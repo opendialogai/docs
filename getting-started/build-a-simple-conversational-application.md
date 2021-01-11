@@ -99,7 +99,40 @@ Now, to make things a bit more interesting we are going to put a condition on th
 
 To achieve this we are going to create two message templates and associate each template to a [condition](../working-with-opendialog/conversations/#conditions) that checks the user's skill level. 
 
+Go back to the first message and in the conditions field add the following condition:
 
+```yaml
+conditions:
+  - condition:
+      operation: eq
+      attributes:
+        attribute: user.skill
+      parameters:
+        value: novice
+```
+
+Then go back to the outgoing intent and create a new "Explainer for experts" template. Use the condition and message below.
+
+```yaml
+conditions:
+  - condition:
+      operation: eq
+      attributes:
+        attribute: user.skill
+      parameters:
+        value: expert
+```
+
+```markup
+<message>
+  <text-message> 
+    Hello, {user.first_name}. Excited to talk OpenDialog.
+  </text-message>
+  <text-message>
+   The OpenDialog Conversation Language is a domain-specific language used by the OpenDialog Conversational Engine to define what are the expected exchanges of intents between participants in a conversation.
+  </text-message>
+</message>
+```
 
 
 
