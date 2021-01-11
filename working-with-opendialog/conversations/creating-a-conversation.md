@@ -44,5 +44,5 @@ If you go to the Test Bot page you can trigger the conversation by typing `inten
 
 ![](../../.gitbook/assets/image%20%287%29.png)
 
-As you can see from the response, OpenDialog correctly identified that the appropriate outgoing intent should be `intent.app.HowDoYouDo` but did not find any message that could be matched to that intent. This is because we haven't created one yet. In the [next section](https://docs.opendialog.ai/docs/adding_a_message) we will do just that.
+As you can see from the response, OpenDialog correctly identified that the appropriate outgoing intent should be `intent.app.HowDoYouDo` but did not find any message that could be matched to that intent. This is because we haven't created one yet. In the [next section](../messages/) we will do just that.
 
