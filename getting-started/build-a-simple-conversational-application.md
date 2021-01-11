@@ -14,7 +14,7 @@ OpenDialog comes with some default conversations in place. We will start by edit
 
 After you've [installed OpenDialog](installing-opendialog/), log in to the OpenDialog application and click on "Message Editor". Provided you've imported the default specification as described in the installation guide you should see two outgoing intents. Each _outgoing_ intent can have one or more messages \(or message templates\) associated with it. 
 
-![Outgoing intents](../.gitbook/assets/image%20%2812%29.png)
+![Outgoing intents](../.gitbook/assets/image%20%2823%29.png)
 
 An outgoing intent is something that the conversational application \(or bot\) _intents_ to say. It is defined in a conversation template. It's the mirror opposite on an _incoming_ intent, which is something the user said that the application needs to interpret. When an outgoing intent is selected to be sent to the user OpenDialog will look at all the messages associated with the outgoing intent and select the most appropriate one. Currently, this mostly depends on conditions that are associated with messages. 
 
@@ -48,7 +48,7 @@ If you now load up the demo webchat you should see the updated welcome response 
 
 This welcome response is _triggered_ by a message sent from the webchat app to OpenDialog, letting it know that a user has loaded the chat. You can also _trigger_ this response by sending it directly to the app. Place the callback id of the event in the "Send Trigger Message" field as shown below. This is an easy way for you to trigger different parts of the conversation and simulate user input. 
 
-![Triggering a message in webchat](../.gitbook/assets/image%20%282%29.png)
+![Triggering a message in webchat](../.gitbook/assets/image%20%289%29.png)
 
 ## Creating a conversation
 
@@ -91,7 +91,7 @@ Click on "Create Message Template", give it a title of "Explainer" and paste the
 
 If you now go back to the test bot, trigger the welcome message and click on the second button you will see the message associated with the outgoing intent. Congratulations - this is your first OpenDialog message!
 
-![Message associated to outgoing intent](../.gitbook/assets/image%20%2811%29.png)
+![Message associated to outgoing intent](../.gitbook/assets/image%20%2822%29.png)
 
 ### Using conditions with intents
 

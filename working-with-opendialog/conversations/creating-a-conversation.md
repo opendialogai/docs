@@ -12,15 +12,15 @@ For the purposes of this guide, however, we will start with a simple conversatio
 
 To create a conversation visit the Conversations listing page in the OpenDialog administration. In the image below you can see that there are three conversations and they are all _active_. OpenDialog keeps track of all changes to conversations and conversations can be active, deactivate and there can also be a version of a conversation in draft mode.
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%2813%29.png)
 
 To create a new conversation click on "Create", this simply provides a very simple editor where you can add a conversation.
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image%20%2812%29.png)
 
 Before saving a conversation OpenDialog runs a number of checks to ensure that it is a valid conversation and will provide relevant messages with any issues that it can identify. If it saves successfully you can then activate the conversation which means that it will be considered the next time an utterance comes in from the user.
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
 The conversation we are creating is a simple request-response. It is expecting the user to say something that will resolve to the `intent.app.hi` and if that is true then it will respond with `intent.app.HowDoYouDo`.
 
@@ -42,7 +42,7 @@ conversation:
 
 If you go to the Test Bot page you can trigger the conversation by typing `intent.app.hi` in the Trigger Message area. This will send an event to webchat which is the equivalent of a user having sent an utterance with that intent.
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%2816%29.png)
 
 As you can see from the response, OpenDialog correctly identified that the appropriate outgoing intent should be `intent.app.HowDoYouDo` but did not find any message that could be matched to that intent. This is because we haven't created one yet. In the [next section](../messages/) we will do just that.
 

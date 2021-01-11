@@ -4,19 +4,19 @@ In the previous section about [creating a conversation](https://docs.opendialog.
 
 Let's start by taking another look at the conversation:
 
-![conversation](https://docs.opendialog.ai/docs/assets/simple_conversation2.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 In the Intents section we have an opening intent and an outgoing intent. We want to associate this outgoing intent with a message. To do this we can click on the outgoing intent to create an outgoing intent in our message response engine that can be linked to messages.
 
-![conversation](https://docs.opendialog.ai/docs/assets/outgoing_intent.png)
+![](../../.gitbook/assets/image%20%282%29.png)
 
 Once the outgoing intent is created we can add message templates to it.
 
-![conversation](https://docs.opendialog.ai/docs/assets/outgoing_intent_created.png)
+![](../../.gitbook/assets/image%20%284%29.png)
 
 A message template has a name, associated condition and the message mark-up. We will deal with conditions later and for now just add the simplest type of message - a text message.
 
-![conversation](https://docs.opendialog.ai/docs/assets/message_template_with_text_message.png)
+![](../../.gitbook/assets/image%20%283%29.png)
 
 The message content is as follows:
 
@@ -29,7 +29,7 @@ The message content is as follows:
 
 Now, returning to the test page for the bot and entering the incoming intent from the user as a trigger we will receive the message we just created.
 
-![conversation](https://docs.opendialog.ai/docs/assets/message_response.png)
+![](../../.gitbook/assets/image%20%2818%29.png)
 
 ### Messages with Buttons
 
@@ -70,17 +70,17 @@ Since the intent remains the same we don't need to modify the actual conversatio
 
 We are creating a `button-message` that has some text at the top and then can have one or more buttons associated with it. Each button has a callback and in this case the callback is the id of the incoming intent that will match the next conversation. What we are telling OpenDialog is that when the user clicks that button OpenDialog should behave as if the user intented to say `intent.app.hi`.
 
-![conversation](https://docs.opendialog.ai/docs/assets/message_with_button.png)
+![](../../.gitbook/assets/image%20%2824%29.png)
 
 Now, if we go back to the test page we will see that the welcome message has the button we just added.
 
-![conversation](https://docs.opendialog.ai/docs/assets/message_with_button_on_chat.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 Clicking on it will trigger the conversation with the opening intent that matches that callback.
 
 > Callbacks on buttons do not need to match the ids of incoming intents. If they do OpenDialog can handle them out of the box, if they don't you can provide mappings between callbacks and intents in OpenDialog configuration.
 
-![conversation](https://docs.opendialog.ai/docs/assets/response_to_button_message.png)
+![](../../.gitbook/assets/image%20%285%29.png)
 
 ### Messages with conditions
 
@@ -129,11 +129,11 @@ The outgoing intent, however, remains the same but we are going to give our outg
 
 The outgoing intent now looks like this:
 
-![conversation](https://docs.opendialog.ai/docs/assets/howdoyoudo_outgoing_intent.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 There are two message templates, one for each type of response. Withing the message templates themselves we've added conditions.
 
-![conversation](https://docs.opendialog.ai/docs/assets/howdoyoudo_condition.png)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 ```text
 conditions:
@@ -147,7 +147,7 @@ conditions:
 
 The condition takes advantage of the conversation context, and checks if the `interpreted_intent`is equal to `intent.app.positiveHi` \(or `intent.aoo.negativehi` for the other message\).
 
-![conversation](https://docs.opendialog.ai/docs/assets/positive_and_negative.png)
+![](../../.gitbook/assets/image%20%2815%29.png)
 
 ### Using attributes in messages
 
@@ -163,7 +163,7 @@ We will add the user's first name as an attribute in the positive message.
 
 The result when we test it is:
 
-![conversation](https://docs.opendialog.ai/docs/assets/message_with_attribute.png)
+![](../../.gitbook/assets/image%20%281%29.png)
 
 ### Different message types
 
