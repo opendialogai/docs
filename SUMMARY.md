@@ -13,7 +13,7 @@
     * [OpenDialog Server Deployment](getting-started/installing-opendialog/deployment/README.md)
       * [Deployment through Forge](getting-started/installing-opendialog/deployment/deployment-through-forge.md)
       * [Large-Scale Enterprise Deployments](getting-started/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
-  * [Quick-start: Build a simple conversational application](getting-started/build-a-simple-conversational-application.md)
+  * [Quick-start: Intro to  conversational applications](getting-started/build-a-simple-conversational-application.md)
 * [Working with OpenDialog](working-with-opendialog/README.md)
   * [Attributes and Contexts](working-with-opendialog/attributes-and-contexts.md)
   * [Conversations](working-with-opendialog/conversations/README.md)

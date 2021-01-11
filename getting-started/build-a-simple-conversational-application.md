@@ -2,9 +2,9 @@
 description: A quick-start guide to development with OpenDialog
 ---
 
-# Quick-start: Build a simple conversational application
+# Quick-start: Intro to  conversational applications
 
-Now that we have OpenDialog up and running let's build a simple application to get a sense of how things work. We will build a small guide to OpenDialog that demostrates some of the features of the application. No NLP is involved so we can focus on the conversational flow, but as you will soon realise because of how OpenDialog structures conversations an guided, button-driven conversation is just as easily converted into one that depends on natural language interaction and the two can be mixed in lots of different ways.
+Now that we have OpenDialog up and running let's build a simple application to get a sense of how things work. We will build a small dialogue that demonstrates some of the features of the application. No NLP is involved so we can focus on the conversational flow, but as you will soon realise, because of how OpenDialog structures conversations, a guided, button-driven conversation is easily converted into one that depends on natural language interaction and the two can be mixed in lots of different ways.
 
 All the concepts used here are described in much more detailed in the "Working with OpenDialog" section. 
 
@@ -64,7 +64,6 @@ conversation:
       intents:
         - u:
             i: intent.example.ExplainOpenDialog
-            interpreter: interpreter.core.callbackInterpreter
         - b:
             i: intent.example.OpenDialogExplainer
             completes: true
@@ -74,7 +73,7 @@ Save the conversation and then activate it.
 
 ## Creating a message
 
-At this point we have a conversation that is expecting an intent from the user called `intent.example.ExplainOpenDialog`. The user can send that intent by click on the button from the message we create before. We are almost there!
+At this point, we have a conversation that is expecting an intent from the user called `intent.example.ExplainOpenDialog`. The user can "send" that intent by clicking on the button from the message we create before. We are almost there!
 
 The next step is to associate the _outgoing_ intent, i.e. the intent that the bot will send in response to the user. To do this go back into edit mode for the conversation we just created and click on the outgoing intent. 
 
@@ -90,9 +89,17 @@ Click on "Create Message Template", give it a title of "Explainer" and paste the
 </message>
 ```
 
-If you now go back to the test bot, trigger the welcome message and click on the second button you will see the message associated with the outgoint intent. Congratulations - this is your first OpenDialog message!
+If you now go back to the test bot, trigger the welcome message and click on the second button you will see the message associated with the outgoing intent. Congratulations - this is your first OpenDialog message!
 
 ![Message associated to outgoing intent](../.gitbook/assets/image%20%287%29.png)
+
+### Using conditions with intents
+
+Now, to make things a bit more interesting we are going to put a condition on the message so that we can modify the message based on the type of user we are interacting with. For _novice users,_ we will keep the same message, while for _expert users_ we will provide more in-depth information. 
+
+To achieve this we need to. add a [condition](../working-with-opendialog/conversations/#conditions) to a message. 
+
+
 
 
 
