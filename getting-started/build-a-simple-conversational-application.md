@@ -1,0 +1,98 @@
+---
+description: A quick-start guide to development with OpenDialog
+---
+
+# Quick-start: Build a simple conversational application
+
+Now that we have OpenDialog up and running let's build a simple application to get a sense of how things work. We will build a small guide to OpenDialog that demostrates some of the features of the application. No NLP is involved so we can focus on the conversational flow, but as you will soon realise because of how OpenDialog structures conversations an guided, button-driven conversation is just as easily converted into one that depends on natural language interaction and the two can be mixed in lots of different ways.
+
+All the concepts used here are described in much more detailed in the "Working with OpenDialog" section. 
+
+## Edit a message 
+
+OpenDialog comes with some default conversations in place. We will start by editing a message to get a sense of how that works. 
+
+After you've [installed OpenDialog](installing-opendialog/), log in to the OpenDialog application and click on "Message Editor". Provided you've imported the default specification as described in the installation guide you should see two outgoing intents. Each _outgoing_ intent can have one or more messages \(or message templates\) associated with it. 
+
+![Outgoing intents](../.gitbook/assets/image%20%288%29.png)
+
+An outgoing intent is something that the conversational application \(or bot\) _intents_ to say. It is defined in a conversation template. It's the mirror opposite on an _incoming_ intent, which is something the user said that the application needs to interpret. When an outgoing intent is selected to be sent to the user OpenDialog will look at all the messages associated with the outgoing intent and select the most appropriate one. Currently, this mostly depends on conditions that are associated with messages. 
+
+Now, click on `intent.opendialog.WelcomeReponse` and you will see that there is one message template associated with it. Click on the edit button, replace it with the message template here
+
+```markup
+<message>
+  <text-message> 
+    Welcome. This is the OpenDialog sample application. 
+    It is going to demonstrate some of the features of the OpenDialog 
+    conversation language. 
+  </text-message>
+  <button-message>
+    <button>
+      <text>Great, let's get started!</text>
+      <callback>intent.example.StartSampleConversation</callback>
+    </button>
+    <button>
+      <text>What is the OpenDialog Conversation Language?</text>
+      <callback>intent.example.ExplainOpenDialog</callback>
+    </button>
+  </button-message>
+</message>
+```
+
+This new message has two parts. The `text-message` , with the main text message from the app, and the `button-message` , with two buttons. Since we are not using natural language in this example the buttons will stand in as user input. The buttons have `callback` values defined - and you will notice that they are intents, just like our outgoing intents. In this case, they are _incoming_ intents from the user. If we were using a natural language interpreter these values would have been the output of the interpreter following an interpretation of user input. However, since we are using buttons we can send the values straight back to our application. 
+
+If you now load up the demo webchat you should see the updated welcome response from the bot. 
+
+![Webchat showing the updated welcome message](../.gitbook/assets/image.png)
+
+This welcome response is _triggered_ by a message sent from the webchat app to OpenDialog, letting it know that a user has loaded the chat. You can also _trigger_ this response by sending it directly to the app. Place the callback id of the event in the "Send Trigger Message" field as shown below. This is an easy way for you to trigger different parts of the conversation and simulate user input. 
+
+![Triggering a message in webchat](../.gitbook/assets/image%20%282%29.png)
+
+## Creating a conversation
+
+Now we have a new message with two buttons that are going to send back new intents to our application. How do we handle those intents though? Well, we need to create a new conversation that will be listening to at least one of those intents. 
+
+To create a conversation, navigate to conversations, click on create an copy the Yaml-definition  below.
+
+```yaml
+conversation:
+  id: explain_opendialog_conversation
+  scenes:
+    opening_scene:
+      intents:
+        - u:
+            i: intent.example.ExplainOpenDialog
+            interpreter: interpreter.core.callbackInterpreter
+        - b:
+            i: intent.example.OpenDialogExplainer
+            completes: true
+```
+
+Save the conversation and then activate it. 
+
+## Creating a message
+
+At this point we have a conversation that is expecting an intent from the user called `intent.example.ExplainOpenDialog`. The user can send that intent by click on the button from the message we create before. We are almost there!
+
+The next step is to associate the _outgoing_ intent, i.e. the intent that the bot will send in response to the user. To do this go back into edit mode for the conversation we just created and click on the outgoing intent. 
+
+As this is a new outgoing intent you will be invited to create it and you can now associate message templates with it. 
+
+Click on "Create Message Template", give it a title of "Explainer" and paste the message that we have below. 
+
+```markup
+<message>
+  <text-message> 
+    The OpenDialog Conversation Language is a domain-specific language used by the OpenDialog Conversational Engine to define what are the expected exchanges of intents between participants in a conversation.
+  </text-message>
+</message>
+```
+
+If you now go back to the test bot, trigger the welcome message and click on the second button you will see the message associated with the outgoint intent. Congratulations - this is your first OpenDialog message!
+
+![Message associated to outgoing intent](../.gitbook/assets/image%20%287%29.png)
+
+
+
