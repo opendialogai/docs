@@ -14,7 +14,7 @@ OpenDialog comes with some default conversations in place. We will start by edit
 
 After you've [installed OpenDialog](installing-opendialog/), log in to the OpenDialog application and click on "Message Editor". Provided you've imported the default specification as described in the installation guide you should see two outgoing intents. Each _outgoing_ intent can have one or more messages \(or message templates\) associated with it. 
 
-![Outgoing intents](../.gitbook/assets/image%20%288%29.png)
+![Outgoing intents](../.gitbook/assets/image%20%289%29.png)
 
 An outgoing intent is something that the conversational application \(or bot\) _intents_ to say. It is defined in a conversation template. It's the mirror opposite on an _incoming_ intent, which is something the user said that the application needs to interpret. When an outgoing intent is selected to be sent to the user OpenDialog will look at all the messages associated with the outgoing intent and select the most appropriate one. Currently, this mostly depends on conditions that are associated with messages. 
 
@@ -91,7 +91,7 @@ Click on "Create Message Template", give it a title of "Explainer" and paste the
 
 If you now go back to the test bot, trigger the welcome message and click on the second button you will see the message associated with the outgoing intent. Congratulations - this is your first OpenDialog message!
 
-![Message associated to outgoing intent](../.gitbook/assets/image%20%287%29.png)
+![Message associated to outgoing intent](../.gitbook/assets/image%20%288%29.png)
 
 ### Using conditions with intents
 

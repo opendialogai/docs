@@ -10,9 +10,9 @@ Conversations can have multiple _scenes_ and each scene can have multiple intera
 
 For the purposes of this guide, however, we will start with a simple conversation. Just a straightforward request-response.
 
-To create a conversation visit the Conversations listing page in the OpenDialog administration. In the image below you can see that there are three conversations and they are all _active_. OpenDialog keeps track of all changes to conversations and conversations can be active, deactive and there can also be a version of a conversation in draft mode.
+To create a conversation visit the Conversations listing page in the OpenDialog administration. In the image below you can see that there are three conversations and they are all _active_. OpenDialog keeps track of all changes to conversations and conversations can be active, deactivate and there can also be a version of a conversation in draft mode.
 
-![conversation](https://docs.opendialog.ai/docs/assets/od_conversations.png)
+![](../../.gitbook/assets/image%20%284%29.png)
 
 To create a new conversation click on "Create", this simply provides a very simple editor where you can add a conversation.
 
