@@ -1,6 +1,6 @@
 # Messages
 
-In the previous section about [creating a conversation](https://docs.opendialog.ai/docs/creating_a_conversation) we created a simple conversation with a request and response. Now, we are going to look at how we can associate messages to outgoing intents of that conversation.
+In the previous section about [creating a conversation](../conversations/creating-a-conversation.md) we created a simple conversation with a request and response. Now, we are going to look at how we can associate messages to outgoing intents of that conversation.
 
 Let's start by taking another look at the conversation:
 
