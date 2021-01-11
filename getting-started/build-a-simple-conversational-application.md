@@ -97,7 +97,7 @@ If you now go back to the test bot, trigger the welcome message and click on the
 
 Now, to make things a bit more interesting we are going to put a condition on the message so that we can modify the message based on the type of user we are interacting with. For _novice users,_ we will keep the same message, while for _expert users_ we will provide more in-depth information. 
 
-To achieve this we need to. add a [condition](../working-with-opendialog/conversations/#conditions) to a message. 
+To achieve this we need to add a [condition](../working-with-opendialog/conversations/#conditions) to a message. 
 
 
 
