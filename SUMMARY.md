@@ -15,6 +15,7 @@
       * [Large-Scale Enterprise Deployments](getting-started/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
   * [Quick-start: Intro to  conversational applications](getting-started/build-a-simple-conversational-application.md)
 * [Working with OpenDialog](working-with-opendialog/README.md)
+  * [Architecture](working-with-opendialog/architecture.md)
   * [Attributes and Contexts](working-with-opendialog/attributes-and-contexts.md)
   * [Conversations](working-with-opendialog/conversations/README.md)
     * [Creating a Conversation](working-with-opendialog/conversations/creating-a-conversation.md)
