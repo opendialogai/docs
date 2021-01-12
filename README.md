@@ -6,7 +6,7 @@ To achieve this OpenDialog provides:
 
 * a specific and opinionated approach to designing conversations \([see core concepts](concepts/)\)
 * an open-source development framework for building conversational applications \([see our Getting Started guide](getting-started/)\).
-* an open-source web-based application for managing conversational applications \(available on Github.
+* an open-source web-based application for managing conversational applications \([available on Github](https://github.com/opendialogai/opendialog)\).
 
 ### Who is OpenDialog for? 
 
