@@ -14,7 +14,7 @@ OpenDialog comes with some default conversations in place. We will start by edit
 
 After you've [installed OpenDialog](installing-opendialog/), log in to the OpenDialog application and click on "Message Editor". Provided you've imported the default specification as described in the installation guide you should see two outgoing intents. Each _outgoing_ intent can have one or more messages \(or message templates\) associated with it. 
 
-![Outgoing intents](../.gitbook/assets/image%20%2837%29.png)
+![Outgoing intents](../.gitbook/assets/image%20%2841%29.png)
 
 An outgoing intent is something that the conversational application \(or bot\) _intents_ to say. It is defined in a conversation template. It's the mirror opposite on an _incoming_ intent, which is something the user said that the application needs to interpret. When an outgoing intent is selected to be sent to the user OpenDialog will look at all the messages associated with the outgoing intent and select the most appropriate one. Currently, this mostly depends on conditions that are associated with messages. 
 
@@ -48,7 +48,7 @@ If you now load up the demo webchat you should see the updated welcome response 
 
 This welcome response is _triggered_ by a message sent from the webchat app to OpenDialog, letting it know that a user has loaded the chat. You can also _trigger_ this response by sending it directly to the app. Place the callback id of the event in the "Send Trigger Message" field as shown below. This is an easy way for you to trigger different parts of the conversation and simulate user input. 
 
-![Triggering a message in webchat](../.gitbook/assets/image%20%2815%29.png)
+![Triggering a message in webchat](../.gitbook/assets/image%20%2817%29.png)
 
 ## Creating a conversation
 
@@ -84,14 +84,19 @@ Click on "Create Message Template", give it a title of "Explainer" and paste the
 ```markup
 <message>
   <text-message> 
-    The OpenDialog Conversation Language is a domain-specific language used by the OpenDialog Conversational Engine to define what are the expected exchanges of intents between participants in a conversation.
+    Hello, {user.first_name}. Excited to talk OpenDialog.
+  </text-message>
+  <text-message>
+   The OpenDialog Conversation Language is a domain-specific language used by the OpenDialog Conversational Engine to define what are the expected exchanges of intents between participants in a conversation.
   </text-message>
 </message>
 ```
 
 If you now go back to the test bot, trigger the welcome message and click on the second button you will see the message associated with the outgoing intent. Congratulations - this is your first OpenDialog message!
 
-![Message associated to outgoing intent](../.gitbook/assets/image%20%2836%29.png)
+![Message associated with a specific intent](../.gitbook/assets/image%20%2816%29.png)
+
+You'll notice a couple of things here. Firstly, we have two separate _bubbles,_ one for each `text-message` and, secondly, we are using an attribute `{user.first_name}`. What the code within the curly brackets is doing is telling OpenDialog to ask the `user` context for the value of an attribute called `first_name` and display that attribute within the message.
 
 ### Using conditions with intents
 
@@ -134,5 +139,21 @@ conditions:
 </message>
 ```
 
+To test the setup you can visit the test bot. We are going to set attribute values explicitly to test conversation flow. First, set up the skill level using the "Set custom user attribute" form.
 
+![You can set custom user attributes here](../.gitbook/assets/image%20%2828%29.png)
+
+Secondly, we will trigger the `explain_opendialog_conversation` directly through the Trigger form
+
+![Use the trigger form to send intents directly to the Conversation Engine](../.gitbook/assets/image%20%285%29.png)
+
+The conversation and message will now use the updated custom attribute value to pick the appropriate message. 
+
+![](../.gitbook/assets/image%20%2840%29.png)
+
+ If you set the value of the skill level back to novice and send the trigger message again you will instead get the message for novices. 
+
+### More to come!
+
+There is much more to say about how OpenDialog works, this is just scratching the surface. We haven't talked about interpreters, actions or custom contexts. We will be updating the documentation over the next few weeks so please either [get directly in touch](https://opendialog.ai) or make sure you check back here. 
 

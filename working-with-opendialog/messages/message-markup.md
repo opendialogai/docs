@@ -24,7 +24,7 @@ The message element can optionally contain a `disable_text` property to turn off
 
 Example messages with user text enabled and then disabled.
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](../../.gitbook/assets/image%20%2834%29.png)
 
 ### Supported Message Types
 
@@ -42,7 +42,7 @@ A plain message with only text. Specially formatted links can also be included i
 
 **Example**
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 ```text
 <message>
@@ -67,7 +67,7 @@ Messages can also contain URLs in the text - that will linkified and there is al
 </message>
 ```
 
-![](../../.gitbook/assets/image%20%2842%29.png)
+![](../../.gitbook/assets/image%20%2846%29.png)
 
 Links like `greenshootlabs.com` in the message text will be turned to links as well.
 
@@ -97,7 +97,7 @@ Displays an image message. Optionally, the image can also be a link that can opt
 </message>
 ```
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
 #### Button Messages
 
@@ -161,7 +161,7 @@ Here is are examples of a message with one button and two buttons. Clicking on t
 </message>
 ```
 
-![](../../.gitbook/assets/image%20%2834%29.png)
+![](../../.gitbook/assets/image%20%2837%29.png)
 
 ```text
 
@@ -180,7 +180,7 @@ Here is are examples of a message with one button and two buttons. Clicking on t
 </message>
 ```
 
-![](../../.gitbook/assets/image%20%2813%29.png)
+![](../../.gitbook/assets/image%20%2814%29.png)
 
 **Link buttons**
 
@@ -214,7 +214,7 @@ Links buttons are used to create links to other web pages. The `link_new_tab` el
 </message>
 ```
 
-![](../../.gitbook/assets/image%20%2819%29.png)
+![](../../.gitbook/assets/image%20%2821%29.png)
 
 **Click to Call buttons**
 
@@ -256,7 +256,7 @@ There are currently 2 types that can be used:
 
 An example outgoing intent with 2 button messages, 1 external 1 not showing different button types:
 
-![](../../.gitbook/assets/image%20%2828%29.png)
+![](../../.gitbook/assets/image%20%2831%29.png)
 
 #### Rich messages
 
@@ -298,7 +298,7 @@ Where buttons can be any of the buttons described above.
 </message>
 ```
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 #### Form messages
 
@@ -354,7 +354,7 @@ When using `radio` or `select` elements, you must define an `options` block givi
 
 The `email` element type acts just like a `text` element, but on submission, is validated to ensure it is formatted like an email address
 
-![](../../.gitbook/assets/image%20%2839%29.png)
+![](../../.gitbook/assets/image%20%2843%29.png)
 
 This form message example was created with the following XML:
 
@@ -422,7 +422,7 @@ Note - messages with very different sizes may not display well in a horizontal c
 </list-message>
 ```
 
-![](../../.gitbook/assets/image%20%2833%29.png)
+![](../../.gitbook/assets/image%20%2836%29.png)
 
 **Date Picker messages**
 
@@ -444,7 +444,7 @@ The `min_date` and `max_date` fields restrict the dates that are shown to the us
 </date-picker-message>
 ```
 
-![](../../.gitbook/assets/image%20%2840%29.png)
+![](../../.gitbook/assets/image%20%2844%29.png)
 
 **Autocomplete message**
 
@@ -526,7 +526,7 @@ Long text messages also allow for custom submit button text, confirmation text t
 </long-text-message>
 ```
 
-![](../../.gitbook/assets/image%20%2821%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 **Full Page Rich messages**
 
@@ -575,7 +575,7 @@ CTA messages can only contain text
 </cta-messsaeg>
 ```
 
-![](../../.gitbook/assets/image%20%2830%29.png)
+![](../../.gitbook/assets/image%20%2833%29.png)
 
 #### Hand to Human messages
 
@@ -612,5 +612,5 @@ The supported data attributes at the moment are:
 
 Meta Messages can be placed anywhere in a message template and will have the same effect
 
-![](../../.gitbook/assets/image%20%2822%29.png)
+![](../../.gitbook/assets/image%20%2824%29.png)
 

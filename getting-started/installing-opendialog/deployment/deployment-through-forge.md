@@ -42,7 +42,7 @@ usermod -aG docker forge
 
 Here is a screenshot of how the configuration should look. We will be using this later on when setting up our server.
 
-![Forge Recipe to prep an OD service](../../../.gitbook/assets/image%20%2826%29.png)
+![Forge Recipe to prep an OD service](../../../.gitbook/assets/image%20%2829%29.png)
 
 ### Step 2: Create a new server
 
@@ -50,7 +50,7 @@ The next step is to prepare the server itself. We are assuming that Forge is con
 
 We will setup the simplest possible server - be sure to select the Post-Provision Recipe that we prepared in Step 1. With all the settings in place, you can click on "Create Server".
 
-![](../../../.gitbook/assets/image%20%2841%29.png)
+![](../../../.gitbook/assets/image%20%2845%29.png)
 
 If there are no issues with the Digital Ocean access and the options select the server will start building and we need to wait for it to be provisioned.
 
@@ -58,7 +58,7 @@ If there are no issues with the Digital Ocean access and the options select the 
 
 Forge will create a default site setup on the server, but for the sake of complete clarity, we will create a new site. 
 
-![](../../../.gitbook/assets/image%20%2816%29.png)
+![](../../../.gitbook/assets/image%20%2818%29.png)
 
 Once the new site is created we can delete the `default` site. 
 
@@ -72,7 +72,7 @@ We can now connect an OpenDialog application repository to this site and then we
 * In Forge go to your just created site and select Git Repository, set up the SSH key provided by Forge in your OpenDialog repository to enable Forge to pull from the repo. 
 * Add the repository details and the branch to use in the "Install Repository" form on Forge and click on Install Repository. 
 
-![](../../../.gitbook/assets/image%20%2835%29.png)
+![](../../../.gitbook/assets/image%20%2838%29.png)
 
 If all goes well it know means that you can deploy code to your newly minted Forge-managed server. Just a few more steps and we will be ready to use our OpenDialog application. 
 
