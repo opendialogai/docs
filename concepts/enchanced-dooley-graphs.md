@@ -6,7 +6,7 @@ An EI is made up by the sum of possible conversations that participants in the E
 
 Conversations have a specific structure that we can reason about within OpenDialog. Below is simple conversation with just two scenes and a connection between the scenes.
 
-![alt-text](https://docs.opendialog.ai/docs/assets/example_conversation.png)
+![A conversation with two scenes](../.gitbook/assets/example_conversation.png)
 
 There are a few things going on so let's break it down.
 
