@@ -155,5 +155,5 @@ The conversation and message will now use the updated custom attribute value to 
 
 ### More to come!
 
-There is much more to say about how OpenDialog works, this is just scratching the surface. We haven't talked about interpreters, actions or custom contexts. We will be updating the documentation over the next few weeks so please either [get directly in touch](https://opendialog.ai) or make sure you check back here. 
+There is much more to say about how OpenDialog works, this is just scratching the surface. We haven't talked the more complex aspects of the [conversational language](../working-with-opendialog/conversations/) or about interpreters, actions or custom contexts. We will be updating the documentation over the next few weeks so please either [get directly in touch](https://opendialog.ai) or make sure you check back here. 
 
