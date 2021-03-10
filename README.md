@@ -1,3 +1,9 @@
+---
+description: >-
+  Design and deploy delightful conversational experiences across multiple
+  channels with our open-source, enterprise-scale Conversational AI Platform.
+---
+
 # OpenDialog
 
 **OpenDialog** is a conversational application management platform. It enables teams to design, develop, deploy, test and maintain conversational applications.
