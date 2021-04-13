@@ -1,5 +1,9 @@
 # Enchanced Dooley Graphs
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ### Representing conversations
 
 An EI is made up by the sum of possible conversations that participants in the EI can have. A conversation captures some higher order goal.

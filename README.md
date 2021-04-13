@@ -1,5 +1,9 @@
 # OpenDialog
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 **OpenDialog** is a conversational application management platform. It enables teams to design, develop, deploy, test and maintain conversational applications.
 
 To achieve this OpenDialog provides:

@@ -4,6 +4,10 @@ description: Description of the local dev environment OD devs use
 
 # Local Dev Environment for development
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ## Standard Local Dev Environment
 
 The local dev environment installation is suitable for those that are looking to write code for OpenDialog applications. 

@@ -1,5 +1,9 @@
 # Electronic Institutions
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 In OpenDialog conversational applications are modelled as _electronic institutions_ \(EIs\).
 
 > An EI is "an organisational structure for coordinating the activities of multiple interacting agents".

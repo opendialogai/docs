@@ -4,6 +4,10 @@ description: Guide to quickly spin up an OpenDialog app using Docker
 
 # Simple Docker-based installation
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ## Introduction
 
 This guide provides a quick way to setup OpenDialog on your own machine. This is useful to help learn how OpenDialog works and experiment with conversational applications. 

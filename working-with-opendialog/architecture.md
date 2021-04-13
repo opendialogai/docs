@@ -4,6 +4,10 @@ description: A high-level description of the OpenDialog Architecture
 
 # Architecture
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ### OpenDialog Architecture
 
 OpenDialog is a [Laravel](https://laravel.com) application with a MySQL backend for user management and content management and a [Dgraph](https://dgraph.io) backend \(a graph-based database written in Go\) for conversation management and conversational analytics.

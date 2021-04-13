@@ -4,6 +4,10 @@ description: An introduction to OpenDialog's Conversation Description Language.
 
 # Conversations
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 Conversations in OpenDialog rely on three key building blocks: **conversations**, **scenes** & **intents**. These three building blocks are in a hierarchical relationship where conversations contain scenes, and scenes contain intents. Within a single OpenDialog application there can be one or more conversations, with each conversation containing one or more scenes, and each scene containing one or more intents.
 
 OpenDialog conversations model communication between two agents: a user and the OpenDialog application \(i.e. the bot\). In conversational design this communication is primarily modelled by a simple alternation between user and bot intents, however there is also scope for more complex patterns by using **interpreters**, **conditions** and **actions**.

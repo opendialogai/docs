@@ -6,6 +6,10 @@ description: >-
 
 # Concepts
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ## Conversational Applications
 
 OpenDialog takes a unique approach to designing [conversational applications](conversational-applications.md). It is inspired by multi-agent systems research, a subfield of AI that deals with building and modelling systems where multiple participants need to communicate, cooperate, argument and negotiate. 

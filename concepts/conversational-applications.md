@@ -1,5 +1,9 @@
 # Conversational Applications
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 **OpenDialog** is a framework for building and managing _conversational applications_ to automate, scale and improve processes and interactions between humans and machines. 
 
 A _conversational application_ is an application whose main mode of interaction with the user is through the exchange of messages, which we call _utterances_. Each utterance carries an _intent \(or multiple intents\)_. An intent describes the underlying purpose of the party sending the _utterance_. That purpose or intent can be expressed using any number of different utterances.

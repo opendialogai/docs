@@ -1,5 +1,9 @@
 # Creating a Conversation
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 A conversation is the key building block of an OpenDialog conversation application. When a user interacts with an app the first thing we do is determine what conversation we should _instantiate_ in order to manage the interaction.
 
 This happens by looking into all the _active_ conversations and all the opening intents of active conversations and choosing the conversation with a matching opening intent.

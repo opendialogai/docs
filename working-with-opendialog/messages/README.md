@@ -1,5 +1,9 @@
 # Messages
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 In the previous section about [creating a conversation](../conversations/creating-a-conversation.md) we created a simple conversation with a request and response. Now, we are going to look at how we can associate messages to outgoing intents of that conversation.
 
 Let's start by taking another look at the conversation:

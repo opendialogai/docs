@@ -4,6 +4,10 @@ description: Introduction to attributes and contexts in OpenDialog
 
 # Attributes and Contexts
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ## What are attributes
 
 Attributes are the way OpenDialog describes different things in the domain that the conversational application operates in. They can range from `first_name` or `last_name` for a user to the `price` for a specific item or a description of the user type \(e.g. `novice`, `intermediate`, `expert`\)

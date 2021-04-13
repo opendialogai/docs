@@ -4,6 +4,10 @@ description: Deploying OpenDialog to a server
 
 # OpenDialog Server Deployment
 
+{% hint style="warning" %}
+Warning - you are browsing the documentation for an older version of OpenDialog. Please check out the latest version. 
+{% endhint %}
+
 ## System Requirements
 
 ### Browser Requirements
