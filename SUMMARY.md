@@ -1,30 +1,40 @@
 # Table of contents
 
 * [OpenDialog](README.md)
-* [Concepts](concepts/README.md)
-  * [Conversational Applications](concepts/conversational-applications.md)
-  * [Electronic Institutions](concepts/electronic-institutions.md)
-  * [Enchanced Dooley Graphs](concepts/enchanced-dooley-graphs.md)
-* [Getting Started](getting-started/README.md)
-  * [Installing OpenDialog](getting-started/installing-opendialog/README.md)
-    * [OpenDialog on your machine](getting-started/installing-opendialog/opendialog-on-your-machine/README.md)
-      * [Simple Docker-based installation](getting-started/installing-opendialog/opendialog-on-your-machine/simple-docker-based-installation.md)
-      * [Local Dev Environment for development](getting-started/installing-opendialog/opendialog-on-your-machine/local-dev-environment-for-development.md)
-    * [OpenDialog Server Deployment](getting-started/installing-opendialog/deployment/README.md)
-      * [Deployment through Forge](getting-started/installing-opendialog/deployment/deployment-through-forge.md)
-      * [Large-Scale Enterprise Deployments](getting-started/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
-  * [Quick-start: Intro to  conversational applications](getting-started/build-a-simple-conversational-application.md)
-* [Working with OpenDialog](working-with-opendialog/README.md)
-  * [Architecture](working-with-opendialog/architecture.md)
-  * [Attributes and Contexts](working-with-opendialog/attributes-and-contexts.md)
-  * [Conversations](working-with-opendialog/conversations/README.md)
-    * [Creating a Conversation](working-with-opendialog/conversations/creating-a-conversation.md)
-  * [Messages](working-with-opendialog/messages/README.md)
-    * [Message Markup](working-with-opendialog/messages/message-markup.md)
-  * [Conversational Interfaces](working-with-opendialog/interfaces/README.md)
-    * [WebChat](working-with-opendialog/interfaces/webchat/README.md)
-      * [WebChat API](working-with-opendialog/interfaces/webchat/webchat-api.md)
-  * [Interpreters](working-with-opendialog/interpreters.md)
-  * [Contexts](working-with-opendialog/contexts.md)
-  * [Actions](working-with-opendialog/actions.md)
+
+## Concepts <a id="concepts-1"></a>
+
+* [Introduction](concepts-1/concepts.md)
+* [What are Conversations?](concepts-1/what-are-conversations/README.md)
+  * [Electronic Institutions](concepts-1/what-are-conversations/electronic-institutions.md)
+  * [Enchanced Dooley Graphs](concepts-1/what-are-conversations/enchanced-dooley-graphs.md)
+* [Modelling Conversational Applications](concepts-1/modelling-conversational-applications.md)
+
+## Getting Started <a id="getting-started-1"></a>
+
+* [Installing OpenDialog](getting-started-1/installing-opendialog/README.md)
+  * [OpenDialog on your machine](getting-started-1/installing-opendialog/opendialog-on-your-machine/README.md)
+    * [Simple Docker-based installation](getting-started-1/installing-opendialog/opendialog-on-your-machine/simple-docker-based-installation.md)
+    * [Local Dev Environment for development](getting-started-1/installing-opendialog/opendialog-on-your-machine/local-dev-environment-for-development.md)
+  * [OpenDialog Server Deployment](getting-started-1/installing-opendialog/deployment/README.md)
+    * [Deployment through Forge](getting-started-1/installing-opendialog/deployment/deployment-through-forge.md)
+    * [Large-Scale Enterprise Deployments](getting-started-1/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
+* [Quick-start: Intro to  conversational applications](getting-started-1/build-a-simple-conversational-application.md)
+
+## Working With OpenDialog <a id="working-with-opendialog-1"></a>
+
+---
+
+* [Architecture](architecture.md)
+* [Attributes and Contexts](attributes-and-contexts.md)
+* [Conversations](conversations/README.md)
+  * [Creating a Conversation](conversations/creating-a-conversation.md)
+* [Messages](messages/README.md)
+  * [Message Markup](messages/message-markup.md)
+* [Conversational Interfaces](interfaces/README.md)
+  * [WebChat](interfaces/webchat/README.md)
+    * [WebChat API](interfaces/webchat/webchat-api.md)
+* [Interpreters](interpreters.md)
+* [Contexts](contexts.md)
+* [Actions](actions.md)
 

@@ -6,13 +6,23 @@ description: >-
 
 # OpenDialog
 
-**OpenDialog** is a conversational application management platform. It enables teams to design, develop, deploy, test and maintain conversational applications.
+{% hint style="info" %}
+The 1.0 version is currently in private beta and the documentation is in beta as well - please [get in touch](https://www.opendialog.ai/contact-us/) for a demo, if you want to join our private beta or simply to sign-up to be notified when the final release will be ready. 
+{% endhint %}
+
+**OpenDialog** is a conversational application management platform. 
+
+It enables teams to design, develop, deploy, test, maintain and refine conversational applications.
 
 To achieve this OpenDialog provides:
 
-* a specific and opinionated approach to designing conversations \([see core concepts](concepts/)\)
-* an open-source development framework for building conversational applications \([see our Getting Started guide](getting-started/)\).
-* an open-source web-based application for managing conversational applications \([available on Github](https://github.com/opendialogai/opendialog)\).
+* **Method**: A specific and opinionated approach to designing conversations \([see core concepts](concepts-1/concepts.md)\).
+* **Tooling**: A web-based conversation designer and conversation management system supported by a modular, open-source, development framework for designing and developing conversational applications.
+* **Integrations**:
+  * A flexible webchat widget for web-based chat.
+  * An API endpoint for custom chat integrations to your own conversational interface.
+  * Support for other popular conversational interfaces such as Slack, Facebook, WhatsApp, etc.
+  * Support for integration with NLU systems such as Dialogflow, LUIS, Lex and Spacy.  
 
 ### Who is OpenDialog for? 
 
@@ -20,7 +30,7 @@ OpenDialog is for anyone looking to develop conversational applications. Whether
 
 **For conversation designers,** OpenDialog offers a fast, flexible and resilient way of designing conversations, from prototype to final deployment.
 
-**For Conversational AI developers,** OpenDialog provides integrations to leading NLP solutions and an architectural approach that means you can pick and mix tools and approaches down to the level of individual intents
+**For Conversational AI developers,** OpenDialog provides integrations to leading NLP solutions and an architectural approach that means you can pick and mix tools and approaches down to the level of individual intents.
 
 **For application developers,** OpenDialog provides a modular and robust framework that makes it easy to integrate conversational applications with the rest of your digital ecosystem.
 
@@ -30,7 +40,9 @@ OpenDialog is for anyone looking to develop conversational applications. Whether
 
 ### **How does OpenDialog work?** 
 
-OpenDialog’s core is its Conversational Engine and its Conversation Description Language \(CDL\). The engine is based on our model of a conversational application and coordinates interactions between users and bots. The CDL allows you to specify what interaction patterns are expected and supported. It has flexible integration with a variety of interpreters of user input, supports the interleaving of actions with conversation, and has rich semantic context management. OpenDialog also supports multiple conversational interfaces and comes out of the box with a feature-rich webchat widget.
+At OpenDialog's core is its Conversation Designer. This no-code conversation design and development tool enables you to describe complex conversational patterns quickly and efficiently. 
+
+The Conversation Builder translates your conversation design to OpenDialog's Conversation Description Language \(CDL\). Our conversation engine can then manage the conversation based on your specifications and co-ordinate the interaction with other systems \(Natural Language Understanding tools or external APIs\). We offer flexible integration with a variety of interpreters of user input, supports the interleaving of actions with conversation, and rich semantic context management. 
 
 ### Why OpenDialog? 
 

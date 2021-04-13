@@ -1,0 +1,53 @@
+---
+description: Guide to quickly spin up an OpenDialog app using Docker
+---
+
+# Simple Docker-based installation
+
+## Introduction
+
+This guide provides a quick way to setup OpenDialog on your own machine. This is useful to help learn how OpenDialog works and experiment with conversational applications. 
+
+## Step 1 - Install Docker Desktop
+
+OpenDialog does not have a desktop application, so to help us try it out our own machines without having to deal with complex setup instructions or setup virtual server hosts we make use of Docker. Docker is open-source software that allows us to package up code in a single "container" and deploy it to a variety of different environments, such as our own machine. 
+
+To get started you will need to install Docker Desktop on your own machine. Docker Desktop is an all-in-one easy to install application that will provide all the tools necessary for OpenDialog to work locally without affecting the configuration of your own machine. 
+
+[Follow the instructions from Docker to how to install on either a Windows or a Mac. ](https://docs.docker.com/desktop/)
+
+## Step 2 - Download the latest release of OpenDialog
+
+* Visit the [OpenDialog releases page](https://github.com/opendialogai/opendialog/releases) on Github and download the latest release as a zip file on your local machine. 
+* Unzip the file - you will end up with a directory containing the OpenDialog application. 
+
+## Step 3 - Configure Docker Environment
+
+From within a terminal application navigate to the OpenDialog directory that you just unzipped. From there go into the `docker/od-demo` directory.
+
+```text
+cd docker/od-demo
+```
+
+Copy the sample environment variables file to one that you can use with your instance of OpenDialog. You do not need to edit the file.
+
+```text
+cp .env.example .env
+```
+
+We will now tell Docker to use a specific configuration file to create the necessary application environment.
+
+```text
+docker-compose up -d app
+```
+
+If this is the first time you are doing this don't be surprised if it takes some time to download all the necessary components. It is setting up a fully-fledged environment on your own machine. 
+
+Once it is done we need to run a command that is going to initialise the OpenDialog application itself. 
+
+```text
+docker-compose exec app bash docker/od-demo/update-docker.sh
+```
+
+You can now login to the web application by visiting `http://localhost` and logging in with  user: `admin@example.com` and password: `opendialog`.
+
