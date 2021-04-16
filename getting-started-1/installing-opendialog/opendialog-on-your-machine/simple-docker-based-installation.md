@@ -23,16 +23,10 @@ To get started you will need to install Docker Desktop on your own machine. Dock
 
 ## Step 3 - Configure Docker Environment
 
-From within a terminal application navigate to the OpenDialog directory that you just unzipped. From there go into the `docker/od-demo` directory.
+From within a terminal application navigate to the OpenDialog directory that you just unzipped. From there go into the `od-docker-demo` directory.
 
 ```text
-cd docker/od-demo
-```
-
-Copy the sample environment variables file to one that you can use with your instance of OpenDialog. You do not need to edit the file.
-
-```text
-cp .env.example .env
+cd od-docker-demo
 ```
 
 We will now tell Docker to use a specific configuration file to create the necessary application environment.
@@ -46,7 +40,7 @@ If this is the first time you are doing this don't be surprised if it takes some
 Once it is done we need to run a command that is going to initialise the OpenDialog application itself. 
 
 ```text
-docker-compose exec app bash docker/od-demo/update-docker.sh
+docker-compose exec app bash docker/scripts/update-docker.sh
 ```
 
 You can now login to the web application by visiting `http://localhost` and logging in with  user: `admin@example.com` and password: `opendialog`.
