@@ -127,8 +127,6 @@ Once you are logged in you need to run the following commands.
 
 `php artisan schema:init` - setup the Dgraph schema
 
-`php artisan specification:import` - import conversations, messages and intents. 
-
 ### Step 8: Login to OpenDialog
 
 Visit the OpenDialog application on your URL and log in using the username and password you created. On the Conversations page ensure that you activate the imported conversations and then you should be able to see the webchat widget through the Test Bot page. 
