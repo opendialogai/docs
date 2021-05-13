@@ -36,7 +36,7 @@ Once you've selected the Welcome Response, which actually completes the conversa
 
 Congratulations! You've made it through a basic run down of the core concepts of OpenDialog. The conversation may not be very exciting just yet but remember this is just the basic components coming out of the box. 
 
-As we update our documentation you will find out how you can add additional turns, how to take advantage of different types of conversations, scenes and turns and weave into all of this conditions, connect .your application to NLU services such as Dialogflow or LUIS and you will soon be able to build sophisticated conversational experiences.
+As we update our documentation you will find out how you can add additional turns, how to take advantage of different types of conversations, scenes and turns and weave into all of this conditions, connect your application to NLU services such as Dialogflow or LUIS and you will soon be able to build sophisticated multi-turn conversational experiences.
 
 
 
