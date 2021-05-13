@@ -50,9 +50,9 @@ Now, that we got to the turn level we can click on the Intents to see what inten
 
 ![Intent View](../../.gitbook/assets/image%20%2851%29.png)
 
-Intents are split in "Request Intents" and "Response Intents". A request intent is the initiating intent in a turn \(and it can come from either the user or the app\), while the response intent is the expect response. Turns do not need to have a Response Intent. The Request intent could be completing the conversation or it could be transitioning the conversation to another Scene or another Conversation. 
+Intents are split in "Request Intents" and "Response Intents". A request intent is the initiating intent in a turn \(and it can come from either the user or the app\), while the response intent is the expected response. Turns do not need to have a Response Intent. The Request intent could be completing the conversation or it could be transitioning the conversation to another Scene or another Conversation. 
 
-hWe can setup multiple requests and multiple responses. Conditions on intents and the actual interpreration of intents can help the conversation engine determine which one should be applicable. 
+We can setup multiple requests and multiple responses. Conditions on intents and the actual interpretation of intents can help the conversation engine determine which one should be applicable. 
 
 If you click on an Intent you are taken to the Intent overview page that provides a summary of the key points around an intent. 
 
@@ -60,7 +60,7 @@ If you click on an Intent you are taken to the Intent overview page that provide
 
 Let's walk through the highlights here. 
 
-The Participant is the User, so this describes an expected message from the user - an example of this message, the "Sample Message" is "Hello from user". 
+The Participant is the User, so this describes an expected message from the user - an example of this message, the "Sample Message" is "_Hello from user_". 
 
 The interpreter we will be using to interpret this message is the OpenDialog defalut interpreter. This interpreter simply interprets button clicks or specific events \(hence the name callbackInterpreter\). 
 
