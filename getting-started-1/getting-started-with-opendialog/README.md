@@ -10,11 +10,11 @@ To get started you can either [install it on your own machine ](../installing-op
 
 What we will do in the subsequent sections is run through how you can:
 
-* [Create a scenario](creating-a-scenario.md)
-* [Explore a scenario](exploring-and-understanding-a-scenario.md) to see its individual components
+* [Create a scenario](creating-a-scenario.md).
+* [Explore a scenario](exploring-and-understanding-a-scenario.md) to see its individual components.
 * [Understand the conversational flows](understanding-a-scenario.md) a scenario supports through the flow player. 
 
-Give yourself some time to ease into the OpenDialog way of doing things and keep in mind that the documentation is constantly updated to cover all the various components. 
+Give yourself some time to ease into the OpenDialog way of doing things and keep in mind that the documentation is constantly updated to cover all the various components! 
 
 \*\*\*\*
 
