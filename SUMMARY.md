@@ -12,6 +12,10 @@
 
 ## Getting Started <a id="getting-started-1"></a>
 
+* [Getting Starting With OpenDialog Apps](getting-started-1/build-a-simple-conversational-application/README.md)
+  * [Creating a Scenario](getting-started-1/build-a-simple-conversational-application/creating-a-scenario.md)
+  * [Exploring a Scenario](getting-started-1/build-a-simple-conversational-application/exploring-and-understanding-a-scenario.md)
+  * [Understanding a Scenario](getting-started-1/build-a-simple-conversational-application/understanding-a-scenario.md)
 * [Installing OpenDialog](getting-started-1/installing-opendialog/README.md)
   * [OpenDialog on your machine](getting-started-1/installing-opendialog/opendialog-on-your-machine/README.md)
     * [Simple Docker-based installation](getting-started-1/installing-opendialog/opendialog-on-your-machine/simple-docker-based-installation.md)
@@ -19,7 +23,6 @@
   * [OpenDialog Server Deployment](getting-started-1/installing-opendialog/deployment/README.md)
     * [Deployment through Forge](getting-started-1/installing-opendialog/deployment/deployment-through-forge.md)
     * [Large-Scale Enterprise Deployments](getting-started-1/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
-* [Quick-start: Intro to  conversational applications](getting-started-1/build-a-simple-conversational-application.md)
 
 ## Working With OpenDialog <a id="working-with-opendialog-1"></a>
 

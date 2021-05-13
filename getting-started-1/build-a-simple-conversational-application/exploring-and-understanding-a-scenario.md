@@ -1,0 +1,82 @@
+# Exploring a Scenario
+
+We've just [created a scenario](creating-a-scenario.md), and can now dig into exploring what elements are there.
+
+### Scenario Level View
+
+![Starting point for scenarios](../../.gitbook/assets/image%20%2853%29.png)
+
+The scenario level view provides an overview of all the conversations within a scenario. If you click on one of the conversations you will be taken into a conversation view, where you can see the scenes, and if you click on a scene you are taken to turns and finally intents.  
+
+### Conversation Level View
+
+![Conversation Level View](../../.gitbook/assets/image%20%2856%29.png)
+
+At the Conversational level view we can see the Conversation and its associated scenes \(in this case just one scene called "Welcome Scene"\), as well as add new scenes. 
+
+If you click on the Conversation itself you can edit its settings. 
+
+![Conversation Settings](../../.gitbook/assets/image%20%2865%29.png)
+
+The key thing to keep in mind about the "Welcome Conversation" is that it has the _STARTING_ behaviour. This let's the conversation engine know that it can consider the "Welcome Conversation" as an entry conversation into the entire scenario. You can have multiple _STARTING_ conversations and, of course, conversations without this behaviour. If a conversation does not have a starting behaviour it will only be considered _after_ a user has already entered the scenario.
+
+You can also select the default interpreter for the conversation and add conditions but we will come back to that later. For now let's move down to the scene level.
+
+### Scene Level View
+
+![Scene Level View](../../.gitbook/assets/image%20%2870%29.png)
+
+At the Scene level view we can see the turns associated with a scene and edit settings in the same way we can do for conversations
+
+![Scene settings](../../.gitbook/assets/image%20%2868%29.png)
+
+Similar to conversations, scenes have a name, a behavior and you can set a scene-level interpreter and define conditions. As you can see the "Welcome Scene" also has a _STARTING_ behaviour. This indicates to the conversation engine that this scene can be used as a starting scene for this conversation. 
+
+### Turn Level View
+
+If we click on the "Welcome Turn" we are taken to the Turn level view. A turn is the container for the possible exchange of intents. 
+
+![Turn Level View](../../.gitbook/assets/image%20%2859%29.png)
+
+If you click on the "Welcome Turn" you will get the settings view for the turn. 
+
+![Turn Settings](../../.gitbook/assets/image%20%2866%29.png)
+
+The turn in this case is also a _STARTING_ turn, which means that this is a turn through which the overall conversation can start. 
+
+### Intent Level View
+
+Now, that we got to the turn level we can click on the Intents to see what intents we are expecting to be exchanging at the turn level. 
+
+![Intent View](../../.gitbook/assets/image%20%2851%29.png)
+
+Intents are split in "Request Intents" and "Response Intents". A request intent is the initiating intent in a turn \(and it can come from either the user or the app\), while the response intent is the expect response. Turns do not need to have a Response Intent. The Request intent could be completing the conversation or it could be transitioning the conversation to another Scene or another Conversation. 
+
+hWe can setup multiple requests and multiple responses. Conditions on intents and the actual interpreration of intents can help the conversation engine determine which one should be applicable. 
+
+If you click on an Intent you are taken to the Intent overview page that provides a summary of the key points around an intent. 
+
+![Detail view of an Intent](../../.gitbook/assets/image%20%2858%29.png)
+
+Let's walk through the highlights here. 
+
+The Participant is the User, so this describes an expected message from the user - an example of this message, the "Sample Message" is "Hello from user". 
+
+The interpreter we will be using to interpret this message is the OpenDialog defalut interpreter. This interpreter simply interprets button clicks or specific events \(hence the name callbackInterpreter\). 
+
+The confidence level is set to 100% \(although, in any case, when dealing with specific clicks confidence level is always certain. 
+
+Finally, there are no transitions associated with this intent. 
+
+If you click on the edit button \(the yellow pencil\) you are taken to the edit screen for this intent, while the cog wheel takes you to advanced settings. 
+
+
+
+![Edit Intent View](../../.gitbook/assets/image%20%2872%29.png)
+
+The edit view enables you to manipulate all the settings about the intent. We won't get into the details just yet, since we cover it comprehensively in the Intent section. 
+
+
+
+
+

@@ -2,6 +2,8 @@
 
 {% hint style="info" %}
 The 1.0 version is currently in private beta and the documentation is in beta as well - please [get in touch](https://www.opendialog.ai/contact-us/) for a demo, if you want to join our private beta or simply to sign-up to be notified when the final release will be ready. 
+
+The concepts referred to here are still relevant but our no-code UI makes having to understand the underlying YAML representation much less urgent.
 {% endhint %}
 
 In the previous section about [creating a conversation](../conversations/creating-a-conversation.md) we created a simple conversation with a request and response. Now, we are going to look at how we can associate messages to outgoing intents of that conversation.
