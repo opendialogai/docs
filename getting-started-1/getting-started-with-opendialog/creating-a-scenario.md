@@ -1,6 +1,6 @@
 # Creating a Scenario
 
-The first step will be to create a scenario. A scenario represent a single conversational experience, a specific use-case that is meant to be complete in and of itself. While you can use OpenDialog to move users between different scenarios for now we will treat Scenarios as stand-alone experiences. 
+The first step will be to create a scenario. A scenario represent a single conversational experience, a specific use-case that is meant to be complete in and of itself. While you can use OpenDialog to move users between different scenarios for now we will treat scenarios as stand-alone experiences. 
 
 ### Create New Scenario 
 
