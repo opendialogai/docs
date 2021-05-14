@@ -2,7 +2,7 @@
 description: A quick introduction to the basics of OpenDialog applications
 ---
 
-# Getting Starting With OpenDialog Apps
+# Getting Started With OpenDialog Apps
 
 With the [introduction into the concepts](../../concepts-1/modelling-conversational-applications.md) that drive how OpenDialog  thinks of conversational applications - let us dive into the tool itself. 
 
