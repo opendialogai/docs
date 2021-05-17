@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-> This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../modelling-conversational-applications.md) section.
+> This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../modelling-conversational-applications.md) section. If you are really, really in a hurry jump over to [Getting Started with OpenDialog Apps](../../getting-started-1/getting-started-with-opendialog/).
 
 We all intuitively know what is a conversation. One of the first things we are taught is how to exchange ideas and information with others using words and whatever other sensory clues we are capable of producing \(visual, auditory, touch, etc\). The question to tackle here is **what are conversations in the context of a conversational application**, and, more specifically, in OpenDialog. 
 
