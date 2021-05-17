@@ -70,7 +70,7 @@ When a user says something to the bot we have an _utterance_. The utterance goes
 
 After we have a user intent we identify what the appropriate outgoing intent is. This outgoing intent is then mapped to an _utterance_ or _message_ from the bot to the user. The diagram below illustrates the flow from a user utterance, to interpretation and then back to a conversational application utterance.
 
-![The flow from an incoming utterance to an outgoing utterance. ](../.gitbook/assets/blank-diagram-page-2-1-.png)
+![The flow from an incoming utterance to an outgoing utterance. ](../../.gitbook/assets/blank-diagram-page-2-1-.png)
 
 ```yaml
 conversation:

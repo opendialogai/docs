@@ -29,7 +29,7 @@ Below is a brief description of the main components of OpenDialog.
 
 _This is a simplified view of the activities that take place from user input to bot response to give you a sense of how OpenDialog works._
 
-![OpenDialog Architecture](.gitbook/assets/opendialogarchitecture.png)
+![OpenDialog Architecture](../.gitbook/assets/opendialogarchitecture.png)
 
 It all starts with an incoming message at one of the OpenDialog sensors.
 

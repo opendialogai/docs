@@ -28,16 +28,23 @@
 
 ---
 
-* [Architecture](architecture.md)
-* [Attributes and Contexts](attributes-and-contexts.md)
-* [Conversations](conversations/README.md)
-  * [Creating a Conversation](conversations/creating-a-conversation.md)
-* [Messages](messages/README.md)
-  * [Message Markup](messages/message-markup.md)
-* [Conversational Interfaces](interfaces/README.md)
-  * [WebChat](interfaces/webchat/README.md)
-    * [WebChat API](interfaces/webchat/webchat-api.md)
-* [Interpreters](interpreters.md)
-* [Contexts](contexts.md)
-* [Actions](actions.md)
+* [Introduction](introduction.md)
+* [Scenarios](designer.md)
+* [Conversations](adding-conversations.md)
+* [Scenes](scenes.md)
+
+## Developing With OpenDialog
+
+* [Architecture](developing-with-opendialog/architecture.md)
+* [Attributes and Contexts](developing-with-opendialog/attributes-and-contexts.md)
+* [Conversations](developing-with-opendialog/conversations/README.md)
+  * [Creating a Conversation](developing-with-opendialog/conversations/creating-a-conversation.md)
+* [Messages](developing-with-opendialog/messages/README.md)
+  * [Message Markup](developing-with-opendialog/messages/message-markup.md)
+* [Conversational Interfaces](developing-with-opendialog/interfaces/README.md)
+  * [WebChat](developing-with-opendialog/interfaces/webchat/README.md)
+    * [WebChat API](developing-with-opendialog/interfaces/webchat/webchat-api.md)
+* [Interpreters](developing-with-opendialog/interpreters.md)
+* [Contexts](developing-with-opendialog/contexts.md)
+* [Actions](developing-with-opendialog/actions.md)
 
