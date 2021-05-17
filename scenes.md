@@ -1,3 +1,7 @@
+---
+description: Scenes in OpenDialog
+---
+
 # Scenes
 
 Scenes capture specific context within a single conversation. 
@@ -9,6 +13,8 @@ Similarly to the higher order concepts of Scenarios and Conversations they can h
 ![Scene Settings](.gitbook/assets/image%20%2880%29.png)
 
 ## Scene Behaviours
+
+Scenes currently support just one behaviour - the _STARTING_ behaviour.
 
 ### Starting Scene
 

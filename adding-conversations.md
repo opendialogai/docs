@@ -1,3 +1,7 @@
+---
+description: Conversation in OpenDialog
+---
+
 # Conversations
 
 Once you get into a scenario you can start adding new conversations. 

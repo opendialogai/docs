@@ -1,3 +1,7 @@
+---
+description: Scenarios in OpenDialog
+---
+
 # Scenarios
 
 The centre of the OpenDialog experience is the Designer. This is where you can start designing new scenarios and manage existing scenarios. 
