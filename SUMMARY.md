@@ -32,6 +32,7 @@
 * [Scenarios](designer.md)
 * [Conversations](adding-conversations.md)
 * [Scenes](scenes.md)
+* [Turns and Intents](turns-and-intents.md)
 
 ## Developing With OpenDialog
 
