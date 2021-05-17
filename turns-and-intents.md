@@ -58,3 +58,17 @@ The sample utterance is the phrase we use in the conversation flow and in the co
 
 The Intent Name is the more formal name for the intent that we use to refer to it through interpreters \(for incoming intents\) or in the message repository \(for outgoing intents\)
 
+### Interpreter and Confidence Level
+
+The Interpreter indicates which interpreter we will be using for the intent in question, while the confidence level determines the minimum confidence level acceptable for the intent. 
+
+### Intent Behaviours
+
+Yes, Intents have behaviours as well! Intents currently just have the _COMPLETING_ behaviour, which means that if an intent is matched it will also mark the conversation as completed. A completed conversation will take us back at the top of the scenario and looking for another way in through starting conversations, scenes, turns, etc. 
+
+### Transitions
+
+Finally, intents can also cause transitions. What this means is that if an intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there. 
+
+
+
