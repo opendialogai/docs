@@ -38,6 +38,7 @@ This will publish the Attribute config file `attribute_engine` in `config\opendi
 
 Let's have a look at the config file.
 
+{% code title="attribute\_engine.php" %}
 ```php
 <?php
 
@@ -68,6 +69,7 @@ return [
 ];
     
 ```
+{% endcode %}
 
 There are two types of things we can register. 
 

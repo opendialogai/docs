@@ -6,7 +6,7 @@ description: Turns in OpenDialog
 
 Turns are contained within scenes and represent the last conversational level for OpenDialog. 
 
-![A scene with two turns](.gitbook/assets/image%20%2891%29.png)
+![A scene with two turns](.gitbook/assets/image%20%2892%29.png)
 
 ![Turn Settings](.gitbook/assets/image%20%2887%29.png)
 

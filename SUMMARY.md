@@ -40,13 +40,13 @@
 * [Architecture](developing-with-opendialog/architecture.md)
 * [Attributes and Contexts](developing-with-opendialog/attributes-and-contexts/README.md)
   * [Creating a Custom Attribute](developing-with-opendialog/attributes-and-contexts/creating-a-custom-attribute.md)
+  * [Creating a Custom Context](developing-with-opendialog/attributes-and-contexts/contexts.md)
 * [Messages](developing-with-opendialog/messages/README.md)
   * [Message Markup](developing-with-opendialog/messages/message-markup.md)
 * [Conversational Interfaces](developing-with-opendialog/interfaces/README.md)
   * [WebChat](developing-with-opendialog/interfaces/webchat/README.md)
     * [WebChat API](developing-with-opendialog/interfaces/webchat/webchat-api.md)
 * [Interpreters](developing-with-opendialog/interpreters.md)
-* [Contexts](developing-with-opendialog/contexts.md)
 * [Actions](developing-with-opendialog/actions.md)
 
 ## Reference
