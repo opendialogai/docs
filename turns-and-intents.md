@@ -6,9 +6,9 @@ description: Turns in OpenDialog
 
 Turns are contained within scenes and represent the last conversational level for OpenDialog. 
 
-![A scene with two turns](.gitbook/assets/image%20%2892%29.png)
+![A scene with two turns](.gitbook/assets/image%20%2894%29.png)
 
-![Turn Settings](.gitbook/assets/image%20%2887%29.png)
+![Turn Settings](.gitbook/assets/image%20%2889%29.png)
 
 ## Turn Behaviours
 
@@ -28,11 +28,11 @@ Turns can be both starting and open at the same time.
 
 Turns contain a set of response and request intents. You can decide which participant \(the user or the application\) are to initiate in a turn. 
 
-![](.gitbook/assets/image%20%2890%29.png)
+![](.gitbook/assets/image%20%2892%29.png)
 
 You can have multiple intents in the request or response "buckets". 
 
-![Request and Response Intents](.gitbook/assets/image%20%2885%29.png)
+![Request and Response Intents](.gitbook/assets/image%20%2887%29.png)
 
 {% hint style="info" %}
 Typically, you would be either be using conditions \(on application intents\) or depend on the interpreters \(for user intents\) to determine which intent would actually be selected. 
@@ -46,7 +46,7 @@ An intent from the user is also referred to as an _incoming_ intent, while an in
 
 ## Intent Settings
 
-![Request Intent Settings](.gitbook/assets/image%20%2884%29.png)
+![Request Intent Settings](.gitbook/assets/image%20%2885%29.png)
 
 An intent has a number of settings to help us manage it.
 

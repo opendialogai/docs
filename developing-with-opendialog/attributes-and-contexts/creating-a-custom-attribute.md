@@ -10,7 +10,7 @@ There ar\e two ways to create a custom attribute. You can create one through the
 
 Visit `admin/dynamic-attributes` and create a new attribute selecting one of the existing types. 
 
-![Creating a custom attribute](../../.gitbook/assets/image%20%2886%29.png)
+![Creating a custom attribute](../../.gitbook/assets/image%20%2888%29.png)
 
 ![Dynamic Attributes](../../.gitbook/assets/image%20%2883%29.png)
 
@@ -143,7 +143,7 @@ For example, to register a custom attribute that uses the type above we can add 
 
 Now, when we try to access attributes we will see our new attribute show up!
 
-![](../../.gitbook/assets/image%20%2889%29.png)
+![](../../.gitbook/assets/image%20%2891%29.png)
 
 
 
