@@ -38,7 +38,8 @@
 
 * [Introduction](developing-with-opendialog/introduction.md)
 * [Architecture](developing-with-opendialog/architecture.md)
-* [Attributes and Contexts](developing-with-opendialog/attributes-and-contexts.md)
+* [Attributes and Contexts](developing-with-opendialog/attributes-and-contexts/README.md)
+  * [Creating a Custom Attribute](developing-with-opendialog/attributes-and-contexts/creating-a-custom-attribute.md)
 * [Conversations](developing-with-opendialog/conversations/README.md)
   * [Creating a Conversation](developing-with-opendialog/conversations/creating-a-conversation.md)
 * [Messages](developing-with-opendialog/messages/README.md)
