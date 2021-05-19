@@ -68,7 +68,37 @@ Yes, Intents have behaviours as well! Intents currently just have the _COMPLETIN
 
 ### Transitions
 
-Finally, intents can also cause transitions. What this means is that if an intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there. 
+Finally, intents can also cause transitions. What this means is that if an intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there.
+
+## Reserved Intent Names 
+
+Some intents have special meanings in OpenDialog so it's worth highlighting those here:
+
+### intent.core.welcome
+
+This intent is mapped to an event from webchat - it is called whenever webchat loads for a new user and provides a way to kickstart the conversation. It is automatically set as the Request Intent of the Welcome Scene's Welcome Turn. 
+
+### intent.core.TurnNoMatch
+
+If no interpreter is able to provide a positive interpretation of a user utterance the Conversation Engine will generate a TurnNoMatch intent and attempt to find a Turn within the scene that can handle it. 
+
+### intent.core.SceneNoMatch
+
+If no turn within the current scene handles the `intent.core.TurnNoMatch` the Conversation Engine will generate a Scene No Match and escalate a level above to try and find a match for that. 
+
+### intent.core.ConversationNoMatch
+
+If no turn within the current scene handles the `intent.core.SceneNoMatch` the Conversation Engine will generate a Conversation No Match and escalate a level above to try and find a match for that. 
+
+### intent.core.NoMatch
+
+This intent is fired by the Conversation Engine whenever all interpreters return a no match and no lower-level No Matches \(described above\) where caught. 
+
+Currently this is automatically set as the Request Intent of the No Match Turn in the No Match Conversation. 
+
+
+
+
 
 
 

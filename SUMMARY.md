@@ -35,6 +35,11 @@
 * [Turns and Intents](turns-and-intents.md)
 * [Conversation Simulator](conversation-simulator.md)
 
+## Conversational Patterns <a id="example-flows"></a>
+
+* [Introduction](example-flows/introduction.md)
+* [The Contextual FAQ Pattern](example-flows/the-contextual-faq-pattern.md)
+
 ## Developing With OpenDialog
 
 * [Introduction](developing-with-opendialog/introduction.md)
