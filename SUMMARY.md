@@ -38,9 +38,8 @@
 ## Conversational Patterns <a id="example-flows"></a>
 
 * [Introduction](example-flows/introduction.md)
-* [Contextual Help Pattern](example-flows/contextual-help.md)
-* [Contextual No Match Pattern](example-flows/contextual-no-match-pattern.md)
-* [Contextual FAQ Pattern](example-flows/the-contextual-faq-pattern.md)
+* [Contextual Help](example-flows/contextual-help.md)
+* [The Contextual FAQ Pattern](example-flows/the-contextual-faq-pattern.md)
 
 ## Developing With OpenDialog
 
