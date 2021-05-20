@@ -22,7 +22,7 @@ The Turn Help will have two intents:
 
 Here is what the configuration for the "request help" intent from the user will look like. 
 
-![Request Help intent settings](../.gitbook/assets/image%20%28104%29.png)
+![Request Help intent settings](../.gitbook/assets/image%20%28105%29.png)
 
 The response intent from the bot can now provide help relevant to the context.
 
