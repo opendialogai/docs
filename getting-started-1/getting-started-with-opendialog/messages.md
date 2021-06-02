@@ -1,4 +1,4 @@
-# Messages
+# Managing Messages
 
 Messages are associated to intents that the application generates. At each level of a scenario you can access messages through the message icon in the action bar. 
 

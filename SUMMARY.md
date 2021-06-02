@@ -16,7 +16,7 @@
   * [Creating a Scenario](getting-started-1/getting-started-with-opendialog/creating-a-scenario.md)
   * [Exploring a Scenario](getting-started-1/getting-started-with-opendialog/exploring-and-understanding-a-scenario.md)
   * [Understanding a Scenario](getting-started-1/getting-started-with-opendialog/understanding-a-scenario.md)
-  * [Messages](getting-started-1/getting-started-with-opendialog/messages.md)
+  * [Managing Messages](getting-started-1/getting-started-with-opendialog/messages.md)
 * [Installing OpenDialog](getting-started-1/installing-opendialog/README.md)
   * [OpenDialog on your machine](getting-started-1/installing-opendialog/opendialog-on-your-machine/README.md)
     * [Simple Docker-based installation](getting-started-1/installing-opendialog/opendialog-on-your-machine/simple-docker-based-installation.md)
