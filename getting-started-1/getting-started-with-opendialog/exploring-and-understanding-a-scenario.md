@@ -18,7 +18,7 @@ If you click on the Conversation itself you can edit its settings.
 
 ![Conversation Settings](../../.gitbook/assets/image%20%2865%29.png)
 
-The key thing to keep in mind about the "Welcome Conversation" is that it has the _STARTING_ behaviour. This let's the conversation engine know that it can consider the "Welcome Conversation" as an entry conversation into the entire scenario. You can have multiple _STARTING_ conversations and, of course, conversations without this behaviour. If a conversation does not have a starting behaviour it will only be considered _after_ a user has already entered the scenario.
+The key thing to keep in mind about the "Welcome Conversation" is that it has the _STARTING_ behaviour. This lets the conversation engine know that it can consider the "Welcome Conversation" as an _entry_ conversation into the entire scenario. You can have multiple _STARTING_ conversations and, of course, conversations without this behaviour. If a conversation does not have a starting behaviour it will only be considered _after_ a user has already entered the scenario and provided there is a transition to it.
 
 You can also select the default interpreter for the conversation and add conditions but we will come back to that later. For now let's move down to the scene level.
 
@@ -62,7 +62,7 @@ Let's walk through the highlights here.
 
 The Participant is the User, so this describes an expected message from the user - an example of this message, the "Sample Message" is "_Hello from user_". 
 
-The interpreter we will be using to interpret this message is the OpenDialog defalut interpreter. This interpreter simply interprets button clicks or specific events \(hence the name callbackInterpreter\). 
+The interpreter we will be using to interpret this message is the OpenDialog default interpreter. This interpreter simply interprets button clicks or specific events \(hence the name callbackInterpreter\). 
 
 The confidence level is set to 100% \(although, in any case, when dealing with specific clicks confidence level is always certain. 
 
@@ -74,7 +74,7 @@ If you click on the edit button \(the yellow pencil\) you are taken to the edit 
 
 ![Edit Intent View](../../.gitbook/assets/image%20%2872%29.png)
 
-The edit view enables you to manipulate all the settings about the intent. We won't get into the details just yet, since we cover it comprehensively in the Intent section. 
+The edit view enables you to manipulate all the settings about the intent. We won't get into the details just yet, since we cover it comprehensively in the [Turns and Intents](../../turns-and-intents.md) section. 
 
 
 
