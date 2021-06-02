@@ -12,6 +12,10 @@ Attributes have a type and a value.
 
 Attributes can be _scalar_ \(store just one value\), or they can be _composite._ Composite attributes store multiple attributes within them.
 
+{% hint style="info" %}
+Roadmap: Currently only OpenDialog core makes use of composite attributes but it will be possible to access them through the interface as well in the future.
+{% endhint %}
+
 The [Core OpenDialog package](https://github.com/opendialogai/core/tree/develop/src/Attribute) provides some attribute types \(`String`, `Int`, `Array`, `Float`, `Boolean`, `Timestamp`\) but developers can add additional types based on their needs.
 
 Attributes are used in conversations and messages to provide relevant information for subsequent conversational reasoning \(through conditions and actions\) or message construction. They can also be used to indicate expected entities that should be extracted from user utterances and stored in contexts.
