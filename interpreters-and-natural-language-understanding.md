@@ -115,6 +115,40 @@ The complete interactions described here are illustrated in the video below:
 
 The default callback interpreter is essential for button driven interaction and can help with simple prototyping, but for actual NLU we need to use an NLU interpreter which we will discuss next. 
 
+## Dialogflow Interpreter
+
+The OpenDialog Dialogflow integration allows us to use Dialogflow intent interpretation, entity extraction and the Dialogflow knowledge bases. This means that you can use one or more Dialogflow agents as your NLU interpreters and do all the conversation design in OpenDialog. 
+
+#### Create a Dialogflow ES agent
+
+The first step to using Dialogflow is to create an [ES Dialogflow agent](https://cloud.google.com/dialogflow/es/docs). We are using Dialogflow as just an NLU service so we will be focussing on just training intents, extracting entities and \(if and when required\) setting up knowledge bases.
+
+#### Create an API access key in the Google cloud console
+
+Once you've created an agent follow the instructions here to generate an API key. 
+
+The first step is to create a service user - we will need the Dialogflow API Admin role.
+
+![Creating an service user for the Dialogflow API through the Google Cloud Console](.gitbook/assets/image%20%28147%29.png)
+
+Then you can create a JSON key which will generate a file and download it to your machine. 
+
+![Generating a JSON key for Dialogflow API access](.gitbook/assets/image%20%28144%29.png)
+
+#### Create a Dialogflow Interpreter in OpenDialog 
+
+We can now create an interpreter in OpenDialog that will connect to that Dialogflow agent. 
+
+![OpenDialog Interpreter Manager](.gitbook/assets/image%20%28146%29.png)
+
+![Dialogflow Interpreter Configuration](.gitbook/assets/image%20%28143%29.png)
+
+Once you've filled in the details you will be able to run a connectivity test to ensure that the API key is working correctly.  
+
+![](.gitbook/assets/2021-06-07_17-01-18.png)
+
+With a success message in place you are ready to start using intents in your conversation design. 
+
 
 
 
