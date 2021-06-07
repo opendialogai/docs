@@ -109,9 +109,11 @@ If the user types "radio ga ga" they will get the response "radio goo goo".
 
 The complete interactions described here are illustrated in the video below:
 
+{% embed url="https://youtu.be/KV22RisKoMo" %}
 
 
-Now, simulating user input can be useful for quick prototyping but we really need to be able to connect complete NLU services. So let's have a look at that next. 
+
+The default callback interpreter is essential for button driven interaction and can help with simple prototyping, but for actual NLU we need to use an NLU interpreter which we will discuss next. 
 
 
 
