@@ -4,7 +4,7 @@ description: >-
   minimising the need for intent training
 ---
 
-# Contextual Help
+# Contextual Help Pattern
 
 One of the challenges with conversations is providing the most contextual responses possible given the overall state of the conversation. This is particularly relevant when the user asks generic questions such as a request for help. 
 
@@ -22,7 +22,7 @@ The Turn Help will have two intents:
 
 Here is what the configuration for the "request help" intent from the user will look like. 
 
-![Request Help intent settings](../.gitbook/assets/image%20%28104%29.png)
+![Request Help intent settings](../.gitbook/assets/image%20%28105%29.png)
 
 The response intent from the bot can now provide help relevant to the context.
 
