@@ -10,7 +10,7 @@ description: >-
 
 > This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../modelling-conversational-applications.md) section. If you are really, really in a hurry jump over to [Getting Started with OpenDialog Apps](../../getting-started-1/getting-started-with-opendialog/).
 
-We all intuitively know what is a conversation. One of the first things we are taught is how to exchange ideas and information with others using words and whatever other sensory clues we are capable of producing \(visual, auditory, touch, etc\). The question to tackle here is **what are conversations in the context of a conversational application**, and, more specifically, in OpenDialog. 
+We all intuitively know what a conversation is. One of the first things we are taught is how to exchange ideas and information with others using words and whatever other sensory clues we are capable of producing \(visual, auditory, touch, etc\). The question to tackle here is **what are conversations in the context of a conversational application**, and, more specifically, in OpenDialog. 
 
 As we say in our [manifesto](https://www.opendialog.ai/manifesto), a conversational application has a specific purpose. It is communicating with the user to coordinate, collaborate in order to solve a specific goal. As such, it is worth asking ourselves how do we \(as humans\) know how to communicate, coordinate and collaborate in the real world? How do we, as humans, figure out what is the appropriate next thing to do?
 
