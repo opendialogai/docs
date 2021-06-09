@@ -71,17 +71,17 @@ If the Conversation Engine does not match any of the possible intents it will cr
 
 ## Interpretation
 
-A key aspect of conversational behaviour is the interpretation of user utterances. The way OpenDialog handles this is by using _interpreters._ Interpreters are assigned to individual user-related intents. When a user utterance is provided all the relevant interpreters based on conversational context will be queried and the interpreter with the highest confidence score will be matched. 
+A key aspect of conversational behaviour is the interpretation of user utterances. The way OpenDialog handles this is by using [interpreters](interpreters-and-natural-language-understanding.md). __Interpreters are assigned to individual user-related intents. When a user utterance is provided all the relevant interpreters based on conversational context will be queried and the interpreter with the highest confidence score will be matched. 
 
-### _Expected Attributes_
+### Expected Attributes
 
-Interpreters can also generate _expected attributes._ These are pieces of information that we expect to find within a user utterance. If an interpreter finds an expected attribute it will store it in the context we provided. This enables us to then user it. 
+Interpreters can also generate _expected attributes._ These are pieces of information that we expect to find within a user utterance. If an interpreter finds an expected attribute it will store it in the context we provided,  this enables us to then use it. 
 
-For example, for the phrase "I would like to order shoes size 7", we can have an expected attribute of `shoe_size` that we can direct the conversation engine to store in the `User` context. We can then use conditions through the conversation to determine whether we have this piece of information or not.
+For example, for the phrase "I would like to order size 7 shoes", we can have an expected attribute of;`shoe_size`that we can direct the conversation engine to store in the `User` context. We can then use conditions throughout the conversation to determine whether we have this piece of information or not.
 
 ## Actions
 
-The last piece of the puzzle are actions. Actions enable us to interact with external services or simply perform some specific type of computation that we can then feed back into context. 
+The last pieces of the puzzle are actions. Actions enable us to interact with external services or simply perform some specific type of computation that we can then feed back into the context. 
 
 Actions take attributes as their inputs and provide attributes as their outputs. This gives us a consistent way of doing something and then providing that information back to our conversational application so that it can use it in its interactions with the user. 
 
