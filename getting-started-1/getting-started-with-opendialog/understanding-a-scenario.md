@@ -32,17 +32,11 @@ Once you've selected the Welcome Response, which actually completes the conversa
 
 ![](../../.gitbook/assets/image%20%28171%29.png)
 
-Congratulations! You've made it through a basic run-through of the core concepts of OpenDialog. The conversation may not be very exciting just yet but remember this is just the basic components coming out of the box. 
+Congratulations! You've made it through a basic run-through of the core concepts of OpenDialog and it's conversation designer. The conversation may not be very exciting just yet but remember this is just the basic conversational components coming out of the box. 
+
+Next we would recommend learning more about [managing messages](messages.md) which are linked to intents.
 
 As we update our documentation you will find out how you can add additional turns, how to take advantage of different types of conversations, scenes, and turns and weave into all of this Conditions, connect your application to NLU services such as Dialogflow or LUIS and you will soon be able to build sophisticated multi-turn conversational experiences.
-
-
-
-
-
-
-
- 
 
 
 
