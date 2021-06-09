@@ -4,6 +4,10 @@ description: Scenarios in OpenDialog
 
 # Scenarios
 
+{% hint style="info" %}
+Have you read our '[Getting started with OpenDialog](getting-started-1/getting-started-with-opendialog/)' section? If not, we would advise reading that before you dive into the content here.
+{% endhint %}
+
 The centre of the OpenDialog experience is the Designer. This is where you can start designing new scenarios and manage existing scenarios. 
 
 ![The Designer](.gitbook/assets/image%20%2877%29.png)
