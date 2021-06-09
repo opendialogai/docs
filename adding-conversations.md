@@ -8,7 +8,7 @@ description: Conversation in OpenDialog
 Have you read our '[Getting started with OpenDialog](getting-started-1/getting-started-with-opendialog/)' section? If not, we would advise reading that before you dive into the content here as it gives an overview of the concepts behind OpenDialog.
 {% endhint %}
 
-Once you get into a [scenario](designer.md) you can start adding new conversations. 
+Once you have created your first [scenario](designer.md) you can start adding new conversations. 
 
 ![Scenario Level View](.gitbook/assets/image%20%28179%29.png)
 
