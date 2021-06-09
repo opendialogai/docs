@@ -12,7 +12,7 @@
 
 ## Getting Started <a id="getting-started-1"></a>
 
-* [Getting Started With OpenDialog Apps](getting-started-1/getting-started-with-opendialog/README.md)
+* [Getting Started With OpenDialog](getting-started-1/getting-started-with-opendialog/README.md)
   * [Creating a Scenario](getting-started-1/getting-started-with-opendialog/creating-a-scenario.md)
   * [Exploring a Scenario](getting-started-1/getting-started-with-opendialog/exploring-and-understanding-a-scenario.md)
   * [Understanding a Scenario](getting-started-1/getting-started-with-opendialog/understanding-a-scenario.md)
