@@ -1,10 +1,10 @@
 # Understanding a Scenario
 
-So far we've [created](creating-a-scenario.md) a scenario and [explored](exploring-and-understanding-a-scenario.md) one of the conversations. Now, let's dive into the Conversational Flow. How do we visualise what are the possible flows through the two conversations we already have. 
+So far we've [created](creating-a-scenario.md) a scenario and [explored](exploring-and-understanding-a-scenario.md) one of the conversations. Now, let's dive into the Conversational Flow. How do we visualise what are the possible flows through the two conversations we already have? 
 
 ![](../../.gitbook/assets/image%20%28169%29.png)
 
-Click on the Play button \(next to the Add Conversation button\) will open up the Conversational Flow view. 
+Click on the Play button \(next to the Add Conversation button\) and it will open up the Conversational Flow view. 
 
 ![](../../.gitbook/assets/image%20%28162%29.png)
 
@@ -24,7 +24,7 @@ Click on "Please Choose an Intent" reveals that there are two available intents 
 You may have noticed that our intents have the naming convention of _intent.core.&lt;something&gt;_ - this is just for default internal intents of OpenDialog. You can name your intents whatever suits you best although we suggest short, clear names. 
 {% endhint %}
 
- One you've selected an intent, the conversational engine will evaluate follow up options. Here, since we are dealing with a simple conversation it is straightforward. If you select the Welcome intent, you are moved within the "Welcome Conversation", the "Welcome Scene" and finally the Welcome Turn since all of those are Starting Components. The only possible reply from within the Welcome Turn is a Hello back from the bot so that is the option remaining!
+Once you've selected an intent, the conversational engine will evaluate follow up options. Since we are dealing with a simple conversation in our example it is straightforward. If you select the Welcome intent, you are moved within the "Welcome Conversation", the "Welcome Scene" and finally the "Welcome Turn" since all of those are Starting Components. The only possible reply from within the Welcome Turn is a hello back from the bot so that is the option remaining!
 
 ![](../../.gitbook/assets/image%20%28155%29.png)
 
