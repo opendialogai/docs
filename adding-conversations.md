@@ -10,7 +10,7 @@ Have you read our '[Getting started with OpenDialog](getting-started-1/getting-s
 
 Once you have created your first [scenario](designer.md) you can start adding new conversations. 
 
-![Scenario Level View](.gitbook/assets/image%20%28179%29.png)
+![Scenario Level View](.gitbook/assets/image%20%28181%29.png)
 
 A conversation captures a particular high-level event of your scenario. 
 
