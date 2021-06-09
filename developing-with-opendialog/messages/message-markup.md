@@ -188,13 +188,12 @@ Here is are examples of a message with one button and two buttons. Clicking on t
 
 **Link buttons**
 
-Links buttons are used to create links to other web pages. The `link_new_tab` element can be set to true to force the links to open in a new tab. If not set, links default to opening in the same tab
+Links buttons are used to create links to other web pages. The `new_tab` property can be set to true to force the links to open in a new tab. If not set, links default to opening in the same tab
 
 ```text
     <button>
         <text>Link Button</text>
-        <link>http://example.com</link>
-        <link_new_tab>true|false</link_new_tab>
+        <link new_tab="true"|"false">http://example.com</link>
     </button>
 ```
 
@@ -206,13 +205,11 @@ Links buttons are used to create links to other web pages. The `link_new_tab` el
         <text> Here are some very useful resources for you. </text>
         <button> 
           <text>Wikipedia</text>
-          <link>https://wikipedia.org</link>
-          <link_new_tab>true</link_new_tab>
+          <link new_tab="true">https://wikipedia.org</link>
         </button>
         <button> 
           <text>W3C</text>
-          <link>https://w3.org.org</link>
-          <link_new_tab>true</link_new_tab>
+          <link new_tab="true">https://w3.org.org</link>
         </button>
     </button-message>
 </message>
