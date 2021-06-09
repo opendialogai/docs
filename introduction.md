@@ -26,7 +26,7 @@ In this section, we are going to provide a high-level, quick-fire overview of th
 
 The journey of helping you manage context starts with _**attributes**_. Attributes are the way you can describe anything that is relevant to the conversational application around its environment. 
 
-Attributes are captured within different _**contexts**_. These are like buckets that help us separate and related different types of attributes. There are contexts such as the _user_ context or the _conversation_ context that store attributes related to that. We will be looking at each in more detail later, but for now just keep in mind that anything describable is an attribute, and each attribute will be stored in a context. 
+Attributes are captured within different _**contexts**_. Contexts are like buckets that help us separate and related different types of attributes. There are contexts such as the _user_ context or the _conversation_ context that store attributes related to that. We will be looking at each in more detail later, but for now just keep in mind that anything describable is an attribute, and each attribute will be stored in a context. 
 
 ### Conversational Context and Flow
 

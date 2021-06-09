@@ -46,7 +46,7 @@ Roadmap: The ability to copy scenarios is on our roadmap
 
 ### Exporting and Importing Scenarios
 
-Currently exporting of a scenario is only possible through the command-line interface. 
+Currently exporting scenarios is only possible through the command-line interface. 
 
 {% hint style="info" %}
 Roadmap: The ability to export and import scenarios is on our roadmap.
