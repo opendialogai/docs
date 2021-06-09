@@ -6,11 +6,11 @@ It puts you in the driving seat and shows you what flows are possible given a ce
 
 To start it click on the play button within the action bar. 
 
-![Conversational Simualtor](.gitbook/assets/image%20%28189%29.png)
+![Conversational Simualtor](.gitbook/assets/image%20%28190%29.png)
 
 It allows you to choose an intent that the user could express to get the conversation started. 
 
-![Multiple user choices](.gitbook/assets/image%20%28190%29.png)
+![Multiple user choices](.gitbook/assets/image%20%28193%29.png)
 
 As you can see from the image above the user can have multiple choices and after you've picked one you get the example message associated with that intent in the chat window. 
 
