@@ -39,13 +39,13 @@ The conversation engine then uses that definition to decide:
 
 ### Conversational State
 
-The conversational state will let us know which \(if any\) Scenario is currently active, and then within that Scenario which \(if any\) Conversation is currently _ongoing_, and then within the Conversation which \(if any\) Scene is selected and finally within the Scene which \(if any\) Turn is selected. Each turn has at least one Request Intent and may have Response Intents. Based on the Request Intent the conversation engine will look to select an appropriate response intent or it can perform a Transition to another Conversation or Scene and attempt to find an appropriate intent there. 
+The conversational state will let us know which \(if any\) Scenario is currently active, and then within that Scenario which \(if any\) Conversation is currently _ongoing_, and then within the Conversation which \(if any\) Scene is selected and finally within the Scene which \(if any\) Turn is selected. Each turn has at least one Request Intent and may have Response Intents. Based on the Request Intent the conversation engine will look to select an appropriate response intent or it can perform a Transition to another Conversation or Scene, and attempt to find an appropriate intent there. 
 
 Yes, that is quite a journey but it provides us with a very flexible way of capturing context to a useful degree of detail! The OpenDialog Designer makes it very easy to capture the different stages.
 
 The current conversational state will then determine what are the possible next states. 
 
-At the highest level, a user is only ever in one of two states. They are either in an [_ongoing conversation_](developing-with-opendialog/introduction.md) or they are _not in an ongoing conversation_. 
+At the highest level, a user is only ever in one of two states. They are either in an _ongoing conversation_ or they are _not in an ongoing conversation_. 
 
 #### User not in an ongoing conversation
 
