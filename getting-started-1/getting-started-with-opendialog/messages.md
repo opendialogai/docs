@@ -1,5 +1,7 @@
 # Managing Messages
 
+You have learnt all about the core concepts of OpenDialog and it's conversation designer such as creating a scenario, exploring a scenario and understanding the conversational flow. It's now time to learn about managing the messages.
+
 Messages are associated to intents that the application generates. At each level of a scenario you can access messages through the message icon in the action bar. 
 
 ![Scenario Top Level view - Message icon in action bar](../../.gitbook/assets/image%20%28176%29.png)
