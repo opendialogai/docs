@@ -4,11 +4,15 @@ description: Turns in OpenDialog
 
 # Turns and Intents
 
-Turns are contained within scenes and represent the last conversational level for OpenDialog. 
+{% hint style="info" %}
+Have you read our '[Getting started with OpenDialog](getting-started-1/getting-started-with-opendialog/)' section? If not, we would advise reading that before you dive into the content here as it gives an overview of the concepts behind OpenDialog.
+{% endhint %}
 
-![A scene with two turns](.gitbook/assets/image%20%2894%29.png)
+Turns are contained within Scenes and represent the last conversational level for OpenDialog. 
 
-![Turn Settings](.gitbook/assets/image%20%2889%29.png)
+![A Scene with two Turns](.gitbook/assets/image%20%28188%29.png)
+
+![Scene settings view](.gitbook/assets/image%20%28187%29.png)
 
 ## Turn Behaviours
 
@@ -16,7 +20,7 @@ Turns have two behaviours
 
 ### Starting Turns
 
-_STARTING_ turns are only considered when you join a scene for the first time. After the first interaction within the scene starting turns are no longer considered. 
+_STARTING_ turns are only considered when you join a scene for the first time. After the first interaction within the Scene starting turns are no longer considered. 
 
 ### Open Turns 
 
@@ -26,29 +30,29 @@ Turns can be both starting and open at the same time.
 
 ## Intents in Turns
 
-Turns contain a set of response and request intents. You can decide which participant \(the user or the application\) are to initiate in a turn. 
+Turns contain a set of Response and Request intents. You can decide which participant \(the user or the application\) should initiate a turn. 
 
-![](.gitbook/assets/image%20%2892%29.png)
+![](.gitbook/assets/image%20%28181%29.png)
 
 You can have multiple intents in the request or response "buckets". 
 
-![Request and Response Intents](.gitbook/assets/image%20%2887%29.png)
+![Request and Response Intents](.gitbook/assets/image%20%28183%29.png)
 
 {% hint style="info" %}
-Typically, you would be either be using conditions \(on application intents\) or depend on the interpreters \(for user intents\) to determine which intent would actually be selected. 
+Typically, you would either be using conditions \(on application intents\) or rely on the interpreters \(for user intents\) to determine which intent would actually be selected. 
 {% endhint %}
 
 You can also only have request intents, and you would then most likely be defining transitions within intents to move the conversation forward. 
 
-An intent from the user is also referred to as an _incoming_ intent, while an intent from the application is referred to as an _outgoing_ intent. As the figure below illustrates an incoming utterance is interpreted to be matched on an incoming intent, and the conversation engine will the select an outgoing intent that we will map \(through the message repository\) to an outgoing utterance.
+An intent, from the user, is also referred to as an _incoming_ intent, while an intent from the application is referred to as an _outgoing_ intent. As the figure below illustrates an incoming utterance is interpreted to be matched on an incoming intent, and the Conversation Engine will then select an outgoing intent that we will map \(through the message repository\) to an outgoing utterance.
 
 ![Incoming and Outgoing Intents](.gitbook/assets/image%20%2880%29.png)
 
 ## Intent Settings
 
-![Request Intent Settings](.gitbook/assets/image%20%2885%29.png)
+![Request Intent Settings](.gitbook/assets/image%20%28186%29.png)
 
-An intent has a number of settings to help us manage it.
+Intents have a number of settings to help us manage it:
 
 ### Sample Utterance
 
@@ -56,7 +60,7 @@ The sample utterance is the phrase we use in the conversation flow and in the co
 
 ### Intent Name
 
-The Intent Name is the more formal name for the intent that we use to refer to it through interpreters \(for incoming intents\) or in the message repository \(for outgoing intents\)
+The Intent Name is the more formal name for the intent that we use to refer to it through interpreters \(for incoming intents\) or in the message repository \(for outgoing intents\). A good naming format to use for this is `intent.user.<name of intent>` for user intents and `intent.app.<name of intent>`for app intents.
 
 ### Interpreter and Confidence Level
 
@@ -64,11 +68,11 @@ The Interpreter indicates which interpreter we will be using for the intent in q
 
 ### Intent Behaviours
 
-Yes, Intents have behaviours as well! Intents currently just have the _COMPLETING_ behaviour, which means that if an intent is matched it will also mark the conversation as completed. A completed conversation will take us back at the top of the scenario and looking for another way in through starting conversations, scenes, turns, etc. 
+Yes, Intents have behaviours as well! Intents currently just have the _COMPLETING_ behaviour, which means that if the intent is matched it will also mark the conversation as completed. A completed conversation will take us back at the top of the scenario and look for another way in through STARTING conversations, scenes, turns, etc. 
 
 ### Transitions
 
-Finally, intents can also cause transitions. What this means is that if an intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there.
+Finally, intents can also cause transitions. What this means is that if the intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there.
 
 ## Reserved Intent Names 
 
@@ -88,13 +92,13 @@ If no turn within the current scene handles the `intent.core.TurnNoMatch` the Co
 
 ### intent.core.ConversationNoMatch
 
-If no turn within the current scene handles the `intent.core.SceneNoMatch` the Conversation Engine will generate a Conversation No Match and escalate a level above to try and find a match for that. 
+If no scene within the current conversation handles the `intent.core.SceneNoMatch` the Conversation Engine will generate a Conversation No Match and escalate a level above to try and find a match for that. 
 
 ### intent.core.NoMatch
 
-This intent is fired by the Conversation Engine whenever all interpreters return a no match and no lower-level No Matches \(described above\) where caught. 
+This intent is fired by the Conversation Engine whenever all interpreters return a no match and no lower-level No Matches \(described above\) were caught. 
 
-Currently this is automatically set as the Request Intent of the No Match Turn in the No Match Conversation. 
+Currently, this is automatically set as the Request Intent of the No Match Turn in the No Match Conversation. 
 
 
 

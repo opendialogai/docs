@@ -10,7 +10,7 @@ Have you read our '[Getting started with OpenDialog](getting-started-1/getting-s
 
 Once you have created your first [scenario](designer.md) you can start adding new conversations. 
 
-![Scenario Level View](.gitbook/assets/image%20%28181%29.png)
+![Scenario Level View](.gitbook/assets/image%20%28185%29.png)
 
 A conversation captures a particular high-level event of your scenario. 
 
@@ -24,11 +24,11 @@ Clicking on the '+' button enables you to add new conversations. The key setting
 
 **Conditions** allow you to check values of attributes within contexts and only if the conditions are met will the conversation be considered as a possible next conversational context for the conversation engine. 
 
-![Adding a new Conversation](.gitbook/assets/image%20%28177%29.png)
+![Adding a new Conversation](.gitbook/assets/image%20%28179%29.png)
 
 Once you've completed the form, click on the tick to save your settings. You will then be returned to the Scenario Level View.
 
-![Conversation called &quot;Another Conversation&quot; added to Scenario](.gitbook/assets/image%20%28178%29.png)
+![Conversation called &quot;Another Conversation&quot; added to Scenario](.gitbook/assets/image%20%28180%29.png)
 
 The key decision from a design perspective is what is the core conversation you are going to need to have in your conversational application. For example, the image below shows the conversations for Perfect Fit, our reference demo bot. The use case is that of running shoe recommendations. 
 

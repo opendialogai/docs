@@ -10,11 +10,11 @@ Have you read our '[Getting started with OpenDialog](getting-started-1/getting-s
 
 Scenes capture specific context within a single conversation. 
 
-![A conversation with two scenes](.gitbook/assets/image%20%28179%29.png)
+![A conversation with two scenes](.gitbook/assets/image%20%28182%29.png)
 
 Similar to the higher-order concepts of Scenarios and Conversations they can have behaviours, a default interpreter, and conditions associated with them. 
 
-![Scene Settings](.gitbook/assets/image%20%28180%29.png)
+![Scene Settings](.gitbook/assets/image%20%28184%29.png)
 
 ## Scene Behaviours
 
