@@ -24,7 +24,7 @@ Active scenarios are available to be used in chat interfaces, while draft scenar
 
 Scenario settings are accessible through the individual menus of each scenario. You can edit the Scenario name, description, set a preferred interpreter \(which will act as the default interpreter throughout the scenario\) and also set conditions.
 
-When you create a scenario a condition is automatically set that checks the user context to see if they have a selected scenario defined. If a condition is not present then the scenario will always be considered. 
+When you create a scenario a condition is automatically set \(e.g. `user.selected_scenario...`\) that checks the user context to see if they have a selected scenario defined. If a condition is not present then the scenario will always be considered. 
 
 {% hint style="warning" %}
 If you delete this condition you will have to provide a different way to select the scenario - something you should do with care unless you put in place other conditions for scenario selection
