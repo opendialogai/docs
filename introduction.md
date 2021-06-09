@@ -18,7 +18,7 @@ This primarily happens in two ways. Firstly, by helping you define and leverage 
 
 In addition, we allow you to weave in interpreters and define actions as required, as a cohesive and coherent part of the overall application. 
 
-In this section, we are going to provide a high-level, quick-fire overview of these concepts and in subsequent sections, we will dive into the specific details of each. 
+In this section, we are going to provide a high-level, quick-fire overview of these concepts and in subsequent sections, we will dive into the specific details of each.
 
 ## Application and Conversational Context
 
