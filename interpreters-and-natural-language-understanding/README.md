@@ -12,7 +12,7 @@ Once OpenDialog _senses_ an input it generates an _utterance_ that the OpenDialo
 
 The matching function between an utterance and an intent is performed by _interpreters._ A single scenario can have multiple interpreters associated with it. Interpreters are managed through the "Interpreters - NLU" section within OpenDialog.
 
-![Interpreter Management in OpenDialog](../.gitbook/assets/image%20%28196%29.png)
+![Interpreter Management in OpenDialog](../.gitbook/assets/image%20%28199%29.png)
 
 In this section, you define what interpreters are available throughout your OpenDialog instance and you can then associate those interpreters to specific sections of your scenarios. 
 
