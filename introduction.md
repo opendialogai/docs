@@ -71,7 +71,7 @@ If the Conversation Engine does not match any of the possible intents it will cr
 
 ## Interpretation
 
-A key aspect of conversational behaviour is the interpretation of user utterances. The way OpenDialog handles this is by using [interpreters](interpreters-and-natural-language-understanding.md). __Interpreters are assigned to individual user-related intents. When a user utterance is provided all the relevant interpreters based on conversational context will be queried and the interpreter with the highest confidence score will be matched. 
+A key aspect of conversational behaviour is the interpretation of user utterances. The way OpenDialog handles this is by using [interpreters](interpreters-and-natural-language-understanding/). __Interpreters are assigned to individual user-related intents. When a user utterance is provided all the relevant interpreters based on conversational context will be queried and the interpreter with the highest confidence score will be matched. 
 
 ### Expected Attributes
 
