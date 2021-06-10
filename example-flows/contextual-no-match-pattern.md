@@ -12,11 +12,11 @@ Consider the following scene:
 
 ![The Gather Profile Info scene](../.gitbook/assets/image%20%28103%29.png)
 
-In this scene the main goal is to gather relevant profile information. 
+In this scene, the main goal is to gather relevant profile information. 
 
-It is very likely that they user will say something that we will not be able to interpret. In this case the conversation engine will proactively look for a turn that is able to handle an intent called `intent.core.TurnNoMatch`. The Conversation Engine generates this turn on its own when it fails to find a matching interpreter. 
+It is very likely that the user will say something that we will not be able to interpret. In this case, the conversation engine will proactively look for a turn that is able to handle an intent called `intent.core.TurnNoMatch`. The Conversation Engine generates this turn on its own when it fails to find a matching interpreter. 
 
-In order for us to be able to react to this intent we need to setup a Turn that is _listening_ for that intent. Here is what the configuration can look like:
+In order for us to be able to react to this intent we need to set up a Turn that is _listening_ for that intent. Here is what the configuration can look like:
 
 ![Contextual No Match configuration](../.gitbook/assets/image%20%28109%29.png)
 

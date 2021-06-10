@@ -28,7 +28,7 @@ The response intent from the bot can now provide help relevant to the context.
 
 ![Provide help intent settings](../.gitbook/assets/image%20%2897%29.png)
 
-From an NLU perspective what is a significant advantage is that we can reuse the training for the request help Intent across multiple conversations \(even multiple scenarios\). At the same time we can contextualise our response based on needs.
+From an NLU perspective, what is a significant advantage is that we can reuse the training for the request help Intent across multiple conversations \(even multiple scenarios\). At the same time, we can contextualise our response based on needs.
 
 
 
