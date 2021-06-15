@@ -1,4 +1,4 @@
-# Default Interpretor
+# Default Interpreter
 
 ## Default Interpreter
 

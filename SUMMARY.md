@@ -37,7 +37,7 @@
 * [Conversation Simulator](conversation-simulator.md)
 * [Messages](messages.md)
 * [Interpreters and Natural Language Understanding](interpreters-and-natural-language-understanding/README.md)
-  * [Default Interpretor](interpreters-and-natural-language-understanding/default-interpretor.md)
+  * [Default Interpreter](interpreters-and-natural-language-understanding/default-interpretor.md)
   * [Dialogflow Interpreter](interpreters-and-natural-language-understanding/dialogflow-interpreter.md)
 
 ## Conversational Patterns <a id="example-flows"></a>
