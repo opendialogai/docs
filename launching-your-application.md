@@ -22,7 +22,7 @@ To get this, open up the scenario edit menu to show the menu items shown below a
 
 ![Scenario settings menu](.gitbook/assets/image%20%28213%29.png)
 
-The Webchat embed code pop-up will appear. You then need to copy the embed code by clicking on the 'Copy to Clipboard' button.
+The Webchat embed code pop-up will then appear. You then need to copy the embed code by clicking on the 'Copy to Clipboard' button.
 
 ![Embed pop-up](.gitbook/assets/image%20%28212%29.png)
 
