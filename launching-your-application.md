@@ -10,7 +10,7 @@ This section outlines how to launch your conversational application.
 
 #### Publish the Scenario
 
-To launch your conversational application using the OpenDialog WebChat on your website or application you first need to activate the scenario you want to launch. If you have not done so already, you can do this by going to the 'Scenarios' page within the Designer and click on the slider which will turn green.
+To launch your conversational application using the OpenDialog WebChat on your website or application you first need to activate the scenario you want to launch. If you have not done so already, you can do this by going to the 'Scenarios' page within the Designer and clicking on the slider which will turn green when 'active'.
 
 ![Active and draft scenarios](.gitbook/assets/image%20%28214%29.png)
 
