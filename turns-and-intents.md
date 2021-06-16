@@ -82,6 +82,10 @@ Some intents have special meanings in OpenDialog so it's worth highlighting thos
 
 This intent is mapped to an event from webchat - it is called whenever webchat loads for a new user and provides a way to kickstart the conversation. It is automatically set as the Request Intent of the Welcome Scene's Welcome Turn. 
 
+### intent.app.end\_chat
+
+This intent is fired when users click on the "End Chat" button of webchat. 
+
 ### intent.core.TurnNoMatch
 
 If no interpreter is able to provide a positive interpretation of a user utterance the Conversation Engine will generate a TurnNoMatch intent and attempt to find a Turn within the scene that can handle it. 
