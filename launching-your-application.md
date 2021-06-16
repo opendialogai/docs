@@ -16,7 +16,7 @@ To launch your conversational application using the OpenDialog WebChat on your w
 
 #### Embed code
 
-You then need to the embed script for the specific scenario you would like to add to your website or application. 
+You then need the embed script for the specific scenario you would like to add to your website or application. 
 
 To get this, open up the scenario edit menu to show the menu items shown below and click on 'Webchat embed code'.
 
