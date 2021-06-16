@@ -6,9 +6,9 @@ description: >-
 
 # Contextual FAQ Pattern
 
-The Contextual FAQ Pattern deals with the  behavior of supporting FAQ questions within a specific context while also supporting follow up actions and attempting to guide the user through a specific course.
+The Contextual FAQ Pattern deals with the behaviour of supporting FAQ questions within a specific context while also supporting follow-up actions and attempting to guide the user through a specific course.
 
-There are several use cases for this. For example imagine a shopping guide that wants to support the user through the process of choosing a specific product. While there are specific steps we need to go through \(collect preferences, provide recommendations, etc\), throughout we want to be able to answer any adjacent questions the user may have without loosing overall context. 
+There are several use cases for this. For example, imagine a shopping guide that wants to support the user through the process of choosing a specific product. While there are specific steps we need to go through \(collect preferences, provide recommendations, etc\), throughout we want to be able to answer any adjacent questions the user may have without losing overall context. 
 
 The Contextual FAQ Pattern helps us deal with this. 
 
