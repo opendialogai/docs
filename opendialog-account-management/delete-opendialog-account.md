@@ -2,7 +2,7 @@
 description: Deletion of an OpenDialog instance from the OpenDialog Cloud.
 ---
 
-# Delete OpenDialog Account
+# Delete OpenDialog account
 
 In case you choose to discontinue OpenDialog, you can request deletion of your OpenDialog Cloud Edition account by following the instructions below.
 
