@@ -4,11 +4,7 @@ description: A quick-fire view of all the main concepts of OpenDialog
 
 # Introduction
 
-{% hint style="info" %}
-The 1.0 version is currently in private beta and the documentation is in beta as well - please [get in touch](https://www.opendialog.ai/contact-us/) for a demo, if you want to join our private beta or simply to sign-up to be notified when the final release will be ready. 
-{% endhint %}
-
-What does it mean to build a conversational application with OpenDialog? 
+**What does it mean to build a conversational application with OpenDialog?** 
 
 We've talked quite a bit about the [underlying concepts](concepts-1/what-are-conversations/), but here we take a much more practical look to get you started.
 
@@ -61,9 +57,7 @@ At that point, the Conversation Engine will consider what are the Response Inten
 
 If the user is in an ongoing conversation and we have an incoming utterance we will attempt to match that utterance against all the possible turns within a given scene. 
 
-{% hint style="warning" %}
-If the Conversation Engine does not match any of the possible intents it will create its own intent - called a No-Match intent and then attempt to match that! The Conversation Engine starts with what is called a`TurnNoMatch,` which means it was looking for a Turn but didn't manage to find one and it will now look for a Turn that can handle a TurnNoMatch. It then escalates to a`SceneNoMatch,` then a`ConversationNoMatch` and finally the global`NoMatch`. This cascading failure allows us to capture "no matches" at the appropriate level and attempt to recover. We will be looking at more specific examples further on in the documentation.
-{% endhint %}
+If the Conversation Engine does not match any of the possible intents it will create its own intent - called a No-Match intent and then attempt to match that! The Conversation Engine starts with what is called a `TurnNoMatch`, which means it was looking for a Turn but didn't manage to find one and it will now look for a Turn that can handle a TurnNoMatch. It then escalates to a `SceneNoMatch`, then a `ConversationNoMatch` and finally the globalNoMatch. This cascading failure allows us to capture "no matches" at the appropriate level and attempt to recover. We will be looking at more specific examples further on in the documentation
 
 {% hint style="info" %}
 **Roadmap:** We will eventually support the escalation of possible intents to other _open_ scenes and the _open_ conversations so if something fails within a scene we can look for other contexts that may be appropriate.
