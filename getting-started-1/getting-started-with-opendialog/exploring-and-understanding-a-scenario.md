@@ -1,3 +1,7 @@
+---
+description: Exploring the what elements make up a scenario.
+---
+
 # Exploring a Scenario
 
 We've just [created a scenario](creating-a-scenario.md), and can now dig into exploring what elements are there.
@@ -68,5 +72,5 @@ The confidence level is set to 100%, although, in any case, when dealing with sp
 
 Finally, there are no transitions associated with this intent. 
 
-The edit view and advanced settings \(click on the cog wheel\) enable you to manipulate all the settings about the intent. We won't get into the details about those just yet, since we cover it comprehensively in the [Turns and Intents](../../turns-and-intents.md) section. 
+The edit view and advanced settings \(click on the cogwheel\) enable you to manipulate all the settings about the intent. We won't get into the details about those just yet, since we cover it comprehensively in the [Turns and Intents](../../turns-and-intents.md) section. 
 
