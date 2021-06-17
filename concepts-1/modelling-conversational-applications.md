@@ -2,7 +2,7 @@
 description: How we model conversations in OpenDialog.
 ---
 
-# Modelling Conversational Applications
+# Modeling Conversational Applications
 
 ## Introduction
 

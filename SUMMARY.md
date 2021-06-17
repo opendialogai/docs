@@ -8,7 +8,7 @@
 * [What are Conversations?](concepts-1/what-are-conversations/README.md)
   * [Electronic Institutions](concepts-1/what-are-conversations/electronic-institutions.md)
   * [Enchanced Dooley Graphs](concepts-1/what-are-conversations/enchanced-dooley-graphs.md)
-* [Modelling Conversational Applications](concepts-1/modelling-conversational-applications.md)
+* [Modeling Conversational Applications](concepts-1/modelling-conversational-applications.md)
 
 ## Getting Started <a id="getting-started-1"></a>
 
