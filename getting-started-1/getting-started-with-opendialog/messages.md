@@ -1,6 +1,6 @@
 # Managing Messages
 
-You have learned all about the core concepts of OpenDialog and its conversation designer such as [creating a scenario](creating-a-scenario.md), [explored one of the conversations](exploring-and-understanding-a-scenario.md), and have an [understanding of the conversational flow](understanding-a-scenario.md). It's now time to learn about managing messages.
+You have learned all about the core concepts of OpenDialog and its conversation designer such as; [creating a scenario](creating-a-scenario.md), [explored one of the conversations](exploring-and-understanding-a-scenario.md), and have an [understanding of the conversational flow](understanding-a-scenario.md). It's now time to learn about managing messages.
 
 Messages are associated with intents that the application generates. At each level of a scenario, you can access messages through the message icon in the action bar. 
 

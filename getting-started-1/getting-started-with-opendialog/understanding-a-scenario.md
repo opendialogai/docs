@@ -34,7 +34,7 @@ Once you've selected the Welcome Response, which actually completes the conversa
 
 Congratulations! You've made it through a basic run-through of the core concepts of OpenDialog and its conversation designer. The conversation may not be very exciting just yet but remember this is just the basic conversational components coming out of the box. 
 
-Next, we would recommend learning more about [managing messages](messages.md). Messages are linked to intents, specifically the APP intents.
+Next, we would recommend learning more about [managing messages](messages.md). Messages are linked to intents, specifically intents that the application generates.
 
 {% hint style="info" %}
 As we update our documentation you will find out how you can add additional turns, how to take advantage of different types of conversations, scenes, and turns and weave into all of these; conditions, connect your application to NLU services such as Dialogflow or LUIS and you will soon be able to build sophisticated multi-turn conversational experiences.
