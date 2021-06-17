@@ -4,7 +4,7 @@ description: A quick introduction to the basics of OpenDialog
 
 # Getting Started With OpenDialog
 
-With the [introduction into the concepts](../../concepts-1/modelling-conversational-applications.md) that drive how OpenDialog  thinks of conversational applications - let us dive into the tool itself. 
+Following the [introduction into the concepts](../../concepts-1/modelling-conversational-applications.md) that drive how OpenDialog thinks of conversational applications - let us now dive into the tool itself. 
 
 To get started you can either [install it on your own machine ](../installing-opendialog/)or [get in touch for access](https://opendialog.ai/opendialog-private-invite/) to your private beta.
 
@@ -15,6 +15,14 @@ What we will do in the subsequent sections is run through how you can:
 * [Understand the conversational flows](understanding-a-scenario.md) a scenario supports through the flow player. 
 
 Give yourself some time to ease into the OpenDialog way of doing things and keep in mind that the documentation is constantly updated to cover all the various components! 
+
+{% hint style="info" %}
+At the end of this section, you will have set up and understood the basics around a scenario and all of its components incl. messages. You will **not** have a full conversation up and running.  
+
+To create your first conversation either work through the sections under [working with OpenDialog](../../introduction.md) or follow [one of our tutorials](../../tutorials/button-driven-bot.md) e.g. Button briven conversation.
+{% endhint %}
+
+
 
 \*\*\*\*
 
