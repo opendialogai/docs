@@ -8,7 +8,11 @@ description: >-
 
 ## Introduction
 
-> This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../modelling-conversational-applications.md) section. If you are really, really in a hurry jump over to [Getting Started with OpenDialog Apps](../../getting-started-1/getting-started-with-opendialog/).
+{% hint style="success" %}
+This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../modelling-conversational-applications.md) section. 
+
+If you are really, really in a hurry jump over to [Getting Started with OpenDialog Apps](../../getting-started-1/getting-started-with-opendialog/) to set up your first scenario within OpenDialog.
+{% endhint %}
 
 We all intuitively know what a conversation is. One of the first things we are taught is how to exchange ideas and information with others using words and whatever other sensory clues we are capable of producing \(visual, auditory, touch, etc\). The question to tackle here is **what are conversations in the context of a conversational application**, and, more specifically, in OpenDialog. 
 
@@ -16,9 +20,9 @@ As we say in our [manifesto](https://www.opendialog.ai/manifesto), a conversatio
 
 ## We are all agents in a multi-agent world
 
-There is a sub-field of Artificial Intelligence, called Multi-Agent Systems, that has been grappling with this problem for some time. In multi-agent systems, agents are considered autonomous entities that need to come together to solve common problems. Which sounds an awful lot like what conversational applications are. In conversational applications you have one \(or more\) software bots that need to communicate and collaborate with one or more humans to solve a common problem. 
+There is a sub-field of Artificial Intelligence, called Multi-Agent Systems, that has been grappling with this problem for some time. In multi-agent systems, agents are considered autonomous entities that need to come together to solve common problems. Which sounds an awful lot like what conversational applications are. In conversational applications, you have one \(or more\) software bots that need to communicate and collaborate with one or more humans to solve a common problem. 
 
-It will come as no surprise then that OpenDialog views a conversational application as a multi-agent system. Theoretically there can be multiple **participants** in this system, but at the very least there is one user \(the human\) and one application \(our bot\).
+It will come as no surprise then that OpenDialog views a conversational application as a multi-agent system. Theoretically, there can be multiple **participants** in this system, but at the very least there is one user \(the human\) and one application \(our bot\).
 
 > In an OpenDialog conversational application, bots and humans are all considered as agents in a single multi-agent system.
 
@@ -26,7 +30,7 @@ This approach allows us to tap into the rich research that already exists on how
 
 ## Institutions for the win!
 
-There are several ways of modelling such multi-agent systems. We adopted a framework called [Electronic Institutions \(EI\)](electronic-institutions.md). This framework is particularly well-suited as it aligns with our view of what a conversational application is and it provides a rich enough set of concepts and structure, enabling us to describe a wide range of scenarios. 
+There are several ways of modeling such multi-agent systems. We adopted a framework called [Electronic Institutions \(EI\)](electronic-institutions.md). This framework is particularly well-suited as it aligns with our view of what a conversational application is and it provides a rich enough set of concepts and structure, enabling us to describe a wide range of scenarios. 
 
 > An Electronic Institution is an organisational structure for coordinating the activities of multiple interacting agents. This organisational structure provides the framework for conversational applications.
 
