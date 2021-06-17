@@ -6,7 +6,9 @@ description: A quick-fire view of all the main concepts of OpenDialog
 
 **What does it mean to build a conversational application with OpenDialog?** 
 
-We've talked quite a bit about the [underlying concepts](concepts-1/what-are-conversations/), but here we take a much more practical look to get you started.
+We've talked quite a bit about the [underlying concepts](concepts-1/what-are-conversations/) behind OpenDialog and have walked through [creating a scenario](getting-started-1/getting-started-with-opendialog/creating-a-scenario.md), [explored a scenario](getting-started-1/getting-started-with-opendialog/exploring-and-understanding-a-scenario.md) to see its individual components and also looked at the [conversational flows](getting-started-1/getting-started-with-opendialog/understanding-a-scenario.md). 
+
+Here we take a much more practical look to get you started.
 
 The aim of OpenDialog is to empower you to quickly create sophisticated conversational experiences. 
 
