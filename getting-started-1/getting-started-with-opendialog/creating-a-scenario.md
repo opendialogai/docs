@@ -1,6 +1,6 @@
 # Creating a Scenario
 
-The first step will be to create a scenario. A scenario represent a single conversational experience, a specific use-case that is meant to be complete in and of itself. While you can use OpenDialog to move users between different scenarios for now we will treat scenarios as stand-alone experiences. 
+The first step will be to create a scenario. A scenario represents a single conversational experience, a specific use-case that is meant to be complete in and of itself. While you can use OpenDialog to move users between different scenarios for now we will treat scenarios as stand-alone experiences. 
 
 ### Create New Scenario 
 
@@ -14,7 +14,7 @@ Click on the "Create New Scenario" button, and you will be presented with the Ne
 
 ### Scenario Viewer
 
-Once you click on "Create Scenario", you are _dropped_ in the scenario with two default conversations - the "Welcome Conversation" and the "No Match Conversation". 
+Once you click on "Create Scenario", you are dropped in the scenario with two default conversations - the "Welcome Conversation" and the "No Match Conversation". 
 
 ![](../../.gitbook/assets/image%20%2861%29.png)
 
