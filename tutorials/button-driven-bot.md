@@ -6,7 +6,9 @@ description: >-
 
 # Button Driven Bot
 
-We are going to create this application:
+For this button-driven interaction, the OpenDialog the default callback interpreter is essential and can help with simple prototyping. If you not read about this head over to the [default interpreter section](../interpreters-and-natural-language-understanding/default-interpretor.md). If you have, you can then follow the step-by-step guide below to create a button-driven conversation \(bot\). 
+
+For this tutorial we are going to create this conversation experience:
 
 {% embed url="https://youtu.be/GAY5vlIPiOA" caption="Tutorial: Button driven bot " %}
 
