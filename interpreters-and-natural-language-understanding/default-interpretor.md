@@ -18,5 +18,7 @@ The default callback interpreter is essential for button-driven interaction and 
 **Tutorial:** Want to create your own button-driven conversation like the example below? Jump over to our tutorial section and follow the [step-by-step guide for a button-driven conversation](../tutorials/button-driven-bot.md). 
 {% endhint %}
 
-{% embed url="https://youtu.be/KV22RisKoMo" caption="Button-driven conversation" %}
+{% embed url="https://youtu.be/GAY5vlIPiOA" caption="Tutorial: Button driven bot" %}
+
+
 

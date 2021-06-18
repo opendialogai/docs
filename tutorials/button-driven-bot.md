@@ -8,7 +8,7 @@ description: >-
 
 We are going to create this application:
 
-{% embed url="https://youtu.be/KV22RisKoMo" %}
+{% embed url="https://youtu.be/GAY5vlIPiOA" caption="Tutorial: Button driven bot " %}
 
 #### 1. Create a new scenario
 
