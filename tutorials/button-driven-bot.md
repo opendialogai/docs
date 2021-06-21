@@ -30,7 +30,7 @@ Navigate back to the Intents Overview for the Welcome Turn and click on the mess
 
 ![Message editor - Message view for an intent](../.gitbook/assets/image%20%28128%29.png)
 
-![Button message for response intent.](../.gitbook/assets/image%20%28219%29.png)
+![Button message for response intent.](../.gitbook/assets/image%20%28220%29.png)
 
 We now have two buttons. Each button will send a different callback `requestButtonDriven` and `requestNLUDriven` . In addition to the callback we are also sending different values `preference.guided` and `preference.NLU`. The values will be embedded within the utterance and can be extracted and stored in the user context. This allows us to collect information \(in the same way we would extract entities from a natural language phrase\) and store it in our context to reuse it later on - we'll go into more details about this in a separate tutorial, in the future. 
 
@@ -101,11 +101,11 @@ We now need to create the messages for the following 3 APP response:
 
 **N.B.** Remember to click on 'save message' after creating the message template.
 
-![Button Preference Turn - responseButtonDriven intent message ](../.gitbook/assets/image%20%28217%29.png)
+![Button Preference Turn - responseButtonDriven intent message ](../.gitbook/assets/image%20%28218%29.png)
 
 ![NLU Preference Turn - responseNLUDriven intent message ](../.gitbook/assets/image%20%28206%29.png)
 
-![Switch Preference - ResponseGoodAtThis message ](../.gitbook/assets/image%20%28216%29.png)
+![Switch Preference - ResponseGoodAtThis message ](../.gitbook/assets/image%20%28217%29.png)
 
 #### 6. Activating and testing your Scenario
 
