@@ -28,34 +28,11 @@ We are going to be creating another turn within the same scene so we want to sta
 
 Navigate back to the Intents Overview for the Welcome Turn and click on the messages icon within the Action Bar to enter the message editing mode. We will be adding a button to that welcome message. 
 
-![](../.gitbook/assets/image%20%28128%29.png)
+![Message editor - Message view for an intent](../.gitbook/assets/image%20%28128%29.png)
 
-{% hint style="info" %}
-Roadmap: Currently buttons are only available through the custom blocks that drop in the XML template of a message. However, we will soon have a button UI widget to support button creation. 
-{% endhint %}
+![Button message for response intent.](../.gitbook/assets/image%20%28217%29.png)
 
-![Response with buttons](../.gitbook/assets/image%20%28126%29.png)
-
-Here is the XML for our button message. 
-
-```markup
-<button-message>
-  <button>
-    <text>Drive with a button</text>
-    <value>preference.guided</value>
-    <callback>requestButtonDriven</callback>
-    <display>true</display>
-  </button>
-  <button>
-    <text>Drive with NLU</text>
-    <value>preference.NLU</value>
-    <callback>requestNLUDriven</callback>
-    <display>true</display>
-  </button>
-</button-message>
-```
-
-We now have two buttons. Each button will send a different callback `requestButtonDriven` and `requestNLUDriven` . In addition to the callback we are also sending different values `preference.guided` and `preference.NLU`. The values will be embedded within the utterance and can be extracted and stored in the user context. This allows us to collect information \(in the same way we would extract entities from a natural language phrase\) and store it in our context to reuse it later on. 
+We now have two buttons. Each button will send a different callback `requestButtonDriven` and `requestNLUDriven` . In addition to the callback we are also sending different values `preference.guided` and `preference.NLU`. The values will be embedded within the utterance and can be extracted and stored in the user context. This allows us to collect information \(in the same way we would extract entities from a natural language phrase\) and store it in our context to reuse it later on - we'll go into more details about this in a separate tutorial, in the future. 
 
 _**N.B.** You don't need to set values like above each time but it can be useful in a range of situations._ 
 
