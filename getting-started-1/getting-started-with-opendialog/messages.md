@@ -14,7 +14,7 @@ Intents can be associated with multiple messages as we typically want to customi
 
 ![Messages associated with welcome intent](../../.gitbook/assets/image%20%28112%29.png)
 
-We support a range of message types and are adding more and more UI widgets to make it as simple as possible to create them. You can also find a full list of supported messages not available via the UI  through "Custom Message" and an explanation of the underlying XML structure [here](../../developing-with-opendialog/messages/message-markup.md).
+We [support a range of message types](../../messages.md) and are adding more and more UI widgets to make it as simple as possible to create them. You can also find a full list of supported messages not available via the UI  through "Custom Message" and an explanation of the underlying XML structure [here](../../developing-with-opendialog/messages/message-markup.md).
 
 ![Editing a single message](../../.gitbook/assets/image%20%28216%29.png)
 
