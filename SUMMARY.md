@@ -25,6 +25,10 @@
     * [Deployment through Forge](getting-started-1/installing-opendialog/deployment/deployment-through-forge.md)
     * [Large-Scale Enterprise Deployments](getting-started-1/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
 
+## Tutorials
+
+* [Button Driven Bot](tutorials/button-driven-bot.md)
+
 ## Working With OpenDialog <a id="working-with-opendialog-1"></a>
 
 ---
@@ -43,10 +47,6 @@
   * [Create and manage users](opendialog-account-management/create-and-manage-users.md)
   * [Delete OpenDialog account](opendialog-account-management/delete-opendialog-account.md)
 * [Launching Your Application](launching-your-application.md)
-
-## Tutorials
-
-* [Button Driven Bot](tutorials/button-driven-bot.md)
 
 ## Conversational Patterns <a id="example-flows"></a>
 
