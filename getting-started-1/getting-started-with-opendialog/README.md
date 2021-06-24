@@ -16,11 +16,7 @@ What we will do in the subsequent sections is run through how you can:
 
 You can also watch the following video to get a high-level overview of OpenDialog's Conversational Components: 
 
-
-
-{% embed url="https://youtu.be/gGqXJDdrZh4" %}
-
-
+{% embed url="https://www.youtube.com/watch?v=gGqXJDdrZh4" %}
 
 {% hint style="success" %}
 Give yourself some time to ease into the OpenDialog way of doing things and keep in mind that the documentation is constantly updated to cover all the various components!
