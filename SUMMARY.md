@@ -68,7 +68,8 @@
   * [WebChat](developing-with-opendialog/interfaces/webchat/README.md)
     * [WebChat API](developing-with-opendialog/interfaces/webchat/webchat-api.md)
 * [Interpreters](developing-with-opendialog/interpreters.md)
-* [Actions](developing-with-opendialog/actions.md)
+* [Actions](developing-with-opendialog/actions/README.md)
+  * [Webhook action](developing-with-opendialog/actions/webhook-action.md)
 
 ## Reference
 
