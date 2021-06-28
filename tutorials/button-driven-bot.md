@@ -1,12 +1,17 @@
 ---
 description: >-
   A tutorial to guide you through the process of building a button-driven (or
-  guided) conversation
+  guided) conversation and a quick view of how you can test natural language
+  conversations.
 ---
 
-# Button Driven Bot \(with a touch of NLU\)
+# Designing a basic flow and controlling with buttons
 
-For this button-driven interaction \(with just a hint of NLU thrown in\), the OpenDialog the default callback interpreter is essential and can help with simple prototyping. If you not read about this head over to the [default interpreter section](../interpreters-and-natural-language-understanding/default-interpretor.md). If you have, you can then follow the step-by-step guide below to create a button-driven conversation \(bot\). 
+In this tutorial we are going to have a look at how we can:
+
+* design a flow with multiple conversations
+* move through that flow using buttons
+* introduce natural language interactions for prototyping before we connect NLU interpreters. 
 
 For this tutorial we are going to create this conversation experience:
 
@@ -16,23 +21,23 @@ For this tutorial we are going to create this conversation experience:
 
 The first step is to create a new scenario. We will call it "My first button-driven scenario".
 
-![](../.gitbook/assets/image%20%28252%29.png)
+![Button-driven scenario top-level](../.gitbook/assets/image%20%28252%29.png)
 
-### 2. Setting up the conversational flow
+### 2. Setting up the top level conversations
 
 We will start by setting up the conversational flow we expect to have with different turns and intents. 
 
-If you rewatch the clip at the start you can see that there are three distinct conversations. The welcome conversation \(which we already have\), one around button-driven interaction and one with just NLU \(don't worry we will not need to setup NLU interpreters we will use OpenDialog's easy way to fake NLU interaction for prototyping\).  
+If you watch the clip at the start you can see that there are three distinct conversations. The welcome conversation \(which we already have\), one around button-driven interaction and one with just NLU \(don't worry we will not need to setup NLU interpreters - we will use OpenDialog's easy way to fake NLU interaction for prototyping\).  
 
 Let's go ahead and edit our existing scenario to reflect this structure. 
 
 #### 2.1 Create the button-driven conversation 
 
- Go to the top-level of the scenario and click on the "+" button to add a conversation. Let's call it "Button-driven conversation" and make it a starting conversation \(we will explain later\).
+Go to the top-level of the scenario and click on the "+" button to add a conversation. Let's call it "Button-driven conversation" and make it a starting conversation \(we will explain later why it needs to be a starting conversation\).
 
 ![Creating a conversation](../.gitbook/assets/image%20%28234%29.png)
 
-2.2 Create the NLU conversation
+#### 2.2 Create the NLU conversation
 
 Now repeat the process to add the NLU conversation. Make sure to make this one a starting conversation as well. 
 
@@ -40,9 +45,9 @@ Now repeat the process to add the NLU conversation. Make sure to make this one a
 
 We have the conversation level components in place, now we can think about the interactions that will happen within them. 
 
-### 3. Button-driven conversation
+### 3. Button-driven conversation conversation flow
 
-The user will _enter_ the button-driven conversation by clicking on the "Drive with a button" option. So we will add a welcome scene to this conversation to capture that intent and the response from the bot. 
+The user will _enter_ the button-driven conversation by clicking on the "Drive with a button" option. So we will add a welcome scene to this conversation to _capture_ that intent and then provide a response from the bot. 
 
 #### 3.1 Create a scene
 
@@ -52,7 +57,7 @@ Click on the Button-driven Conversation and create a Scene called "Welcome to Bu
 
 #### 3.2 Add a starting turn
 
-Now let's add a starting turn that will contain the first interaction we will have in this conversation. Make sure to add the starting behaviour to the turn \(the open behaviour is set by default and we will keep that\). 
+Now add a starting turn that will contain the first interaction we will have in this conversation. Make sure to add the starting behaviour to the turn \(the open behaviour is set by default and we will keep that so that we can re-enter the turn even after the initial interaction\). 
 
 ![](../.gitbook/assets/image%20%28281%29.png)
 
@@ -76,7 +81,7 @@ Now, let's add the application response intent. Click on the "+" sign in the res
 
 ![Application response](../.gitbook/assets/image%20%28276%29.png)
 
-Great! That handles the introductory bit of the interaction for the button-driven conversation. However, we also want to be able to click again \(so we need to capture that user intent\) and we will also want to switch to natural language style interaction. 
+Great! That handles the introductory bit of the interaction for the button-driven conversation. However, we also want to be able to click again \(so we need to capture that user intent\) and we will also want to switch to natural language style interaction \(rewatch the video for a reminder of the types of interactions we are after\). 
 
 We are going to create another turn for that bit of interaction. 
 
@@ -88,7 +93,7 @@ Now we will add another turn to handle more button clicking:
 
 ![Adding a turn called &quot;More buttons!&quot;](../.gitbook/assets/image%20%28250%29.png)
 
-We will add three possible user intents to this turn - note that we've given the intent the same value as the sample phrase:
+We will add three possible user intents to this turn - note that we've given all the intents the same value for sample phrase and intent name. 
 
 * Click away 
 * Stick to buttons
@@ -106,7 +111,7 @@ Click on the "Switch to NLU" intent and add a transition to the conversation.
 
 ![Adding a transition](../.gitbook/assets/image%20%28227%29.png)
 
-We can transition to Conversations, Scene or Turns and the conversation engine will pick up things from there to figure out what intents will match. Add a transition to the NLU Conversation. Once you save the transition change you will see a link next to the transition and you can follow that to go to the conversation. 
+We can transition to Conversations, Scene or Turns and the conversation engine will pick up things from there to figure out what intents will match. Add a transition to the NLU Conversation. Once you save the transition change you will see a link next to the transition and you can follow that to go to the conversation. When a user selects to Switch to NLU the conversation engine will take us at the _top_ of the NLU conversation and will look for a starting scene and turn that it can travel through down to an intent that could be a response from the application to the Switch to NLU intent. 
 
 ![Intent with a transition](../.gitbook/assets/image%20%28274%29.png)
 
@@ -118,7 +123,7 @@ Let's dive into our NLU conversation to start designing that.
 
 Hold on here because we are about to get a bit "OpenDialoguey..." 
 
-For the NLU conversation we are going to allow for the user or the application to start the conversation. When the user from the Welcome To Buttons! conversation asks for NLU interactions we will transition to the NLU conversation and have the bot reply in a starting turn. Later one we will also cater for the conversation to start by the user.
+For the NLU conversation we are going to allow for the user **or** the application to start the conversation. When the user, coming from the Welcome To Buttons! conversation asks ,for NLU interactions we will transition to the NLU conversation and have the application reply in a starting turn. Later one we will also cater for the conversation to start by the user.
 
 When we switch the _cadence_ like this we describe it as having the application take the _initiative_ in a conversation
 
@@ -152,7 +157,7 @@ Then we will add another starting turn with a user initiative - this will give u
 
 ![User initiative welcome start](../.gitbook/assets/image%20%28231%29.png)
 
-Ok, now that we have the two possible ways to enter the conversation let's add the intent to handle a response to the "Radio goo goo". Let's think it through first. 
+Ok, now that we have the two possible ways to enter the conversation let's add the intent to handle a response to the "radio goo goo". Let's think it through first. 
 
 So, we are in our NLU Welcome scene. We are expecting the user to say "radio ga ga" and we will reply with "radio goo goo" and then offer the chance to the user to repeat "radio ga ga" or to go back to button-driven interaction. 
 
@@ -180,7 +185,7 @@ Let's add an intent in that "Coming from NLU" turn.
 
 ![](../.gitbook/assets/image%20%28266%29.png)
 
-Nice, now - back to our NLU conversation to add the intent that will take us to the turn we just created with a transition.
+Nice. Now, back to our NLU conversation to add the intent that will take us to the turn we just created with a transition.
 
 ![](../.gitbook/assets/image%20%28245%29.png)
 
@@ -194,7 +199,7 @@ Let's recap where we are so far.
 
 We can test all this by going to the top of the scenario and hitting the play button to activate the conversation player and trying out various flows.
 
-Let's try... while quite a few options show up the first event from the webchat will be the "intent.core.welcome" - if we select that we see that we get the default welcome message as an option and after we select that we get the user's first response as an option... and that is it. We are stuck between those two messages!
+Let's try... while quite a few options show up the first event from the webchat will be the "intent.core.welcome" - if we select that we see that we get the default welcome message as an option and after we select that we get the user's first response as an option... and that is it? Hold on! We are stuck between those two messages!
 
 ![That&apos;s not right...](../.gitbook/assets/image%20%28228%29.png)
 
@@ -214,7 +219,7 @@ Click on the response intent and then click on the trash can to delete it.
 
 ![Delete intents by clicking on the trash can.](../.gitbook/assets/image%20%28255%29.png)
 
-Now, let's fix the request intent. We want it to complete the conversation so that the conversation engine will move back to the top of the scenario and consider other conversations \(such as the button-driven one or the NLU one\). 
+Now, let's fix the request intent. We want it to complete the conversation so that the conversation engine will move back to the top of the scenario and consider all the other conversations \(such as the button-driven one or the NLU one\). 
 
 Tick the "Intent completes conversation" checkbox for this.
 
@@ -226,7 +231,7 @@ Ok, now let's go back to the conversation player and check the conversation flow
 
 ![Proper conversation flow!](../.gitbook/assets/image%20%28261%29.png)
 
-That is much better, isn't it. We can trigger the application, move to the welcome conversation and the flow from button-driven to NLU can back without issues. 
+That is much better, isn't it. We can trigger the application, move to the welcome conversation and the flow from button-driven to NLU and back without issues. 
 
 With the conversational flow in place as we would like it, it is time to work on our messages. The Conversation Player uses the sample messages but for our final application we want to insert those buttons and do so much more! Time to move start using the message editor. 
 
