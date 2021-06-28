@@ -19,7 +19,7 @@ It enables teams to design, develop, deploy, test, maintain and refine conversat
 To achieve this OpenDialog provides:
 
 * **Method**: A specific and opinionated approach to designing conversations \([see core concepts](concepts-1/concepts.md)\).
-* **Tooling**: A web-based conversation designer and conversation management system supported by a modular, open-source, development framework for designing and developing conversational applications.
+* **Tooling**: A web-based conversation designer and conversation management system supported by a modular, [open-source](https://github.com/opendialogai/opendialog), development framework for designing and developing conversational applications.
 * **Integrations**:
   * A flexible webchat widget for web-based chat.
   * An API endpoint for custom chat integrations to your own conversational interface.
