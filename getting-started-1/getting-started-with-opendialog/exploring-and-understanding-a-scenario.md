@@ -70,11 +70,9 @@ Let's walk through the highlights here.
 
 The Participant is the APP, so this describes an expected message from the application - an example of this message, the _Sample Message_ is "Hi! This is the default welcome message for the My First Scenario Scenario.". 
 
-The interpreter we will be using to interpret this message is the OpenDialog default interpreter. This interpreter simply interprets button clicks or specific events \(hence the name callbackInterpreter\). 
 
-The confidence level is set to 100%, although, in any case, when dealing with specific clicks confidence level is always certain. 
 
 Finally, there are no transitions associated with this intent. 
 
-The edit view and advanced settings \(click on the cogwheel\) enable you to manipulate all the settings about the intent. We won't get into the details about those just yet, since we cover it comprehensively in the [Turns and Intents](../../turns-and-intents.md) section. 
+The advanced settings enable you to manipulate all conditions, actions and expected attributes. We won't get into the details about those just yet, since we cover it comprehensively in the [Turns and Intents](../../turns-and-intents.md) section. 
 
