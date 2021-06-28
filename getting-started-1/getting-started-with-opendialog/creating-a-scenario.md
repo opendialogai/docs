@@ -14,13 +14,13 @@ Click on the Designer on the sidebar to enter the Designer space where you can c
 
 Click on the "Create New Scenario" button, and you will be presented with the New Scenario dialogue. Fill in the details - something that will be clear and help you and others easily identify the purpose of a scenario.
 
-![Create a new scenario in OpenDialog](../../.gitbook/assets/image%20%28225%29.png)
+![Create a new scenario in OpenDialog](../../.gitbook/assets/image%20%28227%29.png)
 
 ### Scenario Viewer
 
 Once you click on "Create Scenario", you are dropped in the scenario with three default conversations - the "Trigger" conversation, the "Welcome Conversation" and the "No Match Conversation". 
 
-![Initial conversations for most OpenDialog Scenarios](../../.gitbook/assets/image%20%28224%29.png)
+![Initial conversations for most OpenDialog Scenarios](../../.gitbook/assets/image%20%28226%29.png)
 
 The "Trigger Conversation" is the one that will be "activated" when a user first interacts \(with a webchat interface this is the conversation that gets _triggered_ when the user loads the webchat widget\). 
 

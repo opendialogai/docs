@@ -2,11 +2,11 @@
 
 So far we've [created](creating-a-scenario.md) a scenario and [explored](exploring-and-understanding-a-scenario.md) one of the conversations. Now, let's dive into the Conversational Flow. _How do we visualise what are the possible flows through the two conversations we already have?_ We do this through our Conversational Flow view within the conversation designer.
 
-![Conversation Designer - Starting conversations](../../.gitbook/assets/image%20%28169%29.png)
+![](../../.gitbook/assets/image%20%28225%29.png)
 
 To open the Conversational Flow view click on the Play button \(_next to the Add Conversation button\)_ and it will open it up on the right.
 
-![Conversation flow view.](../../.gitbook/assets/image%20%28162%29.png)
+![Conversation flow view](../../.gitbook/assets/image%20%28231%29.png)
 
 The Conversational Flow view makes it possible to play out the conversation using just the sample messages that are associated with each intent. This means that you can test for yourself or show others how you expect the conversation to develop before having to do any NLU training or dive into detailed message composition or have to worry about conditions and context.
 
@@ -14,9 +14,9 @@ The Conversational Flow view makes it possible to play out the conversation usin
 
 The starting position is the point in the conversation that you clicked on the play button. Since we did it at the top of the Scenario our starting position is the Scenario itself. 
 
-We have two Conversations that are bot _STARTING_ conversations and each has Scenes and Turns that are all starting so they will both be available as the conversation engine evaluates what could possibly happen next. 
+We have two Conversations that are both _STARTING_ conversations and each has Scenes and Turns that are all starting so they will both be available as the conversation engine evaluates what could  happen next. 
 
-![Conversation flow view - intent selection.](../../.gitbook/assets/image%20%28158%29.png)
+![Conversation player - starting intent selection](../../.gitbook/assets/image%20%28223%29.png)
 
 Click on "Please Choose an Intent" reveals that there are two available intents from the User. The first is the Welcome intent \(_intent.core.welcome\)_ and the second is the No Match \(_intent.core.NoMatch_\) intent.
 
