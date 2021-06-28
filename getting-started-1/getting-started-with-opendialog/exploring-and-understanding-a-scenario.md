@@ -8,13 +8,13 @@ We've just [created a scenario](creating-a-scenario.md), and can now dig into ex
 
 ### Scenario Level View
 
-![Starting point for scenarios](../../.gitbook/assets/image%20%28156%29.png)
+![Scenario Level View](../../.gitbook/assets/image%20%28227%29.png)
 
 The scenario level view provides an overview of all the conversations within a scenario. If you click on one of the conversations you will be taken into a conversation view, where you can see the scenes, and if you click on a scene you are taken to turns and finally intents.  
 
 ### Conversation Level View
 
-![Conversation Level Vie](../../.gitbook/assets/image%20%28170%29.png)
+![Conversation Level View](../../.gitbook/assets/image%20%28170%29.png)
 
 At the Conversational level view we can see the Conversation and its associated scenes \(in this case just one scene called "Welcome Scene"\), as well as the action bar to add new scenes. 
 
@@ -52,19 +52,23 @@ The turn in this case is also a _STARTING_ turn, which means that this is a turn
 
 Now, that we are at the turn level we can click on the Intents to see what intents we are expecting to be exchanging at the turn level. 
 
-![Intent view](../../.gitbook/assets/image%20%28164%29.png)
+![](../../.gitbook/assets/image%20%28223%29.png)
 
-Intents are split into "Request Intents" and "Response Intents". A request intent is an initiating intent in a turn \(and it can come from either the user or the app\), while the response intent is the expected response. Turns do not need to have a Response Intent. The Request intent could be completing the conversation or it could be transitioning the conversation to another Scene or another Conversation. 
+Intents are split into "Request Intents" and "Response Intents". A request intent is an initiating intent in a turn \(and it can come from either the user or the app\), while the response intent is the expected response. 
 
-We can set up multiple requests and multiple responses. Conditions on intents and the actual interpretation of intents can help the conversation engine determine which one should be applicable. 
+Turns do not need to have a Response Intent. If a turn does not have a response intent the conversation engine will look at other turns in that same scene where the participant is the other counterpart - i.e. if we just left a turn where the response intent was from the application we will be looking for other turns where the opening \(or response\) intent is from the user and vice-versa. This allows you to flip conversational cadence and control initiative in a number of interesting ways! 
+
+The intents could be completing the conversation or it could be transitioning the conversation to another Scene or another Conversation. 
+
+We can set up multiple requests and multiple responses. Conditions on intents and the actual interpretation of intents can help the conversation engine determine which one should be applicable. Current the first passing intent in a turn response or request pair will be the one select.
 
 If you click on an Intent you are taken to the Intent overview page that provides a summary of the key points and the edit panel for an intent. 
 
-![Detail &amp; Edit view of an Intent](../../.gitbook/assets/image%20%28174%29.png)
+![Single intent view](../../.gitbook/assets/image%20%28226%29.png)
 
 Let's walk through the highlights here. 
 
-The Participant is the User, so this describes an expected message from the user - an example of this message, the "Sample Message" is "_Hello from user_". 
+The Participant is the APP, so this describes an expected message from the application - an example of this message, the _Sample Message_ is "Hi! This is the default welcome message for the My First Scenario Scenario.". 
 
 The interpreter we will be using to interpret this message is the OpenDialog default interpreter. This interpreter simply interprets button clicks or specific events \(hence the name callbackInterpreter\). 
 
