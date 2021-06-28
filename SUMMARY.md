@@ -27,7 +27,7 @@
 
 ## Tutorials
 
-* [Button Driven Bot](tutorials/button-driven-bot.md)
+* [Button Driven Bot \(with a touch of NLU\)](tutorials/button-driven-bot.md)
 
 ## Working With OpenDialog <a id="working-with-opendialog-1"></a>
 

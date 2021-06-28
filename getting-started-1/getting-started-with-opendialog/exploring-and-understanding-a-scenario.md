@@ -8,7 +8,7 @@ We've just [created a scenario](creating-a-scenario.md), and can now dig into ex
 
 ### Scenario Level View
 
-![Scenario Level View](../../.gitbook/assets/image%20%28229%29.png)
+![Scenario Level View](../../.gitbook/assets/image%20%28267%29.png)
 
 The scenario level view provides an overview of all the conversations within a scenario. If you click on one of the conversations you will be taken into a conversation view, where you can see the scenes, and if you click on a scene you are taken to turns and finally intents.  
 
@@ -52,7 +52,7 @@ The turn in this case is also a _STARTING_ turn, which means that this is a turn
 
 Now, that we are at the turn level we can click on the Intents to see what intents we are expecting to be exchanging at the turn level. 
 
-![](../../.gitbook/assets/image%20%28224%29.png)
+![](../../.gitbook/assets/image%20%28241%29.png)
 
 Intents are split into "Request Intents" and "Response Intents". A request intent is an initiating intent in a turn \(and it can come from either the user or the app\), while the response intent is the expected response. 
 
@@ -64,7 +64,7 @@ We can set up multiple requests and multiple responses. Conditions on intents an
 
 If you click on an Intent you are taken to the Intent overview page that provides a summary of the key points and the edit panel for an intent. 
 
-![Single intent view](../../.gitbook/assets/image%20%28228%29.png)
+![Single intent view](../../.gitbook/assets/image%20%28262%29.png)
 
 Let's walk through the highlights here. 
 
