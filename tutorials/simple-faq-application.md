@@ -76,6 +76,8 @@ In order to do so, in the Designer, navigate to :
 
 Welcome Conversation &gt; Welcome Scene &gt; Welcome Turn &gt; Intent Overview
 
+![Navigate to the Welcome Intents in order to edit them](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.37.56.png)
+
 What we want to accomplish is the following :
 
 * Application says hello to the user
@@ -83,15 +85,21 @@ What we want to accomplish is the following :
 
 To do so, delete the user response intent as this is not what is expected.  Then, click on the application's initial request intent to edit it.  Set up this intent \(called intent.app.welcomeresponseforsimplefaq\) to transition to the 'FAQ Conversation'.
 
+![Set up the transition from the &apos;Welcome request intent&apos; to the &apos;FAQ conversation&apos;](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.39.00.png)
+
 ### Edit the Welcome Message
 
 You're almost there!  In order to reflect these changes, and also do some nice wordsmithing, you can edit all the outgoing messages in the message editor!
 
-Navigate to [the message editor](../messages.md) - either from the sidebar menu or directly from within the designer and the intent you wish to edit the message for.
+Messages are associated with what we call "outgoing intents". Outgoing intents are intents that the application has. They are sent to the user, but of course, the user does not receive an intent. The user receives a message that carries the application's intent. Just as the application receives a message and attempts to map it to an intent. The relationship is mirrored, which makes it consistent and coherent. 
+
+Navigate to [the message editor](../messages.md) - either from the sidebar menu or directly from within the designer and the intent you wish to edit the message for - using the 'bubble with pen inside' icon in the navigation bar.
+
+![Use the &apos;Edit Message&apos; icon in the navigation bar to edit outgoing messages](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.36.26.png)
 
 You can do a lot of interesting things with messages - give them a specific name, add conditions,...
 
-👉Let's keep it simple for this first  example, and edit the intent.app.welcomeresponseforsimplefaq message, to be an open-ended question.  For example: "Hello, how can I help you?" - inviting the user to ask their FAQ-question. Give the message a specific name, for example 'General Welcome Message'.
+👉Let's keep it simple for this first example, and edit the 'intent.app.welcomeresponseforsimplefaq' message, to be an open-ended question.  For example: "Hello, how can I help you?" - inviting the user to ask their FAQ-question. Give the message a specific name, for example 'General Welcome Message'.
 
 ![Edit a message in the Message Editor view](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.59.42.png)
 
@@ -99,11 +107,32 @@ Almost done! Make sure to Save your message before navigating back to the Design
 
 ### Activate your scenario
 
-Once you're happy with your outgoing messages, you can now activate your scenario using the activation toggle in the scenario overview box.
+Navigate to the designer and find your scenario in the list. Click on the slider to active your Scenario \(it should now be green\). You're Scenario is now active! You're ready to test it.
 
 ![Scenario overview - use to navigate to a specific scenario or activate a scenario with its toggle](../.gitbook/assets/capture-de-cran-2021-06-28-a-19.04.49.png)
 
-Congratulations! You can now test your scenario using the 'Preview' from the sidebar!
+To test your application navigate to the preview section and select your Scenario from the drop-down menu. You should then see WebChat appear with the welcome response you created.
+
+![](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.46.25.png)
+
+{% hint style="info" %}
+Remember when testing the NLU simulation it needs to exactly match what you set up as the intent name e.g "how can I return my purchase" -
+
+👉 To be noted: intent names are case sensitive! 
+{% endhint %}
+
+Congratulations! You just created your first quick FAQ prototype simulating NLU. Our next step will be to integrate some actual NLU and start designing some more complex conversations! 
+
+Let's recap the main points:
+
+* You start by creating a new scenario
+* Setup the conversations to be had
+* Design your scenes and turns, taking care around what is a starting scene and starting or open turns
+* Check your conversations flows to make sure it all behaves as you would expect.
+* Finalise your messages with the right tone of voice.
+* Activate your scenario and test the real thing in Preview before [launching to your website](../launching-your-application.md). 
+
+While the default callback interpreter is essential for button-driven interaction and can help with simple prototyping,  for actual NLU we need to use an [NLU interpreter which we discuss here](../interpreters-and-natural-language-understanding/dialogflow-interpreter.md). 
 
 
 
