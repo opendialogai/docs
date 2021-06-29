@@ -101,11 +101,17 @@ We will add three possible user intents to this turn - note that we've given all
 
 ![](../.gitbook/assets/image%20%28233%29.png)
 
-The first two intents we expect to keep us in this turn with the application replying that we are getting good at button clicking. So let's add that intent as a response intent.
+The first two intents we expect to keep us in this turn with the application replying that we are getting good at button clicking. 
+
+So let's add that intent as a response intent. Click on the "+" button of response intents and add the intent as shown in the picture below. The sample utterance is "You are getting good at this" and the intent name is "buttonConfirmation". 
 
 ![](../.gitbook/assets/image%20%28271%29.png)
 
-The third intent "Switch to NLU" we want to take us to the NLU conversation. This means that we will need to insert a transition to the NLU conversation.
+Save and you should get a turn that looks like this:
+
+![All four intents of the More buttons! turn](../.gitbook/assets/image%20%28285%29.png)
+
+Onwards! The third intent "Switch to NLU" we want to take us to the NLU conversation. This means that we will need to insert a transition to the NLU conversation.
 
 Click on the "Switch to NLU" intent and add a transition to the conversation. 
 
