@@ -157,7 +157,11 @@ Then we will add another starting turn with a user initiative - this will give u
 
 ![User initiative welcome start](../.gitbook/assets/image%20%28231%29.png)
 
-Ok, now that we have the two possible ways to enter the conversation let's add the intent to handle a response to the "radio goo goo". Let's think it through first. 
+Ok, now that we have the two possible ways to enter the conversation let's add the intent to handle a response to the "radio ga ga". If you rewatch the video you will notice that our "NLUish" interaction is the bot inviting the user to sing with them - the user will say "radio ga ga" and the ap responds "radio goo goo" \(a tribute to the song Radio Ga Ga of the band Queen for those wondering!\)
+
+![](../.gitbook/assets/image%20%28284%29.png)
+
+Let's think it through first. 
 
 So, we are in our NLU Welcome scene. We are expecting the user to say "radio ga ga" and we will reply with "radio goo goo" and then offer the chance to the user to repeat "radio ga ga" or to go back to button-driven interaction. 
 
