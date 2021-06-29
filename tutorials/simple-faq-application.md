@@ -28,30 +28,28 @@ You are now asked to name your conversation - in our case 'FAQ Conversation'.  Y
 
 ### Add scenes, turns and intents
 
-Within your FAQ conversation, you will want to cover different topics like for example returns, account management, product information, ...
+Within your FAQ conversation, you will want to cover different topics such as; returns, account management, product information, ...
 
-Each subtopic in OpenDialog can be set up as [a scene](../scenes.md).  Within the FAQ conversation, go ahead and create a few scenes for each subtopic you would like to cover in your FAQ conversation.
+Each subtopic in OpenDialog can be set up as [a scene](../scenes.md).  Open the FAQ conversation, go ahead and create a few scenes for each subtopic you would like to cover in your FAQ conversation.
 
-Give each scene ****[**a starting behaviour**](https://app.gitbook.com/@opendialog/s/opendialog-development-and-deployment/~/drafts/-Mcnkn9hX19zDpH0QXXK/scenes#scene-behaviours)**,** so that the conversation engine will consider them all as 'conversation starters’.  For more in-depth information on behaviour, check out the linked article!
+Give each scene ****[**a starting behaviour,**](../scenes.md) so that the conversation engine will consider them all as 'conversation starters’.  For more in-depth information on behaviour, check out the [linked article](../scenes.md)!
 
 Finally, [**Turns**](../turns-and-intents.md) capture single exchanges. In our FAQ application, these are our question-answer pairs.  Make sure to give each turn [a starting behaviour](../turns-and-intents.md#starting-turns), so that the conversation engine considers them when entering their parent component: the scene.
 
-👉 In our example: Within the FAQ conversation - set up a 'Returns' scene, with a 'Return purchase' turn.
+👉 **In our example:** Within the FAQ conversation - set up a 'Returns' scene, with a 'Return purchase' turn.
 
-Now is the time to start adding our questions and answers in the information architecture we have set up.  We will do this using [request and response intents.](../turns-and-intents.md#intents-in-turns)
+Now is the time to start adding our questions and answers to the information architecture we have set up.  We will do this using [request and response intents.](../turns-and-intents.md#intents-in-turns)
 
 ![Intent overview with Request intents and Response intents](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.24.57.png)
 
-👉Our FAQ conversation is a user-driven conversation.  This means that the participant submitting the request is the User \(versus bot-driven conversation where the app is the one submitting the request\).
-
-In our example, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Return purchase' turn, now set up a request intent and a response intent.
+👉 Our FAQ conversation is a user-driven conversation.  This means that the participant submitting the request is the User \(versus bot-driven conversation where the app is the one submitting the request\). As so, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Return purchase' turn, set up the request intent and response intent.
 
 You can set up an intent by clicking on the + symbol in the navigation bar, or directly in the Request Intent box.  A third panel will open in your browser, allowing you to add information to your intent.
 
 Add a sample utterance \(what the user might say\), add an intent name \(the exact thing you expect a user to ask - at least for this basic tutorial\*\), and save your request intent.
 
 {% hint style="info" %}
-In further applications, you can name your intent more systematically as you will be using an NLU interpreter - allowing for more flexibility in your model.  For quick prototyping, using the Default Interpreter - you need to use the exact wording \(case-sensitive!\) you want to work with.
+In further applications, you can name your intent more systematically as you will be using an NLU interpreter - allowing for more flexibility in your model.  For quick prototyping, using the Default Interpreter - you need to use the exact wording \(This is case-sensitive!\) you want to work with.
 {% endhint %}
 
 ![Setting up a request intent for a user participant, using &apos;Default Interpreter&apos;](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.34.07.png)
@@ -62,9 +60,9 @@ Now add your response intent from the application, indicating in your sample utt
 
 Your response intent ends that specific turn, and you need to tell the conversation engine what to consider next in the application's scenario - using [a transition](../turns-and-intents.md#transitions).  
 
-👉Because we only have one main conversation in this example, we will ask the conversational application to transition to the top of that 'FAQ conversation' so that it can consider other topics \(scenes\), or question-answer pairs \(turns\) the user might want to enquire about.
+👉 Because we only have one main conversation in this example, we will ask the conversational application to transition to the top of that 'FAQ conversation' so that it can consider other topics \(scenes\), or question-answer pairs \(turns\) the user might want to enquire about.
 
-Set up a few more scenes, turns, and intents for different question-answer pairs.
+Set up a few more scenes, turns, and intents for different question-answer pairs - see the video tutorial for examples.
 
 ### Edit the 'Welcome Conversation'
 
@@ -80,8 +78,8 @@ Welcome Conversation &gt; Welcome Scene &gt; Welcome Turn &gt; Intent Overview
 
 What we want to accomplish is the following :
 
-* Application says hello to the user
-* Application then listens for a user request from the 'FAQ conversation'
+* The Application says hello to the user
+* The Application then listens for a user request from the 'FAQ conversation'
 
 To do so, delete the user response intent as this is not what is expected.  Then, click on the application's initial request intent to edit it.  Set up this intent \(called intent.app.welcomeresponseforsimplefaq\) to transition to the 'FAQ Conversation'.
 
@@ -93,7 +91,7 @@ You're almost there!  In order to reflect these changes, and also do some nice w
 
 Messages are associated with what we call "outgoing intents". Outgoing intents are intents that the application has. They are sent to the user, but of course, the user does not receive an intent. The user receives a message that carries the application's intent. Just as the application receives a message and attempts to map it to an intent. The relationship is mirrored, which makes it consistent and coherent. 
 
-Navigate to [the message editor](../messages.md) - either from the sidebar menu or directly from within the designer and the intent you wish to edit the message for - using the 'bubble with pen inside' icon in the navigation bar.
+Now navigate to [the message editor](../messages.md) - either from the sidebar menu or directly from within the designer and the intent you wish to edit the message for - using the 'bubble with a pen inside' icon in the action bar.
 
 ![Use the &apos;Edit Message&apos; icon in the navigation bar to edit outgoing messages](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.36.26.png)
 
@@ -103,7 +101,7 @@ You can do a lot of interesting things with messages - give them a specific name
 
 ![Edit a message in the Message Editor view](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.59.42.png)
 
-Almost done! Make sure to Save your message before navigating back to the Designer!
+Almost done! Make sure to click on 'Save Message' before navigating back to the Designer!
 
 ### Activate your scenario
 
@@ -111,14 +109,14 @@ Navigate to the designer and find your scenario in the list. Click on the slider
 
 ![Scenario overview - use to navigate to a specific scenario or activate a scenario with its toggle](../.gitbook/assets/capture-de-cran-2021-06-28-a-19.04.49.png)
 
-To test your application navigate to the preview section and select your Scenario from the drop-down menu. You should then see WebChat appear with the welcome response you created.
+To test your application navigate to the 'Preview' section and select your Scenario from the drop-down menu. You should then see WebChat appear with the welcome response you created.
 
 ![](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.46.25.png)
 
 {% hint style="info" %}
-Remember when testing the NLU simulation it needs to exactly match what you set up as the intent name e.g "how can I return my purchase" -
+Remember when testing the NLU simulation it needs to exactly match what you set up as the intent name e.g "how can I return my purchase".
 
-👉 To be noted: intent names are case sensitive! 
+👉  intent names are case sensitive! 
 {% endhint %}
 
 Congratulations! You just created your first quick FAQ prototype simulating NLU. Our next step will be to integrate some actual NLU and start designing some more complex conversations! 
