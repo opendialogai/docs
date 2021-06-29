@@ -28,6 +28,7 @@
 ## Tutorials
 
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
+* [Simple FAQ Application](tutorials/simple-faq-application.md)
 
 ## Working With OpenDialog <a id="working-with-opendialog-1"></a>
 
