@@ -15,7 +15,11 @@ In this tutorial we are going to have a look at how we can:
 
 For this tutorial we are going to create this conversation experience:
 
-{% embed url="https://youtu.be/GAY5vlIPiOA" caption="Tutorial: Button driven bot " %}
+{% embed url="https://youtu.be/GAY5vlIPiOA" caption="Button-driven application : Example" %}
+
+{% embed url="https://youtu.be/picC-Hgjamo" caption="Button-driven application : Tutorial" %}
+
+
 
 ### 1. Create a new scenario
 
