@@ -42,7 +42,12 @@ You can have multiple intents in the request or response "buckets".
 Typically, you would either be using conditions \(on application intents\) or rely on the interpreters \(for user intents\) to determine which intent would actually be selected. 
 {% endhint %}
 
-You can also only have request intents, and you would then most likely be defining transitions within intents to move the conversation forward. 
+You can also only have request intents. 
+
+If you only have request intents in a turn one of two things can happen:
+
+1. You define a transition in the turn in which case the engine will follow the transition and attempt to find an appropriate intent on the _end_ of that transition. An appropriate intent would be the _opposite_ participant. So if in Turn A the request intent is from the APP we will be looking for intents from the USER in Turn B and vice-versa. This allows you to do cadence switch on transitions to have natural conversation flows. 
+2. You don't define a transition, in which case the engine will go back to the scene level and look for open turns that it could follow that have the _opposite_ participant. So if you had Turn A with an APP intent and no response intents that engine would look for other open turns with a USER request intent to enter. This again allows you to switch cadence, deal with out of context questions such as FAQ, etc or localised no matching. 
 
 An intent, from the user, is also referred to as an _incoming_ intent, while an intent from the application is referred to as an _outgoing_ intent. As the figure below illustrates an incoming utterance is interpreted to be matched on an incoming intent, and the Conversation Engine will then select an outgoing intent that we will map \(through the message repository\) to an outgoing utterance.
 
@@ -60,7 +65,7 @@ The sample utterance is the phrase we use in the conversation flow and in the co
 
 ### Intent Name
 
-The Intent Name is the more formal name for the intent that we use to refer to it through interpreters \(for incoming intents\) or in the message repository \(for outgoing intents\). A good naming format to use for this is `intent.user.<name of intent>` for user intents and `intent.app.<name of intent>`for app intents.
+The Intent Name is the more formal name for the intent that we use to refer to it through interpreters \(for incoming intents\) or in the message repository \(for outgoing intents\). A good naming format to use for this is `intent.user.<name of intent>` for user intents and `intent.app.<name of intent>`for app intents. However, feel free to use whatever makes sense for your better understanding of the flow. 
 
 ### Interpreter and Confidence Level
 
