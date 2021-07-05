@@ -28,7 +28,7 @@ The Webchat embed code pop-up will then appear. You then need to copy the embed 
 
 Once you have the embed code you then need to add it to the relevant pages on your website or application.
 
-This embed code should be added at the bottom of the `body` section of the page\(s\) for which the Webchat should appear.  
+This embed code should be added at the bottom of the `body` section of the page\(s\) for which the Webchat should appear. 
 
 {% hint style="info" %}
 Further interfaces and an improved way to embed the OpenDialog Webchat are currently on our product roadmap for Q3/Q4 2021. 
