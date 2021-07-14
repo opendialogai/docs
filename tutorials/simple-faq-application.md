@@ -60,14 +60,14 @@ Now is the time to start adding our questions and answers to the information arc
 
 👉 Our FAQ conversation is a user-driven conversation.  This means that the participant submitting the request is the User \(versus bot-driven conversation where the app is the one submitting the request\). As so, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Return purchase' turn, set up the request intent and response intent.
 
-In our example, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Return purchase' turn, now set up a request intent and a response intent.
+In our example, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Purchase return' turn, now set up a request intent and a response intent.
 
 You can set up an intent by clicking on the + symbol in the navigation bar, or directly in the Request Intent box.  A third panel will open in your browser, allowing you to add information to your intent.
 
 Add a sample utterance \(what the user might say\), add an intent name \(the exact thing you expect a user to ask - at least for this basic tutorial\*\), and save your request intent.
 
 {% hint style="info" %}
-In further applications, you can name your intent more systematically as you will be using an NLU interpreter - allowing for more flexibility in your model.  For quick prototyping, using the Default Interpreter - you need to use the exact wording \(This is case-sensitive!\) you want to work with.
+In further applications, you can name your intent more systematically as you will be using an NLU interpreter - allowing for more flexibility in your model.  For quick prototyping, using the Default Interpreter - you need to use the exact wording you want to work with. To be noted: The Default interpreter is case sensitive.
 {% endhint %}
 
 ![Setting up a request intent for a user participant, using &apos;Default Interpreter&apos;](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.34.07.png)
@@ -111,7 +111,9 @@ Let's fix that by first deleting the response intent \(we don't need it as we ha
 
 Click on the response intent and then click on the trash can to delete it. 
 
-Now, let's fix the request intent. We want it to transition to the FAQ conversation so that the conversation engine will consider  the FAQ conversation as the next component. To do so, click on the application's initial request intent to edit it.  Set up this intent \(called intent.app.welcomeresponseforsimplefaq\) to transition to the 'FAQ Conversation'.
+ Now, let's fix the request intent. We want it to transition to the FAQ conversation so that the conversation engine will consider  the FAQ conversation as the next component. To do so, click on the application's initial request intent to edit it.  Set up this intent \(called intent.app.welcomeresponseforsimplefaq\) to transition to the 'FAQ Conversation'.
+
+![Set up your welcome intent to transition to the FAQ conversation](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.31.31.png)
 
 ![Set up the transition from the &apos;Welcome request intent&apos; to the &apos;FAQ conversation&apos;](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.39.00.png)
 
