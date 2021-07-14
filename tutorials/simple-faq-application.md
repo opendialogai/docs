@@ -4,6 +4,14 @@ description: A quick tutorial to set up a simple FAQ Application using OpenDialo
 
 # Simple FAQ Application
 
+
+
+In this tutorial we are going to have a look at how we can:
+
+* design a basic FAQ flow using several OpenDialog components
+* move through that flow using the OpenDialog default interpreter
+* introduce natural language interactions for prototyping before we connect NLU interpreters. 
+
 {% embed url="https://youtu.be/R\_tRCQFE6jk" %}
 
 
@@ -12,19 +20,23 @@ description: A quick tutorial to set up a simple FAQ Application using OpenDialo
 
 Head on over to the 'Designer' and start [creating your 'Simple FAQ' scenario](../getting-started-1/getting-started-with-opendialog/creating-a-scenario.md): give your scenario a name, as well as a description.
 
-Think about what Conversations there are to be had.  OpenDialog comes with a few conversations out of the box: a Trigger conversation \(for the user to trigger the conversational application\), a Welcome conversation \(in which the application welcomes the user\), and a No-match conversation \(in case the user request is misunderstood or unhandled by the conversational engine\).
-
 ![Set up a new scenario - &apos;Simple FAQ&apos;](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.10.49.png)
 
-For our use case, we will also need an FAQ conversation to hold all our question-answer pairs.
+Think about what Conversations there are to be had.  OpenDialog comes with a few conversations out of the box: a Trigger conversation \(for the user to trigger the conversational application\), a Welcome conversation \(in which the application welcomes the user\), and a No-match conversation \(in case the user request is misunderstood or unhandled by the conversational engine\).
+
+![Simple FAQ scenario  top-level ](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.12.40.png)
+
+
+
+👉 In our example, we will also need an FAQ conversation to hold all our question-answer pairs.
 
 ### Create your FAQ conversation
 
 [Add another conversation](../adding-conversations.md), by hitting the + button in the navigation bar below.
 
-You are now asked to name your conversation - in our case 'FAQ Conversation'.  You can also set an interpreter, a behaviour and add conditions.  In our case, we will be using the [Default Interpreter.](../interpreters-and-natural-language-understanding/default-interpretor.md)  No need to worry about conditions or behaviours quite yet. You can go ahead and save your 'FAQ Conversation'
+![FAQ conversation settings](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.14.33.png)
 
-![Create an FAQ conversation](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.12.21.png)
+You are now asked to name your conversation - in our case 'FAQ Conversation'.  You can also set an interpreter, a behaviour and add conditions.  In our case, we will be using the [Default Interpreter.](../interpreters-and-natural-language-understanding/default-interpretor.md)  No need to worry about conditions or behaviours quite yet. You can go ahead and save your 'FAQ Conversation'
 
 ### Add scenes, turns and intents
 
@@ -32,9 +44,13 @@ Within your FAQ conversation, you will want to cover different topics such as; r
 
 Each subtopic in OpenDialog can be set up as [a scene](../scenes.md).  Open the FAQ conversation, go ahead and create a few scenes for each subtopic you would like to cover in your FAQ conversation.
 
+![](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.16.47.png)
+
 Give each scene ****[**a starting behaviour,**](../scenes.md) so that the conversation engine will consider them all as 'conversation starters’.  For more in-depth information on behaviour, check out the [linked article](../scenes.md)!
 
 Finally, [**Turns**](../turns-and-intents.md) capture single exchanges. In our FAQ application, these are our question-answer pairs.  Make sure to give each turn [a starting behaviour](../turns-and-intents.md#starting-turns), so that the conversation engine considers them when entering their parent component: the scene.
+
+![](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.18.15.png)
 
 👉 **In our example:** Within the FAQ conversation - set up a 'Returns' scene, with a 'Return purchase' turn.
 
@@ -43,6 +59,8 @@ Now is the time to start adding our questions and answers to the information arc
 ![Intent overview with Request intents and Response intents](../.gitbook/assets/capture-de-cran-2021-06-28-a-18.24.57.png)
 
 👉 Our FAQ conversation is a user-driven conversation.  This means that the participant submitting the request is the User \(versus bot-driven conversation where the app is the one submitting the request\). As so, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Return purchase' turn, set up the request intent and response intent.
+
+In our example, the request intent is the user's question and the response intent the application's answer to that particular question.  Within the 'Return purchase' turn, now set up a request intent and a response intent.
 
 You can set up an intent by clicking on the + symbol in the navigation bar, or directly in the Request Intent box.  A third panel will open in your browser, allowing you to add information to your intent.
 
@@ -64,11 +82,11 @@ Your response intent ends that specific turn, and you need to tell the conversat
 
 Set up a few more scenes, turns, and intents for different question-answer pairs - see the video tutorial for examples.
 
+![Add some extra scenes, turns and intents](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.21.32.png)
+
 ### Edit the 'Welcome Conversation'
 
 In OpenDialog, every scenario comes with a 'Welcome Conversation' out of the box.  You need to edit and personalize this welcome conversation, depending on what you want to achieve.
-
-👉In our example, we are using a user-driven pattern - meaning that the welcome conversation \(which is naturally app-driven\) needs to be adapted to reflect that.
 
 In order to do so, in the Designer, navigate to :
 
@@ -76,12 +94,24 @@ Welcome Conversation &gt; Welcome Scene &gt; Welcome Turn &gt; Intent Overview
 
 ![Navigate to the Welcome Intents in order to edit them](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.37.56.png)
 
-What we want to accomplish is the following :
+Here is the Welcome turn of the Welcome conversation.
+
+![](../.gitbook/assets/image%20%28249%29.png)
 
 * The Application says hello to the user
 * The Application then listens for a user request from the 'FAQ conversation'
 
-To do so, delete the user response intent as this is not what is expected.  Then, click on the application's initial request intent to edit it.  Set up this intent \(called intent.app.welcomeresponseforsimplefaq\) to transition to the 'FAQ Conversation'.
+There is both a request and a response intent, and if you click on either of them none transitions or completes. That means we are going to be stuck in this turn indefinitely. 
+
+👉In our example, we are using a user-driven pattern - meaning that the welcome conversation \(which is naturally app-driven\) needs to be adapted to reflect that.
+
+What we want to accomplish is the following :
+
+Let's fix that by first deleting the response intent \(we don't need it as we handle user responses in the FAQ conversation\).
+
+Click on the response intent and then click on the trash can to delete it. 
+
+Now, let's fix the request intent. We want it to transition to the FAQ conversation so that the conversation engine will consider  the FAQ conversation as the next component. To do so, click on the application's initial request intent to edit it.  Set up this intent \(called intent.app.welcomeresponseforsimplefaq\) to transition to the 'FAQ Conversation'.
 
 ![Set up the transition from the &apos;Welcome request intent&apos; to the &apos;FAQ conversation&apos;](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.39.00.png)
 
