@@ -4,15 +4,13 @@ description: OpenDialog message markup
 
 # Message Markup
 
-As outlined, within the ['Message' section under 'Working with OpenDialog](../messages/)', we currently support a few of the message types through the message editor UI. We are continually adding more and more UI widgets to make it easier for you to create smarter and more engaging conversational applications. 
-
-Below is a full list of the supported messages which can be added via "[Custom Message](../messages/message-type-custom-message.md)" and an explanation of the underlying XML structure. 
+As outlined, within the ['Message' section under 'Working with OpenDialog'](../messages/), we currently support a few of the message types through the message editor UI and we are continually adding more and more UI widgets. However, we do support a wider full list of messages which can be added via '[Custom Message](../messages/message-type-custom-message.md)'.
 
 In OpenDialog the aim for message markup is to provide a single way of writing messages that will then be automatically translated into the appropriate format for the frontend platform that should receive and transmit the message to the user. 
 
-We use a custom XML style markup language for describing message templates. Not all message platforms support all message types, so in some cases the resulting message will differ between platforms. 
+We use a custom XML style markup language for describing message templates. Not all message platforms support all message types, so in some cases the resulting message will differ between platforms. A full explanation of the XML structure for each message type can be seen below.
 
-## Supported Custom Message Types
+## Custom Message Types
 
 ### Text Message
 
@@ -35,21 +33,15 @@ A plain message with only text. Specially formatted links can also be included i
 
 ```
 
-Messages can also contain URLs in the text - that will linkified and there is also support for an explicit link at the end of a message.
+Messages can also contain URLs in the text - that will be linkified. Links like `greenshootlabs.com` in the message text will be turned to links.
 
 ```text
 <message>
     <text-message> 
       You can have a link straing in text like this: hey go to greenshootlabs.com or you can do this:
-      <link new_tab="true">
-        <url>https://docs.opendialog.ai</url>
-        <text>Read the OpenDialog Docs</text>
-      </link>
   </text-message>
 </message>
 ```
-
-Links like `greenshootlabs.com` in the message text will be turned to links as well.
 
 There is no support at the moment for any other formatting such as bold, italics etc
 
@@ -100,7 +92,7 @@ A button message can contain 1 or more buttons for the user to interact with \(s
 
 OpenDialog has built in support for 4 types of button:
 
-#### **Callback buttons**
+#### **1. Callback buttons**
 
 Callback buttons will send a `callback_id` \(and optionally a `value`\) when interacted with by the user that will move the conversation forward. Make sure that any `callback_id` you use in a button response is mapped to an intent in the interpreter engine config.
 
@@ -156,7 +148,7 @@ Here is are examples of a message with one button and two buttons. Clicking on t
 </message>
 ```
 
-#### **Link buttons**
+#### **2. Link buttons**
 
 Links buttons are used to create links to other web pages. The `new_tab` property can be set to true to force the links to open in a new tab. If not set, links default to opening in the same tab
 
@@ -185,7 +177,7 @@ Links buttons are used to create links to other web pages. The `new_tab` propert
 </message>
 ```
 
-#### **Click to Call buttons**
+#### **3. Click to Call buttons**
 
 Click to call buttons are used to create buttons for telephone numbers. They created a standard format `tel:` link that depending on the user's current device and platform will start a phone call to the number given
 
@@ -196,7 +188,7 @@ Click to call buttons are used to create buttons for telephone numbers. They cre
     </button>
 ```
 
-#### **Tab Switch buttons**
+#### **4. Tab Switch buttons**
 
 Tab Switch buttons should only be used for the OD Webchat platform in conjunction with comments and indicates that the button should switch the user to the 'comments' tab
 
@@ -263,7 +255,7 @@ Where buttons can be any of the buttons described above.
 
 ### Form messages
 
-Form messages allow for user to input data in standard web form rather than text entry. When submitted, the values of the entered by the user are sent back along with the defined `callback` All form messages must contain the following elements:
+Form messages allow for user to input data in standard web form rather than text entry. When submitted, the values entered by the user are sent back along with the defined `callback`. All form messages must contain the following elements:
 
 ```text
     <form-message>
@@ -468,25 +460,6 @@ Autocomplete With Suggestions
 
 Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen \(depending on what is supported by each platform\). For webchat full page messages, the user input is also taken over.
 
-#### **Long Text messages**
-
-These messages are for a special case where a user is expected to enter more long form text and gives a larger space to do this. In the case of OD webchat, a Long Text message will hide the current message list and display a large input space with the message text displayed above.
-
-On submission, the user's input is sent as text along with the defined `callback`
-
-Long text messages also allow for custom submit button text, confirmation text that is displayed to the user after submission and an optional character limit to limit what the user can enter
-
-```text
-<long-text-message>
-    <submit_text>Submit Text</submit_text>
-    <callback>callback</callback>
-    <initial_text>$this->initialText</initial_text>
-    <placeholder>$this->placeholder</placeholder>
-    <confirmation_text>$this->confirmationText</confirmation_text>
-    <character_limit>$this->characterLimit</character_limit>
-</long-text-message>
-```
-
 #### **Full Page Rich messages**
 
 Full page rich messages are defined in exactly the same way as standard rich messages, but can optionally define a cancel button to allow the user to move on without interacting.
@@ -518,15 +491,34 @@ Full Page Form messages are defined in exactly the same way as form messages, bu
     </fp-form-message>    
 ```
 
+### **Long Text messages**
+
+These messages are for a special case where a user is expected to enter more long form text and gives a larger space to do this. In the case of OD webchat, a Long Text message will hide the current message list and display a large input space with the message text displayed above.
+
+On submission, the user's input is sent as text along with the defined `callback`
+
+Long text messages also allow for custom submit button text, confirmation text that is displayed to the user after submission and an optional character limit to limit what the user can enter
+
+```text
+<long-text-message>
+    <submit_text>Submit Text</submit_text>
+    <callback>callback</callback>
+    <initial_text>$this->initialText</initial_text>
+    <placeholder>$this->placeholder</placeholder>
+    <confirmation_text>$this->confirmationText</confirmation_text>
+    <character_limit>$this->characterLimit</character_limit>
+</long-text-message>
+```
+
 ## Special Messages
 
 The messages below do not act like standard messages that appear in a message list and history, but perform specific actions.
 
 ### CTA messages
 
-CTA messages are used to display content in the minimized chatbot and will only work with the OpenDialog webchat platform. Each time a CTA message is sent, the CTA text in the minimized chatbot header is updated.
+CTA messages are used to display content in the minimised chatbot and will only work with the OpenDialog webchat platform. Each time a CTA message is sent, the CTA text in the minimiaed chatbot header is updated.
 
-CTA messages can only contain text
+CTA messages can only contain text:
 
 ```text
 <cta-messsage>
