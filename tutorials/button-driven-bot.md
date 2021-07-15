@@ -338,5 +338,3 @@ Let's recap the main points:
 
 While the default callback interpreter is essential for button-driven interaction and can help with simple prototyping, but for actual NLU we need to use an [NLU interpreter which we discuss here](../interpreters-and-natural-language-understanding/dialogflow-interpreter.md). 
 
-
-
