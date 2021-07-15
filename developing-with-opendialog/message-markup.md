@@ -1,8 +1,12 @@
+---
+description: OpenDialog message markup
+---
+
 # Message Markup
 
 As outlined, within the ['Message' section under 'Working with OpenDialog](../messages/)', we currently support a few of the message types through the message editor UI. We are continually adding more and more UI widgets to make it easier for you to create smarter and more engaging conversational applications. 
 
-Below is a full list of the supported messages which can be added via "Custom Message" and an explanation of the underlying XML structure. 
+Below is a full list of the supported messages which can be added via "[Custom Message](../messages/message-type-custom-message.md)" and an explanation of the underlying XML structure. 
 
 In OpenDialog the aim for message markup is to provide a single way of writing messages that will then be automatically translated into the appropriate format for the frontend platform that should receive and transmit the message to the user. 
 
