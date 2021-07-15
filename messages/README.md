@@ -1,11 +1,8 @@
 ---
-description: >-
-  A tutorial to guide you through the process of building a button-driven (or
-  guided) conversation and a quick view of how you can test natural language
-  conversations.
+description: Working with OpenDialog message types through the UI.
 ---
 
-# Designing a basic flow and controlling with buttons
+# Messages
 
 We outlined the basics of [managing messages](../getting-started-1/getting-started-with-opendialog/messages.md) and how they relate to intents within the getting started with OpenDialog section. We will use this section to dive further into the different messages types we currently support through the message editor UI. We are continually adding more and more UI widgets to make it easier for you to create smarter and more engaging conversational applications. 
 
@@ -60,44 +57,14 @@ We will dive into the different message types that are available via the UI indi
 
 ### 5. Message types
 
-Below is the full list of message types that are available through the message editor UI. We are continually adding more and more UI widgets to make it easier for you to create smarter and more engaging conversational applications. 
+Below is the full list of message types that are currently available through the message editor UI. We are continually adding more and more UI widgets to make it easier for you to create smarter and more engaging conversational applications. 
+
+* [Text message](message-type-text-block.md)
+* [Image message](message-type-image-block.md)
+* [Button message](message-type-button-block.md)
+* [Custom message](message-type-custom-message.md) 
 
 {% hint style="warning" %}
-If you can not find the message type you require below, you can find a full list of supported messages not available via the UI  through "Custom Message" and an explanation of the underlying XML structure [here](../developing-with-opendialog/message-markup.md).
+If you can not find the message type you require above, you can find a full list of supported messages not available via the UI through "Custom Message" and an explanation of the underlying XML structure [here](../developing-with-opendialog/message-markup.md).
 {% endhint %}
-
-#### Text message
-
-A text message is a plain text message which just includes text. You can add as many text blocks to your message as required. The text block only accepts plain text. If you want to include a link, you can do this by pasting the full URL, this will then be shown as a clickable link in webchat.  
-
-![Message editor: Text messages](../.gitbook/assets/image%20%28300%29.png)
-
-#### Image message
-
-An image message allows you to display an image and include an optional link behind it to make it clickable. You have the option to enable this to open in a new tab or not. To add an image you will need to  host the image somewhere; either on your website or in an Amazon S3 bucket, then paste the URL in the 'Image source' field. See the example below.
-
-![Message editor: Image message.](../.gitbook/assets/image%20%28296%29.png)
-
-#### Button message
-
-The button message type allows you to create button driven applications like [this tutorial \(Designing a basic flow and controlling with buttons\).](button-driven-bot.md) 
-
-You can add only one button message type to each message, however, within that you can add as many buttons as you require. You can do this by clicking on the + next to the message you require the button to appear afterwards. Right now you can not reorder the buttons, so they need to be added in the right order. 
-
-![Message editor: Button message type](../.gitbook/assets/image%20%28288%29.png)
-
-Within the button block, you can add some plain text \(_if you've not already using the text block_\) and then edit/add new buttons. Within each button you can add:
-
-* **Button text:** This is the text that is visible on the button
-* **Button functionality:** This is the action that you would like the button to perform e.g. open an external URL or transition the user to another intent \(you'll have seen this in the [buttontutorial](button-driven-bot.md)\).
-
-
-
-
-
-#### Custom message 
-
-
-
-
 

@@ -6,7 +6,7 @@ The default interpreter that comes out of the box with OpenDialog is useful prim
 
 ### Button-driven \(or guided\) conversations
 
-When we build a message with a button we can instruct the button to send the name of a specific intent to the OpenDialog conversation engine. Within the[ message markup](../developing-with-opendialog/messages/message-markup.md) this intent is defined within `callback` tag. 
+When we build a message with a button we can instruct the button to send the name of a specific intent to the OpenDialog conversation engine. Within the[ message markup](../developing-with-opendialog/message-markup.md) this intent is defined within `callback` tag. 
 
 When the user clicks a button the WebChat widget will send to the conversation engine an event that contains the value within the callback tag. The conversation engine will then attempt to match that callback to the value of a specific intent within your scenario \(based on the overall conversational state\). 
 

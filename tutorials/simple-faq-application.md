@@ -123,7 +123,7 @@ You're almost there!  In order to reflect these changes, and also do some nice w
 
 Messages are associated with what we call "outgoing intents". Outgoing intents are intents that the application has. They are sent to the user, but of course, the user does not receive an intent. The user receives a message that carries the application's intent. Just as the application receives a message and attempts to map it to an intent. The relationship is mirrored, which makes it consistent and coherent. 
 
-Now navigate to [the message editor](../messages.md) - either from the sidebar menu or directly from within the designer and the intent you wish to edit the message for - using the 'bubble with a pen inside' icon in the action bar.
+Now navigate to [the message editor](../messages/) - either from the sidebar menu or directly from within the designer and the intent you wish to edit the message for - using the 'bubble with a pen inside' icon in the action bar.
 
 ![Use the &apos;Edit Message&apos; icon in the navigation bar to edit outgoing messages](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.36.26.png)
 
