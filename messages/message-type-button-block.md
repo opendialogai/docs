@@ -25,7 +25,7 @@ Let's focus on transitioning to another intent _\(Simulate user intent\)_ as thi
 
 To create a new one, you need to open the Conversation where the new intent needs to be located, click on 'Create new intent...' and then add the name and finally select the Scene then Turn it should live in \(you can also create Scenes and Turns if required\). Remember to click on ✔ to save before closing.
 
-![Message editor: Create new intent.](../.gitbook/assets/image%20%28325%29.png)
+![Message editor: Create new intent.](../.gitbook/assets/image%20%28316%29.png)
 
 {% hint style="info" %}
 **Reminder:** If you've created a new intent etc. Remember to go back into the Designer after you've saved the message to fine tune the settings of your new Intent, Scene and Turn. You will need to add behaviours, conditions and/or transitions.

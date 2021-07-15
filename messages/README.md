@@ -24,7 +24,7 @@ There are two different ways to find and then edit messages within OpenDialog.
 
 **Route 2:** Through the 'Message Editor' link in the left-hand navigation. Through this route, you will need to first select the scenario that you want to edit/add messages for before then been shown all the messages that exist within that Scenario.
 
-![Message Editor: Scenario selector](../.gitbook/assets/image%20%28305%29.png)
+![Message Editor: Scenario selector](../.gitbook/assets/image%20%28302%29%20%281%29.png)
 
 ### 2. Finding specific messages
 
@@ -32,7 +32,7 @@ Once you've opened up the Message Editor, depending on the chosen route to enter
 
 To help with understanding which intent\(s\) you're viewing, at the top of the screen you can see a breadcrumb style list of links under the title 'Conversational context'. These outline which group of intent you're seeing. They are also clickable to help jump back up a level to view more intents i.e. if you're viewing a Turn you can jump back to view all Intents at the Conversation level.
 
-![Message editor: Conversational context visible ](../.gitbook/assets/image%20%28307%29.png)
+![Message editor: Conversational context visible ](../.gitbook/assets/image%20%28303%29%20%281%29.png)
 
 ### 3. Editing a specific message
 
