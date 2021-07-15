@@ -77,7 +77,15 @@ Yes, Intents have behaviours as well! Intents currently just have the _COMPLETIN
 
 ### Transitions
 
-Finally, intents can also cause transitions. What this means is that if the intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there.
+Intents can also cause transitions. What this means is that if the intent is matched it will cause a transition to another Conversation or Scene, and the Conversational State will pick up from there.
+
+### **Advanced Settings**
+
+Within each intent you can add the following advanced settings to an intent:
+
+* **Expected Attributes**: You can add Attributes to an intent, by adding them it tells the system to save the specified attributes in the given context e.g. `First-name` in the `session` context. If not set, attributes will always be saved in the `user` context. You can read more about [Attributes here](developing-with-opendialog/attributes-and-contexts/).
+* **Conditions**: You can add conditions to intents to only show specific intent based on certain criteria. If a condition that has been added is met, then it will show the intent e.g. if we only want to show this intent to new users then we would set a condition such as `seconds_since_last_seen`with the operation set to `Less Than` and the value set to `0` - Meaning only user that have never interacted with the application will see this intent. _More information will soon be available on Conditions._
+* **Actions**: We can also add actions that will have been define in the 'Action' section. As so, if this intent is selected, the named action will be run. _More information will soon be available on Actions._
 
 ## Reserved Intent Names 
 
