@@ -15,9 +15,7 @@ In this tutorial we are going to have a look at how we can:
 
 The first step is to create a new scenario. We will call it "My first button-driven scenario".
 
-
-
-
+![](../.gitbook/assets/image%20%28361%29.png)
 
 ### 2. Setting up the top level conversations
 
@@ -63,7 +61,7 @@ Save the turn and you will be back at the scene level. Click into the turn so th
 
 Ok, now we can click the yellow "+" button to add intents to our turn. 
 
-![](../.gitbook/assets/image%20%28369%29.png)
+![](../.gitbook/assets/image%20%28370%29.png)
 
 The request intent will be from the user, requesting button-driven interaction. Click the plus sign on the "Request Intents" block to add it.
 
@@ -71,11 +69,11 @@ The request intent will be from the user, requesting button-driven interaction. 
 
 Once you hit save you should see the following:
 
-![](../.gitbook/assets/image%20%28371%29.png)
+![](../.gitbook/assets/image%20%28372%29.png)
 
 Now, let's add the application response intent. Click on the "+" sign in the response intents to add that.
 
-![](../.gitbook/assets/image%20%28377%29.png)
+![](../.gitbook/assets/image%20%28378%29.png)
 
 Great! That handles the introductory bit of the interaction for the button-driven conversation. However, we also want to be able to click again \(so we need to capture that user intent\) and we will also want to switch to natural language style interaction \(rewatch the video for a reminder of the types of interactions we are after\). 
 
@@ -115,7 +113,7 @@ Click on the "Switch to NLU" intent and add a transition to the conversation.
 
 We can transition to Conversations, Scene or Turns and the conversation engine will pick up things from there to figure out what intents will match. Add a transition to the NLU Conversation. Once you save the transition change you will see a link next to the transition and you can follow that to go to the conversation. When a user selects to Switch to NLU the conversation engine will take us at the _top_ of the NLU conversation and will look for a starting scene and turn that it can travel through down to an intent that could be a response from the application to the Switch to NLU intent.
 
-![](../.gitbook/assets/image%20%28370%29.png)
+![](../.gitbook/assets/image%20%28371%29.png)
 
 ### 4. NLU Conversation
 
@@ -151,7 +149,7 @@ With the participants switched we can add the application message
 
 Save the intent.
 
-![](../.gitbook/assets/image%20%28361%29.png)
+![](../.gitbook/assets/image%20%28362%29.png)
 
 Then we will add another starting turn with a user initiative - this will give us the other possible way into the conversation.
 
@@ -173,7 +171,7 @@ So let's add a turn that is called "NLU Lyrics" in our welcome scene to capture 
 
 ![Create the NLU Lyrics turn](../.gitbook/assets/image%20%28376%29.png)
 
-![Add a user intent called radio ga ga](../.gitbook/assets/image%20%28363%29.png)
+![Add a user intent called radio ga ga](../.gitbook/assets/image%20%28364%29.png)
 
 ![And an application intent called radio goo goo](../.gitbook/assets/image%20%28352%29.png)
 
@@ -187,11 +185,11 @@ Before we add the intent, however, we are going to go back to our button-driven 
 
 So our "Welcome to Buttons" scene now actually has three turns
 
-![](../.gitbook/assets/image%20%28373%29.png)
+![](../.gitbook/assets/image%20%28374%29.png)
 
 Let's add an intent in that "Coming from NLU" turn.
 
-![](../.gitbook/assets/image%20%28375%29.png)
+![](../.gitbook/assets/image%20%28377%29.png)
 
 Nice. Now, back to our NLU conversation to add the intent that will take us to the turn we just created with a transition.
 
@@ -209,7 +207,7 @@ We can test all this by going to the top of the scenario and hitting the play bu
 
 Let's try... while quite a few options show up the first event from the webchat will be the "intent.core.welcome" - if we select that we see that we get the default welcome message as an option and after we select that we get the user's first response as an option... and that is it? Hold on! We are stuck between those two messages!
 
-![](../.gitbook/assets/image%20%28366%29.png)
+![](../.gitbook/assets/image%20%28367%29.png)
 
 Oops! That's not quite right, is it? We can't actually get out of the welcome conversation yet. Come to think of it we haven't adjusted our welcome conversation at all! Let's click in and see what changes we would need to make. 
 
@@ -257,11 +255,11 @@ You should see just one message, click on it so we can start editing it.
 
 As you can see it already has a button associated with it. We are going to change it to drive us to the various conversation we want to get to. Click the edit button to go into the message and replace the "Ok" with "Drive with a button". Then in the button functionality we want to "Simulate user intent".
 
-![](../.gitbook/assets/image%20%28367%29.png)
+![](../.gitbook/assets/image%20%28369%29.png)
 
 Then select the "requestButtonDriving" intent from within the Button-Driven Conversation.
 
-![](../.gitbook/assets/image%20%28362%29.png)
+![](../.gitbook/assets/image%20%28363%29.png)
 
 Also add a second button that will take us to the NLU conversation.
 
@@ -273,13 +271,13 @@ Great. That takes care of the welcome conversation let us move to the button-dri
 
 You should see three messages that we need to deal with here. 
 
-![](../.gitbook/assets/image%20%28364%29.png)
+![](../.gitbook/assets/image%20%28366%29.png)
 
 The first one is the welcome message that will then invite us to "Click away" with a button, the second will invite us to either switch or stick to buttons and the third will welcome us back to buttons after the NLU conversation. Let's dive into each one.
 
 For the first one we removed the text block \(click on the "X" next to the message\) and added a button block with the same text but then a button called "Click away" and a simulated intent of "Click away".
 
-![](../.gitbook/assets/image%20%28374%29.png)
+![](../.gitbook/assets/image%20%28375%29.png)
 
 Save and then navigate back to message overview and click on the "Welcome to buttons" scene to get the three messages.
 
@@ -293,7 +291,7 @@ As you can see the "Stick to buttons" button just simulates the "Click away" int
 
 Ok. You should be getting the hand of this by now. Last one to go. The welcome back to buttons message. This one will also give us a button to click away. 
 
-![](../.gitbook/assets/image%20%28372%29.png)
+![](../.gitbook/assets/image%20%28373%29.png)
 
 We are done with the Button-driven conversation so let's head to the NLU one and fix messages there.
 
@@ -301,7 +299,7 @@ We are done with the Button-driven conversation so let's head to the NLU one and
 
 Just two messages to content with here. The fist one we want to enhance so that it invites the user to sing!
 
-![](../.gitbook/assets/image%20%28378%29.png)
+![](../.gitbook/assets/image%20%28379%29.png)
 
 The second one gives us the choice to go back to the button-driven conversation or sing again.
 
