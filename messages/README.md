@@ -1,8 +1,10 @@
 ---
-description: Working with OpenDialog message types through the UI.
+description: >-
+  Working with the OpenDialog message edit and the available messages types
+  through the UI.
 ---
 
-# Messages
+# Messages & Message Editor
 
 We outlined the basics of [managing messages](../getting-started-1/getting-started-with-opendialog/messages.md) and how they relate to intents within the getting started with OpenDialog section. We will use this section to dive further into the different messages types we currently support through the message editor UI. We are continually adding more and more UI widgets to make it easier for you to create smarter and more engaging conversational applications. 
 

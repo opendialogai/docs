@@ -40,7 +40,7 @@
 * [Scenes](scenes.md)
 * [Turns and Intents](turns-and-intents.md)
 * [Conversation Simulator](conversation-simulator.md)
-* [Messages](messages/README.md)
+* [Messages & Message Editor](messages/README.md)
   * [Message type: Text block](messages/message-type-text-block.md)
   * [Message Type: Image block](messages/message-type-image-block.md)
   * [Message type: Button block](messages/message-type-button-block.md)
