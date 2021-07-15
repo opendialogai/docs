@@ -9,6 +9,12 @@ description: >-
 
 In this tutorial we are going to have a look at how we can:
 
+* design a flow with multiple conversations
+* move through that flow using buttons
+* introduce natural language interactions for prototyping before we connect NLU interpreters.
+
+For this tutorial we are going to create this conversation experience:
+
 {% embed url="https://youtu.be/picC-Hgjamo" %}
 
 ### 1. Create a new scenario
