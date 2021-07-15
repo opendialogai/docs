@@ -23,7 +23,7 @@ There are multiple ways to find and then edit messages within OpenDialog.
 
 **Route 2:** Through the 'message editor' menu item in the left-hand navigation. Through this route, you will need to first select the scenario that you want to edit/add messages for. 
 
-![Message Editor: Scenario selector](../.gitbook/assets/image%20%28300%29.png)
+![Message Editor: Scenario selector](../.gitbook/assets/image%20%28302%29.png)
 
 ### 2. Finding specific messages
 
@@ -31,7 +31,7 @@ Once you've opened up the message editor, depending on the chosen route to enter
 
 To help with understanding which intent you're viewing, at the top of the screen you can see a list of links under the title 'Conversational context'. These outline which group of intent you're seeing. They are also clickable to help jump back to view more intents.
 
-![Message editor: Conversational context visible ](../.gitbook/assets/image%20%28301%29.png)
+![Message editor: Conversational context visible ](../.gitbook/assets/image%20%28303%29.png)
 
 ### 3. Editing a specific message
 
@@ -70,7 +70,7 @@ If you can not find the message type you require below, you can find a full list
 
 A text message is a plain text message which just includes text. You can add as many text blocks to your message as required. The text block only accepts plain text. If you want to include a link, you can do this by pasting the full URL, this will then be shown as a clickable link in webchat.  
 
-![Message editor: Text messages](../.gitbook/assets/image%20%28302%29.png)
+![Message editor: Text messages](../.gitbook/assets/image%20%28304%29.png)
 
 #### Image message
 
@@ -84,7 +84,7 @@ The button message type allows you to create button driven applications like [th
 
 You can add only one button message type to each message, however, within that you can add as many buttons as you require. You can do this by clicking on the + next to the message you require the button to appear afterwards. Right now you can not reorder the buttons, so they need to be added in the right order. 
 
-![Message editor: Button message type](../.gitbook/assets/image%20%28288%29.png)
+![Message editor: Button message type](../.gitbook/assets/image%20%28290%29.png)
 
 Within the button block, you can add some plain text \(_if you've not already using the text block_\) and then edit/add new buttons. Within each button you can add:
 

@@ -8,7 +8,7 @@ The button message type allows you to create button driven applications like [th
 
 You can add only one button message type to each message, however, within that you can add as many buttons as you require. You can do this by clicking on the + next to the message you require the button to appear afterwards. Right now you can not reorder the buttons, so they need to be added in the right order. 
 
-![Message editor: Button message type](../.gitbook/assets/image%20%28288%29.png)
+![Message editor: Button message type](../.gitbook/assets/image%20%28290%29.png)
 
 Within the button block, you can add some plain text \(_if you've not already used the text block_\) and then edit/add new buttons. Within each button you can add:
 
@@ -25,7 +25,7 @@ Let's focus on transitioning to another intent _\(Simulate user intent\)_ as thi
 
 To create a new one, you need to open the Conversation where the new intent needs to be located, click on 'Create new intent...' and then add the name and finally select the Scene then Turn it should live in \(you can also create Scenes and Turns if required\). Remember to click on ✔ to save before closing.
 
-![Message editor: Create new intent.](../.gitbook/assets/image%20%28314%29.png)
+![Message editor: Create new intent.](../.gitbook/assets/image%20%28316%29.png)
 
 ### **Button behaviours**
 

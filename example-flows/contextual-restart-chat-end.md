@@ -12,7 +12,7 @@ The webchat widget comes with 2 things to help conversation designers in this si
 
 Out of the box, these buttons are not visible in the widget and must be turned on in the Interface Settings page:
 
-![Restart and Chat End buttons can be turned on in Interface Settings](../.gitbook/assets/image%20%28308%29.png)
+![Restart and Chat End buttons can be turned on in Interface Settings](../.gitbook/assets/image%20%28312%29.png)
 
 ![Webchat widget with End Chat and Restart buttons turned on](../.gitbook/assets/image%20%28297%29.png)
 
@@ -34,7 +34,7 @@ The pattern is similar to the [Contextual No Match pattern](https://docs.opendia
 
 When you create a new scenario, a `Trigger Conversation` is created for you that handles the `WELCOME` event from webchat as well as the global restart
 
-![Global Restart intent in the Trigger Conversation](../.gitbook/assets/image%20%28303%29.png)
+![Global Restart intent in the Trigger Conversation](../.gitbook/assets/image%20%28305%29.png)
 
 With this in place, any time a user clicks the restart button, they will hit the `Trigger Conversation` and this intent will transition them to the `Welcome Turn` in the `Welcome Conversation`. You should update this to suit your needs.
 
@@ -59,7 +59,7 @@ Notice that there is a Turn named `Scene Restart` - the idea of this Turn is to 
 
 In this case, if the user restarts the flow at any point in this scene, we would want to route them back to the `Get Name Turn`. We can set up 1 intent with a transition to do this for us
 
-![The Scene Level Restart](../.gitbook/assets/image%20%28307%29.png)
+![The Scene Level Restart](../.gitbook/assets/image%20%28311%29.png)
 
 {% hint style="success" %}
 Notice the intent is named `intent.core.SceneRestart` as we want to capture all restarts within this scene
