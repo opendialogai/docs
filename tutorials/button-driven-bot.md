@@ -23,7 +23,7 @@ There are multiple ways to find and then edit messages within OpenDialog.
 
 **Route 2:** Through the 'message editor' menu item in the left-hand navigation. Through this route, you will need to first select the scenario that you want to edit/add messages for. 
 
-![Message Editor: Scenario selector](../.gitbook/assets/image%20%28302%29.png)
+![Message Editor: Scenario selector](../.gitbook/assets/image%20%28305%29.png)
 
 ### 2. Finding specific messages
 
@@ -31,7 +31,7 @@ Once you've opened up the message editor, depending on the chosen route to enter
 
 To help with understanding which intent you're viewing, at the top of the screen you can see a list of links under the title 'Conversational context'. These outline which group of intent you're seeing. They are also clickable to help jump back to view more intents.
 
-![Message editor: Conversational context visible ](../.gitbook/assets/image%20%28303%29.png)
+![Message editor: Conversational context visible ](../.gitbook/assets/image%20%28307%29.png)
 
 ### 3. Editing a specific message
 
@@ -70,7 +70,7 @@ If you can not find the message type you require below, you can find a full list
 
 A text message is a plain text message which just includes text. You can add as many text blocks to your message as required. The text block only accepts plain text. If you want to include a link, you can do this by pasting the full URL, this will then be shown as a clickable link in webchat.  
 
-![Message editor: Text messages](../.gitbook/assets/image%20%28304%29.png)
+![Message editor: Text messages](../.gitbook/assets/image%20%28308%29.png)
 
 #### Image message
 

@@ -20,7 +20,7 @@ Click on the "Create New Scenario" button, and you will be presented with the Ne
 
 Once you click on "Create Scenario", you are dropped in the scenario with three default conversations - the "Trigger" conversation, the "Welcome Conversation" and the "No Match Conversation". 
 
-![Initial conversations for most OpenDialog Scenarios](../../.gitbook/assets/image%20%28253%29.png)
+![Initial conversations for most OpenDialog Scenarios](../../.gitbook/assets/image%20%28319%29.png)
 
 The "Trigger Conversation" is the one that will be "activated" when a user first interacts \(with a webchat interface this is the conversation that gets _triggered_ when the user loads the webchat widget\). 
 
