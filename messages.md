@@ -12,5 +12,3 @@ If you can not find the message type you require below, you can find a full list
 Message types to be added.
 {% endhint %}
 
-
-

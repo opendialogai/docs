@@ -22,5 +22,12 @@ In order for us to be able to react to this intent we need to set up a Turn that
 
 You can then deal with the No Match situation in whatever way will best fit the context at hand.
 
- 
+As well as the `intent.core.TurnNoMatch` intent, the OpenDialog conversation engine will work up a stack looking for matching no match intents from Turn up until Conversation and then globally. The logic is as follows:
+
+* If there is no matching intent for what the user just entered, the conversation engine generates a `intent.core.TurnNoMatch` intent
+* If no `intent.core.TurnNoMatch` intent is found, the conversation engine generates a `intent.core.SceneNoMatch`
+* If no `intent.core.SceneNoMatch` is found, the conversation engine generates a `intent.core.ConversationNoMatch` intent
+* If this is not found, a global `intent.core.NoMatch` is looked for. 
+
+**NB Any new scenario you create in OpenDialog will have a generic NoMatch intent generated for you. If this has been deleted or removed, things might not work as expected.**
 

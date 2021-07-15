@@ -54,6 +54,7 @@
 * [Introduction](example-flows/introduction.md)
 * [Contextual Help Pattern](example-flows/contextual-help.md)
 * [Contextual No Match Pattern](example-flows/contextual-no-match-pattern.md)
+* [Contextual Restart / Chat End](example-flows/contextual-restart-chat-end.md)
 * [Contextual FAQ Pattern](example-flows/the-contextual-faq-pattern.md)
 
 ## Developing With OpenDialog
