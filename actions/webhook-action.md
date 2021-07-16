@@ -24,7 +24,7 @@ Once this is saved, you'll want to copy the webhook's URL \(from the "Your uniqu
 
 After creating the action, you need to make it active like this:
 
-![](../.gitbook/assets/image%20%28317%29.png)
+![](../.gitbook/assets/image%20%28317%29%20%281%29.png)
 
 We then need to add it to the desired intent, along with desired context mappings for the input and output attributes. In this example we've added the action to the response intent of the "Welcome Turn". Our example uses the following context mappings:
 

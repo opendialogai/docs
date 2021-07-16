@@ -70,6 +70,7 @@
 * [Attributes and Contexts](developing-with-opendialog/attributes-and-contexts/README.md)
   * [Creating a Custom Attribute](developing-with-opendialog/attributes-and-contexts/creating-a-custom-attribute.md)
   * [Creating a Custom Context](developing-with-opendialog/attributes-and-contexts/contexts.md)
+* [Conditions](developing-with-opendialog/conditions.md)
 * [Message Markup](developing-with-opendialog/message-markup.md)
 * [Conversational Interfaces](developing-with-opendialog/interfaces/README.md)
   * [WebChat](developing-with-opendialog/interfaces/webchat/README.md)
@@ -77,8 +78,7 @@
     * [WebChat API](developing-with-opendialog/interfaces/webchat/webchat-api.md)
     * [Load Webchat within page Element](developing-with-opendialog/interfaces/webchat/load-webchat-within-a-page-element.md)
 * [Interpreters](developing-with-opendialog/interpreters.md)
-* [Actions](developing-with-opendialog/actions/README.md)
-  * [Webhook action](developing-with-opendialog/actions/webhook-action.md)
+* [Actions](developing-with-opendialog/actions.md)
 
 ## Reference
 
