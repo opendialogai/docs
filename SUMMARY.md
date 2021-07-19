@@ -54,6 +54,7 @@
 * [OpenDialog Account Management](opendialog-account-management/README.md)
   * [Create and manage users](opendialog-account-management/create-and-manage-users.md)
   * [Delete OpenDialog account](opendialog-account-management/delete-opendialog-account.md)
+  * [Account Security](opendialog-account-management/account-security.md)
 * [Launching Your Application](launching-your-application.md)
 
 ## Conversational Patterns <a id="example-flows"></a>
