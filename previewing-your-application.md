@@ -4,20 +4,22 @@ description: Where and how to preview you application within OpenDialog.
 
 # Previewing your application
 
-Within OpenDialog we enable you to preview your application within OpenDialog, meaning you can test and validate the conversational experience before deploying your application. Right now this preview focuses on Webchat \(AKA Chatbot\).
+Within OpenDialog we enable you to preview your application within OpenDialog, meaning you can test and validate the conversational experience before deploying your application. 
 
-If you've already completed one of our tutorials \(see below\) then you'll have already been and played with the preview page.
+Right now the Preview page only allows you to preview the OpenDialog Webchat \(AKA Chatbot\). As more interfaces are released in Q2 & Q3 this page will be updated to cover those.
+
+If you've already completed one of our tutorials \(see below\) then you'll have already interacted with our preview page.
 
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
 
-This page of our documentation focuses on giving you more insight and guidance around how to utilise the page and get the most of it whilst you're building out your conversational applications.
+Even if you've interacted with the Preview page, this page of our documentation focuses on giving you some in-depth guidance around how to utilise the page, it's features and get the most of it whilst you're building out your conversational applications.
 
 ### Selecting your Scenario
 
-When you first click through the 'Preview' page from the navigation you are asked to select the Scenario you would like to preview. Within the drop down list you will see ALL active scenario's - so if the one you want preview is missing, it's likely to be in draft mode. If so, head back to the Designer and switch it from 'Draft' to 'Active'.
+When you first click through to the 'Preview' page from the navigation you will be asked to select the Scenario you would like to preview. Within the drop down list you will see only active scenario's - so if the one you want preview is missing, it's likely to be in draft mode. If so, head back to the Designer and switch it from 'Draft' to 'Active'.
 
-Once your Scenario is active you then see it in the drop list to select.
+Once your Scenario is active you will then see it in the drop list to select.
 
 ![Preview: Scenario select](.gitbook/assets/image%20%28389%29.png)
 
@@ -25,7 +27,7 @@ You will then see that our Webchat appears displaying your Scenario welcome conv
 
 ### Conversation Context
 
-Whilst you interact with the conversation application you will notice that the conversational context updates to show you the intent which is currently being displayed. The links are clickable and will take you through to the intent so that you can make any changes as required.
+Whilst you interact with Webchat you will notice that the Conversational Context updates to show you the intent _\(and where it's positioned in your Scenario\)_ that is currently being displayed. The links are clickable and will take you through to the intent so that you can make any changes as required.
 
 ![](.gitbook/assets/conversational_context.gif)
 
@@ -35,7 +37,7 @@ Whilst you interact with the conversation application you will notice that the c
 
 We won't go into what we mean by Attributes and Context in this section. However, if you'd like to learn more you can so [here](developing-with-opendialog/attributes-and-contexts/).
 
-Within the preview page, you're able to simulate attributes which you might have set as conditions against [messages](messages/#6-message-conditions), [Intents & Turns](turns-and-intents.md#advanced-settings), Scene, Conversation or Scenario's. You can do this by using the fields under 'Set Custom Attributes'. Underneath that is the list of User and Global context available - which will include any custom items that you add.
+Within the preview page, you're able to simulate attributes which you might have set as conditions against [messages](messages/#6-message-conditions), [Intents & Turns](turns-and-intents.md#advanced-settings), Scene, Conversation or Scenario's. You can simulate this this by using the fields under 'Set Custom Attributes'. Underneath that is the list of 'User' and 'Global' contexts available - which will include any custom items that you add.
 
 **Attribute Example:**
 
