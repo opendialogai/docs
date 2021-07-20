@@ -49,7 +49,7 @@
   * [Default Interpreter](interpreters-and-natural-language-understanding/default-interpretor.md)
   * [Dialogflow Interpreter](interpreters-and-natural-language-understanding/dialogflow-interpreter.md)
   * [LUIS Interpreter](interpreters-and-natural-language-understanding/luis-interpreter.md)
-  * [Q&A Interpreter](interpreters-and-natural-language-understanding/qna-interpreter.md)
+  * [QnA Interpreter](interpreters-and-natural-language-understanding/qna-interpreter.md)
 * [Actions](actions/README.md)
   * [Webhook action](actions/webhook-action.md)
 * [Previewing your application](previewing-your-application.md)

@@ -79,7 +79,7 @@ If the test returns an error, please review the LUIS settings that you used to c
 
 ## Publishing your interpreter
 
-You will need to publish you interpreter before you can use it in your Scenario. To do this you need go to the interpreter landing page \(`<instance-name>.cloud.opendialog.ai/admin/interpreters`\) and then activate the interpreter by turning the slider green.
+You will need to publish your interpreter before you can use it in your Scenario. To do this you need go to the interpreter landing page \(`<instance-name>.cloud.opendialog.ai/admin/interpreters`\) and then activate the interpreter by turning the slider green.
 
 ## Use the interpreter for an intent
 
@@ -105,5 +105,5 @@ After the webchat widget loads, if you send a message such as "i want to order c
 
 
 
-Well done, you've now got your Luis instance integrated with your conversational application. 
+Well done, you've now got your LUIS instance integrated with your conversational application. 
 
