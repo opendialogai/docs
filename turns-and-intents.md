@@ -93,11 +93,15 @@ Some intents have special meanings in OpenDialog so it's worth highlighting thos
 
 ### intent.core.welcome
 
-This intent is mapped to an event from webchat - it is called whenever webchat loads for a new user and provides a way to kickstart the conversation. It is automatically set as the Request Intent of the Welcome Scene's Welcome Turn. 
+This intent is mapped to an event from webchat - it is called whenever webchat loads for a new user and provides a way to kickstart the conversation. It is automatically set as a Request Intent of the Welcome Scene's Welcome Turn. 
 
-### intent.app.end\_chat
+### intent.core.restart
 
-This intent is fired when users click on the "End Chat" button of webchat. 
+This intent is fired when users click on the "Restart" button in webchat. It is automatically set as a Request Intent of the Welcome Scene's Welcome Turn. 
+
+### intent.core.endChat
+
+This intent is fired when users click on the "End Chat" button in webchat. 
 
 ### intent.core.TurnNoMatch
 
