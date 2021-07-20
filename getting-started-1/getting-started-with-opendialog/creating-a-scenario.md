@@ -22,7 +22,7 @@ Once you click on "Create Scenario", you are dropped in the scenario with three 
 
 ![Initial conversations for most OpenDialog Scenarios](../../.gitbook/assets/image%20%28319%29.png)
 
-The "Trigger Conversation" is the one that will be "activated" when a user first interacts \(with a webchat interface this is the conversation that gets _triggered_ when the user loads the webchat widget\). 
+The "Trigger Conversation" is the one that will be "activated" when a user first interacts \(with a webchat interface this is the conversation that gets _triggered_ when the user loads the webchat widget\) and then transfer the user to the Welcome Conversation \(see below\). 
 
 The Welcome Conversation is where we start interacting with the user, welcoming them to this conversational application. 
 
