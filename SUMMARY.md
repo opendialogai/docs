@@ -78,6 +78,7 @@
 * [Message Markup](developing-with-opendialog/message-markup.md)
 * [Conversational Interfaces](developing-with-opendialog/interfaces/README.md)
   * [WebChat](developing-with-opendialog/interfaces/webchat/README.md)
+    * [Webchat Interface Settings](developing-with-opendialog/interfaces/webchat/webchat-interface-settings.md)
     * [User Tracking](developing-with-opendialog/interfaces/webchat/user-tracking.md)
     * [WebChat API](developing-with-opendialog/interfaces/webchat/webchat-api.md)
     * [Load Webchat within page Element](developing-with-opendialog/interfaces/webchat/load-webchat-within-a-page-element.md)
