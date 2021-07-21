@@ -6,10 +6,6 @@ description: >-
 
 # OpenDialog
 
-{% hint style="info" %}
-The 1.0 version is currently in private beta and this documentation is in beta as well 🙂 - please [get in touch](https://www.opendialog.ai/contact-us/) for a demo, if you want to join our private beta or simply to sign-up to be notified when the final release will be ready. 
-{% endhint %}
-
 **OpenDialog** is a conversational application management platform. 
 
 ![OpenDialog](.gitbook/assets/opendialog-updatedpresentationbold.png)
