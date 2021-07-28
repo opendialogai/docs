@@ -19,8 +19,8 @@ These are triggered by the user open/closing or interacting with the chat window
 * `chat_displayed` -  Triggered when the chat is first displayed to the user
 * `chatbot_minimized`-  Triggered when the chatbot is minimised
 * `chatbot_maximized`-  Triggered when the chatbot is opened
-* `download_chat_transcript`-  Triggered when the user download the transcript, if the option if available.
-* `end_chat` -  Triggered when the user clicks on the end chat link
+* `download_chat_transcript`-  Triggered when the user downloads the transcript, if the option if available.
+* `end_chat` -  Triggered when the user clicks on the 'end chat' link
 * `confirm_end_chat`-  Triggered when user clicks on 'yes' after the clicking on 'end chat'
 * `url_clicked` \(along with `url clicked` and `text`\) -  Triggered when a user clicks on an outboard link.
 
