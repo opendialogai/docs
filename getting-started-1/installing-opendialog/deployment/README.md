@@ -22,7 +22,7 @@ OpenDialog is tested with _MySQL 5.7_ and _Postgress 12._
 
 #### Dgraph Database
 
-OpenDialog is currently tested and works with _Dgraph v20.11.0_
+OpenDialog is currently tested and works with _Dgraph v21.03.0_
 
 ### PHP Requirements
 
