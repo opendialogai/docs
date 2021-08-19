@@ -6,7 +6,9 @@ description: How we think of and model conversations in OpenDialog.
 
 ## Introduction
 
-The OpenDialog conversational model provides a series of concepts to allow us to deconstruct a conversation into its individual components and to be able to reason about different levels of the conversation in isolation. This provides a lot of flexibility to intervene at just the right level and also to break the problem down enough so that you are dealing with a series of smaller, solvable challenges rather than one big intractable conversation.
+The OpenDialog conversational model provides a series of concepts to allow us to deconstruct a conversation into its individual components and to be able to reason about different levels of the conversation in isolation. 
+
+This provides a lot of flexibility to intervene at just the right level and also to break the problem down enough so that you are dealing with a series of smaller, solvable challenges rather than one big intractable conversation.
 
 There are multiple ways to construct a specific conversation so it is useful to allow yourself to experiment with different approaches. The conversation builder supports this explorative approach so that it is a low-cost effort. 
 
