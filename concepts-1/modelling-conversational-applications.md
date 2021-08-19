@@ -12,13 +12,15 @@ This provides a lot of flexibility to intervene at just the right level and also
 
 There are multiple ways to construct a specific conversation so it is useful to allow yourself to experiment with different approaches. The conversation builder supports this explorative approach so that it is a low-cost effort. 
 
+In the next section we will break down what the OpenDialog model is and how you can reason about it. 
+
 ## Model Overview
 
 ![Overview of the OpenDialog conversational model](../.gitbook/assets/opendialog-model-1-.png)
 
 The OpenDialog model is a collection of **Conversational Components** that are related between them in a hierarchical way. 
 
-We start with **Scenarios**. A scenario is meant to encapsulate a set of related conversations that are all focused on helping the user achieve a specific high-level goal. 
+We start with **Scenarios**. A scenario is meant to encapsulate a set of related conversations that are all focused on helping the user achieve a specific high-level goal. You can think of scenarios as stand-alone use cases or single bots. 
 
 Scenarios contain within them **Conversations**. Conversations capture the exchanges for smaller specific goals on the way to the larger scenario goal. 
 
