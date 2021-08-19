@@ -1,8 +1,8 @@
 ---
-description: How we model conversations in OpenDialog.
+description: How we think of and model conversations in OpenDialog.
 ---
 
-# Modeling Conversational Applications
+# The OpenDialog Way
 
 ## Introduction
 

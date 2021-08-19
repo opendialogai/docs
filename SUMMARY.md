@@ -5,7 +5,7 @@
 ## Concepts <a id="concepts-1"></a>
 
 * [Introduction](concepts-1/concepts.md)
-* [Modeling Conversational Applications](concepts-1/modelling-conversational-applications.md)
+* [The OpenDialog Way](concepts-1/modelling-conversational-applications.md)
 
 ## Getting Started <a id="getting-started-1"></a>
 
