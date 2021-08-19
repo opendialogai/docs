@@ -14,7 +14,7 @@ There are multiple ways to construct a specific conversation so it is useful to 
 
 In the next section we will break down what the OpenDialog model is and how you can reason about it. 
 
-## Model Overview
+## The OpenDialog Model
 
 ![Overview of the OpenDialog conversational model](../.gitbook/assets/opendialog-model-1-.png)
 
