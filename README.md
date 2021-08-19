@@ -6,9 +6,9 @@ description: >-
 
 # OpenDialog
 
-**OpenDialog** is a conversational application management platform. 
-
 ![OpenDialog](.gitbook/assets/opendialog-updatedpresentationbold.png)
+
+**OpenDialog** is a conversational application management platform. 
 
 It enables teams to design, develop, deploy, test, maintain and refine conversational applications.
 
@@ -40,7 +40,7 @@ OpenDialog is for anyone looking to develop conversational applications. Whether
 
 At OpenDialog's core is its Conversation Designer. This no-code conversation design and development tool enables you to describe complex conversational patterns quickly and efficiently. 
 
-The Conversation Builder translates your conversation design to OpenDialog's Conversation Description Language \(CDL\). Our conversation engine can then manage the conversation based on your specifications and co-ordinate the interaction with other systems \(Natural Language Understanding tools or external APIs\). We offer flexible integration with a variety of interpreters of user input, supports the interleaving of actions with conversation, and rich semantic context management. 
+The Conversation Builder translates your conversation design to OpenDialog's [Conversation Description Language \(CDL\)](reference/conversation-description-language.md). Our conversation engine can then manage the conversation based on your specifications and co-ordinate the interaction with other systems \(Natural Language Understanding tools or external APIs\). We offer flexible integration with a variety of interpreters of user input, supports the interleaving of actions with conversation, and rich semantic context management. 
 
 ### Why OpenDialog? 
 
