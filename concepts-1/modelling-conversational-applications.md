@@ -30,9 +30,9 @@ Finally, **Turns** capture single exchanges. A conversational turn consists of t
 
 Along the way, we can define _**conditions**_ and _**behaviors**_ and attach them to conversational components. 
 
-A _condition_ allows us to query contextual information to ensure that the conversational component is relevant at a given phase of the conversation. For example, there is little reason to enter a _Checkout_ scenario if there are items in our cart to checkout. So we can add a condition that ensures that the Checkout Scenario will only be considered if the cart has information within it. 
+A _**condition**_ allows us to query contextual information to ensure that the conversational component is relevant at a given phase of the conversation. For example, there is little reason to enter a _Checkout_ conversation if there are no items in our cart to checkout. So we can add a condition that ensures that the Checkout Scenario will only be considered if the cart has information within it. 
 
-A _behavior_ is a directive that we give to the OpenDialog conversational engine about how to treat a specific Conversational Component. Currently, we support a small and simple set of behaviors \(although we have grand plans for this in the future!\). For example, you can assign a Scene the behavior of _starting_, this indicates to the Conversation Engine that that scene should be considered as an _entry_ scene for a conversation. A scene that does not have the starting behavior cannot be entered into unless the user is already in a conversation.  
+A _**behavior**_ is a directive that we give to the OpenDialog conversational engine about how to treat a specific Conversational Component. Currently, we support a small and simple set of behaviors \(although we have grand plans for this in the future!\). For example, you can assign a Scene the behavior of _starting_, this indicates to the Conversation Engine that that scene should be considered as an _entry_ scene for a conversation. A scene that does not have the starting behavior cannot be entered into unless the user is already in a conversation.  
 
 ## An Example OpenDialog Scenario
 
