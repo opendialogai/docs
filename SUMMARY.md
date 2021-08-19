@@ -5,9 +5,6 @@
 ## Concepts <a id="concepts-1"></a>
 
 * [Introduction](concepts-1/concepts.md)
-* [What are Conversations?](concepts-1/what-are-conversations/README.md)
-  * [Electronic Institutions](concepts-1/what-are-conversations/electronic-institutions.md)
-  * [Enchanced Dooley Graphs](concepts-1/what-are-conversations/enchanced-dooley-graphs.md)
 * [Modeling Conversational Applications](concepts-1/modelling-conversational-applications.md)
 
 ## Getting Started <a id="getting-started-1"></a>
@@ -87,5 +84,8 @@
 
 ## Reference
 
+* [What are Conversations?](reference/what-are-conversations/README.md)
+  * [Electronic Institutions](reference/what-are-conversations/electronic-institutions.md)
+  * [Enchanced Dooley Graphs](reference/what-are-conversations/enchanced-dooley-graphs.md)
 * [Conversation Description Language](reference/conversation-description-language.md)
 

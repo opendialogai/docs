@@ -14,15 +14,7 @@ In order, however, for us to be able to deal with the complexity, without gettin
 
 We need a strong understanding of what are conversations, what are the component parts and how do they interact to build increasingly more complicated solutions and handle sophisticated multi-turn conversations. 
 
-So let's start with how we think of [conversations](what-are-conversations/). 
-
-
-
-> If you are after a longer intro on what we think some of the challenges of conversational application are please check out the talk below on "Conversational applications that work smarter, not harder".
-
-{% embed url="https://www.youtube.com/watch?v=vAloyTUA7vs" %}
-
-
+So let's start with how we think of [conversations](../reference/what-are-conversations/). 
 
 
 
