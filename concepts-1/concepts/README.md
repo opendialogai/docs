@@ -20,7 +20,7 @@ We need a strong understanding of what are conversations, what are the component
 
 This model is at the heart of what OpenDialog does and how it works. 
 
-The _OpenDialog_ _way_ is based on a number of principles about how we think of and model conversations. This section guides you through these ideas by explaining each principle and at the same time describing the OpenDialog conversation model..  Spending some time to read through these ideas will help you get proficient and efficient in the OpenDialog way much faster.
+The _OpenDialog_ _way_ is based on a number of principles about how we think of and model conversations. This section guides you through these ideas by explaining each principle and at the same time describing the OpenDialog conversation model. Spending some time to read through these ideas will help you get proficient and efficient in the OpenDialog way much faster.
 
 If you've used other conversational approaches these principles will help you understand how our approach differs and how it can help you become more efficient and build conversations that are more sophisticated. 
 
