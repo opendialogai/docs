@@ -18,16 +18,20 @@ A conversational application platform needs to embrace this complexity, break th
 
 We need a strong understanding of what are conversations, what are the component parts and how they interact to build increasingly more complicated solutions and handle sophisticated multi-turn conversations. 
 
-This model is at the heart of what OpenDialog does and how it works. 
+This model is at the heart of what OpenDialog does and how it works. Overall the _OpenDialog_ _Way_ is based on three core pillars:
 
-The _OpenDialog_ _way_ is based on a number of principles about how we think of and model conversations. This section guides you through these ideas by explaining each principle and at the same time describing the OpenDialog conversation model. Spending some time to read through these ideas will help you get proficient and efficient in the OpenDialog way much faster.
+1. A clear conversational model to help  reason about what are conversations. 
+2.  A context-first way of defining conversations so that we can more robustly manage interactions. 
+3. A pro-active and opinionated conversation engine that works with the model, takes advantage of context and co-ordinates between all the different components allows us to break the problem into smaller pieces. 
+
+This section guides you through these ideas by explaining each principle and at the same time describing the overall approach. Spending some time to read through these ideas will help you get proficient and efficient in the OpenDialog way much faster.
 
 If you've used other conversational approaches these principles will help you understand how our approach differs and how it can help you become more efficient and build conversations that are more sophisticated. 
 
 If you are new to conversation design this section will bring you up to speed with the terminology and concepts and set you on your way of designing great conversations!
 
 {% hint style="info" %}
-At the heart of all these ideas there is a deeper theoretical approach based on approach conversational applications as multi-agent systems. After you've covered this section if you are still curious about some of the reasoning behind our approach it may be worth delving deeper into the [theory](../../reference/what-are-conversations/). 
+Underlying these ideas there is a conceptual approach based on viewing conversational applications as multi-agent systems. After you've covered this section if you are still curious about some of the reasoning behind it it may be worth delving deeper into the [theory](../../reference/what-are-conversations/). 
 {% endhint %}
 
 Let's dive into it!
