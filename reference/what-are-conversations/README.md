@@ -9,7 +9,7 @@ description: >-
 ## Introduction
 
 {% hint style="success" %}
-This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../../concepts-1/modelling-conversational-applications.md) section. 
+This section provides some of the why behind the how of OpenDialog. If you want to dive straight into the active part then go straight to the [Modelling Conversations](../../concepts-1/concepts/) section. 
 
 If you are really, really in a hurry jump over to [Getting Started with OpenDialog](../../getting-started-1/getting-started-with-opendialog/) to set up your first scenario within OpenDialog.
 {% endhint %}
@@ -38,5 +38,5 @@ There are several ways of modeling such multi-agent systems. We adopted a framew
 
 You can read some more about [Electronic Institutions ](electronic-institutions.md)and the specific way we model conversations within EIs \(using something called [Enhanced Dooley Graphs](enchanced-dooley-graphs.md)\)
 
-Ok. Enough of the underlying theory and thanks for giving this section some time. Let us move on to how we [practically model conversations](../../concepts-1/modelling-conversational-applications.md)! 
+Ok. Enough of the underlying theory and thanks for giving this section some time. Let us move on to how we [practically model conversations]()! 
 

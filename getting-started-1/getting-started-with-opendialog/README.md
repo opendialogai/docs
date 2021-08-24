@@ -4,7 +4,7 @@ description: A quick introduction to the basics of OpenDialog
 
 # Getting Started With OpenDialog
 
-Following the [introduction into the concepts](../../concepts-1/modelling-conversational-applications.md) that drive how OpenDialog models conversational applications - let us now dive into the tool itself. 
+Following the [introduction into the concepts]() that drive how OpenDialog models conversational applications - let us now dive into the tool itself. 
 
 To get started you can either [install it on your own machine ](../installing-opendialog/)or [get in touch for access](https://opendialog.ai/opendialog-private-invite/) to your private beta.
 

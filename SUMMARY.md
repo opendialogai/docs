@@ -2,10 +2,12 @@
 
 * [OpenDialog](README.md)
 
-## Concepts <a id="concepts-1"></a>
+## Introduction <a id="concepts-1"></a>
 
-* [Introduction](concepts-1/concepts.md)
-* [The OpenDialog Way](concepts-1/modelling-conversational-applications.md)
+* [The OpenDialog Way](concepts-1/concepts/README.md)
+  * [1. Start with a conversation model](concepts-1/concepts/1.-start-with-a-conversation-model.md)
+  * [2. Design using a context-first approach](concepts-1/concepts/2.-design-using-a-context-first-approach.md)
+  * [3: Work with a pro-active \(and opinionated\) conversation engine](concepts-1/concepts/3-work-with-a-pro-active-and-opinionated-conversation-engine.md)
 
 ## Getting Started <a id="getting-started-1"></a>
 
