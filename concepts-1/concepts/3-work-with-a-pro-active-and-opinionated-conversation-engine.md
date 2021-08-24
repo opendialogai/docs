@@ -1,4 +1,4 @@
-# 3: Work with a pro-active \(and opinionated\) conversation engine
+# 3. Work with a pro-active \(and opinionated\) conversation engine
 
 So far we've talked about the [OpenDialog Conversation Model](1.-start-with-a-conversation-model.md) and the [OpenDialog Context-First approach](2.-design-using-a-context-first-approach.md)  The third aspect that ties everything together is the OpenDialog Conversation  Engine. 
 
