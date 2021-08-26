@@ -1,8 +1,8 @@
 # 3. Work with a pro-active \(and opinionated\) conversation engine
 
-So far we've talked about the [OpenDialog Conversation Model](1.-start-with-a-conversation-model.md) and the [OpenDialog Context-First approach](2.-design-using-a-context-first-approach.md)  The third aspect that ties everything together is the OpenDialog Conversation  Engine. 
+So far we've talked about the [OpenDialog Conversation Model](1.-start-with-a-conversation-model.md) and the [OpenDialog Context-First approach](2.-design-using-a-context-first-approach.md)  The third aspect that ties everything together is the OpenDialog Conversation Engine. 
 
-The job of the OpenDialog Engine is two-fold. One the one hand it co-ordinates between all the different components of a conversational application \(which we've talked about [earlier](1.-start-with-a-conversation-model.md)\) and on the other hand it reasons about what are the possible next steps in a conversation based on the conversation design and the rules that govern its behaviour.
+The job of the OpenDialog Engine is two-fold; On the one hand it co-ordinates between all the different components of a conversational application \(which we've talked about [earlier](1.-start-with-a-conversation-model.md)\) and on the other hand it reasons about what are the possible next steps in a conversation based on the conversation design and the rules that govern its behaviour.
 
 We call it a pro-active and opinionated conversation engine because it takes a specific approach to deciding what to do next and pro-actively provides support to make conversation design more efficient. As a conversation designer you become more efficient if you work with the approach the engine has \(hence the opinionated part\). 
 
@@ -20,11 +20,11 @@ When an incoming utterance is received the first thing the conversation engine d
 
 #### b. Current conversation status?
 
-Ok, now that we have a user the next step is to determine what is the current conversation status.
+Ok, now that we have a user the next step is to determine what is the current conversation status?
 
-If it is a completely new user then we may only be scoped by a single scenario but need to determine if the message from the user matches any of the possible starting states within that conversation. 
+If it is a completely new user, then we may only be scoped by a single scenario but need to determine if the message from the user matches any of the possible starting states within that conversation. 
 
-If it is an existing user then they may already be at a specific point within a scenario so we need to determine what possible next steps are possible from that point. 
+If it is an existing user, then they may already be at a specific point within a scenario so we need to determine what possible next steps are available from that point. 
 
 ### II. Defining starting state
 
@@ -109,12 +109,4 @@ Now the conversation engine is waiting for input from the user and once received
 
 
 Hopefully this walk through the OpenDialog way has clarified some aspects of how OpenDialog works. There is much more that is possible but the next best step would be for you to [dive in](https://opendialog.ai) and start building your own application or [follow one of our tutorials](../../tutorials/button-driven-bot.md). 
-
-
-
-
-
-### 
-
-
 
