@@ -2,19 +2,27 @@
 
 The OpenDialog Dialogflow integration allows us to use Dialogflow intent interpretation, entity extraction and the Dialogflow knowledge bases. This means that you can use one or more Dialogflow agents as your NLU interpreters and do all the conversation design in OpenDialog. 
 
-#### Create a Dialogflow ES agent
+### Create a Dialogflow ES agent
 
 The first step to using Dialogflow is to create an [ES Dialogflow agent](https://cloud.google.com/dialogflow/es/docs). We are using Dialogflow as just an NLU service so we will be focussing on just training intents, extracting entities and \(if and when required\) setting up knowledge bases.
 
-#### Create an API access key in the Google cloud console
+### Create an API access key in the Google cloud console
 
 Once you've created an agent follow the instructions here to generate an API key. 
 
-The first step is to create a service user - we will need the Dialogflow API Admin role.
+1. Go to the settings of you Dialogflow agent and click on the project link to go to the Google Cloud project console
+
+![](../.gitbook/assets/image%20%28418%29.png)
+
+2. From within the Google Cloud console project go to the IAM & Admin &gt; Service Accounts. 
+
+![](../.gitbook/assets/image%20%28417%29.png)
+
+3. Create a service account and give it the Dialogflow API Admin role. You will need to give it an ID and then grant the Role as shown below. 
 
 ![Creating an service user for the Dialogflow API through the Google Cloud Console](../.gitbook/assets/image%20%28154%29.png)
 
-Then you can create a JSON key which will generate a file and download it to your machine. 
+4. Click on the account just created, head to the Keys tab and create a JSON key which will generate a file and download it to your machine. 
 
 ![Generating a JSON key for Dialogflow API access](../.gitbook/assets/image%20%28147%29.png)
 
