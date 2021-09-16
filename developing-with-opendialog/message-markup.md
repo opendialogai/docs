@@ -82,7 +82,13 @@ Button messages allow you to provide the user a number of options to select as a
 </message>
 ```
 
-Setting the `external` property to true results in a the message buttons appearing outside of the button message \(this defaults to false if not set\).
+Setting the `external` property to true results in the message buttons appearing outside of the button message \(this defaults to false if not set\).
+
+{% hint style="danger" %}
+**NB**
+
+Button messages with external buttons must be the last message in the intent so they aren't overwritten by any subsequent message in the webchat view.
+{% endhint %}
 
 Setting the `clear_after_interaction` property to false means that the buttons will remain visible to the user after being interacted with
 
@@ -359,9 +365,9 @@ This is needed so an intent can have a matching template that doesn't result in 
 
 ### List messages
 
-List messages allow for multiple messages be be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search results or related items.
+List messages allow for multiple messages to be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search results or related items.
 
-List messages work well together with rich messages, but can be used as a wrapper for any messages types.
+List messages work well together with rich messages but can be used as a wrapper for any messages types.
 
 The only option available for list messages is `view-type`. This can either be `vertical` \(default\) or `horizontal`
 
@@ -369,15 +375,25 @@ Note - messages with very different sizes may not display well in a horizontal c
 
 ```text
 <list-message list_type="horizontal">
-    <text-message>{text_message}</text-message>
-    <image-message>{image_message}</image-message>
-    <rich-message>{rich_message}</rich-message>
+    <item><text-message>{text_message}</text-message></item>
+    <item><image-message>{image_message}</image-message></item>
+    <item><rich-message>{rich_message}</rich-message></item>
 </list-message>
 ```
 
 ![](../.gitbook/assets/image%20%2836%29.png)
 
-### **Date Picker messages**
+### **Input take-over messages**
+
+The following messages take over the standard user input to provide the user a different way of entering data 
+
+{% hint style="danger" %}
+**NB**
+
+These types of message MUST be the final message in the intent so they aren't overwritten by any subsequent message in the webchat view.
+{% endhint %}
+
+#### **Date Picker messages**
 
 These allow the user to enter a date by selecting day, month and or year. Each of these fields can be defined as required meaning the message cannot be submitted unless the user has entered a value.
 
@@ -399,7 +415,7 @@ The `min_date` and `max_date` fields restrict the dates that are shown to the us
 
 ![](../.gitbook/assets/image%20%2844%29.png)
 
-### **Autocomplete message**
+#### **Autocomplete message**
 
 The autocomplete message is used to create an input that will offer suggestions to a user as they start typing. This message is supported by an API that should accept a query string and respond with an array of items to show in the JSON format below:
 
@@ -458,11 +474,17 @@ Autocomplete With Suggestions
 
 ### Full page messages
 
-Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen \(depending on what is supported by each platform\). For webchat full page messages, the user input is also taken over.
+Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen \(depending on what is supported by each platform\). For webchat full page messages, the user input is also taken over. 
+
+{% hint style="danger" %}
+**NB**
+
+These types of message MUST be the final message in the intent so they aren't overwritten by any subsequent message in the webchat view.
+{% endhint %}
 
 #### **Full Page Rich messages**
 
-Full page rich messages are defined in exactly the same way as standard rich messages, but can optionally define a cancel button to allow the user to move on without interacting.
+Full page rich messages are defined in exactly the same way as standard rich messages
 
 ```text
 <fp-rich-message>
@@ -473,14 +495,12 @@ Full page rich messages are defined in exactly the same way as standard rich mes
         <src>image_src</src>
         <url new_tab="true|false">www.example.com</url>
     </image>
-    <cancel_text>Text</cancel_text>
-    <cancel_callback>callback</cancel_callback>
 </fp-rich-message>
 ```
 
 #### **Full Page Form messages**
 
-Full Page Form messages are defined in exactly the same way as form messages, but with a different element name:
+Full Page Form messages are defined in exactly the same way as form messages, but with a different element name and can optionally define a cancel button to allow the user to move on without interacting.
 
 ```text
     <fp-form-message>
@@ -488,26 +508,7 @@ Full Page Form messages are defined in exactly the same way as form messages, bu
        <submit_text>Submit Text</submit_text>
        <callback>Callback</callback>
        <auto_submit>true|false</auto_submit>
-    </fp-form-message>    
-```
-
-### **Long Text messages**
-
-These messages are for a special case where a user is expected to enter more long form text and gives a larger space to do this. In the case of OD webchat, a Long Text message will hide the current message list and display a large input space with the message text displayed above.
-
-On submission, the user's input is sent as text along with the defined `callback`
-
-Long text messages also allow for custom submit button text, confirmation text that is displayed to the user after submission and an optional character limit to limit what the user can enter
-
-```text
-<long-text-message>
-    <submit_text>Submit Text</submit_text>
-    <callback>callback</callback>
-    <initial_text>$this->initialText</initial_text>
-    <placeholder>$this->placeholder</placeholder>
-    <confirmation_text>$this->confirmationText</confirmation_text>
-    <character_limit>$this->characterLimit</character_limit>
-</long-text-message>
+    </fp-form-message>
 ```
 
 ## Special Messages
