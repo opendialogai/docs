@@ -8,6 +8,14 @@ description: >-
 
 One of the challenges with conversations is providing the most contextual responses possible given the overall state of the conversation. This is particularly relevant when the user asks generic questions such as a request for help. 
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=34JabVHj-38" %}
+
+
+
+## Pattern Explanation
+
 OpenDialog provides an efficient way of dealing with this through a single help intent that can be trained once but reused multiple times contextually. 
 
 Consider the following scene:
@@ -29,6 +37,8 @@ The response intent from the bot can now provide help relevant to the context.
 ![Provide help intent settings](../.gitbook/assets/image%20%2897%29.png)
 
 From an NLU perspective, what is a significant advantage is that we can reuse the training for the request help Intent across multiple conversations \(even multiple scenarios\). At the same time, we can contextualise our response based on needs.
+
+
 
 
 
