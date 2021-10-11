@@ -16,7 +16,7 @@ We use a custom XML style markup language for describing message templates. Not 
 
 A plain message with only text. Specially formatted links can also be included in the text body
 
-```text
+```
 <message>
 <text-message>{message-text}</text-message>
 </message>
@@ -24,7 +24,7 @@ A plain message with only text. Specially formatted links can also be included i
 
 **Example:**
 
-```text
+```
 <message>
   <text-message> 
     Hello, this is a text message.
@@ -35,7 +35,7 @@ A plain message with only text. Specially formatted links can also be included i
 
 Messages can also contain URLs in the text - that will be linkified. Links like `greenshootlabs.com` in the message text will be turned to links.
 
-```text
+```
 <message>
     <text-message> 
       You can have a link straing in text like this: hey go to greenshootlabs.com or you can do this:
@@ -49,7 +49,7 @@ There is no support at the moment for any other formatting such as bold, italics
 
 Displays an image message. Optionally, the image can also be a link that can optionally open in a new tab if the `url` property is included.
 
-```text
+```
 <message>
     <image-message>
         <src>{img_src}</src>
@@ -60,7 +60,7 @@ Displays an image message. Optionally, the image can also be a link that can opt
 
 **Example**
 
-```text
+```
 <message>
     <image-message> 
       <src>https://docs.opendialog.ai/img/od-logo-with-credit.jpg</src>
@@ -73,7 +73,7 @@ Displays an image message. Optionally, the image can also be a link that can opt
 
 Button messages allow you to provide the user a number of options to select as a response. The basic mark up is:
 
-```text
+```
 <message>
     <button-message clear_after_interaction="true|false">
        <text>{button message text}</text>
@@ -82,7 +82,7 @@ Button messages allow you to provide the user a number of options to select as a
 </message>
 ```
 
-Setting the `external` property to true results in the message buttons appearing outside of the button message \(this defaults to false if not set\).
+Setting the `external` property to true results in the message buttons appearing outside of the button message (this defaults to false if not set).
 
 {% hint style="danger" %}
 **NB**
@@ -94,15 +94,15 @@ Setting the `clear_after_interaction` property to false means that the buttons w
 
 #### **Buttons**
 
-A button message can contain 1 or more buttons for the user to interact with \(some platforms have different restrictions on the number of buttons per message\) Each button must define a `text` element to specify the text that should be shown to the user.
+A button message can contain 1 or more buttons for the user to interact with (some platforms have different restrictions on the number of buttons per message) Each button must define a `text` element to specify the text that should be shown to the user.
 
 OpenDialog has built in support for 4 types of button:
 
 #### **1. Callback buttons**
 
-Callback buttons will send a `callback_id` \(and optionally a `value`\) when interacted with by the user that will move the conversation forward. Make sure that any `callback_id` you use in a button response is mapped to an intent in the interpreter engine config.
+Callback buttons will send a `callback_id` (and optionally a `value`) when interacted with by the user that will move the conversation forward. Make sure that any `callback_id` you use in a button response is mapped to an intent in the interpreter engine config.
 
-```text
+```
     <button>
         <text>Callback Button</text>
         <callback>callback id</callback>
@@ -112,7 +112,7 @@ Callback buttons will send a `callback_id` \(and optionally a `value`\) when int
 
 Values can be optionally set on callback buttons to add some extra context to the button response. The format of button values is:
 
-```text
+```
     attribute_name.attribute_value
 ```
 
@@ -124,7 +124,7 @@ When passing through the Callback Interpreter, button values will be parsed and 
 
 Here is are examples of a message with one button and two buttons. Clicking on the button would cause that callback value to be sent back to OpenDialog which could then be matched with an incoming intent.
 
-```text
+```
 
 <message>
     <button-message>
@@ -137,7 +137,7 @@ Here is are examples of a message with one button and two buttons. Clicking on t
 </message>
 ```
 
-```text
+```
 
 <message>
     <button-message>
@@ -158,7 +158,7 @@ Here is are examples of a message with one button and two buttons. Clicking on t
 
 Links buttons are used to create links to other web pages. The `new_tab` property can be set to true to force the links to open in a new tab. If not set, links default to opening in the same tab
 
-```text
+```
     <button>
         <text>Link Button</text>
         <link new_tab="true"|"false">http://example.com</link>
@@ -167,7 +167,7 @@ Links buttons are used to create links to other web pages. The `new_tab` propert
 
 **Example**
 
-```text
+```
 <message>
     <button-message>
         <text> Here are some very useful resources for you. </text>
@@ -187,7 +187,7 @@ Links buttons are used to create links to other web pages. The `new_tab` propert
 
 Click to call buttons are used to create buttons for telephone numbers. They created a standard format `tel:` link that depending on the user's current device and platform will start a phone call to the number given
 
-```text
+```
     <button>
         <text>CLick to Call</text>
         <click_to_call>02079460000</click_to_call>
@@ -198,7 +198,7 @@ Click to call buttons are used to create buttons for telephone numbers. They cre
 
 Tab Switch buttons should only be used for the OD Webchat platform in conjunction with comments and indicates that the button should switch the user to the 'comments' tab
 
-```text
+```
 <button>
    <text>Tab Switch</text> 
    <tab_switch>true</tab_switch>
@@ -209,7 +209,7 @@ Tab Switch buttons should only be used for the OD Webchat platform in conjunctio
 
 Buttons can be defined with a `type` that can affect how they are displayed as a button on screen. Types are added as properties of the button like this:
 
-```text
+```
 <button type="{type}">
     <text>Click me!</text>
     <callback>intent.app.startAConversations</callback>
@@ -219,7 +219,7 @@ Buttons can be defined with a `type` that can affect how they are displayed as a
 There are currently 2 types that can be used:
 
 * `skip` - If a button in an `external` button message has type of `skip`, it will appear below the other buttons with a different appearance. This can be used in conjunction with other messages to allow a user to skip past an intent
-* `inline` - If a button in a standard button message \(not `external`\) has a type of `inline`, it will appear along with the button message text, inside the chat bubble.
+* `inline` - If a button in a standard button message (not `external`) has a type of `inline`, it will appear along with the button message text, inside the chat bubble.
 
 ### Rich messages
 
@@ -233,7 +233,7 @@ Rich messages allow for more control around message content and how it is displa
 
 Where buttons can be any of the buttons described above.
 
-```text
+```
 <rich-message>
     <title>Title</title>
     <subtitle>Subtitle</subtitle>
@@ -247,7 +247,7 @@ Where buttons can be any of the buttons described above.
 
 **Example**
 
-```text
+```
     <rich-message>
         <title>Rich Message</title>
         <subtitle>With a subtitle</subtitle>
@@ -263,7 +263,7 @@ Where buttons can be any of the buttons described above.
 
 Form messages allow for user to input data in standard web form rather than text entry. When submitted, the values entered by the user are sent back along with the defined `callback`. All form messages must contain the following elements:
 
-```text
+```
     <form-message>
        <text>Text</text>
        <submit_text>Submit Text</submit_text>
@@ -274,22 +274,13 @@ Form messages allow for user to input data in standard web form rather than text
 
 Here, the `text` value is shown at the top of the form message and the `submit_text` value is shown on the form submit button. When `auto_submit` is set to true, the form will automatically be submitted when the user selects a value. This works best when just 1 element is added to the form
 
-Optionally, the form message can contain a cancel button. This allows the user to tell the bot they do not want to submit the form. When clicked, the value of `cancel_callback` is sent. The cancel button can be added to a form message with the following mark up:
-
-```text
-<form-message>
-    <cancel_text>Text</cancel_text>
-    <cancel_callback>Callback</cancel_callback>
-</form-message>
-```
-
 **Elements**
 
-Form messages have support for a number of different elements \(matching what is possible in a standard HTML form\). All elements are defined in the same way, and there is no limit to how many can appear on a form message.
+Form messages have support for a number of different elements (matching what is possible in a standard HTML form). All elements are defined in the same way, and there is no limit to how many can appear on a form message.
 
 Each element must define a `type` and `display`, and can optionally define `required` and `default_value`. If required is set to true, the form cannot be submitted unless the field has a value.
 
-```text
+```
 <element>
     <element_type>textarea|text|number|email|select|auto_complete_select|radio</element_type>
     <display>Display Name</display>
@@ -300,7 +291,7 @@ Each element must define a `type` and `display`, and can optionally define `requ
 
 When using `radio` or `select` elements, you must define an `options` block giving the options to be presented in the radio list or select element:
 
-```text
+```
 <element>
     <options>
       <option>
@@ -313,11 +304,11 @@ When using `radio` or `select` elements, you must define an `options` block givi
 
 The `email` element type acts just like a `text` element, but on submission, is validated to ensure it is formatted like an email address
 
-![](../.gitbook/assets/image%20%2843%29.png)
+![](<../.gitbook/assets/image (43).png>)
 
 This form message example was created with the following XML:
 
-```text
+```
 <message>
     <form-message>
         <text>Text</text>
@@ -359,7 +350,7 @@ This form message example was created with the following XML:
 
 This is needed so an intent can have a matching template that doesn't result in a message being sent to the user. This may not be supported on all platforms. Empty messages can be useful to add to intents that we want to match for a user, but only send a message if certain conditions are met - for example using the standard `intent.core.welcome` to only send a message if the user was seen more than once.
 
-```text
+```
 <empty-message/>
 ```
 
@@ -369,11 +360,11 @@ List messages allow for multiple messages to be combined into a single message f
 
 List messages work well together with rich messages but can be used as a wrapper for any messages types.
 
-The only option available for list messages is `view-type`. This can either be `vertical` \(default\) or `horizontal`
+The only option available for list messages is `view-type`. This can either be `vertical` (default) or `horizontal`
 
 Note - messages with very different sizes may not display well in a horizontal carousel
 
-```text
+```
 <list-message list_type="horizontal">
     <item><text-message>{text_message}</text-message></item>
     <item><image-message>{image_message}</image-message></item>
@@ -381,7 +372,7 @@ Note - messages with very different sizes may not display well in a horizontal c
 </list-message>
 ```
 
-![](../.gitbook/assets/image%20%2836%29.png)
+![](<../.gitbook/assets/image (36).png>)
 
 ### **Input take-over messages**
 
@@ -399,7 +390,7 @@ These allow the user to enter a date by selecting day, month and or year. Each o
 
 The `min_date` and `max_date` fields restrict the dates that are shown to the user so that what they submit is always within that range. The dates provided should be ISO date format containing at least the year, or just the word `today`.
 
-```text
+```
 <date-picker-message>
     <text>{message text}</text>
     <callback>{callback}</callback>
@@ -413,13 +404,13 @@ The `min_date` and `max_date` fields restrict the dates that are shown to the us
 </date-picker-message>
 ```
 
-![](../.gitbook/assets/image%20%2844%29.png)
+![](<../.gitbook/assets/image (44).png>)
 
 #### **Autocomplete message**
 
 The autocomplete message is used to create an input that will offer suggestions to a user as they start typing. This message is supported by an API that should accept a query string and respond with an array of items to show in the JSON format below:
 
-```text
+```
 [
   {
     "name": "item1"
@@ -441,13 +432,13 @@ The message XML accepts a number of options that help the webchat component know
 
 So in the example below, each time the user entered a character into the input field, the following GET request would is made to fetch the next set of suggestions
 
-```text
+```
     /api/v4/products?name=value&query={}
 ```
 
 There are 2 text type fields `text` which will appear when the message starts showing and `placeholder` which shows in the message input box before a user starts typing
 
-```text
+```
   <autocomplete-message>
    <title>{text}</title>
    <callback>{callback}</callback>
@@ -466,7 +457,7 @@ There are 2 text type fields `text` which will appear when the message starts sh
 
 Autocomplete closed
 
-![](../.gitbook/assets/image%20%281%29.png)
+![](<../.gitbook/assets/image (1).png>)
 
 Autocomplete With Suggestions
 
@@ -474,7 +465,7 @@ Autocomplete With Suggestions
 
 ### Full page messages
 
-Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen \(depending on what is supported by each platform\). For webchat full page messages, the user input is also taken over. 
+Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen (depending on what is supported by each platform). For webchat full page messages, the user input is also taken over. 
 
 {% hint style="danger" %}
 **NB**
@@ -486,7 +477,7 @@ These types of message MUST be the final message in the intent so they aren't ov
 
 Full page rich messages are defined in exactly the same way as standard rich messages
 
-```text
+```
 <fp-rich-message>
     <title>Title</title>
     <subtitle>Subtitle</subtitle>
@@ -500,14 +491,18 @@ Full page rich messages are defined in exactly the same way as standard rich mes
 
 #### **Full Page Form messages**
 
-Full Page Form messages are defined in exactly the same way as form messages, but with a different element name and can optionally define a cancel button to allow the user to move on without interacting.
+Full Page Form messages are defined in exactly the same way as form messages, but with a different element name.
 
-```text
+Optionally, the full page form message can contain a cancel button. This allows the user to tell the bot they do not want to submit the form. When clicked, the value of `cancel_callback` is sent. The cancel button can be added to a form message with the following mark up:
+
+```
     <fp-form-message>
        <text>Text</text>
        <submit_text>Submit Text</submit_text>
        <callback>Callback</callback>
        <auto_submit>true|false</auto_submit>
+       <cancel_text>Text</cancel_text>
+       <cancel_callback>Callback</cancel_callback>
     </fp-form-message>
 ```
 
@@ -521,23 +516,23 @@ CTA messages are used to display content in the minimised chatbot and will only 
 
 CTA messages can only contain text:
 
-```text
+```
 <cta-messsage>
     {text}
 </cta-messsaeg>
 ```
 
-![](../.gitbook/assets/image%20%2833%29.png)
+![](<../.gitbook/assets/image (33).png>)
 
 ### Hand to System messages
 
-Hand to system messages are intended to be used to inform OpenDialog that the handling of chat has been taken over by another channel \(typically a human\). In OpenDialog webchat, this means that new messages sent by the user are not sent to the `incoming/webchat` endpoint, but are handled by an external system.
+Hand to system messages are intended to be used to inform OpenDialog that the handling of chat has been taken over by another channel (typically a human). In OpenDialog webchat, this means that new messages sent by the user are not sent to the `incoming/webchat` endpoint, but are handled by an external system.
 
 > Documentation for handling hand-to-human messages is being developed.
 
 Hand to system messages contain a number of `data` elements that have a unique name specifying what they are for. This way, any custom data payload can be sent with hand to system messages
 
-```text
+```
 <hand-to-system-message system="my-custom-system">
   <data name="replace_name_attribute">Value</data>
 </hand-to-system-message>
@@ -547,7 +542,7 @@ Hand to system messages contain a number of `data` elements that have a unique n
 
 Meta messages are designed to allow the incoming message to have an effect on the conversational interface. There are a number of directives. Each meta message is made up of a number of `data` attributes defined as below:
 
-```text
+```
   <meta-message>
     <data name="textLimit">50</data>
     <data name="progressPercent">10</data>
@@ -564,17 +559,16 @@ The supported data attributes at the moment are:
 
 Meta Messages can be placed anywhere in a message template and will have the same effect
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](<../.gitbook/assets/image (24).png>)
 
 ### Attribute messages
 
 Attribute messages takes the name of a context and attribute and expects the value of the attribute to be properly formed XML. The content of that XML will then be rendered as a message. 
 
-```text
+```
 <attribute-message> 
   context_name.attribute_name
 </attribute-message>
 ```
 
 You might look to use this if you are using an external service and wanted control over the formatting of the resulting message.
-
