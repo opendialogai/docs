@@ -16,32 +16,31 @@ To get started you will need to install Docker Desktop on your own machine. Dock
 
 [Follow the instructions from Docker to how to install on either a Windows or a Mac. ](https://docs.docker.com/desktop/)
 
-## Step 2 - Download the latest release of OpenDialog
+## Step 2 - Download the latest version of OpenDialog Quick Start
 
-* Visit the [OpenDialog releases page](https://github.com/opendialogai/opendialog/releases) on Github and download the latest release as a zip file on your local machine. 
-* Unzip the file - you will end up with a directory containing the OpenDialog application. 
+* Visit the [OpenDialog Quick Start repo](https://github.com/opendialogai/quick-start) on Github and download the latest version as a zip file on your local machine. 
+* Unzip the file - you will end up with a directory containing the OpenDialog docker-compose quick start. 
 
 ## Step 3 - Configure Docker Environment
 
-From within a terminal application navigate to the OpenDialog directory that you just unzipped. From there go into the `od-docker-demo` directory.
+From within a terminal application navigate to the OpenDialog Quick-Start directory that you just unzipped.
 
-```text
-cd od-docker-demo
+```
+cd quick-start
 ```
 
 We will now tell Docker to use a specific configuration file to create the necessary application environment.
 
-```text
-docker-compose up -d app
+```
+docker-compose up -d
 ```
 
 If this is the first time you are doing this don't be surprised if it takes some time to download all the necessary components. It is setting up a fully-fledged environment on your own machine. 
 
 Once it is done we need to run a command that is going to initialise the OpenDialog application itself. 
 
-```text
+```
 docker-compose exec app bash docker/scripts/update-docker.sh
 ```
 
 You can now login to the web application by visiting `http://localhost` and logging in with the user: `admin@example.com` and password: `opendialog`.
-
