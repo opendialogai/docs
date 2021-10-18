@@ -28,6 +28,7 @@
 
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
+* [Product Chooser Template](tutorials/product-chooser-template.md)
 
 ## Working With OpenDialog <a href="working-with-opendialog-1" id="working-with-opendialog-1"></a>
 
