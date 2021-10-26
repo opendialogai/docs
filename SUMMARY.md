@@ -16,6 +16,10 @@
   * [Exploring a Scenario](getting-started-1/getting-started-with-opendialog/exploring-and-understanding-a-scenario.md)
   * [Understanding a Scenario](getting-started-1/getting-started-with-opendialog/understanding-a-scenario.md)
   * [Managing Messages](getting-started-1/getting-started-with-opendialog/messages.md)
+* [Building 'The Power Of OpenDialog' conversational app](getting-started-1/building-the-power-of-opendialog-conversational-app/README.md)
+  * [Lesson 1: Conversational Map Design](getting-started-1/building-the-power-of-opendialog-conversational-app/lesson-1-conversational-map-design.md)
+  * [Lesson 2: Buiding Intents](getting-started-1/building-the-power-of-opendialog-conversational-app/lesson-2-buiding-intents.md)
+  * [Lesson 3: Creating Messages and Buttons](getting-started-1/building-the-power-of-opendialog-conversational-app/lesson-3-creating-messages-and-buttons.md)
 * [Installing OpenDialog](getting-started-1/installing-opendialog/README.md)
   * [OpenDialog on your machine](getting-started-1/installing-opendialog/opendialog-on-your-machine/README.md)
     * [Simple Docker-based installation](getting-started-1/installing-opendialog/opendialog-on-your-machine/simple-docker-based-installation.md)
@@ -28,11 +32,7 @@
 
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
-* [Building The Power Of OpenDialog](tutorials/building-the-power-of-opendialog.md)
-* [Product Chooser Template](tutorials/product-chooser-template/README.md)
-  * [Lesson 1: Conversational Map Design](tutorials/product-chooser-template/lesson-1-conversational-map-design.md)
-  * [Lesson 2: Buiding Intents](tutorials/product-chooser-template/lesson-2-buiding-intents.md)
-  * [Lesson 3: Creating Messages and Buttons](tutorials/product-chooser-template/lesson-3-creating-messages-and-buttons.md)
+* [Product Chooser Template](tutorials/product-chooser-template.md)
 
 ## Working With OpenDialog <a href="working-with-opendialog-1" id="working-with-opendialog-1"></a>
 
