@@ -28,7 +28,11 @@
 
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
-* [Product Chooser Template](tutorials/product-chooser-template.md)
+* [Building The Power Of OpenDialog](tutorials/building-the-power-of-opendialog.md)
+* [Product Chooser Template](tutorials/product-chooser-template/README.md)
+  * [Lesson 1: Conversational Map Design](tutorials/product-chooser-template/lesson-1-conversational-map-design.md)
+  * [Lesson 2: Buiding Intents](tutorials/product-chooser-template/lesson-2-buiding-intents.md)
+  * [Lesson 3: Creating Messages and Buttons](tutorials/product-chooser-template/lesson-3-creating-messages-and-buttons.md)
 
 ## Working With OpenDialog <a href="working-with-opendialog-1" id="working-with-opendialog-1"></a>
 

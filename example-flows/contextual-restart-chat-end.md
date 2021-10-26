@@ -12,29 +12,29 @@ The webchat widget comes with 2 things to help conversation designers in this si
 
 Out of the box, these buttons are not visible in the widget and must be turned on in the Interface Settings page:
 
-![Restart and Chat End buttons can be turned on in Interface Settings](../.gitbook/assets/image%20%28318%29.png)
+![Restart and Chat End buttons can be turned on in Interface Settings](<../.gitbook/assets/image (318).png>)
 
-![Webchat widget with End Chat and Restart buttons turned on](../.gitbook/assets/image%20%28297%29.png)
+![Webchat widget with End Chat and Restart buttons turned on](<../.gitbook/assets/image (297).png>)
 
 In the flow of a conversation, if the user clicks on the **Restart** button, a `intent.core.restart` intent is generated. Clicking on the **End Chat** button generates a `intent.core.end_chat` intent.
 
-Both of these intents are dealt with slightly differently to a standard user intent from the webchat as they are `escalating` - this means that if no local match is found, the conversation engine will work its way up through the current Turn, Scene and Conversation until looking for a top-level match. 
+Both of these intents are dealt with slightly differently to a standard user intent from the webchat as they are `escalating` - this means that if no local match is found, the conversation engine will work its way up through the current Turn, Scene and Conversation until looking for a top-level match.&#x20;
 
 The pattern is similar to the [Contextual No Match pattern](https://docs.opendialog.ai/example-flows/contextual-no-match-pattern) with the intent name being updated for each level of the conversation.
 
 **Restart Intents:**
 
-`intent.core.TurnRestart` -&gt; `intent.core.SceneRestart` -&gt; `intent.core.ConversationRestart` -&gt; `intent.core.restart` 
+`intent.core.TurnRestart` -> `intent.core.SceneRestart` -> `intent.core.ConversationRestart` -> `intent.core.restart`&#x20;
 
 **Chat End Intents:**
 
-`intent.core.TurnEndChat` -&gt; `intent.core.SceneEndChat` -&gt; `intent.core.ConversationEndChat` -&gt; `intent.core.endChat` 
+`intent.core.TurnEndChat` -> `intent.core.SceneEndChat` -> `intent.core.ConversationEndChat` -> `intent.core.endChat`&#x20;
 
 ### Conversation Structure
 
 When you create a new scenario, a `Trigger Conversation` is created for you that handles the `WELCOME` event from webchat as well as the global restart
 
-![Global Restart intent in the Trigger Conversation](../.gitbook/assets/image%20%28312%29.png)
+![Global Restart intent in the Trigger Conversation](<../.gitbook/assets/image (312).png>)
 
 With this in place, any time a user clicks the restart button, they will hit the `Trigger Conversation` and this intent will transition them to the `Welcome Turn` in the `Welcome Conversation`. You should update this to suit your needs.
 
@@ -46,24 +46,23 @@ Note the End Chat is not handled out of the box and you will need to set this up
 
 Individual Turns, Scenes and Conversations can handle restarts however they need.
 
-Consider a scene in which we are trying to gather information about a user. Our conversational flow will be a question from the app, followed by an answer from the user. 
+Consider a scene in which we are trying to gather information about a user. Our conversational flow will be a question from the app, followed by an answer from the user.&#x20;
 
 It's easy to consider a situation where the user would want to restart this flow - if they've entered some wrong information for example.
 
-A scene for this might look something like the one below  
+A scene for this might look something like the one below\
 
 
-![A scene to gather user information](../.gitbook/assets/image%20%28309%29.png)
+![A scene to gather user information](<../.gitbook/assets/image (309).png>)
 
-Notice that there is a Turn named `Scene Restart` - the idea of this Turn is to handle the user restarting the flow and contextually at this point. 
+Notice that there is a Turn named `Scene Restart` - the idea of this Turn is to handle the user restarting the flow and contextually at this point.&#x20;
 
 In this case, if the user restarts the flow at any point in this scene, we would want to route them back to the `Get Name Turn`. We can set up 1 intent with a transition to do this for us
 
-![The Scene Level Restart](../.gitbook/assets/image%20%28317%29.png)
+![The Scene Level Restart](<../.gitbook/assets/image (317).png>)
 
 {% hint style="success" %}
 Notice the intent is named `intent.core.SceneRestart` as we want to capture all restarts within this scene
 {% endhint %}
 
 Now, if the user clicks the restart button at any point in within this scene, they will be routed straight back to the start.
-

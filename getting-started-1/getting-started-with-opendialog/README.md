@@ -4,17 +4,17 @@ description: A quick introduction to the basics of OpenDialog
 
 # Getting Started With OpenDialog
 
-Following the [introduction into the concepts]() that drive how OpenDialog models conversational applications - let us now dive into the tool itself. 
+Following the [introduction into the concepts](broken-reference) that drive how OpenDialog models conversational applications - let us now dive into the tool itself.&#x20;
 
-To get started you can either [install it on your own machine ](../installing-opendialog/)or [get in touch for access](https://opendialog.ai/opendialog-private-invite/) to your private beta.
+To get started you can either [install it on your own machine ](../installing-opendialog/)or [sign-up to the SaaS version](https://opendialog.ai/opendialog-private-invite/) of OpenDialog.
 
 What we will do in the subsequent sections is run through how you can:
 
 * [Create a scenario](creating-a-scenario.md).
 * [Explore a scenario](exploring-and-understanding-a-scenario.md) to see its individual components.
-* [Understand the conversational flows](understanding-a-scenario.md) a scenario supports through the flow player. 
+* [Understand the conversational flows](understanding-a-scenario.md) a scenario supports through the flow player.&#x20;
 
-You can also watch the following video to get a high-level overview of OpenDialog's Conversational Components: 
+You can also watch the following video to get a high-level overview of OpenDialog's Conversational Components:&#x20;
 
 {% embed url="https://www.youtube.com/watch?v=gGqXJDdrZh4" %}
 
@@ -23,8 +23,7 @@ Give yourself some time to ease into the OpenDialog way of doing things and keep
 {% endhint %}
 
 {% hint style="info" %}
-At the end of this section, you will have set up and understood the basics around a scenario and all of its components incl. messages. You will **not** have a full conversation up and running.  
+At the end of this section, you will have set up and understood the basics around a scenario and all of its components incl. messages. You will **not** have a full conversation up and running. &#x20;
 
 **What do after this section?** Start working through the documentation under the ['Working with OpenDialog' section](../../developing-with-opendialog/introduction.md) or follow [one of our tutorials](../../tutorials/button-driven-bot.md) e.g. Button-driven conversation.
 {% endhint %}
-

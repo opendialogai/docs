@@ -4,15 +4,15 @@ description: How to create your own attributes
 
 # Creating a Custom Attribute
 
-There ar\e two ways to create a custom attribute. You can create one through the interface or do it entirely programmatically. 
+There ar\e two ways to create a custom attribute. You can create one through the interface or do it entirely programmatically.&#x20;
 
 ## Through the interface
 
-Visit `admin/dynamic-attributes` and create a new attribute selecting one of the existing types. 
+Visit `admin/dynamic-attributes` and create a new attribute selecting one of the existing types.&#x20;
 
-![Creating a custom attribute](../../.gitbook/assets/image%20%2888%29.png)
+![Creating a custom attribute](<../../.gitbook/assets/image (88).png>)
 
-![Dynamic Attributes](../../.gitbook/assets/image%20%2883%29.png)
+![Dynamic Attributes](<../../.gitbook/assets/image (83).png>)
 
 {% hint style="info" %}
 The user interface has yet to be updated to match the 1.x style but the functionality will remain the same 🙂.
@@ -20,13 +20,13 @@ The user interface has yet to be updated to match the 1.x style but the function
 
 Now, that you have a custom attribute you can refer to it through the Conversation Designer
 
-![Using custom attributes](../../.gitbook/assets/image%20%2881%29.png)
+![Using custom attributes](<../../.gitbook/assets/image (81).png>)
 
 ## Programmatically
 
-To programmatically create an attribute you will need to provide an Attribute implementation. 
+To programmatically create an attribute you will need to provide an Attribute implementation.&#x20;
 
-Before starting an attribute ensure that you publish the AttributeEngine configurations to the main OpenDialog application. 
+Before starting an attribute ensure that you publish the AttributeEngine configurations to the main OpenDialog application.&#x20;
 
 From the root of your app call:
 
@@ -38,7 +38,7 @@ This will publish the Attribute config file `attribute_engine` in `config\opendi
 
 Let's have a look at the config file.
 
-{% code title="attribute\_engine.php" %}
+{% code title="attribute_engine.php" %}
 ```php
 <?php
 
@@ -71,7 +71,7 @@ return [
 ```
 {% endcode %}
 
-There are two types of things we can register. 
+There are two types of things we can register.&#x20;
 
 ### Custom attribute types
 
@@ -119,7 +119,7 @@ class ExperienceAttribute extends StringAttribute
 
 It is stored in our application namespace.
 
-We can then register it in the `config\opendialog\attribute_engine.php` config file. 
+We can then register it in the `config\opendialog\attribute_engine.php` config file.&#x20;
 
 ```php
     'custom_attribute_types' => [
@@ -130,9 +130,9 @@ We can then register it in the `config\opendialog\attribute_engine.php` config f
 
 ### Custom Attribute
 
-A custom attribute can use an existing type or a custom attribute type. 
+A custom attribute can use an existing type or a custom attribute type.&#x20;
 
-For example, to register a custom attribute that uses the type above we can add it to our configuration. 
+For example, to register a custom attribute that uses the type above we can add it to our configuration.&#x20;
 
 ```php
     'custom_attributes' => [
@@ -143,7 +143,5 @@ For example, to register a custom attribute that uses the type above we can add 
 
 Now, when we try to access attributes we will see our new attribute show up!
 
-![](../../.gitbook/assets/image%20%2891%29.png)
-
-
+![](<../../.gitbook/assets/image (91).png>)
 

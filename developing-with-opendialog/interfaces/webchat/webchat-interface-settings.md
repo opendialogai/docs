@@ -10,7 +10,7 @@ The settings are currently GLOBAL and will affect all scenarios you have created
 
 Any changes made to the fields are not saved until you click on the 'Save Settings' button at the top of the screen
 
-![Save your settings changes using the save button](../../../.gitbook/assets/image%20%28400%29.png)
+![Save your settings changes using the save button](<../../../.gitbook/assets/image (400).png>)
 
 ## Sections
 
@@ -18,45 +18,44 @@ The settings are broadly split into 4 settings that affect different elements wi
 
 ### General
 
-![The General settings](../../../.gitbook/assets/image%20%28401%29.png)
+![The General settings](<../../../.gitbook/assets/image (401).png>)
 
 Here you can configure some overall settings for the widget:
 
-**Header** - Control the chatbot logo and title that appear in the header. If no value is set, nothing is shown.
+**Header **- Control the chatbot logo and title that appear in the header. If no value is set, nothing is shown.
 
 **Chatbot** - Controls the global name and avatar used for the messages from the chatbot. The avatar can be turned off for individual messages in the message editor.
 
 **Messages** - Toggle whether the time of the message is shown underneath each message.
 
-**Typing Event** - The length of time \(in milliseconds\) that the typing indicator should be shown for each message.
+**Typing Event **- The length of time (in milliseconds) that the typing indicator should be shown for each message.
 
-**Chatbot Controls** - Controls whether various buttons are displayed on the chatbot. The download button allows the user to download a text copy of the chat log. [More info on restart and end chat can be found here](../../../example-flows/contextual-restart-chat-end.md) ****
+**Chatbot Controls **- Controls whether various buttons are displayed on the chatbot. The download button allows the user to download a text copy of the chat log. [More info on restart and end chat can be found here](../../../example-flows/contextual-restart-chat-end.md)** **
 
-**Start Options** - When a chat session starts, the widget works out whether we are dealing with a new user \(someone we have never seen before\), a returning user \(someone who we have seen before but is not in a conversation\) or an ongoing user \(a user we have seen before who is in a  conversation\). These options allow you to chose if the widget should start minimised and less intrusive for any of these user types.
+**Start Options **- When a chat session starts, the widget works out whether we are dealing with a new user (someone we have never seen before), a returning user (someone who we have seen before but is not in a conversation) or an ongoing user (a user we have seen before who is in a  conversation). These options allow you to chose if the widget should start minimised and less intrusive for any of these user types.
 
 ### CSS
 
-![CSS Options](../../../.gitbook/assets/image%20%28403%29.png)
+![CSS Options](<../../../.gitbook/assets/image (403).png>)
 
 Here you can upload custom CSS files to completely customise the chat widget. There are 2 files you can add:
 
 **CSS for Chatbot** - This will be loaded inside the chat widget and is used to alter things about the widget
 
-**CSS for page -** This is loaded on the parent page that the widget is on. This allows for customisation of things like size and position of the widget
+**CSS for page - **This is loaded on the parent page that the widget is on. This allows for customisation of things like size and position of the widget
 
 ### Layout Settings
 
-![Alter the colours used in the bot](../../../.gitbook/assets/image%20%28396%29.png)
+![Alter the colours used in the bot](<../../../.gitbook/assets/image (396).png>)
 
-Here you can adjust the colours used in the bot from the chat window itself to the messages and buttons. 
+Here you can adjust the colours used in the bot from the chat window itself to the messages and buttons.&#x20;
 
 {% hint style="warning" %}
-**Remember:** Please ensure that the colours you pick are compatible with each other and content will be readable
+**Remember: **Please ensure that the colours you pick are compatible with each other and content will be readable
 {% endhint %}
 
 ### Conversational History Settings
 
-![Adjust what history is shown to the user](../../../.gitbook/assets/image%20%28397%29.png)
+![Adjust what history is shown to the user](<../../../.gitbook/assets/image (397).png>)
 
 Here, you can control whether the interface shows a user their previous chat history on load, and if so, how many messages to show. You can test how this behaves by using the preview section and **refreshing** the page on your browser rather than clicking the 'Refresh Scenario' button as this will generate a new user.
-

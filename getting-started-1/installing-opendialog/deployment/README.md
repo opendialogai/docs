@@ -14,11 +14,11 @@ The OpenDialog web application should be functional in, all modern browsers that
 * Safari
 * Firefox
 
-### Database Requirements 
+### Database Requirements&#x20;
 
 #### SQL Database
 
-OpenDialog is tested with _MySQL 5.7_ and _Postgress 12._ 
+OpenDialog is tested with _MySQL 5.7_ and _Postgress 12. _
 
 #### Dgraph Database
 
@@ -30,5 +30,4 @@ PHP 7.4
 
 ### Server Requirements
 
-OpenDialog will work with any server that meets the PHP version requirements \(including Nginx, Apache\). We test using Nginx.
-
+OpenDialog will work with any server that meets the PHP version requirements (including Nginx, Apache). We test using Nginx.
