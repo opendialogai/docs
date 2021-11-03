@@ -2,7 +2,7 @@
 description: >-
   A tutorial to guide you through the process of building The Power Of
   OpenDialog, a button-driven (or guided) conversation that demonstrates the
-  different messaging features and capabilities of OpenDia
+  different features and capabilities of OpenDialog.
 ---
 
 # Building 'The Power Of OpenDialog' conversational app
