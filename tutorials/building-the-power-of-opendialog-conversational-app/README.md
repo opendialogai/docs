@@ -7,8 +7,6 @@ description: >-
 
 # Building 'The Power Of OpenDialog' conversational app
 
-
-
 {% embed url="https://www.youtube.com/embed/DeAK_EmUsG4" %}
 Overview video
 {% endembed %}
@@ -21,7 +19,9 @@ In this tutorial, we are going to have a look at the following:
 * How to create intents, messages and buttons.
 * Learning how to build a fully functional bot and gain a good grasp of some practical ways that you could use OpenDialog.
 
-Our plan for this series will begin with:
+Before you dive into the tutorial you can see The Power of OpenDialog in action on our [website](https://opendialog.ai/the-power-of-opendialog/). This will be a good reference for you whilst you're building out your own.
+
+Ready to get started? Our plan for this series will begin with:
 
 {% content-ref url="lesson-1-conversational-map-design.md" %}
 [lesson-1-conversational-map-design.md](lesson-1-conversational-map-design.md)
