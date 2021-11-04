@@ -1,10 +1,12 @@
 ---
 description: >-
-  A description of the product chooser template and how you can adapt it to your
-  own needs.
+  A tutorial on how to build a product chooser and product support app within
+  OpenDialog
 ---
 
-# Product Chooser Template
+# Product Chooser and Support
+
+> The product chooser and product support application is available as a template within OpenDialog SaaS ([signup now!](https://opendialog.ai)) and you can test it out [here](https://opendialog.ai/case-study-perfectfit/).&#x20;
 
 The Product Chooser Template is an OpenDialog Conversational Application (for the webchat interface) designed to help people choose a product after they've answered a few questions. The scenario is built around a user looking for running shoes but it can be adapted to fit any situation where the aim is to provide some recommendations after having collected some relevant information. &#x20;
 

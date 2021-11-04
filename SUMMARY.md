@@ -30,7 +30,7 @@
   * [Lesson 1: Conversational Map Design](tutorials/building-the-power-of-opendialog-conversational-app/lesson-1-conversational-map-design.md)
   * [Lesson 2: Buiding Intents](tutorials/building-the-power-of-opendialog-conversational-app/lesson-2-buiding-intents.md)
   * [Lesson 3: Creating Messages and Buttons](tutorials/building-the-power-of-opendialog-conversational-app/lesson-3-creating-messages-and-buttons.md)
-* [Product Chooser Template](tutorials/product-chooser-template.md)
+* [Product Chooser and Support](tutorials/product-chooser-and-support.md)
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
 
