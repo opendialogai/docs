@@ -26,9 +26,9 @@
 
 ## Templates
 
-* [Product Chooser Template](templates/product-chooser-template/README.md)
-  * [Setup Instructions](templates/product-chooser-template/setup-instructions.md)
-  * [How It Works](templates/product-chooser-template/how-it-works.md)
+* [Product Chooser](templates/product-chooser/README.md)
+  * [Setup Instructions](templates/product-chooser/setup-instructions.md)
+  * [How It Works](templates/product-chooser/how-it-works.md)
 
 ## Tutorials
 

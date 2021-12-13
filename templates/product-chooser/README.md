@@ -4,9 +4,11 @@ description: >-
   OpenDialog
 ---
 
-# Product Chooser Template
+# Product Chooser
 
+{% hint style="success" %}
 The product chooser and product support application is available as a template within OpenDialog SaaS ([signup now!](https://opendialog.ai)) and you can test it out [here](https://opendialog.ai/case-study-perfectfit/).&#x20;
+{% endhint %}
 
 ## Overview
 
@@ -19,15 +21,16 @@ The scenario was originally built around the use case of a customer looking for 
 ### Key features of this template to note:
 
 * Flexible information gathering in context, tailoring to multiple, possible, conversational patterns including FAQ questions, updating gathered information and more...
-* Sidebar conversations enabling users to break out from a scene to handle a specific piece of information before returning to the prior scene.
-* FAQ setup allowing for easy integrations with your knowledge base or QA-interpreter service
+* Support for side conversations throughout the conversation, allowing users to sidetrack and the application to provide contextual, graceful, just-in-time recovery.
+* FAQ setup  for easy integration with your knowledge base or Q\&A-interpreter service
+* Rich carousel messages allowing to expose recommended products and interactive menus, to help guide the users during their choice of a product
 * Form messages to collect relevant information from the user
 
 ## Key Conversations
 
 These are the key conversations:
 
-**Welcome Conversation** - Welcomes the user to the experience, provides support for them to move forward to the "Gather Experience" conversation and can also be integrated with FAQ Support.&#x20;
+**Welcome Conversation** - Welcomes the user to the experience, provides support for them to move forward to the "Gather Experience" conversation and  also supports FAQ questions.&#x20;
 
 **Gather Experience** - The main objective of this conversation is to gather the key pieces of information required to provide some recommendations to the user.
 
@@ -35,10 +38,10 @@ These are the key conversations:
 
 **Purchase** - After a user picks a product we move them to the Purchase phase where they can complete relevant information and pay for the product.&#x20;
 
-**Feedback** - **** The Feedback conversation is not available throughout but is a follow-up to the 'Offboard' conversation or 'End Chat' button being triggered.
+**Feedback** - **** The Feedback conversation allows you to gather relevant feedback from the user after their purchasing experience or when they decide to end the conversation. &#x20;
 
 **Offboard** - The Offboard conversation offboards the user with an appropriate message.&#x20;
 
-**No Match Conversation** - The catch-all conversation that allows the application to fail gracefully when any intent parsing goes wrong. The template caters for localised no matches as well (i.e. No Match turns within a scene). You can find out more about this [here](https://docs.opendialog.ai/adding-conversations#no-match-conversation).
+**No Match Conversation** - This catch-all 'No Match' conversation allows the application to fail gracefully when any intent parsing goes wrong. The template caters for localised no matches as well (i.e. No Match turns within a scene). You can find out more about this [here](https://docs.opendialog.ai/adding-conversations#no-match-conversation).
 
 **Trigger** - The Trigger conversation captures intents that are supposed to start the entire conversation such as when the user loads WebChat (`intent.core.welcome` ) or when the user clicks on the WebChat restart icon (`intent.core.restart`). You can find out more about this [here](https://docs.opendialog.ai/example-flows/contextual-restart-chat-end#conversation-structure).  We recommend not making any major changes to this conversation, unless you have a specific purpose in mind - as this might break the overall functionality of the application.
