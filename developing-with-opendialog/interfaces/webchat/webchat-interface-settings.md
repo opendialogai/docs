@@ -22,17 +22,17 @@ The settings are broadly split into 4 settings that affect different elements wi
 
 Here you can configure some overall settings for the widget:
 
-**Header **- Control the chatbot logo and title that appear in the header. If no value is set, nothing is shown.
+**Header** - Control the chatbot logo and title that appear in the header. If no value is set, nothing is shown.
 
 **Chatbot** - Controls the global name and avatar used for the messages from the chatbot. The avatar can be turned off for individual messages in the message editor.
 
 **Messages** - Toggle whether the time of the message is shown underneath each message.
 
-**Typing Event **- The length of time (in milliseconds) that the typing indicator should be shown for each message.
+**Typing Event** - The length of time (in milliseconds) that the typing indicator should be shown for each message.
 
-**Chatbot Controls **- Controls whether various buttons are displayed on the chatbot. The download button allows the user to download a text copy of the chat log. [More info on restart and end chat can be found here](../../../example-flows/contextual-restart-chat-end.md)** **
+**Chatbot Controls** - Controls whether various buttons are displayed on the chatbot. The download button allows the user to download a text copy of the chat log. [More info on restart and end chat can be found here](../../../example-flows/contextual-restart-chat-end.md) ****&#x20;
 
-**Start Options **- When a chat session starts, the widget works out whether we are dealing with a new user (someone we have never seen before), a returning user (someone who we have seen before but is not in a conversation) or an ongoing user (a user we have seen before who is in a  conversation). These options allow you to chose if the widget should start minimised and less intrusive for any of these user types.
+**Start Options** - When a chat session starts, the widget works out whether we are dealing with a new user (someone we have never seen before), a returning user (someone who we have seen before but is not in a conversation) or an ongoing user (a user we have seen before who is in a  conversation). These options allow you to chose if the widget should start minimised and less intrusive for any of these user types.
 
 ### CSS
 
@@ -42,7 +42,7 @@ Here you can upload custom CSS files to completely customise the chat widget. Th
 
 **CSS for Chatbot** - This will be loaded inside the chat widget and is used to alter things about the widget
 
-**CSS for page - **This is loaded on the parent page that the widget is on. This allows for customisation of things like size and position of the widget
+**CSS for page -** This is loaded on the parent page that the widget is on. This allows for customisation of things like size and position of the widget
 
 ### Layout Settings
 
@@ -51,7 +51,7 @@ Here you can upload custom CSS files to completely customise the chat widget. Th
 Here you can adjust the colours used in the bot from the chat window itself to the messages and buttons.&#x20;
 
 {% hint style="warning" %}
-**Remember: **Please ensure that the colours you pick are compatible with each other and content will be readable
+**Remember:** Please ensure that the colours you pick are compatible with each other and content will be readable
 {% endhint %}
 
 ### Conversational History Settings

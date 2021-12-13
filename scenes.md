@@ -18,9 +18,9 @@ Similar to the higher-order concepts of Scenarios and Conversations they can hav
 
 ## Scene Behaviours
 
-Scenes currently support one behaviour - the _STARTING _behaviour.
+Scenes currently support one behaviour - the _STARTING_ behaviour.
 
 ### Starting Scene
 
-A _STARTING _scene is one that will be considered if it is the first time we interact with a specific conversation.&#x20;
+A _STARTING_ scene is one that will be considered if it is the first time we interact with a specific conversation.&#x20;
 

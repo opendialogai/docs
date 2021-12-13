@@ -18,7 +18,7 @@ The OpenDialog web application should be functional in, all modern browsers that
 
 #### SQL Database
 
-OpenDialog is tested with _MySQL 5.7_ and _Postgress 12. _
+OpenDialog is tested with _MySQL 5.7_ and _Postgress 12._&#x20;
 
 #### Dgraph Database
 

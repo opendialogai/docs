@@ -1,0 +1,363 @@
+{
+  "id": "a952380a-20d2-46e3-8daf-e96c544924fe",
+  "name": "userContinueNLU",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "show me",
+          "userDefined": false
+        }
+      ],
+      "count": 1,
+      "id": "eb42ff6d-d547-4285-9026-47a7774cd92c",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "lets get started",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "e2b1d434-a06c-43ad-9e47-c0f9650b0a2f",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "hiya",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "9458d3a2-98e5-4c66-8682-0dcb92ba5fcb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "hello",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "9e5c8ee7-243c-43b1-be9a-5a8383d4d532",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "hi",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "cedd5b49-5eca-4bbb-902d-7980ebcf9f6a",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "show shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "b52d42a2-f7b3-4477-a1f7-c96311a227fb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "see the shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f910a140-4162-4ed3-a7cf-f74d0b9d8b2e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's see shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "df075a65-207e-474d-954c-f732b6da3659",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "yeah",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "fdbc70e0-3236-4f49-b5ff-6fe1c1b2461c",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's see them",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "b9a6017a-5737-446b-9f98-ed593ecbe6e3",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "show me some shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "1b307f51-4cc4-450b-9080-ac2496d7a299",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "show me the shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c1d3f352-3f46-4925-a590-8c69b3ec1a22",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "nope",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "fe23028c-cad5-4060-9a85-accde85a7c00",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "no",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "b30c7b8c-6af8-4181-8ee9-f7e1859183ef",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's pay",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "4bd767e3-5827-4700-a9ef-20da73311aa2",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "correct",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "bb4bf7c5-3fa1-4aaf-a65a-d5a1f7475357",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "yes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "de0195c8-1c2f-4cfa-9564-4fcc01dc050f",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "confirm",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "3adbc72d-5d4c-42f6-bdf2-6255b202f5d9",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "go ahead",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "7a28489d-29c6-4fee-a8cf-ac14db5833bc",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's do it",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "08e91dce-bd09-4a6d-973a-db2794c90cf9",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's pick shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "ec8f3920-08b4-4798-94c6-f833d779745d",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "move",
+          "userDefined": false,
+          "meta": "@sys.ignore",
+          "alias": null
+        },
+        {
+          "text": " forward",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "3826d085-54a7-469f-bdfe-79f0ccdbc7f2",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "keep going",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "ad4e5509-be07-46af-9615-b8bd79f48924",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "move",
+          "userDefined": false,
+          "meta": "@sys.ignore",
+          "alias": null
+        },
+        {
+          "text": " on",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "066ab76b-7544-4b7a-b6ce-ee0542825637",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's go",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "cc0b20d8-3ebe-4ca6-bedd-c3c8f9772130",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "🚀Yep. Let's go",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "79a19d17-4dc7-4d69-b819-995c428e22aa",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

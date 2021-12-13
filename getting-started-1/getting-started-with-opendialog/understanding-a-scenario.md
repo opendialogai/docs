@@ -1,6 +1,6 @@
 # Understanding a Scenario
 
-So far we've [created](creating-a-scenario.md) a scenario and [explored](exploring-and-understanding-a-scenario.md) one of the conversations. Now, let's dive into the Conversational Flow. _How do we visualise what are the possible flows through the two conversations we already have? _We do this through our Conversational Flow view within the conversation designer.
+So far we've [created](creating-a-scenario.md) a scenario and [explored](exploring-and-understanding-a-scenario.md) one of the conversations. Now, let's dive into the Conversational Flow. _How do we visualise what are the possible flows through the two conversations we already have?_ We do this through our Conversational Flow view within the conversation designer.
 
 ![Scenario overview](<../../.gitbook/assets/image (381).png>)
 
@@ -18,7 +18,7 @@ We have two Conversations that are both _STARTING_ conversations and each has Sc
 
 ![Conversation player - starting intent selection](<../../.gitbook/assets/image (385).png>)
 
-Click on "Select Available Intents" reveals that there are three available intents from the User. The first is the Trigger intent (_intent.core.welcome), _the second is the Restart (_intent.core.restart_) intent and the third is the No Match (_intent.core.NoMatch_) intent.
+Click on "Select Available Intents" reveals that there are three available intents from the User. The first is the Trigger intent (_intent.core.welcome),_ the second is the Restart (_intent.core.restart_) intent and the third is the No Match (_intent.core.NoMatch_) intent.
 
 {% hint style="warning" %}
 You may have noticed that our intents have the naming convention of _intent.core.\<something>_ - this is just for default internal intents of OpenDialog. You can name your intents whatever suits you best although we suggest short, clear names.&#x20;

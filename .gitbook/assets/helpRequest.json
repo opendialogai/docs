@@ -1,0 +1,159 @@
+{
+  "id": "c3fe0207-895c-4d30-a71e-c3552c2d57f3",
+  "name": "helpRequest",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "give me some help",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "9d02d1d1-bcc2-40b2-a6ac-e1af5c97c2bb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what do I do?",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "fb56b139-ff8a-4d2e-98f9-a8aa8edd4538",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "talk to a person",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "117d4931-5346-42f2-a677-965da3e28346",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "human",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f5ddf3d3-a985-4386-9a9f-8f702cf6ea93",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i want to talk to the manager",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "0f1c2454-85d1-4b3d-b282-aee93511857b",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "connect me to a human",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "5fd6c8cc-a439-401c-b259-10fe989be518",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I want to talk to someone",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c1702b2f-8cfa-4e2f-b83c-bf2869086bb7",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what do I do",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "d70c2c1d-7cc0-481c-99a6-9545e370a358",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "help me",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "db297e1f-efc3-4a8c-97ef-82ac4b71105b",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i need help",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f26c5cf3-8a35-484e-b476-5787bad353f7",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

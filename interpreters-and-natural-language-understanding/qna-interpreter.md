@@ -1,4 +1,4 @@
-# QnA Interpreter
+# Microsoft QnA Interpreter
 
 The OpenDialog QnA integration allows us to use QnA knowledge bases.
 
@@ -23,7 +23,7 @@ Once you're happy with the training pairs, click "Save and train" in the top rig
 There are two key credentials to make note of after you publish your knowledge base; the app URL and the endpoint key. After publishing you should see some details for making a HTTP request to the published knowledge base.&#x20;
 
 1. **APP URL** is the combination of the host URL (next to the "Host:" field) and the endpoint (next to "POST"), it will be something similar to "https://\[your-qna-service].azurewebsites.net/qnamaker/knowledgebases/\[id]/generateAnswer".&#x20;
-2. **Endpoint key **is found after "Authorization: EndpointKey".
+2. **Endpoint key** is found after "Authorization: EndpointKey".
 
 ![](../.gitbook/assets/qna-publish.png)
 

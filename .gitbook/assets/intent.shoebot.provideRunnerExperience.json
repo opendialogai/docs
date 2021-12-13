@@ -1,0 +1,1010 @@
+{
+  "id": "821a7754-fcd7-475e-8b1f-d181789a0733",
+  "name": "intent.shoebot.provideRunnerExperience",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "gender",
+          "dataType": "@gender",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "$gender",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "pronation",
+          "dataType": "@pronation",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "$pronation",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "frequency",
+          "dataType": "@frequency",
+          "isList": true,
+          "required": false,
+          "prompts": [],
+          "value": "$frequency",
+          "outputDialogContexts": []
+        },
+        {
+          "noInputPromptMessages": [],
+          "noMatchPromptMessages": [],
+          "promptMessages": [],
+          "defaultValue": "",
+          "name": "size",
+          "dataType": "@size",
+          "isList": false,
+          "required": false,
+          "prompts": [],
+          "value": "$size",
+          "outputDialogContexts": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i run ",
+          "userDefined": false
+        },
+        {
+          "text": "weekly",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "c5d8f6e2-850c-4301-b75e-4906e52a55f7",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i run ",
+          "userDefined": false
+        },
+        {
+          "text": "often",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "c2a5b34c-59ac-4d27-8357-e88c78c8e280",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i run very ",
+          "userDefined": false
+        },
+        {
+          "text": "often",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "cf069d68-82a5-4c31-8ad9-8f7b1cace886",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i ",
+          "userDefined": false
+        },
+        {
+          "text": "don't run very often",
+          "userDefined": true,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 1,
+      "id": "23425b96-4fcb-4071-b790-4b1a99915048",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "looking for ",
+          "userDefined": false
+        },
+        {
+          "text": "men's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " and I ",
+          "userDefined": false
+        },
+        {
+          "text": "don't run very often",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "2178bf4f-482b-4a52-8e6f-7a66d7b13950",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "make that a ",
+          "userDefined": false
+        },
+        {
+          "text": "size 7",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "ef708a00-5f1a-4855-8048-8cc6f7e47598",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i want ",
+          "userDefined": false
+        },
+        {
+          "text": "size 8",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        },
+        {
+          "text": " shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "d6ddad90-4b06-4136-b713-edbeb000608d",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "make it a ",
+          "userDefined": false
+        },
+        {
+          "text": "size 9",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "8115c724-c7ca-4fc8-9cae-6752d44ff2bc",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i usually run ",
+          "userDefined": false
+        },
+        {
+          "text": "a couple of times a week",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "e5d479da-82d9-456b-b84b-cf79ddd667b7",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i go on ",
+          "userDefined": false
+        },
+        {
+          "text": "daily",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        },
+        {
+          "text": " runs most ",
+          "userDefined": false
+        },
+        {
+          "text": "weeks",
+          "userDefined": false,
+          "meta": "@sys.ignore",
+          "alias": null
+        }
+      ],
+      "count": 0,
+      "id": "0e4c6aee-54de-4ecf-82a8-a53e204f6b4c",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "shoes",
+          "userDefined": false
+        }
+      ],
+      "count": 2,
+      "id": "8b6bce01-f1b6-4bea-b2dc-00ed2451dee4",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i run ",
+          "userDefined": false
+        },
+        {
+          "text": "half",
+          "userDefined": false,
+          "meta": "@sys.ignore",
+          "alias": null
+        },
+        {
+          "text": "-",
+          "userDefined": false
+        },
+        {
+          "text": "marathons",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "87aaec66-f5a7-4706-bc26-601a85f8b2b6",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I run ",
+          "userDefined": false
+        },
+        {
+          "text": "marathons",
+          "userDefined": true,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "719750d8-592a-4ce8-9145-4ac8d1825dc0",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I ",
+          "userDefined": false
+        },
+        {
+          "text": "underpronate",
+          "userDefined": true,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "699c2c31-7f74-450b-9f07-8613c46ed2f3",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I ",
+          "userDefined": false
+        },
+        {
+          "text": "overpronate",
+          "userDefined": true,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "cc14b628-e63b-482a-b9fd-40d30ee690d2",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's make it ",
+          "userDefined": false
+        },
+        {
+          "text": "men's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 0,
+      "id": "06bf3325-24e1-4ad8-ba99-3ddd7f74970c",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "actually what about ",
+          "userDefined": false
+        },
+        {
+          "text": "women's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 0,
+      "id": "64b33745-258f-4355-91d7-1c83cec83b98",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "casual",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        },
+        {
+          "text": " runner",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "8c5dc499-3b8f-48ef-883c-5cc344625fee",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "actually show me ",
+          "userDefined": false
+        },
+        {
+          "text": "men's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 0,
+      "id": "6e355c6b-a47f-4d56-8181-ef34f611c2a0",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "show me ",
+          "userDefined": false
+        },
+        {
+          "text": "women's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 0,
+      "id": "a81e8f87-9241-4d8c-aa32-e3c8a9ab0539",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "men's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": ". ",
+          "userDefined": false
+        },
+        {
+          "text": "daily",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 1,
+      "id": "61815fed-bf48-49f7-b753-da9c08492eed",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I need shoes for ",
+          "userDefined": false
+        },
+        {
+          "text": "casual",
+          "userDefined": true,
+          "alias": "frequency",
+          "meta": "@frequency"
+        },
+        {
+          "text": " running",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "5dc0e163-b9d1-4fa2-bdca-5c31b5387194",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I need ",
+          "userDefined": false
+        },
+        {
+          "text": "runners for men",
+          "userDefined": true,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "size 8",
+          "userDefined": true,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "850b0de3-3b9e-4d82-8cef-6a9263b98ebe",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "women shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "size 6",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "over pronate",
+          "userDefined": false,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "a8df5703-86b7-42f1-a469-1f2e34520d79",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "women shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "size 6",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "46659e5f-f276-4e4a-a2f0-8b562bfd413e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i'd like to get ",
+          "userDefined": false
+        },
+        {
+          "text": "women shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " for ",
+          "userDefined": false
+        },
+        {
+          "text": "a casual",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        },
+        {
+          "text": " runner ",
+          "userDefined": false
+        },
+        {
+          "text": "size five",
+          "userDefined": false,
+          "meta": "@sys.ignore",
+          "alias": null
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "over pronate",
+          "userDefined": false,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "74bab2ac-218f-4f4f-a781-56cf278c85df",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i'm looking for ",
+          "userDefined": false
+        },
+        {
+          "text": "women shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " ",
+          "userDefined": false
+        },
+        {
+          "text": "size five",
+          "userDefined": true,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "43a7903a-4159-4bd7-85b8-440acbc00671",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "size 5",
+          "userDefined": true,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "fa3d5744-9102-4da0-a418-ddb5fb20f919",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "women's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 0,
+      "id": "661dcf5b-9daf-46e6-8884-b0f9a412170f",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i'm looking for ",
+          "userDefined": false
+        },
+        {
+          "text": "men's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 0,
+      "id": "ca7d5b49-1856-43f1-a074-04d24c2fd3e5",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "over pronation",
+          "userDefined": false,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "5e10bc9c-8468-4fd0-98cb-0f4639f63a33",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i run ",
+          "userDefined": false
+        },
+        {
+          "text": "once a week",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 1,
+      "id": "58cb2ece-0f97-4824-bf35-487cf40fb7da",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I'm looking for ",
+          "userDefined": false
+        },
+        {
+          "text": "women shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": " for ",
+          "userDefined": false
+        },
+        {
+          "text": "casual",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        },
+        {
+          "text": " running",
+          "userDefined": false
+        }
+      ],
+      "count": 1,
+      "id": "50b53d71-1a8d-4ea8-96ac-d66e877d4621",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i've got ",
+          "userDefined": false
+        },
+        {
+          "text": "neutral pronation",
+          "userDefined": false,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "771d9d86-74ef-4978-85bc-fa2555f2a98c",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "every day",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 1,
+      "id": "3bd412d8-536c-42ce-a7cf-7a035cfd3d53",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "six",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "83d7ab64-734f-48c3-9c78-9a73757365e3",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "I'm looking for ",
+          "userDefined": false
+        },
+        {
+          "text": "women shoes",
+          "userDefined": true,
+          "alias": "gender",
+          "meta": "@gender"
+        },
+        {
+          "text": ", ",
+          "userDefined": false
+        },
+        {
+          "text": "size 5.5",
+          "userDefined": true,
+          "alias": "size",
+          "meta": "@size"
+        },
+        {
+          "text": ", ",
+          "userDefined": false
+        },
+        {
+          "text": "over pronation",
+          "userDefined": true,
+          "alias": "pronation",
+          "meta": "@pronation"
+        },
+        {
+          "text": ". I usually run 5km to 7km in the park ",
+          "userDefined": false
+        },
+        {
+          "text": "each day",
+          "userDefined": true,
+          "alias": "frequency",
+          "meta": "@frequency"
+        },
+        {
+          "text": ".",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "dbd2ecd3-aa35-49d2-b25b-a72aff3824eb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "looking for ",
+          "userDefined": false
+        },
+        {
+          "text": "men's shoes",
+          "userDefined": false,
+          "alias": "gender",
+          "meta": "@gender"
+        }
+      ],
+      "count": 1,
+      "id": "00159d0d-9827-49c1-a8a5-28363ab4cf30",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Daily",
+          "userDefined": false,
+          "alias": "frequency",
+          "meta": "@frequency"
+        }
+      ],
+      "count": 0,
+      "id": "262866d2-a480-4f46-9490-c26dc9366712",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "Neutral",
+          "userDefined": false,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 0,
+      "id": "efe35a10-21ad-4e2f-bde5-ce70ce1dd29e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i ",
+          "userDefined": false
+        },
+        {
+          "text": "overpronate",
+          "userDefined": false,
+          "alias": "pronation",
+          "meta": "@pronation"
+        }
+      ],
+      "count": 1,
+      "id": "1f71d5e7-b626-4bb5-b9fd-751381141222",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i want shoes ",
+          "userDefined": false
+        },
+        {
+          "text": "size 7",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 1,
+      "id": "84732089-2cb2-4d08-98b7-86c1f3c478ea",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "loking for ",
+          "userDefined": false
+        },
+        {
+          "text": "size 6",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 0,
+      "id": "c0ca2ee5-2dbb-4d8b-b8ca-cc68fff3b05f",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "size 8",
+          "userDefined": false,
+          "alias": "size",
+          "meta": "@size"
+        }
+      ],
+      "count": 1,
+      "id": "4abea8c9-b7b1-4e2f-b5f0-7259a20c42d1",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

@@ -36,7 +36,7 @@ OpenDialog is for anyone looking to develop conversational applications. Whether
 
 **OpenDialog is a tool for the entire team**. It allows everyone to speak the same language, collaborate through the same tool and produce better conversational applications as a result.&#x20;
 
-### **How does OpenDialog work? **
+### **How does OpenDialog work?**&#x20;
 
 At OpenDialog's core is its Conversation Designer. This no-code conversation design and development tool enables you to describe complex conversational patterns quickly and efficiently.&#x20;
 

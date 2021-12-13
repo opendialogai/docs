@@ -27,7 +27,7 @@ You will then see that our Webchat appears displaying your Scenario welcome conv
 
 ### Conversation Context
 
-Whilst you interact with Webchat you will notice that the Conversational Context updates to show you the intent _(and where it's positioned in your Scenario) _that is currently being displayed. The links are clickable and will take you through to the intent so that you can make any changes as required.
+Whilst you interact with Webchat you will notice that the Conversational Context updates to show you the intent _(and where it's positioned in your Scenario)_ that is currently being displayed. The links are clickable and will take you through to the intent so that you can make any changes as required.
 
 ![](.gitbook/assets/conversational\_context.gif)
 
@@ -43,7 +43,7 @@ Within the preview page, you're able to simulate attributes which you might have
 
 Using an example we've used [elsewhere in the documentation,](messages/#6-message-conditions) where we want to show different messages to users depending on whether they are a new user or a returning user.&#x20;
 
-We firstly need to set conditions on the messages themselves to tell the system which message it should show depending on the value of the attribute saved against the user. For this example, we would have set the 'Attribute' to `seconds_since_last_seen ` and the 'Value' to be less than '`0`' for new users or to be greater than '`0`' for returning users.
+We firstly need to set conditions on the messages themselves to tell the system which message it should show depending on the value of the attribute saved against the user. For this example, we would have set the 'Attribute' to `seconds_since_last_seen` and the 'Value' to be less than '`0`' for new users or to be greater than '`0`' for returning users.
 
 So then to test this within the preview, for a returning user, we would type in `seconds_since_last_seen` to the 'Attribute' field and then '`1`' into the value field then click on 'Add'. You will see it update in the 'Context- User' section.&#x20;
 

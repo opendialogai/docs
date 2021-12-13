@@ -10,7 +10,7 @@ Attributes are the way OpenDialog describes different things in the domain that 
 
 Attributes have a type and a value.
 
-Attributes can be _scalar _(store just one value), or they can be _composite._ Composite attributes store multiple attributes within them.
+Attributes can be _scalar_ (store just one value), or they can be _composite._ Composite attributes store multiple attributes within them.
 
 {% hint style="info" %}
 Roadmap: Currently only OpenDialog core makes use of composite attributes but it will be possible to access them through the interface as well in the future.

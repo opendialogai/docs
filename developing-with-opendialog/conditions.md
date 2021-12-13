@@ -6,11 +6,11 @@ description: Introduction to Conditions in OpenDialog
 
 Conditions can be used to ensure that only specific elements are considered for matching. They can be specified in the following places:
 
-* **Scenario Level **- if conditions are not met then the entire Scenario is not considered
-* **Conversation Level ** - if conditions are not met then the entire Conversation is not considered
+* **Scenario Level** - if conditions are not met then the entire Scenario is not considered
+* **Conversation Level** - if conditions are not met then the entire Conversation is not considered
 * **Scene Level** - if conditions are not met then the entire Scene is not considered
 * **Turn Level** - if conditions are not met then the entire Turn is not considered
-* **Intent (APP & USER) **
+* **Intent (APP & USER)**&#x20;
 * **Messages**&#x20;
 
 If multiple conditions are given for a single element they are combined on an `AND` basis, in other words they must **all** be true for the element to be considered.

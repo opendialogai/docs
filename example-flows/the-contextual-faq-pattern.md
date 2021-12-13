@@ -16,7 +16,7 @@ Let's walk through an example to demonstrate the process. Imagine you have a sce
 
 ![A shopping guide scenario](<../.gitbook/assets/image (110).png>)
 
-The expectation is that following a _Welcome _conversation we will lead the user to a _Collect Preferences _conversation where we will ask a few questions about their preferences in order to be able to provide recommendations.&#x20;
+The expectation is that following a _Welcome_ conversation we will lead the user to a _Collect Preferences_ conversation where we will ask a few questions about their preferences in order to be able to provide recommendations.&#x20;
 
 While we are in the Collect Preferences conversation we anticipate that the user will also have questions that should be dealt with an FAQ functionality. The user should be able to ask an FAQ question, get an answer and then be asked whatever remaining preference collection questions there are.&#x20;
 
@@ -28,7 +28,7 @@ The Welcome Conversation has just one Scene. For the purposes of this example we
 
 The Welcome Turn is a _STARTING_ turn and its job is to welcome the user to the conversation.&#x20;
 
-Following that we anticipate that the user will either have some questions to ask right then (handled by the _OPEN _FAQ turn or the user might either click a button or simply say that they want to get started with the guided experience. That is handled by the Continue Trigger Turn.&#x20;
+Following that we anticipate that the user will either have some questions to ask right then (handled by the _OPEN_ FAQ turn or the user might either click a button or simply say that they want to get started with the guided experience. That is handled by the Continue Trigger Turn.&#x20;
 
 The FAQ Turn is an Open turn with a simple request  and response pair.
 

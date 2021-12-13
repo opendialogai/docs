@@ -4,7 +4,7 @@ description: A quick-fire view of all the main concepts of OpenDialog
 
 # Introduction
 
-**What does it mean to build a conversational application with OpenDialog? **
+**What does it mean to build a conversational application with OpenDialog?**&#x20;
 
 We've talked quite a bit about the [underlying concepts](reference/what-are-conversations/) behind OpenDialog and have walked through [creating a scenario](getting-started-1/getting-started-with-opendialog/creating-a-scenario.md), [explored a scenario](getting-started-1/getting-started-with-opendialog/exploring-and-understanding-a-scenario.md) to see its individual components and also looked at the [conversational flows](getting-started-1/getting-started-with-opendialog/understanding-a-scenario.md).&#x20;
 
@@ -43,13 +43,13 @@ Yes, that is quite a journey but it provides us with a very flexible way of capt
 
 The current conversational state will then determine what are the possible next states.&#x20;
 
-At the highest level, a user is only ever in one of two states. They are either in an _ongoing conversation_ or they are_ not in an ongoing conversation_.&#x20;
+At the highest level, a user is only ever in one of two states. They are either in an _ongoing conversation_ or they are _not in an ongoing conversation_.&#x20;
 
 #### User not in an ongoing conversation
 
 If no ongoing conversation is selected then when an utterance event takes place (an utterance event is just a fancy way to say that someone said something) the job of the conversation engine is to determine what (if any) Turn the user could be placed in (and by consequence what the ongoing conversation is).&#x20;
 
-To do this the Conversation Engine is going to examine all [active](designer.md#active-and-draft-scenarios) scenarios, look at all the conversations that have been given the [_STARTING_](adding-conversations.md#starting-conversations) behaviour, find all the Scenes that have a _STARTING _behaviour, then find Turns with a _STARTING _behaviour.&#x20;
+To do this the Conversation Engine is going to examine all [active](designer.md#active-and-draft-scenarios) scenarios, look at all the conversations that have been given the [_STARTING_](adding-conversations.md#starting-conversations) behaviour, find all the Scenes that have a _STARTING_ behaviour, then find Turns with a _STARTING_ behaviour.&#x20;
 
 From those Turns, it is going to use the interpreter associated with each turn to attempt to interpret the user utterance. The interpreter with the highest confidence score will _win_, and the user will be positioned in that conversational state.&#x20;
 
@@ -62,16 +62,16 @@ If the user is in an ongoing conversation and we have an incoming utterance we w
 If the Conversation Engine does not match any of the possible intents it will create its own intent - called a No-Match intent and then attempt to match that! The Conversation Engine starts with what is called a `TurnNoMatch`, which means it was looking for a Turn but didn't manage to find one and it will now look for a Turn that can handle a TurnNoMatch. It then escalates to a `SceneNoMatch`, then a `ConversationNoMatch` and finally the globalNoMatch. This cascading failure allows us to capture "no matches" at the appropriate level and attempt to recover. We will be looking at more specific examples further on in the documentation
 
 {% hint style="info" %}
-**Roadmap: **We will eventually support the escalation of possible intents to other _open_ scenes and the _open_ conversations so if something fails within a scene we can look for other contexts that may be appropriate.
+**Roadmap:** We will eventually support the escalation of possible intents to other _open_ scenes and the _open_ conversations so if something fails within a scene we can look for other contexts that may be appropriate.
 {% endhint %}
 
 ## Interpretation
 
-A key aspect of conversational behaviour is the interpretation of user utterances. The way OpenDialog handles this is by using [interpreters](interpreters-and-natural-language-understanding/)._ _Interpreters are assigned to individual user-related intents. When a user utterance is provided all the relevant interpreters based on conversational context will be queried and the interpreter with the highest confidence score will be matched.&#x20;
+A key aspect of conversational behaviour is the interpretation of user utterances. The way OpenDialog handles this is by using [interpreters](interpreters-and-natural-language-understanding/). __ Interpreters are assigned to individual user-related intents. When a user utterance is provided all the relevant interpreters based on conversational context will be queried and the interpreter with the highest confidence score will be matched.&#x20;
 
 ### Expected Attributes
 
-Interpreters can also generate _expected attributes. _These are pieces of information that we expect to find within a user utterance. If an interpreter finds an expected attribute it will store it in the context we provided,  this enables us to then use it.&#x20;
+Interpreters can also generate _expected attributes._ These are pieces of information that we expect to find within a user utterance. If an interpreter finds an expected attribute it will store it in the context we provided,  this enables us to then use it.&#x20;
 
 For example, for the phrase "I would like to order size 7 shoes", we can have an expected attribute of;`shoe_size`that we can direct the conversation engine to store in the `User` context. We can then use conditions throughout the conversation to determine whether we have this piece of information or not.
 

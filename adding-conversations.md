@@ -40,15 +40,15 @@ This high-level view captures the core goals quickly. You can now start diving i
 
 ## Conversation Behaviours
 
-Conversations support just one type of _behaviour. _
+Conversations support just one type of _behaviour._&#x20;
 
 ### Starting Conversations
 
-A _STARTING _conversation will only be considered if it is the first time a user interacts with a scenario or when another conversation has been explicitly completed (conversations can be marked as completed through an intent setting).&#x20;
+A _STARTING_ conversation will only be considered if it is the first time a user interacts with a scenario or when another conversation has been explicitly completed (conversations can be marked as completed through an intent setting).&#x20;
 
 ## Welcome Conversation
 
-The Welcome conversation is the default _STARTING _conversation.&#x20;
+The Welcome conversation is the default _STARTING_ conversation.&#x20;
 
 It has one Scene and one Turn within that scene which are both _STARTING_ as well.&#x20;
 

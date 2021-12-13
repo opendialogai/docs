@@ -17,7 +17,7 @@ So you now want to secure you account with 2FA! Firstly you need to click on you
 Then click on 'Identity & Security' to open the user security page. To then enable 2FA, click on 'Enable 2FA' to open up the 2FA menu.&#x20;
 
 {% hint style="danger" %}
-**IMPORTANT: **Ensure that you scan the QR code, register it and back-up your recovery codes before clicking on 'Confirm'. You can 'Cancel' if you do not wish to proceed.
+**IMPORTANT:** Ensure that you scan the QR code, register it and back-up your recovery codes before clicking on 'Confirm'. You can 'Cancel' if you do not wish to proceed.
 {% endhint %}
 
 Once setup you will now need your chosen authenticator application to hand when logging in to your account.&#x20;

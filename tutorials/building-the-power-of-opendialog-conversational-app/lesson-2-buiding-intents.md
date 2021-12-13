@@ -44,7 +44,7 @@ Now that we've made our App Request Intent let's look at the turn that contains 
 
 * Navigate back to the Welcome User scene
 
-This is now where the Next turn comes in. Remember from the previous lesson that this turn focuses on the navigation of the scenes._** **_In our case, this will be where the user request intents of what the user would like to navigate to, would be placed. This would be to see **Button Behaviours**, **Button Functionalities** or see the **Other Capabilities** covered in the other conversations.
+This is now where the Next turn comes in. Remember from the previous lesson that this turn focuses on the navigation of the scenes. _****_ In our case, this will be where the user request intents of what the user would like to navigate to, would be placed. This would be to see **Button Behaviours**, **Button Functionalities** or see the **Other Capabilities** covered in the other conversations.
 
 Now let’s create these intents.
 

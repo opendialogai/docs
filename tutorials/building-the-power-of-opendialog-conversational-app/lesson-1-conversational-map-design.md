@@ -24,7 +24,7 @@ Here is an overview of the conversational map of The Power of OpenDialog.
 ## Step 1: Create A Scenario
 
 {% hint style="info" %}
-A **scenario **is meant to encapsulate a set of related conversations focused on helping the user achieve a specific high-level goal.
+A **scenario** is meant to encapsulate a set of related conversations focused on helping the user achieve a specific high-level goal.
 {% endhint %}
 
 ![](<../../.gitbook/assets/Screenshot (47).png>)

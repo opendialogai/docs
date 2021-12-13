@@ -46,13 +46,13 @@ Each subtopic in OpenDialog can be set up as [a scene](../scenes.md).  Open the 
 
 ![](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.16.47.png)
 
-Give each scene** **[**a starting behaviour,**](../scenes.md) so that the conversation engine will consider them all as 'conversation starters’.  For more in-depth information on behaviour, check out the [linked article](../scenes.md)!
+Give each scene **** [**a starting behaviour,**](../scenes.md) so that the conversation engine will consider them all as 'conversation starters’.  For more in-depth information on behaviour, check out the [linked article](../scenes.md)!
 
 Finally, [**Turns**](../turns-and-intents.md) capture single exchanges. In our FAQ application, these are our question-answer pairs.  Make sure to give each turn [a starting behaviour](../turns-and-intents.md#starting-turns), so that the conversation engine considers them when entering their parent component: the scene.
 
 ![](../.gitbook/assets/capture-de-cran-2021-06-29-a-08.18.15.png)
 
-👉** In our example:** Within the FAQ conversation - set up a 'Returns' scene, with a 'Return purchase' turn.
+👉 **In our example:** Within the FAQ conversation - set up a 'Returns' scene, with a 'Return purchase' turn.
 
 Now is the time to start adding our questions and answers to the information architecture we have set up.  We will do this using [request and response intents.](../turns-and-intents.md#intents-in-turns)
 

@@ -34,7 +34,7 @@ If the conversation state, beyond the scenario itself, is not determined then we
 Please note that the conversation engine can actually choose between multiple scenarios first, before diving into conversations of a single scenario. Choosing between different scenarios is not currently supported through the user interface though. A scenario is defined at the point of integration with an external conversation interface.&#x20;
 {% endhint %}
 
-The conversations that can start an interaction within a scenario are the conversations that have the **starting **behaviour. In the UI this is indicated by a green pointer on the conversation.&#x20;
+The conversations that can start an interaction within a scenario are the conversations that have the **starting** behaviour. In the UI this is indicated by a green pointer on the conversation.&#x20;
 
 ![Starting and non-starting conversations](<../../.gitbook/assets/image (411).png>)
 
@@ -66,7 +66,7 @@ When we position our context at the request part of a turn we are looking for a 
 
 1. If the matching intent defines a _transition_ to another part of the conversation, we will follow that transition.
 2. In the absence of a transition we will look for a matching response intent that we can select _within_ the turn.
-3. If there is no transition and no response intent we will look for a request intent (from the application) in _another_ turn within the same scene. This is what we call a _cadence _change in OpenDialog. When a turn has no response and we are forced to look for a request from the other participant in another turn we are handing the _conversational initiative_ to the other participant and changing the cadence from user->app to app->user in this case.&#x20;
+3. If there is no transition and no response intent we will look for a request intent (from the application) in _another_ turn within the same scene. This is what we call a _cadence_ change in OpenDialog. When a turn has no response and we are forced to look for a request from the other participant in another turn we are handing the _conversational initiative_ to the other participant and changing the cadence from user->app to app->user in this case.&#x20;
 
 In our example there are no response intents, and if you recall from earlier there are also no other turns in the scene. So let us hope we define some sort of transition!
 

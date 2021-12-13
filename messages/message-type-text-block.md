@@ -11,5 +11,5 @@ A text message is a plain message with only text. You can add as many text block
 There is no support at the moment for any other formatting such as hyperlinking text, bold, italics etc.
 
 {% hint style="success" %}
-**Saves Message: **Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
+**Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

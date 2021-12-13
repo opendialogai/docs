@@ -24,7 +24,7 @@ If you click on the Conversation itself you can edit its settings.
 
 The key thing to keep in mind about the "Trigger Conversation" is that it has a _STARTING_ behaviour. This lets the conversation engine know that it can consider the "Welcome Conversation" as an _entry_ conversation into the entire scenario. You can have multiple _STARTING_ conversations and, of course, conversations without this behaviour.&#x20;
 
-If a conversation does not have a starting behaviour it will only be considered after_ _a user has already entered the scenario and provided there is a transition to it.
+If a conversation does not have a starting behaviour it will only be considered after __ a user has already entered the scenario and provided there is a transition to it.
 
 You can also select the default interpreter for the conversation and add conditions but we will come back to that later. For now let's move down to the scene level.
 
@@ -48,7 +48,7 @@ If you click on the "Trigger Turn" you will get the settings view for the turn.&
 
 ![Turn settings](<../../.gitbook/assets/image (322).png>)
 
-The turn in this case is also a _STARTING _and a _OPEN _ behaviour, which means that this is a turn through which the overall conversation can start and come back to, if required.&#x20;
+The turn in this case is also a _STARTING_ and a _OPEN_ behaviour, which means that this is a turn through which the overall conversation can start and come back to, if required.&#x20;
 
 ### Intent Level View
 

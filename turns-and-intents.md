@@ -20,7 +20,7 @@ Turns have two behaviours
 
 ### Starting Turns
 
-_STARTING _turns are only considered when you join a scene for the first time. After the first interaction within the Scene starting turns are no longer considered.&#x20;
+_STARTING_ turns are only considered when you join a scene for the first time. After the first interaction within the Scene starting turns are no longer considered.&#x20;
 
 ### Open Turns&#x20;
 
@@ -49,7 +49,7 @@ If you only have request intents in a turn one of two things can happen:
 1. You define a transition in the turn in which case the engine will follow the transition and attempt to find an appropriate intent on the _end_ of that transition. An appropriate intent would be the _opposite_ participant. So if in Turn A the request intent is from the APP we will be looking for intents from the USER in Turn B and vice-versa. This allows you to do cadence switch on transitions to have natural conversation flows.&#x20;
 2. You don't define a transition, in which case the engine will go back to the scene level and look for open turns that it could follow that have the _opposite_ participant. So if you had Turn A with an APP intent and no response intents that engine would look for other open turns with a USER request intent to enter. This again allows you to switch cadence, deal with out of context questions such as FAQ, etc or localised no matching.&#x20;
 
-An intent, from the user, is also referred to as an _incoming _intent, while an intent from the application is referred to as an _outgoing_ intent. As the figure below illustrates an incoming utterance is interpreted to be matched on an incoming intent, and the Conversation Engine will then select an outgoing intent that we will map (through the message repository) to an outgoing utterance.
+An intent, from the user, is also referred to as an _incoming_ intent, while an intent from the application is referred to as an _outgoing_ intent. As the figure below illustrates an incoming utterance is interpreted to be matched on an incoming intent, and the Conversation Engine will then select an outgoing intent that we will map (through the message repository) to an outgoing utterance.
 
 ![Incoming and Outgoing Intents](<.gitbook/assets/image (80).png>)
 

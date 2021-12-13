@@ -2,14 +2,14 @@
 
 * [OpenDialog](README.md)
 
-## Introduction <a href="concepts-1" id="concepts-1"></a>
+## Introduction <a href="#concepts-1" id="concepts-1"></a>
 
 * [The OpenDialog Way](concepts-1/concepts/README.md)
   * [1. Start with a conversation model](concepts-1/concepts/1.-start-with-a-conversation-model.md)
   * [2. Design using a context-first approach](concepts-1/concepts/2.-design-using-a-context-first-approach.md)
   * [3. Work with a pro-active (and opinionated) conversation engine](concepts-1/concepts/3-work-with-a-pro-active-and-opinionated-conversation-engine.md)
 
-## Getting Started <a href="getting-started-1" id="getting-started-1"></a>
+## Getting Started <a href="#getting-started-1" id="getting-started-1"></a>
 
 * [Getting Started With OpenDialog](getting-started-1/getting-started-with-opendialog/README.md)
   * [Creating a Scenario](getting-started-1/getting-started-with-opendialog/creating-a-scenario.md)
@@ -24,17 +24,22 @@
     * [Deployment through Forge](getting-started-1/installing-opendialog/deployment/deployment-through-forge.md)
     * [Large-Scale Enterprise Deployments](getting-started-1/installing-opendialog/deployment/large-scale-enterprise-deployments.md)
 
-## Templates & Tutorials <a href="tutorials" id="tutorials"></a>
+## Templates
+
+* [Product Chooser Template](templates/product-chooser-template/README.md)
+  * [Setup Instructions](templates/product-chooser-template/setup-instructions.md)
+  * [How It Works](templates/product-chooser-template/how-it-works.md)
+
+## Tutorials
 
 * [Building 'The Power Of OpenDialog' conversational app](tutorials/building-the-power-of-opendialog-conversational-app/README.md)
   * [Lesson 1: Conversational Map Design](tutorials/building-the-power-of-opendialog-conversational-app/lesson-1-conversational-map-design.md)
   * [Lesson 2: Buiding Intents](tutorials/building-the-power-of-opendialog-conversational-app/lesson-2-buiding-intents.md)
   * [Lesson 3: Creating Messages and Buttons](tutorials/building-the-power-of-opendialog-conversational-app/lesson-3-creating-messages-and-buttons.md)
-* [Product Chooser and Support](tutorials/product-chooser-and-support.md)
 * [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
 
-## Working With OpenDialog <a href="working-with-opendialog-1" id="working-with-opendialog-1"></a>
+## Working With OpenDialog <a href="#working-with-opendialog-1" id="working-with-opendialog-1"></a>
 
 ***
 
@@ -64,7 +69,7 @@
   * [Account Security](opendialog-account-management/account-security.md)
 * [Launching Your Application](launching-your-application.md)
 
-## Conversational Patterns <a href="example-flows" id="example-flows"></a>
+## Conversational Patterns <a href="#example-flows" id="example-flows"></a>
 
 * [Introduction](example-flows/introduction.md)
 * [Contextual Help Pattern](example-flows/contextual-help.md)

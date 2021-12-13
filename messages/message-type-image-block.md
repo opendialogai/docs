@@ -11,5 +11,5 @@ To add an image you will need to first host the image somewhere external from Op
 ![Message editor: Image message.](<../.gitbook/assets/image (296).png>)
 
 {% hint style="success" %}
-**Saves Message: **Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
+**Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

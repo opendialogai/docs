@@ -31,7 +31,7 @@ If you watch the clip at the start you can see that there are three distinct con
 
 Let's go ahead and edit our existing scenario to reflect this structure.&#x20;
 
-#### 2.1 Create the button-driven conversation  <a href="2-1-create-the-button-driven-conversation" id="2-1-create-the-button-driven-conversation"></a>
+#### 2.1 Create the button-driven conversation  <a href="#2-1-create-the-button-driven-conversation" id="2-1-create-the-button-driven-conversation"></a>
 
 Go to the top-level of the scenario and click on the "+" button to add a conversation. Let's call it "Button-driven conversation" and make it a starting conversation (we will explain later why it needs to be a starting conversation).
 
@@ -45,7 +45,7 @@ Now repeat the process to add the NLU conversation. Make sure to make this one a
 
 We have the conversation level components in place, now we can think about the interactions that will happen within them.&#x20;
 
-### 3. Button-driven conversation conversation flow <a href="3-button-driven-conversation-conversation-flow" id="3-button-driven-conversation-conversation-flow"></a>
+### 3. Button-driven conversation conversation flow <a href="#3-button-driven-conversation-conversation-flow" id="3-button-driven-conversation-conversation-flow"></a>
 
 The user will _enter_ the button-driven conversation by clicking on the "Drive with a button" option. So we will add a welcome scene to this conversation to _capture_ that intent and then provide a response from the bot.&#x20;
 
@@ -131,7 +131,7 @@ Hold on here because we are about to get a bit "OpenDialoguey..."&#x20;
 
 For the NLU conversation we are going to allow for the user **or** the application to start the conversation. When the user, coming from the Welcome To Buttons! conversation asks ,for NLU interactions we will transition to the NLU conversation and have the application reply in a starting turn. Later one we will also cater for the conversation to start by the user.
 
-When we switch the _cadence_ like this we describe it as having the application take the _initiative _in a conversation
+When we switch the _cadence_ like this we describe it as having the application take the _initiative_ in a conversation
 
 #### 4.1 Create the NLU starting turn with application initiative
 
@@ -237,7 +237,7 @@ Tick the "Intent completes conversation" checkbox for this.
 
 ![](<../.gitbook/assets/image (334).png>)
 
-### 6. Checking the conversational flow <a href="6-checking-the-conversational-flow" id="6-checking-the-conversational-flow"></a>
+### 6. Checking the conversational flow <a href="#6-checking-the-conversational-flow" id="6-checking-the-conversational-flow"></a>
 
 Ok, now let's go back to the conversation player and check the conversation flow.
 
@@ -247,7 +247,7 @@ That is much better, isn't it. We can trigger the application, move to the welco
 
 With the conversational flow in place as we would like it, it is time to work on our messages. The Conversation Player uses the sample messages but for our final application we want to insert those buttons and do so much more! Time to move start using the message editor.
 
-### 7. Message Editor <a href="7-message-editor" id="7-message-editor"></a>
+### 7. Message Editor <a href="#7-message-editor" id="7-message-editor"></a>
 
 Messages are associated with what we call "outgoing intents". Outgoing intents are intents that the application has. They are sent to the user, but of course, the user does not receive an intent. The user receives a message that carries the application's intent. Just as the application receives a message and attempts to map it to an intent. The relationship is mirrored, which makes it consistent and coherent.&#x20;
 

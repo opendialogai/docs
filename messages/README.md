@@ -22,7 +22,7 @@ There are two different ways to find and then edit messages within OpenDialog.&#
 
 ![Conversation node view: Action bar at the bottom](<../.gitbook/assets/image (291).png>)
 
-**Route 2: **Through the 'Message Editor' link in the left-hand navigation. Through this route, you will need to first select the scenario that you want to edit/add messages for before then been shown all the messages that exist within that Scenario.
+**Route 2:** Through the 'Message Editor' link in the left-hand navigation. Through this route, you will need to first select the scenario that you want to edit/add messages for before then been shown all the messages that exist within that Scenario.
 
 ![Message Editor: Scenario selector](<../.gitbook/assets/image (305).png>)
 
@@ -46,10 +46,10 @@ To then edit the message you click on the edit icon. You can also duplicate OR d
 
 Once into the specific message edit screen, you will see the following options available to you:
 
-* **Message name: **This is purely to help you identify specific messages in the list. So for our example of new and returning users, we might call the first 'welcome message - new user' and the other 'welcome message - returning user'.
-* **Layout: **This is where you can build your message content, add conditions to your messages and set behaviours such as disabling text input and hiding the app avatar - _More on this further in the section._
-* **Preview: **This will show you a preview of your message.
-* **Conversation Designer: **This shows where in the Scenario this message is/is going to be located.
+* **Message name:** This is purely to help you identify specific messages in the list. So for our example of new and returning users, we might call the first 'welcome message - new user' and the other 'welcome message - returning user'.
+* **Layout:** This is where you can build your message content, add conditions to your messages and set behaviours such as disabling text input and hiding the app avatar - _More on this further in the section._
+* **Preview:** This will show you a preview of your message.
+* **Conversation Designer:** This shows where in the Scenario this message is/is going to be located.
 
 ### 4. Designing my message
 
@@ -76,7 +76,7 @@ If you can not find the message type you require above, you can find a full list
 
 Continuing our example above, where we want to show different messages to users depending on whether they are a new user or a returning user. To do this we would us Conditions to tell the system which message it should show depending on the value of attribute saved against the user.
 
-For our example, then we would set the 'Attribute' to `seconds_since_last_seen `, 'Context' to `user`, 'Operation' to `Equals` and the 'Value' to '`0`' - meaning only show this message if the user has not been seen yet.
+For our example, then we would set the 'Attribute' to `seconds_since_last_seen` , 'Context' to `user`, 'Operation' to `Equals` and the 'Value' to '`0`' - meaning only show this message if the user has not been seen yet.
 
 ![Conditions: New user welcome message](<../.gitbook/assets/image (301).png>)
 
