@@ -126,7 +126,7 @@ Update `intent.dialogflow.faq` interpreter to _Dialogflow Interpreter._
 
 _**Work Out Pronation Turn**_
 
-And finally, within this scene, navigate to the Help Request turn and make the following changes.
+And finally, within this scene, navigate to the Work Out Pronation turn and make the following changes.
 
 Update `intent.shoebot.pronation` interpreter to _Dialogflow Interpreter._
 
