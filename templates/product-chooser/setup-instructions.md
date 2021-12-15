@@ -214,7 +214,7 @@ Navigate to the faqAnswer intent in the FAQ turn in the Welcome Scene of the Wel
 
 _**Prompt Question Turn**_
 
-Next_**,**_ navigate to the FAQ turn within the same scene and delete the default message at the bottom.&#x20;
+Next_**,**_ navigate to the Prompt Question turn within the same scene and delete the default message at the bottom.&#x20;
 
 ![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_device-warning (9).png>)
 
@@ -224,11 +224,21 @@ Next_**,**_ navigate to the FAQ turn within the same scene and delete the defaul
 
 _**Welcome User Turn**_
 
-Start by navigating to the Request Experience Welcome message in the requestExperienceWelcome scene, which is found in the Welcome User turn in the User Profile scene of the Gather Experience conversation. Once there, delete the default message that appears at the bottom.
+Start by navigating to the Request Experience Welcome message in the requestExperienceWelcome intent , which is found in the Welcome User turn in the User Profile scene of the Gather Experience conversation. Once there, delete the default message that appears at the bottom.
 
 ![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_device-warning (6).png>)
 
 ## Step 4: Virtual Intent Update
+
+### Welcome Conversation
+
+#### Welcome Scene
+
+_**FAQ Turn**_
+
+Once you have navigated to view the intents in the FAQ turn in the Welcome Scene of the Welcome Conversation, update virtual intent of the response intent to `intent.shoebot.provideRunnerExperience`
+
+![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_device-warning (10).png>)
 
 ### Gather Experience Conversation
 
@@ -236,9 +246,7 @@ Start by navigating to the Request Experience Welcome message in the requestExpe
 
 _**FAQ Turn**_
 
-Once you have navigated to view the intents in the Change Preferences turn in the Welcome to Recommendations scene of the Recommendations conversation, update virtual intent of the response intent to `intent.shoebot.provideRunnerExperience`
-
-
+Finally, navigate to the intents in the Change Preferences turn in the Welcome to Recommendations scene of the Recommendations conversation, update virtual intent of the response intent to `intent.shoebot.provideRunnerExperience`
 
 ![](<../../.gitbook/assets/image (421).png>)
 
