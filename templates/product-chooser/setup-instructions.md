@@ -4,6 +4,10 @@ description: Let's begin by setting up the template to actually work for your ne
 
 # Setup Instructions
 
+{% embed url="https://youtu.be/0NJ-LbBQcDQ" %}
+Product chooser setup instructions video
+{% endembed %}
+
 ## Step 1: Configure NLU
 
 The template out of the box only uses the basic [OpenDialog interpreter](https://docs.opendialog.ai/interpreters-and-natural-language-understanding/default-interpretor) which does not support proper NLU.&#x20;

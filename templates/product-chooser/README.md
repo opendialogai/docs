@@ -12,9 +12,11 @@ The product chooser and product support application is available as a template w
 
 ## Overview
 
-The Product Chooser Template is an OpenDialog Conversational Application (for the webchat interface) designed to help customers choose a product from recommendations which are generated after they've answered a few validating questions.
+{% embed url="https://youtu.be/JmSpQ1pJ1JQ" %}
+Overview of the product chooser template
+{% endembed %}
 
-![Product Chooser Webchat Demo](<../../.gitbook/assets/OpenDialog - Preview - Google Chrome 2021-12-09 09-03-23.gif>)
+The Product Chooser Template is an OpenDialog Conversational Application (for the webchat interface) designed to help customers choose a product from recommendations which are generated after they've answered a few validating questions.
 
 The scenario was originally built around the use case of a customer looking for a pair of running shoes. However, the structure can be adapted to fit any situation where the aim is to provide some recommendations after having collected some relevant information.
 
@@ -22,8 +24,8 @@ The scenario was originally built around the use case of a customer looking for 
 
 * Flexible information gathering in context, tailoring to multiple, possible, conversational patterns including FAQ questions, updating gathered information and more...
 * Support for side conversations throughout the conversation, allowing users to sidetrack and the application to provide contextual, graceful, just-in-time recovery.
-* FAQ setup  for easy integration with your knowledge base or Q\&A-interpreter service
-* Rich carousel messages allowing to expose recommended products and interactive menus, to help guide the users during their choice of a product
+* FAQ setup for easy integration with your knowledge base or Q\&A-interpreter service
+* Rich carousel messages that showcase recommended products and interactive menus, to help guide the users during their choice of a product
 * Form messages to collect relevant information from the user
 
 ## Key Conversations
