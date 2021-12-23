@@ -6,7 +6,7 @@ description: A quick introduction to the basics of OpenDialog
 
 Following the [introduction into the concepts](broken-reference) that drive how OpenDialog models conversational applications - let us now dive into the tool itself.&#x20;
 
-To get started you can either [install it on your own machine ](../installing-opendialog/)or [sign-up to the SaaS version](https://opendialog.ai/opendialog-private-invite/) of OpenDialog.
+To get started you can either [install it on your own machine ](../installing-opendialog/)or [sign-up to the SaaS version](https://cloud.opendialog.ai/register) of OpenDialog.
 
 What we will do in the subsequent sections is run through how you can:
 
@@ -25,5 +25,5 @@ Give yourself some time to ease into the OpenDialog way of doing things and keep
 {% hint style="info" %}
 At the end of this section, you will have set up and understood the basics around a scenario and all of its components incl. messages. You will **not** have a full conversation up and running. &#x20;
 
-**What do after this section?** Work through '[The Power of OpenDialog](../../tutorials/building-the-power-of-opendialog-conversational-app/)' tutorial or the documentation under the ['Working with OpenDialog' section](../../developing-with-opendialog/introduction.md). You can also follow [one of our other tutorials](../../tutorials/button-driven-bot.md) once you're ready.
+**What do after this section?** Work through '[The Power of OpenDialog](../../tutorials/building-the-power-of-opendialog-conversational-app/)' tutorial or the documentation under the ['Working with OpenDialog' section](../../developing-with-opendialog/introduction.md). You can also follow [one of our other tutorials](broken-reference) once you're ready.
 {% endhint %}

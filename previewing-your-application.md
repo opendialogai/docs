@@ -10,7 +10,7 @@ Right now the Preview page only allows you to preview the OpenDialog Webchat (AK
 
 If you've already completed one of our tutorials (see below) then you'll have already interacted with our preview page.
 
-* [Designing a basic flow and controlling with buttons](tutorials/button-driven-bot.md)
+* [Building a Simple Button-Driven Conversational Application](tutorials/building-a-simple-button-driven-conversational-application/)
 * [Simple FAQ Application](tutorials/simple-faq-application.md)
 
 Even if you've interacted with the Preview page, this page of our documentation focuses on giving you some in-depth guidance around how to utilise the page, it's features and get the most of it whilst you're building out your conversational applications.

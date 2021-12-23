@@ -15,7 +15,7 @@ This enables us to build very flexible button-driven conversations where we don'
 The default callback interpreter is essential for button-driven interaction and can help with simple prototyping, but for actual NLU we need to use an [NLU interpreter which we discuss here](dialogflow-interpreter.md).&#x20;
 
 {% hint style="success" %}
-**Tutorial:** Want to create your own button-driven conversation like the example below? Jump over to our tutorial section and follow the [step-by-step guide for a button-driven conversation](../tutorials/button-driven-bot.md).&#x20;
+**Tutorial:** Want to create your own button-driven conversation like the example below? Jump over to our tutorial section and follow the [step-by-step guide for a button-driven conversation](../tutorials/building-a-simple-button-driven-conversational-application/).&#x20;
 {% endhint %}
 
 {% embed url="https://youtu.be/GAY5vlIPiOA" %}

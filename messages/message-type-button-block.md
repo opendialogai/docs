@@ -4,7 +4,7 @@ description: Button message type
 
 # Message type: Button block
 
-The button message enables you to create button driven applications like [this tutorial (Designing a basic flow and controlling with buttons).](../tutorials/button-driven-bot.md)&#x20;
+The button message enables you to create button driven applications like [this tutorial (Designing a basic flow and controlling with buttons).](broken-reference)&#x20;
 
 You can add only one button message type to each message, however, within that you can add as many different buttons as you require. You can do this by clicking on the ＋ next to the button entry you require the button to appear afterwards. Right now you can not reorder the buttons, so they need to be added in the order you want them to appear.
 
@@ -13,7 +13,7 @@ You can add only one button message type to each message, however, within that y
 Within the button block, you can add some plain text (_if you've not already used the text block_) and then edit/add new buttons. Within each button you can add:
 
 * **Button text:** This is the text that is visible on the button
-* **Button functionality:** This is the action that you would like the button to perform on click e.g. open an external URL or transition the user to another intent (you'll have seen this in the [Designing a basic flow and controlling with buttons tutorial](../tutorials/button-driven-bot.md)).&#x20;
+* **Button functionality:** This is the action that you would like the button to perform on click e.g. open an external URL or transition the user to another intent (you'll have seen this in the [Designing a basic flow and controlling with buttons tutorial](broken-reference)).&#x20;
 
 ![Button functionality: Options](<../.gitbook/assets/image (294).png>)
 

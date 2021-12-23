@@ -108,4 +108,4 @@ Now the conversation engine is waiting for input from the user and once received
 
 
 
-Hopefully this walk through the OpenDialog way has clarified some aspects of how OpenDialog works. There is much more that is possible but the next best step would be for you to [dive in](https://opendialog.ai) and start building your own application or [follow one of our tutorials](../../tutorials/button-driven-bot.md).&#x20;
+Hopefully this walk through the OpenDialog way has clarified some aspects of how OpenDialog works. There is much more that is possible but the next best step would be for you to [dive in](https://opendialog.ai) and start building your own application or [follow one of our tutorials](broken-reference).&#x20;
