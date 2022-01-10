@@ -1,5 +1,9 @@
 # Lesson 2: Building Intents
 
+{% embed url="https://youtu.be/rm01zLILpS8" %}
+Building Intents | Build A Simple Button-Driven Bot #3
+{% endembed %}
+
 ## Overview
 
 Let's recap where we are so far.

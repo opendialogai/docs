@@ -1,5 +1,7 @@
 # Lesson 3: Adjusting Default Conversations
 
+{% embed url="https://youtu.be/tJ4k9vJoqcs" %}
+
 ## Overview
 
 Let's recap where we are so far.

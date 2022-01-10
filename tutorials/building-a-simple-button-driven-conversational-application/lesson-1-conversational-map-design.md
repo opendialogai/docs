@@ -1,5 +1,9 @@
 # Lesson 1: Conversational Map Design
 
+{% embed url="https://youtu.be/_FeQZsRItnk" %}
+Conversational Map Design | Build A Simple Button-Driven Bot #2
+{% endembed %}
+
 ## Overview
 
 In this lesson we will take a look at:
