@@ -31,6 +31,20 @@ To create a new one, you need to open the Conversation where the new intent need
 **Reminder:** If you've created a new intent etc. Remember to go back into the Designer after you've saved the message to fine tune the settings of your new Intent, Scene and Turn. You will need to add behaviours, conditions and/or transitions.
 {% endhint %}
 
+### Button Values
+
+Button messages also allow values to be assigned to each button so as well as simulating a user intent, they can assign a value to an attribute that can be saved against the user. \
+\
+For example, if a button message was created to allow a user to answer a question, 2 buttons could be added, 1 with a value of `yes` and one for `no`. The value can then later be used in conditions or actions to affect the conversation flow.&#x20;
+
+#### Adding Button Values
+
+Button values are added in the `Advanced settings` dropdown for buttons with the 'Simulate user intent' type behaviour selected in the 'Button functionality' drop down. The example given below will create a button message with 2 buttons - both will simulate the `AgeResponse` user intent, but each will save a different value against the `over18` attribute.
+
+When a user clicks a button, by default the value will be saved to the user context for use later (_this can be altered by modifying an_ [_intent's advanced settings_](../turns-and-intents.md#advanced-settings))
+
+![Adding button values through the message editor](<../.gitbook/assets/image (451).png>)
+
 ### **Button behaviours**
 
 For the button message type, you can select a number of advanced behaviours depending on your use case.

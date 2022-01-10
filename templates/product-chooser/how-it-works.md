@@ -70,7 +70,7 @@ The Gather Experience Conversation has two scenes. The User Profile scene where 
 
 ### User Profile Scene
 
-![User Profile Scene](<../../.gitbook/assets/image (451).png>)
+![User Profile Scene](<../../.gitbook/assets/image (451) (1).png>)
 
 You'll notice that the User Profile scene has a few turns that are similar to the Welcome scene. The FAQ turn, Turn No Match turn and End Chat turn are all there to handle similar issues as before so we will not go over them. We will, instead, focus on the Welcome User, Provide Experience, Change Experience and Work out pronation turns.&#x20;
 
