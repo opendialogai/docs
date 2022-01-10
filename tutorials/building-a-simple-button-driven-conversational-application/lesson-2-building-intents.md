@@ -10,11 +10,7 @@ Let's recap where we are so far.
 
 * We have a Welcome conversation that can take us to the Button-driven conversation.,
 
-In this lesson we'll cover:
-
-1. Creating Intents
-
-## Step 1: Creating Intents
+## Creating Intents
 
 {% hint style="info" %}
 Within the conversational application, the app and the users take turns in a predefined pattern. This pattern can either be application-driven (request intents are app participant) or user-driven (request intents are user participant). When needed, the conversation designer can interrupt the turn-taking pattern between the participants (application - user), and switch the flow or rhythm of the conversation.
@@ -32,7 +28,7 @@ The request intent will be from the user (Participant), requesting button-driven
 
 #### Confirm Button Driven Intent
 
-Now, let's add the application response intent. Click on the "adding new intent" in the response intents to add that. Fill out the details as outlined on the screenshot below.
+Now, let's add the application response intent. Click on the "adding new intent" button in the response intents section. Then fill out the details as outlined on the screenshot below.
 
 ![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_admin\_conversation-builder\_scenario\_0xe56f02\_scenario=0xe56f02 (19).png>)
 
@@ -50,7 +46,7 @@ We will add three possible user intents to this turn - note that we've given all
 
 ![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_admin\_conversation-builder\_scenario\_0xe56f02\_scenario=0xe56f02 (22).png>)
 
-With these first two intents, we expect to keep us in this turn with the application replying that we are getting good at button clicking.&#x20;
+With these first two intents, we expect that they will keep us in this turn with the application replying that we are getting good at button clicking.&#x20;
 
 #### Button Confirmation Intent (Application)
 
@@ -68,7 +64,7 @@ Add the "Switch to NLU" intent and add a transition to the conversation.&#x20;
 
 We can transition to Conversations, Scenes or Turns and the conversation engine will pick up things from there to figure out what intents will match. Add a transition to the NLU Conversation.&#x20;
 
-Once you save the transition change you will see a link next to the transition and you can follow that to go to the conversation. When a user selects to Switch to NLU the conversation engine will take us at the _top_ of the NLU conversation and will look for a starting scene and turn that it can travel through down to an intent that could be a response from the application to the Switch to NLU intent.
+Once you save the transition change you will see a link next to the transition and you can follow that to go to the conversation. When a user selects to Switch to NLU the conversation engine will take us to the _top_ of the NLU conversation. It will then look for a starting scene and turn that it can travel through down to an intent that could be a response from the application to the Switch to NLU intent.
 
 ### App Welcome Turn
 

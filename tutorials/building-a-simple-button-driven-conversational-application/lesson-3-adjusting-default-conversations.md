@@ -18,7 +18,7 @@ In this lesson we'll cover:
 
 ## Step 1: Test Conversational Flow
 
-We can test the conversation we've setup so far _(Which does not include any messages - This is the next lesson!)_ this by going to the top of the scenario and hitting the play button to activate the conversation player and trying out various flows.
+We can test the conversation we've setup so far _(Which does not include any messages - This is the next lesson!)_ this is done by going to the top of the scenario and hitting the play button to activate the conversation player and trying out various flows.
 
 Let's try... while quite a few options show up, the first event we need to select will be the "intent.core.welcome" - if we select that we will see that we get the default welcome message as an option and after we select that we get the user's first response as an option... and that is it?&#x20;
 
