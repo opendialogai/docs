@@ -1,5 +1,9 @@
 # Lesson 4: Creating Messages and Buttons
 
+{% embed url="https://youtu.be/FTGlb9b0l9Q" %}
+Creating Messages & Buttons | Build A Simple Button-Driven Bot #5
+{% endembed %}
+
 ## Overview <a href="#7-message-editor" id="7-message-editor"></a>
 
 Let's recap where we are so far.
