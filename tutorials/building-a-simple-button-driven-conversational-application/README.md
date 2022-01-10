@@ -15,9 +15,9 @@ Overview | Build A Simple Button-Driven #1
 
 In this tutorial we are going to have a look at how we can:
 
-* design a flow with multiple conversations
-* move through that flow using buttons
-* introduce natural language interactions for prototyping before we connect NLU interpreters.
+* Design a flow with multiple conversations
+* Move through that flow using buttons
+* Introduce natural language interactions for prototyping before we connect NLU interpreters.
 
 
 
