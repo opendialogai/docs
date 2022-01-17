@@ -6,7 +6,7 @@ description: OpenDialog message markup
 
 As outlined, within the ['Message' section under 'Working with OpenDialog'](../messages/), we currently support a few of the message types through the message editor UI and we are continually adding more and more UI widgets. However, we do support a wider full list of messages which can be added via '[Custom Message](../messages/message-type-custom-message.md)'.
 
-In OpenDialog the aim for message markup is to provide a single way of writing messages that will then be automatically translated into the appropriate format for the frontend platform that should receive and transmit the message to the user. 
+In OpenDialog the aim for message markup is to provide a single way of writing messages that will then be automatically translated into the appropriate format for the frontend platform that should receive and transmit the message to the user.&#x20;
 
 We use a custom XML style markup language for describing message templates. Not all message platforms support all message types, so in some cases the resulting message will differ between platforms. A full explanation of the XML structure for each message type can be seen below.
 
@@ -282,14 +282,14 @@ Each element must define a `type` and `display`, and can optionally define `requ
 
 ```
 <element>
-    <element_type>textarea|text|number|email|select|auto_complete_select|radio</element_type>
+    <element_type>textarea|text|number|email|select|auto_complete_select|checkbox</element_type>
     <display>Display Name</display>
     <required>true|false</required>
     <default_value>Default Value</default_value>
 </element>
 ```
 
-When using `radio` or `select` elements, you must define an `options` block giving the options to be presented in the radio list or select element:
+When using `checkbox` or `select` elements, you must define an `options` block giving the options to be presented in the checkbox list or select element:
 
 ```
 <element>
@@ -376,7 +376,7 @@ Note - messages with very different sizes may not display well in a horizontal c
 
 ### **Input take-over messages**
 
-The following messages take over the standard user input to provide the user a different way of entering data 
+The following messages take over the standard user input to provide the user a different way of entering data&#x20;
 
 {% hint style="danger" %}
 **NB**
@@ -465,7 +465,7 @@ Autocomplete With Suggestions
 
 ### Full page messages
 
-Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen (depending on what is supported by each platform). For webchat full page messages, the user input is also taken over. 
+Rich and Form messages can also be presented as 'full page' messages. When full page messages are received, they will take over the entire chatbot screen (depending on what is supported by each platform). For webchat full page messages, the user input is also taken over.&#x20;
 
 {% hint style="danger" %}
 **NB**
@@ -563,7 +563,7 @@ Meta Messages can be placed anywhere in a message template and will have the sam
 
 ### Attribute messages
 
-Attribute messages takes the name of a context and attribute and expects the value of the attribute to be properly formed XML. The content of that XML will then be rendered as a message. 
+Attribute messages takes the name of a context and attribute and expects the value of the attribute to be properly formed XML. The content of that XML will then be rendered as a message.&#x20;
 
 ```
 <attribute-message> 
