@@ -6,7 +6,9 @@ description: >-
 
 # OpenDialog
 
-![OpenDialog](.gitbook/assets/opendialog-updatedpresentationbold.png)
+{% embed url="https://youtu.be/DzwFo00lTZ8" %}
+OpenDialog Webinar Series: An Introduction to OpenDialog
+{% endembed %}
 
 **OpenDialog** is a conversational application management platform.&#x20;
 
