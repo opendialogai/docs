@@ -41,7 +41,10 @@
   * [Lesson 2: Building Intents](tutorials/building-a-simple-button-driven-conversational-application/lesson-2-building-intents.md)
   * [Lesson 3: Adjusting Default Conversations](tutorials/building-a-simple-button-driven-conversational-application/lesson-3-adjusting-default-conversations.md)
   * [Lesson 4: Creating Messages and Buttons](tutorials/building-a-simple-button-driven-conversational-application/lesson-4-creating-messages-and-buttons.md)
-* [Simple FAQ Application](tutorials/simple-faq-application.md)
+* [Building a Simple FAQ Application with the Default Interpreter](tutorials/building-a-simple-faq-application-with-the-default-interpreter/README.md)
+  * [Lesson 1: Conversational Map Design](tutorials/building-a-simple-faq-application-with-the-default-interpreter/lesson-1-conversational-map-design.md)
+  * [Lesson 2: Building Intents](tutorials/building-a-simple-faq-application-with-the-default-interpreter/lesson-2-building-intents.md)
+  * [Lesson 3: Default Conversations & Creating Messages](tutorials/building-a-simple-faq-application-with-the-default-interpreter/lesson-3-default-conversations-and-creating-messages.md)
 
 ## Working With OpenDialog <a href="#working-with-opendialog-1" id="working-with-opendialog-1"></a>
 

@@ -4,8 +4,6 @@
 Building Intents | Build A Simple Button-Driven Bot #3
 {% endembed %}
 
-## Overview
-
 Let's recap where we are so far.
 
 * We have a Welcome conversation that can take us to the Button-driven conversation.,

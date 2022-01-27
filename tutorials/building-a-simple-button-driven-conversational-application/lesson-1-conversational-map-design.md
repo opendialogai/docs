@@ -123,15 +123,13 @@ This scene has four turns.
 
 Now let's add a starting turn
 
-![Adding a starting turn to the NLU starting scene](<../../.gitbook/assets/image (343).png>)
+![](../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_admin\_conversation-builder\_scene\_0xfb1a1e\_scenario=0xf9b146.png)
 
 #### User Welcome Turn
 
 Then we will add another starting turn with a user initiative - this will give us the other possible way into the conversation.
 
-
-
-![](<../../.gitbook/assets/image (329).png>)
+![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_admin\_conversation-builder\_scene\_0xfb1a1e\_scenario=0xf9b146 (1).png>)
 
 #### NLU Lyrics Turn
 
@@ -140,8 +138,6 @@ Ok, now that we have the two possible ways to enter the conversation let's add t
 So let's add a turn that is called "NLU Lyrics" in our welcome scene to capture these possible interactions.&#x20;
 
 ![](<../../.gitbook/assets/od-kamau.cloud.opendialog.ai\_admin\_conversation-builder\_scenario\_0xe56f02\_scenario=0xe56f02 (14).png>)
-
-![Create the NLU Lyrics turn](<../../.gitbook/assets/image (376).png>)
 
 #### Back To Buttons Turn
 

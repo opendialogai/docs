@@ -2,13 +2,13 @@
 
 {% embed url="https://youtu.be/tJ4k9vJoqcs" %}
 
-## Overview
-
 Let's recap where we are so far.
 
 * We have a Welcome conversation that can take us to the Button-driven conversation.,
 * The Button-driven conversation can leads us to the NLU Conversation.
 * The NLU Conversation can take us back to the button conversation.
+
+## Overview
 
 In this lesson we'll cover:
 
@@ -28,7 +28,7 @@ Hold on! We are stuck between those two messages!
 
 Oops! That's not quite right, is it? We can't actually get out of the welcome conversation yet. Come to think of it we haven't adjusted our welcome conversation at all! Let's click in and see what changes we would need to make.&#x20;
 
-## Step 2: Adjust The Welcome Conversation
+## Step 2: Adjust the 'Welcome Conversation'In&#x20;
 
 In the Welcome conversation, there is both a request and a response intent, and if you click on either of them, neither of them transitions or completes. That means we are going to be stuck in this turn indefinitely.&#x20;
 

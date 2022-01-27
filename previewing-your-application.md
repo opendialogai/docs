@@ -11,13 +11,13 @@ Right now the Preview page only allows you to preview the OpenDialog Webchat (AK
 If you've already completed one of our tutorials (see below) then you'll have already interacted with our preview page.
 
 * [Building a Simple Button-Driven Conversational Application](tutorials/building-a-simple-button-driven-conversational-application/)
-* [Simple FAQ Application](tutorials/simple-faq-application.md)
+* [Building a simple FAQ Application with the Default Interpreter](tutorials/building-a-simple-faq-application-with-the-default-interpreter/)
 
 Even if you've interacted with the Preview page, this page of our documentation focuses on giving you some in-depth guidance around how to utilise the page, it's features and get the most of it whilst you're building out your conversational applications.
 
 ### Selecting your Scenario
 
-When you first click through to the 'Preview' page from the navigation you will be asked to select the Scenario you would like to preview. Within the drop down list you will see only active scenario's - so if the one you want preview is missing, it's likely to be in draft mode. If so, head back to the Designer and switch it from 'Draft' to 'Active'.
+When you first click through to the 'Preview' page from the navigation you will be asked to select the Scenario you would like to preview. Within the drop down list you will see only active scenario's - so if the one you want preview is missing, it's likely to be in draft mode. If so, head back to the Designer and switch it from 'Draft' --> 'Active'.
 
 Once your Scenario is active you will then see it in the drop list to select.
 
