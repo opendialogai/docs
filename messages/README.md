@@ -20,11 +20,9 @@ There are two different ways to find and then edit messages within OpenDialog.&#
 
 **Route 1:** From within the Designer. You navigate to the Message Editor by clicking on the message icon 💬  in the action bar on a Scenario, Conversation, Scene, Turn or Intent node view.&#x20;
 
-![Conversation node view: Action bar at the bottom](<../.gitbook/assets/image (291).png>)
+![Conversation node view: Action bar at the bottom](<../.gitbook/assets/image (449).png>)
 
-**Route 2:** Through the 'Message Editor' link in the left-hand navigation. Through this route, you will need to first select the scenario that you want to edit/add messages for before then been shown all the messages that exist within that Scenario.
-
-![Message Editor: Scenario selector](<../.gitbook/assets/image (305).png>)
+**Route 2:** Through the 'Message Editor' link in the left-hand navigation.&#x20;
 
 ### 2. Finding specific messages
 
@@ -66,6 +64,7 @@ Below is the full list of message types that are currently available through the
 * [Text message](message-type-text-block.md)
 * [Image message](message-type-image-block.md)
 * [Button message](message-type-button-block.md)
+* [Form message](message-type-form-block.md)
 * [Custom message](message-type-custom-message.md)&#x20;
 
 {% hint style="warning" %}
@@ -74,7 +73,7 @@ If you can not find the message type you require above, you can find a full list
 
 ### 6. Message Conditions
 
-Continuing our example above, where we want to show different messages to users depending on whether they are a new user or a returning user. To do this we would us Conditions to tell the system which message it should show depending on the value of attribute saved against the user.
+Continuing our example above, where we want to show different messages to users depending on whether they are a new user or a returning user. To do this we would us Conditions to tell the system which message it should show depending on the value of attributes saved against the user.
 
 For our example, then we would set the 'Attribute' to `seconds_since_last_seen` , 'Context' to `user`, 'Operation' to `Equals` and the 'Value' to '`0`' - meaning only show this message if the user has not been seen yet.
 

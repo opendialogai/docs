@@ -86,11 +86,11 @@ From a conversation map perspective, the Request Intent from the application is 
 
 ![Request Intent with 5 associated messages](<../../.gitbook/assets/image (443).png>)
 
-![](<../../.gitbook/assets/image (444).png>)![](<../../.gitbook/assets/image (429).png>)
+![](<../../.gitbook/assets/image (444) (1).png>)![](<../../.gitbook/assets/image (429).png>)
 
 We have a total of five messages. A general one if we don't have any relevant info and another four messages, each focusin on one of the four pieces of information we want to collect. Each of those four messages has a condition that checks to verify if that piece of information exists in our context.&#x20;
 
-![](<../../.gitbook/assets/image (419).png>)
+![](<../../.gitbook/assets/image (419) (1).png>)
 
 #### Provide Experience Turn
 
@@ -178,10 +178,10 @@ The message that displays the shoes is a list message. An important element here
 
 Once the user has selected a product we move to the Purchase conversation and specifically the "Collect Details" scene. The objective of this scene is to a. collect details using a form message and b. allow the user to review and change those details. This is achieved by the interplay of the two turns. The "Get Details" turns presents a form message that the user can fill in and submit while the "Confirm Details" turn provides a summary of the submitted data and gives the user a way back to the form to change anything.&#x20;
 
-![Collect Details Scene](<../../.gitbook/assets/image (448).png>)
+![Collect Details Scene](<../../.gitbook/assets/image (448) (1).png>)
 
 The reason form details can be changed is because each field is stored in the User context and the form message is set up to replace field values with attributes from the user context, if those attributes are present
 
-![](<../../.gitbook/assets/image (441).png>)![](<../../.gitbook/assets/image (422).png>)![](<../../.gitbook/assets/image (420).png>)
+![](<../../.gitbook/assets/image (441).png>)![](<../../.gitbook/assets/image (422).png>)![](<../../.gitbook/assets/image (420) (1).png>)
 
 And that's it you've completed setting up and understanding how the Product Chooser template works. I'd suggest you mess around with it a little more and have a look at conversations or scenes that we didn't cover to gain an even deeper understanding of its capabilities and be able to apply them to your particular use case.
