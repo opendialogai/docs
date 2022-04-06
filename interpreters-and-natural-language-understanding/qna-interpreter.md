@@ -95,4 +95,4 @@ You can keep trying this with other question-answer pairs that you trained QnA f
 
 ![](../.gitbook/assets/qna-preview.png)
 
-Well done, you've now got your Qn instance integrated with your conversational application.&#x20;
+Well done, you've now got your QnA instance integrated with your conversational application.&#x20;

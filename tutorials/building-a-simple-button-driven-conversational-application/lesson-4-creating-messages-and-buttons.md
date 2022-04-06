@@ -104,4 +104,4 @@ Let's recap the main points:
 * Finalise your messages with the right tone of voice.
 * Activate your scenario and test the real thing in Preview before [launching to your website](../../launching-your-application.md).&#x20;
 
-While the default callback interpreter is essential for button-driven interaction and can help with simple prototyping, but for actual NLU we need to use an [NLU interpreter which we discuss here](../../interpreters-and-natural-language-understanding/dialogflow-interpreter.md).&#x20;
+While the default callback interpreter is essential for button-driven interaction and can help with simple prototyping, but for actual NLU we need to use an [NLU interpreter which we discuss here](../../interpreters-and-natural-language-understanding/dialogflow-interpreter/).&#x20;
