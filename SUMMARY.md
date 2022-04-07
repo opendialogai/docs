@@ -45,11 +45,6 @@
   * [Lesson 1: Conversational Map Design](tutorials/building-a-simple-faq-application-with-the-default-interpreter/lesson-1-conversational-map-design.md)
   * [Lesson 2: Building Intents](tutorials/building-a-simple-faq-application-with-the-default-interpreter/lesson-2-building-intents.md)
   * [Lesson 3: Default Conversations & Creating Messages](tutorials/building-a-simple-faq-application-with-the-default-interpreter/lesson-3-default-conversations-and-creating-messages.md)
-* [Building a Conversational Application Using Actions and A No-Code Automation Tool](tutorials/building-a-conversational-application-using-actions-and-a-no-code-automation-tool/README.md)
-  * [Lesson 1: Conversational Map Design](tutorials/building-a-conversational-application-using-actions-and-a-no-code-automation-tool/lesson-1-conversational-map-design.md)
-  * [Lesson 2: Creating Messages](tutorials/building-a-conversational-application-using-actions-and-a-no-code-automation-tool/lesson-2-creating-messages.md)
-  * [Lesson 3: Setting Up Actions](tutorials/building-a-conversational-application-using-actions-and-a-no-code-automation-tool/lesson-3-setting-up-actions.md)
-  * [Lesson 4: Building Simple Webhooks](tutorials/building-a-conversational-application-using-actions-and-a-no-code-automation-tool/lesson-4-building-simple-webhooks.md)
 
 ## Working With OpenDialog <a href="#working-with-opendialog-1" id="working-with-opendialog-1"></a>
 
