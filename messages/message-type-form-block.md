@@ -26,7 +26,7 @@ Each form messagee can have as many fields as needed to capture the information 
 * Dropdown
 * Checkbox&#x20;
 
-![Adding a new form field to a form message](<../.gitbook/assets/image (448).png>)
+![Adding a new form field to a form message](<../.gitbook/assets/image (448) (1).png>)
 
 Each form field must specify:
 

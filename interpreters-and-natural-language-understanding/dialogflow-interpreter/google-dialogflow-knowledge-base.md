@@ -16,7 +16,7 @@ For this particular example, we'll create a delivery knowledge base. Navigate to
 
 Now navigate back to the interpreters section in OpenDialog and select the Dialogflow interpreter that you had setup in the previous section. Once selected you will then need to adjust the intent mapping. The incoming user intent name is `intent.dialogflow.faq` and that should be mapped  to the knowledge base intent as shown in the figure below. This mapping will convert any `Knowledge.Knoweldgebase.*` intent from Dialogflow intent the `intent.dialogflow.faq` intent in OpenDialog.&#x20;
 
-![Mapping FAQ intents](<../../.gitbook/assets/image (434).png>)
+![Mapping FAQ intents](<../../.gitbook/assets/image (434) (1).png>)
 
 ## Test the Interpreter
 

@@ -68,7 +68,7 @@ Mentioned below are all the required intents, you can either manually create the
 
 The incoming user intent name is `intent.dialogflow.faq` and that should be mapped within your Dialogflow interpreter setup to the knowledge base intent as shown in the figure below. This mapping will convert any `Knowledge.Knoweldgebase.*` intent from Dialogflow intent the `intent.dialogflow.faq` intent in OpenDialog.&#x20;
 
-![Mapping FAQ intents](<../../.gitbook/assets/image (434).png>)
+![Mapping FAQ intents](<../../.gitbook/assets/image (434) (1).png>)
 
 For this particular example, we'll create a delivery knowledge base. Navigate to the Knowledge Bases in Dialogflow and Create a Knowledge Base that is a FAQ knowledge type. You may use this document attached below as your knowledge base for your delivery related questions and answers. Once you have uploaded the CSV and added a response, your Delivery knowledge base should be similar to the one shown below.
 
@@ -252,7 +252,7 @@ _**FAQ Turn**_
 
 Finally, navigate to the intents in the Change Preferences turn in the Welcome to Recommendations scene of the Recommendations conversation, update virtual intent of the response intent to `intent.shoebot.provideRunnerExperience`
 
-![](<../../.gitbook/assets/image (421).png>)
+![](<../../.gitbook/assets/image (421) (1).png>)
 
 Your product chooser bot should now be done and ready for you to interact with. After you've reviewed and tested the bot and experienced most of its capabilities check out the [next section](how-it-works.md) which explains how it works. It'll give you a deeper understanding as to what you set up and why it was set up the way it was set up.
 

@@ -43,7 +43,7 @@ Button values are added in the `Advanced settings` dropdown for buttons with the
 
 When a user clicks a button, by default the value will be saved to the user context for use later (_this can be altered by modifying an_ [_intent's advanced settings_](../turns-and-intents.md#advanced-settings))
 
-![Adding button values through the message editor](<../.gitbook/assets/image (451).png>)
+![Adding button values through the message editor](<../.gitbook/assets/image (451) (1).png>)
 
 ### **Button behaviours**
 

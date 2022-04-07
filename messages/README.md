@@ -20,7 +20,7 @@ There are two different ways to find and then edit messages within OpenDialog.&#
 
 **Route 1:** From within the Designer. You navigate to the Message Editor by clicking on the message icon 💬  in the action bar on a Scenario, Conversation, Scene, Turn or Intent node view.&#x20;
 
-![Conversation node view: Action bar at the bottom](<../.gitbook/assets/image (449).png>)
+![Conversation node view: Action bar at the bottom](<../.gitbook/assets/image (449) (1).png>)
 
 **Route 2:** Through the 'Message Editor' link in the left-hand navigation.&#x20;
 

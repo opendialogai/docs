@@ -6,7 +6,7 @@ description: How to use attributes in message content to create custom experienc
 
 Attributes can be used in any message to create dynamic text and content. For example, the user's name could be placed in a welcome message to create a more custom experience.
 
-![Displaying the value of the first\_name attribute from the user context in a text message](<../.gitbook/assets/image (420).png>)
+![Displaying the value of the first\_name attribute from the user context in a text message](<../.gitbook/assets/image (420) (1).png>)
 
 ### Notation
 
@@ -55,4 +55,4 @@ The above would take the value of the `age` attribute in the `user` context, con
 
 Attributes can be used in any message in place of text, button text, image source, form field text etc.&#x20;
 
-![Example message content using attributes in various message types](<../.gitbook/assets/image (458).png>)
+![Example message content using attributes in various message types](<../.gitbook/assets/image (458) (1).png>)

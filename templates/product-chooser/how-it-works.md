@@ -8,7 +8,7 @@ description: >-
 
 In this section, we go through all the main conversations and explain how they work together to provide the overall experience.&#x20;
 
-![Product Choose Template](<../../.gitbook/assets/image (430).png>)
+![Product Choose Template](<../../.gitbook/assets/image (430) (1).png>)
 
 ## Welcome Conversation
 
@@ -28,7 +28,7 @@ This is a _starting_ turn that holds the outgoing intent from the application th
 
 The message has two buttons associated with it that will activate intents that are in other turns within the same scene. We will mention these intents as we examine the other turns.&#x20;
 
-![Product Chooser Welcome](<../../.gitbook/assets/image (427).png>)
+![Product Chooser Welcome](<../../.gitbook/assets/image (427) (1).png>)
 
 #### **End Chat Turn**
 
@@ -46,11 +46,11 @@ The Turn No Match turn is activated when interpreters fail to map the user's req
 
 The FAQ Turn handles FAQ questions within the Welcome Scene. It is an implementation of the Contextual [FAQ Pattern](../../example-flows/the-contextual-faq-pattern.md). The incoming user intent name is `intent.dialogflow.faq` and that should be mapped within your Dialogflow interpreter setup to the knowledge base intent as shown in the figure below. This mapping will convert any `Knowledge.Knoweldgebase.*` intent from Dialogflow intent the `intent.dialogflow.faq` intent in OpenDialog.&#x20;
 
-![Mapping FAQ intents](<../../.gitbook/assets/image (434).png>)
+![Mapping FAQ intents](<../../.gitbook/assets/image (434) (1).png>)
 
 At the same time within the outgoing intent message, you will want to embed the response from the Dialogflow knowledge base using an empty custom message and adding the attribute from the user context that contains the Dialogflow message
 
-![Embedding a Dialogflow Knowledgebase response in an OpenDialog message](<../../.gitbook/assets/image (454).png>)
+![Embedding a Dialogflow Knowledgebase response in an OpenDialog message](<../../.gitbook/assets/image (454) (1).png>)
 
 The end result is that you will be able to wrap question responses in a customised message based on the conversation context.&#x20;
 
@@ -70,7 +70,7 @@ The Gather Experience Conversation has two scenes. The User Profile scene where 
 
 ### User Profile Scene
 
-![User Profile Scene](<../../.gitbook/assets/image (451) (1).png>)
+![User Profile Scene](<../../.gitbook/assets/image (451) (1) (1).png>)
 
 You'll notice that the User Profile scene has a few turns that are similar to the Welcome scene. The FAQ turn, Turn No Match turn and End Chat turn are all there to handle similar issues as before so we will not go over them. We will, instead, focus on the Welcome User, Provide Experience, Change Experience and Work out pronation turns.&#x20;
 
@@ -80,13 +80,13 @@ The Welcome User turn is a _starting_ turn with just one intent from the applica
 
 Below is a couple of possible conversation that will lead to the welcome turn. As you can see, in the first instance we don't have any new information so we need to ask the user everything, while in the second instance we have already collected some relevant info, so we focus more on specific questions.&#x20;
 
-![](<../../.gitbook/assets/image (447).png>)![](<../../.gitbook/assets/image (452).png>)
+![](<../../.gitbook/assets/image (447) (1).png>)![](<../../.gitbook/assets/image (452) (1).png>)
 
 From a conversation map perspective, the Request Intent from the application is the same, but the way that intent is expressed through the question depends on how much information we have.&#x20;
 
 ![Request Intent with 5 associated messages](<../../.gitbook/assets/image (443).png>)
 
-![](<../../.gitbook/assets/image (444) (1).png>)![](<../../.gitbook/assets/image (429).png>)
+![](<../../.gitbook/assets/image (444) (1).png>)![](<../../.gitbook/assets/image (429) (1).png>)
 
 We have a total of five messages. A general one if we don't have any relevant info and another four messages, each focusin on one of the four pieces of information we want to collect. Each of those four messages has a condition that checks to verify if that piece of information exists in our context.&#x20;
 
@@ -96,13 +96,13 @@ We have a total of five messages. A general one if we don't have any relevant in
 
 After we've welcomed the user to this scene, we are now ready to collect any other information that is missing (or handle FAQ questions, etc). The turn that collects this additional information is the Provide Experience Turn.&#x20;
 
-![Provide Experience Turn Intents](<../../.gitbook/assets/image (445).png>)
+![Provide Experience Turn Intents](<../../.gitbook/assets/image (445) (1).png>)
 
 **Request Intents**: There are two requests intents that are meant to handle information coming through from the user. The first one is the one you should configure with an NLU interpreter, while the second one is the one we use for button-based responses.  You can use an NLU interpreter to interpret a button response (we will send the text on the button to the NLU interpreter) but if you are setting values explicitly with buttons it can be more efficient to just use the internal OpenDialog interpreter.&#x20;
 
 **Response Intents**: The response intents are where we decide whether we are going to ask a follow-up question or whether we are ready to show the user some shoes. The first intent "Ready to see some shoes" has a transition to the Welcome To Recommendations Scene in the Recommendations conversation. This intent will be selected only if all the conditions return true.&#x20;
 
-![](<../../.gitbook/assets/image (437).png>)![](<../../.gitbook/assets/image (450).png>)&#x20;
+![](<../../.gitbook/assets/image (437) (1).png>)![](<../../.gitbook/assets/image (450).png>)&#x20;
 
 If the conditions do not evaluate to true we move on to the second possible intent response which is the "Follow-up question". The "Follow-up question" intent, similarly to the intent in the welcome turn has a number of messages associated with it each one with a condition based on the attribute information that is missing.&#x20;
 
@@ -114,7 +114,7 @@ There is one other technique that this scene uses to keep the conversation focus
 
 The way we achieve this is through _virtual intents_. When a user asks an FAQ question we expect the FAQ turn to match and the answer to be provided as usual. However, once that turn plays itself out rather than returning control to the user we fire a _virtual intent_ by defining it on the response intent of the FAQ turn.&#x20;
 
-![](<../../.gitbook/assets/image (421).png>)
+![](<../../.gitbook/assets/image (421) (1).png>)
 
 {% hint style="info" %}
 A virtual intent instructs the conversation engine to emit that intent (as if the user said an utterance that was then interpreted to that intent. Once an intent is emitted the normal flow takes on from there and the conversation engine will do whatever it was going to do if the user had said that intent.&#x20;
@@ -124,7 +124,7 @@ In this case, the implication of the virtual intent is that the Provide Experien
 
 Virtual intents can be extremely powerful in that they can allow us to reactivate entire parts of the conversation and they mimic how human conversational develop. The application is essentially saying "I get that you asked me something different, I will reply to that but then I am also going to continue based on the reply I would have given you if you had not veered off the main objective of the conversation!" The screenshots below show you some examples of virtual intents in action. You see the answers to FAQ questions and then the follow-up coming from the Provide Experience turn.
 
-![](<../../.gitbook/assets/image (456).png>)![](<../../.gitbook/assets/image (442).png>)
+![](<../../.gitbook/assets/image (456) (1).png>)![](<../../.gitbook/assets/image (442).png>)
 
 #### Change Experience Turn
 
@@ -138,7 +138,7 @@ At some point in this specific example we introduce the user to the concept of p
 
 ### Pronation Scene
 
-![Pronation Scene](<../../.gitbook/assets/image (453).png>)
+![Pronation Scene](<../../.gitbook/assets/image (453) (1).png>)
 
 As you can see from the pronation scene the user is introduced to the concept and then guided through how to work out pronation by determining their feet pattern or they can skip the process. Whatever the specific path through this scene they will then be taken back to the User Profile scene.&#x20;
 
@@ -150,7 +150,7 @@ The Recommendations Conversation is made up of two scenes. There is the "Welcome
 
 We transition to the "Welcome to Recommendations" scene from the "User Profile" scene once we have enough information to show the user some products. The objective of this scene is to give the user one last chance to change some information or ask FAQ questions before we show them the products.&#x20;
 
-![Welcome to Recommendations Scene ](<../../.gitbook/assets/image (428).png>)
+![Welcome to Recommendations Scene ](<../../.gitbook/assets/image (428) (1).png>)
 
 As you can see from the figure above the scene has a number of possible _starting_ turns (which are also _open_ turns), this is because the transition from the previous scene happens on an Application intent - so this scene can open with a number of different user intents.&#x20;
 
@@ -168,7 +168,7 @@ The Provide Recommendations Turn is the key turn here. The application runs an a
 
 Currently, this is somewhat artificially split on shoe type and the attributes returned in the action are hard-coded. When you are implementing your own actions you can have an appropriate setup to return the information you need.&#x20;
 
-![](<../../.gitbook/assets/image (455).png>)
+![](<../../.gitbook/assets/image (455) (1).png>)
 
 The message that displays the shoes is a list message. An important element here is how we use the `<value>` field to set the attribute called `selection` to `one`. This could then be used through an action in order to retrieve further information about the selected product to customise the rest of the messages.&#x20;
 
@@ -178,10 +178,10 @@ The message that displays the shoes is a list message. An important element here
 
 Once the user has selected a product we move to the Purchase conversation and specifically the "Collect Details" scene. The objective of this scene is to a. collect details using a form message and b. allow the user to review and change those details. This is achieved by the interplay of the two turns. The "Get Details" turns presents a form message that the user can fill in and submit while the "Confirm Details" turn provides a summary of the submitted data and gives the user a way back to the form to change anything.&#x20;
 
-![Collect Details Scene](<../../.gitbook/assets/image (448) (1).png>)
+![Collect Details Scene](<../../.gitbook/assets/image (448) (1) (1).png>)
 
 The reason form details can be changed is because each field is stored in the User context and the form message is set up to replace field values with attributes from the user context, if those attributes are present
 
-![](<../../.gitbook/assets/image (441).png>)![](<../../.gitbook/assets/image (422).png>)![](<../../.gitbook/assets/image (420) (1).png>)
+![](<../../.gitbook/assets/image (441) (1).png>)![](<../../.gitbook/assets/image (422).png>)![](<../../.gitbook/assets/image (420) (1) (1).png>)
 
 And that's it you've completed setting up and understanding how the Product Chooser template works. I'd suggest you mess around with it a little more and have a look at conversations or scenes that we didn't cover to gain an even deeper understanding of its capabilities and be able to apply them to your particular use case.
