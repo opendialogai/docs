@@ -90,7 +90,7 @@ From a conversation map perspective, the Request Intent from the application is 
 
 We have a total of five messages. A general one if we don't have any relevant info and another four messages, each focusin on one of the four pieces of information we want to collect. Each of those four messages has a condition that checks to verify if that piece of information exists in our context.&#x20;
 
-![](<../../.gitbook/assets/image (419) (1).png>)
+<img src="../../.gitbook/assets/image (419) (1).png" alt="" data-size="original">
 
 #### Provide Experience Turn
 
