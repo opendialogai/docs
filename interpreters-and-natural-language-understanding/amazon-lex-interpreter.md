@@ -4,7 +4,7 @@ The OpenDialog Lex integration allows us to use Amazon Lex for intent interpreta
 
 ### Requirements
 
-To use Amazon Lex, you'll need an [Amazon Web Services](https://aws.amazon.com) account. Please see [these steps](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) for instructions on signing into AWS. Once you've signed into AWS, you'll need to create some resources in order to connect your account to an OpenDialog Lex interpreter.
+To use Amazon Lex, you'll need an [Amazon Web Services](https://aws.amazon.com/) account. Please see [these steps](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) for instructions on signing into AWS. Once you've signed into AWS, you'll need to create some resources in order to connect your account to an OpenDialog Lex interpreter.
 
 ### Create the Lex interpreter
 

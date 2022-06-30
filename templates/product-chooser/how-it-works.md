@@ -84,7 +84,7 @@ Below is a couple of possible conversation that will lead to the welcome turn. A
 
 From a conversation map perspective, the Request Intent from the application is the same, but the way that intent is expressed through the question depends on how much information we have.&#x20;
 
-![Request Intent with 5 associated messages](<../../.gitbook/assets/image (443).png>)
+![Request Intent with 5 associated messages](<../../.gitbook/assets/image (443) (1).png>)
 
 ![](<../../.gitbook/assets/image (444) (1).png>)![](<../../.gitbook/assets/image (429) (1).png>)
 
@@ -178,7 +178,7 @@ The message that displays the shoes is a list message. An important element here
 
 Once the user has selected a product we move to the Purchase conversation and specifically the "Collect Details" scene. The objective of this scene is to a. collect details using a form message and b. allow the user to review and change those details. This is achieved by the interplay of the two turns. The "Get Details" turns presents a form message that the user can fill in and submit while the "Confirm Details" turn provides a summary of the submitted data and gives the user a way back to the form to change anything.&#x20;
 
-![Collect Details Scene](<../../.gitbook/assets/image (448) (1) (1).png>)
+![Collect Details Scene](<../../.gitbook/assets/image (448) (1) (1) (1).png>)
 
 The reason form details can be changed is because each field is stored in the User context and the form message is set up to replace field values with attributes from the user context, if those attributes are present
 

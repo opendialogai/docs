@@ -8,7 +8,7 @@ description: >-
 
 ## Introduction
 
-This guide describes how to spin up and serve an OpenDialog application using [Forge](https://forge.laravel.com).&#x20;
+This guide describes how to spin up and serve an OpenDialog application using [Forge](https://forge.laravel.com/).&#x20;
 
 This is primarily useful for development and testing purposes or for applications with modest resource needs. It is not suitable for large-scale production applications as it installs all resources (including the Dgraph server) on a single VM.
 
@@ -16,9 +16,9 @@ This is primarily useful for development and testing purposes or for application
 
 Before getting started you will need the following:
 
-1. At least a hobby-level account with [Forge](https://forge.laravel.com) as you will need to create a new server from scratch. This guide assumes that the only application running on the server is OpenDialog.&#x20;
-2. An account with [DigitalOcean](https://www.digitalocean.com) - the instructions here are easily translatable to other environments such as AWS or Linode, but we are assuming Digital Ocean.   &#x20;
-3. A Git repository with your OpenDialog application - this is the respository that you will be connecting to Forge and that will then be pulled into your server. The instructions below will assume a [GitHub](https://github.com) repository but any appropriate online Git provider will do. &#x20;
+1. At least a hobby-level account with [Forge](https://forge.laravel.com/) as you will need to create a new server from scratch. This guide assumes that the only application running on the server is OpenDialog.&#x20;
+2. An account with [DigitalOcean](https://www.digitalocean.com/) - the instructions here are easily translatable to other environments such as AWS or Linode, but we are assuming Digital Ocean.   &#x20;
+3. A Git repository with your OpenDialog application - this is the respository that you will be connecting to Forge and that will then be pulled into your server. The instructions below will assume a [GitHub](https://github.com/) repository but any appropriate online Git provider will do. &#x20;
 4. A domain through which to host your application. We will be pointing an A record of this domain to our Digital Ocean droplet and using Forge to provide SSL certificates.&#x20;
 
 ### Step 1: Create a Recipe on Forge to prep the service post-provision
@@ -109,7 +109,7 @@ At this point initiate another deployment, by clicking on Deploy Now, so that yo
 
 We will be using Let's Encrypt through Forge for SSL so it is a case of click on SSL through the Forge admin and asking for a Let's Encrypt certificate to be installed. A number of other options are available as well.&#x20;
 
-_If you are using a new domain you might want to wait a bit to ensure that the DNS A record change has propagated through - you can use a service such as _[_DNS Propagation_](https://dnspropagation.net)_ to check the status_
+_If you are using a new domain you might want to wait a bit to ensure that the DNS A record change has propagated through - you can use a service such as_ [_DNS Propagation_](https://dnspropagation.net/) _to check the status_
 
 ### Step 7: Setup OpenDialog Application on the server
 
