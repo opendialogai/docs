@@ -457,11 +457,11 @@ There are 2 text type fields `text` which will appear when the message starts sh
 
 Autocomplete closed
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 Autocomplete With Suggestions
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (1).png>)
 
 ### Full page messages
 

@@ -105,6 +105,7 @@
     * [Load Webchat within page Element](developing-with-opendialog/interfaces/webchat/load-webchat-within-a-page-element.md)
 * [Interpreters](developing-with-opendialog/interpreters.md)
 * [Actions](developing-with-opendialog/actions.md)
+* [Interaction API](developing-with-opendialog/interaction-api.md)
 
 ## Reference
 
