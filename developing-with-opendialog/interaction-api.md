@@ -52,11 +52,11 @@ A Postman description of the API is available here [https://documenter.getpostma
 
 To access the API you will need a bearer token associated with a user account in the OpenDialog Tenant you want to extract data from.&#x20;
 
-To access your bearer token visit the Identity & Security page
+To access your bearer token visit the Identity & Security page - accessible by clicking on your username in the bottom left-hand corner.
 
 ![](../.gitbook/assets/image.png)
 
-![](../.gitbook/assets/2022-09-21\_16-47-08.png)
+<figure><img src="../.gitbook/assets/2022-09-21_16-47-08.png" alt=""><figcaption><p>API Bearer Token Access</p></figcaption></figure>
 
 
 

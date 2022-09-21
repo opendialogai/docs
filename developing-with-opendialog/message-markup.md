@@ -461,7 +461,7 @@ Autocomplete closed
 
 Autocomplete With Suggestions
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (6).png>)
 
 ### Full page messages
 
