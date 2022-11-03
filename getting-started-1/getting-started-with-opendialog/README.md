@@ -6,7 +6,7 @@ description: A quick introduction to the basics of OpenDialog
 
 Following the [introduction into the concepts](broken-reference) that drive how OpenDialog models conversational applications - let us now dive into the tool itself.&#x20;
 
-To get started you can [sign-up to a sandbox version ](https://cloud.opendialog.ai/register)of OpenDialog.
+To get started you can [sign-up to a sandbox version ](https://cloud.opendialog.ai/register)of OpenDialog. Keep in mind that this is not meant for production use - but purely as a way for you to experience the OpenDialog approach to conversation design. Please [get in touch](https://opendialog.ai) with our team for a demo and enterprise use.
 
 What we will do in the subsequent sections is run through how you can:
 
