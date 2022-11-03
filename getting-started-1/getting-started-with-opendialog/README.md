@@ -6,7 +6,7 @@ description: A quick introduction to the basics of OpenDialog
 
 Following the [introduction into the concepts](broken-reference) that drive how OpenDialog models conversational applications - let us now dive into the tool itself.&#x20;
 
-To get started you can either [install it on your own machine ](../installing-opendialog/)or [sign-up to the SaaS version](https://cloud.opendialog.ai/register) of OpenDialog.
+To get started you can [sign-up to a sandbox version ](https://cloud.opendialog.ai/register)of OpenDialog.
 
 What we will do in the subsequent sections is run through how you can:
 
