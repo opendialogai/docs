@@ -10,8 +10,6 @@
 
 ## OpenDialog Platform and Interface <a href="#opendialog-platform" id="opendialog-platform"></a>
 
-***
-
 * [OpenDialog Platform](introduction.md)
 * [The OpenDialog Workspace](the-opendialog-workspace.md)
 * [The OpenDialog model](the-opendialog-model/README.md)
