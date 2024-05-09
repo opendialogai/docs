@@ -1,0 +1,111 @@
+{
+  "id": "4ee17010-eb9f-426a-9504-1c576d6da10b",
+  "name": "userPromptQuestion",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i need to know",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "60c681c5-d5cf-460a-a4e0-10dca891b682",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i want to ask",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "0c9d8b01-6393-4375-b89e-fda355f2990b",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "can I ask something",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c143077b-ca45-4299-83c0-debc547572ac",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "want to ask something",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "5d32c9b6-57d9-41c9-a432-19481779562e",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i've got a question",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c95e5b34-79dd-488e-9627-1b89909cda5f",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i have a question",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f42b6870-16e0-4b28-b091-1cfddb1527ee",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

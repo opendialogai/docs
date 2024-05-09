@@ -1,0 +1,147 @@
+{
+  "id": "4bfd521d-a3f1-4b61-ac31-582704cdf481",
+  "name": "intent.core.TurnEndChat",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i'm done",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f9da9d1a-ccba-452a-a471-40421381b7e8",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "go away",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f0c869a2-b6bc-492c-91ab-1708fdb76129",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "goodbye",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f8b198cd-8806-48ae-a5ba-0bf0e4405280",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "end",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "6d118a9c-b94e-4e0a-9807-6edd91ec3c36",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "stop",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "ee4adfa6-01f3-4863-bf92-be70a8b1616b",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "let's be done",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "82a70b63-ea6e-4415-81a1-9ee3936c4745",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "finish this",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "e02d034a-2edd-427e-b841-4fbe28192dcb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "stop now",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "9aa47c66-b1e8-43f2-8876-24b3c2f96dee",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "end chat",
+          "userDefined": false
+        }
+      ],
+      "count": 2,
+      "id": "004d0df1-a7b9-47fc-8c8e-8ce96199b5db",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

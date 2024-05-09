@@ -1,0 +1,135 @@
+{
+  "id": "ecc46963-2cf3-42f3-a4c1-90225b0085ab",
+  "name": "intent.shoebot.pronation",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "pronation?",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "dbb1d6db-4ff4-4f89-baea-e2fe4ddb0146",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what do you mean by pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "4539e6ba-f8fe-496b-81cf-3b4a082e63c9",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what on earth is pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "c7c5a7c2-89be-4ae7-af3c-6a0413d21be8",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "unsure about pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "53b59a4e-e12c-4063-ac5f-8f6b7e88b771",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what is my pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "884d115b-0bc6-4157-a2f5-93bad276b089",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "a78a7f87-16d0-44f9-bfd9-542244ccab21",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "tell me about pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "f1ac7caf-cc2b-415f-b154-daf7631a93fb",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what is pronation",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "3744bca9-336f-406f-89f8-3a87f434d03c",
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}

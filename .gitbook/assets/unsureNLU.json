@@ -1,0 +1,117 @@
+{
+  "id": "834adc9f-4ad4-4c7c-bfdc-68d006db3254",
+  "name": "unsureNLU",
+  "auto": true,
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "conditionalResponses": [],
+  "context": [],
+  "contexts": [],
+  "endInteraction": false,
+  "events": [],
+  "fallbackIntent": false,
+  "liveAgentHandoff": false,
+  "parentId": null,
+  "followUpIntents": [],
+  "priority": 500000,
+  "responses": [
+    {
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "defaultResponsePlatforms": {},
+      "messages": [
+        {
+          "type": "message",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "resetContexts": false
+    }
+  ],
+  "rootParentId": null,
+  "templates": [],
+  "userSays": [
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what is that",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "8f322043-f69b-441b-b8af-73412c99d545",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "what do you ",
+          "userDefined": false
+        },
+        {
+          "text": "mean",
+          "userDefined": false,
+          "meta": "@sys.ignore",
+          "alias": null
+        }
+      ],
+      "count": 0,
+      "id": "2d9162b8-ff20-4a37-8b93-f18d66214b36",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "that is not clear",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "cdb9bc74-4a2b-4cf0-8e36-f5ee357324b3",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i don't know",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "dd9095be-eece-4eb0-a7de-b1937bf067e6",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i am not sure",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": "1d9d8f75-ae14-41b6-bb2f-abf863aeb032",
+      "updated": null
+    },
+    {
+      "isTemplate": false,
+      "data": [
+        {
+          "text": "i don't knwo",
+          "userDefined": false
+        }
+      ],
+      "count": 0,
+      "id": null,
+      "updated": null
+    }
+  ],
+  "webhookForSlotFilling": false,
+  "webhookUsed": false
+}
