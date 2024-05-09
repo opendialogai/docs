@@ -15,4 +15,4 @@ Here's an overview of the main sections.&#x20;
 * [**Integrating with OpenDialog**](broken-reference) covers the backend engineering aspects of building conversational experiences, including integrations with other data sources.
 * [**Release Notes**](broken-reference) informs you of the new features and improvements being launched for the platform each month.
 
-_If you have any questions or would like to talk to the OpenDialog team about your GenAI-powered application contact us at support@opendialog.ai._ \
+_If you have any questions or would like to talk to the OpenDialog team about your GenAI-powered application contact us at support@opendialog.ai._ 
