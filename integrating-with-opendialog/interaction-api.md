@@ -46,7 +46,7 @@ The Interaction API makes it possible to retrieve information about interactions
 ```
 {% endcode %}
 
-A Postman description of the API is available here [https://documenter.getpostman.com/view/18689765/UyxhmSVW#d11214de-8749-48af-9521-172591cf54b3](https://documenter.getpostman.com/view/18689765/UyxhmSVW#d11214de-8749-48af-9521-172591cf54b3)
+Please see our [Postman documentation](https://www.postman.com/opendialogai/workspace/opendialog-s-public-workspace/documentation/18689765-415a73ab-291e-43a9-bdb8-aae2eb015f3f?entity=request-18689765-d11214de-8749-48af-9521-172591cf54b3) of the API for further information.
 
 ### Bearer Token
 
