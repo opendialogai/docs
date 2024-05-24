@@ -30,8 +30,9 @@
 
 ## OPENDIALOG WEBCHAT INTERFACE <a href="#webchat" id="webchat"></a>
 
-* [Messages and the Message editor](webchat/messages-and-the-message-editor/README.md)
+* [Message Design](webchat/messages-and-the-message-editor/README.md)
   * [Message Editor](webchat/messages-and-the-message-editor/message-editor.md)
+  * [Constructing messages](webchat/messages-and-the-message-editor/constructing-messages.md)
   * [Message Types](webchat/messages-and-the-message-editor/message-types/README.md)
     * [Text Message](webchat/messages-and-the-message-editor/message-types/text-message.md)
     * [Image Message](webchat/messages-and-the-message-editor/message-types/image-message.md)

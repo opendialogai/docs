@@ -1,10 +1,10 @@
-# Messages and the Message editor
+# Message Design
 
 The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages. Within this section you will find information on how to find, use and utilise all the avaiable features of the OpenDialog message editor.
 
 There are many different message types that are available for use within your conversation. This section of the documentation will take you through exact specific message type in detail, informing you on how and where to find and use messages in order to customise your OpenDialog experience.
 
-### Message Editor
+### Constructing messages
 
 {% content-ref url="message-editor.md" %}
 [message-editor.md](message-editor.md)
