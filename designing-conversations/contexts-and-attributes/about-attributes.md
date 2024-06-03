@@ -2,19 +2,17 @@
 
 ## What are attributes
 
-Attributes are similar to variables. xxxx
+Attributes are what OpenDialog calls the pieces of information that are stored during interaction with a user.&#x20;
 
 For example, a user's `first_name` or `last_name,`the `price` for a specific item or a description of the user type (e.g. `novice`, `intermediate`, `expert`)
 
-Attributes have a type and a value.
+Attributes have a type, a name and a value. The type might be something like `String` , the name might be `first_name` and the specific value would be `John.`
 
 Attributes are used in conversations and messages to provide relevant information for subsequent conversational reasoning (through conditions and actions) or message construction.&#x20;
 
-They can also be used to indicate expected entities that should be extracted from user utterances and stored in contexts.
+Pretty much anything you store and manipulate through the OpenDialog conversation engine is stored as an attribute.&#x20;
 
 ## Attribute types
-
-\[list types and what that means, which values those can have]
 
 boolean: True or False, Yes or No, 1 or 0. Binary decisions.
 
@@ -24,13 +22,7 @@ int: Whole numbers without fractions or decimal values (EX: 1, 5, 25)
 
 string: used for text based variables like words (EX: Small size, Medium size, Large size)
 
-timestamp: an attribute which allows you have the Current time&#x20;
-
-user: each user has a unique identifier. This is a User's unique ID for identification purposes.
-
-utterance
-
-formData
+timestamp: an attribute type for storing unix timestamps. Can be used in comparison condition operations such as greater than and less than. For example, `last_seen` and `first_seen` in the user context are `timestamp` attributes. &#x20;
 
 arrayData
 
@@ -52,7 +44,7 @@ composite
 
 inferred\_composite
 
-The [Core OpenDialog package](https://github.com/opendialogai/core/tree/develop/src/Attribute) provides some attribute types but developers can add additional types based on their needs.
+
 
 ## Defining attributes
 
