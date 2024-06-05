@@ -65,7 +65,7 @@ The following options are available in the Edit Message screen:
     We recommend using the intent name, optionally followed by the condition if you are using one.&#x20;
 
     _For example: WelcomeIntent - userID not set_
-* [**Layout:**](constructing-messages.md) **t**his is where you can build your message content, add conditions to your messages, and set behaviours such as disabling text input and hiding the app avatar&#x20;
+* [**Layout:**](constructing-messages.md)  this is where you can build your message content, add conditions to your messages, and set behaviours such as disabling text input and hiding the app avatar&#x20;
 * **Preview:** shows a preview of your message. More complex messages don't have a full preview available and are labeled in the preview by their message type.
 * **Conversation Designer:** shows the current position in the Scenario where this message is located
 *   [**Conditions**](message-conditions.md): in the conditions tab you will be able to define when your message gets selected by defining conditional rules.&#x20;
