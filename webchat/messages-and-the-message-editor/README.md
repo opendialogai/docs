@@ -1,6 +1,6 @@
 # Message Design
 
-Keep your conversational application ahead of the curve and drive quicker user adoption and user retention using visual cues and suggestions in a hybrid user interface, combining conversational and graphical user interface patterns. This reduces cognitive load, allowing users to focus on their goals, thanks to a personalized, adaptive interfaces. &#x20;
+Keep your conversational application ahead of the curve and drive quicker user adoption and user retention using visual cues and suggestions in a hybrid user interface, combining conversational and well-known graphical user interface patterns. This reduces cognitive load, allowing users to focus on their goals, thanks to a personalized, adaptive interface. &#x20;
 
 ## A low-code message editor
 
