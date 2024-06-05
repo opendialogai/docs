@@ -1,5 +1,7 @@
 # Message Design
 
+Keep your conversational application ahead of the curve and drive quicker user adoption and user retention using visual cues and suggestions in a hybrid user interface, combining conversational and graphical user interface patterns. This reduces cognitive load, allowing users to focus on their goals, thanks to a personalized, adaptive interfaces. &#x20;
+
 ## A low-code message editor
 
 OpenDialog's low-code [Message edito](message-editor.md)[r](message-editor.md) gives you access to the messages in the scenario and allows you to add, edit and delete messages. Within this section you will find information on how to find, use and utilise all the available features of the OpenDialog message editor.
