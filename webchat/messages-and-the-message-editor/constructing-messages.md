@@ -85,3 +85,7 @@ A rule of thumb in a typical OpenDialog assistant is to limit the text in a sing
 
 
 Always test your assistant to make sure the content does not scroll up. Note that images or carousels take up a lot of vertical space, so be mindful of the amount of text you add before or after such an element in a single turn.&#x20;
+
+### Accessibility
+
+For all message types, a key element to take into consideration is [**Accessibility**](../designing-accessible-chatbots.md), especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../designing-accessible-chatbots.md).
