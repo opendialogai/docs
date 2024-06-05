@@ -64,51 +64,21 @@ The following options are available in the Edit Message screen:
 
     We recommend using the intent name, optionally followed by the condition if you are using one.&#x20;
 
-    _For example: WelcomeIntent - userID unknown_
-* **Layout: t**his is where you can build your message content, add conditions to your messages, and set behaviours such as disabling text input and hiding the app avatar&#x20;
+    _For example: WelcomeIntent - userID not set_
+* [**Layout:**](constructing-messages.md) **t**his is where you can build your message content, add conditions to your messages, and set behaviours such as disabling text input and hiding the app avatar&#x20;
 * **Preview:** shows a preview of your message. More complex messages don't have a full preview available and are labeled in the preview by their message type.
 * **Conversation Designer:** shows the current position in the Scenario where this message is located
+*   [**Conditions**](message-conditions.md): in the conditions tab you will be able to define when your message gets selected by defining conditional rules.&#x20;
+
+    _For example: if userID is not set_
 
 <figure><img src="../../.gitbook/assets/2023-05-01_15-15-11 (1).png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
 
-### Designing a message
 
-To design your message, click on any message block(s) to add those to the designer. You will see each of them appear, one after the other. You can then go ahead and add your message content as required.&#x20;
 
-Each block can be deleted or duplicated using the relevant icons.&#x20;
+## Improving the user experience
 
-<figure><img src="../../.gitbook/assets/2023-05-01_15-15-11 copy.png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Taylor the user experience</strong></td><td>Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of <a href="message-types/">message types</a> to their fullest potential.</td><td></td><td><a href="constructing-messages.md">constructing-messages.md</a></td><td><a href="../../.gitbook/assets/legoblocks.png">legoblocks.png</a></td></tr><tr><td><strong>Surface relevant messages</strong></td><td>Take advantage of OpenDialog's unique  approach, using <a href="message-conditions.md">conditions</a> to surface relevant messages at the right moment in the conversation.</td><td></td><td></td><td><a href="../../.gitbook/assets/conditions (1).png">conditions (1).png</a></td></tr><tr><td><strong>Personalize the experience</strong></td><td>Further personalize the user experience by using OpenDialog's <a href="using-attributes-in-messages.md">attribute</a> system.</td><td></td><td></td><td><a href="../../.gitbook/assets/personalisation.png">personalisation.png</a></td></tr></tbody></table>
 
 
 
-{% content-ref url="constructing-messages.md" %}
-[constructing-messages.md](constructing-messages.md)
-{% endcontent-ref %}
-
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>Constructing messages</strong></td><td>Master the art of crafting powerful messages tailored to your specific needs, utilizing OpenDialog's diverse range of message types to their fullest potential.</td><td></td><td><a href="constructing-messages.md">constructing-messages.md</a></td><td><a href="../../.gitbook/assets/legoblocks.png">legoblocks.png</a></td></tr></tbody></table>
-
-
-
-### Message conditions
-
-Message conditions can be defined by clicking on Conditions in the Layout and adding context, attribute and other details. More information about context and attributes is a available in the next page on Attributes in Messages.&#x20;
-
-<figure><img src="../../.gitbook/assets/2023-05-01_15-15-11 copy (1).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../.gitbook/assets/2023-05-01_15-57-54.png" alt=""><figcaption></figcaption></figure>
-
-We define conditions so that the system can evaluate which message to use. In the image below, two messages are associated with the intent called intent.app.WelcomeUser. The message called intent.app.WelcomeNewUser gets used when the user is not an existing customer. If they are, the message intent.app.WelcomeExistingUser is used. Existing\_customer is an attribute of the user context. More information about using attributes in messages can be found in the next page, "Attributes in messages".
-
-<figure><img src="../../.gitbook/assets/2023-05-01_14-35-48.png" alt=""><figcaption><p>Example of messages with conditions</p></figcaption></figure>
-
-Continuing our example above, where we want to show different messages to users depending on whether they are a new user or a returning user. To do this we would us Conditions to tell the system which message it should show depending on the value of attributes saved against the user.
-
-For our example, then we would set the 'Attribute' to `seconds_since_last_seen` , 'Context' to `user`, 'Operation' to `Equals` and the 'Value' to '`0`' - meaning only show this message if the user has not been seen yet.
-
-![Conditions: New user welcome message](<../../.gitbook/assets/image (40).png>)
-
-Where as for the returning user, we would change the 'Operation' to be `Greater than`. Meaning only show this message if the user has been seen before.
-
-![Conditions: Returning user welcome message](<../../.gitbook/assets/image (254).png>)
-
-Conditions are really powerful for enabling personalised experiences for users. The key functionality that drives Conditions are Attributes and you find out more about them [here](../../designing-conversations/conditions-and-operators.md).&#x20;

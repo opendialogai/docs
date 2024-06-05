@@ -50,6 +50,7 @@
     * [File Upload Message](webchat/messages-and-the-message-editor/message-types/file-upload-message.md)
     * [Meta Messages](webchat/messages-and-the-message-editor/message-types/meta-messages/README.md)
       * [Progress Bar Message](webchat/messages-and-the-message-editor/message-types/meta-messages/progress-bar-message.md)
+  * [Message Conditions](webchat/messages-and-the-message-editor/message-conditions.md)
   * [Using Attributes in Messages](webchat/messages-and-the-message-editor/using-attributes-in-messages.md)
 * [Webchat Interface Settings](webchat/webchat-interface-settings.md)
 * [Webchat Controls](webchat/webchat-controls.md)
