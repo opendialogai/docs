@@ -1,20 +1,18 @@
 # Message Design
 
-The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages. Within this section we will find information on how to find, use and utilise all the available features of the OpenDialog message editor.
+## A low-code message editor
+
+OpenDialog's low-code [Message edito](message-editor.md)[r](message-editor.md) gives you access to the messages in the scenario and allows you to add, edit and delete messages. Within this section you will find information on how to find, use and utilise all the available features of the OpenDialog message editor.
+
+## An enriched  user experience
+
+OpenDialog's modular approach to messages allows you to take advantage of rich UI components, surface specific messages on your terms and personalize them to make them relevant to  specific users or use cases.  Check out the following sections to take your conversational application from simple question answering to a truly personalised hybrid experience :&#x20;
+
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Taylor the user experience</strong></td><td>Master the art of crafting powerful messages tailored to your specific needs, combining OpenDialog's diverse range of <a href="message-types/">message types</a> to their fullest potential.</td><td></td><td><a href="constructing-messages.md">constructing-messages.md</a></td><td><a href="../../.gitbook/assets/legoblocks.png">legoblocks.png</a></td></tr><tr><td><strong>Surface relevant messages</strong></td><td>Take advantage of OpenDialog's unique  approach, using <a href="message-conditions.md">conditions</a> to surface relevant messages at the right moment in the conversation.</td><td></td><td><a href="message-conditions.md">message-conditions.md</a></td><td><a href="../../.gitbook/assets/conditions (1).png">conditions (1).png</a></td></tr><tr><td><strong>Personalize the messages</strong></td><td>OpenDialog's <a href="using-attributes-in-messages.md">attribute</a> system will allow you to taylor your messages using these variables to surface  personalised information.</td><td></td><td><a href="using-attributes-in-messages.md">using-attributes-in-messages.md</a></td><td><a href="../../.gitbook/assets/personalisation.png">personalisation.png</a></td></tr></tbody></table>
+
+## A diverse and rich set of message types
 
 There are many different message types that are available for use within a conversation. This section of the documentation will take us through exact specific message type in detail, informing us on how and where to find and use messages in order to customise our OpenDialog experience.
-
-### Constructing messages
-
-{% content-ref url="message-editor.md" %}
-[message-editor.md](message-editor.md)
-{% endcontent-ref %}
-
-{% content-ref url="constructing-messages.md" %}
-[constructing-messages.md](constructing-messages.md)
-{% endcontent-ref %}
-
-### Message types
 
 {% content-ref url="message-types/text-message.md" %}
 [text-message.md](message-types/text-message.md)
@@ -76,8 +74,3 @@ There are many different message types that are available for use within a conve
 [meta-messages](message-types/meta-messages/)
 {% endcontent-ref %}
 
-### Attributes
-
-{% content-ref url="using-attributes-in-messages.md" %}
-[using-attributes-in-messages.md](using-attributes-in-messages.md)
-{% endcontent-ref %}
