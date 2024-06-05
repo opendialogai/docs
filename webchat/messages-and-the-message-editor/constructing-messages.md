@@ -65,9 +65,17 @@ It helps legibility if the information is provided in multiple messages (all wit
 
 Notice the difference between the following screens:&#x20;
 
+&#x20;  &#x20;
+
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/2023-05-23_13-09-37.png" alt="" width="375"><figcaption><p>All text in a single message</p></figcaption></figure>
 
-![](../../.gitbook/assets/2023-05-23\_13-10-36.png)    ![](<../../.gitbook/assets/2023-05-23\_10-57-47 (2).png>)
+ 
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-06-05 at 13.47.08.png" alt="" width="317"><figcaption><p>Text divided up in smaller chunks for readability</p></figcaption></figure>
+
+</div>
 
 ### Words per app turn
 
