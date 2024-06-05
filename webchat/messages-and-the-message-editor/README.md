@@ -1,8 +1,8 @@
 # Message Design
 
-The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages. Within this section you will find information on how to find, use and utilise all the avaiable features of the OpenDialog message editor.
+The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages. Within this section we will find information on how to find, use and utilise all the available features of the OpenDialog message editor.
 
-There are many different message types that are available for use within your conversation. This section of the documentation will take you through exact specific message type in detail, informing you on how and where to find and use messages in order to customise your OpenDialog experience.
+There are many different message types that are available for use within a conversation. This section of the documentation will take us through exact specific message type in detail, informing us on how and where to find and use messages in order to customise our OpenDialog experience.
 
 ### Constructing messages
 
@@ -10,7 +10,11 @@ There are many different message types that are available for use within your co
 [message-editor.md](message-editor.md)
 {% endcontent-ref %}
 
-### Message Types
+{% content-ref url="constructing-messages.md" %}
+[constructing-messages.md](constructing-messages.md)
+{% endcontent-ref %}
+
+### Message types
 
 {% content-ref url="message-types/text-message.md" %}
 [text-message.md](message-types/text-message.md)
@@ -56,8 +60,16 @@ There are many different message types that are available for use within your co
 [rich-message.md](message-types/rich-message.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="message-types/location-message.md" %}
+[location-message.md](message-types/location-message.md)
+{% endcontent-ref %}
+
+{% content-ref url="message-types/e-sign-message.md" %}
+[e-sign-message.md](message-types/e-sign-message.md)
+{% endcontent-ref %}
+
+{% content-ref url="message-types/file-upload-message.md" %}
+[file-upload-message.md](message-types/file-upload-message.md)
 {% endcontent-ref %}
 
 {% content-ref url="message-types/meta-messages/" %}

@@ -32,7 +32,7 @@
 
 * [Message Design](webchat/messages-and-the-message-editor/README.md)
   * [Message Editor](webchat/messages-and-the-message-editor/message-editor.md)
-  * [Constructing messages](webchat/messages-and-the-message-editor/constructing-messages.md)
+  * [Constructing Messages](webchat/messages-and-the-message-editor/constructing-messages.md)
   * [Message Types](webchat/messages-and-the-message-editor/message-types/README.md)
     * [Text Message](webchat/messages-and-the-message-editor/message-types/text-message.md)
     * [Image Message](webchat/messages-and-the-message-editor/message-types/image-message.md)
@@ -45,6 +45,8 @@
     * [Autocomplete Message](webchat/messages-and-the-message-editor/message-types/autocomplete-message.md)
     * [List Message](webchat/messages-and-the-message-editor/message-types/list-message.md)
     * [Rich Message](webchat/messages-and-the-message-editor/message-types/rich-message.md)
+    * [Location Message](webchat/messages-and-the-message-editor/message-types/location-message.md)
+    * [E-Sign Message](webchat/messages-and-the-message-editor/message-types/e-sign-message.md)
     * [File Upload Message](webchat/messages-and-the-message-editor/message-types/file-upload-message.md)
     * [Meta Messages](webchat/messages-and-the-message-editor/message-types/meta-messages/README.md)
       * [Progress Bar Message](webchat/messages-and-the-message-editor/message-types/meta-messages/progress-bar-message.md)

@@ -1,39 +1,51 @@
 ---
-description: This page describes where to use and find a form block message type
+description: This page describes where to use and find a form message type
 ---
 
 # Form Message
 
+## What is a form message?
+
 The form message lets you create more complicated message inputs that are great for capturing structured information about the user use as addresses or full names.
-
-You can only add one form message type to each message, and it should be the last message in the list to work properly.&#x20;
-
-### Properties
 
 Each form message has the follow properties:
 
 * **Text**: Form text can optionally be set and will be displayed at the top of the form message if set
 * **Button text**: The text to display on the submit button shown at the bottom of the form message.
 * **Callback**: Similarly to the 'simulate user intent' button messages, this field needs to be set to point to the next intent in the conversation flow. When clicked on, a list of all conversations for the current scenario is show listing each intent that is part of them. Either select the correct user intent, or create a new one using the drop down interface. See [button message](https://docs.opendialog.ai/messages/message-type-button-block#button-functionality) for more info
+* **Validation:** When creating your form message, you can also set validation for your input fields. There are two ways you can do this, through the regular expression for validation field, and through the error text for use with regular expression validation field. Both of these are optional, but are there if you wish to use them
 
-Each form message can have as many fields as needed to capture the information required. There are 4 main types of form fields:
+Each form message can have as many fields as needed to capture the information required.&#x20;
 
-### Another example: multi-select checkbox form message
+## When to use a form message
 
-Here is an example of a checkbox form message. This message type allows for multi-select. The selected options (whether 1 or more) are captured as the value for the attribute that is listed in the "Attribute name (required)" field. This attribute can be defined "on the fly" just by entering it here, or could be predefined as a [dynamic attribute](../../../designing-conversations/contexts-and-attributes/about-attributes.md).&#x20;
+There are many different situations in which a form message would be used within an OpenDialog chatbot. For example,  user registration. If you require your users to input their information, it is much easier to do this through having them fill out a form, rather than manually input all their text.
 
-<figure><img src="../../../.gitbook/assets/2023-05-17_14-56-53.png" alt=""><figcaption><p>Preview of a multi-select checkbox form message</p></figcaption></figure>
+## How to create a form message
 
-<figure><img src="../../../.gitbook/assets/2023-05-19_12-44-07.png" alt=""><figcaption><p>Message editor page for the multi-select checkbox form message</p></figcaption></figure>
+### Via the no-code image message in Message Editor
 
-In this example, we gather the user's interests and provide simple recommendations based on the selected interests. For instance, if they selected weight management, the next message will provide information relevant to weight management.&#x20;
+Navigate to the [Message Editor](../message-editor.md) and create a form block by clicking the _Add form block_ icon in the Layout section. &#x20;
 
-To do so, the attribute is used as a condition on the message in a next turn:
+<figure><img src="../../../.gitbook/assets/Group 10 (2).png" alt=""><figcaption><p>How to create a form message in the no-code form message block</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>The attribute being used as a condition on the message in a next turn</p></figcaption></figure>
+### Via the custom message in Message Editor
 
-{% hint style="info" %}
-For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../../designing-accessible-chatbots.md).
+Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Select `form-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
+
+Fill in the template with the [properties ](form-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
+
+<figure><img src="../../../.gitbook/assets/Group 11 (1).png" alt=""><figcaption><p>How to create a form message in the custom message block</p></figcaption></figure>
+
+{% hint style="success" %}
+* Open your OpenDialog application
+* Select the Scenario that you wish to edit
+* Select Design from the left hand panel and select Messages
+* Go into the message that you want to add a message block to
+* Add a 'Custom Message' block
+* Select 'Form message' from the drop down
+* Add in your own text to the fields you want to customise
+* To preview your message, go to the Preview section
 {% endhint %}
 
 #### XML Snippet
@@ -123,6 +135,26 @@ This form message example was created with the following XML:
 </message>
 ```
 
+## How to use a form message?
+
+Insert loom
+
 {% hint style="success" %}
 **Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen
+{% endhint %}
+
+## How to retrieve uploaded data?
+
+When a user fills out your form, you may be wondering where that data is kept/stored for you to be able to have access to.
+
+When your user fills out your form, all of their information is added to the User Context. Each field that is available to fill out has an attribute. This means, that once the information is added, it is then added to that attribute for you to use and reference throughout the rest of your conversation. For more information on how to use and create attributes, click [here](../../../designing-conversations/contexts-and-attributes/attribute-management.md).
+
+## How to construct a form message?
+
+When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structuring these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](../constructing-messages.md)page for more information.
+
+You can only add one form message type to each message, and it should be the last message in the list to work properly.&#x20;
+
+{% hint style="info" %}
+For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../../designing-accessible-chatbots.md).
 {% endhint %}

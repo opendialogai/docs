@@ -46,18 +46,14 @@ Within this section, all different message types that are available to you throu
 [rich-message.md](rich-message.md)
 {% endcontent-ref %}
 
+{% content-ref url="location-message.md" %}
+[location-message.md](location-message.md)
+{% endcontent-ref %}
+
+{% content-ref url="e-sign-message.md" %}
+[e-sign-message.md](e-sign-message.md)
+{% endcontent-ref %}
+
 {% content-ref url="meta-messages/" %}
 [meta-messages](meta-messages/)
 {% endcontent-ref %}
-
-## Drag and drop feature
-
-Within every message type, there is also now a drag and drop feature for you to use.&#x20;
-
-### Where to find
-
-<figure><img src="../../../.gitbook/assets/Group 10.png" alt=""><figcaption><p>How to find the drag and drop feature within the message editor</p></figcaption></figure>
-
-To find the drag and drop feature, simply go to the top left hand corner of any message block and find the icon with 6 dots.
-
-From here, you should be able to grab this icon and move your message block to it's desired place.
