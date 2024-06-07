@@ -40,7 +40,7 @@ Fill in the template with the [properties ](list-message.md#properties)of your p
 #### XML Snippet
 
 ```
-<list-message list_type="horizontal">
+<list-message>
     <item><text-message>{text_message}</text-message></item>
     <item><image-message>{image_message}</image-message></item>
     <item><rich-message>{rich_message}</rich-message></item>
@@ -49,8 +49,6 @@ Fill in the template with the [properties ](list-message.md#properties)of your p
 
 #### Properties
 
-The only option available for list messages is `view-type`. This can either be `vertical` (default) or `horizontal`
-
 Within each item of your list message, you can also add a [rich message](rich-message.md). See the rich message page for more information
 
 {% hint style="warning" %}
@@ -58,6 +56,8 @@ If you change your mind and select a different message type after generating the
 {% endhint %}
 
 ## How to use a list message
+
+A tutorial video will be available soon.
 
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
