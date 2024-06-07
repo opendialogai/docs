@@ -1,12 +1,10 @@
 ---
-description: >-
-  On this page, we will look at how to use the message editor to construct and
-  build messages in OpenDialog
+description: How to use the message editor to construct and build messages in OpenDialog
 ---
 
 # Constructing Messages
 
-In OpenDialog, messages are the primary means of interaction between your conversational interface and users. Understanding how to use the various message blocks available within the platform is crucial for crafting effective and engaging interactions.
+In OpenDialog, messages are the primary means of interaction between your conversational interface and its users. Understanding how to use the various message blocks available within the platform is crucial for crafting effective and engaging interactions.
 
 ## Designing a message
 
@@ -14,7 +12,7 @@ Message blocks are modular components that can be combined to form a complete me
 
 To design your message, click on any message block(s) to add those to the designer. You will see each of them appear, one after the other. You can then go ahead and add your message content as required.&#x20;
 
-Each block can be deleted, duplicated or reordered using the relevant icons.&#x20;
+Each block can be deleted, duplicated, or reordered using the relevant icons.&#x20;
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Individual message screen to design your message</p></figcaption></figure>
 
@@ -47,13 +45,13 @@ As a general rule for setting up messages with multiple blocks, it is always bes
 
 ## Reordering message blocks
 
-Within every message type, there is also now a drag and drop feature for you to use.&#x20;
+Within every message type, there is also a drag-and-drop feature for you to use.&#x20;
 
 <figure><img src="../../.gitbook/assets/Group 10 (1).png" alt=""><figcaption></figcaption></figure>
 
-To find the drag and drop feature, simply go to the top left hand corner of any message block and find the icon with 6 dots.
+To access the drag-and-drop feature, go to the top left corner of any message block and click on the icon with six dots.
 
-From here, you can grab and move your message block to it's desired place.
+From here, you can grab and move your message block to its desired place.
 
 ## Design best practices
 
@@ -79,9 +77,11 @@ Notice the difference between the following screens:&#x20;
 
 ### Words per app turn
 
-How much information can be conveyed in a single app turn? This depends to some extent on the nature of the assistant and the interaction. Some turns convey a lot of information, some can be quite concise. E.g. "Thank you. Anything else?"
+How much information can be conveyed in a single app turn? This depends to some extent on the nature of the assistant and the interaction. Some turns convey a lot of information, and some can be quite concise.&#x20;
 
-A key practice is to make sure that the content of a single turn does not exceed the screen height. In other words, the user should not have to scroll to view all the information that is shared in a single turn. To force the user to do so requires effort from the user, they may hardly be aware that there is more information that scrolled up, and it breaks the easy reading experience.&#x20;
+_For example, "Thank you. Is there anything else?"_
+
+A key practice is to ensure that the content of a single turn does not exceed the screen height. In other words, the user should not have to scroll to view all the information shared in a single turn. Forced to do so requires effort from the user, who may hardly be aware that there is more information that scrolled up, and it breaks the easy reading experience.&#x20;
 
 A rule of thumb in a typical OpenDialog assistant is to limit the text in a single turn (if the content consists entirely of text):
 
@@ -96,4 +96,4 @@ Always test your assistant to make sure the content does not scroll up. Note tha
 
 ### Accessibility
 
-For all message types, a key element to take into consideration is [**Accessibility**](../designing-accessible-chatbots.md), especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../designing-accessible-chatbots.md).
+A key element to consider for all message types is [Accessibility](constructing-messages.md#accessibility), especially for messages that include customization with multimedia types such as buttons, images, and links. For all information on accessibility within OpenDialog, please click [here](../designing-accessible-chatbots.md).

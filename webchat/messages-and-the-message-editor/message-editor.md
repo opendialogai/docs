@@ -4,9 +4,9 @@ description: >-
   us to add, edit and delete messages.
 ---
 
-# Message Editor
+# Message editor
 
-## Finding the Message Editor
+## Finding the message editor
 
 There are two ways to access messages:&#x20;
 
@@ -65,7 +65,7 @@ The following options are available in the Edit Message screen:
     We recommend using the intent name, optionally followed by the condition if you are using one.&#x20;
 
     _For example: WelcomeIntent - userID not set_
-* [**Layout:**](constructing-messages.md)  this is where you can build your message content, add conditions to your messages, and set behaviours such as disabling text input and hiding the app avatar&#x20;
+* [**Layout:**](constructing-messages.md)  this is where you can build your message content, add conditions to your messages, and set behaviours such as disabling text input and hiding the app avatar.&#x20;
 * **Preview:** shows a preview of your message. More complex messages don't have a full preview available and are labeled in the preview by their message type.
 * **Conversation Designer:** shows the current position in the Scenario where this message is located
 *   [**Conditions**](message-conditions.md): in the conditions tab you will be able to define when your message gets selected by defining conditional rules.&#x20;
@@ -80,7 +80,7 @@ The following options are available in the Edit Message screen:
 
 OpenDialog's modular approach to messages allows you to take advantage of rich UI components, surface specific messages on your terms and personalize them to make them relevant to  specific users or use cases.  Check out the following sections to take your conversational application from simple question answering to a truly personalised hybrid experience :
 
-<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Taylor the user experience</strong></td><td>Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of <a href="message-types/">message types</a> to their fullest potential.</td><td></td><td><a href="constructing-messages.md">constructing-messages.md</a></td><td><a href="../../.gitbook/assets/legoblocks.png">legoblocks.png</a></td></tr><tr><td><strong>Surface relevant messages</strong></td><td>Take advantage of OpenDialog's unique  approach, using <a href="message-conditions.md">conditions</a> to surface relevant messages at the right moment in the conversation.</td><td></td><td><a href="message-conditions.md">message-conditions.md</a></td><td><a href="../../.gitbook/assets/conditions (1).png">conditions (1).png</a></td></tr><tr><td><strong>Personalize the messages</strong></td><td>OpenDialog's <a href="using-attributes-in-messages.md">attribute</a> system will allow you to taylor your messages using these variables to surface  personalised information.</td><td></td><td><a href="using-attributes-in-messages.md">using-attributes-in-messages.md</a></td><td><a href="../../.gitbook/assets/personalisation.png">personalisation.png</a></td></tr></tbody></table>
+<table data-view="cards" data-full-width="false"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td><strong>Tailor the user experience</strong></td><td>Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of <a href="message-types/">message types</a> to their fullest potential.</td><td></td><td><a href="constructing-messages.md">constructing-messages.md</a></td><td><a href="../../.gitbook/assets/legoblocks.png">legoblocks.png</a></td></tr><tr><td><strong>Surface relevant messages</strong></td><td>Take advantage of OpenDialog's unique  approach, using <a href="message-conditions.md">conditions</a> to surface relevant messages at the right moment in the conversation.</td><td></td><td><a href="message-conditions.md">message-conditions.md</a></td><td><a href="../../.gitbook/assets/conditions (1).png">conditions (1).png</a></td></tr><tr><td><strong>Personalize the messages</strong></td><td>OpenDialog's <a href="using-attributes-in-messages.md">attribute</a> system will allow you to taylor your messages using these variables to surface  personalised information.</td><td></td><td><a href="using-attributes-in-messages.md">using-attributes-in-messages.md</a></td><td><a href="../../.gitbook/assets/personalisation.png">personalisation.png</a></td></tr></tbody></table>
 
 
 
