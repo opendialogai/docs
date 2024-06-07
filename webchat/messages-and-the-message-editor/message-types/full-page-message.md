@@ -133,8 +133,6 @@ The cancel button can be added to a form message with the following mark up:
 
 ## How to use a full page message
 
-Insert loom
-
 ## How to construct a full page message
 
 When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structuring these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](../constructing-messages.md)page for more information.

@@ -65,8 +65,6 @@ Fill in the template with the [properties ](conversation-handover-message.md#pro
 
 ## How to use a conversation handover message
 
-Insert loom
-
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

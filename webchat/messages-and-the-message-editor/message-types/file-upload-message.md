@@ -84,8 +84,6 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a file upload message
 
-Insert loom
-
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

@@ -69,7 +69,7 @@ If you change your mind and select a different message type after generating the
 
 ## How to use an audio message
 
-Insert loom
+{% embed url="https://www.loom.com/share/b68beddac70c4e4ba22273403712f552?sid=185748d0-927d-4b75-b530-61731a267f08" %}
 
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

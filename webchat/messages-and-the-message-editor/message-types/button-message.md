@@ -244,6 +244,10 @@ For the button message type, you can select a number of advanced behaviours depe
 * **Override user input field - show buttons as main interaction mode:** This option will hide the text input within Webchat and show the buttons as the main interaction at the bottom.
 * **Allow continued interaction throughout the conversation:** This option will allow users to continue to interact with the buttons even if they have moved on from that part of the conversation. This is really useful for FAQ style chatbots.
 
+
+
+{% embed url="https://www.loom.com/share/d5b595a7c9d2416e8f6abd214511ac26?sid=b04c2a11-4868-400c-b8c2-42349025dd41" %}
+
 {% hint style="success" %}
 **Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen
 {% endhint %}

@@ -14,15 +14,32 @@ There are two ways to access messages:&#x20;
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/2023-05-01_14-14-32.png" alt=""><figcaption><p>Design option - not expanded</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 23.png" alt=""><figcaption><p>Design option - not expanded</p></figcaption></figure>
 
 </div>
 
-<figure><img src="../../.gitbook/assets/2023-05-01_14-14-51.png" alt=""><figcaption><p>Design option - expanded</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Design option - expanded</p></figcaption></figure>
+
+{% hint style="success" %}
+* Open your OpenDialog application
+* Select the Scenario you would like to edit
+* Go to the Design section in the right hand navigation panel&#x20;
+* Click on the arrow to reveal the drop down
+* Select 'Messages'
+{% endhint %}
 
 **Option 2:** From within the Conversation designer, navigate to the Message editor by clicking on the message icon in a Scenario, Conversation, Scene, Turn or Intent. This will take you directly to the messages related to the conversational component you are on (scenario, conversation, scene, turn or intent)
 
-<figure><img src="../../.gitbook/assets/2023-05-01_14-53-26.png" alt=""><figcaption><p>How to find the message editor</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 25.png" alt=""><figcaption><p>How to find the message editor</p></figcaption></figure>
+
+{% hint style="success" %}
+* Open your OpenDialog application
+* Select the Scenario you would like to edit
+* Go to the Design section in the right hand navigation panel&#x20;
+* Select 'Conversation'
+* When on the conversation page, navigate to the top right hand corner
+* Click on the message bubble, which is the middle option of three icons
+{% endhint %}
 
 ## Finding specific messages
 
@@ -36,15 +53,24 @@ Our search functionality allows you  to edit a specific word, sentence, or messa
 
 You can access the 'Search' functionality in the main scenario menu, which searches for content throughout Intents and Messages.&#x20;
 
-<figure><img src="../../.gitbook/assets/Search_Scenario_View (1).png" alt=""><figcaption><p>Search across Intents and Messaes using the search functionality in the main scenario menu</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 26.png" alt=""><figcaption><p>Search across Intents and Messaes using the search functionality in the main scenario menu</p></figcaption></figure>
 
 To search for a specific message, click on the 'Search' item in the main scenario menu, and the search modal will appear right in the middle of your workspace. Then, enter your query in the search bar, and the modal will display the results instantly.
 
-<figure><img src="../../.gitbook/assets/Search_Message (1).png" alt=""><figcaption><p>Enter your search query in the search bar that appears when selecting Search in the main scenario menu</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-06-05 at 15.36.41.png" alt=""><figcaption><p>Enter your search query in the search bar that appears when selecting Search in the main scenario menu</p></figcaption></figure>
 
 By clicking on the appropriate search result from the list, you'll be directed to the chosen component, giving you the opportunity to edit the selected message with ease.
 
-<figure><img src="../../.gitbook/assets/2023-05-01_15-09-14.png" alt=""><figcaption><p>Message catalog</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 27.png" alt=""><figcaption><p>Message catalog</p></figcaption></figure>
+
+{% hint style="success" %}
+* Open your OpenDialog application
+* Select the Scenario you would like to edit
+* Go to the 'Search' section in the right hand navigation panel&#x20;
+* Click on the button to reveal the search pop up
+* Start typing in what you are looking for
+* Select the message you want from the results
+{% endhint %}
 
 {% hint style="info" %}
 Note that the displayed messages in the message catalog are the sample message you have defined upon intent creation.  The sample message is there to help you with the conversation design, and recognizing intents throughout the OpenDialog platform. When editing a message, this will not edit the sample message. &#x20;
@@ -54,7 +80,7 @@ Note that the displayed messages in the message catalog are the sample message y
 
 In the intent list, click the Edit icon for an existing message or click "Add a new message". An existing message can also be copied or deleted:
 
-<figure><img src="../../.gitbook/assets/2023-05-01_15-09-27.png" alt=""><figcaption><p>Multiple messages associated with a single intent</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 28.png" alt=""><figcaption><p>Multiple messages associated with a single intent</p></figcaption></figure>
 
 The Edit Message screen allows us to change the Message Name and customise the layout using a number of different [message types](message-editor.md#message-types). These types are covered in the next pages of this section.&#x20;
 
@@ -72,9 +98,7 @@ The following options are available in the Edit Message screen:
 
     _For example: if userID is not set_
 
-<figure><img src="../../.gitbook/assets/2023-05-01_15-15-11 (1).png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
-
-
+<figure><img src="../../.gitbook/assets/Group 29.png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
 
 ## Enriched  user experience
 

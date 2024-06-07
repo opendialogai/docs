@@ -60,8 +60,6 @@ Fill in the template with the [properties](location-message.md#properties) of yo
 
 ## How to use location messages
 
-Insert loom
-
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

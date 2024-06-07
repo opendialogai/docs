@@ -137,8 +137,6 @@ This form message example was created with the following XML:
 
 ## How to use a form message?
 
-Insert loom
-
 {% hint style="success" %}
 **Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen
 {% endhint %}
