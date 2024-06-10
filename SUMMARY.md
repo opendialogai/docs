@@ -42,6 +42,7 @@
     * [Form Message](webchat/messages-and-the-message-editor/message-types/form-message.md)
     * [Full Page Message](webchat/messages-and-the-message-editor/message-types/full-page-message.md)
     * [Conversation Handover message](webchat/messages-and-the-message-editor/message-types/conversation-handover-message.md)
+    * [Address Autocomplete Message](webchat/messages-and-the-message-editor/message-types/address-autocomplete-message.md)
     * [Autocomplete Message](webchat/messages-and-the-message-editor/message-types/autocomplete-message.md)
     * [List Message](webchat/messages-and-the-message-editor/message-types/list-message.md)
     * [Rich Message](webchat/messages-and-the-message-editor/message-types/rich-message.md)
