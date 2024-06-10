@@ -56,6 +56,8 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a progress bar message
 
+{% embed url="https://www.loom.com/share/6b9e1179b4504ea282e8663c5574cde6?sid=cabd2202-3893-477b-87ab-5354c4f47238" %}
+
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

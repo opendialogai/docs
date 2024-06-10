@@ -66,11 +66,23 @@ Fill in the template with the [properties](address-autocomplete-message.md#prope
 
 ## How to use an address autocomplete message
 
-Tutorial video coming soon.
+{% embed url="https://www.loom.com/share/e48ff649b6fa4c5884492a25739390f9" %}
 
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}
+
+### Fetchify
+
+The autocomplete message set up uses the website Fetchify. The link to this website is below:
+
+{% embed url="https://www.fetchify.com/address-auto-complete" fullWidth="false" %}
+
+You can set up your own account from the website above if you would like to use address autocomplete messages throughout your conversations in OpenDialog. From here, you will be given a key which you can then copy and paste over into the XML Snippet section in the message editor when adding an address autocomplete message.
+
+You can also make a free account with Google Maps in order to access a static maps API key. This can be accessed from the website below:
+
+[https://developers.google.com/maps/documentation/maps-static/get-api-key](https://developers.google.com/maps/documentation/maps-static/get-api-key)
 
 ## How to construct an address autocomplete message
 

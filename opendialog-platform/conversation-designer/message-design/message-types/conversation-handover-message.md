@@ -65,6 +65,8 @@ Fill in the template with the [properties ](conversation-handover-message.md#pro
 
 ## How to use a conversation handover message
 
+{% embed url="https://www.loom.com/share/606e24e270bb42cea53a68c2203059c7?sid=2d4ccbdb-35d4-44fe-9a61-3b1bd876b1d1" %}
+
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

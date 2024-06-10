@@ -70,6 +70,8 @@ Fill in the template with the [properties](e-sign-message.md#properties) of your
 
 ## How to use e-sign messages
 
+{% embed url="https://www.loom.com/share/45f79a718bf840aa8cddf5b0e62fcb9e?sid=1ad5760c-3545-45fe-a0e8-51cb9b089dab" %}
+
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

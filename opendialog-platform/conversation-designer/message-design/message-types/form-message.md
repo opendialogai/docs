@@ -137,6 +137,10 @@ This form message example was created with the following XML:
 
 ## How to use a form message?
 
+{% embed url="https://www.loom.com/share/d83919130d5743b5a9bc7b3763bdf62c?sid=be885a0c-4e12-476a-99d4-0c48cd036407" %}
+A video example of how to use a form message
+{% endembed %}
+
 {% hint style="success" %}
 **Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen
 {% endhint %}

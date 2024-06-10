@@ -100,6 +100,8 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a rich message
 
+{% embed url="https://www.loom.com/share/b982f37b775b4f26bd571ce56d6b93f2?sid=c7d68bdc-fbed-4935-ba03-7e7267367347" %}
+
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

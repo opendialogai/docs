@@ -115,6 +115,8 @@ If you change your mind and select a different message type after generating the
 ## How to use a text message
 
 {% embed url="https://www.loom.com/share/af079d5a9e654cfba90bedbcc935df9e?sid=197ce241-73b2-4a9a-8bee-db8f1125c039" %}
+A video demonstration on how to use&#x20;
+{% endembed %}
 
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
@@ -122,7 +124,7 @@ If you change your mind and select a different message type after generating the
 
 ### Displaying large language model responses in a text message
 
-You can also use a text message to display the responses from a large language model in your text message.
+You can use a text message to display the responses from a large language model in your text message.
 
 To do so, you can reference the attribute that contains the LLM response in the text message block as follows : {attribute\_name}
 

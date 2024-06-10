@@ -84,6 +84,8 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a file upload message
 
+{% embed url="https://www.loom.com/share/b244bd98b24e46d6bda9de97e5d8c3ab?sid=98ef4b9c-dd03-488c-8327-c66c6477d16c" %}
+
 {% hint style="success" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}

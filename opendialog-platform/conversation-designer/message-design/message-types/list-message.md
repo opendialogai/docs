@@ -60,7 +60,7 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a list message
 
-A tutorial video will be available soon.
+{% embed url="https://www.loom.com/share/0d749f8e4b224eb49d052b4d46f197f0?sid=5555dcef-eaa6-4ab6-a05d-9dc6aba6f3f5" %}
 
 {% hint style="warning" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
