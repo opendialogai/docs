@@ -6,9 +6,49 @@ description: >-
 
 # Release Notes
 
+## May 2024
+
+#### <mark style="color:purple;">New Features</mark>
+
+<mark style="color:blue;">**Message Design:**</mark>  Introducing further support via the Message Editor to use the different message types that were introduced during the Proxima release.  You can learn more on how to use these new [**message types**](../opendialog-platform/conversation-designer/message-design/message-types/) here:
+
+{% content-ref url="../opendialog-platform/conversation-designer/message-design/message-types/" %}
+[message-types](../opendialog-platform/conversation-designer/message-design/message-types/)
+{% endcontent-ref %}
+
+#### <mark style="color:purple;">Improvements</mark>
+
+We also made some improvements & bug fixes throughout the core product, as well as webchat.
+
+Some of the updates include :
+
+* We have added GPT-4o to the managed available Language Services model
+* We have added links in the Message Editor to the different message types for easy access
+* We have updated the scrolling positioning when a message is served in webchat
+
 ## April 2024
 
-#### <mark style="color:purple;">Coming soon!</mark>
+#### <mark style="color:purple;">New Features</mark>
+
+[**Accessibility**](../opendialog-platform/conversation-designer/designing-accessible-chatbots.md) :&#x20;
+
+Webchat is now compliant with WCAG 2.2 standard 🎉 It consist of many little pieces like:
+
+* Changed color contrast
+* Highlighted focused elements
+* Improved visual validation feedback on forms
+* Font sizes using Em instead of pixels
+* Keyboard navigation
+* Screenreaders can read webchat
+* Semantic changes to webchat HTML
+* and many more...
+
+#### <mark style="color:purple;">Improvements</mark>
+
+We've made various improvements and bug fixes to the core product, including :&#x20;
+
+* Support for regex validation in form messages
+* UI fixes to a set of webchat messages&#x20;
 
 ## March 2024
 
