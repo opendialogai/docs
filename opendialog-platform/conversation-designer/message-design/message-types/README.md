@@ -38,6 +38,10 @@ Within this section, all different message types that are available to you throu
 [autocomplete-message.md](autocomplete-message.md)
 {% endcontent-ref %}
 
+{% content-ref url="address-autocomplete-message.md" %}
+[address-autocomplete-message.md](address-autocomplete-message.md)
+{% endcontent-ref %}
+
 {% content-ref url="list-message.md" %}
 [list-message.md](list-message.md)
 {% endcontent-ref %}
@@ -48,12 +52,4 @@ Within this section, all different message types that are available to you throu
 
 {% content-ref url="location-message.md" %}
 [location-message.md](location-message.md)
-{% endcontent-ref %}
-
-{% content-ref url="e-sign-message.md" %}
-[e-sign-message.md](e-sign-message.md)
-{% endcontent-ref %}
-
-{% content-ref url="meta-messages/" %}
-[meta-messages](meta-messages/)
 {% endcontent-ref %}
