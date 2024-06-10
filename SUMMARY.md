@@ -6,7 +6,6 @@
 
 ## CORE CONCEPTS
 
-* [AI Applications](core-concepts/ai-applications.md)
 * [OpenDialog Platform](core-concepts/the-opendialog-workspace/README.md)
   * [Scenarios](core-concepts/the-opendialog-workspace/scenarios.md)
   * [Language Services](core-concepts/the-opendialog-workspace/language-services.md)
