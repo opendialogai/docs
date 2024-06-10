@@ -117,7 +117,7 @@ The <mark style="color:purple;">**conversation logs**</mark> contain the entire 
 
 The considered <mark style="color:purple;">**conversational paths**</mark> are displayed in the middle panel for the selected user-application exchange. You can play through them via the Play button on the conversational logs or walk through them step by-step to review the conversation engine logic by using the arrows at the bottom of the screen. This helps you to understand what incoming and outgoing intents, and messages were selected by the conversation engine and why.
 
-Finally, the right-hand panel displays the <mark style="color:purple;">**conversational logic**</mark> behind the selected conversational paths, displaying the available, selected and rejected intents and the in-depth reasoning behind each decision made by the conversation engine. This is particularly useful to debug conversations and, for example, to better understand why certain user utterances might have caused an unexpected answer. The detailed conversational logic contains information regarding the [interpretation](designing-conversations/interpreters-and-natural-language-understanding/) of the intents via the interpreters set up for your scenario, the passing of  on conversational components, the reasoning behind intent selection, transitions between conversational components and what are attributes are being saved during that interaction.&#x20;
+Finally, the right-hand panel displays the <mark style="color:purple;">**conversational logic**</mark> behind the selected conversational paths, displaying the available, selected and rejected intents and the in-depth reasoning behind each decision made by the conversation engine. This is particularly useful to debug conversations and, for example, to better understand why certain user utterances might have caused an unexpected answer. The detailed conversational logic contains information regarding the [interpretation](opendialog-platform/interpreters-and-natural-language-understanding/) of the intents via the interpreters set up for your scenario, the passing of  on conversational components, the reasoning behind intent selection, transitions between conversational components and what are attributes are being saved during that interaction.&#x20;
 
 ### **Frequently asked questions**
 
@@ -131,7 +131,7 @@ Conversational flow visualization is currently unavailable for exceptionally lar
 
 **I want to access the analytics data via an API rather than the OpenDialog application. How can I do this?**
 
-The [Interaction API](integrating-with-opendialog/interaction-api.md) enables retrieving information about interactions between the user and OpenDialog scenarios. The data is requested for over a time period ( `from` , `to` ) and is split by `user_id` . You can check out the Interaction API documentation through this [link](integrating-with-opendialog/interaction-api.md).
+The [Interaction API](developping-with-opendialog/interaction-api.md) enables retrieving information about interactions between the user and OpenDialog scenarios. The data is requested for over a time period ( `from` , `to` ) and is split by `user_id` . You can check out the Interaction API documentation through this [link](developping-with-opendialog/interaction-api.md).
 
 **I got a warning message for the conversational flow visualization indicating 'No Request ID provided'. What does this mean?**
 

@@ -14,7 +14,7 @@ description: >-
 
 #### <mark style="color:purple;">New Features</mark>
 
-[<mark style="color:blue;">**Interpreter Orchestration:**</mark>](../designing-conversations/interpreters-and-natural-language-understanding/interpreter-orchestration.md) By integrating Interpreter Orchestration into your workflow, it will allow for you to set highest priorities and be able to create smoother, more efficient running conversations with OpenDialog.
+[<mark style="color:blue;">**Interpreter Orchestration:**</mark>](../opendialog-platform/interpreters-and-natural-language-understanding/interpreters/interpreter-orchestration.md) By integrating Interpreter Orchestration into your workflow, it will allow for you to set highest priorities and be able to create smoother, more efficient running conversations with OpenDialog.
 
 {% hint style="info" %}
 Interpreter orchestration is a feature that is available ON DEMAND.  If you would like to use this feature, please reach out to support@opendialog.ai.
@@ -33,7 +33,7 @@ Some of the updates:
 
 #### <mark style="color:purple;">New Features</mark>
 
-* [<mark style="color:blue;">**Attribute management**</mark>](../integrating-with-opendialog/attributes.md)<mark style="color:blue;">**:**</mark> By integrating Attribute Management into your workflow, you can streamline the process of personalising conversations. Whether you're modifying existing attributes or introducing new ones on the fly, this feature simplifies the customisation process, enhancing the efficiency of your interactions.
+* [<mark style="color:blue;">**Attribute management**</mark>](../core-concepts/contexts-and-attributes/attributes.md)<mark style="color:blue;">**:**</mark> By integrating Attribute Management into your workflow, you can streamline the process of personalising conversations. Whether you're modifying existing attributes or introducing new ones on the fly, this feature simplifies the customisation process, enhancing the efficiency of your interactions.
 
 #### <mark style="color:purple;">Improvements</mark>
 
@@ -55,7 +55,7 @@ Notable updates:
 #### <mark style="color:purple;">New Features</mark>
 
 * <mark style="color:blue;">**Language Services:**</mark> Thanks to OpenDialog Language Services, you can easily manage your language model directly within the tool.  This feature is now generally available (previously in Beta)
-* <mark style="color:blue;">**Aliases :**</mark> OpenDialog [Aliases ](../webchat/launching-your-application.md)allows you to create a single point of reference for your Web Chat application. This functionality enables you to alternate different scenarios at any given time. &#x20;
+* <mark style="color:blue;">**Aliases :**</mark> OpenDialog [Aliases ](../opendialog-platform/launching-your-application.md)allows you to create a single point of reference for your Web Chat application. This functionality enables you to alternate different scenarios at any given time. &#x20;
 * [<mark style="color:blue;">**NEW WEBCHAT**</mark>](broken-reference)<mark style="color:blue;">**!**</mark>
   * OpenDialog webchat becomes more intuitive and highly customizable to adapt your branding through advanced Interface settings, theming, and custom messages.&#x20;
   * Thanks to the integration with Speech-to-Text, users can now input their information and queries by voice.
@@ -63,7 +63,7 @@ Notable updates:
 
 #### <mark style="color:purple;">Improvements</mark>
 
-OpenDialog [Integrate](../integrating-with-opendialog/actions.md) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
+OpenDialog [Integrate](../developping-with-opendialog/actions.md) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
 
 ## September 2023
 
@@ -87,13 +87,13 @@ This feature is currently in beta release and available on demand. If you want t
 {% endhint %}
 
 * <mark style="color:blue;">**Send to Email:**</mark> You can now trigger an e-mail to be sent during a user's conversation with your application, personalizing its content with variables from the context.
-* <mark style="color:blue;">**Microsoft Conversation Analysis Interpreter:**</mark> OpenDialog allows you to integrate with your own language models via our [Interpreter](../designing-conversations/interpreters-and-natural-language-understanding/) feature.  Our Interpreter feature now also supports integration with the Microsoft Conversation Analysis service.
-* <mark style="color:blue;">**Microsoft Question Answering Interpreter:**</mark>  OpenDialog allows you to integrate with your own language models via our [Interpreter](../designing-conversations/interpreters-and-natural-language-understanding/) feature.  Our Interpreter feature now also supports integration with the Microsoft Question Answering service.
+* <mark style="color:blue;">**Microsoft Conversation Analysis Interpreter:**</mark> OpenDialog allows you to integrate with your own language models via our [Interpreter](../opendialog-platform/interpreters-and-natural-language-understanding/) feature.  Our Interpreter feature now also supports integration with the Microsoft Conversation Analysis service.
+* <mark style="color:blue;">**Microsoft Question Answering Interpreter:**</mark>  OpenDialog allows you to integrate with your own language models via our [Interpreter](../opendialog-platform/interpreters-and-natural-language-understanding/) feature.  Our Interpreter feature now also supports integration with the Microsoft Question Answering service.
 * <mark style="color:blue;">**Webhook interpreter:**</mark> In July, we also added a webhook interpreter to integrate with external language models without direct OD integration through webhooks. &#x20;
 
 #### <mark style="color:purple;">Improvements</mark>
 
-* We have added two new actions to the [Action Library](../designing-conversations/actions/actions-from-library/): storing the state of the conversation in the user context and returning to that state during the conversation.
+* We have added two new actions to the [Action Library](../opendialog-platform/actions/actions-from-library/): storing the state of the conversation in the user context and returning to that state during the conversation.
 * Persistence of the user context when using virtual intents
 * Performance fixes&#x20;
 
@@ -101,7 +101,7 @@ This feature is currently in beta release and available on demand. If you want t
 
 #### <mark style="color:purple;">New Features</mark>
 
-* [**Freshdesk integration**](../designing-conversations/actions/actions-from-library/freshdesk-action.md): The Freshdesk action lets you set up a connection between OpenDialog and your Freshdesk ticketing system, which you can then use within your conversation design.
+* [**Freshdesk integration**](../opendialog-platform/actions/actions-from-library/freshdesk-action.md): The Freshdesk action lets you set up a connection between OpenDialog and your Freshdesk ticketing system, which you can then use within your conversation design.
 * <mark style="color:blue;">**Conversation hand-off**</mark>: OpenDialog now allows you to set up a seamless handover to a human agent without interrupting the conversation.&#x20;
 
 #### <mark style="color:purple;">Improvements</mark>
