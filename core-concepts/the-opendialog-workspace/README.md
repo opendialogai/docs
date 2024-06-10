@@ -2,7 +2,7 @@
 
 ## Welcome to the OpenDialog Workspace !
 
-When you engage with OpenDialog, a workspace gets set up for you. This can be either on the [cloud.opendialog.ai](http://cloud.opendialog.ai) environment or your own custom environment, e.g., \<company\_name>.opendialog.ai.&#x20;
+When you engage with OpenDialog, a workspace gets set up for you. You will be provided with an appropriate URL : _\<company\_name>.opendialog.ai._&#x20;
 
 The workspace is the starting point for accessing the main OpenDialog functionalities:  [scenarios](../the-opendialog-model/scenarios.md) for setting up your Conversational AI application ,  [language services](language-services.md) to configure language capabilities available to use in your different scenarios, and your  [account management](opendialog-account-management/). &#x20;
 
