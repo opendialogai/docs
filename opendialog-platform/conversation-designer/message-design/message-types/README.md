@@ -2,6 +2,8 @@
 
 Within this section, all different message types that are available to you through the message editor have been outlined and described in detail. Each section will take you through what each message type does, where to find it, and how to implement it into your own conversation
 
+
+
 {% content-ref url="text-message.md" %}
 [text-message.md](text-message.md)
 {% endcontent-ref %}
@@ -52,4 +54,16 @@ Within this section, all different message types that are available to you throu
 
 {% content-ref url="location-message.md" %}
 [location-message.md](location-message.md)
+{% endcontent-ref %}
+
+{% content-ref url="e-sign-message.md" %}
+[e-sign-message.md](e-sign-message.md)
+{% endcontent-ref %}
+
+{% content-ref url="file-upload-message.md" %}
+[file-upload-message.md](file-upload-message.md)
+{% endcontent-ref %}
+
+{% content-ref url="meta-messages/" %}
+[meta-messages](meta-messages/)
 {% endcontent-ref %}
