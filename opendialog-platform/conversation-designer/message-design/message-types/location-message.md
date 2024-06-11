@@ -66,6 +66,36 @@ Fill in the template with the [properties](location-message.md#properties) of yo
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}
 
+## Displaying location information
+
+Once a user has submitted some location information this is stored in an attribute of type _Location._ The structure of the information stored is as follows:
+
+```
+new_address: {
+    "formatted_address":"31 Ufford St, London SE1 8LJ, UK",
+    "postal_code":"SE1 8LJ",
+    "line_1":"31",
+    "line_2":"Ufford Street",
+    "province":"England",
+    "country":"United Kingdom",
+    "lat":51.50252510000001,
+    "lng":-0.1060668
+}
+```
+
+The attribute is called _new\_address_ in this case.&#x20;
+
+In order to display some of this information back to the user (for example, in order to ask them to confirm it), you can access the various fields in the following format from within a message
+
+```
+Ok - we have your new address as {user.new_address['formatted_address']}. 
+Is this correct?
+```
+
+<figure><img src="../../../../.gitbook/assets/image (529).png" alt=""><figcaption></figcaption></figure>
+
+Please pay attention to how _formatted\_address_ is enclosed in single quotes and square brackets. You can access any of the components of the address in the same way.&#x20;
+
 ## How to construct a location message
 
 When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structing these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](../constructing-messages.md)page for more information.
