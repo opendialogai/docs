@@ -66,24 +66,30 @@ Fill in the template with the [properties](location-message.md#properties) of yo
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}
 
-## Displaying location information
+## Storing, Retrieving and Displaying Location Information
 
-Once a user has submitted some location information this is stored in an attribute of type _Location._ The structure of the information stored is as follows:
+Location information is stored in an attribute of type Location. If you haven't configured a new attributes then you could use a built-in attribute called Location (which is also of type Location). Alternative you can create a new attribute and set the type to Location.&#x20;
+
+<figure><img src="../../../../.gitbook/assets/image.png" alt="" width="375"><figcaption><p>Creating an attribute of type attribute</p></figcaption></figure>
+
+Once you've create the new attribute set that attribute name in the XML mentioned above.&#x20;
+
+Once a user has submitted some location information this is stored in an attribute of type _Location._ The structure of the information stored is as the example below:
 
 ```
-new_address: {
-    "formatted_address":"31 Ufford St, London SE1 8LJ, UK",
-    "postal_code":"SE1 8LJ",
-    "line_1":"31",
-    "line_2":"Ufford Street",
-    "province":"England",
-    "country":"United Kingdom",
-    "lat":51.50252510000001,
-    "lng":-0.1060668
+user_address: {
+    "formatted_address":"31 Ufford St, London SE1 8LJ, UK", 
+    "postal_code":"SE1 8LJ", 
+    "line_1":"31", 
+    "line_2":"Ufford Street", 
+    "province":"England", 
+    "country":"United Kingdom", 
+    "lat":51.50252510000001, 
+    "lng":-0.1060668 
 }
 ```
 
-The attribute is called _new\_address_ in this case.&#x20;
+The attribute is called _user\_address_ in this case.&#x20;
 
 In order to display some of this information back to the user (for example, in order to ask them to confirm it), you can access the various fields in the following format from within a message
 
