@@ -20,7 +20,7 @@
   * [Turns and intents](core-concepts/the-opendialog-model/turns-and-intents.md)
 * [OpenDialog Conversation Engine](core-concepts/how-the-conversation-engine-thinks.md)
 * [Contexts and attributes](core-concepts/contexts-and-attributes/README.md)
-  * [🧩 Contexts](core-concepts/contexts-and-attributes/contexts.md)
+  * [Contexts](core-concepts/contexts-and-attributes/contexts.md)
   * [Attributes](core-concepts/contexts-and-attributes/about-attributes.md)
   * [Attribute Management](core-concepts/contexts-and-attributes/attribute-management.md)
   * [Conditions and operators](core-concepts/contexts-and-attributes/conditions-and-operators.md)
