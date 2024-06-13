@@ -4,7 +4,16 @@
 
 ### Welcome to OpenDialog !
 
-OpenDialog is a platform for building GenAI-powered conversational applications. It helps you keep complete control of the user experience while incorporating the best of what LLMs can offer through a unique approach to automated conversations.
+OpenDialog is a platform for building AI-powered conversational applications.&#x20;
+
+It helps you keep complete control of the user experience while incorporating the best of what LLMs can offer through a unique approach to AI-powered conversational application design.
+
+With OpenDialog you can building conversational agents that:
+
+* answer users questions using your own documents and data sources
+* help users complete sophisticated processes in chat - taking advantage of our rich set of [webchat widgets](opendialog-platform/conversation-designer/message-design/message-types/) to build applications
+* integrate with your own backend systems through [Actions](developping-with-opendialog/actions.md)
+* understand how your application is performing through [Analytics](monitoring-your-application.md)
 
 Our documentation acts as a guide to the platform and the OpenDialog way of building conversational applications, but also as a broader reference for Conversational AI.
 
