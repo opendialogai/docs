@@ -157,7 +157,7 @@
 * [Integrating with OpenDialog](developping-with-opendialog/introduction.md)
 * [Actions](developping-with-opendialog/actions.md)
 * [WebChat](developping-with-opendialog/webchat/README.md)
-  * [WebChat API](developping-with-opendialog/webchat/webchat-api.md)
+  * [Chat API](developping-with-opendialog/webchat/webchat-api.md)
   * [WebChat authentication](developping-with-opendialog/webchat/webchat-authentication.md)
   * [User Tracking](developping-with-opendialog/webchat/user-tracking.md)
   * [Load Webchat within page Element](developping-with-opendialog/webchat/load-webchat-within-a-page-element.md)
