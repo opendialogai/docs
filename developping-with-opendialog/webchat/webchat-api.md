@@ -18,7 +18,7 @@ In order to POST messages you need a Bearer Token that is generated from within 
 
 ### Using the Chat API to have a conversation
 
-To have a conversation with an OpenDialog scenario you will typically start by sending a [TRIGGER](https://documenter.getpostman.com/view/3532544/TVmLAdPF#372bcbba-e0af-43f5-b6cd-d59790f86522) message with a callback\_id of WELCOME - this is the default way that OpenDialog app gets started with conversations.
+To have a conversation with an OpenDialog scenario you will typically start by sending a [TRIGGER](https://chatapi.opendialog.ai/#58e86ade-e5ff-4475-8285-0129faa09fc3) message with a callback\_id of WELCOME - this is the default way that OpenDialog app gets started with conversations.
 
 Following the trigger message you can send standard [TEXT](https://documenter.getpostman.com/view/3532544/TVmLAdPF#c83d72c8-11d2-45d9-9949-37e22a5cf635) messages that contain the text that the user is saying.&#x20;
 
