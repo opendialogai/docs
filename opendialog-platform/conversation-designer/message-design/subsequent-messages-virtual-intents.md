@@ -1,6 +1,6 @@
 # Subsequent Messages - Virtual Intents
 
-It is possible to share a number of messages in a single app intent, and [it is recommended to chunk content into bite-size pieces for legibility](messages-best-practices.md).&#x20;
+It is possible to share a number of messages in a single app intent, and [it is recommended to chunk content into bite-size pieces for legibility](../../../best-practices/designing-in-opendialog/messages-best-practices.md).&#x20;
 
 <figure><img src="../../../.gitbook/assets/2023-05-23_14-09-08.png" alt=""><figcaption><p>3 pieces of information in a single app intent</p></figcaption></figure>
 

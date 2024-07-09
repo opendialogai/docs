@@ -10,7 +10,7 @@ description: >-
 
 The Freshdesk action lets you set up a connection between OpenDialog and your Freshdesk ticketing system, which you can then use within your conversation design.&#x20;
 
-[**👉🏻 View detailed instructions for setting up and using your Freshdesk action**](freshdesk-action.md)
+[**👉🏻 View detailed instructions for setting up and using your Freshdesk action**](../../../opendialog-platform/actions/actions-from-library/freshdesk-action.md)
 
 ## Custom action
 

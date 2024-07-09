@@ -51,7 +51,7 @@ The <mark style="color:purple;">**action setup**</mark> happens in the central p
 
 The <mark style="color:purple;">**action testing**</mark> becomes available in the right-hand pane once all the settings above have been completed.&#x20;
 
-You can start <mark style="color:purple;">**using the action in your project**</mark> by adding it to the intent of your choice. More information about this [here](../).
+You can start <mark style="color:purple;">**using the action in your project**</mark> by adding it to the intent of your choice. More information about this [here](../../../designing-conversations/actions/).
 
 ### How to use
 
@@ -109,7 +109,7 @@ To add the action in a meaningful way, we will need to take a 4-stepped approach
 
 For a video tutorial of the 4 steps above, please visit the OD Academy Advanced Topics course or contact academy@opendialog.ai for access.&#x20;
 
-You can reference the [Integrate and Action](../) introduction for more information on how to use actions in your scenarios.
+You can reference the [Integrate and Action](../../../designing-conversations/actions/) introduction for more information on how to use actions in your scenarios.
 
 ### **Frequently asked questions**
 

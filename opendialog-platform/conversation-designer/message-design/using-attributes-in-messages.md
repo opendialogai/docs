@@ -39,7 +39,7 @@ For more information around using, creating and finding attributes within the me
 
 It may be necessary to filter or modify the value of an attribute before it is used in a message. To help with this, OpenDialog provides a number of built-in filters to use when referencing attributes in the message editor.
 
-Filters are applied to attributes using a pipe (`|`) and they can be chained together with the result of a filter being passed through the next. For instance:&#x20;
+Filters are applied to attributes using a pipe (`|`) and they can be chained together with the result of a filter being passed through into the next filter. For instance:&#x20;
 
 ```
 { user.age | number_to_words | uppercase_first }
@@ -58,12 +58,19 @@ The above takes the value of the `age` attribute in the `user` context, converts
 
 **Number Filters**
 
-* `number_to_words` - turns a number into its word. eg 1 => 'one'
+* `speltnumber_to_words` - turns a number into its word. eg 1 => 'one'
 * `ordinal` - returns the ordinal of the number. eg 1 => 1st
-* `ordinal_words` - returns the ordinal spelled out. eg 1 => 'first'
+* `ordinal_words` - returns the ordinal spelt out. eg 1 => 'first'
 
 **Collection Filters**
 
 * `count` - returns the number of items in a collection type attribute
+* `where [field] [value] [operation?]` - filters out elements based on a field and a value, such as `{ history.utterances | where participant user }` to get all of the user utterances in the conversation history
+* `range [start] [number]` - returns a subset of the collection, such as `{history.intents | range -3 2 }`conv to get the second and third from last intent names in the conversation history.
+* `last` - returns the last element of the collection.
+
+**Conversation Object Filters**
+
+* `select [field]` - selects a name or description from a conversation object, such as `{ conversation.current_conversation | select name }`. These attributes can be found within the [Conversation context](../../../core-concepts/contexts-and-attributes/contexts.md).
 
 For video lessons and hands-on practice with these concepts, consider signing up for the OpenDialog Academy lessons by emailing academy@opendialog.ai.&#x20;

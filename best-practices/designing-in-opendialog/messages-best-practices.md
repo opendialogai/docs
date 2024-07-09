@@ -8,9 +8,9 @@ It helps legibility if the information is provided in multiple messages (all wit
 
 Notice the difference between the following screens:&#x20;
 
-<figure><img src="../../../.gitbook/assets/2023-05-23_13-09-37.png" alt="" width="375"><figcaption><p>All text in a single message</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2023-05-23_13-09-37.png" alt="" width="375"><figcaption><p>All text in a single message</p></figcaption></figure>
 
-![](../../../.gitbook/assets/2023-05-23\_13-10-36.png)    ![](<../../../.gitbook/assets/2023-05-23\_10-57-47 (2).png>)
+![](../../.gitbook/assets/2023-05-23\_13-10-36.png)    ![](<../../.gitbook/assets/2023-05-23\_10-57-47 (2).png>)
 
 ## Words per app turn
 
@@ -23,7 +23,7 @@ A rule of thumb in a typical OpenDialog assistant is to limit the text in a sing
 * 9 lines with buttons, ideally in 3 or 4 chunks
 * Consider that on average, each line holds about 30 - 35 characters, or 5 to 6 words of average length (based on an average word length in English of 4.7 characters per word).
 
-<figure><img src="../../../.gitbook/assets/2023-05-23_10-57-47 (5).png" alt="" width="375"><figcaption><p>Example screen and content</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2023-05-23_10-57-47 (5).png" alt="" width="375"><figcaption><p>Example screen and content</p></figcaption></figure>
 
 
 

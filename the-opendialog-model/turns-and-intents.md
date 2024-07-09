@@ -6,7 +6,7 @@ Settings include a turn name, whether the turn exhibits starting and/or open beh
 
 Clicking "Add new condition" opens the New Condition area.
 
-<figure><img src="../../.gitbook/assets/2023-05-18_15-25-33.png" alt=""><figcaption><p>Turns settings</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/2023-05-18_15-25-33.png" alt=""><figcaption><p>Turns settings</p></figcaption></figure>
 
 Conditions allow you to check values of attributes within contexts. The turn will be considered if the conditions are met.&#x20;
 
@@ -18,7 +18,7 @@ Turns contain a set of Response and Request intents. You can decide which partic
 
 If the intent has a request intent followed by a response intent: when the request intent is evaluated, the engine will look if there is a response intent in the same turn, and execute that.&#x20;
 
-<figure><img src="../../.gitbook/assets/2023-05-18_15-29-56.png" alt=""><figcaption><p>Intents in turns</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/2023-05-18_15-29-56.png" alt=""><figcaption><p>Intents in turns</p></figcaption></figure>
 
 As shown above, it is acceptable to only have a single intent (whether app or user intent) in a turn. In this case, there is not accompanying intent in the same turn for the conversation engine to execute. Instead one of two situations happens:&#x20;
 
@@ -29,7 +29,7 @@ It is acceptable to have multiple intents in the list of request or response int
 
 ## Intent settings
 
-<figure><img src="../../.gitbook/assets/2023-05-18_15-38-33.png" alt=""><figcaption><p>Intent settings</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/2023-05-18_15-38-33.png" alt=""><figcaption><p>Intent settings</p></figcaption></figure>
 
 The Intent Name is the more formal name for the intent that we use to refer to it through interpreters (for incoming intents) or in the message repository (for outgoing intents). A good naming format to use for this is `intent.user.<name of intent>` for user intents and `intent.app.<name of intent>`for app intents. However, feel free to use whatever makes sense for your better understanding of the flow.&#x20;
 
@@ -49,9 +49,12 @@ Intents can also cause transitions. What this means is that if the intent is mat
 
 Within each intent you can add the following advanced settings to an intent:
 
-* **Expected Attributes**: You can add Attributes to an intent, by adding them it tells the system to save the specified attributes in the given context e.g. `First-name` in the `session` context. If not set, attributes will always be saved in the `user` context. You can read more about [Attributes here](broken-reference).
 * **Conditions**: You can add conditions to intents to only show specific intent based on certain criteria. If a condition that has been added is met, then it will show the intent e.g. if we only want to show this intent to new users then we would set a condition such as `seconds_since_last_seen`with the operation set to `Less Than` and the value set to `0` - Meaning only user that have never interacted with the application will see this intent. _More information will soon be available on Conditions._
 * **Actions**: We can also add actions that will have been define in the 'Action' section. As so, if this intent is selected, the named action will be run. _More information will soon be available on Actions._
+
+{% hint style="info" %}
+Any action type (whether it's a Webhook, Action or LLM Action) can be added to an intent using this method.&#x20;
+{% endhint %}
 
 ## Reserved Intent Names&#x20;
 

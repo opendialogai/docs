@@ -1,4 +1,4 @@
-# Integrate and actions
+# Integrating with 3rd parties
 
 ## Introduction
 
@@ -30,5 +30,22 @@ Once an action is created and activated, it can be added to an intent. To add an
 
 To add an action, select an action from the dropdown list and save attributes to a context. Mapping the input and output attributes informs the action of where to find the input attributes and where to store the output attributes. If a mapping isn't provided for an output attribute, OpenDialog will by default store it in the `user` context.
 
-<figure><img src="../../.gitbook/assets/2023-05-02_15-32-45.png" alt=""><figcaption><p>Adding an action</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2023-05-02_15-32-45.png" alt=""><figcaption><p>Adding an action to an intent</p></figcaption></figure>
 
+## Start creating actions
+
+{% content-ref url="webhook-action.md" %}
+[webhook-action.md](webhook-action.md)
+{% endcontent-ref %}
+
+{% content-ref url="actions-from-library/" %}
+[actions-from-library](actions-from-library/)
+{% endcontent-ref %}
+
+{% content-ref url="../../opendialog-platform/actions/conversation-hand-off/" %}
+[conversation-hand-off](../../opendialog-platform/actions/conversation-hand-off/)
+{% endcontent-ref %}
+
+{% content-ref url="../../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/" %}
+[llm-actions](../../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/)
+{% endcontent-ref %}

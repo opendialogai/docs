@@ -103,7 +103,7 @@ Notable updates:
 
 #### <mark style="color:purple;">Improvements</mark>
 
-OpenDialog [Integrate](../developping-with-opendialog/actions.md) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
+OpenDialog [Integrate](../developping-with-opendialog/actions/) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
 
 ## September 2023
 
@@ -133,7 +133,7 @@ This feature is currently in beta release and available on demand. If you want t
 
 #### <mark style="color:purple;">Improvements</mark>
 
-* We have added two new actions to the [Action Library](../opendialog-platform/actions/actions-from-library/): storing the state of the conversation in the user context and returning to that state during the conversation.
+* We have added two new actions to the [Action Library](../designing-conversations/actions/actions-from-library/): storing the state of the conversation in the user context and returning to that state during the conversation.
 * Persistence of the user context when using virtual intents
 * Performance fixes&#x20;
 
