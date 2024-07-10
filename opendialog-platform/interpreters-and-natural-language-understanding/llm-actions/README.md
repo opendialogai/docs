@@ -222,7 +222,7 @@ With these output attributes created and their values defined, we can now config
 
 With these output attributes created and their values defined, we can now configure messages based on the circumstances of the users application. If they can be insured, we can redirect to {can\_insure\_string}. If we need more information, we can redirect to the {follow\_up\_question} to gather more information.&#x20;
 
-**Frequency penalty**
+#### **Frequency penalty**
 
 A positive frequency penalty value discourages the recurrence of words in the generated text by applying penalties to tokens based on their frequency of occurrence. The higher the frequency of a token in the text, the lower the likelihood that the LLM will use it again.
 
