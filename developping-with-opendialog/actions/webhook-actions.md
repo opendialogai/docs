@@ -48,6 +48,72 @@ description: >-
 }
 ```
 
+### Handling different attribute types
+
+In OpenDialog we support a number of different attribute types and webhook action can be used with more than just key:value pairs.&#x20;
+
+#### Composite Attributes
+
+You can provide information as a JSON object in a reply to an OpenDialog Action. The attribute type within OpenDialog needs to be defined as `JSON Inferred Composite`. This indicates to the OpenDialog engine that it should attempt to infer all the different properties of the JSON object and map them to appropriate attributes.&#x20;
+
+So for example you can provide the following payload as a response&#x20;
+
+```
+{
+  "successful": true,
+  "output_data": {
+    "attributes": {
+      "policy_info": {
+        "number_of_policies": "3",
+        "policy1": {
+          "type": "motor_policy",
+          "name": "John1",
+          "surname": "Doe1",
+          "policyID": "12345ABC"
+        },
+        "policy2": {
+          "type": "motor_policy",
+          "name": "John2",
+          "surname": "Doe2",
+          "policyID": "12345ABC"
+        },
+        "policy3": {
+          "type": "motor_policy",
+          "name": "John3",
+          "surname": "Doe3",
+          "policyID": "12345ABC"
+        }
+      }
+    }
+  }
+}
+```
+
+
+
+OpenDialog will make this attribute available as a composite and you can access specific properties with the syntax `user.policy_info[number_of_policies]` or `user.policy_info[policy2][type]`, from within messages, etc.&#x20;
+
+Attribute Collections
+
+Attribute collections are lists of items. For lists you can declare that the attribute is of a collection type and then present the information as an array within the payload response to the action.&#x20;
+
+
+
+```
+{
+  "successful": true,
+  "output_data": {
+    "attributes": {
+      "collection_example": ["item1", "item2", "item3"],
+    }
+  }
+}
+```
+
+
+
+You can then access collection data using the index -  for the above it would be `collection_example[0]` for retrieving `item1`, and so on.&#x20;
+
 ### Examples
 
 #### Populating attributes
