@@ -53,10 +53,18 @@ Fill in the template with the [properties](location-message.md#properties) of yo
 <location-message>
     <text>text</text>
     <callback>callback</callback>
-    <attribute_name>attributeName</attribute_name>
+    <attribute_name>location</attribute_name>
     <api_key>google_maps_api_key</api_key>
 </location-message>
 ```
+
+{% hint style="warning" %}
+The location message type sets an attribute called \<location>&#x20;
+
+If you want to use a different attribute name, this is possible you must register this attribute name via the dynamic attributes page first, before using it in the location message XML.&#x20;
+
+If you do not register this new attribute first, this will cause the message to fail and you will get a no-match in your conversation.
+{% endhint %}
 
 ## How to use location messages
 
