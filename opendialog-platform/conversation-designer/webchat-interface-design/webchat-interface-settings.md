@@ -4,7 +4,7 @@ description: Customise the look and feel of the Webchat widget
 
 # Webchat Interface Settings
 
-The Interface Settings section of the OpenDialog admin is where you go to customise how the widget looks and behaves before [embedding](../../../developping-with-opendialog/webchat/load-webchat-within-a-page-element.md) it on your webpage.
+The Interface Settings section of the OpenDialog admin is where you go to customise how the widget looks and behaves before [embedding](../../../developing-with-opendialog/webchat/load-webchat-within-a-page-element.md) it on your webpage.
 
 The settings are currently GLOBAL and will affect all scenarios you have created, including ones that have already been published. Any changes saved are instantly applied and anyone using your bot going forward will see them. You can use the preview section to test out the widget and see how.
 

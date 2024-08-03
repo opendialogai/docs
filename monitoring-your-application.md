@@ -131,7 +131,7 @@ Conversational flow visualization is currently unavailable for exceptionally lar
 
 **I want to access the analytics data via an API rather than the OpenDialog application. How can I do this?**
 
-The [Interaction API](developping-with-opendialog/interaction-api.md) enables retrieving information about interactions between the user and OpenDialog scenarios. The data is requested for over a time period ( `from` , `to` ) and is split by `user_id` . You can check out the Interaction API documentation through this [link](developping-with-opendialog/interaction-api.md).
+The [Interaction API](developing-with-opendialog/interaction-api.md) enables retrieving information about interactions between the user and OpenDialog scenarios. The data is requested for over a time period ( `from` , `to` ) and is split by `user_id` . You can check out the Interaction API documentation through this [link](developing-with-opendialog/interaction-api.md).
 
 **I got a warning message for the conversational flow visualization indicating 'No Request ID provided'. What does this mean?**
 

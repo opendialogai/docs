@@ -1,6 +1,6 @@
 # Webhook actions
 
-The webhook action allows you to send and receive data from an external service via a HTTP POST request to a provided webhook URL. For information on building such a service, please see the [Integrating with OpenDialog](../../developping-with-opendialog/introduction.md) section.&#x20;
+The webhook action allows you to send and receive data from an external service via a HTTP POST request to a provided webhook URL. For information on building such a service, please see the [Integrating with OpenDialog](../../developing-with-opendialog/introduction.md) section.&#x20;
 
 Once you have a service that provides the desired functionality, you'll want to create a new webhook by following the action creation steps and set the action's URL to be the URL of your service.
 

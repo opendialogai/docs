@@ -111,7 +111,7 @@ Each requires a slightly different configuration.&#x20;
 {% hint style="info" %}
 If you choose the 'Custom' engine, you will need to manually configure your action using the JSON input field&#x20;
 
-[Learn about JSON LLM action settings](../../../developping-with-opendialog/actions/llm-actions.md)
+[Learn about JSON LLM action settings](../../../developing-with-opendialog/actions/llm-actions.md)
 {% endhint %}
 
 ### Prompt configuration

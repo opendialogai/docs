@@ -103,7 +103,7 @@ Notable updates:
 
 #### <mark style="color:purple;">Improvements</mark>
 
-OpenDialog [Integrate](../developping-with-opendialog/actions/) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
+OpenDialog [Integrate](../developing-with-opendialog/actions/) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
 
 ## September 2023
 

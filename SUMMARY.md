@@ -156,19 +156,19 @@
 * [FAQ](faq.md)
 * [Troubleshooting and Common Problems](opendialog-platform/troubleshooting-and-common-problems.md)
 
-## Developping With OpenDialog
+## Developing With OpenDialog
 
-* [Integrating with OpenDialog](developping-with-opendialog/introduction.md)
-* [Actions](developping-with-opendialog/actions/README.md)
-  * [Webhook actions](developping-with-opendialog/actions/webhook-actions.md)
-  * [LLM actions](developping-with-opendialog/actions/llm-actions.md)
-* [WebChat](developping-with-opendialog/webchat/README.md)
-  * [Chat API](developping-with-opendialog/webchat/webchat-api.md)
-  * [WebChat authentication](developping-with-opendialog/webchat/webchat-authentication.md)
-  * [User Tracking](developping-with-opendialog/webchat/user-tracking.md)
-  * [Load Webchat within page Element](developping-with-opendialog/webchat/load-webchat-within-a-page-element.md)
-  * [How to enable JavaScript in your browser](developping-with-opendialog/webchat/how-to-enable-javascript-in-your-browser.md)
-* [Interaction API](developping-with-opendialog/interaction-api.md)
+* [Integrating with OpenDialog](developing-with-opendialog/introduction.md)
+* [Actions](developing-with-opendialog/actions/README.md)
+  * [Webhook actions](developing-with-opendialog/actions/webhook-actions.md)
+  * [LLM actions](developing-with-opendialog/actions/llm-actions.md)
+* [WebChat](developing-with-opendialog/webchat/README.md)
+  * [Chat API](developing-with-opendialog/webchat/webchat-api.md)
+  * [WebChat authentication](developing-with-opendialog/webchat/webchat-authentication.md)
+  * [User Tracking](developing-with-opendialog/webchat/user-tracking.md)
+  * [Load Webchat within page Element](developing-with-opendialog/webchat/load-webchat-within-a-page-element.md)
+  * [How to enable JavaScript in your browser](developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser.md)
+* [Interaction API](developing-with-opendialog/interaction-api.md)
 
 ## Release Notes
 

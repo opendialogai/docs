@@ -11,8 +11,8 @@ With OpenDialog you can build sophisticated and user-friendly conversational age
 * provide users with automated support, answering their questions using your own documents and data sources through LLM-powered knowledge services and RAG.
 * automate business processes through natural conversations that follow your rules through our novel [Conversation Model](the-opendialog-model/).
 * incorporate rich [web widgets](opendialog-platform/conversation-designer/message-design/message-types/) into the conversation to make the experience more engaging and use LLM-powered actions to reason about user inputs or generate output.&#x20;
-* integrate with your own  systems through [Actions](developping-with-opendialog/actions/) and the Action API.
-* integrate OpenDialog conversation capability into your own front-end applications through our [Chat API](developping-with-opendialog/webchat/webchat-api.md).
+* integrate with your own  systems through [Actions](developing-with-opendialog/actions/) and the Action API.
+* integrate OpenDialog conversation capability into your own front-end applications through our [Chat API](developing-with-opendialog/webchat/webchat-api.md).
 * understand how your application is performing through [Analytics](monitoring-your-application.md).
 
 Our documentation acts as a guide to the platform and the OpenDialog way of building conversational applications, but also as a broader reference for Conversational AI.
