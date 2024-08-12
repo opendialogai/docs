@@ -180,6 +180,17 @@ A topic source can be in one of the following vectorisation statuses :
 
 ### Test your RAG service
 
+Once you have vectorised your different topic sources for a given topic, you can now start testing the responses that will get generated based on this information and a user query, using the test panel. &#x20;
+
+{% hint style="success" %}
+* Go to the third panel on the right-hand side of your screen
+* Add a user utterance to test with
+* Click on 'Run test'
+* View results - scroll down to see the full results
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-08-12 at 14.26.34.png" alt=""><figcaption><p>Testing your knowledge service using the test panel</p></figcaption></figure>
+
 ### Retrieve your knowledge string
 
 ### Set up an LLM action using knowledge strings
