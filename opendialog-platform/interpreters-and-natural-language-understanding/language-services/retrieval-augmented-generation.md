@@ -234,15 +234,16 @@ In order to use the knowledge from within a specific RAG service to generate res
 
 #### Using a knowledge string in your LLM action
 
-In your LLM action, go to the 'Prompt configuration' tab.&#x20;
-
 {% hint style="info" %}
 For more information on LLM actions, please check the [**LLM Actions**](../llm-actions/) section of the documentation.
 {% endhint %}
 
+<figure><img src="../../../.gitbook/assets/RAG-LLMactions.png" alt=""><figcaption><p>Using the AboutCompany RAG service in an LLM action</p></figcaption></figure>
 
-
-Write your system prompt, including the reference to your RAG service where relevant.
+{% hint style="success" %}
+* In your LLM action, go to the 'Prompt configuration' tab.&#x20;
+* Write your system prompt, including the reference to your RAG service where relevant.
+{% endhint %}
 
 For example:
 
@@ -264,6 +265,32 @@ Make sure to never forgot the closing `%%` syntax, otherwise your  data will not
 
 ### Add your RAG-based LLM Action to your conversation design
 
-## Settings
+In order to use your RAG-based generated response in your conversation design, you will need to update it to run the LLM action on the relevant intent and reference its output in the relevant message.
 
-## FAQ
+#### Adding your RAG-based LLM Action to the conversation design
+
+Just like other LLM actions, in order for them to run, they need to be added to the intent they are relevant for.
+
+{% hint style="success" %}
+* Go to the Designer section of your scenario using the left-hand menu
+* Navigate to the correct intent within the designer
+* Within the third panel, click 'Add conditions, actions & attributes'
+* Click '+ Add new action' and select your action from the drop-down
+* Add the relevant output attributes (if needed)
+{% endhint %}
+
+#### Adding your RAG-based LLM Action output to the messages
+
+Your LLM action's response based on the RAG knowledge will be stored against an output attribute.  If you have not defined a specific output attribute in your LLM action, the default output attribute will be `<llm_response>.`
+
+{% hint style="success" %}
+* Go to the Message Editor section of your scenario using the left-hand menu
+* Navigate to the correct message using the breadcrumbs on the top of your screen
+* Edit your message using the edit icon in its top-right corner
+* Reference your content in the message type of your choice using the following {attributename}
+{% endhint %}
+
+
+
+<figure><img src="../../../.gitbook/assets/RAG-response.png" alt=""><figcaption><p>Reference your generated response via the output attribute</p></figcaption></figure>
+
