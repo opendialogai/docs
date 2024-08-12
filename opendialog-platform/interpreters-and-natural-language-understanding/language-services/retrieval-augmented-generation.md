@@ -99,6 +99,8 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 
 ### Set up your RAG service
 
+#### Basic settings
+
 <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>From the Language Services dashboard, view your created RAG services or create a new one</p></figcaption></figure>
 
 {% hint style="success" %}
@@ -111,6 +113,26 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 {% endhint %}
 
 <figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>RAG service setup page</p></figcaption></figure>
+
+#### Advanced settings
+
+{% hint style="info" %}
+Advanced settings will become available in our next release.
+{% endhint %}
+
+If you are an advanced user of RAG services, and know your way around vectorisation - the Advanced settings section is where you can update the following settings:
+
+**Chunk size**
+
+Chunk size refers to the number of tokens or words that a piece of text is divided into during processing. This setting determines how large each segment, or "chunk," of text will be when it is broken down for analysis or computation. For example, a chunk size of 512 tokens will divide the text into segments of 512 tokens each. Adjusting the chunk size can directly impact the performance and accuracy of text processing tasks like vectorization and information retrieval.
+
+**Chunk overlap**
+
+Chunk overlap is the number of tokens that overlap between consecutive chunks of text. It ensures that important context is preserved across chunks, improving the accuracy of downstream tasks such as information retrieval or machine learning models. For example, if your chunk size is 512 tokens and your chunk overlap is 50 tokens, each chunk will share 50 tokens with the previous chunk. Adjusting chunk overlap can help balance between context preservation and computational efficiency.
+
+**Top K**
+
+Top K refers to the number of top results or items to retrieve during a search or query operation within Retrieval-Augmented Generation (RAG) services. Specifically, it determines how many of the most relevant documents or pieces of information are returned from the database or knowledge base for further processing. For example, setting Top K to 5 will retrieve the 5 most relevant documents based on the search criteria. Adjusting this setting can influence the quality and relevance of the retrieved information, balancing between precision and recall in information retrieval tasks.
 
 ### Add your topics and relevant data sources
 
