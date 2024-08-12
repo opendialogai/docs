@@ -45,7 +45,7 @@ To access the RAG service feature  in your workspace:
 * Create a new RAG service by using the Create language service button
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Access the ability to add a RAG service via the Language Services feature</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Access the ability to add a RAG service via the Language Services feature</p></figcaption></figure>
 
 ## Structure
 
@@ -61,7 +61,7 @@ The <mark style="color:purple;">**RAG service settings**</mark> section allows y
 
 The <mark style="color:purple;">**Topics**</mark> section allows you to define, manage, edit and test the main semantic topics of your RAG service.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>The topics overview provides you with an overview of your different topics, and the ability to manage them</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>The topics overview provides you with an overview of your different topics, and the ability to manage them</p></figcaption></figure>
 
 To action the generation of responses based on your RAG service, you will need to use an additional feature of OpenDialog: [<mark style="color:purple;">**LLM Actions**</mark>](../llm-actions/).  The setup of a topic in your RAG service will generate a knowledge string that you can reference in your LLM Actions prompt, to ensure that the generated answer uses the knowledge sources you have provided.
 
@@ -155,9 +155,28 @@ Once you have selected text, the text upload modal will pop up. From here you ca
 Currently the only option for adding topic sources is Text. However the ability to upload URL and Document sources will be coming in our next release.
 {% endhint %}
 
-#### Vectorize your topic sources
+#### Vectorise your topic sources
+
+When you add topic sources to your knowledge service topics, they get stored to the topic sources table. From within the topic source table, you can see all of the topic sources that you have added.&#x20;
+
+Your topic sources now need to be converted to their numerical representation, using vectorisation.&#x20;
+
+{% hint style="success" %}
+* Select the topic sources you want to vectorise using the checkbox next to them (or the checkbox in the title line to select all)
+* Click on the vectorise button
+* View the vectorisation status
+{% endhint %}
 
 
+
+<figure><img src="../../../.gitbook/assets/RAG-vectorisation.png" alt=""><figcaption><p>Select your topic sources to start vectorisation</p></figcaption></figure>
+
+A topic source can be in one of the following vectorisation statuses :
+
+* <mark style="color:orange;">**Requires Vectorisation**</mark> :  your topic source has not yet been vectorised since its last upload or edit. Your topic source might also be put in this status when it has become obsolete or when the RAG settings have changed. Select the topic source and click the vectorise button to start the process.&#x20;
+* <mark style="color:yellow;">**Vectorisation in progress**</mark> : your topic source is currently being vectorised. Depending on the size of your topic source, this might take a few minutes.
+* <mark style="color:green;">**Vectorised**</mark> : your topic source is vectorised and ready to be used by an LLM
+* <mark style="color:red;">**Vectorisation failed**</mark> : the vectorisation process of the selected topic source has failed. Verify your settings, and retry.
 
 ### Test your RAG service
 

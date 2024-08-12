@@ -116,7 +116,7 @@ Use _emojis_ sparingly, and include them at the end of sentences to avoid breaki
 
 ## Message speed&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt="The &#x27;Typing Cvent&#x27; setting within the Open Dialog conversation designer, shows how to adjust message speed using a numerical value "><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt="The &#x27;Typing Cvent&#x27; setting within the Open Dialog conversation designer, shows how to adjust message speed using a numerical value "><figcaption></figcaption></figure>
 
 Showing too many messages too quickly can be difficult for some customers to keep track of and comprehend, specifically if English is not their first language. It's better to slow things down a little and give them some space to read.&#x20;
 
