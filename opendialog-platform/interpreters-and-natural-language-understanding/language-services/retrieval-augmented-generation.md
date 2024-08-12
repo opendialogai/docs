@@ -222,7 +222,45 @@ If you omit to add the additional query, the LLM will systematically return the 
 
 `"You are a chatbot answering user questions. You may only find your answer from within the following data: %% countries_ks.capital_cities ? France %%`
 
-### Set up an LLM action using knowledge strings
+### Set up an LLM action referencing a RAG service
+
+In order to use the knowledge from within a specific RAG service to generate responses in your OpenDialog application, you will need to:&#x20;
+
+{% hint style="success" %}
+* Create an[ LLM action](../llm-actions/) for response regeneration, referencing your RAG service as part of the system prompt, using a [knowledge string](retrieval-augmented-generation.md#retrieve-your-knowledge-string)
+* Add the LLM action to the relevant application intent in your conversation design
+* Add the relevant output attributes of your LLM action in the outgoing message, using the Message Editor.&#x20;
+{% endhint %}
+
+#### Using a knowledge string in your LLM action
+
+In your LLM action, go to the 'Prompt configuration' tab.&#x20;
+
+{% hint style="info" %}
+For more information on LLM actions, please check the [**LLM Actions**](../llm-actions/) section of the documentation.
+{% endhint %}
+
+
+
+Write your system prompt, including the reference to your RAG service where relevant.
+
+For example:
+
+```
+You are a helpful customer service assistant. 
+
+The user will provide you with questions
+related to the organisation, its founders, its originis and its vision. 
+
+Your goal is to provide a relevant response to their queries.  
+
+Construct your response using the following data: 
+%%MyKnowledgeService.AboutCompany?{utterance_text}%%
+```
+
+{% hint style="danger" %}
+Make sure to never forgot the closing `%%` syntax, otherwise your  data will not get referenced and the LLM will provide a general, non-relevant response.
+{% endhint %}
 
 ### Add your RAG-based LLM Action to your conversation design
 
