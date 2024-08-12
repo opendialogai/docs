@@ -14,7 +14,7 @@ To design your message, click on any message block(s) to add those to the design
 
 Each block can be deleted, duplicated, or reordered using the relevant icons.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Individual message screen to design your message</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>Individual message screen to design your message</p></figcaption></figure>
 
 ## Combining message blocks
 

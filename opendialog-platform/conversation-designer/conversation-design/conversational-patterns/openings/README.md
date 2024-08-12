@@ -120,13 +120,13 @@ Lowes.com
 
 Okta's OktaBot uses a more transactional style. The bot greets the user. The self-identification is more implicit in the header and above the prompt. The bot goes straight into authentication to then show the relevant options.
 
-![](../../../../../.gitbook/assets/1.png) ![](../../../../../.gitbook/assets/2.png)
+![](<../../../../../.gitbook/assets/1 (1).png>) ![](<../../../../../.gitbook/assets/2 (2).png>)
 
 Erica is the assistant for Bank of America. Erica is integrated in the mobile app, and has been featured for a number of years, so the need for self-identification is less of a priority.
 
 Erica greats the user, and since the assistant is integrated in the app, access to the first name is available for personalization.
 
-Next Erica actually shows "new insights": a list of things that may interest me as a user, before showing the options ![](../../../../../.gitbook/assets/3.png)
+Next Erica actually shows "new insights": a list of things that may interest me as a user, before showing the options ![](<../../../../../.gitbook/assets/3 (1).png>)
 
 **More examples**
 

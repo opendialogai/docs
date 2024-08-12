@@ -22,7 +22,7 @@ Buttons are useful for many different reasons. They give you the opportunity to 
 
 Navigate to the [Message Editor](../message-editor.md) and create a button block by clicking the _Add button block_ icon in the Layout section. &#x20;
 
-<figure><img src="../../../../.gitbook/assets/Group 6.png" alt=""><figcaption><p>How to create a button message in the no-code button message block</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Group 6 (1).png" alt=""><figcaption><p>How to create a button message in the no-code button message block</p></figcaption></figure>
 
 {% hint style="success" %}
 * Open your OpenDialog application
@@ -40,7 +40,7 @@ Navigate to the [Message Editor](../message-editor.md) and create a _Custom Mess
 
 Fill in the template with the [properties](button-message.md#properties) of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/Group 7 (1).png" alt=""><figcaption><p>How to create a button message in the custom message block</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Group 7 (1) (1).png" alt=""><figcaption><p>How to create a button message in the custom message block</p></figcaption></figure>
 
 {% hint style="success" %}
 * Open your OpenDialog application

@@ -58,7 +58,7 @@ Navigate to the [Message Editor](../message-editor.md) and create a _Custom Mess
 
 Fill in the template with the [properties ](text-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/Group 3 (1).png" alt=""><figcaption><p>Where to find the custom messages button and XML for text messages</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Group 3 (1) (1).png" alt=""><figcaption><p>Where to find the custom messages button and XML for text messages</p></figcaption></figure>
 
 {% hint style="success" %}
 * Open your OpenDialog application

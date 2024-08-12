@@ -20,7 +20,7 @@ Note - If the attribute has no value or does not exist in the context given, the
 
 ### Message editor&#x20;
 
-<figure><img src="../../../.gitbook/assets/Group 3.png" alt=""><figcaption><p>The attribute input field can be accessed within the message editor section of the conversation designer</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Group 3 (1).png" alt=""><figcaption><p>The attribute input field can be accessed within the message editor section of the conversation designer</p></figcaption></figure>
 
 To access the Attribute Management feature within the message editor for a given scenario:
 

@@ -78,7 +78,7 @@ If you do not register this new attribute first, this will cause the message to 
 
 Location information is stored in an attribute of type Location. If you haven't configured a new attributes then you could use a built-in attribute called Location (which is also of type Location). Alternative you can create a new attribute and set the type to Location.&#x20;
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt="" width="375"><figcaption><p>Creating an attribute of type attribute</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (529).png" alt="" width="375"><figcaption><p>Creating an attribute of type attribute</p></figcaption></figure>
 
 Once you've create the new attribute set that attribute name in the XML mentioned above.&#x20;
 
@@ -106,7 +106,7 @@ Ok - we have your new address as {user.new_address['formatted_address']}.
 Is this correct?
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (529).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (529) (1).png" alt=""><figcaption></figcaption></figure>
 
 Please pay attention to how _formatted\_address_ is enclosed in single quotes and square brackets. You can access any of the components of the address in the same way.&#x20;
 

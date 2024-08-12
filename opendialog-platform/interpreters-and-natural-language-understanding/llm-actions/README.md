@@ -7,12 +7,6 @@ description: >-
 
 # LLM Actions
 
-{% hint style="info" %}
-The LLM Actions feature is currently in BETA. &#x20;
-
-Please reach out to support@opendialog.ai for early access.
-{% endhint %}
-
 Using LLM Actions you have more fine-grained control over when and how to involve an LLM in your conversation since actions can be performed _after_ a user intent has been interpreted (by an OpenDialog interpreter) or _before_ a bot message was sent to the user.  This enables you to influence the context of the conversation as best required by your scenario.&#x20;
 
 This section will help you to understand what an LLM action is, and how to configure and use it within your conversation.&#x20;
@@ -154,6 +148,19 @@ Attributes require a value. When using the testing panel, where possible, OpenDi
 **Using Attributes in prompts**
 
 When you refer to an attribute in a prompt, you are telling OpenDialog to substitute the value of that attribute into the prompt at the point it is submitted to the LLM. Due to this potential variation in the content of the attribute, it is not possible to know the full token usage of a prompt until the attribute values have been substituted. To determine the total token usage (and consequently the cost) of a specific attribute value, please see the "Inspect" section of the testing panel.
+
+**Using RAG service strings**
+
+To use your RAG service from within a system prompt you should use the special syntax `%% [service].[topic] %%` to reference the data you want to use. For example if you have a knowledge service called 'countries\_ks' and you want to reference the 'capital\_cities' topic data you would use `%% countries_ks.capital_cities %%`.&#x20;
+
+Optionally you can also add a query to only return the topic data that is useful to the user's question. To do this, the syntax is\
+`%% [service].[topic] ? [query] %%`
+
+_An example RAG service string_**:**
+
+`"You are a chatbot answering user questions. You may only find your answer from within the following data: %% countries_ks.capital_cities ? France %%:`
+
+[Read more on 'RAG Services'](../language-services/retrieval-augmented-generation/)
 
 **Using output attributes**&#x20;
 

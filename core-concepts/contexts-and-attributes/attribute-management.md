@@ -43,7 +43,7 @@ The Attribute Management function can be found in the sidebar of the conversatio
 
 ### Intents
 
-<figure><img src="../../.gitbook/assets/Group 2.png" alt=""><figcaption><p>The attribute input field can be accessed within the advanced intent settings section in conversation designer sidebar.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 2 (1).png" alt=""><figcaption><p>The attribute input field can be accessed within the advanced intent settings section in conversation designer sidebar.</p></figcaption></figure>
 
 To access the Attribute Management feature within the intents sidebar for a given scenario:
 
@@ -56,7 +56,7 @@ To access the Attribute Management feature within the intents sidebar for a give
 
 ### Conditions&#x20;
 
-<figure><img src="../../.gitbook/assets/Group 1.png" alt=""><figcaption><p>The attribute management input field can be accessed under the custom conditions section of the conversation designer sidebar.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 1 (1).png" alt=""><figcaption><p>The attribute management input field can be accessed under the custom conditions section of the conversation designer sidebar.</p></figcaption></figure>
 
 To access the Attribute Management feature within the conditions sidebar for a given scenario:
 
@@ -68,7 +68,7 @@ To access the Attribute Management feature within the conditions sidebar for a g
 
 ### Message editor&#x20;
 
-<figure><img src="../../.gitbook/assets/Group 3.png" alt=""><figcaption><p>The attribute input field can be accessed within the message editor section of the conversation designer</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Group 3 (1).png" alt=""><figcaption><p>The attribute input field can be accessed within the message editor section of the conversation designer</p></figcaption></figure>
 
 To access the Attribute Management feature within the message editor for a given scenario:
 

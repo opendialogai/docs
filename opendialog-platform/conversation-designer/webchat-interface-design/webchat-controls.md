@@ -16,7 +16,7 @@ Within the top header of every chat bot, there is a variety of different control
 
 
 
-<figure><img src="../../../.gitbook/assets/Group 7.png" alt="" width="375"><figcaption><p>Where to find the minimise button - right top hand corner</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Group 7 (1).png" alt="" width="375"><figcaption><p>Where to find the minimise button - right top hand corner</p></figcaption></figure>
 
 The minimise button here allows you to close down your conversation when you are finished, or simply need to take a break from the chatbot.
 
