@@ -160,7 +160,7 @@ _An example RAG service string_**:**
 
 `"You are a chatbot answering user questions. You may only find your answer from within the following data: %% countries_ks.capital_cities ? France %%:`
 
-[Read more on 'RAG Services'](../language-services/retrieval-augmented-generation/)
+[Read more on 'RAG Services'](../language-services/retrieval-augmented-generation.md)
 
 **Using output attributes**&#x20;
 

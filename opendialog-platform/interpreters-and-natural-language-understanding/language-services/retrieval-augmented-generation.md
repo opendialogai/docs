@@ -19,7 +19,7 @@ The OpenDialog RAG service allows you to&#x20;
 
 
 
-<figure><img src="../../../../.gitbook/assets/1.png" alt="Flowchart showing the Retrieval Augmented Generation process: uploading documents, converting and vectorizing them, querying using prompting, and generating a response."><figcaption><p>Simplified diagram of the Retrieval Augmented Generation process</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1.png" alt="Flowchart showing the Retrieval Augmented Generation process: uploading documents, converting and vectorizing them, querying using prompting, and generating a response."><figcaption><p>Simplified diagram of the Retrieval Augmented Generation process</p></figcaption></figure>
 
 ## In Action
 
@@ -45,7 +45,7 @@ To access the RAG service feature  in your workspace:
 * Create a new RAG service by using the Create language service button
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption><p>Access the ability to add a RAG service via the Language Services feature</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Access the ability to add a RAG service via the Language Services feature</p></figcaption></figure>
 
 ## Structure
 
@@ -57,19 +57,19 @@ In some cases, throughout the product you might find that RAG services are refer
 
 The <mark style="color:purple;">**RAG service settings**</mark> section allows you to name  and provide a description for your RAG service to easily recognise it in the Language Services Dashboard. Once it is being used in your applications, you can also visualise the scenarios that are actively using this particular RAG service.
 
-<figure><img src="../../../../.gitbook/assets/RAG-settings-use.png" alt=""><figcaption><p>Access the RAG service settings components via the left-hand menu</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/RAG-settings-use.png" alt=""><figcaption><p>Access the RAG service settings components via the left-hand menu</p></figcaption></figure>
 
 The <mark style="color:purple;">**Topics**</mark> section allows you to define, manage, edit and test the main semantic topics of your RAG service.
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>The topics overview provides you with an overview of your different topics, and the ability to manage them</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>The topics overview provides you with an overview of your different topics, and the ability to manage them</p></figcaption></figure>
 
-To action the generation of responses based on your RAG service, you will need to use an additional feature of OpenDialog: [<mark style="color:purple;">**LLM Actions**</mark>](../../llm-actions/).  The setup of a topic in your RAG service will generate a knowledge string that you can reference in your LLM Actions prompt, to ensure that the generated answer uses the knowledge sources you have provided.
+To action the generation of responses based on your RAG service, you will need to use an additional feature of OpenDialog: [<mark style="color:purple;">**LLM Actions**</mark>](../llm-actions/).  The setup of a topic in your RAG service will generate a knowledge string that you can reference in your LLM Actions prompt, to ensure that the generated answer uses the knowledge sources you have provided.
 
 ## How to use
 
 ### Overview
 
-<figure><img src="../../../../.gitbook/assets/3.png" alt=""><figcaption><p>Overview of the steps within OpenDialog to setup and use a RAG service</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/3.png" alt=""><figcaption><p>Overview of the steps within OpenDialog to setup and use a RAG service</p></figcaption></figure>
 
 \[Video tutorial coming soon]
 
@@ -93,11 +93,11 @@ When a topic is queried, behind the scenes, all of the topic sources belonging t
 
 A knowledge string is a piece of syntax you will use to reference a specific RAG service, and one of its topics within an LLM action, or for testing purposes in the test panel.
 
-<figure><img src="../../../../.gitbook/assets/2 (1).png" alt=""><figcaption><p>Syntax structure of a knowledge string</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2 (1).png" alt=""><figcaption><p>Syntax structure of a knowledge string</p></figcaption></figure>
 
 ### Set up your RAG service
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>From the Language Services dashboard, view your created RAG services or create a new one</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>From the Language Services dashboard, view your created RAG services or create a new one</p></figcaption></figure>
 
 {% hint style="success" %}
 * On the language services dashboard, click the Create New Service button
@@ -108,13 +108,13 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 * Click 'Create service' button to finish creating your service
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>RAG service setup page</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>RAG service setup page</p></figcaption></figure>
 
 ### Add your topics and relevant data sources
 
-Once you have created your [RAG ](./#rag)service setup, you will get taken to the [Topics](./#topics) page. This page will be empty when first creating your service. You can start setting up your topics, by clicking on the Add topic button in the top right corner of the middle panel of your screen.
+Once you have created your [RAG ](retrieval-augmented-generation.md#rag)service setup, you will get taken to the [Topics](retrieval-augmented-generation.md#topics) page. This page will be empty when first creating your service. You can start setting up your topics, by clicking on the Add topic button in the top right corner of the middle panel of your screen.
 
-<figure><img src="../../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Select the 'Add topic' button from the top right hand corner of your screen</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Select the 'Add topic' button from the top right hand corner of your screen</p></figcaption></figure>
 
 #### Setting up your topics
 
@@ -126,7 +126,7 @@ Once you have created your [RAG ](./#rag)service setup, you will get taken to th
 * This will trigger the 'Add sources' section to appear
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Provide a name, description to your topic and create it by clicking on the create topic button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Provide a name, description to your topic and create it by clicking on the create topic button</p></figcaption></figure>
 
 #### Adding topic sources
 
@@ -138,7 +138,7 @@ Once you have created a topic, you can start adding your documents, data and inf
 * Select the source type of your data
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/Select source type.png" alt=""><figcaption><p>Add your information sources to a topic using the 'Add source' dropdown</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Select source type.png" alt=""><figcaption><p>Add your information sources to a topic using the 'Add source' dropdown</p></figcaption></figure>
 
 <mark style="color:purple;">**Adding a text source**</mark>
 
@@ -154,6 +154,10 @@ Once you have selected text, the text upload modal will pop up. From here you ca
 {% hint style="info" %}
 Currently the only option for adding topic sources is Text. However the ability to upload URL and Document sources will be coming in our next release.
 {% endhint %}
+
+#### Vectorize your topic sources
+
+
 
 ### Test your RAG service
 
