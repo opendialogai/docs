@@ -25,9 +25,13 @@ The OpenDialog RAG service allows you to&#x20;
 
 #### Use your own data
 
+Generate response from your own data, making sure that responses are accurate and relevant to your user's queries.
+
 #### Dynamic content generation&#x20;
 
-#### Up-to-date response
+Rather than depending on statically defined messaging, make your content more dynamic by generating responses based on your up-to-date knowledge.
+
+#### Up-to-date responses
 
 By relying on up-to-date information from retrieval mechanisms, the system can provide more accurate and current responses.
 
