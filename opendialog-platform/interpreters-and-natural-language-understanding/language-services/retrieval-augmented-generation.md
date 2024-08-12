@@ -93,8 +93,6 @@ When a topic is queried, behind the scenes, all of the topic sources belonging t
 
 A knowledge string is a piece of syntax you will use to reference a specific RAG service, and one of its topics within an LLM action, or for testing purposes in the test panel.
 
-<figure><img src="../../../.gitbook/assets/2 (1).png" alt=""><figcaption><p>Syntax structure of a knowledge string</p></figcaption></figure>
-
 ### Set up your RAG service
 
 <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>From the Language Services dashboard, view your created RAG services or create a new one</p></figcaption></figure>
@@ -192,6 +190,37 @@ Once you have vectorised your different topic sources for a given topic, you can
 <figure><img src="../../../.gitbook/assets/Screenshot 2024-08-12 at 14.26.34.png" alt=""><figcaption><p>Testing your knowledge service using the test panel</p></figcaption></figure>
 
 ### Retrieve your knowledge string
+
+You can use your RAG service in your AI application by referencing it through a [knowledge string](retrieval-augmented-generation.md#knowledge-strings) in other services, like LLM Actions.  In order to do so, you need to retrieve or construct the relevant knowledge strings.&#x20;
+
+<figure><img src="../../../.gitbook/assets/2 (1).png" alt=""><figcaption><p>Syntax structure of a knowledge string</p></figcaption></figure>
+
+#### Retrieving a knowledge string
+
+The easiest way to retrieve your knowledge string is by going into the test panel of a specific topic.  The default system prompt already has your pre-formatted knowledge string in it.  You can simply copy/paste it for use in an LLM action.
+
+**Example**:&#x20;
+
+```
+%%MyKnowledgeService.topic?{utterance_text}%%
+```
+
+#### Constructing a knowledge string from scratch
+
+You can construct your knowledge string from scratch, and use it elsewhere in the OpenDialog platform by typing `%%` followed by your knowledge string syntax.
+
+To use your RAG service from within a system prompt you should use the special syntax `%% [service].[topic] %%` to reference the data you want to use. For example if you have a knowledge service called 'countries\_ks' and you want to reference the 'capital\_cities' topic data you would use `%% countries_ks.capital_cities%%`.&#x20;
+
+You should also add a query to only return the topic data that is useful to the user's question. To do this, the syntax is\
+`%% [service].[topic] ? [query] %%`
+
+{% hint style="warning" %}
+If you omit to add the additional query, the LLM will systematically return the full information of your topic source without making it relevant to the user query.
+{% endhint %}
+
+#### **An example knowledge service string, used in a system prompt:**
+
+`"You are a chatbot answering user questions. You may only find your answer from within the following data: %% countries_ks.capital_cities ? France %%`
 
 ### Set up an LLM action using knowledge strings
 
