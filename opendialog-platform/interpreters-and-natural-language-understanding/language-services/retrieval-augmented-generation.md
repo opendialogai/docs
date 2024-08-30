@@ -175,8 +175,68 @@ Once you have selected text, the text upload modal will pop up. From here you ca
 * Select 'Upload source' once you are finished
 {% endhint %}
 
-{% hint style="info" %}
-Currently the only option for adding topic sources is Text. However the ability to upload URL and Document sources will be coming in our next release.
+<figure><img src="../../../.gitbook/assets/URL 2.png" alt=""><figcaption><p>From the URL uploader modal you can start to add in your URL's in the 'URL Source' field</p></figcaption></figure>
+
+<mark style="color:purple;">**Adding a URL source**</mark>
+
+To add a URL source, you first need to select the 'URL' option from the topic source drop down menu.
+
+<figure><img src="../../../.gitbook/assets/URL 1.png" alt=""><figcaption><p>Select URL from the topic source dropdown menu</p></figcaption></figure>
+
+Once you have selected 'URL' from the topic source dropdown, the URL upload modal will appear. From here, you can add in your source. You can either add in one URL, or you also have the option to add in multiple URL's, separated by a comma list.&#x20;
+
+You also have the option to include exclusion ID's and Classes. These optional fields allow you to select parts of your URL that you would not like to be referenced. Then when your URL source is vectorised, these ID's and Classes will not be included.
+
+<figure><img src="../../../.gitbook/assets/URL 3.png" alt=""><figcaption><p>Here you have the option to input any exclusion ID's and Classes for your URL source(s)</p></figcaption></figure>
+
+Once you are happy with the URL\`s selected, you can click the 'Upload source' button to add them to your topic.
+
+<figure><img src="../../../.gitbook/assets/URL 4.png" alt=""><figcaption><p>Click the 'Upload source' button to add your URL's to your topic</p></figcaption></figure>
+
+{% hint style="success" %}
+* Select URL from the add source dropdown
+* This will bring up the 'Upload URL's' modal
+* From here, add in your URL's to the URL source field
+* Add any exclusion classes or ID's that you want to&#x20;
+* Select 'Upload source' once you are finished
+{% endhint %}
+
+<mark style="color:purple;">**Adding a document source**</mark>
+
+To add a document source, you first need to select the 'Document' option from the topic source drop down menu.
+
+The types of document that can be uploaded to your topic as a source are:
+
+* HTML
+* CSV
+* PDF
+* DOCX
+* DOC
+* TXT
+* YAML
+*   XLSX
+
+
+
+<figure><img src="../../../.gitbook/assets/pic 2.png" alt=""><figcaption><p>Select 'Document' from the topic source dropdown menu</p></figcaption></figure>
+
+Once you have selected Document, the document upload modal will pop up. From here you can either click to upload a document of your choice, or you can drag and drop files onto the modal. You can upload multiple files at once if you wish to.&#x20;
+
+<figure><img src="../../../.gitbook/assets/pic 3.png" alt=""><figcaption><p>The document upload modal</p></figcaption></figure>
+
+After you have selected the files that you want to upload, you can see them listed underneath the document upload modal. If you have accidentally selected a file that you don't wish to upload, you can click the 'X' button next to it's name to remove it from the list.
+
+Once you are happy with the files selected, you can click the 'Upload source' button to add them to your topic.
+
+<figure><img src="../../../.gitbook/assets/pic 4.png" alt=""><figcaption><p>Once you're happy with your uploaded documents, click 'Upload source'</p></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/pic 5.png" alt=""><figcaption><p>Once you have uploaded your document, you can see it in your topic sources table</p></figcaption></figure>
+
+{% hint style="success" %}
+* Select Document from the add source dropdown
+* This will bring up the 'Add document' modal
+* From here, you can click to add your documents or you can simply drag and drop
+* Select 'Upload source' once you are finished
 {% endhint %}
 
 #### Vectorise your topic sources
