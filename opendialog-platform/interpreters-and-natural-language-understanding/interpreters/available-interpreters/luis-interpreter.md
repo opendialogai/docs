@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Microsoft LUIS interpreter
 
 The OpenDialog LUIS integration allows us to use LUIS intent interpretation and entity extraction.

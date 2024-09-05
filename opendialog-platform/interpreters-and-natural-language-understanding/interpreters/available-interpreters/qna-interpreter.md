@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Microsoft QnA interpreter
 
 The OpenDialog QnA integration allows us to use QnA knowledge bases.
