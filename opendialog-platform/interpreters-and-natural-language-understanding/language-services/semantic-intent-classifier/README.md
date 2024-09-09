@@ -15,6 +15,8 @@ Please reach out to [support@opendialog.ai](mailto:) for early access.
 
 Interpreting a user's utterance is an important part of conversation design. It ensures your bot can understand what a user has said in natural language, understand whether it is a question about 'Policy' or 'Making a claim', and accurately match an intent. Conversations are non-linear and context-driven, meaning effective intent management and matching is integral to great conversation design.&#x20;
 
+[Try the OpenDialog digital concierge](https://opendialog.ai/opendialog-digital-concierge/)
+
 <figure><img src="../../../../.gitbook/assets/screencapture-semantic-classifiers-cloud-dev1-engineering-opendialog-app-admin-semantic-classifiers-2251799814000009-intents-2024-09-05-09_54_06.png" alt="The Semantic intent classifier, showing a list of intents and sub intents with instructions "><figcaption><p>Classify intents and sub intents with an LLM using our Semantic intent classifier </p></figcaption></figure>
 
 ## The basics
