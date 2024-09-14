@@ -1,10 +1,12 @@
 ---
 description: >-
   This section describes the different actions that are available through the
-  actions library.
+  actions library .
 ---
 
 # Actions from library
+
+
 
 ## Freshdesk action
 
@@ -12,7 +14,7 @@ The Freshdesk action lets you set up a connection between OpenDialog and your Fr
 
 [**👉🏻 View detailed instructions for setting up and using your Freshdesk action**](../../../opendialog-platform/actions/actions-from-library/freshdesk-action.md)
 
-## Custom action
+## Custom actions
 
 If custom actions have been built for your application and/or account specifically, you will also find these in the Action library under the Custom section.
 

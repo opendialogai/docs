@@ -1,12 +1,14 @@
-# Integrating with 3rd parties
+# Integrations and Reasoning in your application
 
 ## Introduction
 
-Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data into the conversation.&#x20;
+Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data to return to the conversation.&#x20;
 
-Actions can take input and return output. In Opendialog, both input and output are stored as values for attributes. An attribute is a single piece of data that has a name, type and value. For example, the attribute `first_name` is a string (text) that stores the user's first name. The attribute `seconds_since_last_seen` is an integer (number) and stores the number of seconds since the assistant last interacted with the user. Actions allow us to define input and output attributes as a way to pass data in and out of our applications.
+Actions can take input and return output. In OpenDialog, both input and output are stored as values for attributes. An attribute is a single piece of data that has a name, type and value. For example, the attribute `first_name` is a string (text) that stores the user's first name. The attribute `seconds_since_last_seen` is an integer (number) and stores the number of seconds since the assistant last interacted with the user. Actions allow us to define input and output attributes as a way to pass data in and out of our applications.
 
-Each intent in a conversation has the possibility of having an assigned action, which will be run after that intent is matched. For user intents, the action will be run directly after interpretation and matching of the user's utterance, which provides the possibility of using the expected attributes of the intent as inputs to the action. For application intents, the action will be run directly after intent conditions are evaluated, but before messages are selected and rendered, which provides the possibility of action outputs affecting which message is chosen and the attributes included within messages.
+Each intent in a conversation has the possibility of having an assigned action, which will be run after that intent is matched. For user intents, the action will be run directly after interpretation and matching of the user's utterance. For application intents, the action will be run directly after intent conditions are evaluated, but before messages are selected and rendered, which provides the possibility of action outputs affecting which message is chosen and the attributes included within messages.
+
+In this section we describe webhook actions and prebuilt actions. For reasoning and other functionality through LLM Actions go to the [LLM Action](../../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/) section.
 
 ## Creating an action
 

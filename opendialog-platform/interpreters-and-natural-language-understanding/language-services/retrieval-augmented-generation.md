@@ -49,7 +49,7 @@ To access the RAG service feature  in your workspace:
 * Create a new RAG service by using the Create language service button
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Access the ability to add a RAG service via the Language Services feature</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Access the ability to add a RAG service via the Language Services feature</p></figcaption></figure>
 
 ## Structure
 
@@ -65,7 +65,7 @@ The <mark style="color:purple;">**RAG service settings**</mark> section allows y
 
 The <mark style="color:purple;">**Topics**</mark> section allows you to define, manage, edit and test the main semantic topics of your RAG service.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>The topics overview provides you with an overview of your different topics, and the ability to manage them</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption><p>The topics overview provides you with an overview of your different topics, and the ability to manage them</p></figcaption></figure>
 
 To action the generation of responses based on your RAG service, you will need to use an additional feature of OpenDialog: [<mark style="color:purple;">**LLM Actions**</mark>](../llm-actions/).  The setup of a topic in your RAG service will generate a knowledge string that you can reference in your LLM Actions prompt, to ensure that the generated answer uses the knowledge sources you have provided.
 
@@ -101,7 +101,7 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 
 #### Basic settings
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>From the Language Services dashboard, view your created RAG services or create a new one</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption><p>From the Language Services dashboard, view your created RAG services or create a new one</p></figcaption></figure>
 
 {% hint style="success" %}
 * On the language services dashboard, click the Create New Service button
