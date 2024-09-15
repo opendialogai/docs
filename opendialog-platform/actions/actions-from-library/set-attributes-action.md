@@ -9,7 +9,7 @@ There are a number of reasons you may want to explicitly set some attribute valu
 
 The Set Attributes action is available through the Custom Actions Component ID dropdown.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 It is configured by configuring it's JSON structure.&#x20;
 
@@ -17,7 +17,7 @@ The attribute value map identifies the name of the attribute and the value it sh
 
 The example below shows how we would set the value of two attributes starter\_bot\_global\_no\_match\_count and starter\_bot\_chat\_started to specific values within the User context.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
