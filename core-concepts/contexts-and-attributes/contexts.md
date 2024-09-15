@@ -8,13 +8,13 @@ We support persistent contexts that will be automatically stored together with u
 
 ## What type of contexts can you use?
 
-OpenDialog supports a set of contexts out of the box, also know as 'core contexts'. It is also possible to create your own custom contexts.
+OpenDialog supports a set of contexts out of the box, also know as 'core contexts'. It is also possible to create your own custom contexts through code.
 
 #### Core Contexts
 
 "Out of the box" OpenDialog supports the following contexts
 
-* `user` : The user context stores attributes in the database. As such attributes stored in the user context will persist across requests.
+* `user` : The user context stores attributes in the database. As such attributes stored in the user context will persist across requests. Typically, unless otherwise defined any attributes you create for your conversational application will be stored in the user context and can be accessed by typing `{user.<attribute_name>}`.
 * `session` : The session context is an in-memory context valid for a single request-response exchange. It is a convenient context to store application-specific attributes that are only required within the space of a single request. We use the session context to store messages coming back from external NLU interpreters, for example, so that they can be embedded within a message and displayed to the user.
 * `global` : The global context is a read-only, persistent context that can be managed through the UI. By visiting `admin/global-contexts` you can add attributes to the global context. These attributes will then be available throughout your application by referencing `global.attribute_name`. The Global context is useful for any values that won't change during a conversation and are applied to all scenarios within your workspace, such as a company name or phone number.
 * `conversation` : The conversation context is a read-only context that contains the current conversational state. Each attribute is a Conversation Object attribute which can be used with the `select` [filter](../../opendialog-platform/conversation-designer/message-design/using-attributes-in-messages.md#available-filters). The context has the following attributes:
