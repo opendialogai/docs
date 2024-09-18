@@ -176,6 +176,10 @@
   * [User Tracking](developing-with-opendialog/webchat/user-tracking.md)
   * [Load Webchat within page Element](developing-with-opendialog/webchat/load-webchat-within-a-page-element.md)
   * [How to enable JavaScript in your browser](developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser.md)
+  * [SDK](developing-with-opendialog/webchat/sdk/README.md)
+    * [Methods](developing-with-opendialog/webchat/sdk/methods.md)
+    * [Events](developing-with-opendialog/webchat/sdk/events.md)
+    * [Custom Components](developing-with-opendialog/webchat/sdk/custom-components.md)
 * [Interaction API](developing-with-opendialog/interaction-api.md)
 
 ## Release Notes
