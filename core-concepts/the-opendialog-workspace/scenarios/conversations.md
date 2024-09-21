@@ -1,14 +1,16 @@
 # Conversations
 
+Conversations represent the high-level goals or states of our scenario.&#x20;
+
 ## Conversation settings
 
-Settings include a conversation name, whether the conversation exhibits starting behavior, and selecting an interpreter to use.&#x20;
+Settings include a conversation name, whether the conversation exhibits starting behavior, and selecting the default interpreter to use.&#x20;
 
-<figure><img src="../../.gitbook/assets/2023-05-18_15-08-12.png" alt=""><figcaption><p>Conversation settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2023-05-18_15-08-12.png" alt=""><figcaption><p>Conversation settings</p></figcaption></figure>
 
 Clicking "Add new condition" opens the New Condition area:
 
-<figure><img src="../../.gitbook/assets/2023-05-18_15-09-06.png" alt=""><figcaption><p>Conversation settings expanded</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2023-05-18_15-09-06.png" alt=""><figcaption><p>Conversation settings expanded</p></figcaption></figure>
 
 Conditions allow you to check values of attributes within contexts. The conversation will be considered if the conditions are met.&#x20;
 

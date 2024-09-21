@@ -113,7 +113,7 @@ A Semantic Intent Classifier Language Service has 4 main components:&#x20;
 **Note:** A complete Semantic Intent Classifier also includes:&#x20;
 
 * A Language services [Interpreter](../../interpreters/)&#x20;
-* A [user intent](../../../../the-opendialog-model/turns-and-intents.md#intents-in-turns) in the conversation designer with the selected Interpreter and Intent
+* A [user intent](../../../../core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md#intents-in-turns) in the conversation designer with the selected Interpreter and Intent
 {% endhint %}
 
 ## How to use&#x20;

@@ -6,7 +6,7 @@ Settings include a scene name, whether the scene exhibits starting behavior, and
 
 Clicking "Add new condition" opens the New Condition area.
 
-<figure><img src="../../.gitbook/assets/2023-05-18_15-18-42.png" alt=""><figcaption><p>Scenes settings</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2023-05-18_15-18-42.png" alt=""><figcaption><p>Scenes settings</p></figcaption></figure>
 
 
 

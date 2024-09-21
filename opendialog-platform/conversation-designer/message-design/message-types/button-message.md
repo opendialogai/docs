@@ -233,7 +233,7 @@ For example, if a button message was created to allow a user to answer a questio
 
 Button values are added in the `Advanced settings` dropdown for buttons with the 'Simulate user intent' type behaviour selected in the 'Button functionality' drop down. The example given below will create a button message with 2 buttons - both will simulate the `AgeResponse` user intent, but each will save a different value against the `over18` attribute.
 
-When a user clicks a button, by default the value will be saved to the user context for use later (_this can be altered by modifying an_ [_intent's advanced settings_](../../../../the-opendialog-model/turns-and-intents.md#intent-settings))
+When a user clicks a button, by default the value will be saved to the user context for use later (_this can be altered by modifying an_ [_intent's advanced settings_](../../../../core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md#intent-settings))
 
 ![Adding button values through the message editor](<../../../../.gitbook/assets/image (514).png>)
 

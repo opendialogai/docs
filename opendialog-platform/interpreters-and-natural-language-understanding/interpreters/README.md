@@ -33,4 +33,4 @@ Multiple Interpreters can exist within a single scenario, and each Interpreter c
 
 <figure><img src="../../../.gitbook/assets/2023-05-02_12-11-15.png" alt=""><figcaption><p>Adding a new interpreter page</p></figcaption></figure>
 
-Once an Interpreter is available and set to active using the toggle switch, it can be [referenced in the conversation structure](../../../the-opendialog-model/turns-and-intents.md#interpreter-and-confidence-level) at the component level.&#x20;
+Once an Interpreter is available and set to active using the toggle switch, it can be [referenced in the conversation structure](../../../core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md#interpreter-and-confidence-level) at the component level.&#x20;

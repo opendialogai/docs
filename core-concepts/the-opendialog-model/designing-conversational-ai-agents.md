@@ -62,3 +62,19 @@ As you start designing in OpenDialog you will see that we provide multiple ways 
 
 
 
+
+
+{% hint style="info" %}
+**If we are using LLMs why do you care about intents?**
+
+
+
+You could use OpenDialog with a single user Intent and a single bot Intent - with everything mediated via a prompt. What you are doing there, however, is abdicating all control of the conversation to the prompt and LLM. Anyone who has attempted to build an enterprise-grade conversational application will know that that is not enough. You need more control over inputs and outputs. Explicit, rule-based, control.&#x20;
+
+
+
+That is why we prefer to set up broad intent classes that enable us to reason about the type of thing the user is saying and the context within which they are saying it so that we can be more fine-grained into what prompts we use to respond, what sources we access for knowledge (in the case of RAG) and how well we control the next step of the conversation. This way we take advantage of the power of LLMs without abdicating control to them - something that is crucial for an enterprise-grade application that can be trusted.&#x20;
+{% endhint %}
+
+
+

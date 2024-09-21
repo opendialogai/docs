@@ -4,7 +4,7 @@
 
 The first thing you see when you login to OpenDialog is the workspace.&#x20;
 
-The workspace is the starting point for accessing the main OpenDialog functionalities:  [scenarios](../the-opendialog-model/scenarios.md) for setting up your Conversational AI application ,  [language services](language-services.md) to configure language capabilities available to use in your different scenarios, and your  [account management](opendialog-account-management/). &#x20;
+The workspace is the starting point for accessing the main OpenDialog functionalities:  [scenarios](broken-reference) for setting up your Conversational AI application ,  [language services](language-services.md) to configure language capabilities available to use in your different scenarios, and your  [account management](opendialog-account-management/). &#x20;
 
 <figure><img src="../../.gitbook/assets/OD-workspacedashboard.png" alt=""><figcaption><p>The Workspace Dashboard is your go-to starting point to create &#x26; manage your applications.</p></figcaption></figure>
 
