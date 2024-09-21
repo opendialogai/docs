@@ -6,6 +6,12 @@
 
 ## CORE CONCEPTS
 
+* [OpenDialog Approach](the-opendialog-model/README.md)
+  * [Designing Conversational AI Agents](core-concepts/the-opendialog-model/designing-conversational-ai-agents.md)
+  * [Scenarios](core-concepts/the-opendialog-model/scenarios.md)
+  * [Conversations](core-concepts/the-opendialog-model/conversations.md)
+  * [Scenes](core-concepts/the-opendialog-model/scenes.md)
+  * [Turns and intents](the-opendialog-model/turns-and-intents.md)
 * [OpenDialog Platform](core-concepts/the-opendialog-workspace/README.md)
   * [Scenarios](core-concepts/the-opendialog-workspace/scenarios.md)
   * [Language Services](core-concepts/the-opendialog-workspace/language-services.md)
@@ -13,11 +19,6 @@
     * [Creating and managing users](core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users.md)
     * [Deleting OpenDialog account](core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account.md)
     * [Account Security](core-concepts/the-opendialog-workspace/opendialog-account-management/account-security.md)
-* [OpenDialog Model](the-opendialog-model/README.md)
-  * [Scenarios](core-concepts/the-opendialog-model/scenarios.md)
-  * [Conversations](core-concepts/the-opendialog-model/conversations.md)
-  * [Scenes](core-concepts/the-opendialog-model/scenes.md)
-  * [Turns and intents](the-opendialog-model/turns-and-intents.md)
 * [OpenDialog Conversation Engine](core-concepts/how-the-conversation-engine-thinks.md)
 * [Contexts and attributes](core-concepts/contexts-and-attributes/README.md)
   * [Contexts](core-concepts/contexts-and-attributes/contexts.md)
