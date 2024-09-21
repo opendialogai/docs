@@ -78,7 +78,7 @@ The <mark style="color:purple;">**translation status**</mark> visualization show
 
 Below, we outline the vocabulary used throughout this section to describe language types in the translation process.
 
-The <mark style="color:purple;">**base language**</mark> is the language you set when creating your conversational application. The base language can not be changed. You can edit the messages for your base language using the [Message Editor](broken-reference).
+The <mark style="color:purple;">**base language**</mark> is the language you set when creating your conversational application. The base language can not be changed. You can edit the messages for your base language using the [Message Editor](opendialog-platform/conversation-designer/message-design/message-editor.md).
 
 A <mark style="color:purple;">**source language**</mark> is the language you select to translate from. This can either be the base language or another language you have translations for already. The source language selection will be limited to the base language if you have not yet uploaded any new translation files.
 
