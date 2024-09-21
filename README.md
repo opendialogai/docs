@@ -17,8 +17,6 @@ With OpenDialog you can build sophisticated and user-friendly conversational age
 * integrate OpenDialog conversation capability into your own front-end applications through our [Chat API](developing-with-opendialog/webchat/webchat-api.md).
 * gain deep understanding of how your application is performing through [Analytics](monitoring-your-application.md), tracking every decision and LLM call.&#x20;
 
-Check out our documentation to find out more or [get in touch with any questions!](https://opendialog.ai/support/)
-
 <table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td></td><td><a href="broken-reference"><strong>Core concepts</strong></a></td><td>The core concepts that underpin the OpenDialog  interface, framework and models.</td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td></td><td><a href="broken-reference"><strong>Create</strong> <strong>AI Applications</strong></a></td><td>Discover how to build your own GenAI-powered application using the OpenDialog model.</td><td><a href="broken-reference">Broken link</a></td><td></td></tr><tr><td></td><td><a href="broken-reference"><strong>Develop with OD</strong></a></td><td>Back-end engineering aspects including integrations and our API documentation.</td><td><a href="broken-reference">Broken link</a></td><td></td></tr></tbody></table>
 
 ### Want to find out what's new?
