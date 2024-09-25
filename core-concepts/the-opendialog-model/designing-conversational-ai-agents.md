@@ -4,11 +4,15 @@ The title is not the whole truth. &#x20;
 
 We are sorry about that, but we had to give this page a title that people will recognise.&#x20;
 
-When you are designing a solution, however, you are not _just_ designing a Conversational AI Agent. You are doing much more than that.-The OpenDialog approach acknowledges it and supports you in doing it.&#x20;
+When you are designing a solution, however, you are not _just_ designing a Conversational AI Agent. You are doing much more than that. You are actually designing a (software) space within which an AI-powered agent _and_ a user will _enter_ to interact by exchanging messages, trying to co-operate and co-ordinate to solve a problem or enjoy a chat. &#x20;
 
-When you are designing a solution you are actually designing a (software) space within which an AI-powered agent **and** a user will _enter_ to interact by exchanging messages, trying to co-operate and co-ordinate to solve a problem or enjoy a chat. &#x20;
+This distinction may sound philosophical but it is crucial. You cannot design for something if you don't have access to all the elements that make up that design. In this case those elements are:
 
-This distinction may sound philosophical but it is crucial. You cannot design for something if you don't have access to all the elements that make up that design.&#x20;
+1. The possible behavior, language and actions that the AI agent will use
+2. The possible behavior, lanaguage and actions that the human user of the agent will use
+3. The rules of the overall space that govern the interaction and dictate how language should be interpreted and when certain rules should be applied. &#x20;
+
+The OpenDialog approach directly supports you in designing across these elements and combining them in a number of different ways.&#x20;
 
 Let's see what this means in practice.&#x20;
 
