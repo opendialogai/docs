@@ -117,7 +117,9 @@ interface CustomComponent {
 const componentData: Array<CustomComponent> = [
   {
     name: 'location', // must be the same as the `type` in the message data.
-    component: LocationMessage
+    component: LocationMessage,
+    fullScreen: true,
+    autoShow: false
   }
 ]
 ```
@@ -153,7 +155,9 @@ interface CustomComponent {
 const componentData: Array<CustomComponent> = [
   {
     name: 'location',
-    component: LocationMessage
+    component: LocationMessage,
+    fullScreen: true,
+    autoShow: false
   }
 ]
 
