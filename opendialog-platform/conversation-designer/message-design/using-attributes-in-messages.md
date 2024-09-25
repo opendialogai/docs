@@ -1,7 +1,5 @@
 # Using Attributes in Messages
 
-If you are not familiar with the concept of attributes, [read more](../../../core-concepts/contexts-and-attributes/about-attributes.md) or consider the video-based OD Academy lessons. To sign up, email academy@opendialog.ai.&#x20;
-
 Attributes can be used in any message to customize the content. For example, the user's name can be added in the welcome message to personalize the experience.
 
 <figure><img src="../../../.gitbook/assets/2023-05-01_16-43-02.png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>

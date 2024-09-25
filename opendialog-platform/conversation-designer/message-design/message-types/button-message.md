@@ -6,8 +6,6 @@ description: This page describes where to use and find a button block message ty
 
 ## What is a button message?
 
-The button message enables you to create button driven applications. The Appointment Confirmation bot in the OpenDialog Academy is an example. To sign up for the OpenDialog Academy, contact academy@opendialog.ai.
-
 You can add only one button message type to each message, however, within that you can add as many different buttons as you require. You can do this by clicking on the ＋ next to the button entry you require the button to appear afterwards. Right now you can not reorder the buttons, so they need to be added in the order you want them to appear.
 
 ![Message editor: Button message type](<../../../../.gitbook/assets/image (279).png>)

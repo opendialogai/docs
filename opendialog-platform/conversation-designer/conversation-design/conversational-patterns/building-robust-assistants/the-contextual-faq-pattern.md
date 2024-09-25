@@ -6,8 +6,6 @@ description: >-
 
 # Contextual FAQ
 
-For a video-based example please refer to the OD Academy Core Concepts course, module 3 lesson 4. If you need access to the course, please email academy@opendialog.ai.&#x20;
-
 ### What it is used for
 
 The contextual FAQ pattern allows the user to ask questions that are relevant to the task they are completing. For instance, image the following conversation as a user signs up for a life insurance policy:

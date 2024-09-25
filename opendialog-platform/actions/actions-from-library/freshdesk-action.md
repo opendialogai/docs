@@ -107,8 +107,6 @@ To add the action in a meaningful way, we will need to take a 4-stepped approach
 3. Within this scene, create a welcome turn where the application is going to ask for the required attributes, via a form message
 4. Finally, create the appropriate user-led turn which includes the SubmitTicket intent, and which you can add the action to.
 
-For a video tutorial of the 4 steps above, please visit the OD Academy Advanced Topics course or contact academy@opendialog.ai for access.&#x20;
-
 You can reference the [Integrate and Action](../../../designing-conversations/actions/) introduction for more information on how to use actions in your scenarios.
 
 ### **Frequently asked questions**

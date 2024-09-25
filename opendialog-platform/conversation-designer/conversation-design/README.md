@@ -28,6 +28,4 @@ You can access the 'Search' functionality in the main scenario menu, which searc
 
 Building the structure for an assistant is similar to information architecture in the field of UX: there are a number of ways to structure the information, and some may work better than others.&#x20;
 
-If you are new to the OpenDialog platform, consider taking the OpenDialog Academy Core Concepts and Advanced Topics courses to learn how to build the structure for your assistant. Email  academy@opendialog.ai to get access.&#x20;
-
 To help out with some commonly used structures, which are often referred to as "patterns" or "design patterns" we provide a catalog of OpenDialog patterns, including a pattern for help, no match, FAQ, etc. These patterns are described in more detail in the next pages.&#x20;

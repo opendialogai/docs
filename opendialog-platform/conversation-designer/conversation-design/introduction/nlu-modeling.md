@@ -4,8 +4,6 @@ If your conversational experience includes natural language in addition to butto
 
 NLU modeling may be part of the conversation designer's task, or an AI/ML data scientist or AI trainer may be taking on this task.&#x20;
 
-Integration between the OpenDialog platform and the NLU service of your choice is documented in the Interpreters and Natural Language Understanding section of this documentation under the "Working with OpenDialog" heading and is covered in the Advanced Topics course in the OpenDialog Academy.&#x20;
-
 ## Use LLMs
 
 If you are using a "traditional" NLU service (as opposed to an LLM), you will need sample utterances to train each intent. There are a number of ways to gather sample utterances. One of the options is to use an application such as ChatGPT.&#x20;
