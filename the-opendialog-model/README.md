@@ -2,11 +2,11 @@
 
 > Get the most out of OpenDialog by spending some time getting familiar with the OpenDialog approach to AI Agent conversational design.&#x20;
 
-Our aim is to support a wide range of GenAI-powered conversation styles from simple question-answering to sophisticated multi-step processes with complex interactions and custom widgets.&#x20;
+Our aim is to support a wide range of GenAI-powered conversation styles from simple question-answering to sophisticated multi-step processes with complex interactions and custom widgets while always keep you in control.&#x20;
 
 To achieve this three ingredients are necessary.&#x20;
 
-* The **conversation or application designer** (that's you!) needs to be in complete control of the conversation and easily specify and support different interaction styles from open-ended chat to goal-driven structured exchanges mixing and matching LLM capability and dialog flows as the context of the conversation requires.&#x20;
+* The **conversation or application designer** (that's you!) needs to be in complete control of the conversation and easily specify and support different interaction styles from open-ended chat to goal-driven structured exchanges mixing and matching LLM capability and adapting dialog flows as the context of the conversation requires.&#x20;
 * **Explicit rules** need to be supported and tightly integrated with conversation context and data so as to adhere to business and other process rules and regulations and drive better use of LLMs through retrieval-augment generation or other techniques.
 * **LLMs need to be flexibly and safely brought into the process** to enable advanced natural language understanding and reasoning, providing a choice of prompt styles, LLM providers as well as solid analytics to track what is happening.&#x20;
 

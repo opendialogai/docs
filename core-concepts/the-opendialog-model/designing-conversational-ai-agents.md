@@ -1,20 +1,22 @@
 # Designing Conversational AI Agents
 
-The title is not the whole truth. &#x20;
+When designing Conversational AI agents we deal with three broad aspects
 
-We are sorry about that, but we had to give this page a title that people will recognise.&#x20;
+1. The possible behavior, language and actions that the user of the agent may want to use to achieve their goal (get an answer to a question, complete a transaction, make a change to a policy, etc).
+2. The possible and available behaviors, language and actions that the AI agent has to help the user achieve the goal.
+3. The context of the conversation and the overall rules that govern the interaction and dictate how language should be interpreted and when certain rules should be applied. &#x20;
 
-When you are designing a solution, however, you are not _just_ designing a Conversational AI Agent. You are doing much more than that. You are actually designing a (software) space within which an AI-powered agent _and_ a user will _enter_ to interact by exchanging messages, trying to co-operate and co-ordinate to solve a problem or enjoy a chat. &#x20;
-
-This distinction may sound philosophical but it is crucial. You cannot design for something if you don't have access to all the elements that make up that design. In this case those elements are:
-
-1. The possible behavior, language and actions that the AI agent will use
-2. The possible behavior, lanaguage and actions that the human user of the agent will use
-3. The rules of the overall space that govern the interaction and dictate how language should be interpreted and when certain rules should be applied. &#x20;
+A conversation design needs to be able to manipulate and reason about all of these elements within a Conversational AI framework so as to be able design for the right outcomes.&#x20;
 
 The OpenDialog approach directly supports you in designing across these elements and combining them in a number of different ways.&#x20;
 
-Let's see what this means in practice.&#x20;
+<figure><img src="../../.gitbook/assets/3A (1).png" alt=""><figcaption><p>High-level view of the OpenDialog Framework</p></figcaption></figure>
+
+The diagram below illustrates the key components at a high-level. When user input comes in we classify it (through Semantic Classifiers) in order to have an understanding of what the user is trying to say and then we contextualise it based on the state of the overall business process we are support, the specific type of conversation we are having and what we know abot the user. We can then reason about where the conversation should transition next before we go ahead and generate a response for the user. This reasoning cycle is illustrated below.
+
+<figure><img src="../../.gitbook/assets/5B.png" alt=""><figcaption><p>The OpenDialog Reasoning Cycle</p></figcaption></figure>
+
+This functionality is support by the OpenDialog AI Agent Orchestration Layer in combination with the OpenDialog Conversation Framework.
 
 ## The OpenDialog Conversation Framework
 

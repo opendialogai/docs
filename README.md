@@ -1,10 +1,10 @@
 # Getting Started
 
-<figure><img src=".gitbook/assets/1270x760 - Image (20).png" alt="The Open dialog conversation engine displaying features available to build robust conversations"><figcaption><p>OpenDialog: AI Agent and Co-pilot Design and Management Platform</p></figcaption></figure>
+<figure><img src=".gitbook/assets/1270x760 - Image (20).png" alt="The Open dialog conversation engine displaying features available to build robust conversations"><figcaption><p>OpenDialog: AI Agent Management System</p></figcaption></figure>
 
 ### Welcome 👋
 
-> OpenDialog is a no-code platform with a unique methodology for designing, maintaining and scaling enterprise-grade conversational AI Agents and Co-Pilots quickly and safely.
+> OpenDialog is a no-code AI Agent Management System with a unique methodology for designing, maintaining and scaling enterprise-grade conversational AI Agents and Co-Pilots quickly and safely.
 
 From chatbots that answer questions using your own documents to powerful AI agents that integrate with your systems and execute complex tasks, OpenDialog enables you to get started quickly, scale effectively and maintain apps reliably over time.&#x20;
 
