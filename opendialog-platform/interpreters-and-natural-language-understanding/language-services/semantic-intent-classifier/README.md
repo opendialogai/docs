@@ -7,12 +7,6 @@ description: >-
 
 # Semantic Intent Classifier
 
-{% hint style="info" %}
-The Semantic Intent Classifier feature is currently in BETA. &#x20;
-
-Please reach out to [support@opendialog.ai](mailto:) for early access.
-{% endhint %}
-
 Interpreting a user's utterance is an important part of conversation design. It ensures your bot can understand what a user has said in natural language, understand whether it is a question about 'Policy' or 'Making a claim', and accurately match an intent. Conversations are non-linear and context-driven, meaning effective intent management and matching is integral to great conversation design.&#x20;
 
 [Try the OpenDialog digital concierge](https://opendialog.ai/opendialog-digital-concierge/)

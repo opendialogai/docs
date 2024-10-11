@@ -6,6 +6,73 @@ description: >-
 
 # Release Notes
 
+## September 2024
+
+Significant milestone in OpenDIalog which brings you even more powerful way of building conversational applications!
+
+#### <mark style="color:purple;">New Features</mark>
+
+**Semantic Intent Classifier**
+
+Remember our intent classifiers? Imagine a world when you can define simple list of your intents with few words of description what this about and thats it. No example phrases, nothing, any semantically matching user utterances will be classified as you want. Guess what? We did it! With our brand new semantic classifier you can do just this - specify list of intents, give it a description, choose an LLM engine which will be used to perform classification and use it in your scenario.
+
+For more details check out documentation [here](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier).
+
+**RAG services**
+
+We now have our very own support for Retrieval-Augmented Generation (RAG) which gives you ability to generate contextually relevant responses, based on a semantic search over a vectorised knowledge base. You can now use _your_ data to feed into your bots and use this knowledge to drive conversations. Want your users to be able to ask questions about where to find parking spot at your facility? No problem. You have complicated policy document and you want your bot to talk about its content? It's as easy for us as ABC. With our RAG service you can use any custom URL, pdf, csv, docx. xlsx or just simply drop us a text and we'll figure it out.
+
+More in our docs [here](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation).
+
+#### <mark style="color:purple;">Improvements</mark>
+
+Don't forget to regularly brush your teeth, clean your desk and fix any bugs you find on your way of building excellent product. We did our homework. Did you?
+
+* Fixed issue with processing composite JSON object an output attribute from wehbook action
+* Fixed unexpected behaviour when no-matching / escalation
+* Fixed override input field in new webchat causes blocking error
+* Remove character limit for webhook action URL
+* Removed ability to create outdated interpreters such as LUIS, QnA and RASA. Existing scenarios which uses them will still work
+* Added soft wrap for long component names
+* Fixed stretched cards on dashbaord
+* Added new "step" property yo number input
+* Added ability to map attributes from another attributes in "Set Attributes" action
+
+## August 2024
+
+#### <mark style="color:purple;">New Features</mark>
+
+We've been working hard to bring to you exciting new way to interact with LLMs what we call [LLM Actions](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions)! It's like a usual action which you can attach to an intent but which will leverage LLM to perform a task which you desire. Give it a system prompt, specify output attributes, configure moderation - with all of that you can make bot respond with dynamic messages, extract specific information from user utterance, format request to upstream webhook and much more. Check out documentation for detailed usage.
+
+#### <mark style="color:purple;">Improvements</mark>
+
+We didn't forget to do some housekeeping in our product so few fixes in place such as:
+
+* Fixed akward minimize/maximize webchat behaviour
+* Fixed download chat link with iphone not working
+* Fixed lower options are hidden in dropdown menu
+* New gpt-4o-mini model support
+
+## July 2024
+
+We've been busy with tiding up our product and making a lot of improvements and bugfixes including:
+
+* Fix for message history is not consistently ordered
+* Allow free input for standart autocomplete
+* Support for cancel functionality for different message types
+
+And much more  :tada:
+
+## June 2024
+
+#### <mark style="color:purple;">New Features</mark>
+
+* Added [address autocomplete](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message) message
+* Added [new location attribute](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/about-attributes#location-attribute)
+* Added support for GPT-4o model
+
+Plus various bugfixes and improvements :tada:
+
 ## May 2024
 
 #### <mark style="color:purple;">New Features</mark>
