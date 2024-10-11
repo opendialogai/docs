@@ -8,7 +8,7 @@ description: >-
 
 ## September 2024
 
-Significant milestone in OpenDialog bringing you an even more powerful way of building conversational applications!
+A significant milestone in OpenDialog's evolution, bringing you an even more powerful way of building AI Agents!
 
 #### <mark style="color:purple;">New Features</mark>
 
