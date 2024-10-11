@@ -8,45 +8,45 @@ description: >-
 
 ## September 2024
 
-Significant milestone in OpenDIalog which brings you even more powerful way of building conversational applications!
+Significant milestone in OpenDialog bringing you an even more powerful way of building conversational applications!
 
 #### <mark style="color:purple;">New Features</mark>
 
-**Semantic Intent Classifier**
+<mark style="color:blue;">**Semantic Intent Classifier**</mark>
 
-Remember our intent classifiers? Imagine a world when you can define simple list of your intents with few words of description what this about and thats it. No example phrases, nothing, any semantically matching user utterances will be classified as you want. Guess what? We did it! With our brand new semantic classifier you can do just this - specify list of intents, give it a description, choose an LLM engine which will be used to perform classification and use it in your scenario.
+Remember our intent classifiers? Imagine a world where you can define a simple list of  intents and a short description for each, and thats it. No example phrases, nothing! Any semantically matching user utterances will be classified as you want. Guess what? We did it! With our brand new semantic classifier you can do just this - specify an intent name, give it a description, choose an LLM engine which will be used to perform classification and use it in your scenario.
 
-For more details check out documentation [here](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier).
+For more details check out our documentation [here](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier).
 
-**RAG services**
+<mark style="color:blue;">**RAG services**</mark>
 
-We now have our very own support for Retrieval-Augmented Generation (RAG) which gives you ability to generate contextually relevant responses, based on a semantic search over a vectorised knowledge base. You can now use _your_ data to feed into your bots and use this knowledge to drive conversations. Want your users to be able to ask questions about where to find parking spot at your facility? No problem. You have complicated policy document and you want your bot to talk about its content? It's as easy for us as ABC. With our RAG service you can use any custom URL, pdf, csv, docx. xlsx or just simply drop us a text and we'll figure it out.
+We now have our very own support for Retrieval-Augmented Generation (RAG) which gives you the ability to generate contextually relevant responses, based on a semantic search over a vectorised knowledge base. You can now use _your_ data to feed into your AI agents and use this knowledge to drive conversations. Want your users to be able to ask questions about where to find a parking spot at your facility? No problem. You have complicated policy document and you want your AI agent to answer questions about its content? In OpenDialog, it has become as easy as ABC. With our RAG service you can use any custom URL, pdf, .csv, docx. xlsx file or just simply drop raw text and our RAG service will take it from there.
 
 More in our docs [here](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation).
 
 #### <mark style="color:purple;">Improvements</mark>
 
-Don't forget to regularly brush your teeth, clean your desk and fix any bugs you find on your way of building excellent product. We did our homework. Did you?
-
 * Fixed issue with processing composite JSON object an output attribute from wehbook action
 * Fixed unexpected behaviour when no-matching / escalation
 * Fixed override input field in new webchat causes blocking error
-* Remove character limit for webhook action URL
+* Removed character limit for webhook action URL
 * Removed ability to create outdated interpreters such as LUIS, QnA and RASA. Existing scenarios which uses them will still work
 * Added soft wrap for long component names
 * Fixed stretched cards on dashbaord
-* Added new "step" property yo number input
+* Added new "step" property to number input
 * Added ability to map attributes from another attributes in "Set Attributes" action
 
 ## August 2024
 
 #### <mark style="color:purple;">New Features</mark>
 
-We've been working hard to bring to you exciting new way to interact with LLMs what we call [LLM Actions](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions)! It's like a usual action which you can attach to an intent but which will leverage LLM to perform a task which you desire. Give it a system prompt, specify output attributes, configure moderation - with all of that you can make bot respond with dynamic messages, extract specific information from user utterance, format request to upstream webhook and much more. Check out documentation for detailed usage.
+<mark style="color:blue;">**LLM Actions**</mark>
+
+We've been working hard to bring  you an exciting new way to interact with LLMs, called [LLM Actions](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions)! It's like a usual action which you can attach to an intent but which will leverage LLMs to perform a task. Give it a system prompt, specify output attributes, configure moderation - and make your AI agent respond with dynamic messages, extract specific information from user utterance, format request to upstream webhook and much more. Check out [documentation](../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/) for detailed usage.
 
 #### <mark style="color:purple;">Improvements</mark>
 
-We didn't forget to do some housekeeping in our product so few fixes in place such as:
+We didn't forget to do some housekeeping in our product so we did a few fixes, such as:
 
 * Fixed akward minimize/maximize webchat behaviour
 * Fixed download chat link with iphone not working
@@ -55,7 +55,7 @@ We didn't forget to do some housekeeping in our product so few fixes in place su
 
 ## July 2024
 
-We've been busy with tiding up our product and making a lot of improvements and bugfixes including:
+We've been busy  tidying up our product and making a lot of improvements and bugfixes, including:
 
 * Fix for message history is not consistently ordered
 * Allow free input for standart autocomplete
