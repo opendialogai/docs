@@ -10,7 +10,7 @@ A conversation design needs to be able to manipulate and reason about all of the
 
 The OpenDialog approach directly supports you in designing across these elements and combining them in a number of different ways.&#x20;
 
-<figure><img src="../../.gitbook/assets/3A (1).png" alt=""><figcaption><p>High-level view of the OpenDialog Framework</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/3B.png" alt=""><figcaption><p>High-level overview of the OpenDialog Framework</p></figcaption></figure>
 
 The diagram below illustrates the key components at a high-level. When user input comes in we classify it (through Semantic Classifiers) in order to have an understanding of what the user is trying to say and then we contextualise it based on the state of the overall business process we are support, the specific type of conversation we are having and what we know abot the user. We can then reason about where the conversation should transition next before we go ahead and generate a response for the user. This reasoning cycle is illustrated below.
 
