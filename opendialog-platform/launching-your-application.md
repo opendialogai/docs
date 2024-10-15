@@ -56,3 +56,45 @@ Once an Alias is created it appears in the Alias tab of the workspace. To edit, 
 
 The only part of an Alias that can be changed is the scenario it links to. The name cannot be changed, and the embedded webchat code will not be changed when the scenario is changed.
 
+## Session expiry in WebChat
+
+**Session Expiry** is the time after which the session will expire after there is no activity with the WebChat application. This is a security feature that is used to prevent unauthorized access to the system. The session expiry time can be set by the system administrator and/or scenario designer and can be changed as per the requirement.
+
+### How it works
+
+After user inactivity larger than the WebChat application session expiry time, the session will expire. Any interaction with the chatbot after that will continue the conversation to an intent called **intent.core.sessionExpired**. This intent can be used to handle the session expiry event and conversation can be continued from there, as the designer see fit.
+
+The default WebChat scenario has a default implementation of the **intent.core.sessionExpired** intent, which will end the conversation with a message to the user that the session has expired. The session expiry message has an option to restart conversation by default. Designer can change this behavior as per the requirement.
+
+On older scenarios, where the **intent.core.sessionExpired** intent is not present, and you set the expiry time, the conversation will fall back to **No Match** Intent. So, if you set the session expiry time, it is recommended to add the **intent.core.sessionExpired** intent to your scenario to handle the session expiry event.
+
+If the session expiry time is not set, or it's value is set to **0** the session will not expire and the conversation will continue as normal.
+
+The session expiry is handled in an escalating way meaning that it can be caught at various levels of the scenario in the same way as **No Match** and **Restart** intents are. The supported intents are:
+
+* **intent.core.TurnSessionExpired**
+* **intent.core.SceneSessionExpired**
+* **intent.core.ConversationSessionExpired**
+
+### How to set the session expiry time
+
+The session expiry time is controlled by an attribute called **session\_lifetime**. Its value is in seconds, where **0** means no expiry. Absence of this attribute also means no expiry of the session.
+
+This attribute is added in the embed code of the WebChat application. By default, this is set to **0**.
+
+Here's an example of the embed code:
+
+```javascript
+<script>
+  window.openDialogSettings = {
+    url: 'https://brian-may.cloud.opendialog.ai',
+    user: {
+      custom: {
+        selected_scenario: '0x420',
+        session_lifetime: 0
+      }
+    },
+    parentEl: "#chatbot"
+  };
+</script>
+```
