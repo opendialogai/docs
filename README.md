@@ -4,7 +4,7 @@
 
 ### Welcome 👋
 
-> OpenDialog is a no-code AI Agent Management System with a unique methodology for designing, maintaining and scaling enterprise-grade conversational AI Agents and Co-Pilots quickly and safely.
+> OpenDialog is a no-code AI Agent Management System with a unique methodology for designing, maintaining and scaling enterprise-grade conversational AI Agents quickly and safely.
 
 From chatbots that answer questions using your own documents to powerful AI agents that integrate with your systems and execute complex tasks, OpenDialog enables you to get started quickly, scale effectively and maintain apps reliably over time.&#x20;
 
