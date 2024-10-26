@@ -1,6 +1,10 @@
 # Webhook actions
 
-The webhook action allows you to send and receive data from an external service via a HTTP POST request to a provided webhook URL. For some more details around the data structures you can use please see the [Integrating with OpenDialog](../../developing-with-opendialog/introduction.md) section.&#x20;
+The webhook action allows you to send and receive data from an external service via a HTTP POST request to a provided webhook URL.&#x20;
+
+{% hint style="info" %}
+For some more details around the data structures you can use please see the [Integrating with OpenDialog](../../developing-with-opendialog/introduction.md) section.&#x20;
+{% endhint %}
 
 Once you have a service that provides the desired functionality, you'll want to create a new webhook by following the action creation steps and set the action's URL to be the URL of your service.
 
@@ -14,38 +18,83 @@ This could be used to send authorization tokens and other custom headers as requ
 
 ### Mocking a webhook
 
-If you would like to test OpenDialog's webhook action functionality ahead of developing a webhook, you can generate a mocked webhook using a service such as [webhook.site](https://webhook.site). This will provide you with a webhook URL, the ability to see the inputs sent by OpenDialog, and the ability to set a static response to be returned to OpenDialog. This can be useful to understand how the input and output attributes of an action will fit in with your conversation flows.
+If you would like to test OpenDialog's webhook action functionality ahead of developing a webhook, you can generate a mocked webhook using a service such as [webhook.site](https://webhook.site) or Postman.&#x20;
 
-The following steps presume that you've created a mocked webhook on webhook.site, and that you are working with the default conversations provided when you create a new scenario, if this is not the case some steps may vary.&#x20;
+This will provide you with a webhook URL, the ability to see the inputs sent by OpenDialog, and the ability to set a static response to be returned to OpenDialog. This can be useful to understand how the input and output attributes of an action will fit in with your conversation flows.
+
+The following steps use an example we provide through Postman - available [here](https://www.postman.com/opendialogai/opendialog-s-public-workspace/request/48m0k3s/webhook-endpoint).&#x20;
 
 This example mocks a webhook action that takes input of a first & last name, and outputs a concatenated full name.
 
-First we'll need to visit [webhook.site](https://webhook.site) to create a new webhook for our action. We'll then need to set the static response by using the "Edit" option, and adding some JSON to the "Response body" field. The example below mocks a successful action that returns a `full_name` attribute, you can find [other examples](https://docs.opendialog.ai/developing-with-opendialog/actions/webhook-action#examples) in the developer documentation.
+First, let's create a test action in OpenDialog and set the webhook endpoint to point to our mocked webhook endpoint on Postman.
 
-![The required JSON for a successful webhook action that returns a full\_name attribute](../../.gitbook/assets/webhook-mock-response.png)
+The url we are using is `https://af7df53c-9871-40de-a454-31d5cf2d6237.mock.pstmn.io /your-webhook-endpoint`
 
-Once this is saved, you'll want to copy the webhook's URL (from the "Your unique URL" field) and set it as the URL for your webhook action in OpenDialog. You'll also want to specify any input and output attributes. For this example we'd have `first_name` & `last_name` as input attributes, and `full_name` as an output attribute.&#x20;
+<figure><img src="../../.gitbook/assets/image (535).png" alt=""><figcaption><p>A webhook action</p></figcaption></figure>
 
-![](<../../.gitbook/assets/image (276).png>)
+Now, we can set up the **input attributes.** This is the information we will be collecting from our scenario and sending to our webhook endpoint. In this case it will be the user's first and last name.&#x20;
 
-After creating the action, you need to make it active like this:
+{% hint style="info" %}
+In the **Headers** section you can setup and authentication token required and you can also send headers that include conversation attributes such as the user's ID.&#x20;
+{% endhint %}
 
-![](<../../.gitbook/assets/image (151).png>)
+<figure><img src="../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
 
-We then need to add it to the desired intent, along with desired context mappings for the input and output attributes. In this example we've added the action to the response intent of the "Welcome Turn". Our example uses the following context mappings:
+Ok, so we've setup a `first_name` and `last_name` as input attributes and indicated that we expect a `full_name` as an output attribute (i.e. the result of our action).&#x20;
 
-![Adding the mocked webhook action to the "Welcome Turn" repsonse intent](../../.gitbook/assets/actions-add-to-intent.png)
+{% hint style="info" %}
+The webhook action is _permissive_ in that it will accept input attributes that were not explicitly defined here and it will also show output attributes that were not explicitly defined. Output attributes will be stored by default in the user context. The main reason to define attributes is to provide clarity for what the expectations are and to be able to manipulate via the UI where attributes are stored (i.e. in which context).&#x20;
+{% endhint %}
 
-After your intent is saved, make sure that your scenario is activated. You can now visit the "Preview" page and try out your mocked webhook action. As we set two input attributes, we'll want to add mock values for them before OpenDialog performs the action.&#x20;
+Now, we can test our action by click on the Test Action Using JSON button.
 
-We can set attributes to the user context directly by using the "Set Custom Attributes" panel in the top right; in a real OpenDialog application perhaps these attributes would be collected from user input. In this example we'll want to set the `first_name` as 'John' and `last_name` as 'Smith'.
+<figure><img src="../../.gitbook/assets/image (537).png" alt=""><figcaption><p>Testing a webhook action</p></figcaption></figure>
 
-![Setting the input attribute values: first\_name = John, last\_name = Smith](../../.gitbook/assets/webhook-mock-inputs.png)
+We will get the preset response from the mock Postman server.&#x20;
 
-Once you have set these mock values, we need to match the intent that the action was added to. In this example we can do that by clicking the "OK" button on the first message from the application. When the next response is returned, you should notice that the user context attributes under "Context - User" will now contain `action_status: true` and `full_name: John Smith`.&#x20;
+Now, we can activate our action to make it available in a scenario.&#x20;
 
-This means that the mocked webhook action was performed. If you check your webhook.site page, you should be able to see the request that came from OpenDialog, including the two input attributes that were provided.
+<figure><img src="../../.gitbook/assets/image (538).png" alt="" width="375"><figcaption><p>Activating an action. </p></figcaption></figure>
 
-![](../../.gitbook/assets/webhook-mock-content.png)
+Finally, we can add the action to a specific intent so that it is run whenever that intent is selected.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (539).png" alt=""><figcaption><p>Adding an action to an intent. </p></figcaption></figure>
+
+In this case, I've added the action to the WelcomeResponse intent, so it will be executed whenever that intent is executed. You might notice in the screenshot that there is another action defined (Customise welcome message). You can run multiple actions on an intent and they will be executed in order.&#x20;
+
+Before testing it out let's setup the WelcomeResponse message to use the results of the Webhook test action. We will edit the message associated with this intent and use the user's full name in the message.
+
+1. Click on Edit Messages.
+
+<figure><img src="../../.gitbook/assets/image (540).png" alt=""><figcaption></figcaption></figure>
+
+2. Click on the WelcomeResponse edit button
+
+<figure><img src="../../.gitbook/assets/image (541).png" alt=""><figcaption></figcaption></figure>
+
+3. We are going to add a text block to our message that greets the user.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (542).png" alt=""><figcaption></figcaption></figure>
+
+4. Now if we visit the preview section we will see that we are extracting the information from the action and using it to greet the user.
+
+<figure><img src="../../.gitbook/assets/image (543).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Well done! You've created your first action using the Webhook action in OpenDialog.
+
+## Dealing with failed actions
+
+Actions can fail so we need to be able to check for that from our conversation design and deal with it appropriately.&#x20;
+
+Every action automatically generates a boolean attribute (true/false) based on the action name. For the example above that would be `webhook_test_action_success`
+
+We can see the value of this attribute in our user context.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (544).png" alt="" width="321"><figcaption></figcaption></figure>
+
+We can check for the value of this attribute in our conditions before we use the output of the attribute.&#x20;
+
+For example, we could have two messages one used when `webhook_test_action_success` is true and one for false.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (545).png" alt=""><figcaption></figcaption></figure>
+
