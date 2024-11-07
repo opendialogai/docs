@@ -89,7 +89,7 @@ Remember to use only one of the options to indicate range.&#x20;
   <no_past_dates>true</no_past_dates>
   <no_future_dates>false</no_future_dates>
   <max_date>today</max_date>
-  <min_date>20200101</min_date>
+  <min_date>2024-01-20</min_date>
   <attribute_name>date_attribute_name</attribute_name>
 </date-message>
 ```
@@ -107,7 +107,7 @@ For the **time picker**
   <no_past_dates>true</no_past_dates>
   <no_future_dates>false</no_future_dates>
   <max_date>today</max_date>
-  <min_date>20200101</min_date>
+  <min_date>2024-01-20</min_date>
   <attribute_name>date_attribute_name</attribute_name>
 </date-message>
 ```
@@ -123,7 +123,7 @@ For the **date & time** **picker**
   <no_past_dates>true</no_past_dates>
   <no_future_dates>false</no_future_dates>
   <max_date>today</max_date>
-  <min_date>20200101</min_date>
+  <min_date>2024-01-20</min_date>
   <attribute_name>date_attribute_name</attribute_name>
 </date-message>
 ```
@@ -139,7 +139,7 @@ For the **year picker**
   <no_past_dates>true</no_past_dates>
   <no_future_dates>false</no_future_dates>
   <max_date>today</max_date>
-  <min_date>20200101</min_date>
+  <min_date>2024-01-20</min_date>
   <attribute_name>date_attribute_name</attribute_name>
 </date-message>
 ```
@@ -155,7 +155,7 @@ For the **month and year picker**
   <no_past_dates>true</no_past_dates>
   <no_future_dates>false</no_future_dates>
   <max_date>today</max_date>
-  <min_date>20200101</min_date>
+  <min_date>2024-01-20</min_date>
   <attribute_name>date_attribute_name</attribute_name>
 </date-message>
 ```
