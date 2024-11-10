@@ -2,7 +2,7 @@
 
 Every LLM Action is logged and you can download those Logs directly from the action.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Aggregate and Detail LLM Action log data</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (530).png" alt=""><figcaption><p>Aggregate and Detail LLM Action log data</p></figcaption></figure>
 
 **Aggregate Log Data** will provide the following top level coutns
 

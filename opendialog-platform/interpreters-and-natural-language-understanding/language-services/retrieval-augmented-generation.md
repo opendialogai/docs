@@ -112,7 +112,7 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 * Click 'Create service' button to finish creating your service
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>RAG service setup page</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption><p>RAG service setup page</p></figcaption></figure>
 
 #### Advanced settings
 
@@ -138,7 +138,7 @@ Top K refers to the number of top results or items to retrieve during a search o
 
 Once you have created your [RAG ](retrieval-augmented-generation.md#rag)service setup, you will get taken to the [Topics](retrieval-augmented-generation.md#topics) page. This page will be empty when first creating your service. You can start setting up your topics, by clicking on the Add topic button in the top right corner of the middle panel of your screen.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Select the 'Add topic' button from the top right hand corner of your screen</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption><p>Select the 'Add topic' button from the top right hand corner of your screen</p></figcaption></figure>
 
 #### Setting up your topics
 
@@ -150,7 +150,7 @@ Once you have created your [RAG ](retrieval-augmented-generation.md#rag)service 
 * This will trigger the 'Add sources' section to appear
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Provide a name, description to your topic and create it by clicking on the create topic button</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption><p>Provide a name, description to your topic and create it by clicking on the create topic button</p></figcaption></figure>
 
 #### Adding topic sources
 

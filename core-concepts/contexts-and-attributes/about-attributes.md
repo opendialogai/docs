@@ -50,7 +50,7 @@ If an attribute type is not defined it will default to string.&#x20;
   * Example: Assume you have a collection of names called `FavouriteNames` .  The structure would be `["Asterix", "Obelix", "Getafix"]` and you can access them through `FavouriteNames[0]` which would return Asterix, etc.&#x20;
   *   In a message you could access it as shown below&#x20;
 
-      <figure><img src="../../.gitbook/assets/image (530).png" alt=""><figcaption><p>Using a collection attribute in messages</p></figcaption></figure>
+      <figure><img src="../../.gitbook/assets/image (530) (1).png" alt=""><figcaption><p>Using a collection attribute in messages</p></figcaption></figure>
 
 and this would provide the output&#x20;
 
