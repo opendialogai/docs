@@ -39,8 +39,11 @@ Fill in the template with the [properties](progress-bar-message.md#properties) o
 
 #### XML Snippet
 
+So, for example, the snippet below would show that the Claim Process is 10% complete.
+
 <pre><code>&#x3C;meta-message>
-  &#x3C;data name="progressPercentage">any%&#x3C;/data>
+  &#x3C;data name="progressPercent">10%&#x3C;/data>
+  &#x3C;data name="progressText">Claim Process Completion&#x3C;/data>
 <strong>&#x3C;/meta-message>
 </strong></code></pre>
 
