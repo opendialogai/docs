@@ -2,7 +2,16 @@
 
 ## GETTING STARTED <a href="#getting-started-1" id="getting-started-1"></a>
 
-* [Getting Started](README.md)
+* [Introduction](README.md)
+* [Quick Start AI Agents](getting-started-1/quick-start-ai-agents/README.md)
+  * [Quick Start AI Agent](getting-started-1/quick-start-ai-agents/quick-start-ai-agent.md)
+  * [The "Start from Scratch" AI Agent](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/README.md)
+    * [Chat Management Conversation](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation.md)
+    * [Welcome Conversation](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation.md)
+    * [Topic Conversation](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation.md)
+    * [Global No Match Conversation](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation.md)
+    * [Supporting LLM Actions](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions.md)
+    * [Semantic Classifier: Query Classifier](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier.md)
 
 ## CORE CONCEPTS
 
@@ -163,13 +172,6 @@
 * [Translating your application](translating-your-application.md)
 * [FAQ](faq.md)
 * [Troubleshooting and Common Problems](opendialog-platform/troubleshooting-and-common-problems.md)
-* [The "Start from Scratch" Scenario Explained](opendialog-platform/the-start-from-scratch-scenario-explained/README.md)
-  * [Chat Management Conversation](opendialog-platform/the-start-from-scratch-scenario-explained/chat-management-conversation.md)
-  * [Welcome Conversation](opendialog-platform/the-start-from-scratch-scenario-explained/welcome-conversation.md)
-  * [Topic Conversation](opendialog-platform/the-start-from-scratch-scenario-explained/topic-conversation.md)
-  * [Global No Match Conversation](opendialog-platform/the-start-from-scratch-scenario-explained/global-no-match-conversation.md)
-  * [Supporting LLM Actions](opendialog-platform/the-start-from-scratch-scenario-explained/supporting-llm-actions.md)
-  * [Semantic Classifier: Query Classifier](opendialog-platform/the-start-from-scratch-scenario-explained/semantic-classifier-query-classifier.md)
 
 ## Developing With OpenDialog
 

@@ -4,7 +4,7 @@ description: The Chat Management Conversation of the Start from Scratch Scenario
 
 # Chat Management Conversation
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="563"><figcaption></figcaption></figure>
 
 The Chat Management conversation is a _Starting_ conversation. It contains scenes, turn and intents that handle chat management functionality. The green dots on top of the Scenes indicate that all of these Scenes also have the _Starting_ behavior. Finally, the turns within the scenes are also _Starting_ turns.&#x20;
 
@@ -20,7 +20,7 @@ The struction of the Chat Management Conversation is as follows (Scene > Turn > 
 * **End Chat -** `intent.core.EndChat`: The intent that is triggered when a user chooses to end the chat from the webchat menu.&#x20;
 
 {% hint style="info" %}
-The structure of these intents _`intent.core.intentName`_ is [reserved](../../core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md#reserved-intent-names) to OpenDialog. The conversation engine treats these intents differently as they _escalate_ through the conversation. It means that you can _catch_ these intents at a local level (a specific turn or scene) before they _escalate_ to the global version (that for the Start from Scratch Scenario is available in Chat Management.&#x20;
+The structure of these intents _`intent.core.intentName`_ is [reserved](../../../core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md#reserved-intent-names) to OpenDialog. The conversation engine treats these intents differently as they _escalate_ through the conversation. It means that you can _catch_ these intents at a local level (a specific turn or scene) before they _escalate_ to the global version (that for the Start from Scratch Scenario is available in Chat Management.&#x20;
 {% endhint %}
 
 {% hint style="success" %}

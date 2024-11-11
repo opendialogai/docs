@@ -1,4 +1,4 @@
-# Getting Started
+# Introduction
 
 <figure><img src=".gitbook/assets/1270x760 - Image (20).png" alt="The Open dialog conversation engine displaying features available to build robust conversations"><figcaption><p>OpenDialog: AI Agent Management System</p></figcaption></figure>
 
@@ -27,9 +27,11 @@ From chatbots that answer questions using your own documents to powerful AI agen
 
 We are constantly improving the OpenDialog product and finding new ways to transform the power of Generative AI into useful conversational experiences.  Check out our [**release notes**](release-notes/release-notes.md) for the latest updates.
 
-### Get in touch!
+### Get Started
 
-_If you have any questions or would like to talk to the OpenDialog team about your GenAI-powered application contact us at support@opendialog.ai._
+_We have laaunched an AI Accelerator Program to help individuals and teams get started quickly with OpenDialog and get all the expert support they need._&#x20;
+
+_Visit_ [_https://opendialog.ai/opendialog-ai-accelerator-program/_](https://opendialog.ai/opendialog-ai-accelerator-program/) _to apply!_
 
 ## OpenDialog Features
 

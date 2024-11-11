@@ -6,7 +6,7 @@ description: The LLM Actions used by the "Start from Scratch" scenario
 
 To support fluid conversation exchange the "Start from Scratch" scenario uses a number of LLM Actions that can form a solid basis / template for your own LLM Actions.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-11-09 at 18.43.42.png" alt=""><figcaption><p>LLM Actions of the "Start from Scratch" scenario</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2024-11-09 at 18.43.42.png" alt=""><figcaption><p>LLM Actions of the "Start from Scratch" scenario</p></figcaption></figure>
 
 ## No Match Response Generation
 
