@@ -51,3 +51,10 @@ As you can see from the image above the entry point to the scenari is Chat Manag
 [global-no-match-conversation.md](global-no-match-conversation.md)
 {% endcontent-ref %}
 
+{% content-ref url="supporting-llm-actions.md" %}
+[supporting-llm-actions.md](supporting-llm-actions.md)
+{% endcontent-ref %}
+
+{% content-ref url="semantic-classifier-query-classifier.md" %}
+[semantic-classifier-query-classifier.md](semantic-classifier-query-classifier.md)
+{% endcontent-ref %}
