@@ -6,13 +6,19 @@ description: The OpenDialog Quick Start AI Agent
 
 The Quick Start AI Agent is an optimised journey that really simplifies the process of creating an AI Agent. It is the fastest way to get up and running with OpenDialog.&#x20;
 
-You can fire up the Quick Start AI Agent process by visiting Create Scenario and then click on "Get Started Now"
+
+
+{% embed url="https://youtu.be/3AhhuMZaP6M" %}
+
+You will get taken to the Quick Start AI Agent process when you first login to OpenDialog or you can fire it up the  by visiting Create Scenario and then click on "Get Started Now"
 
 <figure><img src="../../.gitbook/assets/image (547).png" alt=""><figcaption><p>Create Scenario Link</p></figcaption></figure>
 
 The guide will take you through 3 quick steps and in a couple of minutes you will have a fully fledged conversational AI Agent to experiment with.&#x20;
 
 Behind the scenes OpenDialog configures a complete AI Agent scenario that you can use as a starting point for your agents.&#x20;
+
+
 
 
 
@@ -47,3 +53,9 @@ With that in place you can hit vectorise and your AI Agent will be created
 By clicking on preview you will be directed to your AI Agent and you can test it out
 
 <figure><img src="../../.gitbook/assets/test-agent.png" alt=""><figcaption><p>Quick Start AI Agent - Ready to be Tested!</p></figcaption></figure>
+
+{% hint style="info" %}
+**Want to take it a step further?**
+
+Make sure to check out the video where we walk you through the process of adding additional topics of discussion to your initial setup.
+{% endhint %}

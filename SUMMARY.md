@@ -3,6 +3,7 @@
 ## GETTING STARTED <a href="#getting-started-1" id="getting-started-1"></a>
 
 * [Introduction](README.md)
+* [Getting ready](getting-started-1/getting-ready.md)
 * [Quick Start AI Agents](getting-started-1/quick-start-ai-agents/README.md)
   * [Quick Start AI Agent](getting-started-1/quick-start-ai-agents/quick-start-ai-agent.md)
   * [The "Start from Scratch" AI Agent](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/README.md)
@@ -12,6 +13,12 @@
     * [Global No Match Conversation](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation.md)
     * [Supporting LLM Actions](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions.md)
     * [Semantic Classifier: Query Classifier](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier.md)
+
+## TUTORIALS
+
+* [Adding a new topic of discussion](tutorials/readme.md)
+* [Using knowledge sources via RAG](tutorials/using-knowledge-sources-via-rag.md)
+* [Adding a structured conversation](tutorials/adding-a-structured-conversation.md)
 
 ## CORE CONCEPTS
 
