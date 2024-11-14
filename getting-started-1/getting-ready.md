@@ -46,7 +46,7 @@ Where will the AI agent retrieve the majority of its information? It could be an
 With these details in hand, you’re ready to create a safe, responsive AI agent that delivers immediate value to your users.
 
 {% hint style="info" %}
-Not quite sure about what you want to build?
+**Not quite sure about what you want to build?**
 
 You can use our example use case in the product: an AI Agent that answers questions about the moon.
 {% endhint %}
