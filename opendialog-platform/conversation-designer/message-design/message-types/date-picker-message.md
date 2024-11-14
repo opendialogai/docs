@@ -54,23 +54,23 @@ Other examples on when to use this message type include booking reservations, se
 
 ## How to create a date picker message
 
-### Via the custom message in Message Editor
+Date picker messages are set up by following two steps:
 
-Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Copy the [XML snippet](date-picker-message.md#xml-snippet) at the bottom of this page into the black box and your chat message will appear in the Preview panel.&#x20;
+1. Creating a date picker message on an application intent
+2. Setting up the corresponding user intent to move the conversation forward
 
-Fill in the template with the [properties](date-picker-message.md#properties) of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
+### 1. Creating a date picker message on an application intent
 
 <figure><img src="../../../../.gitbook/assets/Group 8 (1).png" alt=""><figcaption><p>How to create a date picker message in the custom message block</p></figcaption></figure>
 
 {% hint style="success" %}
-* Open your OpenDialog application
-* Select the Scenario that you wish to edit
-* Select Design from the left hand panel and select Messages
-* Go into the message that you want to add a message block to
-* Add a 'Custom Message' block
+* In your scenario management, navigate to the application intent you wish to create the date picker message for.
+* In the yellow right-hand settings panel, view its basic settings.
+* Click on the 'Edit Messages' button in the Design from the right hand panel and select Messages
+* Go into the message that you want to add a message block to by clicking on its Edit icon (notebook with a pencil)
+* Select add a 'Custom Message' block
 * Select 'Date Picker' from the drop down
-* Add in your own text to the fields you want to customise
-* To preview your message, go to the Preview section
+* Update the XML to the [XML format](date-picker-message.md#xml-snippet) you need for your use case
 {% endhint %}
 
 {% hint style="warning" %}
@@ -185,13 +185,22 @@ To indicate range, use either `<no_past_dates>` and `<no_future_dates>` or `<min
 
 `<attribute_name>` defines the attribute to which the chosen date is stored.
 
-## How to use a date picker message
+### 2. Setting up the corresponding user intent
 
-{% embed url="https://www.loom.com/share/53d8e69063d0411097b1d69c7e2fd71c?sid=b1533127-c688-4c93-ac8a-43003caccaa5" %}
-Video demonstration on how to use the date picker feature within OpenDialog
-{% endembed %}
+In your XML you have set a callback parameter which defines the user intent to be triggered.  This means that when the user will click on the 'Submit' button (button text defined in the \<submit\_text> parameter), the conversation engine will look for this callback intent in your conversation design setup.
+
+To set this up, follow these steps:
 
 {% hint style="success" %}
+* In your scenario management, navigate to the scene of the application intent that you set the date picker message on.
+* <mark style="color:red;">**Set the Priority Interpreter to 'OpenDialog' - Do not forget!**</mark>
+* Create a 'Continue' Turn
+* Create a user intent corresponding to the callback from your XML snippet (by default this is 'Continue')
+* Set the interpreter to Default so that it will pick up on the OpenDialog interpreter you set on the Scene level.
+* From here, either set up a corresponding application response intent for your confirmation message or transition to a different part of the convrsation via a transition.
+{% endhint %}
+
+{% hint style="warning" %}
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
 {% endhint %}
 
