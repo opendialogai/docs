@@ -6,6 +6,41 @@ description: >-
 
 # Release Notes
 
+## October 2024
+
+This month, we've got a LOT for you! Both things that please the eye and improve the quality of life on our platform!
+
+#### <mark style="color:purple;">New Features</mark>
+
+<mark style="color:blue;">**New designs for login and registration screens**</mark>
+
+We've got a much better and slicker design for some of our pages, such as Login, Registration, and Reset Password.&#x20;
+
+<mark style="color:blue;">**New sidebar**</mark>
+
+Our new navigation pattern makes it easier for you to navigate the platform and accomplish your tasks more quickly. We've also uncovered some hidden gems like user management and attribute dashboard in case you knew it was there but were going to them via direct URL 👀
+
+<mark style="color:blue;">**New way of creating scenarios**</mark>
+
+Say goodbye to the snake animation (my favorite) on the scenario creation screen and behold a brand new one with an updated "Start from scratch" template, the ability to import scenarios, and visual updates to this one
+
+#### <mark style="color:purple;">Improvements</mark>
+
+So many improvements await you in this release, worth highlighting these ones:
+
+* Allowed for different date/time formats via attribute filters.
+* Updated the interface settings page to the latest relevant state.
+* Added a setting in URL-source vectorization to omit HTML tags.
+* New pop-up for prompt editing.
+* Fixed the preview dropdown z-index.
+* Fixed the "add scene/turn" button always showing the wrong sidebar on the first click.
+* Fixed LLM Action output attributes not enforcing unique attribute names.
+* Fixed the Card component being cut in half when the screen resolution is low.
+* Fixed Activation toggles sitting outside of the Card component in LLM Actions.
+* Fixed the confirmation popup when deleting an action.
+* Activation toggles are now on by default on all system components.
+* Unified the behavior of description fields.
+
 ## September 2024
 
 A significant milestone in OpenDialog's evolution, bringing you an even more powerful way of building AI Agents!
