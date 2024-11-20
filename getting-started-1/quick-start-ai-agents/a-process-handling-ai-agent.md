@@ -14,6 +14,12 @@ Conversational AI Agents typically need to support three modes of interaction
 
 The [Quick Start AI agent](quick-start-ai-agent.md) and the [Start from Scratch AI Agent](the-start-from-scratch-ai-agent/) are both focussed on handling questions on a wide range of topics. Here we delve into the second aspect, which is handling processes and look at how it can be combined with the question-answering.
 
+{% hint style="info" %}
+**Template available**&#x20;
+
+To get started with the Process Handling Agent in OpenDialog visit the "Create a new scenario" page and select the Process AI Agent template.
+{% endhint %}
+
 ## What's special about processes?
 
 Handling processes needs specific attention because they have a well defined series of steps (and sequence) and a well-defined end goal. For example, if we need to collect a few different pieces of information in order to finalise an appointment booking for a user we cannot achieve that final goal until all the pieces of information are collected (just as would happen in the real world).&#x20;
