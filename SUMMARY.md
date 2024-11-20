@@ -13,6 +13,7 @@
     * [Global No Match Conversation](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation.md)
     * [Supporting LLM Actions](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions.md)
     * [Semantic Classifier: Query Classifier](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier.md)
+  * [A Process Handling AI Agent](getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent.md)
 
 ## TUTORIALS
 
