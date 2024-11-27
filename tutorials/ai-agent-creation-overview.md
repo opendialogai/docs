@@ -49,7 +49,7 @@ Add a knowledge source & use it in your conversation design
 {% endstep %}
 
 {% step %}
-### [Add a structured process conversation](adding-a-structured-conversation.md)
+### [Add a structured process conversation](../getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent.md)
 
 Handling processes needs specific attention because they have a well defined series of steps (and sequence) and a well-defined end goal.
 
