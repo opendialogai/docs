@@ -6,10 +6,6 @@ description: The OpenDialog Quick Start AI Agent
 
 The Quick Start AI Agent is an optimised journey that really simplifies the process of creating an AI Agent. It is the fastest way to get up and running with OpenDialog.&#x20;
 
-
-
-{% embed url="https://youtu.be/3AhhuMZaP6M" %}
-
 You will get taken to the Quick Start AI Agent process when you first login to OpenDialog or you can fire it up the  by visiting Create Scenario and then click on "Get Started Now"
 
 <figure><img src="../../.gitbook/assets/image (547).png" alt=""><figcaption><p>Create Scenario Link</p></figcaption></figure>
@@ -18,11 +14,17 @@ The guide will take you through 3 quick steps and in a couple of minutes you wil
 
 Behind the scenes OpenDialog configures a complete AI Agent scenario that you can use as a starting point for your agents.&#x20;
 
+## See it in action
 
 
 
+{% embed url="https://youtu.be/RhUc_mgkNl8" %}
+Building a Quickstart AI Agent in no time!
+{% endembed %}
 
-## Step 1 - Provide a name
+## Step by step guide
+
+### Step 1 - Provide a name
 
 <figure><img src="../../.gitbook/assets/image (548).png" alt=""><figcaption><p>Step 1 - Quick Start AI Agent - Provide a name</p></figcaption></figure>
 
@@ -34,7 +36,7 @@ Behind the scenes OpenDialog configures a complete AI Agent scenario that you ca
 
 
 
-## Step 3 - Description and vectorisation
+### Step 3 - Description and vectorisation
 
 If you upload your own knowledge source you will be asked to provide a quick description&#x20;
 
@@ -48,7 +50,7 @@ With that in place you can hit vectorise and your AI Agent will be created
 
 
 
-## Test your AI Agent
+### Test your AI Agent
 
 By clicking on preview you will be directed to your AI Agent and you can test it out
 
@@ -57,5 +59,5 @@ By clicking on preview you will be directed to your AI Agent and you can test it
 {% hint style="info" %}
 **Want to take it a step further?**
 
-Make sure to check out the video where we walk you through the process of adding additional topics of discussion to your initial setup.
+Make sure to check out the [video](../../tutorials/) where we walk you through the process of adding additional topics of discussion to your initial setup.
 {% endhint %}

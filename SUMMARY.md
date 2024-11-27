@@ -15,11 +15,15 @@
     * [Semantic Classifier: Query Classifier](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier.md)
   * [A Process Handling AI Agent](getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent.md)
 
-## TUTORIALS
+## STEP BY STEP GUIDES <a href="#tutorials" id="tutorials"></a>
 
+* [Creating an AI Agent](tutorials/creating-an-ai-agent.md)
 * [Adding a new topic of discussion](tutorials/readme.md)
 * [Using knowledge sources via RAG](tutorials/using-knowledge-sources-via-rag.md)
 * [Adding a structured conversation](tutorials/adding-a-structured-conversation.md)
+* [Add a 3rd party integration](tutorials/integrate.md)
+* [Test and tweak your AI Agent](tutorials/test-and-tweak-your-ai-agent.md)
+* [Publish your AI Agent](tutorials/publish-your-ai-agent.md)
 
 ## CORE CONCEPTS
 

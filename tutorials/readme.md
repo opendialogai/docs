@@ -1,7 +1,7 @@
 ---
 description: >-
-  Now that your AI agent is handling your primary topic effectively, it’s time
-  to expand its capabilities by introducing a new topic of discussion.
+  Let's expand  your AI Agent's capabilities by introducing a new topic of
+  discussion.
 ---
 
 # Adding a new topic of discussion
@@ -9,6 +9,8 @@ description: >-
 ## Introduction
 
 Adding new topics of discussion allows your AI agent to answer questions and engage in conversations beyond the initial scope, creating a more dynamic and comprehensive user experience. Let’s walk through the process of adding a new topic to your AI agent.
+
+This allows your AI agent to answer questions and engage in conversations beyond the initial scope, creating a more dynamic and comprehensive user experience. Let’s walk through the process of adding a new topic to your AI agent.
 
 So that an AI Agent can correctly handle a new topic of discussion, we must make sure that it is set up to :&#x20;
 
