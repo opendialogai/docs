@@ -5,7 +5,7 @@ description: >-
   integrations and more.
 ---
 
-# Creating an AI Agent
+# AI Agent Creation Overview
 
 Follow the steps in the video tutorials below to create your AI Agents one step at a time, or click the links to read through the detailed instructions of each section.
 
@@ -37,7 +37,7 @@ Add a new topic of discussion
 {% endstep %}
 
 {% step %}
-### [Add & use knowledge sources via RAG](using-knowledge-sources-via-rag.md)
+### [Add & use knowledge sources via RAG](use-knowledge-sources-via-rag.md)
 
 Now, we obviously want our AI Agent to provide more relevant and precise information to our users, using dynamic responses based on your own knowledge sources. &#x20;
 

@@ -17,9 +17,9 @@
 
 ## STEP BY STEP GUIDES <a href="#tutorials" id="tutorials"></a>
 
-* [Creating an AI Agent](tutorials/creating-an-ai-agent.md)
-* [Adding a new topic of discussion](tutorials/readme.md)
-* [Using knowledge sources via RAG](tutorials/using-knowledge-sources-via-rag.md)
+* [AI Agent Creation Overview](tutorials/ai-agent-creation-overview.md)
+* [Add a new topic of discussion](tutorials/readme.md)
+* [Use knowledge sources via RAG](tutorials/use-knowledge-sources-via-rag.md)
 * [Adding a structured conversation](tutorials/adding-a-structured-conversation.md)
 * [Add a 3rd party integration](tutorials/integrate.md)
 * [Test and tweak your AI Agent](tutorials/test-and-tweak-your-ai-agent.md)

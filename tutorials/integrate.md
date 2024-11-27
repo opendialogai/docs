@@ -71,7 +71,7 @@ In the **Headers** section you can setup and authentication token required and y
 
 ### Set up the input and output attributes
 
-N**ow, we can set up the input and output attributes we want to send and retrieve via our action.**&#x20;
+Now, we can set up the input and output attributes we want to send and retrieve via our action.&#x20;
 
 * **Input attributes** contain the information we will be collecting from our scenario and sending to our webhook endpoint.
 * **Output attributes** contain the information we get back as a result of the action being performed.
