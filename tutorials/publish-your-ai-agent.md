@@ -1,6 +1,109 @@
 ---
-hidden: true
+description: Ready to launch your AI Agent?
 ---
 
 # Publish your AI Agent
 
+## Introduction
+
+Now that you’ve built and refined your AI agent, it’s time to publish it on your website and let it engage with your users. OpenDialog makes this a simple two-step process using aliases, allowing you to easily manage and update your webchat without needing to change the underlying code.&#x20;
+
+Let’s walk through the steps to get your AI agent live.
+
+**Create an Alias and Generate Embed Code**
+
+In OpenDialog, an alias acts as a reference point for your WebChat widget. This alias allows you to link different scenarios to your WebChat widget without having to update your website code each time you want to switch or test a new scenario.
+
+## See it in action
+
+_Video coming soon_
+
+## Step by step guide
+
+### Create an Alias
+
+{% hint style="success" %}
+**Navigate to the Alias section**
+
+* In the left-hand navigation panel, select your workspace&#x20;
+* Hover over Scenarios and click on Aliases in the top section of the menu panel
+* View the aliases overview screen
+* Click on ‘Create new alias’
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/create_new_alias.png" alt=""><figcaption><p>Create a new alias by giving it a name and attributing a scenario</p></figcaption></figure>
+
+* Alias Name: This is a unique identifier that follows specific rules. The name must be all lowercase, spaces must be replaced with underscores (\_), and it can’t contain numbers, symbols, or uppercase letters.
+* Scenario: Select the scenario you want the alias to reference.
+
+{% hint style="success" %}
+**Creating an alias**
+
+* Name your alias&#x20;
+* Select the scenario you want this alias to reference from the dropdown
+* Click ‘Create Alias’ to generate the embed code
+* Copy the generated embed code using the Copy icon
+{% endhint %}
+
+The power of aliases allows you to easily update your WebChat without ever touching the code again.&#x20;
+
+Want to switch to a different conversation flow for an upcoming promotion? Simply remap the alias to a new scenario and your website will reflect the update instantly.
+
+### **Embed the WebChat Code in Your Website**
+
+The embed code is the key to getting your AI agent live. Simply embed this code within the body of your website’s HTML just before the closing \</body> tag to display the WebChat widget.
+
+If you don’t have access to the underlying code or admin of your website, you can send this embed code to someone in your organisation with the appropriate access.
+
+This will place the WebChat iFrame at the bottom of the page, after all the other content.&#x20;
+
+Here is an example of an HTML page including the webchat embed code:&#x20;
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My website</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Welcome to my site!</h1>
+    </div>
+    <script>
+      window.openDialogSettings = {
+        url: 'your_workspace_URL',
+        appKey: 'your_app_key',
+        user: {
+          custom: {
+            selected_scenario: 'your_scenario_id',
+            session_lifetime: 0
+          }
+        },
+        customSettings: {
+          
+          openCta: {
+            title: "Hello!👋 Chat with us!",
+            icon: "/images/cta-chat-open.svg",
+            borderRadius: "50px",
+            width: "280px",
+            height: "80px",
+            background: "#001abf",
+          },
+        },
+      };
+    </script>
+    <script src='https://[workspace_name].opendialog.ai/dist/nu-webchat-js'></script>
+  </body>
+</html>
+```
+
+Once your embed code is live on your site, you’re all set!&#x20;
+
+With these simple steps, your AI agent will be ready to engage your customers, and thanks to OpenDialog’s alias system, you can continue to experiment, iterate, and refine your bot’s performance effortlessly.
+
+{% hint style="info" %}
+Need more flexibility to customise webchat?  Check out  our [Webchat SDK ](../developing-with-opendialog/webchat/sdk/) documentation.
+{% endhint %}
