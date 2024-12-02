@@ -28,7 +28,7 @@ For some more details around the data structures you can use please see the [Int
 
 ## See it in action
 
-_Video coming soon_
+
 
 ## Step by step guide
 

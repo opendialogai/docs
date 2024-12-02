@@ -16,7 +16,11 @@ In OpenDialog, an alias acts as a reference point for your WebChat widget. This 
 
 ## See it in action
 
-_Video coming soon_
+{% embed url="https://youtu.be/CnL88dIvqQE?si=HXxwZWjhCD8RHY_b" %}
+Publishing an AI Agent
+{% endembed %}
+
+
 
 ## Step by step guide
 

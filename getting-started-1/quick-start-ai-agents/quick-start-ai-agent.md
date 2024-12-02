@@ -59,5 +59,5 @@ By clicking on preview you will be directed to your AI Agent and you can test it
 {% hint style="info" %}
 **Want to take it a step further?**
 
-Make sure to check out the [video](../../tutorials/) where we walk you through the process of adding additional topics of discussion to your initial setup.
+Make sure to check out our [tutorial videos](../../tutorials/ai-agent-creation-overview.md) where we walk you through the process of adding additional topics of discussion to your initial setup.
 {% endhint %}

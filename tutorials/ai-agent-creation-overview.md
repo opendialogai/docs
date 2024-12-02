@@ -7,7 +7,7 @@ description: >-
 
 # AI Agent Creation Overview
 
-Follow the steps in the video tutorials below to create your AI Agents one step at a time, or click the links to read through the detailed instructions of each section.
+Follow the steps in the video tutorials below to create your AI Agent one step at a time, or click the links to read through the detailed instructions of each section.
 
 {% stepper %}
 {% step %}
@@ -62,25 +62,30 @@ _Video coming soon_
 Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data to return to the conversation.&#x20;
 
 _Video coming soon_
-
-
 {% endstep %}
 
 {% step %}
-### Test and tweak your AI agent
+### [Test and tweak your AI agent](test-and-tweak-your-ai-agent.md)
 
-Your AI Agent is almost ready to launch! Before you publish it, let’s make sure it’s optimised for the best user experience. With OpenDialog’s Preview feature, you can test your AI Agent’s performance.
+Your AI Agent is almost ready to launch! Before you publish it, let’s make sure it’s optimised for the best user experience.&#x20;
 
 _Coming soon_
 {% endstep %}
 
 {% step %}
-### Publish your AI agent
+### [Publish your AI agent](publish-your-ai-agent.md)
 
 Ready to hit Publish? Amazing! Using OpenDialog's Alias feature, you can easily embed your AI Agent on your website or your application in no time and do A/B testing along the way thanks to it's flexible setup.
 
-\
-&#xNAN;_&#x43;oming soon_
+{% embed url="https://youtu.be/CnL88dIvqQE?si=MFun5aJuUWU5ozqr" %}
+Publish your AI Agent walkthrough
+{% endembed %}
+{% endstep %}
+
+{% step %}
+### Improve your AI Agent
+
+_Coming soon_
 {% endstep %}
 {% endstepper %}
 
