@@ -10,7 +10,9 @@ Clicking "Add new condition" opens the New Condition area.
 
 Conditions allow you to check values of attributes within contexts. The turn will be considered if the conditions are met.&#x20;
 
-Example: imagine that a number of questions are asked in sequence. Imagine that in question/turn 3 the user's age is asked. If the user is within a certain age bracket, an additional question is required. If they are not, that question can be skipped. In turn 3, an attribute is set with the age information. In the next turn, the condition checks that attribute value and decides to enter the turn or not. &#x20;
+Example: imagine that a number of questions are asked in sequence. Imagine that in question/turn 3 the user's age is asked. If the user is within a certain age bracket, an additional question is required. If they are not, that question can be skipped. In turn 3, an attribute is set with the age information. In the next turn, the condition checks that attribute value and decides to enter the turn or not.&#x20;
+
+[Learn more about conditions here.](../../contexts-and-attributes/conditions-and-operators.md)
 
 ## Intents in turns
 

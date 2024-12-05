@@ -15,3 +15,5 @@ Clicking "Add new condition" opens the New Condition area:
 Conditions allow you to check values of attributes within contexts. The conversation will be considered if the conditions are met.&#x20;
 
 Example: imagine you are building an ecommerce scenario and you have unregistered and registered users. Registered users may get welcomes with different options, e.g. maybe they are shown some deals that unregistered users won't see. It may well be helpful to set up a conversation where the condition is that the user is recognized as a registered user while there is another conversation for unregistered users.&#x20;
+
+[Learn more about conditions here.](../../contexts-and-attributes/conditions-and-operators.md)
