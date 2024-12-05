@@ -25,7 +25,7 @@ Using our interactive wait time indicator, will :
 * Provide agent ‘presence’ while the user is waiting
 * Improve interaction quality and trust in your AI Agent&#x20;
 
-Give it a try in your scenario's Interface Settings and immediately notice the difference between occupied and unoccupied time!
+Give it a try in your scenario's [Interface Settings](../opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings.md) and immediately notice the difference between occupied and unoccupied time!
 
 #### <mark style="color:purple;">New Features</mark>
 
