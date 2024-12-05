@@ -1,12 +1,12 @@
 # Conditions and operators
 
-Conditions are a way that attributes can be used to shape the flow of the conversation. These conditions are essentially asking a question. If the answer to that question is yes, then the message is eligible for use in the conversation. The various questions being asked are called Operators.&#x20;
+Conditions are a way that attributes can be used to shape the flow of the conversation. These conditions are essentially asking a question. If the answer to that question is yes, then the message is eligible for use in the conversation. The various questions being asked are called Operations.&#x20;
 
-## Available condition operators
+## Available operations on individual conditions
 
 <table data-view="cards" data-full-width="true"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>Is True</strong></td><td>Can be used with Boolean Attributes</td><td>Checks if Attribute value is equal to "True"</td></tr><tr><td><strong>Is False</strong></td><td>Can be used with Boolean Attributes</td><td>Checks if Attribute value is equal to "False"</td></tr><tr><td><strong>Equals</strong></td><td>Can be used with Integer, Float, and String Attributes</td><td>Checks if Attribute value is equal to a set value in the condition</td></tr><tr><td><strong>Not Equals</strong></td><td>Can be used with Integer, Float, and String Attributes</td><td>Checks if Attribute value is not equal to a set value in the condition</td></tr><tr><td><strong>Greater Than</strong></td><td>Can be used with any Attribute with a numerical value</td><td>Checks if Attribute value is greater than the set value in the condition</td></tr><tr><td><strong>Greater Than or Equal To</strong></td><td>Can be used with any Attribute with a numerical value. </td><td>Checks if Attribute value is greater than or equal to the set value in the condition</td></tr><tr><td><strong>Less Than</strong></td><td>Can be used with any Attribute with a numerical value</td><td>Checks if Attribute value is less than the set value in the condition</td></tr><tr><td><strong>Less Than or Equal To</strong></td><td>Can be used with any Attribute with a numerical value. </td><td>Checks if Attribute value is less than or equal to the set value in the condition</td></tr><tr><td><strong>Time Passed Equals</strong></td><td>Can be used with last_seen Attribute</td><td>Checks if last_seen Attribute is equal to the set value in the condition</td></tr><tr><td><strong>Time Passed Greater Than</strong></td><td>Can be used with last_seen Attribute</td><td>Checks if last_seen Attribute is greater than the set value in the condition</td></tr><tr><td><strong>Time Passed Less Than</strong></td><td>Can be used with last_seen Attribute</td><td>Checks if last_seen Attribute is less than the set value in the condition</td></tr><tr><td><strong>Is Not Set</strong></td><td>Can be used with any Attribute</td><td>Checks if the Attribute does not have a value set</td></tr><tr><td><strong>Is Set</strong></td><td>Can be used with any Attribute</td><td>Checks if the Attribute does have a value set</td></tr><tr><td><strong>Is Empty</strong></td><td>Can be used with any Attribute</td><td>Checks if the Attribute does not have a value</td></tr><tr><td><strong>Is Not Empty</strong></td><td>Can be used with any Attribute</td><td>Checks if the Attribute value does have a value</td></tr><tr><td><strong>In Set</strong></td><td>Can be used with String Attributes</td><td>Checks if the Attribute value includes the text value set in the condition</td></tr><tr><td><strong>Not In Set</strong></td><td>Can be used with String Attributes</td><td>Checks if the Attribute value does not include the text value set in the condition</td></tr><tr><td></td><td></td><td></td></tr></tbody></table>
 
-## Multiple conditions with operators
+## Operators to combine multiple conditions
 
 You can chain or group multiple conditions (two or more) together and apply them to any Conversation Object or Message Template, enabling validation through an operator. Currently, the supported operators for chaining conditions are **And** and **Or**.
 
@@ -28,3 +28,7 @@ The above also applies to Message Templates.\
 
 
 <figure><img src="../../.gitbook/assets/image (569).png" alt=""><figcaption><p>Message Template conditions OR operator</p></figcaption></figure>
+
+{% hint style="info" %}
+When adding more than two conditions, you will be asked to select an operator.  This operator will apply to all set conditions.  So, if you create 3 conditions, the AND  or OR operator will apply to all 3.
+{% endhint %}
