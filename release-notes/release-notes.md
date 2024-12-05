@@ -8,7 +8,24 @@ description: >-
 
 ## November 2024
 
-After all the significant changes we made in October, we've taken some time to further improve our existing features and improve usability across the platform.
+After all the significant changes we made in October, we've taken some time to further improve our existing features and improve usability across the platform, for you and your users.
+
+#### <mark style="color:purple;">Improved user experience</mark>
+
+Does it sometimes feel like it takes ages for the AI Agent to reply and you are worried that your users might feel something went wrong, or simply give up?  We've got you covered!
+
+**Introducing...OpenDialog's interactive wait time indicator.**
+
+<figure><img src="../.gitbook/assets/New waiting time (1).gif" alt=""><figcaption><p>OpenDialog's interactive wait time indicator</p></figcaption></figure>
+
+Using our interactive wait time indicator, will :
+
+* Keep users engaged without causing anxiety that something might be broken
+* Enhance the sense of immediacy of the AI Agent's reply
+* Provide agent ‘presence’ while the user is waiting
+* Improve interaction quality and trust in your AI Agent&#x20;
+
+Give it a try in your scenario's Interface Settings and immediately notice the difference between occupied and unoccupied time!
 
 #### <mark style="color:purple;">New Features</mark>
 
