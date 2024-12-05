@@ -37,6 +37,10 @@ We have made improvements to the navigation sidebar for   language services and 
 
 In the three-dot menu for any action, you can now find a new option to duplicate this action so you don't need to start from scratch every time.
 
+<mark style="color:blue;">**Condition Operators**</mark>
+
+So far, conditions in OpenDialog inherently were considered as using the 'AND' operator.  We have now added the possibility for you to combine conditions differently, by letting you choose the operator that controls them : AND or OR.
+
 #### <mark style="color:purple;">Improvements</mark>
 
 * Performance improvements for webchat
