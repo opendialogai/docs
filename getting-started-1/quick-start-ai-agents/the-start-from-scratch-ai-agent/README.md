@@ -8,11 +8,7 @@ This is a similar scenario to the one created by the [Quick Start AI Agent](../q
 
 You can create a start from scratch scenario by visiting the Create Scenario Page and selecting Start from Scratch.&#x20;
 
-<div align="left">
-
-<figure><img src="../../../.gitbook/assets/image (2).png" alt="" width="375"><figcaption><p>Create Scenario Link</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../../.gitbook/assets/image (2) (1).png" alt="" width="375"><figcaption><p>Create Scenario Link</p></figcaption></figure></div>
 
 <figure><img src="../../../.gitbook/assets/start-from-scratch-scenario.png" alt=""><figcaption><p>Start from Scratch Scenario</p></figcaption></figure>
 
@@ -20,7 +16,7 @@ You can create a start from scratch scenario by visiting the Create Scenario Pag
 
 
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>The Start From Scratch Conversations and Flows</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>The Start From Scratch Conversations and Flows</p></figcaption></figure>
 
 The "Start From Scratch" has four Conversations:&#x20;
 

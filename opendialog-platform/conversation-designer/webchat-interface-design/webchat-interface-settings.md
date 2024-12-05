@@ -18,17 +18,44 @@ The settings are broadly split into 4 settings that affect different elements wi
 
 ### General
 
-![The General settings](<../../../.gitbook/assets/image (419).png>)
+![The General settings](<../../../.gitbook/assets/Screenshot 2024-11-29 at 14.07.49.png>)
 
 Here you can configure some overall settings for the widget:
 
-**Header** - Control the chatbot logo and title that appear in the header. If no value is set, nothing is shown.
+**Header** - Control the chatbot logo that appear in the header. If no value is set, nothing is shown.
 
 **Chatbot** - Controls the global name and avatar used for the messages from the chatbot. The avatar can be turned off for individual messages in the message editor.
 
 **Messages** - Toggle whether the time of the message is shown underneath each message.
 
-**Typing Event** - The length of time (in milliseconds) that the typing indicator should be shown for each message.
+**Typing Event** - Controls behavior when bot "typing" a response. \
+\- _Timing_ configures the length of time (in milliseconds) that the typing indicator should be shown for each message.\
+\- You can control whether you want to show the typing indicator between each message block in the individual message toggling option _Hide Typing Indicator between messages_.\
+\- _Show the typing indicator on message send_ controls whether to show the typing indicator at all.\
+\- _Typing Indicator_ can be either "Animation", which will show three dancing dots (<img src="../../../.gitbook/assets/image (2).png" alt="" data-size="line">), or "Animation with feedback text", which will show spinning dots with feedback text (<img src="../../../.gitbook/assets/image (3).png" alt="" data-size="line">)
+
+You can configure the text and color of dots for "Animation with feedback text" in the embed code after you publish your scenario. Add the general key to your window.openDialogSettings object with the property typingIndicatorSettings. For this, you would need to specify:
+
+\- `color` - hex value for the desired color of spinning dots;\
+\- `texts` - array of strings containing phrases which will rotate with a 3-second interval. The last phrase will stay as long as it takes the bot to respond.
+
+```html
+<script>
+  window.openDialogSettings = {
+    url: 'https://....',
+    appKey: '.....',
+    general: {
+      typingIndicatorSettings: {
+        color: '#ffaa35',
+        texts: ['Thinking...', 'Collecting data...', 'Typing...']
+      }
+    },
+    ...
+  };
+</script>
+```
+
+
 
 **Chatbot Controls** - Controls whether various buttons are displayed on the chatbot. The download button allows the user to download a text copy of the chat log. [More info on restart and end chat can be found here](../conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end.md)&#x20;
 

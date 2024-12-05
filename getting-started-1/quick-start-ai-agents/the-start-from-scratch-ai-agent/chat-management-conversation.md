@@ -4,7 +4,7 @@ description: The Chat Management Conversation of the Start from Scratch Scenario
 
 # Chat Management Conversation
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 The Chat Management conversation is a _Starting_ conversation. It contains scenes, turn and intents that handle chat management functionality. The green dots on top of the Scenes indicate that all of these Scenes also have the _Starting_ behavior. Finally, the turns within the scenes are also _Starting_ turns.&#x20;
 

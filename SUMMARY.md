@@ -136,6 +136,7 @@
       * [File Upload Message](opendialog-platform/conversation-designer/message-design/message-types/file-upload-message.md)
       * [Meta Messages](opendialog-platform/conversation-designer/message-design/message-types/meta-messages/README.md)
         * [Progress Bar Message](opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message.md)
+      * [Attribute Message](opendialog-platform/conversation-designer/message-design/message-types/attribute-message.md)
   * [Webchat Interface design](opendialog-platform/conversation-designer/webchat-interface-design/README.md)
     * [Webchat Interface Settings](opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings.md)
     * [Webchat Controls](opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls.md)

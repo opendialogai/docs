@@ -6,6 +6,31 @@ description: >-
 
 # Release Notes
 
+## November 2024
+
+After all the significant changes we made in October, we've taken some time to further improve our existing features and improve usability across the platform.
+
+#### <mark style="color:purple;">New Features</mark>
+
+<mark style="color:blue;">**Improved indication in the navigation sidebar**</mark>
+
+We have made improvements to the navigation sidebar for   language services and workspaces, as well as indicative labels for the different language service types.
+
+<mark style="color:blue;">**Ability to duplicate actions**</mark>
+
+In the three-dot menu for any action, you can now find a new option to duplicate this action so you don't need to start from scratch every time.
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Performance improvements for webchat
+* Fixed date picker message broken in some cases
+* Improved messaging for when the vectorization queue is busy
+* Fixed appearance of the page with aliases
+* Ability to expand the semantic classifier prompt field
+* Fixed long strings breaking the formatting of a list message
+* Fixed data mismatch between the analysis page and API data export
+* Fixed embed code button visibility
+
 ## October 2024
 
 This month, we've got a LOT for you! Both things that please the eye and improve the quality of life on our platform!
