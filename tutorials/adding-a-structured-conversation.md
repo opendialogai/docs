@@ -1,11 +1,10 @@
 ---
 description: Let's add a structured conversation flow to your AI Agent.
-hidden: true
 ---
 
 # Adding a structured conversation
 
-Now that your AI Agent has become proficient at handling different topic of discussion, let's see how we can add a more structured type of conversation in the mix.
+Now that your AI Agent has become proficient at handling different topics of discussion, let's see how we can add a more structured type of conversation in the mix.
 
 {% hint style="info" %}
 For an AI Agent that is mainly focussed on process-handling, we recommend using the prebuilt [process-handling AI Agent](../getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent.md).
@@ -26,6 +25,15 @@ To do this, we will need to :&#x20;
 _Video coming soon_
 
 ## Step-by-step guide
+
+### What you need before you start building
+
+In order to make the best of adding a structured conversation to your AI Agent, we advise to have a good understanding of the process and its steps, before getting stuck in.
+
+**Ask yourself:**&#x20;
+
+* What is the process I am trying to design and what are it's steps?&#x20;
+* Is it a linear process or are there any forks in the road, that will require me to use conditions?
 
 ### Creating a dedicated conversation
 
