@@ -30,6 +30,10 @@ For some more details around the data structures you can use please see the [Int
 
 
 
+{% embed url="https://youtu.be/aseZ5oHG1IQ?si=nn7YIbOVNQJdDiZr" %}
+A step by step guide to add an integration between OpenDialog and a 3rd party application
+{% endembed %}
+
 ## Step by step guide
 
 Once you have a service that provides the desired functionality, it's time to create your action in OpenDialog.&#x20;
