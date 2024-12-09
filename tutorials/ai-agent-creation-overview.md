@@ -61,7 +61,9 @@ _Video coming soon_
 
 Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data to return to the conversation.&#x20;
 
-_Video coming soon_
+{% embed url="https://youtu.be/aseZ5oHG1IQ" %}
+Add a 3rd party integration
+{% endembed %}
 {% endstep %}
 
 {% step %}
