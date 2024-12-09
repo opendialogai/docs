@@ -14,7 +14,7 @@ We now want to add the possibility for users to book an appointment through our 
 
 To do this, we will need to :&#x20;
 
-1 - Add the AppointmentBooking as [a new topic of discussion](./). This step is covered in the dedicated tutorial. Click the link for a [refresher](./) 👉🏻
+1 - Add the AppointmentBooking as [a new topic of discussion](./). These steps are covered in the dedicated tutorial. Click the link for a [refresher](./), and follow all the outlined steps 👉🏻
 
 2 - Create a dedicated conversation to further handle the AppointmentBooking process.&#x20;
 
