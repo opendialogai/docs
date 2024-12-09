@@ -167,10 +167,10 @@ _Example: ConfirmReadiness_
 **Create a user intent**
 
 * Within the turn, add a user Intent by clicking the yellow + icon.
-* In the small pop-up that appears on the top of the + icon, select app intent
+* In the small pop-up that appears on the top of the + icon, select user intent
 * Enter a user's sample utterance.\
   &#xNAN;_&#x45;xample: "Confirm"_&#x20;
-* Give your application intent a descriptive name. _Example: ConfirmReadiness_
+* Give your user intent a descriptive name. _Example: ConfirmReadiness_
 * The intent will auto-save.
 {% endhint %}
 
