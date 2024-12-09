@@ -60,7 +60,7 @@ In order to set up a structured conversation handling the multiple steps of a pr
 
 * Navigate to the design section of your conversation using the navigation bar
 * Click on the pulsing blue + sign in the action bar in the bottom center of your screen
-* Give your conversation a name, for exemple: AppointmentBooking
+* Give your conversation a name, _for example: AppointmentBooking_
 * Provide your conversation with a description
 * Hit 'Save' to save this newly created conversation
 {% endhint %}
