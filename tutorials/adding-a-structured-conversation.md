@@ -192,7 +192,7 @@ Once the intents have been set up, we will now need to tell the conversation eng
 There are a few options here for you to consider:
 
 * Progress to the next step in the process by transitioning to the next scene.  For instance, after confirming readiness, the user might proceed to a "Provide Availability" scene.
-* Set up a contextual response, for example to handle no-matches.  In this case, the&#x20;
+* Set up a contextual response, for example to handle no-matches.  In this case, the provided responses will nudge the user into using one of the primary responses instead and help them progress the conversation.
 * End the conversation, and take the user back to the top of the scenario
 
 {% hint style="success" %}
