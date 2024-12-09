@@ -6,6 +6,10 @@ description: >-
 
 # SDK
 
+{% hint style="info" %}
+You can find full examples of how to use the WebChat SDK in the dedicated [Webchat SDK site](https://webchat-sdk.opendialog.dev/).
+{% endhint %}
+
 ## Getting started with the WebChat SDK
 
 The WebChat SDK can be used in any website or browser-based application and requires a basic understanding of Javascript to set up and use. These docs assume you are familiar with Javascript and, ideally, a little Typescript.&#x20;
