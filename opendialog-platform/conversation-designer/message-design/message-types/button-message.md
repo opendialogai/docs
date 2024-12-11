@@ -177,7 +177,7 @@ Click to call buttons are used to create buttons for telephone numbers. They cre
   <external>false</external>
   <button>
     <text>Button text</text>
-    <click_to_call>07999812050</click_to_call>
+    <click_to_call>[phone number]</click_to_call>
   </button>
 </button-message>
 ```
