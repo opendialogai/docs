@@ -72,7 +72,7 @@ Now you will need to add the different steps of your process. Each step is repre
 Each scene has a clear goal. At each scene (or step) the user can complete the goal and move forward or they can abandon the process and they will move back to the Topic Conversation.&#x20;
 
 {% hint style="info" %}
-We recommend setting up a template scene for step 1 that you can then duplicate for the next couple of steps.
+We recommend setting up a template scene for the first step of your process that you can then duplicate for the next couple of steps.
 {% endhint %}
 
 A scene for a process conversation contains the following components:
