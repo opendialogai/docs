@@ -213,7 +213,7 @@ There are a few options here for you to consider:
 * Click on the 'Add Response Intent' card, next to the intent you are creating the contextual response for.
 * View the Edit intent panel.
 * Give the response intent a descriptive name, _for example: NoMatchResponse_
-* Add an example message, _for example: 'I didn't quite understand.  Please let me know if you are ready to proceed by typing 'Yes' or 'No', or using the button above'_
+* Add an example message, _for example: 'I didn't quite understand.  Please let me know if you are ready to proceed by typing 'Yes' or 'No', or using the button below'_
 * The intent will autosave.
 * You can further fine-tune the message by clicking on 'Edit messages' or you can revisit this later via the Message Editor.
 {% endhint %}
