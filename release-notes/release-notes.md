@@ -6,6 +6,23 @@ description: >-
 
 # Release Notes
 
+## December 2024
+
+We are wrapping up this year with some user experience improvements and clearing some small flaws from our platform.
+
+#### <mark style="color:purple;">Better visibility for your vectorisation queue quotas</mark>
+
+We are delighted to present a tracker for your vectorisation usage restrictions. Each Topic page now features a progress bar that shows the number of jobs currently in progress and updates each time you add new items to the queue until you reach the quota. This should help you better understand how many jobs you can have per topic at any given time.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Capacity tracker for vectorisation quotas</p></figcaption></figure>
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Order list of available actions in conversation designer side panel alphabetically;
+* Fix visibility issue for existing conditions on message card in message editor;
+* Fix reCAPTCHA resubmission issue;
+* Improve performance for dashboard page.
+
 ## November 2024
 
 After all the significant changes we made in October, we've taken some time to further improve our existing features and improve usability across the platform, for you and your users.
