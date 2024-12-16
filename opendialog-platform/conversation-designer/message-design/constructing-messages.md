@@ -53,6 +53,21 @@ To access the drag-and-drop feature, go to the top left corner of any message bl
 
 From here, you can grab and move your message block to its desired place.
 
+## Formatting Text using HTML tags
+
+You can use the following HTML tags in messages
+
+```
+ALLOWED_TAGS: ['a', 'br', 'strong', 'b', 'wbr'],
+ALLOWED_ATTR: ['href', 'target', 'class']
+```
+
+You can also direct your LLM actions to produce content that uses these tags instead of markdown, providing some examples of the type of content you would like to product.&#x20;
+
+{% hint style="info" %}
+In an upcomign release of OpenDialog (Jan 2025) we will also be supporting markdown in messages.&#x20;
+{% endhint %}
+
 ## Design best practices
 
 ### Bite-sized information is easier to read
@@ -65,15 +80,7 @@ Notice the difference between the following screens:&#x20;
 
 &#x20;  &#x20;
 
-<div align="left">
-
-<figure><img src="../../../.gitbook/assets/2023-05-23_13-09-37.png" alt="" width="375"><figcaption><p>All text in a single message</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../.gitbook/assets/Screenshot 2024-06-05 at 13.47.08.png" alt="" width="317"><figcaption><p>Text divided up in smaller chunks for readability</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../../.gitbook/assets/2023-05-23_13-09-37.png" alt="" width="375"><figcaption><p>All text in a single message</p></figcaption></figure> <figure><img src="../../../.gitbook/assets/Screenshot 2024-06-05 at 13.47.08.png" alt="" width="317"><figcaption><p>Text divided up in smaller chunks for readability</p></figcaption></figure></div>
 
 ### Words per app turn
 
