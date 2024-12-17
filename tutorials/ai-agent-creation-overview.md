@@ -25,7 +25,7 @@ Get started with a Quickstart AI Agent
 {% endstep %}
 
 {% step %}
-### [Add a new topic of discussion](./)
+### [Add a new topic of discussion](add-a-new-topic-of-discussion.md)
 
 Adding new topic of discussion allows your AI agent to answer questions and engage in conversations beyond the initial scope, creating a more dynamic and comprehensive user experience.&#x20;
 
