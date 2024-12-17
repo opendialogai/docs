@@ -22,7 +22,11 @@ To do this, we will need to :&#x20;
 
 ## See it in action
 
-_Video coming soon_
+
+
+{% embed url="https://youtu.be/ZA7xgNQDYGk" %}
+Add a structured conversation thanks to OpenDialog's unique model
+{% endembed %}
 
 ## Step-by-step guide
 

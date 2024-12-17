@@ -21,7 +21,9 @@ There are a few types of tests that you will want to run before launching your A
 
 ## See it in action
 
-_Video coming soon_
+{% embed url="https://youtu.be/OP8V9e3K3u8" %}
+Follow along to debug your AI Agent, step by step
+{% endembed %}
 
 ## Step-by-step guide
 

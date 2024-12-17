@@ -53,13 +53,21 @@ Add a knowledge source & use it in your conversation design
 
 Handling processes needs specific attention because they have a well defined series of steps (and sequence) and a well-defined end goal.
 
-_Video coming soon_
+
+
+{% embed url="https://youtu.be/ZA7xgNQDYGk" %}
+Easily add a structured conversation thanks to OpenDialog's scalable model.
+{% endembed %}
+
+
 {% endstep %}
 
 {% step %}
 ### [Add a 3rd party integration](integrate.md)
 
 Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data to return to the conversation.&#x20;
+
+
 
 {% embed url="https://youtu.be/aseZ5oHG1IQ" %}
 Add a 3rd party integration
@@ -71,7 +79,11 @@ Add a 3rd party integration
 
 Your AI Agent is almost ready to launch! Before you publish it, let’s make sure it’s optimised for the best user experience.&#x20;
 
-_Coming soon_
+
+
+{% embed url="https://youtu.be/OP8V9e3K3u8" %}
+Follow along to go through the different steps to debug your AI Agent's experience
+{% endembed %}
 {% endstep %}
 
 {% step %}
@@ -79,15 +91,11 @@ _Coming soon_
 
 Ready to hit Publish? Amazing! Using OpenDialog's Alias feature, you can easily embed your AI Agent on your website or your application in no time and do A/B testing along the way thanks to it's flexible setup.
 
+
+
 {% embed url="https://youtu.be/CnL88dIvqQE?si=MFun5aJuUWU5ozqr" %}
 Publish your AI Agent walkthrough
 {% endembed %}
-{% endstep %}
-
-{% step %}
-### Improve your AI Agent
-
-_Coming soon_
 {% endstep %}
 {% endstepper %}
 
