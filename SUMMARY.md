@@ -118,6 +118,7 @@
     * [Messages best practices](best-practices/designing-in-opendialog/messages-best-practices.md)
     * [Subsequent Messages - Virtual Intents](opendialog-platform/conversation-designer/message-design/subsequent-messages-virtual-intents.md)
     * [Using Attributes in Messages](opendialog-platform/conversation-designer/message-design/using-attributes-in-messages.md)
+    * [Using Markdown in messages](opendialog-platform/conversation-designer/message-design/using-markdown-in-messages.md)
     * [Message Types](opendialog-platform/conversation-designer/message-design/message-types/README.md)
       * [Text Message](opendialog-platform/conversation-designer/message-design/message-types/text-message.md)
       * [Image Message](opendialog-platform/conversation-designer/message-design/message-types/image-message.md)

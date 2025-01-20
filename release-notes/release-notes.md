@@ -6,6 +6,21 @@ description: >-
 
 # Release Notes
 
+## January 2025
+
+Happy New Year!  To start the year off with a bang, we wanted to give our messages even more flexibility.  Which is why, in this release, we are happy to introduce markdown support for our text messages.  In addition, we have been busy making improvements throughout the product, to make the usability of our product even smoother.
+
+#### <mark style="color:purple;">Markdown support in text messages</mark>
+
+Our text messages now support markdown. You can create bullet lists, bold/italic text, headings, links, images, code blocks, and tables using standard markdown syntax, and they will be rendered in webchat. For more information, please [see the docs](release-notes.md#markdown-support-in-text-messages).
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Fixed the double-scroll bar issue on the preview page;
+* Fixed leading and trailing whitespaces in webhook action headers;&#x20;
+* Fixed sidebar overlapping with incoming intents in preview;
+* Improved messaging for the semantic classifier test panel when no intents matched.
+
 ## December 2024
 
 We are wrapping up this year with some user experience improvements and clearing some small flaws from our platform.
