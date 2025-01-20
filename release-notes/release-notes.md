@@ -12,7 +12,7 @@ Happy New Year!  To start the year off with a bang, we wanted to give our messag
 
 #### <mark style="color:purple;">Markdown support in text messages</mark>
 
-Our text messages now support markdown. You can create bullet lists, bold/italic text, headings, links, images, code blocks, and tables using standard markdown syntax, and they will be rendered in webchat. For more information, please [see the docs](release-notes.md#markdown-support-in-text-messages).
+Our text messages now support markdown. You can create bullet lists, bold/italic text, headings, links, images, code blocks, and tables using standard markdown syntax, and they will be rendered in webchat. For more information, please [see the docs](../opendialog-platform/conversation-designer/message-design/using-markdown-in-messages.md).
 
 #### <mark style="color:purple;">Improvements</mark>
 
