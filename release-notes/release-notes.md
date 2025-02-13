@@ -6,6 +6,30 @@ description: >-
 
 # Release Notes
 
+## February 2025
+
+This month, we have released a significant update to the preview page and made several general improvements to the system.
+
+We reflected on our preview page and redesigned it to make testing your conversations more efficient.&#x20;
+
+The preview console now takes up the full right side of the screen, featuring two tabs: "Conversation Logs" and "Attributes". This layout allows you to see incoming and outgoing intents more clearly, with the considered and selected paths easily accessible.&#x20;
+
+In the "Attributes" tab, you'll find an enhanced search function and filters. Additionally, custom attributes are clickable and will take you directly to their management page.
+
+Setting custom attributes to test specific paths of your conversation has also become a lot easier, as you can now set multiple attributes.
+
+For more information, please [see the docs](../previewing-your-application.md).
+
+<figure><img src="../.gitbook/assets/image (572).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Fixed issue when Chatwoot integration is inactive by default
+* Improved spacing for code blocks in markdown messages
+* Made conversation intents clickable within considered and selected path panels
+* Resolved bug with conditions during initial scene creation
+* Moved the banner for quickstart AI agent to the Dashboard.
+
 ## January 2025
 
 Happy New Year!  To start the year off with a bang, we wanted to give our messages even more flexibility.  Which is why, in this release, we are happy to introduce markdown support for our text messages.  In addition, we have been busy making improvements throughout the product, to make the usability of our product even smoother.
