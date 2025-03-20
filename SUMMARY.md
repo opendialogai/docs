@@ -4,6 +4,7 @@
 
 * [Introduction](README.md)
 * [Getting ready](getting-started-1/getting-ready.md)
+* [Billing and plans](getting-started-1/billing-and-plans.md)
 * [Quick Start AI Agents](getting-started-1/quick-start-ai-agents/README.md)
   * [Quick Start AI Agent](getting-started-1/quick-start-ai-agents/quick-start-ai-agent.md)
   * [The "Start from Scratch" AI Agent](getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/README.md)
@@ -203,7 +204,7 @@
     * [Methods](developing-with-opendialog/webchat/sdk/methods.md)
     * [Events](developing-with-opendialog/webchat/sdk/events.md)
     * [Custom Components](developing-with-opendialog/webchat/sdk/custom-components.md)
-* [Interaction API](developing-with-opendialog/interaction-api.md)
+* [External APIs](developing-with-opendialog/interaction-api.md)
 
 ## Release Notes
 
