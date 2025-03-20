@@ -6,6 +6,27 @@ description: >-
 
 # Release Notes
 
+## March 2025
+
+#### <mark style="color:purple;">"Tutorials" sidebar menu item</mark>
+
+The first update for this month is a new sidebar item "Tutorials" featuring various how-to guides. We've added this enhancement to improve your learning experience, allowing you to access our learning videos, documentation links, and additional resources all in one convenient place.
+
+<figure><img src="../.gitbook/assets/image (574).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">API for pre-populating user context for full-page webchat</mark>
+
+The second one is a new API endpoint you can use for pre-populating user context for a conversation in full-page webchat. You send us initial attribute values for a given user, and in return, you'll get a link for a full-page webchat for this user with this data ready to go. More information is available [in our docs](../developing-with-opendialog/interaction-api.md).
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Fixed carousel slider styles;
+* Fixed language switching in webchat via 3-dots menu;
+* Removed redundant condition operator when there is only one condition;
+* Added better feedback for webhook action failure so you can debug more effectively;
+* Added links to language services in interpreter dropdown;
+* Fixed default styles for tables and numbered lists in markdown messages;
+
 ## February 2025
 
 This month, we have released a significant update to the preview page and made several general improvements to the system.
