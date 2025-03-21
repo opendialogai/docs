@@ -6,7 +6,7 @@ Attributes can be used in any message to customize the content. For example, the
 
 ### Notation
 
-Attributes are added to messages using curly braces `{}.`and Inside the curly braces we first add the context name (very often and by default the context is "user"), next we add a period (`.`) and then the attribute name. For example, the attribute `first_name` stored in the `user` context looks like this:
+Attributes are added to messages using curly braces `{}` and inside the curly braces we first add the context name (very often and by default the context is "user"), next we add a period (`.`) and then the attribute name. For example, the attribute `first_name` stored in the `user` context looks like this:
 
 ```
 {user.first_name}

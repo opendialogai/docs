@@ -12,11 +12,7 @@ There are two ways to access messages:&#x20;
 
 **Option 1:** The Messages functionality is available as part of the Design functionality. Design includes both Conversation, where the conversation design occurs and Messages, where we access the message editor and work on everything to do with the content and assistant prompts. If Messages is not viewable in the sidebar, click the carrot (down arrow) to the right of Design to expand.&#x20;
 
-<div align="left">
-
-<figure><img src="../../../.gitbook/assets/Group 23.png" alt=""><figcaption><p>Design option - not expanded</p></figcaption></figure>
-
-</div>
+<div align="left"><figure><img src="../../../.gitbook/assets/Group 23.png" alt=""><figcaption><p>Design option - not expanded</p></figcaption></figure></div>
 
 <figure><img src="../../../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Design option - expanded</p></figcaption></figure>
 
@@ -97,8 +93,12 @@ The following options are available in the Edit Message screen:
 *   [**Conditions**](message-conditions.md): in the conditions tab you will be able to define when your message gets selected by defining conditional rules.&#x20;
 
     _For example: if userID is not set_
+* **Behaviours:**
+  * "Disable free-form user input field for this message" will ensure that the user is not able to send free-form text messages in response to this message. This is usually best used alongside a message block that the user can interact with, such as a button message or form message.
+  * "Hide the avatar for this message" will ensure that Webchat doesn't display the avatar alongside the message.
+  * "Exclude markdown code from attribute filling" will ensure that any curly-braces `{}`included inside [markdown code blocks](http://commonmark.org/help/) (single or triple back ticks) will not be used in attribute filling. By default OpenDialog will presume any curly braces are being used as [attribute syntax](using-attributes-in-messages.md) and attempt to fill it's value, this behaviour excludes markdown code from being filled. This behaviour is useful if you need to use curly braces for things such as code snippets within your messages.
 
-<figure><img src="../../../.gitbook/assets/Group 29.png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Screenshot 2025-03-06 at 11.09.33 (1).png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
 
 ## Enriched  user experience
 
