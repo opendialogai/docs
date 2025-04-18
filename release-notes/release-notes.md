@@ -6,6 +6,32 @@ description: >-
 
 # Release Notes
 
+## April 2025
+
+#### <mark style="color:purple;">Visible actions and conditions on intent cards</mark>
+
+To enhance clarity regarding conditions and actions tied to specific intent within Conversation Designer, we are rolling out an update that will visibly mark intent cards when they contain associated action or condition. Additionally, we've incorporated straightforward edit links directly on the interface of each intent card for immediate access to thisi elements:
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Security updates</mark>
+
+This release includes several important security updates. One of them being a stricter password policy. If your current password does not meet new strength criteria, upon next login you'll be prompted to reset it in accordance with these updated guidelines:
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Fixed bug with empty bubble causing stalled conversation due to empty message;
+* iframe option now has no effect when using SDK;
+* Fixed intent links in conversation preview;
+* Fixed bug for priority interpreter not set upon scene creation;
+* Appearance improved and adjusted the wording to be clearer: "View all" button appears;
+* Correctly on Language Services sidebar even with an overloaded interface;
+* Clarity of status indicators enhanced across Knowledge Service topics page.
+
 ## March 2025
 
 #### <mark style="color:purple;">"Tutorials" sidebar menu item</mark>
@@ -74,7 +100,7 @@ We are wrapping up this year with some user experience improvements and clearing
 
 We are delighted to present a tracker for your vectorisation usage restrictions. Each Topic page now features a progress bar that shows the number of jobs currently in progress and updates each time you add new items to the queue until you reach the quota. This should help you better understand how many jobs you can have per topic at any given time.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Capacity tracker for vectorisation quotas</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Capacity tracker for vectorisation quotas</p></figcaption></figure>
 
 #### <mark style="color:purple;">Improvements</mark>
 

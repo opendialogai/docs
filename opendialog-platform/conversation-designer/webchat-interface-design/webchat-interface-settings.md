@@ -32,7 +32,7 @@ Here you can configure some overall settings for the widget:
 \- _Timing_ configures the length of time (in milliseconds) that the typing indicator should be shown for each message.\
 \- You can control whether you want to show the typing indicator between each message block in the individual message toggling option _Hide Typing Indicator between messages_.\
 \- _Show the typing indicator on message send_ controls whether to show the typing indicator at all.\
-\- _Typing Indicator_ can be either "Animation", which will show three dancing dots (<img src="../../../.gitbook/assets/image (2).png" alt="" data-size="line">), or "Animation with feedback text", which will show spinning dots with feedback text (<img src="../../../.gitbook/assets/image (3).png" alt="" data-size="line">)
+\- _Typing Indicator_ can be either "Animation", which will show three dancing dots (<img src="../../../.gitbook/assets/image (2) (4).png" alt="" data-size="line">), or "Animation with feedback text", which will show spinning dots with feedback text (<img src="../../../.gitbook/assets/image (3) (3).png" alt="" data-size="line">)
 
 You can configure the text and color of dots for "Animation with feedback text" in the embed code after you publish your scenario. Add the general key to your window.openDialogSettings object with the property typingIndicatorSettings. For this, you would need to specify:
 
