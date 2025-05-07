@@ -16,7 +16,7 @@ Plan ahead for headcount changes by scheduling potential seat increases or reduc
 
 To cancel your Pro subscription, simply hit the ‘Cancel Subscription’ button at the bottom of the page. You’ll be downgraded to our Free tier on your next billing cycle.
 
-**Note**: You may lose access to some features when you downgrade. Check out what’s included in our packages [here](https://www.voiceflow.com/pricing).
+**Note**: You may lose access to some features when you downgrade. Check out what’s included in our packages [here](https://opendialog.ai/pricing/).
 
 ### Get billing support
 
