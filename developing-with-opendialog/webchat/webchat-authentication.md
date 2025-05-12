@@ -8,7 +8,7 @@ For WebChat, the user ID is used to fetch WebChat configuration, WebChat history
 
 ### Known user ID
 
-If the OD chatbot is embedded on a page where the user is known (e.g. a page they have to log in to), the user ID can be passed in with the embed code (currently, the field is called `email` but it does not have to be an email - just a unique identifying string)
+If the OD chatbot is embedded on a page where the user is known (e.g. a page they have to log in to), the user ID can be passed in with the embed code (previously, the field was called `email`)
 
 ```jsx
 <script>
@@ -16,7 +16,7 @@ If the OD chatbot is embedded on a page where the user is known (e.g. a page the
       url: '{url}',
       appKey: '{app_key}',
       user: {
-	email: '{user_identifier}'
+        user_id: '{user_identifier}'
         custom: {
           selected_scenario: '{scenario_id}'
         }

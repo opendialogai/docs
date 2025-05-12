@@ -12,7 +12,7 @@ Any changes made to the fields are not saved until you click on the 'Save Settin
 
 ![Save your settings changes using the save button](<../../../.gitbook/assets/image (359).png>)
 
-## Sections
+## Interface Settings
 
 The settings are broadly split into 4 settings that affect different elements within the interface and how it behaves.
 
@@ -86,3 +86,27 @@ Here you can adjust the colours used in the bot from the chat window itself to t
 ![Adjust what history is shown to the user](<../../../.gitbook/assets/image (528).png>)
 
 Here, you can control whether the interface shows a user their previous chat history on load, and if so, how many messages to show. You can test how this behaves by using the preview section and **refreshing** the page on your browser rather than clicking the 'Refresh Scenario' button as this will generate a new user.
+
+## Security Settings
+
+### Anonymous Authentication
+
+Anonymous Authentication is designed to enhance security while allowing users to interact without traditional login credentials. By default, this will be enabled when you create a new scenario.
+
+When a user first interacts with the system, it checks if the user ID already exists. If not, a secure token (JWT) is created as a cookie to verify their identity, securely stored, and linked to the user. On future visits, the system uses this token to recognise the user and maintain their session.
+
+This authentication method applies to sending messages, retrieving configuration settings, viewing past conversations, and accessing chat transcripts. It helps prevent unauthorised users from accessing protected chat features.
+
+When this feature is enabled, users must not be assigned pre-set user ID's (such as email addresses) as Anonymous Authentication requires user IDs to be assigned as random and unique identifiers, so that they are not predictable.
+
+### Cross site request forgery (CSRF)
+
+In order to protect the Anonymous Authentication cookie, and to prevent data manipulation, an anti-CSRF token can be automatically applied to all webchat requests. The token will be issued as a cookie, and each request will return the token as a HTTP header. The cookie will only be readable by a page of the same origin which ensures that it can not be sent as a header by untrusted pages.
+
+This means that SDK implementations will need to ensure that the a custom subdomain is registered which can be mapped to the OpenDialog ChatAPI. Without this the cookie will not be readable by your page (as the ChatAPI is considered a 3rd party). While developing your SDK implementation, the CSRF Interface Setting can be toggled off to allow you to continue building while a custom domain is provisioned.
+
+### Cross origin resource sharing (CORS)
+
+CORS settings can be enabled to only allow specific websites to display your webchat agent. This is enforced by CORS headers which are respected by all major browsers.
+
+After enabling CORS, you will need to provide a list of the origins that should be allowed. This should include the protocol and the domain, such as `https://example.com`.
