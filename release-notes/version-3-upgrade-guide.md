@@ -2,7 +2,7 @@
 
 The latest release of OpenDialog introduces new security features and updates several Webchat API endpoints that may require action on your part. This page outlines what’s changed and helps you decide if you need to do anything.
 
-### What has changed
+### What's Changed?
 
 The changes fall into two categories:
 
@@ -13,7 +13,7 @@ The changes fall into two categories:
 
 ### Schedule
 
-We’ve split the updates into two releases to give you time to adapt:
+&#x20;We've split the updates into two separate releases to allow customers time to update their applications in line with the new requirements:
 
 * **2.17.0 “Jabbah”** — 22 May 2025
   * Supports both old and new API endpoints
@@ -50,11 +50,15 @@ All Chat API calls now require two headers. Missing headers will trigger HTTP 42
 
 Starting in **3.0.0**, every Chat API endpoint must include the same authorization header used by `/incoming/chatApi`. By default (unless you enable additional security options), this is your `appKey` as documented in the Chat API guide.
 
+
+
+Read more about in the [Chat API](../developing-with-opendialog/webchat/webchat-api.md) section of these docs.
+
 ***
 
 ### Security Features (v3.0.0+)
 
-Starting in **3.0.0**, we’re rolling out several opt-in security controls across all Chat API endpoints to tighten up your users’ interactions with OpenDialog. See **Security Settings** on the Webchat Interface Settings page for full details.
+Beginning with version 3.0.0, we’re introducing several optional security controls across all Chat API endpoints to enhance the security of user interactions with OpenDialog. See [**Security Settings**](../opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings.md#security-settings) on the Webchat Interface Settings page for full details.
 
 > **Note:**
 >
@@ -79,12 +83,12 @@ If you embed via the snippet on the Webchat Interface Settings page:
 
 For applications built with the OpenDialog ChatUI SDK:
 
-1. **CORS**\
-   Whitelist your page URLs when CORS protection is turned on by adding them in the security settings tab in Webchat interface settings
-2. **CSRF**
-   * Requires browser-accessible cookies.
-   * You must map a **custom domain** to your OpenDialog tenant.  To set this up, please coordinate DNS + tenant mapping with OpenDialog support
-   * We recommend leaving CSRF **off** during development whilst any custom domain mapping is set up
+* **CORS (Cross-Origin Resource Sharing)**\
+  Whitelist your page URLs when CORS protection is turned on by adding them in the security settings tab in Webchat interface settings
+* **CSRF (Cross-Site Request Fogery)**
+  * Requires browser-accessible cookies.
+  * You must map a **custom domain** to your OpenDialog tenant.  To set this up, please coordinate DNS + tenant mapping with OpenDialog support
+  * We recommend leaving CSRF **off** during development whilst any custom domain mapping is set up
 
 ***
 
@@ -92,19 +96,14 @@ For applications built with the OpenDialog ChatUI SDK:
 
 If you call the Chat API directly, update your code as follows:
 
-**a) Anonymous Authentication**
-
-* On first request, the API returns a per-user JWT in a cookie named\
-  `opendialog_anonymous_authentication_token`.
-* **All subsequent requests** must include that cookie.
-
-**b) Anti-CSRF**
-
-* CSRF is a browser-only threat. Disable it in your scenario settings if you aren’t in a browser context.
-
-**c) CORS**
-
-* Browser-only protection. Ignore for server-to-server integrations.
+* &#x20;**Anonymous Authentication**
+  * On first request, the API returns a per-user JWT in a cookie named\
+    `opendialog_anonymous_authentication_token`.
+  * **All subsequent requests** must include that cookie.
+* **Anti-CSRF**
+  * CSRF is a browser-only threat. Disable it in your scenario settings if you aren’t in a browser context.
+* **CORS**
+  * Browser-only protection. Ignore for server-to-server integrations.
 
 ***
 
