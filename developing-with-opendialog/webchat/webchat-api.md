@@ -6,11 +6,18 @@ You can use this API to interact with OpenDialog through your own applications, 
 
 There are three endpoints supported right now. Brief details are provided below and the API is  documented [here](https://chatapi.opendialog.ai/).
 
-`GET webchat-config`  - where you can retrieve configuration for how the interface should behave.&#x20;
+`GET chat-api/configuration`  - where you can retrieve configuration for how the interface should behave.&#x20;
 
-`GET user/<user-id>/history` - where you can retrieve past messages for a given user
+`GET chat-api/history` - where you can retrieve past messages for a given user
 
-`POST incoming/webchat`  - where you post messages and receive the answer from OpenDialog
+`POST chat-api/message`  - where you post messages and receive the answer from OpenDialog
+
+You must also include the following user ID and scenario ID HTTP headers with each request:\
+`OPENDIALOG-USER-ID: <user_id>`
+
+`OPENDIALOG-SCENARIO-ID: <scenario_id>`&#x20;
+
+These headers ensure users are authenticated and are properly directed to your AI agent.
 
 {% hint style="info" %}
 In order to POST messages you need a Bearer Token that is generated from within the OpenDialog application in Webchat Settings (it is the appKey in the embed code). &#x20;
