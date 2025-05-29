@@ -6,6 +6,44 @@ description: >-
 
 # Release Notes
 
+## May 2025
+
+#### <mark style="color:purple;">Important deprecation notice</mark>
+
+We've been undertaking a number of technical enhancements to streamline OpenDialog's internal systems, boosting performance, reliability, and security. As part of this work, the next major release will deprecate the following API endpoints
+
+* `/incoming/chatApi`&#x20;
+* `/chatApi-config`&#x20;
+* `/user/{user_id}/history`
+* `/user/{user_id}/history/file`&#x20;
+
+\
+Don't worry - you don't need to do anything from your side if you are using chat embed code or SDK!
+
+However, if you are calling these endpoints directly from application code, you will have one month to align with the new API structure. Please refer to [the detailed upgrade guide](version-3-upgrade-guide.md) to find out what steps are.
+
+#### <mark style="color:purple;">Refreshed look for scenario visualizer in preview</mark>
+
+We made our scenario visualizer in preview and analyse a bit more convenient and useful when it comes to debugging your conversation:
+
+* We added icons in section headings for better visual feedback;
+* More information about run actions;
+* Actions and conditions are now clickable and take you to where they are defined
+
+<figure><img src="../.gitbook/assets/image (575).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Fixed Chatwoot integration when unable to send multiple messages in one go;
+  * Also corrected Chatwoo client returning the wrong inbox `source_id` when contact has more than one inbox attachment;
+* Fixed actions indicator component for USER intent card;
+* Fixed interpreter confirmation popup shows even if no changes;
+* Improved anti-brute force mechanisms and account locking;
+* Fixed Z-index issue with attribute value sliding drawer on LLM Action page;
+* Fixed missing "Download LLM action log" in scenario visualizer;
+* Various important security patches;
+* Few minor fixes on "My account" page.
+
 ## April 2025
 
 #### <mark style="color:purple;">Visible actions and conditions on intent cards</mark>
