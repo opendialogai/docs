@@ -208,5 +208,5 @@
 
 ## Release Notes
 
-* [Version 3 Upgrade Guide](release-notes/version-3-upgrade-guide.md)
 * [Release Notes](release-notes/release-notes.md)
+* [Version 3 Upgrade Guide](release-notes/version-3-upgrade-guide.md)
