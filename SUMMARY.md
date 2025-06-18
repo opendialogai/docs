@@ -37,7 +37,7 @@
     * [Turns and intents](core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md)
   * [Language Services](core-concepts/the-opendialog-workspace/language-services.md)
   * [OpenDialog Account Management](core-concepts/the-opendialog-workspace/opendialog-account-management/README.md)
-    * [Creating and managing users](core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users.md)
+    * [Managing Users](core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users.md)
     * [Deleting OpenDialog account](core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account.md)
     * [Account Security](core-concepts/the-opendialog-workspace/opendialog-account-management/account-security.md)
 * [OpenDialog Conversation Engine](core-concepts/how-the-conversation-engine-thinks.md)

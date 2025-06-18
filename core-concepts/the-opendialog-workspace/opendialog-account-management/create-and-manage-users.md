@@ -1,26 +1,29 @@
-# Creating and managing users
+# Managing Users
 
-On setup, there will be at least one user in the workspace. Any user may add additional users to the workspace.&#x20;
+Welcome to user management in OpenDialog! This guide shows you how to add and manage team members in your workspace. Your workspace starts with one user account, and you can easily add more team members as needed.
 
-### Adding a new user
+### :heavy\_plus\_sign: Adding a new user
 
-To enable a members of your team to access the workspace, you will have to add them as users within your OpenDialog account.&#x20;
+To enable your team members to access the instance, you will have to add them as users on your OpenDialog account.&#x20;
 
-**Note:** users are added to the workspace, not to a specific scenario. So they are able to see ALL scenarios associated with a workspace.
+{% hint style="info" %}
+Users are added to the workspace, not to a specific scenario.
+{% endhint %}
 
-To do this, you need to click on the three dots next to your name, then on 'User Management'. Next, click on the 'Create' button, fill out their details and click 'Create'.&#x20;
+To do this, click on your name, the three dots next to it, and then click on User Management. Once there, click the Create button at the top right, complete the form, and click Create.
 
 <figure><img src="../../../.gitbook/assets/image (576).png" alt=""><figcaption></figcaption></figure>
 
-Once you've set up the new user account, you need to notify the user directly and inform them, since NO email is automatically sent out.&#x20;
+Once you've set up the new user account, you need to notify the user directly since no email is automatically sent to inform them of the account setup.&#x20;
 
-Instruct the user to
+**Instruct the user to:**
 
-* Go to your instance URL e.g. `<instance-name>.cloud.opendialog.ai`&#x20;
-* Click on the 'I forgot my password' link to set up their password and log in
+* Visit [cloud.opendialog.ai ](https://cloud.opendialog.ai/)
+* Click on the 'I forgot my password' link and enter their email
+* Await an email, then follow the instructions to set up their password and log in to the platform.
 
 ### Deleting a user
 
-To remove a user from your instance, click on the three dots next to your name, then on 'User Management'. Then click on 'X' next to the user you want to remove, then 'yes' on the pop-up, and the user will be removed.
+To remove a user from your instance, go to the User Management page within the application and click 'X' next to the user you want to remove. Then, click 'Yes' on the pop-up, and the user will be removed.
 
 ![User profile - Delete/Edit buttons](<../../../.gitbook/assets/image (149).png>)
