@@ -50,7 +50,7 @@ We made our scenario visualizer in preview and analyse a bit more convenient and
 
 To enhance clarity regarding conditions and actions tied to specific intent within Conversation Designer, we are rolling out an update that will visibly mark intent cards when they contain associated action or condition. Additionally, we've incorporated straightforward edit links directly on the interface of each intent card for immediate access to thisi elements:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
