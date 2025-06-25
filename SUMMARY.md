@@ -139,6 +139,7 @@
       * [Meta Messages](opendialog-platform/conversation-designer/message-design/message-types/meta-messages/README.md)
         * [Progress Bar Message](opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message.md)
       * [Attribute Message](opendialog-platform/conversation-designer/message-design/message-types/attribute-message.md)
+      * [Twilio Content Template Message](opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message.md)
   * [Webchat Interface design](opendialog-platform/conversation-designer/webchat-interface-design/README.md)
     * [Webchat Interface Settings](opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings.md)
     * [Webchat Controls](opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls.md)

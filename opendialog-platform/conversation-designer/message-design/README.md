@@ -76,3 +76,6 @@ There are many different message types that are available for use within a conve
 [meta-messages](message-types/meta-messages/)
 {% endcontent-ref %}
 
+{% content-ref url="message-types/twilio-content-template-message.md" %}
+[twilio-content-template-message.md](message-types/twilio-content-template-message.md)
+{% endcontent-ref %}

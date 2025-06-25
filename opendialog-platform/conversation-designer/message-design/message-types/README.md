@@ -67,3 +67,7 @@ Within this section, all different message types that are available to you throu
 {% content-ref url="meta-messages/" %}
 [meta-messages](meta-messages/)
 {% endcontent-ref %}
+
+{% content-ref url="twilio-content-template-message.md" %}
+[twilio-content-template-message.md](twilio-content-template-message.md)
+{% endcontent-ref %}
