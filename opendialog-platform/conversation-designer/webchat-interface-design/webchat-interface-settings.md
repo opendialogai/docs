@@ -10,7 +10,7 @@ The settings are currently GLOBAL and will affect all scenarios you have created
 
 Any changes made to the fields are not saved until you click on the 'Save Settings' button at the top of the screen
 
-![Save your settings changes using the save button](<../../../.gitbook/assets/image (359).png>)
+<figure><img src="../../../.gitbook/assets/image (583).png" alt=""><figcaption><p>Save your settings changes using the save button</p></figcaption></figure>
 
 ## Interface Settings
 
@@ -89,7 +89,11 @@ Here, you can control whether the interface shows a user their previous chat his
 
 ## Security Settings
 
+<figure><img src="../../../.gitbook/assets/image (578).png" alt=""><figcaption><p>Security Settings tab</p></figcaption></figure>
+
 ### Anonymous Authentication
+
+<figure><img src="../../../.gitbook/assets/image (579).png" alt=""><figcaption><p>Anonymous Authentication</p></figcaption></figure>
 
 Anonymous Authentication is designed to enhance security while allowing users to interact without traditional login credentials. By default, this will be enabled when you create a new scenario.
 
@@ -101,11 +105,15 @@ When this feature is enabled, users must not be assigned pre-set user ID's (such
 
 ### Cross site request forgery (CSRF)
 
+<figure><img src="../../../.gitbook/assets/image (581).png" alt=""><figcaption><p>Cross Site Request Forgery Settings</p></figcaption></figure>
+
 In order to protect the Anonymous Authentication cookie, and to prevent data manipulation, an anti-CSRF token can be automatically applied to all webchat requests. The token will be issued as a cookie, and each request will return the token as a HTTP header. The cookie will only be readable by a page of the same origin which ensures that it can not be sent as a header by untrusted pages.
 
 This means that SDK implementations will need to ensure that the a custom subdomain is registered which can be mapped to the OpenDialog ChatAPI. Without this the cookie will not be readable by your page (as the ChatAPI is considered a 3rd party). While developing your SDK implementation, the CSRF Interface Setting can be toggled off to allow you to continue building while a custom domain is provisioned.
 
 ### Cross origin resource sharing (CORS)
+
+<figure><img src="../../../.gitbook/assets/image (582).png" alt=""><figcaption><p>Cross Origin Resource Sharing Settings</p></figcaption></figure>
 
 CORS settings can be enabled to only allow specific websites to display your webchat agent. This is enforced by CORS headers which are respected by all major browsers.
 
