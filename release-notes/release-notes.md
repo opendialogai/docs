@@ -6,6 +6,45 @@ description: >-
 
 # Release Notes
 
+## June 2025
+
+#### <mark style="color:purple;">Security section in the Interface Settings</mark>
+
+We now have a brand new security tab for webchat interface settings which allows you to fine-tune your security requirements to validate anonymous access to the webchat, CSRF settings and specify authorized domains from which webchat should be accessible.
+
+<figure><img src="../.gitbook/assets/image (584).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Whatsapp and SMS integration</mark>
+
+We are happy to announce that you can plug in OpenDialog conversations into WhatsApp or SMS so users can have more ways to interact with your OD application.&#x20;
+
+Use the conversation designer to configure channel-specific messages like WhatsApp quick replies, cards, and carousels. Go to Analyze to see interaction logs from various channels.
+
+_Note_: currently this feature is available on-demand, so if you want to try it out, reach out to our team via email [hello@opendialog.ai](mailto:hello@opendialog.ai).
+
+
+
+<div align="left"><figure><img src="../.gitbook/assets/image (585).png" alt="" width="302"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image (586).png" alt="" width="358"><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image (588).png" alt=""><figcaption></figcaption></figure></div>
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Removed extra confirmation toast when saving LLM Action with moderation off;
+* Fixed header wrapping issue on a Webhook action;
+* Fixed accessibility issue for minimize icon;
+* Fixed issue where Analyze does not show Selected App intent information;
+* Fixed download chat transcript functionality for SDK usage;
+
+#### <mark style="color:purple;">Important deprecation notice</mark>
+
+Just a reminder that from this month onward, the following endpoints are no longer supported:
+
+* `/incoming/chatApi`&#x20;
+* `/chatApi-config`&#x20;
+* `/user/{user_id}/history`
+* `/user/{user_id}/history/file`&#x20;
+
+If you have any issues regarding the above, you can get help via our support form - [https://opendialog.ai/support](https://opendialog.ai/support/).
+
 ## May 2025
 
 #### <mark style="color:purple;">Important deprecation notice</mark>
