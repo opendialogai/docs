@@ -2,7 +2,7 @@
 description: Let's enhance your AI Agent's knowledge with Retrieval Augmented Generation.
 ---
 
-# Using knowledge sources via RAG
+# Use knowledge sources via RAG
 
 ## Introduction
 
@@ -68,6 +68,10 @@ Now, with your new topic created, it’s time to begin adding sources to it. Ope
 * Select the source type you want to add (URL, document or text)
 * In the pop-up, follow the instructions
 * Click ‘Upload source’ to continue
+{% endhint %}
+
+{% hint style="warning" %}
+Note - For Microsoft Word documents, we only support `.docx` file formats. If you have an older style `.doc` file, please resave as a `.docx` file before trying to upload to your knowledge source&#x20;
 {% endhint %}
 
 ### **Vectorize your knowledge source**
