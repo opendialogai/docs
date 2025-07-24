@@ -179,6 +179,7 @@
     * [Freshdesk Action](opendialog-platform/actions/actions-from-library/freshdesk-action.md)
     * [Send to Email Action](opendialog-platform/actions/actions-from-library/send-to-email-action.md)
     * [Set Attributes Action](opendialog-platform/actions/actions-from-library/set-attributes-action.md)
+    * [Datetime Action](opendialog-platform/actions/actions-from-library/datetime-action.md)
   * [Conversation Hand-off](opendialog-platform/actions/conversation-hand-off/README.md)
     * [Chatwoot](opendialog-platform/actions/conversation-hand-off/chatwoot.md)
 * [Previewing your application](previewing-your-application.md)
