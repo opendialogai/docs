@@ -56,9 +56,13 @@ The above takes the value of the `age` attribute in the `user` context, converts
 
 **Number Filters**
 
-* `speltnumber_to_words` - turns a number into its word. eg 1 => 'one'
+* `number_to_words` - turns a number into its word. eg 1 => 'one'
 * `ordinal` - returns the ordinal of the number. eg 1 => 1st
 * `ordinal_words` - returns the ordinal spelt out. eg 1 => 'first'
+
+**Timestamp Filters**
+
+* `format_date [format]` - converts a unix timestamp to a human readable timestamp. The format determines how it gets displayed, e.g. `"Y-m-d"` would give an output like `2025-07-23`, or `"l jS F"` would give an output like `Wednesday 23rd July`. A full list of formats can be found [here](https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters).
 
 **Collection Filters**
 
