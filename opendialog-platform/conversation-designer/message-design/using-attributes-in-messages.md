@@ -60,9 +60,19 @@ The above takes the value of the `age` attribute in the `user` context, converts
 * `ordinal` - returns the ordinal of the number. eg 1 => 1st
 * `ordinal_words` - returns the ordinal spelt out. eg 1 => 'first'
 
-**Timestamp Filters**
+**Date Time Filters**
 
-* `format_date [format]` - converts a unix timestamp to a human readable timestamp. The format determines how it gets displayed, e.g. `"Y-m-d"` would give an output like `2025-07-23`, or `"l jS F"` would give an output like `Wednesday 23rd July`. A full list of formats can be found [here](https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters).
+*   `format_date [format] [timezone]` — Converts a Unix `timestamp` or a `date time` string into a human-readable format, applying the specified time zone.
+
+    * The first parameter, `[format]`, specifies the output format using standard PHP date format codes. For example:
+      * `"Y-m-d"` → `2025-07-23`
+      * `"l jS F"` → `Wednesday 23rd July`\
+        A full list of supported format characters can be found [here](https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters).
+    * The second parameter, `[timezone]`**,** is optional and defines the time zone used for formatting. For instance, using `"Europe/London"` will format the date time according to London time. You can find a list of valid time zone identifiers [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).\
+      If omitted, the user’s browser time zone will be used by default.
+
+    Example usage:\
+    `{date_attribute | format_date "Y-m-d H:i:s" "Europe/London"}`
 
 **Collection Filters**
 
