@@ -6,6 +6,26 @@ description: >-
 
 # Release Notes
 
+## July 2025
+
+#### <mark style="color:purple;">Role-based access</mark>
+
+You can now manage user access with greater precision by assigning specific roles to users within your workspace. This ensures each user has access only to the functionality they need to perform their job. There are five available roles:
+
+* **Admin**: Access to everything, including user management. Assign it to your power users who are responsible for the OD platform within your organisation.
+* **Editor**: Has access to all features except user management. Ideal for builders and team members responsible for creating agents.
+* **Analyse Guest**: Access to all scenario analytics. Assign it to stakeholders who are interested in monitoring your application's performance and extracting business insights.
+* **Preview Guest**: Access to all scenarios previews. Assign it to your QA team and people who need to interact with the bot during development.
+* **Preview & Analyse Guest**: Access to both preview and analyse within all scenarios. Useful for users whose role might require both testing and monitoring your agent.
+
+For more information, look at [our documentation here](../core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users.md#role-based-access-control).
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Resolved issue with fixed intent selection being hindered by the custom message editor.
+* Fixed message ordering issue in WhatsApp.
+* Implemented various improvements to the performance and security of our platform.
+
 ## June 2025
 
 #### <mark style="color:purple;">Security section in the Interface Settings</mark>
