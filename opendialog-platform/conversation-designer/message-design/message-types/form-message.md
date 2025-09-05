@@ -29,6 +29,52 @@ Navigate to the [Message Editor](../message-editor.md) and create a form block b
 
 <figure><img src="../../../../.gitbook/assets/Group 10 (2).png" alt=""><figcaption><p>How to create a form message in the no-code form message block</p></figcaption></figure>
 
+### Creating Form Messages With Dynamic Data
+
+When creating a form message in the Message Editor, there are two ways to provide dropdown options. The first, is by manually providing a set of static options. The second way to do this is via a [collection attribute](../../../../core-concepts/contexts-and-attributes/about-attributes.md#multiple-value-attribute-types-collections-and-composites), populated by a fetch operation from a [webhook action](../../../../designing-conversations/actions/webhook-action.md).
+
+By clicking on _-Select-_, you can choose how you want to populate your dropdown.
+
+<figure><img src="../../../../.gitbook/assets/image (590).png" alt=""><figcaption><p>Deciding how to populate your form message dropdown</p></figcaption></figure>
+
+If you decide to do this manually, you can simply type the name of the option, and hit the '+' button to add the option. Your options will appear underneath the input box, and also in the preview tab on the right hand side.
+
+<figure><img src="../../../../.gitbook/assets/image (592).png" alt=""><figcaption><p>Adding static options to your FormMessage dropdown</p></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/image (593).png" alt=""><figcaption><p>Adding dynamic data to FormMessage dropdown</p></figcaption></figure>
+
+If you want to use a collection attribute, you can select what context that attribute will be saved in, and then specify the name of that attribute so that during a live conversation (you can test this in preview or on a live bot) the options are dynamically filled.&#x20;
+
+We support a range of attribute types from the following list:&#x20;
+
+* `StringCollectionAttribute` e.g. \["Banana", "Apple", "Cherry"]
+* `IntegerColelctionAttribute` e.g. \[1, 2, 3]
+* `FloatCollectionAttribute` e.g. \[1.1, 1.2, 1.3]
+* `ArrayDataAttribute` (aka 'List') e.g. \["Any set of values", "that you like", \["even nested ones"]]
+* `JSONInferredCompositeAttribute`  e.g. { "1": "Unemployed", "2": "Employed"}
+
+The only unsupported type is:
+
+* `CompositeCollectionAttribute`
+
+**Key/Value Mapping**: For large option sets, use `JSONInferredCompositeAttribute` to show user-friendly labels while storing corresponding IDs or codes. Users see the "value" (e.g., "Software Engineer") but your system stores the "key" (e.g., "SE001").
+
+<figure><img src="../../../../.gitbook/assets/image (594).png" alt="An image of the Form Select Designer. From Top to bottom we have 6  input fields with the following labels: &#x27;Field type&#x27;, &#x27;Field label&#x27;, &#x27;Select a data source&#x27;, &#x27;Attribute name&#x27; and &#x27;Default value&#x27;. There is also a checkbox beneath that toggles if the field is optional (default setting) or mandatory."><figcaption></figcaption></figure>
+
+Once you've specified your data or data source, you will see a toggle to enable sorting of your dropdown options. When enabled, they will be alphabetically sorted from A-Z (A at the top, Z at the bottom) to make it simpler to scroll through the different options, or jump to a specific start letter.&#x20;
+
+### Searching Within A Dropdown In WebChat
+
+Once your form message is built, testing it in preview will show the form and let you type to search. You can search a form select regardless of the number of options within it.
+
+<figure><img src="../../../../.gitbook/assets/image (596).png" alt=""><figcaption><p>Searching a dropdown in a form message</p></figcaption></figure>
+
+If you choose to sort your options alphabetically, users will be provided with a navigation bar to jump to a specific letter.
+
+**Priority Options**: Symbols, numbers, and special characters sort to the top—prefix important options with "\*" or other characters to keep them visible at the start of the list.
+
+<figure><img src="../../../../.gitbook/assets/image (595).png" alt=""><figcaption><p>Sorting your options alphabetically, including priority options</p></figcaption></figure>
+
 ### Via the custom message in Message Editor
 
 Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Select `form-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
@@ -88,8 +134,14 @@ When using `checkbox` or `select` elements, you must define an `options` block g
         <value>Value</value>
       </option>
     </options>
+    <options_attribute>context.attribute_name</options_attribute>
+    <alphabetical>false</alphabetical>
 </element>
 ```
+
+For a `select` element, you can also define an `options_attribute` , by providing the context name (e.g. user, session, conversation, etc...) and the name of the attribute you want to use, separated by a dot ("."). This is a way of populating the `options` block with a dynamic data source.&#x20;
+
+Additionally, we have an `<alphabetical></alphabetical>` tag to control whether the dropdown options are sorted alphabetically A-Z or not. This defaults to a value of `false`.&#x20;
 
 The `email` element type acts just like a `text` element, but on submission, is validated to ensure it is formatted like an email address
 
