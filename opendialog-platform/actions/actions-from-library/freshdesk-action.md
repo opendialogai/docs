@@ -86,9 +86,7 @@ You can test your action using the test pane on the right-hand side of the actio
 
 To test your action, add dummy test data to the JSON snippet then click on the ‘Run action test’ button.&#x20;
 
-<figure><img src="../../../.gitbook/assets/Screenshot 2023-06-02 at 10.15.10.png" alt=""><figcaption><p>Test your action using the Test Action pane</p></figcaption></figure>
-
-
+<figure><img src="../../../.gitbook/assets/image (597).png" alt=""><figcaption><p>Test your action using test action pane</p></figcaption></figure>
 
 This will trigger the action to run the test data through Freshdesk, create the Freshdesk ticket and retrieve the related information about the ticket including information about the action success, the ticket creation, the ticket ID and the ticket response due date. &#x20;
 
