@@ -6,7 +6,7 @@ description: The Topic Conversation of the Start From Scratch Scenario
 
 The Topic conversation is the more complex conversation in this Scenario as it lays out the structure to deal with a number of different generic topics in a fluid conversational way.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption><p>The Topic Conversation</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption><p>The Topic Conversation</p></figcaption></figure>
 
 Every Scene in the Topic Conversation follows the same pattern.&#x20;
 

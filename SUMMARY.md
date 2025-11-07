@@ -174,7 +174,11 @@
     * [Using conversation history (memory) in LLM actions](opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions.md)
     * [LLM Action Analytics](opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/llm-action-analytics.md)
 * [3rd party Integrations in your application](designing-conversations/actions/README.md)
-  * [Webhook actions](designing-conversations/actions/webhook-action.md)
+  * [Webhook action](opendialog-platform/actions/webhook-action/README.md)
+    * [Execution logs and troubleshooting](opendialog-platform/actions/webhook-action/execution-logs-and-troubleshooting.md)
+    * [Using JMESPath expressions](opendialog-platform/actions/webhook-action/using-jmespath-expressions.md)
+    * [\[Deprecated\] webhook actions](opendialog-platform/actions/webhook-action/webhook-action/README.md)
+      * [\[Deprecated\] developing a webhook action](opendialog-platform/actions/webhook-action/webhook-action/deprecated-developing-a-webhook-action.md)
   * [Actions from library](designing-conversations/actions/actions-from-library/README.md)
     * [Freshdesk Action](opendialog-platform/actions/actions-from-library/freshdesk-action.md)
     * [Send to Email Action](opendialog-platform/actions/actions-from-library/send-to-email-action.md)
@@ -193,9 +197,6 @@
 ## Developing With OpenDialog
 
 * [Integrating with OpenDialog](developing-with-opendialog/introduction.md)
-* [Actions](developing-with-opendialog/actions/README.md)
-  * [Webhook actions](developing-with-opendialog/actions/webhook-actions.md)
-  * [LLM actions](developing-with-opendialog/actions/llm-actions.md)
 * [WebChat](developing-with-opendialog/webchat/README.md)
   * [Chat API](developing-with-opendialog/webchat/webchat-api.md)
   * [WebChat authentication](developing-with-opendialog/webchat/webchat-authentication.md)

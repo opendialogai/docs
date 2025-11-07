@@ -105,7 +105,7 @@ Each requires a slightly different configuration.&#x20;
 {% hint style="info" %}
 If you choose the 'Custom' engine, you will need to manually configure your action using the JSON input field&#x20;
 
-[Learn about JSON LLM action settings](../../../developing-with-opendialog/actions/llm-actions.md)
+[Learn about JSON LLM action settings](broken-reference)
 {% endhint %}
 
 ### Prompt configuration
@@ -269,7 +269,7 @@ If the model returns this text exactly, then the action will fail. If you want t
 
 #### Content moderation&#x20;
 
-This setting allow you to further control the behaviour and content of your LLM action by moderating offensive/inappropriate content. This is enabled by default. If content is moderated the action will fail and some [output attributes](output-attributes.md#llm\_action\_flagged\_moderation\_categories) contain granular detail of the moderation will be provided.
+This setting allow you to further control the behaviour and content of your LLM action by moderating offensive/inappropriate content. This is enabled by default. If content is moderated the action will fail and some [output attributes](output-attributes.md#llm_action_flagged_moderation_categories) contain granular detail of the moderation will be provided.
 
 {% hint style="warning" %}
 _We strongly recommend that this settings be used with care as disabling content moderation could have undesired affects._&#x20;

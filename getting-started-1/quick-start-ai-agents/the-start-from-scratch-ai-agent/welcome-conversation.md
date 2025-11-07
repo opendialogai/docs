@@ -16,11 +16,11 @@ The Welcome Scene has just one _Starting_ Turn - the Welcome Turn - with an APP 
 
 The WelcomeResponse Message is a static message - you can customise it by editing it directly or turn it into a dynamic message by using an LLM action on the intent to generate a relevant welcome message.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you visit the Preview section of the bot (under Test) you will see this message appear in WebChat. The `intent.core.welcome` intent was the incoming user intent (triggered automatically by the fact that WebChat loaded on the page). That intent (containted in the Chat Management conversation) then transitions the context to the Welcome Conversation where the OpenDialog Engine identified one possible response - the `WelcomeResponse` - which the associated message.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The WelcomeResponse intent then transitions us to the Topic Conversation where we are waiting for a message from the user. You can see the transition under "Transition to" in the WelcomeResponse intent.
 

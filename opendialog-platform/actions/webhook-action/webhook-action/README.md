@@ -1,14 +1,18 @@
-# Webhook actions
+# \[Deprecated] webhook actions
+
+{% hint style="warning" %}
+This action is deprecated in OpenDialog. Use [new webhook action](../) instead.
+{% endhint %}
 
 The webhook action allows you to send and receive data from an external service via a HTTP POST request to a provided webhook URL.&#x20;
 
 {% hint style="info" %}
-For some more details around the data structures you can use please see the [Integrating with OpenDialog](../../developing-with-opendialog/introduction.md) section.&#x20;
+For some more details around the data structures you can use please see the [Integrating with OpenDialog](../../../../developing-with-opendialog/introduction.md) section.&#x20;
 {% endhint %}
 
 Once you have a service that provides the desired functionality, you'll want to create a new webhook by following the action creation steps and set the action's URL to be the URL of your service.
 
-![A webhook action that sends/receives data from "https://api.example.com/opendialog"](<../../.gitbook/assets/image (403).png>)
+![A webhook action that sends/receives data from "https://api.example.com/opendialog"](<../../../../.gitbook/assets/image (403).png>)
 
 ### Headers
 
@@ -30,7 +34,7 @@ First, let's create a test action in OpenDialog and set the webhook endpoint to 
 
 The url we are using is `https://af7df53c-9871-40de-a454-31d5cf2d6237.mock.pstmn.io /your-webhook-endpoint`
 
-<figure><img src="../../.gitbook/assets/image (535).png" alt=""><figcaption><p>A webhook action</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (535).png" alt=""><figcaption><p>A webhook action</p></figcaption></figure>
 
 Now, we can set up the **input attributes.** This is the information we will be collecting from our scenario and sending to our webhook endpoint. In this case it will be the user's first and last name.&#x20;
 
@@ -38,7 +42,7 @@ Now, we can set up the **input attributes.** This is the information we will be 
 In the **Headers** section you can setup and authentication token required and you can also send headers that include conversation attributes such as the user's ID.&#x20;
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (536).png" alt=""><figcaption></figcaption></figure>
 
 Ok, so we've setup a `first_name` and `last_name` as input attributes and indicated that we expect a `full_name` as an output attribute (i.e. the result of our action).&#x20;
 
@@ -48,17 +52,17 @@ The webhook action is _permissive_ in that it will accept input attributes that 
 
 Now, we can test our action by click on the Test Action Using JSON button.
 
-<figure><img src="../../.gitbook/assets/image (537).png" alt=""><figcaption><p>Testing a webhook action</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (537).png" alt=""><figcaption><p>Testing a webhook action</p></figcaption></figure>
 
 We will get the preset response from the mock Postman server.&#x20;
 
 Now, we can activate our action to make it available in a scenario.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (538).png" alt="" width="375"><figcaption><p>Activating an action. </p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (538).png" alt="" width="375"><figcaption><p>Activating an action. </p></figcaption></figure>
 
 Finally, we can add the action to a specific intent so that it is run whenever that intent is selected.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (539).png" alt=""><figcaption><p>Adding an action to an intent. </p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (539).png" alt=""><figcaption><p>Adding an action to an intent. </p></figcaption></figure>
 
 In this case, I've added the action to the WelcomeResponse intent, so it will be executed whenever that intent is executed. You might notice in the screenshot that there is another action defined (Customise welcome message). You can run multiple actions on an intent and they will be executed in order.&#x20;
 
@@ -66,19 +70,19 @@ Before testing it out let's setup the WelcomeResponse message to use the results
 
 1. Click on Edit Messages.
 
-<figure><img src="../../.gitbook/assets/image (540).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (540).png" alt=""><figcaption></figcaption></figure>
 
 2. Click on the WelcomeResponse edit button
 
-<figure><img src="../../.gitbook/assets/image (541).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (541).png" alt=""><figcaption></figcaption></figure>
 
 3. We are going to add a text block to our message that greets the user.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (542).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (542).png" alt=""><figcaption></figcaption></figure>
 
 4. Now if we visit the preview section we will see that we are extracting the information from the action and using it to greet the user.
 
-<figure><img src="../../.gitbook/assets/image (543).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (543).png" alt="" width="375"><figcaption></figcaption></figure>
 
 Well done! You've created your first action using the Webhook action in OpenDialog.
 
@@ -90,11 +94,11 @@ Every action automatically generates a boolean attribute (true/false) based on t
 
 We can see the value of this attribute in our user context.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (544).png" alt="" width="321"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (544).png" alt="" width="321"><figcaption></figcaption></figure>
 
 We can check for the value of this attribute in our conditions before we use the output of the attribute.&#x20;
 
 For example, we could have two messages one used when `webhook_test_action_success` is true and one for false.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (545).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (545).png" alt=""><figcaption></figcaption></figure>
 

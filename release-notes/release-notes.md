@@ -6,6 +6,34 @@ description: >-
 
 # Release Notes
 
+## October 2025
+
+#### <mark style="color:purple;">New webhook action</mark>
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+#### New Features and Updates
+
+Our brand new integration method with external resources is out! You can now:
+
+* Utilize a variety of HTTP verbs.
+* Use OD attribute syntax within URL-queries, path segments, or header values.
+* Construct free-form JSON requests with inline values or OD attributes.
+* Employ flexible syntax for mapping your JSON responses to OD output attributes.
+* Save entire responses as strings.
+* Access a new testing panel for this action.
+* View action logs and aggregate information.
+
+Contact us via email at [hello@opendialog.ai](mailto:hello@opendialog.ai) if you want this feature enabled for your workspace. Otherwise, it will become the default setting starting with the next release. Existing webhook actions remain unchanged, but creating new ones will not be possible in the future.
+
+Additionally, we've made several improvements to the actions page:
+
+* The card's header now displays the action name instead of the action type.
+* All actions now have an optional description that will be displayed as a subtitle; if not provided, the action type will be shown.
+* New webhook actions have an extra chip at the bottom indicating the HTTP verb used.
+
+Check out more in our [documentation](../opendialog-platform/actions/webhook-action/).
+
 ## July 2025
 
 #### <mark style="color:purple;">Role-based access</mark>
@@ -89,7 +117,7 @@ We made our scenario visualizer in preview and analyse a bit more convenient and
 * More information about run actions;
 * Actions and conditions are now clickable and take you to where they are defined
 
-<figure><img src="../.gitbook/assets/image (575).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (575) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### <mark style="color:purple;">Improvements</mark>
 
@@ -109,15 +137,15 @@ We made our scenario visualizer in preview and analyse a bit more convenient and
 
 To enhance clarity regarding conditions and actions tied to specific intent within Conversation Designer, we are rolling out an update that will visibly mark intent cards when they contain associated action or condition. Additionally, we've incorporated straightforward edit links directly on the interface of each intent card for immediate access to thisi elements:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (5).png" alt=""><figcaption></figcaption></figure>
 
 #### <mark style="color:purple;">Security updates</mark>
 
 This release includes several important security updates. One of them being a stricter password policy. If your current password does not meet new strength criteria, upon next login you'll be prompted to reset it in accordance with these updated guidelines:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 #### <mark style="color:purple;">Improvements</mark>
 
@@ -197,7 +225,7 @@ We are wrapping up this year with some user experience improvements and clearing
 
 We are delighted to present a tracker for your vectorisation usage restrictions. Each Topic page now features a progress bar that shows the number of jobs currently in progress and updates each time you add new items to the queue until you reach the quota. This should help you better understand how many jobs you can have per topic at any given time.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Capacity tracker for vectorisation quotas</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Capacity tracker for vectorisation quotas</p></figcaption></figure>
 
 #### <mark style="color:purple;">Improvements</mark>
 
@@ -451,7 +479,7 @@ Notable updates:
 
 #### <mark style="color:purple;">Improvements</mark>
 
-OpenDialog [Integrate](../developing-with-opendialog/actions/) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
+OpenDialog [Integrate](broken-reference) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
 
 ## September 2023
 

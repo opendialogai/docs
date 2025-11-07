@@ -52,11 +52,15 @@ Intents can also cause transitions. What this means is that if the intent is mat
 Within each intent you can add the following advanced settings to an intent:
 
 * **Conditions**: You can add conditions to intents to only show specific intent based on certain criteria. If a condition that has been added is met, then it will show the intent e.g. if we only want to show this intent to new users then we would set a condition such as `seconds_since_last_seen`with the operation set to `Less Than` and the value set to `0` - Meaning only user that have never interacted with the application will see this intent. _More information will soon be available on Conditions._
-* **Actions**: We can also add actions that will have been define in the 'Action' section. As so, if this intent is selected, the named action will be run. _More information will soon be available on Actions._
+* **Actions**: We can also add actions that will have been define in the 'Action' section. As so, if this intent is selected, the named action will be ru&#x6E;_._
 
 {% hint style="info" %}
 Any action type (whether it's a Webhook, Action or LLM Action) can be added to an intent using this method.&#x20;
 {% endhint %}
+
+Actions can have output attributes, typically set up for webhook or LLM actions. These user-defined attributes are populated by this action as a result of its execution. By default, all output attributes are stored in the `user` context, but you can override this behavior at the intent level.:&#x20;
+
+<div><figure><img src="../../../.gitbook/assets/1.png" alt="" width="501"><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/2.png" alt="" width="329"><figcaption></figcaption></figure></div>
 
 ## Reserved Intent Names&#x20;
 

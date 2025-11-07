@@ -1,12 +1,8 @@
----
-description: >-
-  The webhook action allows you to send and receive attributes to/from a webhook
-  URL.
----
+# \[Deprecated] developing a webhook action
 
-# Webhook actions
-
-## Developing a Webhook action
+{% hint style="warning" %}
+This action is deprecated in OpenDialog. Use [new webhook action](../) instead.
+{% endhint %}
 
 ### Webhook request structure
 

@@ -16,7 +16,7 @@ You can create a start from scratch scenario by visiting the Create Scenario Pag
 
 
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption><p>The Start From Scratch Conversations and Flows</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption><p>The Start From Scratch Conversations and Flows</p></figcaption></figure>
 
 The "Start From Scratch" has four Conversations:&#x20;
 

@@ -1,4 +1,4 @@
-# Integrations and Reasoning in your application
+# 3rd party Integrations in your application
 
 ## Introduction
 
@@ -36,8 +36,8 @@ To add an action, select an action from the dropdown list and save attributes to
 
 ## Start creating actions
 
-{% content-ref url="webhook-action.md" %}
-[webhook-action.md](webhook-action.md)
+{% content-ref url="../../opendialog-platform/actions/webhook-action/webhook-action/" %}
+[webhook-action](../../opendialog-platform/actions/webhook-action/webhook-action/)
 {% endcontent-ref %}
 
 {% content-ref url="actions-from-library/" %}

@@ -19,7 +19,7 @@ The OpenDialog RAG service allows you to&#x20;
 
 
 
-<figure><img src="../../../.gitbook/assets/1.png" alt="Flowchart showing the Retrieval Augmented Generation process: uploading documents, converting and vectorizing them, querying using prompting, and generating a response."><figcaption><p>Simplified diagram of the Retrieval Augmented Generation process</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1 (3).png" alt="Flowchart showing the Retrieval Augmented Generation process: uploading documents, converting and vectorizing them, querying using prompting, and generating a response."><figcaption><p>Simplified diagram of the Retrieval Augmented Generation process</p></figcaption></figure>
 
 ## In Action
 
@@ -279,7 +279,7 @@ Once you have vectorised your different topic sources for a given topic, you can
 
 You can use your RAG service in your AI application by referencing it through a [knowledge string](retrieval-augmented-generation.md#knowledge-strings) in other services, like LLM Actions.  In order to do so, you need to retrieve or construct the relevant knowledge strings.&#x20;
 
-<figure><img src="../../../.gitbook/assets/2 (1).png" alt=""><figcaption><p>Syntax structure of a knowledge string</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/2 (1) (2).png" alt=""><figcaption><p>Syntax structure of a knowledge string</p></figcaption></figure>
 
 #### Retrieving a knowledge string
 

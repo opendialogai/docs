@@ -31,7 +31,7 @@ Navigate to the [Message Editor](../message-editor.md) and create a form block b
 
 ### Creating Form Messages With Dynamic Data
 
-When creating a form message in the Message Editor, there are two ways to provide dropdown options. The first, is by manually providing a set of static options. The second way to do this is via a [collection attribute](../../../../core-concepts/contexts-and-attributes/about-attributes.md#multiple-value-attribute-types-collections-and-composites), populated by a fetch operation from a [webhook action](../../../../designing-conversations/actions/webhook-action.md).
+When creating a form message in the Message Editor, there are two ways to provide dropdown options. The first, is by manually providing a set of static options. The second way to do this is via a [collection attribute](../../../../core-concepts/contexts-and-attributes/about-attributes.md#multiple-value-attribute-types-collections-and-composites), populated by a fetch operation from a [webhook action](../../../actions/webhook-action/).
 
 By clicking on _-Select-_, you can choose how you want to populate your dropdown.
 
