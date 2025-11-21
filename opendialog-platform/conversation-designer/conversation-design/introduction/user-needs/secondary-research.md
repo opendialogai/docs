@@ -28,4 +28,4 @@ Just like competitive research with users is a viable method, a heuristic evalua
 
 ## Methods to use
 
-The methods to select will depend on the circumstances; not every organization has access to relevant data logs or prior research. A good practice dictates that these areas are investigated; if you don't ask, you may not know that some relevant prior information is available to you. \
+The methods to select will depend on the circumstances; not every organization has access to relevant data logs or prior research. A good practice dictates that these areas are investigated; if you don't ask, you may not know that some relevant prior information is available to you. <br>

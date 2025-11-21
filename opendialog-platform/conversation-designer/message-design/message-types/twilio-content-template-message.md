@@ -71,6 +71,5 @@ Navigate to the [Message Editor](../message-editor.md) and create a Custom Messa
 4. [Twilio Card Content](https://www.twilio.com/docs/content/twiliocard)\
    This allows for media to be sent in a message.
 5. [Twilio Carousel Content](https://www.twilio.com/docs/content/carousel)\
-   This allows for a multiple cards in a horizontally scrollable carousel.\
-
+   This allows for a multiple cards in a horizontally scrollable carousel.<br>
 

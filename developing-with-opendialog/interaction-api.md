@@ -1,4 +1,8 @@
-# External APIs
+# \[Legacy] External APIs
+
+{% hint style="info" %}
+These API end points are now considered as legacy in OpenDialog. They will be removed in the future. Use the [new Public APIs](public-apis/) instead.
+{% endhint %}
 
 ## Introduction
 

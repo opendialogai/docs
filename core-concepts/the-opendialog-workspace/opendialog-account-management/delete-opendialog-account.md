@@ -6,4 +6,4 @@ In case you choose to discontinue OpenDialog, you can request deletion of your O
 2. Once the email is received the OpenDialog customer support team will be in touch to confirm deletion and start your account deletion.&#x20;
 3. Once completed, you will be notified through email that your account has been deleted.
 
-**Note:**  deleting your OpenDialog account will remove your entire account including all scenarios and will not be recoverable. Please make sure you have exported/transferred any content before requesting the deletion. \
+**Note:**  deleting your OpenDialog account will remove your entire account including all scenarios and will not be recoverable. Please make sure you have exported/transferred any content before requesting the deletion. <br>

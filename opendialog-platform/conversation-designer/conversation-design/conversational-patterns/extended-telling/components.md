@@ -15,8 +15,7 @@
 ### Extended telling sequence
 
 * Bot gives the first part of the telling
-  * Good message design here will reduce cues to turn transition at utterance end (lots of intonational cues, avoid sequence-ending moves e.g. gratitude, summation, etc…), making it clear bot plans to continue. \
-
+  * Good message design here will reduce cues to turn transition at utterance end (lots of intonational cues, avoid sequence-ending moves e.g. gratitude, summation, etc…), making it clear bot plans to continue. <br>
 * User provides cues to the next step (skipping the option for these user cues can speed things up but also feel like railroading to the user; it can also overwhelm e.g with a ton of chat bubbles from the bot all at once).
   * Cued to continue (“hm mm”, “yeah”, “go on”, “continue”) → loop with more tellings. Note: if the user does nothing during bot pausing for cue, normally this is taken as cue to continue.
   * Cued to stop the telling (“I’m bored”, “can we do something else?”) → exit

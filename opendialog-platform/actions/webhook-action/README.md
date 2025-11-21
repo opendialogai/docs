@@ -8,13 +8,13 @@ Webhook actions allows you to make calls to an external APIs via HTTP protocol.&
 
 You can create new webhook action by visiting your scenario -> Integreate -> Actions -> Create webhook integration:
 
-<div><figure><img src="../../../.gitbook/assets/image.png" alt="" width="188"><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div><figure><img src="../../../.gitbook/assets/image (2).png" alt="" width="188"><figcaption></figcaption></figure> <figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 ## Configuring webhook action
 
 ### Overview
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>New webhook page</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>New webhook page</p></figcaption></figure>
 
 1. **Action Name**: Enter a descriptive action name.
 2. **Description** (optional): Add contextual information to clarify the function and necessity of this action.

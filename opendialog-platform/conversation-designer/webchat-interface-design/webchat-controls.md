@@ -22,7 +22,7 @@ The minimise button here allows you to close down your conversation when you are
 
 To do this, locate the minimise icon in the top right corner, and click it once to close your current chatbot window.
 
-### Main Menu 
+### Main Menu<br>
 
 <figure><img src="../../../.gitbook/assets/Group 5.png" alt="" width="375"><figcaption><p>Where to find the main menu button - right top hand corner</p></figcaption></figure>
 
@@ -59,4 +59,4 @@ The Call to Action (CTA) is located when you minimise the chatbot that you are c
 
 To customise the text within the CTA, you can create a CTA message, with information on how to do this available by following the link above.
 
-You are also able to customise the look and feel of your CTA button. This can be done via the [webchat interface settings](webchat-interface-settings.md) section of the conversation engine. \
+You are also able to customise the look and feel of your CTA button. This can be done via the [webchat interface settings](webchat-interface-settings.md) section of the conversation engine. <br>

@@ -6,38 +6,13 @@ description: This page describe where to use and find a date picker message type
 
 ## What is a date picker message?
 
-Date picker messages allow the user to choose a date from a graphical calendar interface within the chat window which is then saved to an attribute for further use. Date picker messages simplify the process of inputting dates in a consistent format. This can often be challenging if you need to constrain the range of dates you would like to accept as input, or if you are serving an international user base with differing date formats. \
+Date picker messages allow the user to choose a date from a graphical calendar interface within the chat window which is then saved to an attribute for further use. Date picker messages simplify the process of inputting dates in a consistent format. This can often be challenging if you need to constrain the range of dates you would like to accept as input, or if you are serving an international user base with differing date formats. <br>
 
-
-<div align="center" data-full-width="true">
-
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-06-04 at 10.31.07.png" alt="" width="207"><figcaption><p>Users are prompted with a clickable input box.</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../../.gitbook/assets/Screenshot 2024-06-04 at 10.31.14.png" alt="" width="207"><figcaption><p>When clicked, a calendar appears</p></figcaption></figure>
-
-</div>
+<div align="center" data-full-width="true"><figure><img src="../../../../.gitbook/assets/Screenshot 2024-06-04 at 10.31.07.png" alt="" width="207"><figcaption><p>Users are prompted with a clickable input box.</p></figcaption></figure> <figure><img src="../../../../.gitbook/assets/Screenshot 2024-06-04 at 10.31.14.png" alt="" width="207"><figcaption><p>When clicked, a calendar appears</p></figcaption></figure></div>
 
 As well as being able to just pick the date, the date picker message also has other options. For example:
 
-<div>
-
-<figure><img src="../../../../.gitbook/assets/Pick a time.png" alt="" width="188"><figcaption><p>Pick a time</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../../.gitbook/assets/Pick a date and time.png" alt="" width="188"><figcaption><p>Pick a date and time</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../../.gitbook/assets/Pick a year and month.png" alt="" width="188"><figcaption><p>Pick a month and year</p></figcaption></figure>
-
- 
-
-<figure><img src="../../../../.gitbook/assets/Pick a year.png" alt="" width="188"><figcaption><p>Pick a year</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../../../../.gitbook/assets/Pick a time.png" alt="" width="188"><figcaption><p>Pick a time</p></figcaption></figure> <figure><img src="../../../../.gitbook/assets/Pick a date and time.png" alt="" width="188"><figcaption><p>Pick a date and time</p></figcaption></figure> <figure><img src="../../../../.gitbook/assets/Pick a year and month.png" alt="" width="188"><figcaption><p>Pick a month and year</p></figcaption></figure> <figure><img src="../../../../.gitbook/assets/Pick a year.png" alt="" width="188"><figcaption><p>Pick a year</p></figcaption></figure></div>
 
 * The month + year option
 * The just-year option

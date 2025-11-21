@@ -63,4 +63,4 @@ In order for your webchat application to be able to return the messages from Cha
 #### Testing the Chatwoot handoff in your scenario
 
 \
-You can check if your hand-off is successful by testing your conversation in the Preview (Test - Preview) and checking the user context on the right side of your screen.When you hit the hand-off message the user context will update to include **handover\_success : true**.\
+You can check if your hand-off is successful by testing your conversation in the Preview (Test - Preview) and checking the user context on the right side of your screen.When you hit the hand-off message the user context will update to include **handover\_success : true**.<br>

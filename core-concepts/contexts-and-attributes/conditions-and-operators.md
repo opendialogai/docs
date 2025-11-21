@@ -24,8 +24,7 @@ Let’s consider an example with two conditions for a Conversation Object: `user
 
 <figure><img src="../../.gitbook/assets/image (567).png" alt=""><figcaption><p>Conditions Or operator</p></figcaption></figure>
 
-The above also applies to Message Templates.\
-
+The above also applies to Message Templates.<br>
 
 <figure><img src="../../.gitbook/assets/image (569).png" alt=""><figcaption><p>Message Template conditions OR operator</p></figcaption></figure>
 

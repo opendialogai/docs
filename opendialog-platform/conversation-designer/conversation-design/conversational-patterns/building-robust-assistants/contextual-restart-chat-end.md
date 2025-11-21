@@ -24,8 +24,7 @@ Individual turns, scenes and conversations can handle restarts however they need
 
 Consider a scene in which we are trying to gather information about a user. Our conversational flow will be a question from the app, followed by an answer from the user. Now imagine the user made a mistake in the information they entered and hit the restart button.&#x20;
 
-This is what a scene for this might look like:\
-
+This is what a scene for this might look like:<br>
 
 ![A scene to gather user information](<../../../../../.gitbook/assets/image (282).png>)
 

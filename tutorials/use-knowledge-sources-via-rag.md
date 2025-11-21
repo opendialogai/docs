@@ -126,8 +126,7 @@ In order to use your new knowledge source in a response, you will need to accomp
 
 Once in the LLM Actions overview, you’ll see prebuilt actions like “Topic Response Generator”, for example, which were automatically created to generate responses for your primary topic. We will be using this LLM action as a basis for our new LLM Action.&#x20;
 
-Let’s have a look at what this “Topic Response Generator” LLM action looks like.\
-
+Let’s have a look at what this “Topic Response Generator” LLM action looks like.<br>
 
 {% hint style="success" %}
 **View a pre-existing LLM Action**
@@ -142,8 +141,7 @@ An LLM action is made up of 3 main components:&#x20;
 
 2 - the **prompt configuration** that provides the LLM with instructions, under the prompt configuration tab, and further settings that allow you to determine how the LLM response will be referenced thanks to output attributes.
 
-3 - **guardrails** to constrain the LLM responses and configure their safety settings, under the safeguarding tab.\
-
+3 - **guardrails** to constrain the LLM responses and configure their safety settings, under the safeguarding tab.<br>
 
 In this initial guide, we are not going to dig any deeper into the preconfigured prompt configuration just yet. All you need to remember for now is that:
 
@@ -151,8 +149,7 @@ In this initial guide, we are not going to dig any deeper into the preconfigured
 * The knowledge string is used in the prompt instructions in a specific knowledge sections, indicated as follows: \<knowledge>
 * The LLM response that comes back when the action is run is saved in OpenDialog under an output attribute which by default is the {llm\_response} attribute
 
-For more information on how to structure prompt instructions for LLM Actions, you can take [a look at our further documentation](../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/).\
-
+For more information on how to structure prompt instructions for LLM Actions, you can take [a look at our further documentation](../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/).<br>
 
 For this initial setup, we will use the same configuration as the ‘Topic Response Generation’ LLM Action.
 
@@ -168,8 +165,7 @@ For this initial setup, we will use the same configuration as the ‘Topic Respo
 
 Now let’s taylor our new LLM action and provide it with instructions to reference our newly setup knowledge source.
 
-👉🏻 You will also need the knowledge string you put aside earlier.\
-
+👉🏻 You will also need the knowledge string you put aside earlier.<br>
 
 {% hint style="success" %}
 **Editing an LLM Action**
@@ -182,8 +178,7 @@ Now let’s taylor our new LLM action and provide it with instructions to refere
 
 _(\*) The same configuration of the LLM Action you have duplicated will apply. When selecting the OpenAI engine, the correct configuration will already be selected. You can use an OpenDialog-managed account, or use your own account credentials._
 
-Now, we are going to update the prompt instructions in order to adapt to the additional knowledge source you have just added. \
-
+Now, we are going to update the prompt instructions in order to adapt to the additional knowledge source you have just added. <br>
 
 {% hint style="success" %}
 **Updating  prompt instructions**&#x20;
@@ -247,4 +242,4 @@ Your new knowledge source is now ready, and the AI Agent is set to generate info
 
 Your additional topic is now live! With these steps, you can empower your AI Agent to handle a wider range of user questions while maintaining a smooth, relevant conversation flow. To add more additional topics, go back to the top of this guide, rinse and repeat!
 
-\
+<br>

@@ -207,7 +207,12 @@
     * [Methods](developing-with-opendialog/webchat/sdk/methods.md)
     * [Events](developing-with-opendialog/webchat/sdk/events.md)
     * [Custom Components](developing-with-opendialog/webchat/sdk/custom-components.md)
-* [External APIs](developing-with-opendialog/interaction-api.md)
+* [\[Legacy\] External APIs](developing-with-opendialog/interaction-api.md)
+* [Public APIs](developing-with-opendialog/public-apis/README.md)
+  * [Knowledge Service APIs](developing-with-opendialog/public-apis/knowledge-service-apis.md)
+  * [User Interactions APIs](developing-with-opendialog/public-apis/user-interactions-apis.md)
+  * [Webchat Deep Link APIs](developing-with-opendialog/public-apis/webchat-deep-link-apis.md)
+  * [User Data Export APIs](developing-with-opendialog/public-apis/user-data-export-apis.md)
 
 ## Release Notes
 
