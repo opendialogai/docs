@@ -191,6 +191,7 @@
 * [Monitoring your application](monitoring-your-application.md)
 * [Debugging your application](opendialog-platform/debugging-your-application.md)
 * [Translating your application](translating-your-application.md)
+* [Additional menu links](opendialog-platform/additional-menu-links.md)
 * [FAQ](faq.md)
 * [Troubleshooting and Common Problems](opendialog-platform/troubleshooting-and-common-problems.md)
 
