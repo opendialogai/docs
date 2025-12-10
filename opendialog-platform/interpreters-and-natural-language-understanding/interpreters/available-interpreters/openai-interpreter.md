@@ -20,11 +20,11 @@ Select the desired model from the list under "Model name". Paste the API key you
 
 ### Optional fields
 
-* [Max tokens](https://platform.openai.com/docs/api-reference/chat/create#chat-create-max\_tokens)
+* [Max tokens](https://platform.openai.com/docs/api-reference/chat/create#chat-create-max_tokens)
 * [Temperature](https://platform.openai.com/docs/api-reference/chat/create#chat-create-temperature)
-* [Frequency penalty](https://platform.openai.com/docs/api-reference/chat/create#chat-create-frequency\_penalty)
-* [Presence penalty](https://platform.openai.com/docs/api-reference/chat/create#chat-create-presence\_penalty)
-* [Top P](https://platform.openai.com/docs/api-reference/chat/create#chat-create-top\_p)
+* [Frequency penalty](https://platform.openai.com/docs/api-reference/chat/create#chat-create-frequency_penalty)
+* [Presence penalty](https://platform.openai.com/docs/api-reference/chat/create#chat-create-presence_penalty)
+* [Top P](https://platform.openai.com/docs/api-reference/chat/create#chat-create-top_p)
 * [Number of generations per prompt](https://platform.openai.com/docs/api-reference/chat/create#chat-create-n)
 * No-match response: This field allows you to specify a value that will cause the interpreter to return no matching intents. For example, you can configure the prompt to return "N/A" if the question isn't relevant, and then you can configure the No-match response field as "N/A". The interpreter would then not return the `OpenAIPrompt` which allows for a no-match (if no other interpreters match the intent).
 * Should left-hand whitespace and punctuation be trimmed from the response?: This field allows you to decide if the interpreter should remove any whitespace or punctuation from the left-hand side of the response. This can be useful for older models that are more focused on pure completitions rather than chat competitions.
@@ -33,7 +33,7 @@ Select the desired model from the list under "Model name". Paste the API key you
 
 There are several attributes that can be returned by this interpreter that need to be taken into consideration. Some of the data returned is not suitable for displaying to users of your conversational interface and messages should be constructed taking these into account.
 
-**+ gpt\_response:** This field holds the response message back from OpenAI. It should be used in messages back to the user where the response is successful and not moderated. It can be included in messages with standard [OpenDialog Attribute annotation](broken-reference).
+**+ gpt\_response:** This field holds the response message back from OpenAI. It should be used in messages back to the user where the response is successful and not moderated. It can be included in messages with standard [OpenDialog Attribute annotation](/broken/pages/ctW05MISDAG5zCohAvji).
 
 \+ **is\_gpt\_response\_moderated:** A boolean attribute that signifies whether the response or request was moderated. In this case, **gpt\_response** should not be shown to a user. Messages or intents can be filtered using [OpenDialog Conditions](../../../../core-concepts/contexts-and-attributes/conditions-and-operators.md)
 

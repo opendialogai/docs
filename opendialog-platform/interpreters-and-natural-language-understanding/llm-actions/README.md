@@ -105,7 +105,7 @@ Each requires a slightly different configuration.&#x20;
 {% hint style="info" %}
 If you choose the 'Custom' engine, you will need to manually configure your action using the JSON input field&#x20;
 
-[Learn about JSON LLM action settings](broken-reference)
+[Learn about JSON LLM action settings](/broken/pages/h1Nv4EMKFW0n10de3P6a)
 {% endhint %}
 
 ### Prompt configuration

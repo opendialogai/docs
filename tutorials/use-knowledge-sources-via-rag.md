@@ -42,10 +42,35 @@ As a first step, you’ll need to add relevant content to your RAG service.  Let
 \
 Within the RAG/ Knowledge service, you’ll see predefined topics and existing knowledge sources that were uploaded during the initial setup. Now, let’s add a new topic for your AI Agent to reference, related to your new topic of discussion.
 
+### Source types
+
+OpenDialog provides the ability to choose from multiple source types depending on the topic type.
+
+#### For **vector topics**:
+
+* URL: Link to a page with relevant information.
+* Document: Upload relevant documents.
+* Text: Manually enter text as a knowledge source.
+
+<figure><img src="../.gitbook/assets/image (613).png" alt=""><figcaption><p>Creating a vector topic</p></figcaption></figure>
+
+#### For **static topics**:
+
+* Static text: Enter or extract full document content (.txt, .json, .xml, .yaml)
+
+> Static topics are ideal when the AI Agent needs access to the **entire, unmodified document**, such as schemas (XSD/JSON), API specifications, or configuration templates.
+
+<figure><img src="../.gitbook/assets/image (612).png" alt="Creating a static topic"><figcaption><p>Creating a static topic</p></figcaption></figure>
+
+Once created, a static topic always contains **one single text source**, which can be replaced by editing the content or extracting a new file.
+
 {% hint style="success" %}
 **Adding a new knowledge topic**
 
-* Click the Add Topic button in the top-right corner
+* Click the **Add Topic** button in the top-right corner
+* Choose between **Vector topic** or **Static topic**
+  * **Vector topics** support URL, Document, and Text sources
+  * **Static topics** support entering or extracting full text from files
 * Enter a name for your topic, such as “AboutCompany”
 * Provide a brief description of your topic aligned with the one you used earlier
 
@@ -54,7 +79,8 @@ _Example: “Information about the brand, organisation, and related services.”
 * Click ‘Create Topic’ to save
 {% endhint %}
 
-\
+
+
 Now, with your new topic created, it’s time to begin adding sources to it. OpenDialog provides you with the ability to choose from a variety of different source types.
 
 * URL: Link to a URL page that has information relevant to your topic.
@@ -62,7 +88,7 @@ Now, with your new topic created, it’s time to begin adding sources to it. Ope
 * Text: Manually enter text as a knowledge source.
 
 {% hint style="success" %}
-**Adding knowledge sources to your topic**
+**Adding knowledge sources to your vector topic**
 
 * Click the Add sources button in the centre right of the screen
 * Select the source type you want to add (URL, document or text)
@@ -76,8 +102,11 @@ Note - For Microsoft Word documents, we only support `.docx` file formats. If yo
 
 ### **Vectorize your knowledge source**
 
-\
 To ensure the AI Agent can efficiently use the information you  just added, you will need to transform its information into a machine readable, numerical format, this is called vectorisation.&#x20;
+
+{% hint style="info" %}
+If your topic is **static**, this step is skipped entirely. Static topics are **not vectorised** and do not appear in vectorisation actions. Vectorisation applies **only to vector topics**.
+{% endhint %}
 
 {% hint style="success" %}
 **Vectorizing your knowledge sources**
@@ -97,6 +126,12 @@ In order to use the vectorised knowledge in your conversation design setup and L
 A knowledge string follows this syntax: %%RAGServiceName.TopicName%%
 
 For example: %%SpaceKnowledge.AboutCompany%%&#x20;
+
+This applies to both **vectorised** and **static topics**.
+
+{% hint style="warning" %}
+**Note:** Static topics do **not** support using query strings (anything after a `?`). If your knowledge string includes a query parameter, remove it when referencing a static topic.
+{% endhint %}
 
 For ease of use, locate the knowledge string for your new topic of discussion in the right-hand test panel and copy/paste this string into a note or blank document for further use in LLM Actions system prompts.
 

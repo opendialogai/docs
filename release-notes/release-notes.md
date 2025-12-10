@@ -472,14 +472,14 @@ Notable updates:
 
 * <mark style="color:blue;">**Language Services:**</mark> Thanks to OpenDialog Language Services, you can easily manage your language model directly within the tool.  This feature is now generally available (previously in Beta)
 * <mark style="color:blue;">**Aliases :**</mark> OpenDialog [Aliases ](../opendialog-platform/launching-your-application.md)allows you to create a single point of reference for your Web Chat application. This functionality enables you to alternate different scenarios at any given time. &#x20;
-* [<mark style="color:blue;">**NEW WEBCHAT**</mark>](broken-reference)<mark style="color:blue;">**!**</mark>
+* [<mark style="color:blue;">**NEW WEBCHAT**</mark>](/broken/pages/Yh2t7P90PzNprbtTVwtP)<mark style="color:blue;">**!**</mark>
   * OpenDialog webchat becomes more intuitive and highly customizable to adapt your branding through advanced Interface settings, theming, and custom messages.&#x20;
   * Thanks to the integration with Speech-to-Text, users can now input their information and queries by voice.
   * Existing messages have been given a new look and feel, and a new set of custom messages has been introduced in new webchat as part of this release, and will continue to be updated in upcoming releases.
 
 #### <mark style="color:purple;">Improvements</mark>
 
-OpenDialog [Integrate](broken-reference) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
+OpenDialog [Integrate](/broken/pages/-MQM33QbO3LxSgzz40Lm) has been enhanced with integrations that offer the possibility to send end-user requests through a ticketing system, to a live agent or trigger an e-mail.
 
 ## September 2023
 
