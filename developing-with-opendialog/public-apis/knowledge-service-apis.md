@@ -9,7 +9,7 @@ Knowledge Services use Retrieval Augmented Generation (RAG) to enhance your conv
 * Define topics and topic sources for your knowledge base
 * Configure embedding and retrieval parameters
 * Integrate with language models for intelligent question answering
-* Vectorize content for semantic search
+* Vectorise content for semantic search
 
 For more details on knowledge services and RAG, see the [Language Services documentation](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation).
 
@@ -340,13 +340,15 @@ Content-Type: application/json
 ```json
 {
   "name": "product_information",
-  "description": "Information about our products"
+  "description": "Information about our products",
+  "topic_type": "vectorised"
 }
 ```
 
 **Validation Rules:**
 
 * `name` - Must match pattern `/^[\w\-]+$/` (alphanumeric, underscores, and hyphens only; no spaces)
+* `topic_type` - Must be either `vectorised` or `static_text`
 
 **Response:**
 
@@ -389,6 +391,7 @@ Authorization: Bearer YOUR_API_TOKEN
     "name": "Product Information",
     "description": "Information about our products",
     "dataset_id": 1,
+    "topic_type": "vectorised",
     "created_at": "2024-01-15T10:30:00.000000Z",
     "updated_at": "2024-01-15T10:30:00.000000Z"
   }
@@ -418,19 +421,23 @@ Content-Type: application/json
 ```json
 {
   "name": "updated_topic_name",
-  "description": "Updated description"
+  "description": "Updated description",
+  "topic_type": "vectorised"
 }
 ```
 
 **Validation Rules:**
 
 * `name` - Must match pattern `/^[\w\-]+$/` (alphanumeric, underscores, and hyphens only; no spaces)
+* `topic_type` - Must be either `vectorised` or `static_text`
 
 **Response:** `204 No Content`
 
 ### Topic Sources
 
-Topic sources are the actual content that gets embedded and vectorized for semantic search within a knowledge service. Sources can be text content, documents, or other data that you want to make searchable through the knowledge service.
+Topic sources are the actual content that gets embedded and vectorised for semantic search within a knowledge service. Sources can be text content, documents, or other data that you want to make searchable through the knowledge service.
+
+Topics with a type of `static_text` only support a single `text` type topic source that cannot be vectorised.
 
 #### List Topic Sources
 
@@ -451,7 +458,7 @@ Authorization: Bearer YOUR_API_TOKEN
 
 #### Create Topic Source
 
-Add a new source to a topic. Topic sources contain the actual content to be vectorized and made searchable.
+Add a new source to a topic. Topic sources contain the actual content to be vectorised and made searchable.
 
 **Endpoint:** `POST /public/api/language-processor/{language_processor_id}/language-processor-topic/{topic_id}/language-processor-topic-source`
 
@@ -586,7 +593,7 @@ Authorization: Bearer YOUR_API_TOKEN
 
 **Configuration Parameters:**
 
-* `type` (string, required) - Type of source: `text`, `url`, or `file`
+* `vectorisedtype` (string, required) - Type of source: `text`, `url`, or `file`
 * `source` (string, required) - The source content or identifier (text content, URL, or filename for file type)
 * `name` (string, optional) - A descriptive name for the source
 * `exclusion_classes` (array, optional) - List of CSS/HTML classes to exclude during processing (URL type)
@@ -596,22 +603,22 @@ Authorization: Bearer YOUR_API_TOKEN
   * `file` (string) - Base64-encoded file content with data URI prefix
   * `file_name` (string) - Original filename
   * `type` (string) - MIME type of the file (e.g., "text/plain", "application/pdf")
-* `vectorisation_status` (string) - Current vectorization status: `pending`, `in_progress`, `completed`, `failed`, or `obsolete`
-* `next_vectorisation` (timestamp, optional) - Scheduled time for next vectorization
-* `vectorisation_interval` (integer, optional) - Interval in seconds between auto-vectorizations
-* `vectorisation_period` (string, optional) - Time period for vectorization scheduling
+* `vectorisation_status` (string) - Current vectorisation status: `pending`, `in_progress`, `completed`, `failed`, or `obsolete`
+* `next_vectorisation` (timestamp, optional) - Scheduled time for next vectorisation
+* `vectorisation_interval` (integer, optional) - Interval in seconds between auto-vectorisations
+* `vectorisation_period` (string, optional) - Time period for vectorisation scheduling
 * `is_truncated` (boolean) - Whether the source content was truncated
 * `allow_truncation` (boolean) - Whether truncation is allowed for this source
-* `last_vectorised` (timestamp, optional) - When this source was last vectorized
-* `will_revectorise` (boolean) - Whether the source will be re-vectorized
+* `last_vectorised` (timestamp, optional) - When this source was last vectorised
+* `will_revectorise` (boolean) - Whether the source will be re-vectorised
 
-**Vectorization Status Values:**
+**Vectorisation Status Values:**
 
-* `pending` - Source waiting to be vectorized
-* `in_progress` - Source is currently being vectorized
-* `completed` - Source has been successfully vectorized
-* `failed` - Vectorization failed for this source
-* `obsolete` - Source content changed; vectorization is outdated
+* `Vectorisationpending` - Source waiting to be vectorised
+* `in_progress` - Source is currently being vectorised
+* `completed` - Source has been successfully vectorised
+* `failed` - Vectorisation failed for this source
+* `obsolete` - Source content changed; vectorisation is outdated
 
 #### Delete Topic Source
 
@@ -633,9 +640,9 @@ Authorization: Bearer YOUR_API_TOKEN
 
 **Response:** `204 No Content`
 
-#### Vectorize Topic
+#### Vectorise Topic
 
-Trigger vectorization for a topic.
+Trigger vectorisation for a topic.
 
 **Endpoint:** `POST /public/api/language-processor/{language_processor_id}/language-processor-topic/{topic_id}/vectorise`
 
@@ -686,6 +693,7 @@ Content-Type: application/json
 {
   "name": "test_topic",
   "description": "test_description",
+  "topic_type": "vectorised",
   "sources": [
     {
       "type": "text",
@@ -707,6 +715,7 @@ Content-Type: application/json
 
 * `name` (string, required) - Name of the topic (must match pattern `/^[\w\-]+$/`)
 * `description` (string, required) - Description of the topic
+* `topic_type` - Must be either `vectorised` or `static_text`
 * `sources` (array, required) - Array of topic sources to create with this topic (minimum 1 source required)
   * `type` (string, required) - Type of source: `text`, `url`, or `file`
   * `configuration` (object, required) - Configuration for the source
