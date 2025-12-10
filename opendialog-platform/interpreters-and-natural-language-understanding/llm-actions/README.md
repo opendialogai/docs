@@ -98,7 +98,13 @@ Each requires a slightly different configuration.&#x20;
 
 #### When using Azure OpenAI&#x20;
 
-• OpenDialog does not provide a managed service, so you will need to provide your Azure OpenAI API Key, Azure OpenAI Resource Name and Azure OpenAI Deployment Name.&#x20;
+• OpenDialog does not provide a managed service, so you will need to provide your Azure OpenAI API Key, Azure OpenAI Resource Name,  Azure OpenAI Deployment Name and the model configured for that deployment
+
+{% hint style="danger" %}
+Note - you will need to enter the model used for Azure OpenAI, and this needs to match the deployment in Azure. If the model you entered does not match, you will get an error message when testing your action configuration\
+\
+![](<../../../.gitbook/assets/image (614).png>)
+{% endhint %}
 
 #### When using a custom configuration
 
@@ -170,6 +176,10 @@ When you check the ‘Use custom output attributes’ checkbox, and enter your o
 
 #### **Temperature**
 
+{% hint style="info" %}
+Note - Temperature will only be displayed for models that support it. For OpenAI, this is any model before GPT-5. If you select a newer model, the temperature config will not show. If you are migrating from an older model to a newer model, please be sure to check the advanced configuration does not have any unsupported configurations for your model.&#x20;
+{% endhint %}
+
 Temperature is a parameter that influences the language model’s output. Setting a lower temperature will yield more deterministic results, however, it might also result in less creative or diverse text, and feel slightly robotic. A low temperature also does not guarantee that the LLM action will respond with the same values each time it is used.
 
 Setting a higher temperature will provide less probable words, leading to more varied and sometimes more creative outputs. However, this can also result in more errors or nonsensical responses. When creating an LLM action, use the testing panel to sense-check your settings and find the right temperature.
@@ -228,6 +238,37 @@ With these output attributes created and their values defined, we can now config
 </details>
 
 With these output attributes created and their values defined, we can now configure messages based on the circumstances of the users application. If they can be insured, we can redirect to {can\_insure\_string}. If we need more information, we can redirect to the {follow\_up\_question} to gather more information.&#x20;
+
+
+
+<figure><img src="../../../.gitbook/assets/image (615).png" alt=""><figcaption></figcaption></figure>
+
+#### File Attribute
+
+The File Attribute field allows you to specify which attribute contains files to be sent to the LLM as attachments when using the Responses API. Select a File Collection attribute from the dropdown that will be attached to your LLM request. This is useful for scenarios where users upload documents or images that the LLM needs to analyse, such as processing receipts, reading documents, or describing images. The selected attribute will be read at runtime, and its files will be passed to the model alongside your prompts.
+
+{% hint style="danger" %}
+When adding a File Attribute to your LLM action, be sure to configure the input attribute on the associated intent - more information on the [3rd Party Integration](https://docs.opendialog.ai/opendialog-platform/actions#adding-an-action-to-an-intent) page
+{% endhint %}
+
+Your conversation will need to contain a [File Upload message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/file-upload-message), and the name of the attribute used in that message must match the one in the LLM action. By default, an attribute named `file_upload` is used. If you use an attribute with a different name, you must be sure to register it as a File Collection Attribute (more details about [attribute registration here](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attribute-management#creating-a-new-dynamic-attribute))&#x20;
+
+{% hint style="info" %}
+Note - The file attribute is available on demand currently. If you would like this turned on for your tenant, please contact OpenDialog support.
+{% endhint %}
+
+#### Reasoning Effort
+
+The Reasoning Effort field controls how much computational effort the model spends on reasoning before generating a response. This setting is available for advanced models that support extended thinking capabilities. Options include Minimal, Low, Medium, and High - higher values allow the model to "think" more deeply about complex problems, which can improve accuracy on tasks requiring\
+multi-step reasoning, analysis, or problem-solving, but may increase response time and token usage. Use lower values for straightforward tasks and higher values when accuracy on complex reasoning is critical.
+
+#### Advanced Configuration
+
+The Advanced Configuration field provides a JSON editor for passing additional parameters directly to the model API. This is available for advanced models where standard configuration options like temperature and frequency penalty are not applicable. Use this field to specify any supported API parameters that aren't exposed through the standard UI fields. The JSON you enter will be merged with the request configuration sent to the model provider. Leave empty to use default settings, or consult your model provider's API documentation for available parameters and their accepted values.
+
+### **Configuration for older models**
+
+The following configuration options will only be displayed for older models that support them and will not be displayed for newer, thinking-type models. If you are migrating your action from and older model to a newer one, please be sure to check that the advanced configuration panel does not include any unsupported fields.
 
 #### **Frequency penalty**
 
@@ -295,6 +336,7 @@ This area shows the information sent to the LLM:
 
 * Attributes and values (gathered from the system or user prompt)
 * User utterance (if a custom user prompt is not set in the advanced section)
+* File Attribute Input (If your LLM action uses File Attribute)
 
 #### **Attributes and values**
 
@@ -308,6 +350,16 @@ When an attribute is entered in the system prompt, it will automatically appear 
 By clicking an attribute in the test panel you can easily set its value within the popup value menu.&#x20;
 
 Any attributes that have had a manual value entered will no longer appear with any form of 'information' alert tooltip.
+
+#### Testing LLM Actions with Files&#x20;
+
+<div data-full-width="false" data-with-frame="true"><figure><img src="../../../.gitbook/assets/image (616).png" alt=""><figcaption></figcaption></figure></div>
+
+When your LLM Action is configured with a File Attribute, a "File Attribute Input" section appears in the test panel. To test with files, select the file type (Img for images, Doc for documents) from the dropdown, enter the publicly accessible URL of the file, and click the + button to add it. The file referenced should be uploaded somewhere publicly accessible. You can add multiple files, and each will appear as a chip showing the type and truncated URL - hover over a chip to see the full URL. Click the `−` button on any chip to remove it. When you run the test, these files will be sent to the LLM as attachments, allowing you to verify that your action handles file inputs correctly.
+
+{% hint style="warning" %}
+Note - there will be improvements coming soon to the testing panel that will allow you to upload files directly
+{% endhint %}
 
 #### **Outputs →**
 
