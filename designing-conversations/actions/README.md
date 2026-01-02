@@ -36,8 +36,8 @@ To add an action, select an action from the dropdown list and save attributes to
 
 ## Start creating actions
 
-{% content-ref url="../../opendialog-platform/actions/webhook-action/webhook-action/" %}
-[webhook-action](../../opendialog-platform/actions/webhook-action/webhook-action/)
+{% content-ref url="../../opendialog-platform/actions/webhook-action/" %}
+[webhook-action](../../opendialog-platform/actions/webhook-action/)
 {% endcontent-ref %}
 
 {% content-ref url="actions-from-library/" %}
