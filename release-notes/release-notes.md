@@ -6,6 +6,69 @@ description: >-
 
 # Release Notes
 
+## January 2026
+
+#### <mark style="color:purple;">Improved file support for LLM Actions</mark>
+
+We are kick-starting the new year with improved support for file usage in your LLM actions! You can now use this feature with Azure OpenAI, Gemini, and Claude as well.
+
+Small note that you can use any type of file with Gemini. For Claude and OpenAI you can use:
+
+* Images: \*.jpg, \*.png, \*gif;
+* PDF files: \*.pdf;
+
+In addition, we've added nice UI to our testing panel to make file upload experience even more smoother.
+
+<figure><img src="../.gitbook/assets/image (623).png" alt="" width="188"><figcaption></figcaption></figure>
+
+Note: For file upload in LLM actions, contact us at [hello@opendialog.ai](mailto:hello@opendialog.ai) to enable this feature on demand.
+
+#### <mark style="color:purple;">Improvements</mark>
+
+This new release includes numerous technical improvements to ensure OpenDialog operates more smoothly. Additionally, the following updates have been made:
+
+* Cleaned up console warnings for webchat.
+* Made description fields for the knowledge service optional.
+* Restricted the file attribute field on LLM actions to only use the FileCollection attribute.
+* Implemented many security and stability enhancements.
+
+## November & December 2025
+
+#### <mark style="color:purple;">Updates to LLM actions</mark>
+
+<div><figure><img src="../.gitbook/assets/image (622).png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/Screenshot 2026-01-08 at 15.53.37.png" alt=""><figcaption></figcaption></figure></div>
+
+We are delighted to share many new and exciting developments regarding our LLM actions!
+
+We've added support for the GPT-5 model and a new configuration for reasoning effort. You might notice slight differences in advanced configurations: we've updated them to reflect corresponding changes in OpenAI requirements. Old actions still work and appear as before.
+
+We have added support for files in our LLM Actions! Simply specify a file collection attribute using the new "File Attribute" selector.
+
+For more information, look at [our documentation here](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions#file-attribute).
+
+Note: For file upload in LLM actions, contact us at [hello@opendialog.ai](mailto:hello@opendialog.ai) to enable this feature on demand.
+
+#### <mark style="color:purple;">Exposing Knowledge Service API</mark>
+
+Interact with Knowledge Services programmatically. Manage resources, batch upload documents, or build any other automation effortlessly. We've got you covered.
+
+Read more in [our docs here](../developing-with-opendialog/public-apis/knowledge-service-apis.md).
+
+#### <mark style="color:purple;">Static topics for knowledge service</mark>
+
+<div><figure><img src="../.gitbook/assets/Screenshot 2026-01-08 at 16.33.54.png" alt=""><figcaption></figcaption></figure> <figure><img src="../.gitbook/assets/image (624).png" alt=""><figcaption></figcaption></figure></div>
+
+We've introduced a new type for a topic in knowledge service: static. Ever wanted to query all available text from your source? Static topics let you do that. You can upload your text file or simply paste any text source you have, then query it all with the syntax `%% service_name.topic_name %%` without any query parameters.
+
+For more details - check out [our documentation](../tutorials/use-knowledge-sources-via-rag.md#source-types).
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Detailed and aggregated log export actions will now be delivered to you asynchronously via email.
+* The value field on the global contexts page is now multiline.
+* Fixed the popup for LLM actions prompt when it occasionally became unusable.
+* Various security and stability improvements.
+
 ## October 2025
 
 #### <mark style="color:purple;">New webhook action</mark>
