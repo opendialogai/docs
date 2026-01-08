@@ -353,13 +353,15 @@ Any attributes that have had a manual value entered will no longer appear with a
 
 #### Testing LLM Actions with Files&#x20;
 
-<div data-full-width="false" data-with-frame="true"><figure><img src="../../../.gitbook/assets/image (616).png" alt=""><figcaption></figcaption></figure></div>
+<figure><img src="../../../.gitbook/assets/image (618).png" alt=""><figcaption><p>Files selected, but not uploaded</p></figcaption></figure>
 
-When your LLM Action is configured with a File Attribute, a "File Attribute Input" section appears in the test panel. To test with files, select the file type (Img for images, Doc for documents) from the dropdown, enter the publicly accessible URL of the file, and click the + button to add it. The file referenced should be uploaded somewhere publicly accessible. You can add multiple files, and each will appear as a chip showing the type and truncated URL - hover over a chip to see the full URL. Click the `−` button on any chip to remove it. When you run the test, these files will be sent to the LLM as attachments, allowing you to verify that your action handles file inputs correctly.
+When your LLM Action is configured with a File Attribute, a "File Attribute Input" section appears in the test panel. To test with files, either drag and drop files from your local machine or click to upload files individually. You can add multiple files, and each will appear along with its name underneath the file selector box. Click the `X` button on any file to remove it. Once all required files have been selected, click on the `Upload files` button to make them available to the LLM Action.&#x20;
 
-{% hint style="warning" %}
-Note - there will be improvements coming soon to the testing panel that will allow you to upload files directly
-{% endhint %}
+Once the files have been uploaded, they will appear in the list of uploaded files along with a thumbnail that relates to each file. Again, files can be removed from the test at this stage by clicking on the `X`
+
+Once all selected files have been uploaded, the `Run LLM Test` button will become active again, and you can run a test along with the uploaded files, simulating user uploaded files.
+
+<figure><img src="../../../.gitbook/assets/image (619).png" alt=""><figcaption><p>2 files uploaded and ready to go</p></figcaption></figure>
 
 #### **Outputs →**
 
@@ -400,6 +402,12 @@ _While OpenDialog provides token data when using LLM actions, the exact number o
 {% hint style="info" %}
 Token calculation varies based on the LLM you use and the specific model selected within that LLM.
 {% endhint %}
+
+#### Files Sent
+
+If files were uploaded and sent in the test, that will be indicated in the inspector, showing the name and type of file included along with the name of the file attribute referenced
+
+<figure><img src="../../../.gitbook/assets/image (621).png" alt=""><figcaption></figcaption></figure>
 
 ## Frequently asked questions&#x20;
 
