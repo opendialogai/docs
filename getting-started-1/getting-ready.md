@@ -37,7 +37,7 @@ What problem is your AI agent solving? Is it helping users troubleshoot technica
 
 ### The Primary Topic Area
 
-What is the main subject your AI agent will cover? Whether it’s customer service, product support, or employee training, identifying this focus area will help you structure the agent’s responses and capabilities.
+What is the main subject your AI agent will cover? Whether it’s customer service, employee training, or product support, identifying this focus area will help you structure the agent’s responses and capabilities.
 
 ### The Primary Knowledge Source:
 
