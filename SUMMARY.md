@@ -44,6 +44,7 @@
 * [Contexts and attributes](core-concepts/contexts-and-attributes/README.md)
   * [Contexts](core-concepts/contexts-and-attributes/contexts.md)
   * [Attributes](core-concepts/contexts-and-attributes/about-attributes.md)
+  * [Attribute Filters](core-concepts/contexts-and-attributes/attribute-filters.md)
   * [Attribute Management](core-concepts/contexts-and-attributes/attribute-management.md)
   * [Conditions and operators](core-concepts/contexts-and-attributes/conditions-and-operators.md)
   * [Composite Attributes](core-concepts/contexts-and-attributes/attributes.md)
