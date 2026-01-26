@@ -82,4 +82,3 @@ Examples:
 Use **single quotes** for composite attribute accessors: `@session.data['field']` (double quotes conflict with filter parameter grouping).
 {% endhint %}
 
-For video lessons and hands-on practice with these concepts, consider signing up for the OpenDialog Academy lessons by emailing academy@opendialog.ai.&#x20;
