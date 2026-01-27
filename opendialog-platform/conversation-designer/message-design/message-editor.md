@@ -12,7 +12,7 @@ There are two ways to access messages:&#x20;
 
 **Option 1:** The Messages functionality is available as part of the Design functionality. Design includes both Conversation, where the conversation design occurs and Messages, where we access the message editor and work on everything to do with the content and assistant prompts. If Messages is not viewable in the sidebar, click the carrot (down arrow) to the right of Design to expand.&#x20;
 
-<div align="left"><figure><img src="../../../.gitbook/assets/Group 23.png" alt=""><figcaption><p>Design option - not expanded</p></figcaption></figure></div>
+<div align="left"><figure><img src="../../../.gitbook/assets/DesignOption_NotExpanded.png" alt=""><figcaption><p>Design option - not expanded</p></figcaption></figure></div>
 
 <figure><img src="../../../.gitbook/assets/Group 24.png" alt=""><figcaption><p>Design option - expanded</p></figcaption></figure>
 
