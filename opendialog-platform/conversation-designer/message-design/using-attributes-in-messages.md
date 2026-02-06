@@ -45,44 +45,8 @@ Filters are applied to attributes using a pipe (`|`) and they can be chained tog
 
 The above takes the value of the `age` attribute in the `user` context, converts the number to words and adds an uppercase the first letter. If `age` was 30, the value placed in the message would be 'Thirty'.
 
-#### Available Filters
-
-**String filters**
-
-* `uppercase` - uppercases all letters in the string
-* `uppercase_words` - uppercases the first letter of each word in the string
-* `uppercase_first` - uppercases only the first letter in the string
-* `lowercase` - lowercases the entire string
-
-**Number Filters**
-
-* `number_to_words` - turns a number into its word. eg 1 => 'one'
-* `ordinal` - returns the ordinal of the number. eg 1 => 1st
-* `ordinal_words` - returns the ordinal spelt out. eg 1 => 'first'
-
-**Date Time Filters**
-
-*   `format_date [format] [timezone]` — Converts a Unix `timestamp` or a `date time` string into a human-readable format, applying the specified time zone.
-
-    * The first parameter, `[format]`, specifies the output format using standard PHP date format codes. For example:
-      * `"Y-m-d"` → `2025-07-23`
-      * `"l jS F"` → `Wednesday 23rd July`\
-        A full list of supported format characters can be found [here](https://www.php.net/manual/en/datetime.format.php#refsect1-datetime.format-parameters).
-    * The second parameter, `[timezone]`**,** is optional and defines the time zone used for formatting. For instance, using `"Europe/London"` will format the date time according to London time. You can find a list of valid time zone identifiers [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).\
-      If omitted, the user’s browser time zone will be used by default.
-
-    Example usage:\
-    `{date_attribute | format_date "Y-m-d H:i:s" "Europe/London"}`
-
-**Collection Filters**
-
-* `count` - returns the number of items in a collection type attribute
-* `where [field] [value] [operation?]` - filters out elements based on a field and a value, such as `{ history.utterances | where participant user }` to get all of the user utterances in the conversation history
-* `range [start] [number]` - returns a subset of the collection, such as `{history.intents | range -3 2 }`conv to get the second and third from last intent names in the conversation history.
-* `last` - returns the last element of the collection.
-
-**Conversation Object Filters**
-
-* `select [field]` - selects a name or description from a conversation object, such as `{ conversation.current_conversation | select name }`. These attributes can be found within the [Conversation context](../../../core-concepts/contexts-and-attributes/contexts.md).
+{% hint style="info" %}
+For a complete list of available filters including string, number, date, collection, encoding, and cryptographic filters, see the [Attribute Filters](../../../core-concepts/contexts-and-attributes/attribute-filters.md) documentation.
+{% endhint %}
 
 For video lessons and hands-on practice with these concepts, consider signing up for the OpenDialog Academy lessons by emailing academy@opendialog.ai.&#x20;

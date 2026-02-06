@@ -39,7 +39,7 @@ What problem is your AI agent solving? Is it helping users troubleshoot technica
 
 What is the main subject your AI agent will cover? Whether it’s customer service, employee training, or product support, identifying this focus area will help you structure the agent’s responses and capabilities.
 
-### The Primary Knowledge Source:
+### The Primary Knowledge Source
 
 Where will the AI agent retrieve the majority of its information? It could be an FAQ website page, product documentation, or an internal database. Your AI agent will pull from these sources dynamically, ensuring it delivers answers based on the most relevant data.
 
