@@ -6,6 +6,44 @@ description: >-
 
 # Release Notes
 
+## February 2026
+
+#### <mark style="color:purple;">Updates to public API authentication</mark>
+
+We've updated our internal authentication mechanism. You can now create more than one token and manage them on a centralized screen. Tokens have a limited, configured lifetime, and if the token has expired, that will be shown in this dashboard.
+
+For more information, see our [Public APIs documentation](../developing-with-opendialog/public-apis/README.md).
+
+<figure><img src="../.gitbook/assets/image (627).png" alt=""><figcaption></figcaption></figure>
+
+#### <mark style="color:purple;">Expandable messages for better user experience</mark>
+
+Introducing expandable messages in webchat! You can now configure text messages to display with an "See more.." option, allowing users to see a preview initially and then expand to read the full content when needed. This is particularly useful for longer messages, helping keep your chat interface clean while still providing access to detailed information when users need it.
+
+<figure><img src="../.gitbook/assets/expand-message-demo.png" alt=""><figcaption></figcaption></figure>
+
+For more information, see our [Text Message](../opendialog-platform/conversation-designer/message-design/message-types/text-message.md) page.
+
+#### <mark style="color:purple;">Enhanced webhook authentication</mark>
+
+We've significantly enhanced our webhook action security with new authentication capabilities:
+
+* **Header-based authentication methods**: Support for variable authentication headers. For example, you can construct HMAC signing
+* **Flexible filters**: New filters available to support your header building
+
+These improvements give you more control over how OpenDialog securely communicates with your external services.
+
+<figure><img src="../.gitbook/assets/webhook_auth_demo.png" alt=""><figcaption></figcaption></figure>
+
+Check our [documentation on attribute filters](../core-concepts/contexts-and-attributes/attribute-filters.md) for newly available filters.
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Added ability to duplicate old webhook actions as new Webhook V2 format
+* Fixed file re-upload issue for LLM actions when using files with the same name
+* Improved webhook handling for empty request bodies
+* Various performance and stability improvements throughout the platform
+
 ## January 2026
 
 #### <mark style="color:purple;">Improved file support for LLM Actions</mark>
