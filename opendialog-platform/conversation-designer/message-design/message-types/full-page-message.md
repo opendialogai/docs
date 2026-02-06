@@ -14,7 +14,7 @@ Full page rich messages are defined in exactly the same way as standard rich mes
 
 Full Page Form messages are defined in exactly the same way as form messages, but with a different element name.
 
-Optionally, the full page form message can contain a cancel button. This allows the user to tell the bot they do not want to submit the form. When clicked, the value of `cancel_callback` is sent.
+Optionally, the full page form message can contain a cancel button. This allows the user to tell the bot they do not want to submit the form. When clicked, the value of `cancel_callback` is sent.&#x20;
 
 ## When to use full page messages
 
@@ -26,7 +26,7 @@ Full page messages are best used when you have a rich or form message that is th
 
 Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Select `fp-rich-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
 
-Fill in the template with the [properties ](full-page-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
+Fill in the template with the [properties ](full-page-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
 
 <figure><img src="../../../../.gitbook/assets/Group 12.png" alt=""><figcaption><p>How to create a full page rich message in the custom message editor</p></figcaption></figure>
 
@@ -45,7 +45,7 @@ Fill in the template with the [properties ](full-page-message.md#properties)of y
 
 Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Select `fp-form-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
 
-Fill in the template with the [properties ](full-page-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
+Fill in the template with the [properties ](full-page-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
 
 <figure><img src="../../../../.gitbook/assets/Group 13.png" alt=""><figcaption><p>How to create a full page form message in the custom message editor</p></figcaption></figure>
 
@@ -144,27 +144,3 @@ When structuring a message, you are able to use multiple different message block
 {% hint style="info" %}
 For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../../designing-accessible-chatbots.md).
 {% endhint %}
-
-## Making Full Page Messages Expandable
-
-Full page form messages support text expansion for body text content.
-
-Message expand is not supported for full page messages.
-
-### Expandable Attributes
-
-| Attribute                | Description                              | Required                        |
-| ------------------------ | ---------------------------------------- | ------------------------------- |
-| `expandable-text`        | Set to `"true"` to enable text expansion | Yes (to enable)                 |
-| `expandable-text-height` | Visual height for collapsed text         | One of height OR chars required |
-| `expandable-text-chars`  | Character limit for collapsed text       | One of height OR chars required |
-
-{% hint style="info" %}
-Full page messages only support text expand. Message expand (`expandable-message`) is not available for this message type.
-{% endhint %}
-
-### Best Practices
-
-* Use sparingly - full page messages are already designed for detailed content
-* Consider whether text expansion improves or hinders the user experience
-* Ensure important instructions remain visible when collapsed
