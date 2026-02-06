@@ -164,7 +164,7 @@ When `expandable-text="true"`, you must provide either `expandable-text-height` 
 
 ```xml
 <text-message expandable-text="true" expandable-text-height="3em">
-  <text>This is a very long text message that will be collapsed initially. Users will see a "Read more..." link to expand and view the full content.</text>
+  This is a very long text message that will be collapsed initially. Users will see a "Read more..." link to expand and view the full content.
 </text-message>
 ```
 
@@ -172,7 +172,7 @@ When `expandable-text="true"`, you must provide either `expandable-text-height` 
 
 ```xml
 <text-message expandable-text="true" expandable-text-chars="240">
-  <text>This is a very long text message that will be collapsed to approximately 240 characters initially.</text>
+  This is a very long text message that will be collapsed to approximately 240 characters initially.
 </text-message>
 ```
 
