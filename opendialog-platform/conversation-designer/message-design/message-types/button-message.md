@@ -18,7 +18,7 @@ Buttons are useful for many different reasons. They give you the opportunity to 
 
 ### Via the no-code button block in Message Editor
 
-Navigate to the [Message Editor](../message-editor.md) and create a button block by clicking the _Add button block_ icon in the Layout section. &#x20;
+Navigate to the [Message Editor](../message-editor.md) and create a button block by clicking the _Add button block_ icon in the Layout section.
 
 <figure><img src="../../../../.gitbook/assets/Group 6 (1).png" alt=""><figcaption><p>How to create a button message in the no-code button message block</p></figcaption></figure>
 
@@ -34,9 +34,9 @@ Navigate to the [Message Editor](../message-editor.md) and create a button block
 
 ### Via the custom message in Message Editor
 
-Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Copy the [XML snippet](button-message.md#xml-snippet) at the bottom of this page into the black box, or select `button-message` from the dropdown and your chat message will appear in the Preview panel.&#x20;
+Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Copy the [XML snippet](button-message.md#xml-snippet) at the bottom of this page into the black box, or select `button-message` from the dropdown and your chat message will appear in the Preview panel.
 
-Fill in the template with the [properties](button-message.md#properties) of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
+Fill in the template with the [properties](button-message.md#properties) of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
 
 <figure><img src="../../../../.gitbook/assets/Group 7 (1) (1).png" alt=""><figcaption><p>How to create a button message in the custom message block</p></figcaption></figure>
 
@@ -203,13 +203,13 @@ There are currently 2 types that can be used:
 Within the button block, you can add some plain text (_if you've not already used the text block_) and then edit/add new buttons. Within each button you can add:
 
 * **Button text:** This is the text that is visible on the button
-* **Button functionality:** This is the action that you would like the button to perform on click e.g. open an external URL or transition the user to another intent.&#x20;
+* **Button functionality:** This is the action that you would like the button to perform on click e.g. open an external URL or transition the user to another intent.
 
 ![Button functionality: Options](<../../../../.gitbook/assets/image (339).png>)
 
 ### **Button functionality**
 
-Let's focus on transitioning to another intent _(Simulate user intent)_ as this action will likely be what you'll be wanting to perform most. There are two options here, either; locate an intent that you've already created from the drop-down or create a new intent.&#x20;
+Let's focus on transitioning to another intent _(Simulate user intent)_ as this action will likely be what you'll be wanting to perform most. There are two options here, either; locate an intent that you've already created from the drop-down or create a new intent.
 
 ![Message editor: Simulate user intent](<../../../../.gitbook/assets/image (386).png>)
 
@@ -223,9 +223,9 @@ To create a new one, you need to open the Conversation where the new intent need
 
 ### Button Values
 
-Button messages also allow values to be assigned to each button so as well as simulating a user intent, they can assign a value to an attribute that can be saved against the user. \
+Button messages also allow values to be assigned to each button so as well as simulating a user intent, they can assign a value to an attribute that can be saved against the user.\
 \
-For example, if a button message was created to allow a user to answer a question, 2 buttons could be added, 1 with a value of `yes` and one for `no`. The value can then later be used in conditions or actions to affect the conversation flow.&#x20;
+For example, if a button message was created to allow a user to answer a question, 2 buttons could be added, 1 with a value of `yes` and one for `no`. The value can then later be used in conditions or actions to affect the conversation flow.
 
 #### Adding Button Values
 
@@ -242,8 +242,6 @@ For the button message type, you can select a number of advanced behaviours depe
 * **Override user input field - show buttons as main interaction mode:** This option will hide the text input within Webchat and show the buttons as the main interaction at the bottom.
 * **Allow continued interaction throughout the conversation:** This option will allow users to continue to interact with the buttons even if they have moved on from that part of the conversation. This is really useful for FAQ style chatbots.
 
-
-
 {% embed url="https://www.loom.com/share/d5b595a7c9d2416e8f6abd214511ac26?sid=b04c2a11-4868-400c-b8c2-42349025dd41" %}
 
 {% hint style="success" %}
@@ -257,3 +255,39 @@ When structuring a message, you are able to use multiple different message block
 {% hint style="info" %}
 For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../../designing-accessible-chatbots.md).
 {% endhint %}
+
+## Making Button Messages Expandable
+
+Button messages can be made expandable to handle cases where you have lengthy explanatory text or many button options.
+
+### Expandable Attributes
+
+| Attribute                   | Description                                         | Required                                  |
+| --------------------------- | --------------------------------------------------- | ----------------------------------------- |
+| `expandable-text`           | Set to `"true"` to enable text expansion            | Yes (to enable)                           |
+| `expandable-text-height`    | Visual height for collapsed text (e.g., `"3em"`)    | One of height OR chars required           |
+| `expandable-text-chars`     | Character limit for collapsed text (e.g., `"240"`)  | One of height OR chars required           |
+| `expandable-message`        | Set to `"true"` to enable whole message expansion   | Yes (to enable message expand)            |
+| `expandable-message-height` | Visual height for collapsed message (e.g., `"4em"`) | Required when `expandable-message="true"` |
+
+### XML Example
+
+```xml
+<button-message expandable-text="true" expandable-text-height="3em">
+  <text>Here is a detailed explanation of all the options available to you. Each option has different implications.</text>
+  <button>
+    <text>Option A</text>
+    <callback>select_option_a</callback>
+  </button>
+  <button>
+    <text>Option B</text>
+    <callback>select_option_b</callback>
+  </button>
+</button-message>
+```
+
+### Best Practices
+
+* For button messages, only use expand for long lists of options
+* Always show at least 2 primary options when collapsed
+* Ensure the most important/common options are visible in the collapsed state

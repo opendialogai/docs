@@ -15,17 +15,17 @@ Each form message has the follow properties:
 * **Callback**: Similarly to the 'simulate user intent' button messages, this field needs to be set to point to the next intent in the conversation flow. When clicked on, a list of all conversations for the current scenario is show listing each intent that is part of them. Either select the correct user intent, or create a new one using the drop down interface. See [button message](https://docs.opendialog.ai/messages/message-type-button-block#button-functionality) for more info
 * **Validation:** When creating your form message, you can also set validation for your input fields. There are two ways you can do this, through the regular expression for validation field, and through the error text for use with regular expression validation field. Both of these are optional, but are there if you wish to use them
 
-Each form message can have as many fields as needed to capture the information required.&#x20;
+Each form message can have as many fields as needed to capture the information required.
 
 ## When to use a form message
 
-There are many different situations in which a form message would be used within an OpenDialog chatbot. For example,  user registration. If you require your users to input their information, it is much easier to do this through having them fill out a form, rather than manually input all their text.
+There are many different situations in which a form message would be used within an OpenDialog chatbot. For example, user registration. If you require your users to input their information, it is much easier to do this through having them fill out a form, rather than manually input all their text.
 
 ## How to create a form message
 
 ### Via the no-code image message in Message Editor
 
-Navigate to the [Message Editor](../message-editor.md) and create a form block by clicking the _Add form block_ icon in the Layout section. &#x20;
+Navigate to the [Message Editor](../message-editor.md) and create a form block by clicking the _Add form block_ icon in the Layout section.
 
 <figure><img src="../../../../.gitbook/assets/Group 10 (2).png" alt=""><figcaption><p>How to create a form message in the no-code form message block</p></figcaption></figure>
 
@@ -43,15 +43,15 @@ If you decide to do this manually, you can simply type the name of the option, a
 
 <figure><img src="../../../../.gitbook/assets/image (593).png" alt=""><figcaption><p>Adding dynamic data to FormMessage dropdown</p></figcaption></figure>
 
-If you want to use a collection attribute, you can select what context that attribute will be saved in, and then specify the name of that attribute so that during a live conversation (you can test this in preview or on a live bot) the options are dynamically filled.&#x20;
+If you want to use a collection attribute, you can select what context that attribute will be saved in, and then specify the name of that attribute so that during a live conversation (you can test this in preview or on a live bot) the options are dynamically filled.
 
-We support a range of attribute types from the following list:&#x20;
+We support a range of attribute types from the following list:
 
 * `StringCollectionAttribute` e.g. \["Banana", "Apple", "Cherry"]
 * `IntegerColelctionAttribute` e.g. \[1, 2, 3]
 * `FloatCollectionAttribute` e.g. \[1.1, 1.2, 1.3]
 * `ArrayDataAttribute` (aka 'List') e.g. \["Any set of values", "that you like", \["even nested ones"]]
-* `JSONInferredCompositeAttribute`  e.g. { "1": "Unemployed", "2": "Employed"}
+* `JSONInferredCompositeAttribute` e.g. { "1": "Unemployed", "2": "Employed"}
 
 The only unsupported type is:
 
@@ -61,7 +61,7 @@ The only unsupported type is:
 
 <figure><img src="../../../../.gitbook/assets/image (594).png" alt="An image of the Form Select Designer. From Top to bottom we have 6  input fields with the following labels: &#x27;Field type&#x27;, &#x27;Field label&#x27;, &#x27;Select a data source&#x27;, &#x27;Attribute name&#x27; and &#x27;Default value&#x27;. There is also a checkbox beneath that toggles if the field is optional (default setting) or mandatory."><figcaption></figcaption></figure>
 
-Once you've specified your data or data source, you will see a toggle to enable sorting of your dropdown options. When enabled, they will be alphabetically sorted from A-Z (A at the top, Z at the bottom) to make it simpler to scroll through the different options, or jump to a specific start letter.&#x20;
+Once you've specified your data or data source, you will see a toggle to enable sorting of your dropdown options. When enabled, they will be alphabetically sorted from A-Z (A at the top, Z at the bottom) to make it simpler to scroll through the different options, or jump to a specific start letter.
 
 ### Searching Within A Dropdown In WebChat
 
@@ -79,7 +79,7 @@ If you choose to sort your options alphabetically, users will be provided with a
 
 Navigate to the [Message Editor](../message-editor.md) and create a _Custom Message._ Select `form-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
 
-Fill in the template with the [properties ](form-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.&#x20;
+Fill in the template with the [properties ](form-message.md#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
 
 <figure><img src="../../../../.gitbook/assets/Group 11 (1).png" alt=""><figcaption><p>How to create a form message in the custom message block</p></figcaption></figure>
 
@@ -139,9 +139,9 @@ When using `checkbox` or `select` elements, you must define an `options` block g
 </element>
 ```
 
-For a `select` element, you can also define an `options_attribute` , by providing the context name (e.g. user, session, conversation, etc...) and the name of the attribute you want to use, separated by a dot ("."). This is a way of populating the `options` block with a dynamic data source.&#x20;
+For a `select` element, you can also define an `options_attribute` , by providing the context name (e.g. user, session, conversation, etc...) and the name of the attribute you want to use, separated by a dot ("."). This is a way of populating the `options` block with a dynamic data source.
 
-Additionally, we have an `<alphabetical></alphabetical>` tag to control whether the dropdown options are sorted alphabetically A-Z or not. This defaults to a value of `false`.&#x20;
+Additionally, we have an `<alphabetical></alphabetical>` tag to control whether the dropdown options are sorted alphabetically A-Z or not. This defaults to a value of `false`.
 
 The `email` element type acts just like a `text` element, but on submission, is validated to ensure it is formatted like an email address
 
@@ -207,9 +207,28 @@ When your user fills out your form, all of their information is added to the Use
 
 When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structuring these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](../constructing-messages.md)page for more information.
 
-You can only add one form message type to each message, and it should be the last message in the list to work properly.&#x20;
+You can only add one form message type to each message, and it should be the last message in the list to work properly.
 
 {% hint style="info" %}
 For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](../../designing-accessible-chatbots.md).
 {% endhint %}
 
+## Making Form Messages Expandable
+
+Form messages support expandable attributes for cases where you have lengthy form introductions or many fields.
+
+### Expandable Attributes
+
+| Attribute                   | Description                                       | Required                                  |
+| --------------------------- | ------------------------------------------------- | ----------------------------------------- |
+| `expandable-text`           | Set to `"true"` to enable text expansion          | Yes (to enable)                           |
+| `expandable-text-height`    | Visual height for collapsed text                  | One of height OR chars required           |
+| `expandable-text-chars`     | Character limit for collapsed text                | One of height OR chars required           |
+| `expandable-message`        | Set to `"true"` to enable whole message expansion | Yes (to enable message expand)            |
+| `expandable-message-height` | Visual height for collapsed message               | Required when `expandable-message="true"` |
+
+### Best Practices
+
+* Use cautiously with forms - users need to see fields to complete them
+* If using message expand, show at least the first 2 form fields when collapsed
+* Consider whether expansion improves or hinders the form-filling experience
