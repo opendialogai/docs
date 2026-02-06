@@ -20,9 +20,9 @@ Authorization: Bearer YOUR_API_TOKEN
 
 To access your bearer token visit the Identity & Security page - accessible by clicking on your username in the bottom left-hand corner.
 
-![](<../../.gitbook/assets/image (242).png>)
+<div align="left"><figure><img src="../../.gitbook/assets/image (626).png" alt=""><figcaption></figcaption></figure></div>
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>API Bearer Token Access</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (627).png" alt=""><figcaption></figcaption></figure>
 
 **Important Security Notes:**
 
@@ -30,6 +30,7 @@ To access your bearer token visit the Identity & Security page - accessible by c
 * API tokens have the same permissions as the user who created them
 * Rotate tokens regularly as part of your security best practices
 * Revoke tokens immediately if they are compromised
+* Tokens have a limited, configured lifetime. If the token has expired, that will be shown in this dashboard.
 
 ### Base URL
 
