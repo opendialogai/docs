@@ -182,6 +182,10 @@ The interpretation context is populated by the Language Service when content mod
 
 The `_intent` context is a transient store populated by the interpreter during intent matching. It holds attributes placed there by interpreters (such as LLM classifiers or regex matchers) for use in conditions evaluated against that intent.
 
+{% hint style="warning" %}
+`_intent` attributes are only available during condition evaluation for a given intent. They cannot be referenced in message templates or any other part of the conversation design.
+{% endhint %}
+
 **Common uses:**
 
 - Accessing classifier confidence scores in conditions
