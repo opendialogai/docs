@@ -198,6 +198,10 @@ The `_intent` context is a transient store populated by the interpreter during i
 
 The `_webhook` context is populated just before a Webhook V2 Action makes its HTTP request. It exposes the resolved request parameters, allowing you to reference them in headers, URL, or body templates within the same action. This is particularly useful for computing derived values such as signatures or checksums.
 
+{% hint style="warning" %}
+`_webhook` attributes are only available during the execution of a Webhook V2 Action. They cannot be referenced in message templates, conditions, or any other part of the conversation design.
+{% endhint %}
+
 **Attributes:**
 
 - `url`: The fully resolved request URL.
@@ -222,6 +226,10 @@ The `_webhook` context is populated just before a Webhook V2 Action makes its HT
 **Read/Write:** Read and write (via the `variables` configuration block).
 
 The `_auth` context is used exclusively during Webhook V2 Header Authentication. It supports lazy resolution, meaning attributes are only resolved when they are actually referenced. This enables variable chaining — you can define a variable that references another `_auth` variable, and the dependency will be resolved automatically.
+
+{% hint style="warning" %}
+`_auth` attributes are only available within the Header Authentication configuration of a Webhook V2 Action. They cannot be referenced in message templates, conditions, the webhook URL, body, or any other part of the conversation design outside of the authentication flow.
+{% endhint %}
 
 By default, the following attributes are always available without configuration:
 
