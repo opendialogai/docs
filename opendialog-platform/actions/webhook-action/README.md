@@ -127,6 +127,100 @@ For more complex mapping and response transformations, use [JMESPath](using-jmes
 
 You can store the whole response as a string by toggling "Store raw response" and selecting a string attribute to contain this value.
 
+### Authentication configuration
+
+<figure><img src="../../../.gitbook/assets/authentication_selection.png" alt="Authentication tab in the webhook action configuration"><figcaption><p>Select an authentication type in the Authentication tab</p></figcaption></figure>
+
+The **Authentication** tab lets you secure outgoing webhook requests. OpenDialog supports two authentication types: **Header Authentication** and **mTLS (mutual TLS)**.
+
+Authentication runs after the request is fully prepared, which means auth headers can reference outgoing request data — such as the URL or body — via the [`_webhook` context](../../../core-concepts/contexts-and-attributes/contexts.md#_webhook). See the [`_auth` context](../../../core-concepts/contexts-and-attributes/contexts.md#_auth) for the full list of auto-provided values and variable chaining options.
+
+#### Header Authentication
+
+Header Authentication lets you add one or more headers to the outgoing request, with values resolved at runtime using the full OpenDialog attribute syntax. It also supports defining intermediate **variables** — values computed from other attributes or `_auth` variables — which can then be referenced in header values.
+
+<figure><img src="../../../.gitbook/assets/authenticaton_headers.png" alt="Header Authentication configuration"><figcaption><p>Configuring Header Authentication with variables and headers</p></figcaption></figure>
+
+The configuration is provided as JSON with two fields:
+
+- **`variables`** (optional) — a map of variable name to template string. Variables are resolved lazily and can reference any context attribute or other `_auth` variables.
+- **`headers`** (required) — a map of header name to template string. Each value is resolved using the same attribute syntax as messages and URLs.
+
+The following values are automatically available in every Header Authentication execution without any configuration:
+
+| Variable | Description |
+| -------- | ----------- |
+| `{_auth.uuid}` | A unique UUID v4 generated for this request |
+| `{_auth.timestamp}` | Current Unix timestamp in seconds |
+| `{_auth.timestamp_micro}` | Current Unix timestamp with microsecond precision |
+
+**Example configuration:**
+
+```json
+{
+    "variables": {
+        "nonce": "{_auth.uuid}",
+        "message": "{user.app_id}:{_auth.nonce}:{_auth.timestamp}"
+    },
+    "headers": {
+        "Authorization": "Bearer {user.api_token}",
+        "X-Request-Id": "{_auth.uuid}",
+        "X-Timestamp": "{_auth.timestamp}",
+        "X-Signature": "{_auth.message}"
+    }
+}
+```
+
+In this example, `message` is built from `app_id`, the request nonce, and the timestamp — all resolved at the point authentication runs. The `X-Signature` header then references that computed value.
+
+{% hint style="info" %}
+You can reference the outgoing request data in your variables and headers using the `_webhook` context. For example, `{_webhook.body}` gives you the request body as it will be sent — useful for building signatures that cover the payload.
+{% endhint %}
+
+{% hint style="warning" %}
+Note - Circular references between variables will cause authentication to fail. For example, if `var_a` references `{_auth.var_b}` and `var_b` references `{_auth.var_a}`, the request will not be sent.
+{% endhint %}
+
+#### mTLS Authentication
+
+mTLS (mutual TLS) authenticates the webhook request using a client certificate, establishing two-way trust between OpenDialog and your API. You'll need a P12 (.p12 / .pfx) certificate and its password.
+
+<figure><img src="../../../.gitbook/assets/authentication_mtls.png" alt="mTLS Authentication configuration"><figcaption><p>Configuring mTLS Authentication with a certificate from the global context</p></figcaption></figure>
+
+The configuration is provided as JSON with three fields:
+
+- **`certificate`** (required) — the base64-encoded P12 certificate content, or an attribute reference such as `{global.my_certificate}`
+- **`password`** (required) — the certificate password, or an attribute reference
+- **`ca_certificate`** (optional) — a base64-encoded CA bundle for server verification, or an attribute reference. If omitted, standard system CA verification is used.
+
+{% hint style="info" %}
+We recommend storing certificate content and passwords in the [Global Context](../../../core-concepts/contexts-and-attributes/contexts.md#global) rather than pasting them directly into the configuration. This keeps sensitive values out of the action config and makes them easier to rotate.
+{% endhint %}
+
+**Example configuration:**
+
+```json
+{
+    "certificate": "{global.mtls_certificate_p12}",
+    "password": "{global.mtls_certificate_password}",
+    "ca_certificate": "{global.mtls_ca_certificate}"
+}
+```
+
+To prepare your certificate:
+
+{% hint style="success" %}
+**Convert your P12 certificate to base64:**
+
+On macOS / Linux, run:
+
+```bash
+base64 -i your-certificate.p12
+```
+
+Copy the output and store it as a Global Context attribute named `mtls_certificate_p12`.
+{% endhint %}
+
 ### Testing your webhook
 
 <figure><img src="../../../.gitbook/assets/image (602).png" alt=""><figcaption><p>Use testing panel on the left to run a test for your webhook</p></figcaption></figure>
