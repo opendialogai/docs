@@ -157,6 +157,77 @@ Use this section to view detailed information about your response, including exa
 
 Use the pop-out icon next to the "Response" section to view this in a full-page modal for more convenience.
 
+## Authentication configuration
+
+Webhook V2 Actions support two authentication methods: **Header Authentication** and **Mutual TLS (mTLS)**. Authentication is configured per webhook action, within the action configuration itself.
+
+<figure><img src="../../../.gitbook/assets/authentication_selection.png" alt=""><figcaption><p>Select an authentication method for your webhook action</p></figcaption></figure>
+
+### Header Authentication
+
+Header Authentication lets you build dynamic authentication headers for your webhook requests. It supports two configuration blocks:
+
+- **`variables`**: A JSON object of named values that are resolved lazily and can reference each other, OD attributes, and built-in `_auth` values.
+- **`headers`**: A JSON object of header key-value pairs to be added to the request.
+
+Both blocks support the full OD attribute syntax, including `_auth` context references, `_webhook` context references (for request body or URL), and standard user/global attributes.
+
+<figure><img src="../../../.gitbook/assets/authenticaton_headers.png" alt=""><figcaption><p>Header Authentication configuration</p></figcaption></figure>
+
+#### Built-in \_auth variables
+
+The following variables are automatically available in every Header Authentication configuration without any setup:
+
+| Variable              | Description                                  |
+| --------------------- | -------------------------------------------- |
+| `{_auth.uuid}`        | A unique UUID generated per request          |
+| `{_auth.timestamp}`   | Current Unix timestamp in seconds            |
+| `{_auth.timestamp_micro}` | Current Unix timestamp in microseconds   |
+
+#### Variable chaining
+
+Variables in the `variables` block can reference other variables defined in the same block, enabling you to build up values step by step. Resolution is lazy — each variable is only resolved when it is needed.
+
+#### Example: HMAC signature
+
+```json
+{
+  "variables": {
+    "secret": "{global.api_secret}",
+    "signature": "hmac-sha256({_webhook.body}, {_auth.secret})"
+  },
+  "headers": {
+    "X-Request-ID": "{_auth.uuid}",
+    "X-Signature": "{_auth.signature}",
+    "X-Timestamp": "{_auth.timestamp}"
+  }
+}
+```
+
+### Mutual TLS (mTLS) Authentication
+
+mTLS authentication establishes a two-way TLS handshake between OpenDialog and your API. You provide a client certificate (in P12/PFX format) which is presented to the server during the TLS negotiation.
+
+<figure><img src="../../../.gitbook/assets/authentication_mtls.png" alt=""><figcaption><p>mTLS Authentication configuration</p></figcaption></figure>
+
+**Configuration fields:**
+
+| Field              | Required | Description                                                            |
+| ------------------ | -------- | ---------------------------------------------------------------------- |
+| Certificate (P12)  | Yes      | Base64-encoded P12/PFX client certificate bundle                       |
+| Password           | Yes      | Password for the P12 certificate                                       |
+| CA Certificate     | No       | Base64-encoded PEM CA certificate for verifying the server certificate |
+
+All fields support the OD attribute syntax, allowing you to store sensitive values as user or global attributes rather than hardcoding them in the configuration.
+
+#### Example: storing the certificate as a global attribute
+
+```
+Certificate: {global.mtls_certificate}
+Password:    {global.mtls_password}
+CA Cert:     {global.mtls_ca_cert}
+```
+
 ## Using your webhook in conversation
 
 Once you've saved your webhook action, it will appear on the "Actions" page. For convenience, a small chip with the HTTP method will be displayed in the bottom-left corner of the action card. Legacy webhook actions will be displayed with the subtitle "Legacy Webhook Action" and can be used as usual.
