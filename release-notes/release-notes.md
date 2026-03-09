@@ -6,6 +6,27 @@ description: >-
 
 # Release Notes
 
+## March 2026
+
+#### <mark style="color:purple;">More control for Webhook V2 integrations</mark>
+
+We've added several improvements to Webhook V2 to make integrations more flexible and reliable:
+
+* Increased timeout for webhook calls
+* New `json_decode` function in JMESPath mappings for response transformation
+* mTLS authentication support for stronger secure integrations. Learn more in [Mutual TLS (mTLS) Authentication](../opendialog-platform/actions/webhook-action/README.md#mutual-tls-mtls-authentication)
+* Better testing panel support for `@`-syntax filter parameters
+
+For more information, see our [Webhook action documentation](../opendialog-platform/actions/webhook-action/README.md).
+
+#### <mark style="color:purple;">Improvements</mark>
+
+* Fixed an issue where workspace list in the sidebar could be incomplete
+* Fixed an issue where "Link opens in a new tab" only worked for the first image block in webchat
+* Improved chat history query performance for faster history loading
+* Fixed RAG vectorisation failure for certain cases
+* Included additional security hardening and infrastructure stability improvements
+
 ## February 2026
 
 #### <mark style="color:purple;">Updates to public API authentication</mark>
