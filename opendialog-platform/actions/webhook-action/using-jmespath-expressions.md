@@ -17,6 +17,48 @@ Resources on JMESPath:
 
 ### Examples
 
+**Custom function: `json_decode(...)`**
+
+Webhook V2 supports a custom JMESPath function called `json_decode(...)`.
+
+Use it when an API returns JSON **inside a string field** and you need to read values from that encoded object.
+
+Without `json_decode(...)`, string fields are treated as plain text and cannot be traversed with dot notation.
+
+**Syntax:**
+
+```text
+json_decode(<json_string_field>)
+```
+
+You can combine it with normal JMESPath traversal, for example:
+
+```text
+json_decode(payload).order.status
+```
+
+If the string is not valid JSON, the result is treated as empty for mapping purposes.
+
+**Example: extract values from a JSON-encoded field**
+
+<table><thead><tr><th>Input JSON</th><th>JMESPath</th></tr></thead><tbody><tr><td><pre class="language-json"><code class="lang-json">{
+  "eventId": "evt_901",
+  "payload": "{\"order\":{\"id\":\"ORD-1007\",\"status\":\"shipped\",\"tracking\":{\"carrier\":\"DHL\",\"number\":\"TRK-7788\"}}}"
+}
+</code></pre></td><td><p>Expression:<br><code>json_decode(payload).order.tracking.number</code><br><br>Output:</p><pre><code>TRK-7788
+</code></pre></td></tr></tbody></table>
+
+**Example: decode and return multiple fields**
+
+<table><thead><tr><th>Input JSON</th><th>JMESPath</th></tr></thead><tbody><tr><td><pre class="language-json"><code class="lang-json">{
+  "payload": "{\"order\":{\"id\":\"ORD-1007\",\"status\":\"shipped\"}}"
+}
+</code></pre></td><td><p>Expression:<br><code>{order_id: json_decode(payload).order.id, order_status: json_decode(payload).order.status}</code><br><br>Output:</p><pre class="language-json"><code class="lang-json">{
+  "order_id": "ORD-1007",
+  "order_status": "shipped"
+}
+</code></pre></td></tr></tbody></table>
+
 **Select a Single Field**
 
 <table><thead><tr><th>Input JSON</th><th>JMESPath</th></tr></thead><tbody><tr><td><pre class="language-json"><code class="lang-json">{
