@@ -22,7 +22,7 @@ The Secret Context is different from the [Global Context](contexts.md#global-con
 
 ## Managing secrets
 
-You can manage secrets through the OpenDialog admin interface. Navigate to your scenario's Secret Context page to view, create, and manage your secrets.
+You can manage secrets through the OpenDialog admin interface. Navigate to the Secret Management page (accessed from the 3 dot menu by your username in the sidebar) to view, create, and manage your secrets.
 
 <figure><img src="../../.gitbook/assets/secret managemnet.png" alt="Secret Management page showing a list of secrets and certificates with their types, dates, and expiration"><figcaption><p>The Secret Management page shows all your stored secrets and certificates</p></figcaption></figure>
 
@@ -48,7 +48,7 @@ Secret strings are for storing sensitive text values like API keys, passwords, a
 {% step %}
 ### Navigate to the Secret Context
 
-Open your scenario and navigate to the Secret Context page.
+Open the Secret Management page from the three-dot menu next to your username in the sidebar.
 {% endstep %}
 {% step %}
 ### Create a new entry
@@ -77,7 +77,7 @@ Certificates are for storing client certificates used in mTLS authentication. Op
 {% step %}
 ### Navigate to the Secret Context
 
-Open your scenario and navigate to the Secret Context page.
+Open the Secret Management page from the three-dot menu next to your username in the sidebar.
 {% endstep %}
 {% step %}
 ### Create a new entry
@@ -89,7 +89,7 @@ Click the button to add a new secret and select **Certificate** as the type.
 
 - **Name** — A descriptive name (e.g. `mtls_certificate`). This is how you'll reference it: `{secret.mtls_certificate}`
 - **Certificate file** — Upload your certificate file (P12, PFX, PEM, CER, CRT, or KEY format)
-- **Password** — If your certificate is password-protected (e.g. P12/PFX files), enter the password. You can also reference another secret as the password.
+- **Password** — If your certificate is password-protected (e.g. P12/PFX files), select an existing secret string from the Secret Context that holds the password. You'll need to create the password as a secret string first.
 {% endstep %}
 {% step %}
 ### Review and save
