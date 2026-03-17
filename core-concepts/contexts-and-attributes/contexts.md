@@ -18,6 +18,7 @@ Attribute references use the format `{context_name.attribute_name}`. When no con
 | `message_history` | Persistent                          | Read only              |
 | `interpretation`| Per moderation evaluation             | Read only              |
 | `_intent`       | Per-intent condition evaluation       | Read only              |
+| `secret`        | Persistent                            | Read only (at runtime) |
 | `_webhook`      | Per Webhook V2 Action execution       | Read only              |
 | `_auth`         | Per Header Authentication execution   | Read & write           |
 
@@ -191,6 +192,36 @@ The `_intent` context is a transient store populated by the interpreter during i
 - Accessing classifier confidence scores in conditions
 - Using interpreter-extracted entities in conditions without writing them to the user context
 - Evaluating intent-level metadata that should not persist beyond condition resolution
+
+## Secret context
+
+**Reference syntax:** `{secret.attribute_name}`
+
+**Persistence:** Persistent — managed through the UI.
+
+**Read/Write:** Read only at runtime. Managed via the admin interface.
+
+The secret context is a secure store for sensitive information such as API keys, passwords, tokens, and certificates. Values stored in the secret context are encrypted at rest and automatically masked in logs and outputs — they'll appear as `••••••••` whenever they're displayed outside of an authorised decryption context.
+
+The secret context supports two attribute types:
+
+- **Secret String** — For sensitive text values like API keys and passwords
+- **Certificate** — For client certificates used in mTLS authentication
+
+{% hint style="warning" %}
+Secret values can only be decrypted within Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2). If you reference a secret elsewhere — such as in a message template, condition, or the webhook URL — the masked value `••••••••` will be used instead.
+{% endhint %}
+
+**Common uses:**
+
+- Storing API keys and bearer tokens for webhook authentication
+- Storing HMAC signing keys for request signatures
+- Storing OAuth2 client secrets
+- Storing client certificates and their passwords for mTLS
+
+{% hint style="info" %}
+For a detailed guide on managing secrets and certificates, see the dedicated [Secret Context](secret-context.md) page.
+{% endhint %}
 
 ## \_webhook context
 
