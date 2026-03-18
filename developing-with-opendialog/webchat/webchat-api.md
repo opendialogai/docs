@@ -4,7 +4,7 @@ The Chat API is what our own chat widget uses to interact with OpenDialog.&#x20;
 
 You can use this API to interact with OpenDialog through your own applications, enabling you to build complete custom front-ends.
 
-Brief details are provided below and the API is documented [here](https://chatapi.opendialog.ai/).
+There are three endpoints supported right now. Brief details are provided below and the API is  documented [here](https://chatapi.opendialog.ai/).
 
 `GET chat-api/configuration`  - where you can retrieve configuration for how the interface should behave.&#x20;
 
