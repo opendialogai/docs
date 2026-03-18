@@ -8,6 +8,12 @@ description: >-
 
 ## March 2026
 
+#### <mark style="color:purple;">Message feedback (thumbs up/down)</mark>
+
+You can now enable **message feedback** in webchat so end users can rate bot messages with a thumbs up/down. This helps you identify which messages are helpful and which need improvement.
+
+Learn more in [Message feedback](../opendialog-platform/conversation-designer/message-design/message-feedback.md).
+
 #### <mark style="color:purple;">More control for Webhook V2 integrations</mark>
 
 We've added several improvements to Webhook V2 to make integrations more flexible and reliable:

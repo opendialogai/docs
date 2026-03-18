@@ -115,6 +115,7 @@
       * [Select resources](opendialog-platform/conversation-designer/conversation-design/introduction/select-resources.md)
   * [Message Design](opendialog-platform/conversation-designer/message-design/README.md)
     * [Message editor](opendialog-platform/conversation-designer/message-design/message-editor.md)
+    * [Message feedback](opendialog-platform/conversation-designer/message-design/message-feedback.md)
     * [Constructing Messages](opendialog-platform/conversation-designer/message-design/constructing-messages.md)
     * [Message Conditions](opendialog-platform/conversation-designer/message-design/message-conditions.md)
     * [Messages best practices](best-practices/designing-in-opendialog/messages-best-practices.md)
