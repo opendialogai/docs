@@ -29,7 +29,7 @@ Here you can configure some overall settings for the widget:
 **Messages** - Configure message behaviour in webchat, including:
 
 - Showing the time of the message underneath each message
-- **Enable message feedback** (thumbs up/down) so end users can rate bot messages. You can also override this per message in the [Message editor](../message-design/message-editor.md).
+- **Enable message feedback** (thumbs up/down) so end users can rate bot messages. You can also override this per message in the [Message editor](../message-design/message-editor.md). Learn more in [Message feedback](../message-design/message-feedback.md).
 
 **Typing Event** - Controls behavior when bot "typing" a response. \
 \- _Timing_ configures the length of time (in milliseconds) that the typing indicator should be shown for each message.\

@@ -96,7 +96,7 @@ The following options are available in the Edit Message screen:
 * **Behaviours:**
   * "Disable free-form user input field for this message" will ensure that the user is not able to send free-form text messages in response to this message. This is usually best used alongside a message block that the user can interact with, such as a button message or form message.
   * "Hide the avatar for this message" will ensure that Webchat doesn't display the avatar alongside the message.
-  * **Message feedback** lets you control whether end users can rate this message in webchat (thumbs up/down):\n    \n    - **Inherit**: use the interface setting (default)\n    - **Enable**: show thumbs for this message\n    - **Disable**: never show thumbs for this message\n    \n    When message feedback is enabled, the preview can show the feedback widget for supported messages.
+  * **Message feedback** lets you control whether end users can rate this message in webchat (thumbs up/down):\n    \n    - **Inherit**: use the interface setting (default)\n    - **Enable**: show thumbs for this message\n    - **Disable**: never show thumbs for this message\n    \n    When message feedback is enabled, the preview can show the feedback widget for supported messages. Learn more in [Message feedback](message-feedback.md).
   * "Exclude markdown code from attribute filling" will ensure that any curly-braces `{}`included inside [markdown code blocks](http://commonmark.org/help/) (single or triple back ticks) will not be used in attribute filling. By default OpenDialog will presume any curly braces are being used as [attribute syntax](using-attributes-in-messages.md) and attempt to fill it's value, this behaviour excludes markdown code from being filled. This behaviour is useful if you need to use curly braces for things such as code snippets within your messages.
 
 <figure><img src="../../../.gitbook/assets/Screenshot 2025-03-06 at 11.09.33 (1).png" alt=""><figcaption><p>Edit Message screen</p></figcaption></figure>
@@ -106,14 +106,6 @@ The following options are available in the Edit Message screen:
 Custom messages let you define message content using XML.
 
 This is how you access message-type-specific attributes.
-
-### Message feedback attribute (Custom Messages)
-
-If you are using a custom message XML editor, you can control message feedback with the `enable_feedback` attribute:
-
-- `enable_feedback="true"`: enable feedback for this message
-- `enable_feedback="false"`: disable feedback for this message
-- Omit the attribute: inherit the interface setting
 
 ### Expandable Message Attributes (Custom Messages)
 

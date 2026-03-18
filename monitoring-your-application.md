@@ -106,7 +106,7 @@ The message log table is an essential tool for reviewing and understanding the f
 
 There is an export button in the top left hand side of the table. Clicking this button will export data with the current filters applied into a CSV file for you to download.
 
-If message feedback is enabled for your workspace, you may also see an additional export button next to this one to download **message feedback results** as a CSV file.
+If message feedback is enabled for your workspace, you may also see an additional export button next to this one to download **message feedback results** as a CSV file. Learn more in [Message feedback](opendialog-platform/conversation-designer/message-design/message-feedback.md).
 
 By examining this data, you can evaluate the performance of your application, identify patterns, and uncover potential areas for improvement.
 
