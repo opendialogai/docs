@@ -141,20 +141,62 @@ Client Secret: {secret.oauth_client_secret}
 Scope:         api.read api.write
 ```
 
+## Using secrets in language model configuration
+
+You can use secret references in place of plain-text credentials when configuring language model integrations. This means you don't need to paste raw API keys into your LLM action or language service configurations — instead, you reference a secret stored in the Secret Context.
+
+When OpenDialog makes an API call to the language model provider, the secret is decrypted just for that request and never stored, logged, or returned in API responses.
+
+### OpenAI
+
+Instead of pasting your API key directly, use a secret reference:
+
+- **API Key:** `{secret.openai_api_key}`
+- **Organisation:** `{secret.openai_org}` _(optional)_
+
+If you're using OpenDialog's managed service, the managed credentials take precedence and any secret reference in the API key field is ignored.
+
+### Azure OpenAI
+
+- **API Key:** `{secret.azure_openai_api_key}`
+
+The resource name and deployment name aren't sensitive, so you can enter those as plain text.
+
+### Anthropic
+
+- **API Key:** `{secret.anthropic_api_key}`
+
+### Gemini API
+
+- **API Key:** `{secret.gemini_api_key}`
+
+### Vertex AI (Gemini / PaLM)
+
+For Vertex AI models, the credentials JSON can be stored as a secret. The entire JSON service account key should be saved as a single secret string:
+
+- **Credentials JSON:** `{secret.gcp_vertex_credentials}`
+
+{% hint style="info" %}
+When you save a language model configuration with a `{secret.*}` reference, OpenDialog validates that the referenced secret exists. If it doesn't, you'll see a validation error — this helps catch typos before they cause runtime failures.
+{% endhint %}
+
+For more details on setting up each provider, see the [LLM Actions](../../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/) documentation.
+
 ## Security model
 
 {% hint style="warning" %}
-Secret values can **only** be decrypted within Webhook V2 authentication configurations — Header Authentication, mTLS, and OAuth2. This is by design. If you reference a secret outside of these contexts (for example, in a message template, a condition, or the webhook URL or body), the value will appear as `••••••••`.
+Secret values can only be decrypted in specific authorised contexts — Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2) and language model configurations. If you reference a secret outside of these contexts (for example, in a message template, a condition, or the webhook URL or body), the value will appear as `••••••••`.
 {% endhint %}
 
 This controlled decryption model means:
 
 - **Secrets in authentication headers** — Decrypted and sent as plaintext to the target API
+- **Secrets in language model API calls** — Decrypted and used for the API request, then discarded
 - **Secrets in message templates** — Displayed as `••••••••` (masked)
 - **Secrets in webhook URL or body** — Displayed as `••••••••` (masked)
 - **Secrets in logs** — Always displayed as `••••••••` (masked)
 
-This ensures that sensitive values are only ever exposed where they're genuinely needed — in the outgoing HTTP request to your API.
+This ensures that sensitive values are only ever exposed where they're genuinely needed — in the outgoing HTTP request to your API or language model provider.
 
 ## Related pages
 
@@ -164,6 +206,10 @@ This ensures that sensitive values are only ever exposed where they're genuinely
 
 {% content-ref url="about-attributes.md" %}
 [about-attributes.md](about-attributes.md)
+{% endcontent-ref %}
+
+{% content-ref url="../../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/" %}
+[LLM Actions](../../opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/)
 {% endcontent-ref %}
 
 {% content-ref url="../../../opendialog-platform/actions/webhook-action/" %}

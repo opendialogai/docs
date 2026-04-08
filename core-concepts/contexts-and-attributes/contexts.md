@@ -209,7 +209,7 @@ The secret context supports two attribute types:
 - **Certificate** — For client certificates used in mTLS authentication
 
 {% hint style="warning" %}
-Secret values can only be decrypted within Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2). If you reference a secret elsewhere — such as in a message template, condition, or the webhook URL — the masked value `••••••••` will be used instead.
+Secret values can only be decrypted in specific authorised contexts — Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2) and language model configurations. If you reference a secret elsewhere — such as in a message template, condition, or the webhook URL — the masked value `••••••••` will be used instead.
 {% endhint %}
 
 **Common uses:**
@@ -218,6 +218,7 @@ Secret values can only be decrypted within Webhook V2 authentication configurati
 - Storing HMAC signing keys for request signatures
 - Storing OAuth2 client secrets
 - Storing client certificates and their passwords for mTLS
+- Storing API keys for language model providers (OpenAI, Azure, Anthropic, Gemini)
 
 {% hint style="info" %}
 For a detailed guide on managing secrets and certificates, see the dedicated [Secret Context](secret-context.md) page.

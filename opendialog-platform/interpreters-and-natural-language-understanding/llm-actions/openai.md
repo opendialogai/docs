@@ -16,11 +16,26 @@ To set up an integration between your LLM action, and an OpenAI model, you can e
 
 [How to create an OpenAI account](https://platform.openai.com/docs/quickstart)
 
-If you are using your own credentials, unselect 'OpenDialog managed' and provide the following three elements:
+If you're using your own credentials, unselect 'OpenDialog managed' and provide the following three elements:
 
 * The **OpenAI API Key** is an API key associated with your OpenAI account. This can be found under the ["API keys"](https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key) page in your OpenAI platform.
 * The **OpenAI Organisation** is a unique identifier for your organisation within OpenAI. This can be found on the [general settings](https://platform.openai.com/settings/organization/general) page under "Organization ID".
 * The **Model** is an identifier for the large language model that you would like to use. OpenAI provides a list of [pre-built model](https://platform.openai.com/docs/models/gpt-4o) identifiers, or you can use a custom fine-tuned model identifier associated with your organisation.
+
+### Using secrets for credentials
+
+Instead of pasting your API key directly, you can reference a secret stored in the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md). This keeps your credentials encrypted and centralised rather than stored as plain text in the configuration.
+
+To use a secret reference, enter the following in the credential fields:
+
+* **API Key:** `{secret.openai_api_key}`
+* **Organisation:** `{secret.openai_org}`
+
+Replace `openai_api_key` and `openai_org` with the names you gave your secrets in the Secret Context. When OpenDialog calls the OpenAI API, the secret is decrypted for that request only — it's never stored in logs or returned in API responses.
+
+{% hint style="info" %}
+OpenDialog validates that the referenced secret exists when you save the configuration. If the secret name doesn't match an entry in your Secret Context, you'll see a validation error.
+{% endhint %}
 
 ## How to use
 

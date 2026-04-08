@@ -115,12 +115,13 @@ The Secret String attribute type stores sensitive text values such as API keys, 
 Secret String attributes are stored in the [Secret Context](secret-context.md) and can be referenced using `{secret.attribute_name}`.
 
 {% hint style="warning" %}
-Secret String values can only be decrypted within Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2). If you reference a secret in any other context — such as a message template, condition, or webhook URL — the value will appear as `••••••••`.
+Secret String values can only be decrypted in specific authorised contexts — Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2) and language model configurations. If you reference a secret in any other context — such as a message template, condition, or webhook URL — the value will appear as `••••••••`.
 {% endhint %}
 
 **Common uses:**
 
 - API keys and bearer tokens for 3rd party integrations
+- API keys for language model providers (OpenAI, Azure, Anthropic, Gemini)
 - HMAC signing keys for webhook authentication
 - OAuth2 client secrets
 - Certificate passwords

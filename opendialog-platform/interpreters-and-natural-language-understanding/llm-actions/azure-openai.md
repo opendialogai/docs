@@ -18,11 +18,25 @@ To set up an integration between your LLM action, and an Azure OpenAI model, you
 
 You will also need to [create a model deployment](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#deploy-a-model) within the service.
 
-To configure your Azure OpenAI LLM action you will need to provide the following three elements:
+To configure your Azure OpenAI LLM action you'll need to provide the following three elements:
 
 * The **Azure OpenAI API Key** is an API key associated with your service. This can be found in your Azure portal by navigating to your Azure OpenAI Service resource, and selecting "Resource Management" and then "Keys and Endpoint". You can use either Key 1 or Key 2.
 * The **Azure OpenAI Resource Name** is the name of the resource in Azure.
 * The **Azure OpenAI Deployment Name** is the name of the deployment. It's important to note that the deployment name is defined when you create the deployment, and will not be the name of the underlying OpenAI model.
+
+### Using secrets for credentials
+
+Instead of pasting your API key directly, you can reference a secret stored in the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md). This keeps your credentials encrypted and centralised.
+
+To use a secret reference, enter the following in the API Key field:
+
+* **API Key:** `{secret.azure_openai_api_key}`
+
+Replace `azure_openai_api_key` with the name you gave your secret in the Secret Context. The resource name and deployment name aren't sensitive, so you can enter those as plain text.
+
+{% hint style="info" %}
+OpenDialog validates that the referenced secret exists when you save the configuration. If the secret name doesn't match an entry in your Secret Context, you'll see a validation error.
+{% endhint %}
 
 ## How to use
 
