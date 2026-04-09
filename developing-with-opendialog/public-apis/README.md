@@ -44,7 +44,7 @@ Replace `{your-workspace}` with your actual workspace name.
 
 ### API Categories
 
-The OpenDialog Public APIs are organized into three main categories:
+The OpenDialog Public APIs are organized into five main categories:
 
 #### Knowledge Service APIs
 
@@ -63,6 +63,18 @@ Retrieve and export user interaction data and conversation history. These APIs p
 Retrieve and export user user data and conversation history. These APIs provide access to user messages, conversation logs, and enable comprehensive data exports for analysis and compliance purposes.
 
 [Read more about User Data Export APIs →](user-data-export-apis.md)
+
+#### Analytics Data Export API
+
+Retrieve clickstream analytics data including events, page views, and user identifications. This API allows you to export behavioral analytics and A/B testing data to external systems for further analysis and reporting.
+
+[Read more about Analytics Data Export API →](analytics-data-export-api.md)
+
+#### Flag Evaluations API
+
+Retrieve feature-flag evaluation data from OpenDialog. This API provides access to experiment variant assignments and reasons, enabling you to export A/B testing and feature-flag analytics data to external systems.
+
+[Read more about Flag Evaluations API →](flag-evaluations-api.md)
 
 #### Webchat Deep Link APIs
 
