@@ -213,8 +213,10 @@
 * [Public APIs](developing-with-opendialog/public-apis/README.md)
   * [Knowledge Service APIs](developing-with-opendialog/public-apis/knowledge-service-apis.md)
   * [User Interactions APIs](developing-with-opendialog/public-apis/user-interactions-apis.md)
-  * [Webchat Deep Link APIs](developing-with-opendialog/public-apis/webchat-deep-link-apis.md)
   * [User Data Export APIs](developing-with-opendialog/public-apis/user-data-export-apis.md)
+  * [Analytics Data Export API](developing-with-opendialog/public-apis/analytics-data-export-api.md)
+  * [Flag Evaluations API](developing-with-opendialog/public-apis/flag-evaluations-api.md)
+  * [Webchat Deep Link APIs](developing-with-opendialog/public-apis/webchat-deep-link-apis.md)
 
 ## Release Notes
 
