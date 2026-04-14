@@ -70,7 +70,7 @@ curl -X GET \
 
 ### Response Body
 
-The response uses **offset-based pagination**. The top-level object contains a `clickstream` key with paginated data and metadata. When `include_flag_data=1` is provided, an additional `experiments` key is included.
+The response uses **simple pagination** (no total count, which avoids expensive count queries on large datasets). The top-level object contains a `clickstream` key with paginated data and metadata. When `include_flag_data=1` is provided, an additional `experiments` key is included.
 
 ### Response Fields — `clickstream.data[]`
 
@@ -98,12 +98,11 @@ Each record in the clickstream represents one of three types:
 
 ### Pagination Fields — `clickstream`
 
-| Field          | Type    | Description                                                        |
-|----------------|---------|--------------------------------------------------------------------|
-| `per_page`     | integer | The number of records per page.                                    |
-| `current_page` | integer | The current page number.                                           |
-| `last_page`    | integer | The last available page number.                                    |
-| `total`        | integer | The total number of records matching the query.                    |
+| Field            | Type    | Description                                                        |
+|------------------|---------|--------------------------------------------------------------------|
+| `per_page`       | integer | The number of records per page.                                    |
+| `current_page`   | integer | The current page number.                                           |
+| `has_more_pages` | boolean | Whether there are more pages of results after the current page.    |
 
 ### Response Fields — `experiments[]` (optional)
 
@@ -155,8 +154,7 @@ Only present when `include_flag_data=1` is passed. Contains flag evaluations sco
         ],
         "per_page": 50,
         "current_page": 1,
-        "last_page": 1,
-        "total": 2
+        "has_more_pages": false
     }
 }
 ```
@@ -183,8 +181,7 @@ Only present when `include_flag_data=1` is passed. Contains flag evaluations sco
         ],
         "per_page": 50,
         "current_page": 1,
-        "last_page": 1,
-        "total": 1
+        "has_more_pages": false
     },
     "experiments": [
         {
@@ -211,8 +208,7 @@ When no records match the given filters:
         "data": [],
         "per_page": 50,
         "current_page": 1,
-        "last_page": 1,
-        "total": 0
+        "has_more_pages": false
     }
 }
 ```
@@ -247,12 +243,12 @@ Request where `end_date` is before `start_date`:
 
 ## Pagination
 
-This endpoint uses **offset-based pagination** for simple, predictable paging through datasets.
+This endpoint uses **simple pagination** — it does not return a total record count, which avoids expensive count queries on large datasets.
 
 1. Make an initial request with the desired `per_page` value (defaults to `50`, maximum `1000`).
-2. The response includes `total`, `current_page`, and `last_page` to help navigate through results.
-3. To fetch subsequent pages, pass the `page` query parameter (e.g. `page=2`, `page=3`).
-4. Continue until `current_page` equals `last_page`.
+2. The response includes `has_more_pages` (boolean) to indicate if more data exists.
+3. To fetch subsequent pages, increment the `page` query parameter (e.g. `page=2`, `page=3`).
+4. Continue until `has_more_pages` is `false`.
 
 ### Example: Iterating Through Pages
 
@@ -262,7 +258,7 @@ This endpoint uses **offset-based pagination** for simple, predictable paging th
 GET /public/api/analytics-data-export?scenario_id=my-scenario&per_page=100
 ```
 
-Response includes `"current_page": 1, "last_page": 3, "total": 250`.
+Response includes `"current_page": 1, "has_more_pages": true`.
 
 **Second request:**
 
@@ -270,13 +266,15 @@ Response includes `"current_page": 1, "last_page": 3, "total": 250`.
 GET /public/api/analytics-data-export?scenario_id=my-scenario&per_page=100&page=2
 ```
 
-**Third request:**
+Response includes `"current_page": 2, "has_more_pages": true`.
+
+**Third (final) request:**
 
 ```
 GET /public/api/analytics-data-export?scenario_id=my-scenario&per_page=100&page=3
 ```
 
-When `current_page` equals `last_page`, all records have been retrieved.
+Response includes `"current_page": 3, "has_more_pages": false` — all records have been retrieved.
 
 ## Rate Limiting
 
