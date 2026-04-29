@@ -48,6 +48,7 @@
   * [Attribute Management](core-concepts/contexts-and-attributes/attribute-management.md)
   * [Conditions and operators](core-concepts/contexts-and-attributes/conditions-and-operators.md)
   * [Composite Attributes](core-concepts/contexts-and-attributes/attributes.md)
+  * [Secret Context](core-concepts/contexts-and-attributes/secret-context.md)
 
 ## CREATE AI APPLICATIONS <a href="#opendialog-platform" id="opendialog-platform"></a>
 

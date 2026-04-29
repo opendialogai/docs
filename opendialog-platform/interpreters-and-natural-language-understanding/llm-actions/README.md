@@ -114,6 +114,12 @@ If you choose the 'Custom' engine, you will need to manually configure your acti
 [Learn about JSON LLM action settings](/broken/pages/h1Nv4EMKFW0n10de3P6a)
 {% endhint %}
 
+#### Using secrets for credentials
+
+For any engine, you can use a `{secret.*}` reference in place of a plain-text API key. This keeps your credentials encrypted in the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md) rather than stored as plain text in the configuration. For example, enter `{secret.openai_api_key}` in the API Key field instead of pasting the key directly.
+
+OpenDialog validates that the referenced secret exists when you save. See the [OpenAI](openai.md#using-secrets-for-credentials) and [Azure OpenAI](azure-openai.md#using-secrets-for-credentials) pages for provider-specific examples, or the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md#using-secrets-in-language-model-configuration) documentation for the full list of supported providers.
+
 ### Prompt configuration
 
 The prompt configuration area is where you can provide instructions for the LLM on how best to assist the user with a response.&#x20;

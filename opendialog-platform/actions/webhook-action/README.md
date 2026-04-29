@@ -159,9 +159,13 @@ Use the pop-out icon next to the "Response" section to view this in a full-page 
 
 ## Authentication configuration
 
-Webhook V2 Actions support two authentication methods: **Header Authentication** and **Mutual TLS (mTLS)**. Authentication is configured per webhook action, within the action configuration itself.
+Webhook V2 Actions support three authentication methods: **Header Authentication**, **Mutual TLS (mTLS)**, and **OAuth2 Client Credentials**. Authentication is configured per webhook action, within the action configuration itself.
 
-<figure><img src="../../../.gitbook/assets/authentication_selection.png" alt=""><figcaption><p>Select an authentication method for your webhook action</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/authentication_selection.png" alt="Authentication method selection showing Header, mTLS, and OAuth2 options"><figcaption><p>Select an authentication method for your webhook action</p></figcaption></figure>
+
+{% hint style="info" %}
+All authentication methods are **secret-aware**. You can reference secrets from the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md) using `{secret.your_secret_name}` in your authentication configuration. Secret values are automatically decrypted during authentication and never appear in logs.
+{% endhint %}
 
 ### Header Authentication
 
@@ -170,9 +174,28 @@ Header Authentication lets you build dynamic authentication headers for your web
 - **`variables`**: A JSON object of named values that are resolved lazily and can reference each other, OD attributes, and built-in `_auth` values.
 - **`headers`**: A JSON object of header key-value pairs to be added to the request.
 
-Both blocks support the full OD attribute syntax, including `_auth` context references, `_webhook` context references (for request body or URL), and standard user/global attributes.
+Both blocks support the full OD attribute syntax, including `_auth` context references, `_webhook` context references (for request body or URL), and standard user/global/secret attributes.
 
-<figure><img src="../../../.gitbook/assets/authenticaton_headers.png" alt=""><figcaption><p>Header Authentication configuration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/authenticaton_headers.png" alt="Header Authentication configuration"><figcaption><p>Header Authentication configuration</p></figcaption></figure>
+
+#### Using secrets in headers
+
+Header Authentication is secret-aware — you can reference secrets from the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md) in your header values and variables. When the authentication executes, secret values are automatically decrypted and included in the outgoing request.
+
+{% hint style="warning" %}
+Secrets can only be decrypted within Webhook V2 authentication configurations. If you reference a secret attribute outside of authentication (for example, in a message template or the webhook URL), the value will appear as `••••••••`.
+{% endhint %}
+
+#### Example: API key from the Secret Context
+
+```json
+{
+  "headers": {
+    "Authorization": "Bearer {secret.api_key}",
+    "X-Request-ID": "{_auth.uuid}"
+  }
+}
+```
 
 #### Built-in \_auth variables
 
@@ -188,12 +211,12 @@ The following variables are automatically available in every Header Authenticati
 
 Variables in the `variables` block can reference other variables defined in the same block, enabling you to build up values step by step. Resolution is lazy — each variable is only resolved when it is needed.
 
-#### Example: HMAC signature
+#### Example: HMAC signature with a secret
 
 ```json
 {
   "variables": {
-    "secret": "{global.api_secret}",
+    "secret": "{secret.hmac_signing_key}",
     "signature": "hmac-sha256({_webhook.body}, {_auth.secret})"
   },
   "headers": {
@@ -206,26 +229,70 @@ Variables in the `variables` block can reference other variables defined in the 
 
 ### Mutual TLS (mTLS) Authentication
 
-mTLS authentication establishes a two-way TLS handshake between OpenDialog and your API. You provide a client certificate (in P12/PFX format) which is presented to the server during the TLS negotiation.
+mTLS authentication establishes a two-way TLS handshake between OpenDialog and your API. You provide a client certificate which is presented to the server during the TLS negotiation.
 
-<figure><img src="../../../.gitbook/assets/authentication_mtls.png" alt=""><figcaption><p>mTLS Authentication configuration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/authentication_mtls.png" alt="mTLS Authentication configuration"><figcaption><p>mTLS Authentication configuration</p></figcaption></figure>
 
 **Configuration fields:**
 
 | Field              | Required | Description                                                            |
 | ------------------ | -------- | ---------------------------------------------------------------------- |
-| Certificate (P12)  | Yes      | Base64-encoded P12/PFX client certificate bundle                       |
-| Password           | Yes      | Password for the P12 certificate                                       |
+| Certificate        | Yes      | A certificate attribute from the Secret Context (e.g. `{secret.my_cert}`) |
+| Password           | Yes      | The password for the certificate — can be a secret (e.g. `{secret.cert_password}`) |
 | CA Certificate     | No       | Base64-encoded PEM CA certificate for verifying the server certificate |
 
-All fields support the OD attribute syntax, allowing you to store sensitive values as user or global attributes rather than hardcoding them in the configuration.
+mTLS is secret-aware. The **Certificate** field expects a reference to a certificate stored in the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md). Certificates can be uploaded in P12, PFX, PEM, CER, CRT, or KEY formats. The **Password** field can also reference a secret, keeping your certificate passphrase protected.
 
-#### Example: storing the certificate as a global attribute
+#### Example: using certificates and secrets from the Secret Context
 
 ```
-Certificate: {global.mtls_certificate}
-Password:    {global.mtls_password}
+Certificate: {secret.mtls_certificate}
+Password:    {secret.cert_password}
 CA Cert:     {global.mtls_ca_cert}
+```
+
+{% hint style="info" %}
+To learn how to upload certificates and create secrets, see the [Secret Context](../../../core-concepts/contexts-and-attributes/secret-context.md) documentation.
+{% endhint %}
+
+### OAuth2 Client Credentials
+
+OAuth2 Client Credentials authentication is designed for server-to-server integrations where your webhook needs to authenticate with an OAuth2-protected API. It implements the [OAuth2 Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4), which exchanges a client ID and client secret for an access token.
+
+<figure><img src="../../../.gitbook/assets/oauth2 config.png" alt="OAuth2 Client Credentials configuration showing token URL, client ID, client secret with a secret reference, and scope"><figcaption><p>OAuth2 Client Credentials configuration</p></figcaption></figure>
+
+**Configuration fields:**
+
+| Field         | Required | Supports secrets | Description                                          |
+| ------------- | -------- | ---------------- | ---------------------------------------------------- |
+| Token URL     | Yes      | No               | The OAuth2 token endpoint URL                        |
+| Client ID     | Yes      | No               | Your application's client identifier                 |
+| Client Secret | Yes      | Yes              | Your application's client secret — can be a secret attribute (e.g. `{secret.oauth_client_secret}`) |
+| Scope         | No       | No               | Space-separated list of scopes to request            |
+
+#### How it works
+
+When your webhook action executes:
+
+1. OpenDialog sends a token request to the **Token URL** with the client credentials
+2. The token endpoint returns an access token
+3. OpenDialog adds the token as a `Bearer` token in the `Authorization` header of your webhook request
+
+#### Token caching
+
+To avoid requesting a new token on every webhook call, OpenDialog automatically caches access tokens. Cached tokens are reused across follow-up calls to the same API. When a cached token is close to expiring, OpenDialog will request a fresh one.
+
+{% hint style="info" %}
+Each unique combination of client credentials and scope gets its own cached token. If you change the client ID, client secret, or scope, a new token will be requested.
+{% endhint %}
+
+#### Example
+
+```
+Token URL:     https://auth.example.com/oauth2/token
+Client ID:     {global.oauth_client_id}
+Client Secret: {secret.oauth_client_secret}
+Scope:         api.read api.write
 ```
 
 ## Using your webhook in conversation

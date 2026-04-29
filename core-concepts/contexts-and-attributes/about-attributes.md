@@ -104,6 +104,43 @@ For the example above we will then be able to access information using the synta
 
 `{user.userPreferences['chat_preferences']['tone']}` or `{user.userPreferences['theme']['dark']}`
 
+### Security Attribute Types
+
+Security attribute types are designed for storing sensitive information that must be protected from exposure in logs, messages, and debugging tools.
+
+#### Secret String
+
+The Secret String attribute type stores sensitive text values such as API keys, passwords, and tokens. Values are encrypted at rest and automatically masked in all outputs — they'll appear as `••••••••` whenever they're displayed or logged.
+
+Secret String attributes are stored in the [Secret Context](secret-context.md) and can be referenced using `{secret.attribute_name}`.
+
+{% hint style="warning" %}
+Secret String values can only be decrypted in specific authorised contexts — Webhook V2 authentication configurations (Header Authentication, mTLS, and OAuth2) and language model configurations. If you reference a secret in any other context — such as a message template, condition, or webhook URL — the value will appear as `••••••••`.
+{% endhint %}
+
+**Common uses:**
+
+- API keys and bearer tokens for 3rd party integrations
+- API keys for language model providers (OpenAI, Azure, Anthropic, Gemini)
+- HMAC signing keys for webhook authentication
+- OAuth2 client secrets
+- Certificate passwords
+
+#### Certificate
+
+The Certificate attribute type stores certificate data along with metadata such as the fingerprint, subject common name (CN), and expiration date. Like Secret String attributes, the certificate content is encrypted at rest.
+
+Certificates are stored in the [Secret Context](secret-context.md) and support multiple formats including P12, PFX, PEM, CER, CRT, and KEY.
+
+**Common uses:**
+
+- Client certificates for mTLS authentication
+- TLS certificates for secure API integrations
+
+{% hint style="info" %}
+For details on how to create and manage secrets and certificates, see the [Secret Context](secret-context.md) documentation.
+{% endhint %}
+
 ### Specific Attribute Types
 
 In addition to the types described above OpenDialog has a number of more specific attribute types
