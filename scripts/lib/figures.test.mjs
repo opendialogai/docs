@@ -66,3 +66,35 @@ test('rewriteAssetRefs normalises existing markdown image paths', () => {
 test('rewriteAssetRefs leaves page links alone', () => {
   assert.equal(rewriteAssetRefs('[a](/section/a/b)'), '[a](/section/a/b)');
 });
+
+test('a code span in a caption becomes a backtick span, not plain text', () => {
+  // openai.md and azure-openai.md both caption a screenshot this way, marking an attribute
+  // name inline with <code> rather than plain prose.
+  assert.equal(
+    convertFigures(
+      '<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-09 at 09.52.58 (1).png" alt="">' +
+        "<figcaption><p>Create a text message using the LLM's response by using the " +
+        '<code>llm_response</code> attribute</p></figcaption></figure>'
+    ),
+    '![](</.gitbook/assets/Screenshot 2024-07-09 at 09.52.58 (1).png>)\n\n' +
+      "*Create a text message using the LLM's response by using the `llm_response` attribute*"
+  );
+});
+
+test('a figure holding more than one img throws rather than silently dropping one', () => {
+  assert.throws(
+    () =>
+      convertFigures(
+        '<figure><img src=".gitbook/assets/a.png" alt=""><img src=".gitbook/assets/b.png" alt="">' +
+          '<figcaption></figcaption></figure>'
+      ),
+    /convertFigures: a <figure> block did not match the expected one-image shape/
+  );
+});
+
+test('an img with no src attribute throws rather than shipping unoptimised', () => {
+  assert.throws(
+    () => convertFigures('<img alt="X">'),
+    /convertFigures: <img> with no src attribute/
+  );
+});
