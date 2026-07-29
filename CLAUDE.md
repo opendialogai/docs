@@ -25,6 +25,10 @@ Migrating OpenDialog's product docs off GitBook onto Astro Starlight, deployed t
 - **50 assets have no file extension.** Sniff magic bytes and rename, or they get served with the wrong MIME type.
 - **One 28 MB GIF exceeds Cloudflare's 25 MiB per-file limit** and will fail deployment. Re-encode to MP4.
 - **Do not set `run_worker_first`** in `wrangler.jsonc`. Static asset requests are free and unlimited; Worker invocations are metered at 100k/day on the free plan.
+- **Never make DNS changes.** Pat repoints `docs.opendialog.ai` manually at cutover. Cloudflare API access is available for Workers and deployments only.
+- **Pat owns the GitBook analytics export.** Do not attempt it.
+- **Routes derive from nav position in `SUMMARY.md`, not from file paths.** See `MIGRATION-NOTES.md`. Four pages sit on disk somewhere other than their nav position; path-based derivation puts them at URLs that 404 today.
+- **`reference/` holds committed snapshots of the live GitBook site** — the acceptance oracle. Never fetch these live in a verification script; they must outlive GitBook. Note `sitemap.xml` is an *index* pointing at `sitemap-pages.xml`, which holds the 204 real URLs.
 
 ## Expected counts
 
@@ -39,7 +43,12 @@ If your script's numbers diverge sharply from these, the script is wrong — do 
 | Relative `.md` links | 499 |
 | `&#x20;` artefacts | 1,203 |
 | Asset files | 1,589 |
-| Live URLs in sitemap | ~131 |
+| Content pages (excl. `SUMMARY.md` and 3 files under `.gitbook/`) | 204 |
+| `SUMMARY.md` nav entries | 204 |
+| Live URLs in `sitemap-pages.xml` | 204 |
+
+The brief's "~131 live URLs" was wrong — 131 is the `llms.txt` nav count, not the published
+URL set. Measured against the live sitemap: 204. Route parity is judged against 204.
 
 ## Commands
 

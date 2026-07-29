@@ -1,0 +1,224 @@
+# OpenDialog Docs
+
+## OpenDialog Documentation
+
+- [Introduction](https://docs.opendialog.ai/getting-started-1/readme.md)
+- [Getting ready](https://docs.opendialog.ai/getting-started-1/getting-ready.md): Before jumping into the build process, you need to make sure you have a clear understanding of an AI agent’s key building blocks and the pieces of information you need to personalise yours.
+- [Billing and plans](https://docs.opendialog.ai/getting-started-1/billing-and-plans.md)
+- [Quick Start AI Agents](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents.md): How to get started in just minutes with OpenDialog
+- [Quick Start AI Agent](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/quick-start-ai-agent.md): The OpenDialog Quick Start AI Agent
+- [The "Start from Scratch" AI Agent](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent.md)
+- [Chat Management Conversation](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation.md): The Chat Management Conversation of the Start from Scratch Scenario
+- [Welcome Conversation](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation.md): The Welcome Conversation of the Start from Scratch Scenario
+- [Topic Conversation](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation.md): The Topic Conversation of the Start From Scratch Scenario
+- [Global No Match Conversation](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation.md): The Global No Match Conversation of the "Start from Scratch" AI Agent
+- [Supporting LLM Actions](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions.md): The LLM Actions used by the "Start from Scratch" scenario
+- [Semantic Classifier: Query Classifier](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier.md): The Semantic Classifier used by the "Start from Scratch" Scenario
+- [A Process Handling AI Agent](https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent.md): OpenDialog Pattern for managing multiple steps in a process through an AI Agent
+- [AI Agent Creation Overview](https://docs.opendialog.ai/tutorials/ai-agent-creation-overview.md): Learn how to create a fully functional AI Agent including semantic classification, retrieval augmented generation, process handling, third-party integrations and more.
+- [Add a new topic of discussion](https://docs.opendialog.ai/tutorials/add-a-new-topic-of-discussion.md): Let's expand  your AI Agent's capabilities by introducing a new topic of discussion.
+- [Use knowledge sources via RAG](https://docs.opendialog.ai/tutorials/use-knowledge-sources-via-rag.md): Let's enhance your AI Agent's knowledge with Retrieval Augmented Generation.
+- [Adding a structured conversation](https://docs.opendialog.ai/tutorials/adding-a-structured-conversation.md): Let's add a structured conversation flow to your AI Agent.
+- [Add a 3rd party integration](https://docs.opendialog.ai/tutorials/integrate.md): Let's enhance your AI Agent with access to 3rd party data.
+- [Test and tweak your AI Agent](https://docs.opendialog.ai/tutorials/test-and-tweak-your-ai-agent.md): Your AI Agent is almost ready to launch! Before you publish it, let’s make sure it’s optimised for the best user experience.
+- [Publish your AI Agent](https://docs.opendialog.ai/tutorials/publish-your-ai-agent.md): Ready to launch your AI Agent?
+- [OpenDialog Approach](https://docs.opendialog.ai/core-concepts/the-opendialog-model.md)
+- [Designing Conversational AI Agents](https://docs.opendialog.ai/core-concepts/the-opendialog-model/designing-conversational-ai-agents.md)
+- [OpenDialog Platform](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace.md)
+- [Scenarios](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios.md)
+- [Conversations](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios/conversations.md)
+- [Scenes](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios/scenes.md)
+- [Turns and intents](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md)
+- [Language Services](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/language-services.md)
+- [OpenDialog Account Management](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management.md)
+- [Managing Users](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users.md)
+- [Deleting OpenDialog account](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account.md)
+- [Account Security](https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management/account-security.md)
+- [OpenDialog Conversation Engine](https://docs.opendialog.ai/core-concepts/how-the-conversation-engine-thinks.md)
+- [Contexts and attributes](https://docs.opendialog.ai/core-concepts/contexts-and-attributes.md)
+- [Contexts](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/contexts.md)
+- [Attributes](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/about-attributes.md)
+- [Attribute Filters](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attribute-filters.md)
+- [Attribute Management](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attribute-management.md): Use OpenDialog Attribute Management to create new attributes throughout your conversation, and easily access existing attributes.
+- [Conditions and operators](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/conditions-and-operators.md)
+- [Composite Attributes](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attributes.md)
+- [Secret Context](https://docs.opendialog.ai/core-concepts/contexts-and-attributes/secret-context.md): Store and manage sensitive information like API keys, passwords, and certificates securely within OpenDialog.
+- [Designing your application](https://docs.opendialog.ai/opendialog-platform/conversation-designer.md)
+- [Conversation Design](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design.md)
+- [Conversational Patterns](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns.md): by Joseph Tyler, Maaike Coppens, Ronald Ashri, Inge De Bleecker
+- [Introduction to conversational patterns](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/introduction-to-conversational-patterns.md)
+- [Building robust assistants](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants.md): How contextual and global FAQ, no match, and help patterns make conversations more robust
+- [Contextual help](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-help.md): Contextual help is customized to the specific part of the interaction where it is implemented.
+- [Restart](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end.md): This pattern allows the user to restart the interaction.
+- [End chat](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end-1.md): This pattern allows the user to end the chat.
+- [Contextual and Global No Match](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-no-match-pattern.md): The contextual No Match pattern refers to a no match intent that is available within a turn, scene or conversation. The global No Match is a last resort catch-all.
+- [Contextual FAQ](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/the-contextual-faq-pattern.md): The contextual FAQ pattern refers to an FAQ turn that is available within the context of a scene.
+- [Openings](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings.md)
+- [Anatomy of an opening](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/anatomy-of-an-opening.md)
+- [Transactional openings](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/transactional-openings.md): Examples of transactional openings for text-based assistants
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/additional-information.md)
+- [Authentication](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication.md)
+- [Components](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/components.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/example-dialog.md)
+- [Using in OpenDialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/using-in-opendialog.md)
+- [Information collection](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection.md)
+- [Components](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/components.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/example-dialog.md)
+- [Using in OpenDialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/using-in-opendialog.md)
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/additional-information.md)
+- [Recommendations](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations.md)
+- [Components](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/components.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/example-dialog.md)
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/additional-information.md)
+- [Extended telling](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling.md)
+- [Components](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/components.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/example-dialog.md)
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/additional-information.md)
+- [Repair](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair.md)
+- [Types of repair](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/types-of-repair.md)
+- [User request not understood](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/user-request-not-understood.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/example-dialog.md)
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/additional-information.md)
+- [Transfer](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer.md)
+- [Components](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/components.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/example-dialog.md)
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/additional-information.md)
+- [Closing](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing.md)
+- [Components](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/components.md)
+- [Example dialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/example-dialog.md)
+- [Using in OpenDialog](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/using-in-opendialog.md)
+- [Additional information](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/additional-information.md)
+- [Best practices](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction.md)
+- [Use Case](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/use-case.md)
+- [Subject Matter Expertise](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/subject-matter-expertise.md)
+- [Business Goals](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/business-goals.md)
+- [User needs](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs.md)
+- [Primary research](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/primary-research.md)
+- [Secondary research](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/secondary-research.md)
+- [Outcome: user profile](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/outcome-user-profile.md)
+- [Assistant personality](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/assistant-personality.md): Assistant tone profile and personality
+- [Sample dialogs](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/sample-dialogs.md)
+- [Conversation structure](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/conversation-structure.md)
+- [API Integration Capabilities](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/api-integration-capabilities.md)
+- [NLU modeling](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/nlu-modeling.md)
+- [Testing strategy](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/testing-strategy.md)
+- [The team](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/the-team.md)
+- [What does a conversation designer do](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/the-team/what-does-a-conversation-designer-do.md)
+- [Select resources](https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/select-resources.md)
+- [Message Design](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design.md)
+- [Message editor](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-editor.md): The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages.
+- [Constructing Messages](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/constructing-messages.md): How to use the message editor to construct and build messages in OpenDialog
+- [Message Conditions](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-conditions.md)
+- [Messages best practices](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/messages-best-practices.md)
+- [Subsequent Messages - Virtual Intents](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/subsequent-messages-virtual-intents.md)
+- [Using Attributes in Messages](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages.md)
+- [Using Markdown in messages](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/using-markdown-in-messages.md)
+- [Message Types](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types.md)
+- [Text Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/text-message.md): This page describes where to use and find a text message type
+- [Image Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/image-message.md): This page describes where to use and find an image message type
+- [Button Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/button-message.md): This page describes where to use and find a button block message type
+- [Date Picker Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/date-picker-message.md): This page describe where to use and find a date picker message type
+- [Audio Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/audio-message.md): This page describes where to use and find an audio message type
+- [Form Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/form-message.md): This page describes where to use and find a form block message type
+- [Full Page Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/full-page-message.md): This page describes where to use and find a full page message type
+- [Conversation Handover message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/conversation-handover-message.md): This page describes where to use and find a conversation handover message type
+- [Autocomplete Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/autocomplete-message.md): This page describes where to use and find an autocomplete message type
+- [Address Autocomplete Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message.md): This page describes where to use and find an address autocomplete message type
+- [List Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/list-message.md): List messages allow for multiple messages to be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search
+- [Rich Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/rich-message.md): This page describes where to use and find a rich message type
+- [Location Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/location-message.md): This page describes where to use and find a location message type
+- [E-Sign Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/e-sign-message.md): This page describes where to use and find a e-sign message type
+- [File Upload Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/file-upload-message.md): This page describes where to use and find a file upload block message type
+- [Meta Messages](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/meta-messages.md): Meta messages can display information about the current web chat interaction as it is happening.
+- [Progress Bar Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message.md): This page describes where to use and find a progress bar message type
+- [Attribute Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/attribute-message.md): This page describes when to use and find an attribute message type
+- [Twilio Content Template Message](https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message.md): This page describes where and how to use Twilio Content Template Message.
+- [Webchat Interface design](https://docs.opendialog.ai/opendialog-platform/conversation-designer/webchat-interface-design.md)
+- [Webchat Interface Settings](https://docs.opendialog.ai/opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings.md): Customise the look and feel of the Webchat widget
+- [Webchat Controls](https://docs.opendialog.ai/opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls.md): This page takes a look at the controls available on your OpenDialog chatbot.
+- [Accessibility](https://docs.opendialog.ai/opendialog-platform/conversation-designer/designing-accessible-chatbots.md)
+- [Inclusive design](https://docs.opendialog.ai/opendialog-platform/conversation-designer/inclusive-design-and-conversation-design.md)
+- [Leveraging Generative AI](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding.md): The OpenDialog platform is tightly integrated with LLM capabilities to support a wide range of conversational applications - from simple question answer bots to sophisticated multi-step experiences.
+- [Language Services](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services.md)
+- [Semantic Intent Classifier](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier.md): OpenDialog's Semantic Intent Classifier provides a quick and easy way to enable natural language input within your bot, allowing you to interpret user utterances without training phrases.
+- [OpenAI](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/openai.md)
+- [Azure](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/azure.md)
+- [Google Gemini](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/google-gemini.md)
+- [Output attributes](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/output-attributes.md)
+- [Retrieval Augmented Generation](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation.md): Learn how to leverage Retrieval-Augmented Generation (RAG) in your AI application
+- [Example-based intent classification \[Deprecated\]](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/example-based-intent-classification-deprecated.md)
+- [Interpreters](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters.md)
+- [Available interpreters](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters.md)
+- [OpenDialog interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/default-interpretor.md)
+- [Amazon Lex interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/amazon-lex-interpreter.md)
+- [Microsoft LUIS interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/luis-interpreter.md)
+- [Google Dialogflow](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter.md)
+- [Google Dialogflow interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-interpreter.md)
+- [Google Dialogflow Knowledge Base](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-knowledge-base.md)
+- [Microsoft QnA interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/qna-interpreter.md)
+- [OpenAI interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter.md)
+- [Using a language service interpreter](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/using-a-language-service-interpreter.md)
+- [Interpreter Orchestration](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/interpreter-orchestration.md): Use OpenDialog Interpreter Orchestration to set a highest priority interpreter at different levels of your conversation.
+- [Troubleshooting interpreters](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters.md)
+- [LLM Actions](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions.md): An LLM Action enables you to use LLMs to perform reasoning, generate text and feed that information back into your scenario in order to influence the next steps of the conversation.
+- [OpenAI](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/openai.md): This section outlines how you can set up an LLM action using OpenAI.
+- [Azure OpenAI](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/azure-openai.md): This section outlines how you can set up a LLM action using Azure OpenAI.
+- [Output attributes](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/output-attributes.md)
+- [Using conversation history (memory) in LLM actions](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions.md)
+- [LLM Action Analytics](https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/llm-action-analytics.md)
+- [3rd party Integrations in your application](https://docs.opendialog.ai/opendialog-platform/actions.md)
+- [Webhook action](https://docs.opendialog.ai/opendialog-platform/actions/webhook-action.md)
+- [Execution logs and troubleshooting](https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/execution-logs-and-troubleshooting.md)
+- [Using JMESPath expressions](https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/using-jmespath-expressions.md)
+- [\[Deprecated\] webhook actions](https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/webhook-action.md)
+- [\[Deprecated\] developing a webhook action](https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/webhook-action/deprecated-developing-a-webhook-action.md)
+- [Actions from library](https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library.md): This section describes the different actions that are available through the actions library .
+- [Freshdesk Action](https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/freshdesk-action.md)
+- [Send to Email Action](https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/send-to-email-action.md)
+- [Set Attributes Action](https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/set-attributes-action.md)
+- [Datetime Action](https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/datetime-action.md)
+- [Conversation Hand-off](https://docs.opendialog.ai/opendialog-platform/actions/conversation-hand-off.md): OpenDialog now allows you to set up a seamless handover to other systems from within your conversational application.
+- [Chatwoot](https://docs.opendialog.ai/opendialog-platform/actions/conversation-hand-off/chatwoot.md): This section outlines how you can set up a handoff to live agents using a Chatwoot integration.
+- [Previewing your application](https://docs.opendialog.ai/opendialog-platform/previewing-your-application.md)
+- [Launching your application](https://docs.opendialog.ai/opendialog-platform/launching-your-application.md)
+- [Monitoring your application](https://docs.opendialog.ai/opendialog-platform/monitoring-your-application.md): Use the OpenDialog Analyse feature to make informed decisions about the past, present and future of your conversational application.
+- [Debugging your application](https://docs.opendialog.ai/opendialog-platform/debugging-your-application.md)
+- [Translating your application](https://docs.opendialog.ai/opendialog-platform/translating-your-application.md): Use the OpenDialog Translate feature to make your conversational application available in multiple languages for your global audience.
+- [Additional menu links](https://docs.opendialog.ai/opendialog-platform/additional-menu-links.md): You can optionally add some links for your customers to your Web Chat instance.
+- [FAQ](https://docs.opendialog.ai/opendialog-platform/faq.md)
+- [Troubleshooting and Common Problems](https://docs.opendialog.ai/opendialog-platform/troubleshooting-and-common-problems.md)
+- [Integrating with OpenDialog](https://docs.opendialog.ai/developing-with-opendialog/introduction.md): Integrating with OpenDialog
+- [WebChat](https://docs.opendialog.ai/developing-with-opendialog/webchat.md)
+- [Chat API](https://docs.opendialog.ai/developing-with-opendialog/webchat/webchat-api.md)
+- [WebChat authentication](https://docs.opendialog.ai/developing-with-opendialog/webchat/webchat-authentication.md)
+- [User Tracking](https://docs.opendialog.ai/developing-with-opendialog/webchat/user-tracking.md): There are data layer variables pre-set within WebChat to enable user tracking data to be passed into Tag Manager and then into Google Analytics instances.
+- [Load Webchat within page Element](https://docs.opendialog.ai/developing-with-opendialog/webchat/load-webchat-within-a-page-element.md)
+- [How to enable JavaScript in your browser](https://docs.opendialog.ai/developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser.md)
+- [SDK](https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk.md): This section describes the WebChat SDK and the functionality you can access as a developer using WebChat within your own application.
+- [Methods](https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk/methods.md): This section describes the methods available on the WebChat SDK
+- [Events](https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk/events.md): This section describes the events available on WebChat via the SDK
+- [Custom Components](https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk/custom-components.md): This section describes how you can pass in your own message types to be rendered in the WebChat application.
+- [\[Legacy\] External APIs](https://docs.opendialog.ai/developing-with-opendialog/interaction-api.md)
+- [Public APIs](https://docs.opendialog.ai/developing-with-opendialog/public-apis.md)
+- [Knowledge Service APIs](https://docs.opendialog.ai/developing-with-opendialog/public-apis/knowledge-service-apis.md)
+- [User Interactions APIs](https://docs.opendialog.ai/developing-with-opendialog/public-apis/user-interactions-apis.md)
+- [Webchat Deep Link APIs](https://docs.opendialog.ai/developing-with-opendialog/public-apis/webchat-deep-link-apis.md)
+- [User Data Export APIs](https://docs.opendialog.ai/developing-with-opendialog/public-apis/user-data-export-apis.md)
+- [Release Notes](https://docs.opendialog.ai/release-notes/release-notes.md): Learn about our product's newest updates and enhancements that will make your conversational applications better.
+- [Version 3 Upgrade Guide](https://docs.opendialog.ai/release-notes/version-3-upgrade-guide.md)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.opendialog.ai/getting-started-1/readme.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.
