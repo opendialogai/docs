@@ -404,3 +404,33 @@ platform-specific binaries and does not affect the build.
 the npm-11-only shape and breaks CI again. The durable fix is pinning the toolchain so local
 and CI agree — either `.node-version` holding CI where it is and contributors using npm 10.x,
 or moving CI to a Node that bundles npm 11. Not decided yet; raised with Pat.
+
+---
+
+## 2026-07-29 — CI pinned to Node 24.18.0
+
+Follow-up to the lockfile failure above. The Workers Builds default is Node 22.16.0 with
+npm 10.9.2 — confirmed both in the build log and in Cloudflare's build-image documentation,
+which also states the version is overridable via `.node-version`, `.nvmrc`, or a
+`NODE_VERSION` build variable.
+
+`.node-version` now pins **24.18.0** (LTS "Krypton"), which ships **npm 11.16.0**.
+
+Chosen over holding CI at 22.16.0 because lockfiles are generated on developer machines, and
+Pat's local npm is 11.x. Pinning CI to npm 10 would mean every local `npm install` reintroduces
+the incompatibility. Moving CI to where the developer already is removes the recurrence
+instead of policing it.
+
+Verified on Node 24.18.0 / npm 11.16.0 before committing:
+
+- `npm ci` succeeds against the regenerated lockfile.
+- `astro build` produces 5 pages, matching the local build.
+- `sharp` 0.34.5 loads and encodes WebP. This was worth checking specifically: npm 11.16
+  gates package lifecycle scripts and emits an `allow-scripts` warning during install. sharp
+  is the whole image pipeline for Phase 3, and the Phase 1 content has no images, so a broken
+  sharp would have passed the build now and failed later. It uses prebuilt binaries and needs
+  no install script, so the warning is benign for this dependency set.
+
+The lockfile is left in its npm-10-generated shape deliberately. It installs cleanly under
+both npm 10.9.2 and npm 11.16.0, so it still works if a build ever falls back to the default
+image.
