@@ -134,3 +134,116 @@ every file `.md`. Would remove MDX entirely at the cost of maintaining our own c
 instead of inheriting Starlight's. Unverified — would need a spike on how Starlight's
 markdown pipeline handles raw HTML blocks. Revisit only if eliminating `.mdx` becomes a
 goal in itself.
+
+---
+
+## 2026-07-29 — Phase 1 scaffold
+
+Astro 7.1.5, Starlight 0.41.5, `sharp` for image processing. No Cloudflare adapter: the
+build is fully static, and an adapter is only needed for on-demand rendering.
+
+**Starlight theming API.** This version uses `--sl-color-accent-low/-/-high`,
+`--sl-color-gray-1..7`, `--sl-color-white/black`, `--sl-font` and `--sl-font-mono`. Dark is
+the `:root` default; light is `:root[data-theme='light']`. Verified by reading
+`node_modules/@astrojs/starlight/style/props.css` rather than the published guide — the
+guide describes a `--color-accent-*` 50–950 scale that this version does not use. Read the
+installed package, not the docs.
+
+**`social` config is an array** of `{ icon, label, href }`, not the older object map.
+
+### Brand tokens
+
+Taken from the rendered markup of opendialog.ai. The docs site itself is a GitBook JS shell
+and carries no usable colour information.
+
+| Token | Value |
+|---|---|
+| Accent (brand blue) | `#0023ff` — `hsl(232, 100%, 50%)` |
+| Deep navy | `#1b1464` |
+| Body text | `#3e4563` |
+| Muted text | `#565f85` |
+| Borders | `#e1e4ef` |
+| Background tint | `#f8f9fc` |
+| Teal accent | `#62cac2` |
+| Fonts | Inter (body), Fragment Mono (code) |
+
+Starlight's default accent hue is 234 and OpenDialog's is 232, so the brand blue sits
+almost exactly on the theme's tuned default. The grey ramp therefore keeps Starlight's
+lightness values, which are tuned for contrast, and shifts only hue and saturation onto
+OpenDialog's blue-tinted greys (all near hue 227). `hsl(232, 100%, 50%)` rounds to
+`#0022ff` under Lightning CSS, so the light-mode accent is pinned to the exact hex.
+
+Fonts are self-hosted via Fontsource. The build makes **zero external font requests** —
+no Google Fonts CDN dependency, which keeps the Phase 4 Lighthouse target reachable.
+
+Logo and favicon are OpenDialog's own brand mark, pulled from the marketing site.
+
+### Placeholder content — must be deleted in Phase 2
+
+`src/content/docs/` currently holds four hand-converted pages purely to prove the deploy:
+
+- `index.md`
+- `getting-started-1/getting-ready/index.md`
+- `core-concepts/the-opendialog-model/index.mdx`
+- `tutorials/ai-agent-creation-overview/index.mdx`
+
+These violate the standing rule against hand-editing generated content and exist only for
+the Phase 1 gate. `convert.mjs` must delete `src/content/docs/` wholesale before writing.
+Figures are omitted from them because assets land in Phase 3.
+
+`core-concepts/the-opendialog-model` was chosen deliberately: its source file is
+`the-opendialog-model/README.md`, one of the four pages whose disk location disagrees with
+its nav position. It builds at the correct live URL, so the nav-based routing rule is
+confirmed end to end and not just on paper.
+
+The `astro.config.mjs` sidebar is a Phase 1 placeholder; `scripts/sidebar.mjs` generates it
+from `SUMMARY.md` in Phase 2.
+
+---
+
+## 2026-07-29 — Two conversion cases missing from the brief
+
+**GitBook card-tables.** 8 instances of `<table data-view="cards">` across 8 files, using
+`data-card-target` and `data-card-cover` column attributes. GitBook renders these as card
+grids. They are raw HTML, so they survive markdown conversion as an unstyled table unless
+handled. Not in the brief's inventory. Needs a Phase 2 decision: convert to `<CardGrid>` +
+`<LinkCard>`, or let them degrade to plain tables. 8 instances is hand-checkable.
+
+Affected: `README.md`, `monitoring-your-application.md`,
+`getting-started-1/quick-start-ai-agents/README.md`,
+`core-concepts/contexts-and-attributes/conditions-and-operators.md`,
+`core-concepts/the-opendialog-workspace/language-services.md`,
+`core-concepts/the-opendialog-workspace/scenarios/README.md`,
+`opendialog-platform/conversation-designer/message-design/message-editor.md`,
+`opendialog-platform/conversation-designer/message-design/README.md`.
+
+**Broken links baked into published content.** 12 occurrences across 6 files of GitBook's
+`/broken/pages/<id>` placeholder, rendered as the literal text "Broken link". These are
+already broken on the live site — the homepage card-table has three of them. They are a
+pre-existing content defect, not a migration artefact. Per the standing rule the prose is
+not edited; flagging for the docs team. They will 404 after cutover exactly as they do now.
+
+Affected: `README.md`, `release-notes/release-notes.md`,
+`core-concepts/the-opendialog-workspace/README.md`,
+`opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/README.md`,
+`opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter.md`,
+`opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/README.md`.
+
+**Typo, not fixed:** `README.md` line 32 reads "We have laaunched an AI Accelerator
+Program". Prose is not edited under the standing rules. For the docs team.
+
+---
+
+## 2026-07-29 — Phase 3 dependency missing
+
+`ffmpeg` is not installed on this machine. Phase 3 needs it to re-encode the 28 MB GIF that
+exceeds Cloudflare's 25 MiB per-file cap and would otherwise fail deployment. Install before
+starting Phase 3.
+
+---
+
+## 2026-07-29 — Astro emits a sitemap *index* too
+
+`@astrojs/sitemap` produces `sitemap-index.xml` plus `sitemap-0.xml`, the same two-level
+pattern GitBook uses. `verify-routes.mjs` must resolve the index on both sides rather than
+parsing the top-level file for `<loc>` page entries.

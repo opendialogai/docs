@@ -1,0 +1,68 @@
+/*
+ * OpenDialog brand tokens for Starlight.
+ *
+ * Colours and fonts are taken from opendialog.ai, not invented. The accent is the
+ * brand blue #0023ff — hsl(232, 100%, 50%). Starlight's own default accent sits at
+ * hue 234, so the brand blue is already close to the theme's tuned defaults.
+ *
+ * The grey ramp keeps Starlight's lightness values, which are tuned for contrast,
+ * and shifts only hue and saturation onto OpenDialog's blue-tinted greys
+ * (#3e4563, #565f85, #a0a8c4, #e1e4ef, #f8f9fc all sit near hue 227).
+ *
+ * Starlight treats dark as the :root default and light as [data-theme='light'].
+ */
+
+@import '@fontsource-variable/inter';
+@import '@fontsource/fragment-mono';
+
+:root {
+	--sl-font: 'Inter Variable', 'Inter', sans-serif;
+	--sl-font-mono: 'Fragment Mono', ui-monospace, monospace;
+
+	/* Accent — dark mode. #0023ff is too dark against a dark background, so the
+	   mid tone is lifted while the hue is held at the brand value. */
+	--sl-color-accent-low: hsl(232, 54%, 22%);
+	--sl-color-accent: hsl(232, 100%, 65%);
+	--sl-color-accent-high: hsl(232, 100%, 87%);
+
+	/* Greys — dark mode */
+	--sl-color-white: hsl(0, 0%, 100%);
+	--sl-color-gray-1: hsl(227, 24%, 94%);
+	--sl-color-gray-2: hsl(227, 20%, 77%);
+	--sl-color-gray-3: hsl(227, 18%, 56%);
+	--sl-color-gray-4: hsl(227, 18%, 36%);
+	--sl-color-gray-5: hsl(227, 20%, 23%);
+	--sl-color-gray-6: hsl(227, 24%, 16%);
+	--sl-color-black: hsl(230, 30%, 10%);
+}
+
+:root[data-theme='light'] {
+	/* Accent — light mode. The mid tone is the brand blue exactly; hsl(232, 100%, 50%)
+	   rounds to #0022ff, so the hex is set directly. */
+	--sl-color-accent-low: hsl(232, 88%, 92%);
+	--sl-color-accent: #0023ff;
+	--sl-color-accent-high: hsl(232, 80%, 30%);
+
+	/* Greys — light mode */
+	--sl-color-white: hsl(230, 30%, 10%);
+	--sl-color-gray-1: hsl(227, 24%, 16%);
+	--sl-color-gray-2: hsl(227, 20%, 23%);
+	--sl-color-gray-3: hsl(227, 18%, 36%);
+	--sl-color-gray-4: hsl(227, 18%, 56%);
+	--sl-color-gray-5: hsl(227, 20%, 77%);
+	--sl-color-gray-6: hsl(227, 24%, 94%);
+	--sl-color-gray-7: hsl(227, 30%, 97%);
+	--sl-color-black: hsl(0, 0%, 100%);
+}
+
+/*
+ * GitBook's <mark> elements survive conversion as raw HTML. Starlight has no
+ * default styling for them, so they need a rule here or they inherit the browser
+ * default yellow, which clashes with the palette.
+ */
+mark {
+	background-color: var(--sl-color-accent-low);
+	color: var(--sl-color-white);
+	padding: 0.05em 0.25em;
+	border-radius: 0.25em;
+}
