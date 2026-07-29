@@ -5,6 +5,10 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://docs.opendialog.ai',
+	// GitBook serves every URL without a trailing slash. Generating internal links
+	// and canonical URLs in the same shape keeps navigation free of redirect hops
+	// and keeps the canonical URL identical to the one indexed today.
+	trailingSlash: 'never',
 	integrations: [
 		starlight({
 			title: 'OpenDialog',

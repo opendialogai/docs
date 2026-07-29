@@ -247,3 +247,35 @@ starting Phase 3.
 `@astrojs/sitemap` produces `sitemap-index.xml` plus `sitemap-0.xml`, the same two-level
 pattern GitBook uses. `verify-routes.mjs` must resolve the index on both sides rather than
 parsing the top-level file for `<loc>` page entries.
+
+---
+
+## 2026-07-29 — Trailing slashes would have put a redirect in front of every URL
+
+Caught on the first deploy. All 204 live GitBook URLs are the no-trailing-slash form and
+return **200** there. Cloudflare's default `html_handling` of `"auto-trailing-slash"`
+answered those same paths with a **307** to the slashed variant.
+
+That is not a cosmetic difference. It would have placed a *temporary* redirect in front of
+every URL on the site. Google does not consolidate ranking signals through a 307, it adds a
+round trip to every page load, and it changes the canonical URL shape — which is exactly
+what makes a post-cutover traffic drop impossible to attribute.
+
+Two settings fix it, and both are needed:
+
+- `wrangler.jsonc` — `"html_handling": "drop-trailing-slash"`, so `/foo` is served directly
+  from `/foo/index.html` with no redirect. Also `"not_found_handling": "404-page"` so the
+  built `404.html` is served instead of a bare Cloudflare 404.
+- `astro.config.mjs` — `trailingSlash: 'never'`, so Starlight generates internal links and
+  `<link rel="canonical">` in the same no-slash shape. Without this the Cloudflare setting
+  would redirect every internal navigation the other way.
+
+Verified after the fix: canonical is `https://docs.opendialog.ai/getting-started-1/getting-ready`,
+sidebar links carry no trailing slash, and all four routes return 200 in their exact live
+form.
+
+**Rollout lag is real and will mislead a verifier.** Immediately after `wrangler deploy`,
+edges disagree — a route returned 200 on 39 of 40 requests with a single stale 307, and
+cleared to 40/40 on the next sample about a minute later. `verify-routes.mjs` must poll to a
+stable result rather than judge a deployment on one request per URL, or it will report
+phantom failures at cutover.
