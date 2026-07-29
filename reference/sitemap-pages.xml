@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+			<url>
+				<loc>https://docs.opendialog.ai</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-11-11T07:48:09.240Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/getting-ready</loc>
+				<priority>0.84</priority>
+				<lastmod>2026-02-06T15:02:25.264Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/billing-and-plans</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-06-18T10:24:57.561Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-11-21T06:53:59.373Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/quick-start-ai-agent</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-11-29T11:18:21.558Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-11-11T08:49:22.433Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-11-09T09:02:38.563Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-11-09T10:37:20.237Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-11-09T17:29:46.870Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-11-09T17:41:06.332Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-11-09T18:07:33.441Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-11-10T15:47:59.851Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-11-20T16:50:19.111Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/ai-agent-creation-overview</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-12-16T18:24:49.100Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/add-a-new-topic-of-discussion</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-11-25T10:52:28.021Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/use-knowledge-sources-via-rag</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-12-10T09:21:37.078Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/adding-a-structured-conversation</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-12-16T18:22:38.465Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/integrate</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-12-09T10:25:52.092Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/test-and-tweak-your-ai-agent</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-12-16T18:15:38.032Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/tutorials/publish-your-ai-agent</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-11-29T11:15:15.540Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-model</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-10-29T15:26:44.815Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-model/designing-conversational-ai-agents</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-10-14T07:13:01.233Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-09-21T08:23:28.613Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-09-21T08:52:19.222Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios/conversations</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-12-02T13:21:39.580Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios/scenes</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-12-02T13:21:39.580Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/scenarios/turns-and-intents</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-11-04T14:33:35.598Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/language-services</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-08-20T09:41:17.291Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-04-24T08:32:18.034Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-07-16T15:29:43.084Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-05-24T14:09:08.780Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/the-opendialog-workspace/opendialog-account-management/account-security</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-05-21T15:27:02.806Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/how-the-conversation-engine-thinks</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-08-23T14:52:40.389Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes</loc>
+				<priority>0.84</priority>
+				<lastmod>2026-03-09T11:05:18.953Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/contexts</loc>
+				<priority>0.7</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/about-attributes</loc>
+				<priority>0.7</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attribute-filters</loc>
+				<priority>0.7</priority>
+				<lastmod>2026-02-06T15:02:25.264Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attribute-management</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-04-25T11:07:48.084Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/conditions-and-operators</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-07-23T11:11:18.216Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/attributes</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-05-23T13:45:40.654Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/core-concepts/contexts-and-attributes/secret-context</loc>
+				<priority>0.7</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-06-10T10:23:31.302Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-09-25T13:08:35.921Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-05-23T11:27:40.549Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/introduction-to-conversational-patterns</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-24T13:58:45.703Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:40:31.281Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-help</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-05-23T11:41:35.969Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-05-23T11:41:35.983Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end-1</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-05-23T11:40:34.082Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-no-match-pattern</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-05-23T11:40:31.281Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/the-contextual-faq-pattern</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-09-25T13:09:51.929Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T14:29:41.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/anatomy-of-an-opening</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T14:38:46.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/transactional-openings</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T17:33:34.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T17:29:46.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T17:26:46.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/components</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T17:27:01.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T17:27:17.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/using-in-opendialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T17:28:45.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-09-25T13:09:51.912Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/components</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:41:43.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:42:04.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/using-in-opendialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:42:21.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:42:30.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T15:37:08.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/components</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:37:23.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:37:38.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:37:47.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T15:33:46.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/components</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:34:08.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:34:22.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:34:31.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T15:30:11.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/types-of-repair</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:30:25.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/user-request-not-understood</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:30:59.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:31:12.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:31:38.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T15:20:17.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/components</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:23:52.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:25:45.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:26:30.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-09-25T13:09:51.929Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/components</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:16:33.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/example-dialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:17:10.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/using-in-opendialog</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:18:00.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/additional-information</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T15:19:22.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-05-23T11:25:15.085Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/use-case</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:25:15.085Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/subject-matter-expertise</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-15T22:27:28.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/business-goals</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:27:40.843Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:28:51.255Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/primary-research</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-15T23:27:31.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/secondary-research</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-15T23:28:07.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/outcome-user-profile</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-05-16T01:28:05.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/assistant-personality</loc>
+				<priority>0.5</priority>
+				<lastmod>2023-05-16T01:25:39.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/sample-dialogs</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:30:17.845Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/conversation-structure</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-04-03T10:17:17.824Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/api-integration-capabilities</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:30:17.845Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/nlu-modeling</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-09-25T13:12:24.709Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/testing-strategy</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-11-28T11:37:49.770Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/the-team</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:27:40.561Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/the-team/what-does-a-conversation-designer-do</loc>
+				<priority>0.42</priority>
+				<lastmod>2023-07-13T13:29:40.000Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/conversation-design/introduction/select-resources</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T11:27:40.580Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-06-26T09:01:50.346Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-editor</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-02-06T11:41:26.748Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/constructing-messages</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-12-16T09:20:43.431Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-conditions</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-06-05T07:35:22.441Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/messages-best-practices</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-01-27T15:23:06.130Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/subsequent-messages-virtual-intents</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-04-26T07:57:03.831Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-02-06T15:02:25.264Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/using-markdown-in-messages</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-12-23T15:19:59.553Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-01-27T15:15:02.762Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/text-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2026-02-06T12:13:59.213Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/image-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-07T09:36:50.684Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/button-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2026-01-27T15:19:11.302Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/date-picker-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-11-12T17:10:34.876Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/audio-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-07T13:50:29.321Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/form-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2026-01-27T15:19:11.302Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/full-page-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2026-01-27T15:21:06.460Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/conversation-handover-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-10T12:36:21.513Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/autocomplete-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-10T12:47:09.073Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-10T13:32:50.587Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/list-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-10T12:51:29.835Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/rich-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2026-01-27T15:21:06.460Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/location-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2025-06-02T14:28:20.445Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/e-sign-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-10T13:01:21.946Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/file-upload-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-06-10T13:55:33.849Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/meta-messages</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-04-26T07:02:23.463Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-11-11T15:51:51.195Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/attribute-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-12-02T16:41:25.195Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message</loc>
+				<priority>0.5</priority>
+				<lastmod>2025-06-25T15:59:46.578Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/webchat-interface-design</loc>
+				<priority>0.7</priority>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-06-26T09:53:19.870Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-04-26T14:02:52.257Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/designing-accessible-chatbots</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-04-29T09:51:49.708Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/conversation-designer/inclusive-design-and-conversation-design</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-04-18T16:25:00.150Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-09-15T08:26:16.279Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-06-07T09:31:07.667Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-10-10T16:08:39.651Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/openai</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-08-23T13:57:39.745Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/azure</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-08-23T13:59:15.304Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/google-gemini</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-08-23T14:20:42.348Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/output-attributes</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-09-03T11:48:02.779Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-08-30T14:08:06.237Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/language-services/example-based-intent-classification-deprecated</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-15T08:19:23.717Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-08-20T09:49:07.554Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters</loc>
+				<priority>0.59</priority>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/default-interpretor</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T16:01:30.206Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/amazon-lex-interpreter</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-23T16:01:30.206Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/luis-interpreter</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-27T10:47:39.882Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-08-23T14:00:38.662Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-interpreter</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-06-07T09:28:02.065Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-knowledge-base</loc>
+				<priority>0.42</priority>
+				<lastmod>2024-06-07T09:28:02.446Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/qna-interpreter</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-27T10:47:39.882Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter</loc>
+				<priority>0.5</priority>
+				<lastmod>2024-05-27T10:47:39.748Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/using-a-language-service-interpreter</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-06-07T09:29:59.243Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/interpreter-orchestration</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-04-05T08:55:46.026Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-06-07T09:29:59.243Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions</loc>
+				<priority>0.7</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/openai</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/azure-openai</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/output-attributes</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-07-09T10:13:25.452Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-15T09:36:29.515Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/llm-action-analytics</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-15T08:35:39.992Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions</loc>
+				<priority>0.84</priority>
+				<lastmod>2026-01-02T15:13:40.003Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/webhook-action</loc>
+				<priority>0.7</priority>
+				<lastmod>2026-04-29T10:40:09.160Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/execution-logs-and-troubleshooting</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-11-03T13:32:35.066Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/using-jmespath-expressions</loc>
+				<priority>0.59</priority>
+				<lastmod>2026-03-09T11:05:18.953Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/webhook-action</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-10-27T14:38:25.253Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/webhook-action/webhook-action/deprecated-developing-a-webhook-action</loc>
+				<priority>0.5</priority>
+				<lastmod>2025-10-27T14:39:38.786Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-09-14T10:24:05.980Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/freshdesk-action</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-10-23T21:06:06.078Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/send-to-email-action</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-05-23T11:49:12.947Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/set-attributes-action</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-14T10:33:30.981Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/actions-from-library/datetime-action</loc>
+				<priority>0.59</priority>
+				<lastmod>2025-07-11T11:06:59.885Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/conversation-hand-off</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-05-23T11:49:13.034Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/actions/conversation-hand-off/chatwoot</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-05-23T11:49:12.956Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/previewing-your-application</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-02-13T16:35:51.149Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/launching-your-application</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-09-19T09:39:01.679Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/monitoring-your-application</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-10-01T14:33:37.272Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/debugging-your-application</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-06-10T09:06:03.711Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/translating-your-application</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-09-21T06:16:36.180Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/additional-menu-links</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-11-03T14:09:02.290Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/faq</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-05-23T10:26:32.849Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/opendialog-platform/troubleshooting-and-common-problems</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-05-23T11:36:31.473Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/introduction</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-04-02T14:35:10.081Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat</loc>
+				<priority>0.84</priority>
+				<lastmod>2024-05-23T11:42:59.435Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/webchat-api</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-05-13T17:36:23.358Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/webchat-authentication</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-05-12T14:13:00.076Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/user-tracking</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-05-23T11:42:59.270Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/load-webchat-within-a-page-element</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-05-23T11:42:59.301Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-05-23T11:55:49.567Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk</loc>
+				<priority>0.7</priority>
+				<lastmod>2024-12-09T14:43:55.365Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk/methods</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-11T06:19:54.686Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk/events</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-11T06:21:13.538Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/webchat/sdk/custom-components</loc>
+				<priority>0.59</priority>
+				<lastmod>2024-09-25T08:10:17.912Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/interaction-api</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-11-19T11:15:00.650Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/public-apis</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-12-30T12:52:19.161Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/public-apis/knowledge-service-apis</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-12-10T09:21:38.624Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/public-apis/user-interactions-apis</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-11-21T12:11:29.484Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/public-apis/webchat-deep-link-apis</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-11-19T10:28:29.295Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/developing-with-opendialog/public-apis/user-data-export-apis</loc>
+				<priority>0.7</priority>
+				<lastmod>2025-11-19T11:02:15.747Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/release-notes/release-notes</loc>
+				<priority>0.84</priority>
+				<lastmod>2026-03-09T11:05:18.953Z</lastmod>
+</url>
+
+			<url>
+				<loc>https://docs.opendialog.ai/release-notes/version-3-upgrade-guide</loc>
+				<priority>0.84</priority>
+				<lastmod>2025-05-21T10:40:32.042Z</lastmod>
+</url>
+
+
+</urlset>

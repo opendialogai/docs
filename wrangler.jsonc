@@ -1,0 +1,17 @@
+{
+  // Static assets only. No Worker script runs for these requests, so no
+  // run_worker_first: static asset requests are free and unlimited, while Worker
+  // invocations are metered at 100k/day on the free plan.
+  "name": "opendialog-docs",
+  "compatibility_date": "2026-07-29",
+  "assets": {
+    "directory": "./dist",
+    // Every live GitBook URL is the no-trailing-slash form and returns 200 there.
+    // The default "auto-trailing-slash" answers those with a 307 to the slashed
+    // path, which would put a temporary redirect in front of all 204 URLs.
+    // "drop-trailing-slash" serves /foo directly from /foo/index.html.
+    "html_handling": "drop-trailing-slash",
+    // Serve the built 404.html rather than a bare Cloudflare 404.
+    "not_found_handling": "404-page"
+  }
+}

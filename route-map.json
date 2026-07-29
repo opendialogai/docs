@@ -1,0 +1,1430 @@
+[
+  {
+    "source": "README.md",
+    "url": "/",
+    "target": "index.md",
+    "title": "Introduction",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/getting-ready.md",
+    "url": "/getting-started-1/getting-ready",
+    "target": "getting-started-1/getting-ready/index.md",
+    "title": "Getting ready",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/billing-and-plans.md",
+    "url": "/getting-started-1/billing-and-plans",
+    "target": "getting-started-1/billing-and-plans/index.md",
+    "title": "Billing and plans",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/README.md",
+    "url": "/getting-started-1/quick-start-ai-agents",
+    "target": "getting-started-1/quick-start-ai-agents/index.md",
+    "title": "Quick Start AI Agents",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/quick-start-ai-agent.md",
+    "url": "/getting-started-1/quick-start-ai-agents/quick-start-ai-agent",
+    "target": "getting-started-1/quick-start-ai-agents/quick-start-ai-agent/index.md",
+    "title": "Quick Start AI Agent",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/README.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/index.md",
+    "title": "The \"Start from Scratch\" AI Agent",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation/index.md",
+    "title": "Chat Management Conversation",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation/index.md",
+    "title": "Welcome Conversation",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation/index.md",
+    "title": "Topic Conversation",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation/index.md",
+    "title": "Global No Match Conversation",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions/index.md",
+    "title": "Supporting LLM Actions",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier.md",
+    "url": "/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier",
+    "target": "getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier/index.md",
+    "title": "Semantic Classifier: Query Classifier",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent.md",
+    "url": "/getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent",
+    "target": "getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent/index.md",
+    "title": "A Process Handling AI Agent",
+    "section": "GETTING STARTED"
+  },
+  {
+    "source": "tutorials/ai-agent-creation-overview.md",
+    "url": "/tutorials/ai-agent-creation-overview",
+    "target": "tutorials/ai-agent-creation-overview/index.md",
+    "title": "AI Agent Creation Overview",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "tutorials/add-a-new-topic-of-discussion.md",
+    "url": "/tutorials/add-a-new-topic-of-discussion",
+    "target": "tutorials/add-a-new-topic-of-discussion/index.md",
+    "title": "Add a new topic of discussion",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "tutorials/use-knowledge-sources-via-rag.md",
+    "url": "/tutorials/use-knowledge-sources-via-rag",
+    "target": "tutorials/use-knowledge-sources-via-rag/index.md",
+    "title": "Use knowledge sources via RAG",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "tutorials/adding-a-structured-conversation.md",
+    "url": "/tutorials/adding-a-structured-conversation",
+    "target": "tutorials/adding-a-structured-conversation/index.md",
+    "title": "Adding a structured conversation",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "tutorials/integrate.md",
+    "url": "/tutorials/integrate",
+    "target": "tutorials/integrate/index.md",
+    "title": "Add a 3rd party integration",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "tutorials/test-and-tweak-your-ai-agent.md",
+    "url": "/tutorials/test-and-tweak-your-ai-agent",
+    "target": "tutorials/test-and-tweak-your-ai-agent/index.md",
+    "title": "Test and tweak your AI Agent",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "tutorials/publish-your-ai-agent.md",
+    "url": "/tutorials/publish-your-ai-agent",
+    "target": "tutorials/publish-your-ai-agent/index.md",
+    "title": "Publish your AI Agent",
+    "section": "STEP BY STEP GUIDES"
+  },
+  {
+    "source": "the-opendialog-model/README.md",
+    "url": "/core-concepts/the-opendialog-model",
+    "target": "core-concepts/the-opendialog-model/index.md",
+    "title": "OpenDialog Approach",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-model/designing-conversational-ai-agents.md",
+    "url": "/core-concepts/the-opendialog-model/designing-conversational-ai-agents",
+    "target": "core-concepts/the-opendialog-model/designing-conversational-ai-agents/index.md",
+    "title": "Designing Conversational AI Agents",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/README.md",
+    "url": "/core-concepts/the-opendialog-workspace",
+    "target": "core-concepts/the-opendialog-workspace/index.md",
+    "title": "OpenDialog Platform",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/scenarios/README.md",
+    "url": "/core-concepts/the-opendialog-workspace/scenarios",
+    "target": "core-concepts/the-opendialog-workspace/scenarios/index.md",
+    "title": "Scenarios",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/scenarios/conversations.md",
+    "url": "/core-concepts/the-opendialog-workspace/scenarios/conversations",
+    "target": "core-concepts/the-opendialog-workspace/scenarios/conversations/index.md",
+    "title": "Conversations",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/scenarios/scenes.md",
+    "url": "/core-concepts/the-opendialog-workspace/scenarios/scenes",
+    "target": "core-concepts/the-opendialog-workspace/scenarios/scenes/index.md",
+    "title": "Scenes",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/scenarios/turns-and-intents.md",
+    "url": "/core-concepts/the-opendialog-workspace/scenarios/turns-and-intents",
+    "target": "core-concepts/the-opendialog-workspace/scenarios/turns-and-intents/index.md",
+    "title": "Turns and intents",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/language-services.md",
+    "url": "/core-concepts/the-opendialog-workspace/language-services",
+    "target": "core-concepts/the-opendialog-workspace/language-services/index.md",
+    "title": "Language Services",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/opendialog-account-management/README.md",
+    "url": "/core-concepts/the-opendialog-workspace/opendialog-account-management",
+    "target": "core-concepts/the-opendialog-workspace/opendialog-account-management/index.md",
+    "title": "OpenDialog Account Management",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users.md",
+    "url": "/core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users",
+    "target": "core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users/index.md",
+    "title": "Managing Users",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account.md",
+    "url": "/core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account",
+    "target": "core-concepts/the-opendialog-workspace/opendialog-account-management/delete-opendialog-account/index.md",
+    "title": "Deleting OpenDialog account",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/the-opendialog-workspace/opendialog-account-management/account-security.md",
+    "url": "/core-concepts/the-opendialog-workspace/opendialog-account-management/account-security",
+    "target": "core-concepts/the-opendialog-workspace/opendialog-account-management/account-security/index.md",
+    "title": "Account Security",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/how-the-conversation-engine-thinks.md",
+    "url": "/core-concepts/how-the-conversation-engine-thinks",
+    "target": "core-concepts/how-the-conversation-engine-thinks/index.md",
+    "title": "OpenDialog Conversation Engine",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/README.md",
+    "url": "/core-concepts/contexts-and-attributes",
+    "target": "core-concepts/contexts-and-attributes/index.md",
+    "title": "Contexts and attributes",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/contexts.md",
+    "url": "/core-concepts/contexts-and-attributes/contexts",
+    "target": "core-concepts/contexts-and-attributes/contexts/index.md",
+    "title": "Contexts",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/about-attributes.md",
+    "url": "/core-concepts/contexts-and-attributes/about-attributes",
+    "target": "core-concepts/contexts-and-attributes/about-attributes/index.md",
+    "title": "Attributes",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/attribute-filters.md",
+    "url": "/core-concepts/contexts-and-attributes/attribute-filters",
+    "target": "core-concepts/contexts-and-attributes/attribute-filters/index.md",
+    "title": "Attribute Filters",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/attribute-management.md",
+    "url": "/core-concepts/contexts-and-attributes/attribute-management",
+    "target": "core-concepts/contexts-and-attributes/attribute-management/index.md",
+    "title": "Attribute Management",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/conditions-and-operators.md",
+    "url": "/core-concepts/contexts-and-attributes/conditions-and-operators",
+    "target": "core-concepts/contexts-and-attributes/conditions-and-operators/index.md",
+    "title": "Conditions and operators",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/attributes.md",
+    "url": "/core-concepts/contexts-and-attributes/attributes",
+    "target": "core-concepts/contexts-and-attributes/attributes/index.md",
+    "title": "Composite Attributes",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "core-concepts/contexts-and-attributes/secret-context.md",
+    "url": "/core-concepts/contexts-and-attributes/secret-context",
+    "target": "core-concepts/contexts-and-attributes/secret-context/index.md",
+    "title": "Secret Context",
+    "section": "CORE CONCEPTS"
+  },
+  {
+    "source": "conversation-designer/README.md",
+    "url": "/opendialog-platform/conversation-designer",
+    "target": "opendialog-platform/conversation-designer/index.md",
+    "title": "Designing your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design",
+    "target": "opendialog-platform/conversation-designer/conversation-design/index.md",
+    "title": "Conversation Design",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/index.md",
+    "title": "Conversational Patterns",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/introduction-to-conversational-patterns.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/introduction-to-conversational-patterns",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/introduction-to-conversational-patterns/index.md",
+    "title": "Introduction to conversational patterns",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/index.md",
+    "title": "Building robust assistants",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-help.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-help",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-help/index.md",
+    "title": "Contextual help",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end/index.md",
+    "title": "Restart",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end-1.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end-1",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-restart-chat-end-1/index.md",
+    "title": "End chat",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-no-match-pattern.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-no-match-pattern",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-no-match-pattern/index.md",
+    "title": "Contextual and Global No Match",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/the-contextual-faq-pattern.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/the-contextual-faq-pattern",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/the-contextual-faq-pattern/index.md",
+    "title": "Contextual FAQ",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/index.md",
+    "title": "Openings",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/anatomy-of-an-opening.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/anatomy-of-an-opening",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/anatomy-of-an-opening/index.md",
+    "title": "Anatomy of an opening",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/transactional-openings.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/transactional-openings",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/transactional-openings/index.md",
+    "title": "Transactional openings",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/openings/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/index.md",
+    "title": "Authentication",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/components.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/components",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/components/index.md",
+    "title": "Components",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/using-in-opendialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/using-in-opendialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/authentication/using-in-opendialog/index.md",
+    "title": "Using in OpenDialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/index.md",
+    "title": "Information collection",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/components.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/components",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/components/index.md",
+    "title": "Components",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/using-in-opendialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/using-in-opendialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/using-in-opendialog/index.md",
+    "title": "Using in OpenDialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/information-collection/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/index.md",
+    "title": "Recommendations",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/components.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/components",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/components/index.md",
+    "title": "Components",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/index.md",
+    "title": "Extended telling",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/components.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/components",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/components/index.md",
+    "title": "Components",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/extended-telling/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/index.md",
+    "title": "Repair",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/types-of-repair.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/types-of-repair",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/types-of-repair/index.md",
+    "title": "Types of repair",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/user-request-not-understood.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/user-request-not-understood",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/user-request-not-understood/index.md",
+    "title": "User request not understood",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/repair/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/index.md",
+    "title": "Transfer",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/components.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/components",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/components/index.md",
+    "title": "Components",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/index.md",
+    "title": "Closing",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/components.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/components",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/components/index.md",
+    "title": "Components",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/example-dialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/example-dialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/example-dialog/index.md",
+    "title": "Example dialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/using-in-opendialog.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/using-in-opendialog",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/using-in-opendialog/index.md",
+    "title": "Using in OpenDialog",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/additional-information.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/additional-information",
+    "target": "opendialog-platform/conversation-designer/conversation-design/conversational-patterns/closing/additional-information/index.md",
+    "title": "Additional information",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/index.md",
+    "title": "Best practices ",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/use-case.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/use-case",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/use-case/index.md",
+    "title": "Use Case",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/subject-matter-expertise.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/subject-matter-expertise",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/subject-matter-expertise/index.md",
+    "title": "Subject Matter Expertise",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/business-goals.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/business-goals",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/business-goals/index.md",
+    "title": "Business Goals",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/index.md",
+    "title": "User needs",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/primary-research.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/primary-research",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/primary-research/index.md",
+    "title": "Primary research",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/secondary-research.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/secondary-research",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/secondary-research/index.md",
+    "title": "Secondary research",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/outcome-user-profile.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/outcome-user-profile",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/user-needs/outcome-user-profile/index.md",
+    "title": "Outcome: user profile",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/assistant-personality.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/assistant-personality",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/assistant-personality/index.md",
+    "title": "Assistant personality",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/sample-dialogs.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/sample-dialogs",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/sample-dialogs/index.md",
+    "title": "Sample dialogs",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/conversation-structure.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/conversation-structure",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/conversation-structure/index.md",
+    "title": "Conversation structure",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/api-integration-capabilities.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/api-integration-capabilities",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/api-integration-capabilities/index.md",
+    "title": "API Integration Capabilities",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/nlu-modeling.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/nlu-modeling",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/nlu-modeling/index.md",
+    "title": "NLU modeling",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "best-practices/testing-strategy.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/testing-strategy",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/testing-strategy/index.md",
+    "title": "Testing strategy",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/the-team/README.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/the-team",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/the-team/index.md",
+    "title": "The team",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/the-team/what-does-a-conversation-designer-do.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/the-team/what-does-a-conversation-designer-do",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/the-team/what-does-a-conversation-designer-do/index.md",
+    "title": "What does a conversation designer do",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/conversation-design/introduction/select-resources.md",
+    "url": "/opendialog-platform/conversation-designer/conversation-design/introduction/select-resources",
+    "target": "opendialog-platform/conversation-designer/conversation-design/introduction/select-resources/index.md",
+    "title": "Select resources",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/README.md",
+    "url": "/opendialog-platform/conversation-designer/message-design",
+    "target": "opendialog-platform/conversation-designer/message-design/index.md",
+    "title": "Message Design",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-editor.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-editor",
+    "target": "opendialog-platform/conversation-designer/message-design/message-editor/index.md",
+    "title": "Message editor",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/constructing-messages.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/constructing-messages",
+    "target": "opendialog-platform/conversation-designer/message-design/constructing-messages/index.md",
+    "title": "Constructing Messages",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-conditions.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-conditions",
+    "target": "opendialog-platform/conversation-designer/message-design/message-conditions/index.md",
+    "title": "Message Conditions",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "best-practices/designing-in-opendialog/messages-best-practices.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/messages-best-practices",
+    "target": "opendialog-platform/conversation-designer/message-design/messages-best-practices/index.md",
+    "title": "Messages best practices",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/subsequent-messages-virtual-intents.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/subsequent-messages-virtual-intents",
+    "target": "opendialog-platform/conversation-designer/message-design/subsequent-messages-virtual-intents/index.md",
+    "title": "Subsequent Messages - Virtual Intents",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/using-attributes-in-messages.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages",
+    "target": "opendialog-platform/conversation-designer/message-design/using-attributes-in-messages/index.md",
+    "title": "Using Attributes in Messages",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/using-markdown-in-messages.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/using-markdown-in-messages",
+    "target": "opendialog-platform/conversation-designer/message-design/using-markdown-in-messages/index.md",
+    "title": "Using Markdown in messages",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/README.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/index.md",
+    "title": "Message Types",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/text-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/text-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/text-message/index.md",
+    "title": "Text Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/image-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/image-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/image-message/index.md",
+    "title": "Image Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/button-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/button-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/button-message/index.md",
+    "title": "Button Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/date-picker-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/date-picker-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/date-picker-message/index.md",
+    "title": "Date Picker Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/audio-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/audio-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/audio-message/index.md",
+    "title": "Audio Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/form-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/form-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/form-message/index.md",
+    "title": "Form Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/full-page-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/full-page-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/full-page-message/index.md",
+    "title": "Full Page Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/conversation-handover-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/conversation-handover-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/conversation-handover-message/index.md",
+    "title": "Conversation Handover message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/autocomplete-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/autocomplete-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/autocomplete-message/index.md",
+    "title": "Autocomplete Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message/index.md",
+    "title": "Address Autocomplete Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/list-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/list-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/list-message/index.md",
+    "title": "List Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/rich-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/rich-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/rich-message/index.md",
+    "title": "Rich Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/location-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/location-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/location-message/index.md",
+    "title": "Location Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/e-sign-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/e-sign-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/e-sign-message/index.md",
+    "title": "E-Sign Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/file-upload-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/file-upload-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/file-upload-message/index.md",
+    "title": "File Upload Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/meta-messages/README.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/meta-messages",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/meta-messages/index.md",
+    "title": "Meta Messages",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/meta-messages/progress-bar-message/index.md",
+    "title": "Progress Bar Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/attribute-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/attribute-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/attribute-message/index.md",
+    "title": "Attribute Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message.md",
+    "url": "/opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message",
+    "target": "opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message/index.md",
+    "title": "Twilio Content Template Message",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/webchat-interface-design/README.md",
+    "url": "/opendialog-platform/conversation-designer/webchat-interface-design",
+    "target": "opendialog-platform/conversation-designer/webchat-interface-design/index.md",
+    "title": "Webchat Interface design",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings.md",
+    "url": "/opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings",
+    "target": "opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings/index.md",
+    "title": "Webchat Interface Settings",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls.md",
+    "url": "/opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls",
+    "target": "opendialog-platform/conversation-designer/webchat-interface-design/webchat-controls/index.md",
+    "title": "Webchat Controls",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/designing-accessible-chatbots.md",
+    "url": "/opendialog-platform/conversation-designer/designing-accessible-chatbots",
+    "target": "opendialog-platform/conversation-designer/designing-accessible-chatbots/index.md",
+    "title": "Accessibility",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/conversation-designer/inclusive-design-and-conversation-design.md",
+    "url": "/opendialog-platform/conversation-designer/inclusive-design-and-conversation-design",
+    "target": "opendialog-platform/conversation-designer/inclusive-design-and-conversation-design/index.md",
+    "title": "Inclusive design",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/index.md",
+    "title": "Leveraging Generative AI",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/index.md",
+    "title": "Language Services",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/index.md",
+    "title": "Semantic Intent Classifier",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/openai.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/openai",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/openai/index.md",
+    "title": "OpenAI",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/azure.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/azure",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/azure/index.md",
+    "title": "Azure",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/google-gemini.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/google-gemini",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/google-gemini/index.md",
+    "title": "Google Gemini",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/output-attributes.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/output-attributes",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier/output-attributes/index.md",
+    "title": "Output attributes",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation/index.md",
+    "title": "Retrieval Augmented Generation",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/example-based-intent-classification-deprecated.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/example-based-intent-classification-deprecated",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/language-services/example-based-intent-classification-deprecated/index.md",
+    "title": "Example-based intent classification [Deprecated]",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/index.md",
+    "title": "Interpreters",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/index.md",
+    "title": "Available interpreters",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/default-interpretor.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/default-interpretor",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/default-interpretor/index.md",
+    "title": "OpenDialog interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/amazon-lex-interpreter.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/amazon-lex-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/amazon-lex-interpreter/index.md",
+    "title": "Amazon Lex interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/luis-interpreter.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/luis-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/luis-interpreter/index.md",
+    "title": "Microsoft LUIS interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/index.md",
+    "title": "Google Dialogflow",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-interpreter.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-interpreter/index.md",
+    "title": "Google Dialogflow interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-knowledge-base.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-knowledge-base",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/dialogflow-interpreter/google-dialogflow-knowledge-base/index.md",
+    "title": "Google Dialogflow Knowledge Base",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/qna-interpreter.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/qna-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/qna-interpreter/index.md",
+    "title": "Microsoft QnA interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter/index.md",
+    "title": "OpenAI interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/using-a-language-service-interpreter.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/using-a-language-service-interpreter",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/using-a-language-service-interpreter/index.md",
+    "title": "Using a language service interpreter",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/interpreter-orchestration.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/interpreter-orchestration",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/interpreter-orchestration/index.md",
+    "title": "Interpreter Orchestration",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters/index.md",
+    "title": "Troubleshooting interpreters",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/README.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/index.md",
+    "title": "LLM Actions",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/openai.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/openai",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/openai/index.md",
+    "title": "OpenAI",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/azure-openai.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/azure-openai",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/azure-openai/index.md",
+    "title": "Azure OpenAI",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/output-attributes.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/output-attributes",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/output-attributes/index.md",
+    "title": "Output attributes",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions/index.md",
+    "title": "Using conversation history (memory) in LLM actions",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/llm-action-analytics.md",
+    "url": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/llm-action-analytics",
+    "target": "opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/llm-action-analytics/index.md",
+    "title": "LLM Action Analytics",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "designing-conversations/actions/README.md",
+    "url": "/opendialog-platform/actions",
+    "target": "opendialog-platform/actions/index.md",
+    "title": "3rd party Integrations in your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/webhook-action/README.md",
+    "url": "/opendialog-platform/actions/webhook-action",
+    "target": "opendialog-platform/actions/webhook-action/index.md",
+    "title": "Webhook action",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/webhook-action/execution-logs-and-troubleshooting.md",
+    "url": "/opendialog-platform/actions/webhook-action/execution-logs-and-troubleshooting",
+    "target": "opendialog-platform/actions/webhook-action/execution-logs-and-troubleshooting/index.md",
+    "title": "Execution logs and troubleshooting",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/webhook-action/using-jmespath-expressions.md",
+    "url": "/opendialog-platform/actions/webhook-action/using-jmespath-expressions",
+    "target": "opendialog-platform/actions/webhook-action/using-jmespath-expressions/index.md",
+    "title": "Using JMESPath expressions",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/webhook-action/webhook-action/README.md",
+    "url": "/opendialog-platform/actions/webhook-action/webhook-action",
+    "target": "opendialog-platform/actions/webhook-action/webhook-action/index.md",
+    "title": "[Deprecated] webhook actions",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/webhook-action/webhook-action/deprecated-developing-a-webhook-action.md",
+    "url": "/opendialog-platform/actions/webhook-action/webhook-action/deprecated-developing-a-webhook-action",
+    "target": "opendialog-platform/actions/webhook-action/webhook-action/deprecated-developing-a-webhook-action/index.md",
+    "title": "[Deprecated] developing a webhook action",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "designing-conversations/actions/actions-from-library/README.md",
+    "url": "/opendialog-platform/actions/actions-from-library",
+    "target": "opendialog-platform/actions/actions-from-library/index.md",
+    "title": "Actions from library",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/actions-from-library/freshdesk-action.md",
+    "url": "/opendialog-platform/actions/actions-from-library/freshdesk-action",
+    "target": "opendialog-platform/actions/actions-from-library/freshdesk-action/index.md",
+    "title": "Freshdesk Action",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/actions-from-library/send-to-email-action.md",
+    "url": "/opendialog-platform/actions/actions-from-library/send-to-email-action",
+    "target": "opendialog-platform/actions/actions-from-library/send-to-email-action/index.md",
+    "title": "Send to Email Action",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/actions-from-library/set-attributes-action.md",
+    "url": "/opendialog-platform/actions/actions-from-library/set-attributes-action",
+    "target": "opendialog-platform/actions/actions-from-library/set-attributes-action/index.md",
+    "title": "Set Attributes Action",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/actions-from-library/datetime-action.md",
+    "url": "/opendialog-platform/actions/actions-from-library/datetime-action",
+    "target": "opendialog-platform/actions/actions-from-library/datetime-action/index.md",
+    "title": "Datetime Action",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/conversation-hand-off/README.md",
+    "url": "/opendialog-platform/actions/conversation-hand-off",
+    "target": "opendialog-platform/actions/conversation-hand-off/index.md",
+    "title": "Conversation Hand-off",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/actions/conversation-hand-off/chatwoot.md",
+    "url": "/opendialog-platform/actions/conversation-hand-off/chatwoot",
+    "target": "opendialog-platform/actions/conversation-hand-off/chatwoot/index.md",
+    "title": "Chatwoot",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "previewing-your-application.md",
+    "url": "/opendialog-platform/previewing-your-application",
+    "target": "opendialog-platform/previewing-your-application/index.md",
+    "title": "Previewing your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/launching-your-application.md",
+    "url": "/opendialog-platform/launching-your-application",
+    "target": "opendialog-platform/launching-your-application/index.md",
+    "title": "Launching your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "monitoring-your-application.md",
+    "url": "/opendialog-platform/monitoring-your-application",
+    "target": "opendialog-platform/monitoring-your-application/index.md",
+    "title": "Monitoring your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/debugging-your-application.md",
+    "url": "/opendialog-platform/debugging-your-application",
+    "target": "opendialog-platform/debugging-your-application/index.md",
+    "title": "Debugging your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "translating-your-application.md",
+    "url": "/opendialog-platform/translating-your-application",
+    "target": "opendialog-platform/translating-your-application/index.md",
+    "title": "Translating your application",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/additional-menu-links.md",
+    "url": "/opendialog-platform/additional-menu-links",
+    "target": "opendialog-platform/additional-menu-links/index.md",
+    "title": "Additional menu links",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "faq.md",
+    "url": "/opendialog-platform/faq",
+    "target": "opendialog-platform/faq/index.md",
+    "title": "FAQ",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "opendialog-platform/troubleshooting-and-common-problems.md",
+    "url": "/opendialog-platform/troubleshooting-and-common-problems",
+    "target": "opendialog-platform/troubleshooting-and-common-problems/index.md",
+    "title": "Troubleshooting and Common Problems",
+    "section": "CREATE AI APPLICATIONS"
+  },
+  {
+    "source": "developing-with-opendialog/introduction.md",
+    "url": "/developing-with-opendialog/introduction",
+    "target": "developing-with-opendialog/introduction/index.md",
+    "title": "Integrating with OpenDialog",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/README.md",
+    "url": "/developing-with-opendialog/webchat",
+    "target": "developing-with-opendialog/webchat/index.md",
+    "title": "WebChat",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/webchat-api.md",
+    "url": "/developing-with-opendialog/webchat/webchat-api",
+    "target": "developing-with-opendialog/webchat/webchat-api/index.md",
+    "title": "Chat API",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/webchat-authentication.md",
+    "url": "/developing-with-opendialog/webchat/webchat-authentication",
+    "target": "developing-with-opendialog/webchat/webchat-authentication/index.md",
+    "title": "WebChat authentication",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/user-tracking.md",
+    "url": "/developing-with-opendialog/webchat/user-tracking",
+    "target": "developing-with-opendialog/webchat/user-tracking/index.md",
+    "title": "User Tracking",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/load-webchat-within-a-page-element.md",
+    "url": "/developing-with-opendialog/webchat/load-webchat-within-a-page-element",
+    "target": "developing-with-opendialog/webchat/load-webchat-within-a-page-element/index.md",
+    "title": "Load Webchat within page Element",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser.md",
+    "url": "/developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser",
+    "target": "developing-with-opendialog/webchat/how-to-enable-javascript-in-your-browser/index.md",
+    "title": "How to enable JavaScript in your browser",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/sdk/README.md",
+    "url": "/developing-with-opendialog/webchat/sdk",
+    "target": "developing-with-opendialog/webchat/sdk/index.md",
+    "title": "SDK",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/sdk/methods.md",
+    "url": "/developing-with-opendialog/webchat/sdk/methods",
+    "target": "developing-with-opendialog/webchat/sdk/methods/index.md",
+    "title": "Methods",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/sdk/events.md",
+    "url": "/developing-with-opendialog/webchat/sdk/events",
+    "target": "developing-with-opendialog/webchat/sdk/events/index.md",
+    "title": "Events",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/webchat/sdk/custom-components.md",
+    "url": "/developing-with-opendialog/webchat/sdk/custom-components",
+    "target": "developing-with-opendialog/webchat/sdk/custom-components/index.md",
+    "title": "Custom Components",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/interaction-api.md",
+    "url": "/developing-with-opendialog/interaction-api",
+    "target": "developing-with-opendialog/interaction-api/index.md",
+    "title": "[Legacy] External APIs",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/public-apis/README.md",
+    "url": "/developing-with-opendialog/public-apis",
+    "target": "developing-with-opendialog/public-apis/index.md",
+    "title": "Public APIs",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/public-apis/knowledge-service-apis.md",
+    "url": "/developing-with-opendialog/public-apis/knowledge-service-apis",
+    "target": "developing-with-opendialog/public-apis/knowledge-service-apis/index.md",
+    "title": "Knowledge Service APIs",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/public-apis/user-interactions-apis.md",
+    "url": "/developing-with-opendialog/public-apis/user-interactions-apis",
+    "target": "developing-with-opendialog/public-apis/user-interactions-apis/index.md",
+    "title": "User Interactions APIs",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/public-apis/webchat-deep-link-apis.md",
+    "url": "/developing-with-opendialog/public-apis/webchat-deep-link-apis",
+    "target": "developing-with-opendialog/public-apis/webchat-deep-link-apis/index.md",
+    "title": "Webchat Deep Link APIs",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "developing-with-opendialog/public-apis/user-data-export-apis.md",
+    "url": "/developing-with-opendialog/public-apis/user-data-export-apis",
+    "target": "developing-with-opendialog/public-apis/user-data-export-apis/index.md",
+    "title": "User Data Export APIs",
+    "section": "Developing With OpenDialog"
+  },
+  {
+    "source": "release-notes/release-notes.md",
+    "url": "/release-notes/release-notes",
+    "target": "release-notes/release-notes/index.md",
+    "title": "Release Notes",
+    "section": "Release Notes"
+  },
+  {
+    "source": "release-notes/version-3-upgrade-guide.md",
+    "url": "/release-notes/version-3-upgrade-guide",
+    "target": "release-notes/version-3-upgrade-guide/index.md",
+    "title": "Version 3 Upgrade Guide",
+    "section": "Release Notes"
+  }
+]
