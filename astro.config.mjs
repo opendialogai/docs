@@ -11,10 +11,14 @@ export default defineConfig({
 	trailingSlash: 'never',
 	integrations: [
 		starlight({
-			title: 'OpenDialog',
+			title: 'OpenDialog Docs',
 			logo: { src: './src/assets/opendialog-logo.png', alt: 'OpenDialog' },
 			favicon: '/favicon.png',
 			customCss: ['./src/styles/custom.css'],
+			components: {
+				// Renders the frontmatter description under the title, as GitBook does.
+				PageTitle: './src/components/PageTitle.astro',
+			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/opendialogai' },
 				{ icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/opendialogai/' },

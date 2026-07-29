@@ -56,6 +56,23 @@
 }
 
 /*
+ * Current sidebar entry.
+ *
+ * Starlight fills the active entry with --sl-color-text-accent and inverts the text.
+ * Against a fully saturated brand blue that reads as a heavy solid block, where the
+ * GitBook site it replaces marks the current page with weight and colour alone.
+ */
+@layer starlight.core {
+	nav [aria-current='page'],
+	nav [aria-current='page']:hover,
+	nav [aria-current='page']:focus {
+		background-color: transparent;
+		color: var(--sl-color-text-accent);
+		font-weight: 600;
+	}
+}
+
+/*
  * GitBook's <mark> elements survive conversion as raw HTML. Starlight has no
  * default styling for them, so they need a rule here or they inherit the browser
  * default yellow, which clashes with the palette.

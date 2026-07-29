@@ -279,3 +279,57 @@ edges disagree — a route returned 200 on 39 of 40 requests with a single stale
 cleared to 40/40 on the next sample about a minute later. `verify-routes.mjs` must poll to a
 stable result rather than judge a deployment on one request per URL, or it will report
 phantom failures at cutover.
+
+---
+
+## 2026-07-29 — Chrome parity with GitBook: added scope, split in two
+
+Pat's direction after reviewing screenshots: stay as close to the GitBook theme as Starlight
+allows.
+
+**This is scope the brief does not contain.** Phase 1 step 4 budgets "brand theming in
+`src/styles/custom.css` using Starlight's CSS custom properties" — tokens only. Matching
+GitBook's layout chrome means component overrides. There is no chrome phase, and Phase 4
+only verifies visuals without budget to change them. Recording the addition rather than
+letting it look like it was always in the plan.
+
+It is consistent with the brief's own reasoning: the argument for not renaming ugly slugs —
+don't change platform and appearance at once, or no traffic shift can be attributed — applies
+equally to chrome.
+
+Split, because some of it cannot be judged yet. Sidebar density, grouping and collapse
+behaviour are meaningless with 4 placeholder nav items standing in for ~40, and page rhythm
+cannot be assessed with every image missing.
+
+**Done now, closing Phase 1:**
+
+- Logo replaced with the transparent RGBA mark the GitBook site itself serves. The previous
+  asset was the marketing-site favicon: the same mark on a rounded blue tile, which read as
+  an app icon next to the wordmark.
+- Site title `OpenDialog` -> `OpenDialog Docs`, matching live.
+- Current sidebar entry no longer a solid fill. Starlight's default sets
+  `background-color: var(--sl-color-text-accent)` with inverted text, which against a fully
+  saturated brand blue reads as a heavy block; GitBook marks the current page with weight and
+  colour alone.
+- Frontmatter `description` rendered under the page title via a `PageTitle` override.
+
+**Deferred until Phase 2/3 provide real nav and images:** section breadcrumb above the title,
+sidebar density and grouping, header actions (`opendialog.ai` link and the "Talk to an
+expert" CTA), table-of-contents behaviour on long pages.
+
+**Explicitly not chasing:** GitBook's "Copy page" dropdown; the cookie banner (Cloudflare Web
+Analytics is cookieless, so its absence is an improvement, not a gap).
+
+### The description gap this fixed
+
+GitBook renders a page's frontmatter `description` as visible lead text under the heading.
+Starlight uses it only for `<meta name="description">` — confirmed by grepping the package,
+where `description` appears solely in `utils/head.ts`. **71 source files carry a
+description**, so without the override 71 pages silently drop content the reader can
+currently see. The brief specifies carrying `description` into frontmatter and does not
+mention that Starlight will not display it.
+
+`src/components/PageTitle.astro` inlines `PAGE_TITLE_ID = '_top'`. Starlight does not expose
+`./constants` as a public export subpath and `./internal` does not re-export it, so importing
+it fails the build. The value must stay `'_top'` — the table of contents' "Overview" entry
+links to `#_top`.
