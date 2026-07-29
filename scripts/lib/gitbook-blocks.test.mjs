@@ -77,3 +77,19 @@ test('entities inside a fence are left alone', () => {
   const input = '```\n&#x20;\n```';
   assert.equal(stripEntities(input), input);
 });
+
+test('two or more real spaces before an end-of-line entity collapse to one', () => {
+  // Stripping only the trailing entity here would leave "a.  " (two real trailing spaces), a
+  // markdown hard break the source never had: those two spaces were followed by literal entity
+  // text, not a line ending.
+  assert.equal(stripEntities('a.  &#x20;'), 'a. ');
+  // constructing-messages.md's shape: a mid-line entity, then real spaces, then a trailing entity.
+  assert.equal(stripEntities('&#x20;  &#x20;'), ' ');
+});
+
+test('an unrecognised hint style throws rather than falling back to note', () => {
+  assert.throws(
+    () => convertHints('{% hint style="note" %}\nBody\n{% endhint %}'),
+    /unsupported hint style: note/
+  );
+});

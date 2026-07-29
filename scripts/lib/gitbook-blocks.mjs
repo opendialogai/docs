@@ -45,11 +45,21 @@ export function stripEntities(text) {
   });
 }
 
-/** Maps {% hint %} blocks to Starlight asides. */
+/**
+ * Maps {% hint %} blocks to Starlight asides.
+ *
+ * An unrecognised style throws rather than falling back to a default: a fifth style introduced
+ * by a later GitBook sync would otherwise coerce silently to `note` and still count as a
+ * converted aside, defeating convert.mjs's 258-aside invariant.
+ */
 export function convertHints(text) {
   return mapLines(text, (line) => {
     const open = line.match(/^[ \t]*\{%\s*hint\s+style="([a-z]+)"\s*%\}[ \t]*$/);
-    if (open) return `:::${ASIDE[open[1]] ?? 'note'}`;
+    if (open) {
+      const aside = ASIDE[open[1]];
+      if (!aside) throw new Error(`unsupported hint style: ${open[1]}`);
+      return `:::${aside}`;
+    }
     if (/^[ \t]*\{%\s*endhint\s*%\}[ \t]*$/.test(line)) return ':::';
     return line;
   });
