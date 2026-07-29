@@ -3,7 +3,7 @@
  *
  * Hints, code and file blocks need no component, so a file containing only these stays .md.
  */
-import { mapLines } from './segments.mjs';
+import { mapLines, protectCode } from './segments.mjs';
 
 const ASIDE = { info: 'note', success: 'tip', warning: 'caution', danger: 'danger' };
 
@@ -72,5 +72,92 @@ export function convertFile(text) {
     if (!match) return line;
     const name = match[1].split('/').pop();
     return `[${name}](</.gitbook/assets/${name}>)`;
+  });
+}
+
+const VIDEO = /^(youtu\.be|youtube\.com|loom\.com)$/;
+
+/** True when an embed URL is one the Embed component can render as an iframe. */
+export function isVideoEmbed(url) {
+  try {
+    return VIDEO.test(new URL(url).hostname.replace(/^www\./, ''));
+  } catch {
+    return false;
+  }
+}
+
+/** Escapes a caption for use inside a double-quoted JSX attribute. */
+function attribute(value) {
+  return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+}
+
+/** Renders one embed. Non-video URLs become autolinks and so need no component. */
+function renderEmbed(url, title) {
+  if (!isVideoEmbed(url)) return `<${url}>`;
+  return title ? `<Embed url="${url}" title="${attribute(title)}" />` : `<Embed url="${url}" />`;
+}
+
+/**
+ * Converts {% embed %} blocks. 36 of the 38 are Loom or YouTube and become <Embed>; the other
+ * two are ordinary web pages and become autolinks, so they do not promote a file to .mdx.
+ *
+ * Done with regex under protectCode rather than a line state machine because no embed block
+ * wraps a fenced code block — measured across the corpus, only {% columns %} does — and a
+ * state machine would need an end-of-input flush for the 19 self-closing form.
+ */
+export function convertEmbeds(text) {
+  return protectCode(text, (masked) =>
+    masked
+      .replace(
+        /^[ \t]*\{%\s*embed\s+url="([^"]+)"[^%]*%\}\n([\s\S]*?)\n[ \t]*\{%\s*endembed\s*%\}[ \t]*$/gm,
+        (_, url, caption) => renderEmbed(url, caption.replace(/\s+/g, ' ').trim())
+      )
+      .replace(/^[ \t]*\{%\s*embed\s+url="([^"]+)"[^%]*%\}[ \t]*$/gm, (_, url) => renderEmbed(url, ''))
+  );
+}
+
+/** Converts {% stepper %} to a Starlight <Steps> ordered list. */
+export function convertSteppers(text) {
+  let inStepper = false;
+  let number = 0;
+  let body = null;
+  return mapLines(text, (line) => {
+    if (/^[ \t]*\{%\s*stepper\s*%\}[ \t]*$/.test(line)) {
+      inStepper = true;
+      number = 0;
+      return ['<Steps>', ''];
+    }
+    if (/^[ \t]*\{%\s*endstepper\s*%\}[ \t]*$/.test(line)) {
+      inStepper = false;
+      return ['</Steps>'];
+    }
+    if (!inStepper) return line;
+    if (/^[ \t]*\{%\s*step\s*%\}[ \t]*$/.test(line)) {
+      number++;
+      body = [];
+      return [];
+    }
+    if (/^[ \t]*\{%\s*endstep\s*%\}[ \t]*$/.test(line)) {
+      const lines = body ?? [];
+      while (lines.length && lines.at(-1).trim() === '') lines.pop();
+      const [first, ...rest] = lines;
+      body = null;
+      return [`${number}. ${first ?? ''}`, ...rest.map((l) => (l.trim() === '' ? '' : `   ${l}`)), ''];
+    }
+    if (body !== null) {
+      body.push(line);
+      return [];
+    }
+    return line;
+  });
+}
+
+/** Converts the single {% columns %} block to a CardGrid. */
+export function convertColumns(text) {
+  return mapLines(text, (line) => {
+    if (/^[ \t]*\{%\s*columns\s*%\}[ \t]*$/.test(line)) return '<CardGrid>';
+    if (/^[ \t]*\{%\s*endcolumns\s*%\}[ \t]*$/.test(line)) return '</CardGrid>';
+    if (/^[ \t]*\{%\s*(end)?column\s*%\}[ \t]*$/.test(line)) return [];
+    return line;
   });
 }

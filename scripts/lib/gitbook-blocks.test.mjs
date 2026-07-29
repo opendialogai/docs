@@ -1,6 +1,15 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { convertCode, convertFile, convertHints, stripEntities } from './gitbook-blocks.mjs';
+import {
+  convertCode,
+  convertColumns,
+  convertEmbeds,
+  convertFile,
+  convertHints,
+  convertSteppers,
+  isVideoEmbed,
+  stripEntities,
+} from './gitbook-blocks.mjs';
 
 test('each hint style maps to its Starlight aside', () => {
   const cases = [
@@ -92,4 +101,89 @@ test('an unrecognised hint style throws rather than falling back to note', () =>
     () => convertHints('{% hint style="note" %}\nBody\n{% endhint %}'),
     /unsupported hint style: note/
   );
+});
+
+test('a self-closing embed becomes an Embed element', () => {
+  assert.equal(
+    convertEmbeds('{% embed url="https://youtu.be/RhUc_mgkNl8" %}'),
+    '<Embed url="https://youtu.be/RhUc_mgkNl8" />'
+  );
+});
+
+test('an embed with a caption passes it as title', () => {
+  assert.equal(
+    convertEmbeds('{% embed url="https://www.loom.com/share/abc" %}\nBuilding an agent\n{% endembed %}'),
+    '<Embed url="https://www.loom.com/share/abc" title="Building an agent" />'
+  );
+});
+
+test('a caption containing a double quote is escaped for the attribute', () => {
+  assert.equal(
+    convertEmbeds('{% embed url="https://youtu.be/x" %}\nThe "best" way\n{% endembed %}'),
+    '<Embed url="https://youtu.be/x" title="The &quot;best&quot; way" />'
+  );
+});
+
+test('a non-video embed becomes a plain link and needs no component', () => {
+  assert.equal(
+    convertEmbeds('{% embed url="https://webaim.org/resources/contrastchecker/" %}'),
+    '<https://webaim.org/resources/contrastchecker/>'
+  );
+});
+
+test('isVideoEmbed recognises Loom and YouTube only', () => {
+  assert.equal(isVideoEmbed('https://youtu.be/x'), true);
+  assert.equal(isVideoEmbed('https://www.youtube.com/watch?v=x'), true);
+  assert.equal(isVideoEmbed('https://www.loom.com/share/x'), true);
+  assert.equal(isVideoEmbed('https://www.fetchify.com/address-auto-complete'), false);
+});
+
+test('a stepper becomes a Steps ordered list with indented bodies', () => {
+  const input = [
+    '{% stepper %}',
+    '{% step %}',
+    '### Navigate to the Secret Context',
+    '',
+    'Open the Secret Management page.',
+    '{% endstep %}',
+    '{% step %}',
+    '### Add a secret',
+    '{% endstep %}',
+    '{% endstepper %}',
+  ].join('\n');
+  assert.equal(
+    convertSteppers(input),
+    [
+      '<Steps>',
+      '',
+      '1. ### Navigate to the Secret Context',
+      '',
+      '   Open the Secret Management page.',
+      '',
+      '2. ### Add a secret',
+      '',
+      '</Steps>',
+    ].join('\n')
+  );
+});
+
+test('columns becomes a CardGrid and the fenced code inside survives', () => {
+  const input = [
+    '{% columns %}',
+    '{% column %}',
+    'Do',
+    '```json',
+    '{ "firstName": "{first_name}" }',
+    '```',
+    '{% endcolumn %}',
+    '{% column %}',
+    "Don't",
+    '{% endcolumn %}',
+    '{% endcolumns %}',
+  ].join('\n');
+  const out = convertColumns(input);
+  assert.match(out, /^<CardGrid>/);
+  assert.match(out, /<\/CardGrid>$/);
+  assert.ok(out.includes('{ "firstName": "{first_name}" }'), 'fenced code must survive verbatim');
+  assert.ok(!out.includes('{% column'), 'no column markers may remain');
 });
