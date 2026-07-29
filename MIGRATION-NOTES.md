@@ -92,15 +92,45 @@ be matched greedily to the final `](`. These four pages are live and must not be
 
 ---
 
-## 2026-07-29 — Open question: `<LinkCard>` and `.mdx` promotion
+## 2026-07-29 — `<LinkCard>` retained; MDX risk measured at one line
 
-`{% content-ref %}` -> `<LinkCard>` forces 11 files to `.mdx`. Measured: none of those 11
-contain the `{ attribute | filter }` template syntax the brief flags as the top build risk,
-so the overlap the brief feared does not exist. Residual risk is bare `{` in prose in four
-of them (`webhook-action/README.md` 33 non-GitBook braces, `secret-context.md` 22,
-`about-attributes.md` 9, `release-notes.md` 4) — needs checking whether those sit inside
-code fences.
+`{% content-ref %}` -> `<LinkCard>` promotes 9 files to `.mdx`. A further 2 files need
+`.mdx` for `<Steps>`/`<CardGrid>` regardless of that decision, so dropping `<LinkCard>`
+would take the `.mdx` count from 11 to 2, not to zero. MDX stays in the build either way.
 
-Rendering `content-ref` as a plain markdown link instead would keep all 204 files as `.md`
-and remove the MDX build-failure class entirely. Awaiting a call from Pat; it is a visual
-trade-off, not a technical one.
+**Measured MDX brace risk.** Scanned all 11 `.mdx` candidates for `{` or `}` surviving
+outside code fences and inline code spans. **One line in the whole set:**
+
+```
+core-concepts/contexts-and-attributes/about-attributes.md:176
+  * This is also directly accessible as  {`user.utterance_text}` without having to refer...
+```
+
+The backticks are misplaced in the source, so the `{` falls outside the code span. The two
+files that require `.mdx` regardless have zero risky lines. The `{ attribute | filter }`
+syntax the brief flags as the top build risk appears in 6 files, none of which are `.mdx`
+candidates — the feared overlap does not exist.
+
+**Decision: keep `<LinkCard>`.** `convert.mjs` escapes bare `{`/`}` in prose when emitting
+`.mdx`. That is an output-encoding rule for the target format, not a prose edit, and it is
+general rather than a per-file special case. The rendered text at that line will still read
+oddly; it reads oddly on GitBook today. Not fixed, logged here.
+
+Weighing against dropping it: 33 of the 51 refs sit on two hub pages —
+`message-design/README.md` (16) and `message-types/README.md` (17) — whose only purpose is
+to route readers onward. Plain links turn those into long bullet lists, a visible downgrade
+against the live site in the Phase 4 visual comparison.
+
+No conversion work is saved by dropping it. The inner link text of a `content-ref` is a raw
+filename (`[chat-management-conversation.md](chat-management-conversation.md)`), not a
+title — GitBook substitutes the target page's title at render. Both options therefore need a
+title lookup via `route-map.json`.
+
+Verified while checking: the `url` attribute and the inner link target agree on all 51
+`content-ref` blocks. No source inconsistency to work around.
+
+**Not taken:** emitting LinkCard-equivalent markup as raw HTML from a remark step, keeping
+every file `.md`. Would remove MDX entirely at the cost of maintaining our own card CSS
+instead of inheriting Starlight's. Unverified — would need a spike on how Starlight's
+markdown pipeline handles raw HTML blocks. Revisit only if eliminating `.mdx` becomes a
+goal in itself.
