@@ -1,0 +1,69 @@
+---
+/**
+ * Renders a Loom or YouTube video in a lazily-loaded 16:9 iframe.
+ *
+ * GitBook's {% embed %} shows a caption under the video; `title` reproduces that and doubles
+ * as the iframe's accessible name.
+ */
+interface Props {
+  url: string;
+  title?: string;
+}
+
+const { url, title } = Astro.props;
+
+/** Maps a share URL to its embeddable form. */
+function embedSrc(raw: string): string | null {
+  const parsed = new URL(raw);
+  const host = parsed.hostname.replace(/^www\./, '');
+  if (host === 'youtu.be') return `https://www.youtube-nocookie.com/embed/${parsed.pathname.slice(1)}`;
+  if (host === 'youtube.com') {
+    const id = parsed.searchParams.get('v');
+    return id ? `https://www.youtube-nocookie.com/embed/${id}` : null;
+  }
+  if (host === 'loom.com') return raw.replace('/share/', '/embed/').split('?')[0];
+  return null;
+}
+
+const src = embedSrc(url);
+// Task 6's isVideoEmbed only emits <Embed> for a hostname this function recognises, so a
+// null src here means that guarantee no longer holds. Failing the build surfaces the gap
+// immediately rather than shipping a dead-looking link in place of a video.
+if (!src) throw new Error(`Embed: no embeddable form for ${url}`);
+---
+
+<figure class="od-embed">
+  <div class="od-embed-frame">
+    <iframe
+      src={src}
+      title={title ?? 'Embedded video'}
+      loading="lazy"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </div>
+  {title && <figcaption>{title}</figcaption>}
+</figure>
+
+<style>
+  .od-embed {
+    margin: 1.5rem 0;
+  }
+  .od-embed-frame {
+    aspect-ratio: 16 / 9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-gray-5);
+  }
+  .od-embed-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+  .od-embed figcaption {
+    margin-top: 0.5rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+</style>
