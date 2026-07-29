@@ -434,3 +434,34 @@ Verified on Node 24.18.0 / npm 11.16.0 before committing:
 The lockfile is left in its npm-10-generated shape deliberately. It installs cleanly under
 both npm 10.9.2 and npm 11.16.0, so it still works if a build ever falls back to the default
 image.
+
+---
+
+## 2026-07-29 — Workers Builds branch control: no per-branch exclusions exist
+
+Correcting earlier guidance in this file and in PR #13, which said to exclude
+`documentation`, `3.9` and `release/*` from build triggers. **That capability does not
+exist.** Workers Builds' branch control (Overview -> Worker -> Settings -> Build -> Branch
+control) offers only two things: a production-branch dropdown, and a single all-or-nothing
+checkbox, "Builds for non-production branches".
+
+Non-production builds are currently **enabled**. Evidence: two pushes to
+`fix/ci-lockfile-npm-version` each produced a `versions upload` with no deployment, matching
+the documented non-production deploy command.
+
+| Commit pushed | Version uploaded |
+|---|---|
+| `af08648` 12:11:56Z | 12:12:28Z |
+| `a2772eb` 12:15:40Z | 12:16:20Z |
+
+So the `documentation` problem is live. Every GitBook sync to that branch triggers a build
+that fails at `npm ci`, because the branch has no `package.json`. There is no clean
+mitigation: the failure happens at the install step before any command we control runs, and
+a `package.json` cannot be added to `documentation` — it is GitBook's, read-only, and writing
+to it corrupts the live site.
+
+**Recommendation: disable non-production branch builds.** The reason is alarm fatigue rather
+than noise as such — if `documentation` fails several times a day, a real failure on `main`
+is lost in the stream. Preview URLs would be convenient for the Phase 4 look-and-feel review,
+but are not required: `scripts/screenshots.mjs` points at a local dev server just as well as
+at a preview URL. Re-enable for that stretch if it earns its keep.
