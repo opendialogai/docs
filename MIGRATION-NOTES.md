@@ -365,3 +365,42 @@ Effort estimate in the brief raised from 7–10 days to 9–13.
 **Entries above this line predate the renumbering.** Where they say "Phase 4" of visual
 comparison or the Lighthouse target, they mean what is now Phase 5. This file is append-only,
 so they stand as written.
+
+---
+
+## 2026-07-29 — First CI build failed: lockfile was npm-11-only
+
+Workers Builds' first run failed at `npm clean-install`:
+
+```
+npm error `npm ci` can only install packages when your package.json and
+npm error package-lock.json are in sync.
+npm error Missing: @emnapi/core@2.0.0-alpha.3 from lock file
+npm error Missing: @emnapi/runtime@2.0.0-alpha.3 from lock file
+npm error Missing: @emnapi/wasi-threads@2.0.1 from lock file
+```
+
+**Root cause: npm version skew, not a stale lock.** The build image runs npm 10.9.2
+(Node 22.16.0); the lockfile was generated locally by npm 11.6.0. Proven by running both
+against the identical lockfile:
+
+| npm | result |
+|---|---|
+| 11.6.0 | 463 packages, success |
+| 10.9.2 | EUSAGE, the three `@emnapi` packages missing |
+
+The `@emnapi` packages are optional wasm32-wasi fallbacks reached through
+`@napi-rs/wasm-runtime`, pulled in by `sharp` and `rolldown`. npm 10 hoists them to
+top-level entries in the tree; npm 11 does not consider them needed and omits them from the
+lock. npm 10 then refuses a lock that lacks entries it expects.
+
+**Fix:** lockfile regenerated with npm 10.9.2, which adds the three top-level entries.
+Verified the regenerated lock installs cleanly under *both* versions, and that a full
+`npm ci` + `astro build` under npm 10.9.2 succeeds — 5 pages, matching the local build.
+npm 10 installs 366 packages and npm 11 installs 466; the difference is optional
+platform-specific binaries and does not affect the build.
+
+**This will recur.** Any `npm install` run locally under npm 11 rewrites the lock back into
+the npm-11-only shape and breaks CI again. The durable fix is pinning the toolchain so local
+and CI agree — either `.node-version` holding CI where it is and contributors using npm 10.x,
+or moving CI to a Node that bundles npm 11. Not decided yet; raised with Pat.
