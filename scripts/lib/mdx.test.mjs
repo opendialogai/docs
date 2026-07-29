@@ -101,3 +101,34 @@ test('a brace inside a raw HTML tag\'s attribute is not escaped', () => {
     '<div data-token="{x}">y</div>'
   );
 });
+
+// TAG's attribute matching must be quote-aware. A literal ">" inside a quoted value (a Card
+// title, an href) is not the tag's closing delimiter, and a naive "anything but >" match would
+// truncate there — exposing the rest of the real tag, brace included, to brace-escaping as if
+// it were ordinary prose.
+test('a > inside a quoted attribute value does not truncate the tag, and a brace in that value is left alone', () => {
+  assert.equal(
+    normaliseForMdx('<LinkCard title="a > b {c}" href="/y" />'),
+    '<LinkCard title="a > b {c}" href="/y" />'
+  );
+});
+
+// class=/style= must be matched in attribute position (preceded by the whitespace that
+// separates attributes), not as a bare substring anywhere in the tag's raw text — otherwise a
+// query string containing "class=" gets corrupted into "className=".
+test('class= inside a quoted attribute value is not rewritten to className=', () => {
+  assert.equal(
+    normaliseForMdx('<LinkCard title="X" href="/y?class=header" />'),
+    '<LinkCard title="X" href="/y?class=header" />'
+  );
+});
+
+// The same attribute-position anchoring means an attribute that merely contains "class" as
+// part of a longer name — data-class, not class — is never renamed: "class=" is only ever a
+// real attribute name when it is the whole word immediately after a space.
+test('an attribute named like class (e.g. data-class) is not renamed', () => {
+  assert.equal(
+    normaliseForMdx('<div data-class="x">y</div>'),
+    '<div data-class="x">y</div>'
+  );
+});
