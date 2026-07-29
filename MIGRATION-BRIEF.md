@@ -3,7 +3,7 @@
 **Audience:** Claude Code (or an engineer working alongside it)
 **Repo:** `opendialogai/docs`, branch `documentation` (live content, last synced 29 Apr 2026)
 **Target:** Astro Starlight, deployed to Cloudflare Workers static assets
-**Estimated effort:** 7–10 engineering days across 5 phases
+**Estimated effort:** 9–13 engineering days across 6 phases
 
 ---
 
@@ -125,7 +125,7 @@ Build command `npx astro build`, output `./dist`.
 │   ├── content.config.ts
 │   └── styles/custom.css        # OpenDialog brand tokens
 ├── public/
-│   └── _redirects               # only for URL mismatches found in Phase 4
+│   └── _redirects               # only for URL mismatches found in Phase 5
 └── source/                      # pristine copy of the GitBook export (git-ignored)
 ```
 
@@ -236,7 +236,50 @@ Produce `route-map.json` mapping `source file path → live URL → target file 
 
 ---
 
-### Phase 4 — Verification
+### Phase 4 — Look and feel
+**Goal:** the new site reads as the same product as the GitBook site it replaces.
+
+This phase exists because Phase 1 only budgets brand *tokens* — colours and fonts set through
+Starlight's CSS custom properties. Matching GitBook's layout chrome means overriding Starlight
+components, which is a different job. It runs here, after Phase 3, because it is the first
+point at which the site is genuinely comparable: real navigation, real content, real images.
+Judging sidebar density or page rhythm before that is guesswork.
+
+It runs *before* verification and cutover on purpose. The argument is the same one that keeps
+the ugly slugs: do not change platform and appearance in the same step, or no traffic or
+support-ticket shift after cutover can be attributed to a cause. Phase 5 also gates on human
+sign-off of a visual comparison, which cannot be given before the alignment exists.
+
+Already done in Phase 1 — logo, site title, current-nav-entry treatment, and rendering the
+frontmatter `description` as lead text under the page title. Remaining:
+
+1. **Section breadcrumb** above the page title. GitBook shows the section name — `CORE
+   CONCEPTS`, `STEP BY STEP GUIDES`. The section is already in `route-map.json`.
+2. **Sidebar** density, grouping, type scale and collapse behaviour against the full ~204-entry
+   nav.
+3. **Header actions.** GitBook carries an `opendialog.ai` link and a "Talk to an expert" CTA.
+   Decide whether they come across; Starlight has no built-in config for header links, so this
+   needs a `Header` override.
+4. **Table of contents** behaviour on long pages, and suppressing the "Overview"-only stub on
+   pages with no headings.
+5. **Typographic pass** — heading scale, measure, spacing rhythm — against the live site with
+   real images in place.
+6. **Asides, card-tables and `<LinkCard>`** reviewed in context now that real content renders.
+7. **Dark mode**, which has had no review at all. GitBook's dark theme is the reference.
+
+Use `scripts/screenshots.mjs` throughout; it captures matched viewports of the live site and
+the preview for side-by-side comparison.
+
+**Do not** chase pixel parity. GitBook chrome we are deliberately dropping — "Powered by
+GitBook", the cookie banner, the "Copy page" dropdown — stays dropped. The test is whether a
+reader notices the platform changed, not whether a diff tool does.
+
+**Gate:** side-by-side screenshots at 375px, 768px and 1440px across a representative page set,
+in both colour schemes, with human sign-off.
+
+---
+
+### Phase 5 — Verification
 **Goal:** prove the site is equivalent before anyone repoints DNS.
 
 1. **Route parity.** `scripts/verify-routes.mjs` fetches `https://docs.opendialog.ai/sitemap.xml`, diffs it against the built routes in `dist/`, and fails on any live URL with no target. Add a `public/_redirects` entry for each genuine mismatch (expect a handful of section-prefix quirks such as `the-opendialog-model/README.md` serving at `/core-concepts/the-opendialog-model`).
@@ -251,8 +294,8 @@ Produce `route-map.json` mapping `source file path → live URL → target file 
 
 ---
 
-### Phase 5 — Cutover
-1. Re-sync fresh content from GitBook into `source/`, re-run `convert.mjs` and `assets.mjs`, re-run Phase 4 checks. This is the payoff for keeping the scripts idempotent.
+### Phase 6 — Cutover
+1. Re-sync fresh content from GitBook into `source/`, re-run `convert.mjs` and `assets.mjs`, re-run Phase 5 checks. This is the payoff for keeping the scripts idempotent.
 2. Confirm the analytics export has been taken (see `gitbook-analytics-export.mjs`) — **irreversible once the plan is downgraded**.
 3. Stand up replacement analytics (Cloudflare Web Analytics — free, no cookie banner) on the preview deployment *before* cutover so there is baseline overlap.
 4. Deploy to production Worker. Point `docs.opendialog.ai` DNS at it.

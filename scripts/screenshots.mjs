@@ -7,8 +7,9 @@
  *   node scripts/screenshots.mjs --width 375         # a single viewport width
  *   node scripts/screenshots.mjs --paths /a,/b       # explicit paths
  *
- * Phase 4 requires a visual comparison of the top 30 pages by traffic against the live
- * site; pass those paths in with --paths once top-pages.csv is available.
+ * Phase 4 (look and feel) and Phase 5 (verification) both compare against the live site.
+ * Phase 5 wants the top 30 pages by traffic; pass those in with --paths once
+ * top-pages.csv is available.
  */
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';

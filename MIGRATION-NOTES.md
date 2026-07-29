@@ -333,3 +333,35 @@ mention that Starlight will not display it.
 `./constants` as a public export subpath and `./internal` does not re-export it, so importing
 it fails the build. The value must stay `'_top'` — the table of contents' "Overview" entry
 links to `#_top`.
+
+---
+
+## 2026-07-29 — Phases renumbered: look and feel is now Phase 4
+
+A dedicated look-and-feel phase was added to `MIGRATION-BRIEF.md` at Pat's direction. It sits
+after Assets and before Verification:
+
+| | Was | Now |
+|---|---|---|
+| 1 | Scaffold and theme | Scaffold and theme |
+| 2 | Conversion script | Conversion script |
+| 3 | Assets | Assets |
+| 4 | Verification | **Look and feel** (new) |
+| 5 | Cutover | Verification |
+| 6 | — | Cutover |
+
+Placed before verification and cutover rather than at the very end. Aligning appearance after
+DNS moves would defeat the point of doing it: the reason for matching GitBook is the same as
+the reason for keeping the ugly slugs — do not change platform and appearance in one step, or
+no post-cutover traffic shift can be attributed. Verification also gates on human sign-off of
+a visual comparison, which cannot happen before the alignment exists.
+
+Placed after Assets because that is the first point where the site is genuinely comparable —
+real nav, real content, real images. Sidebar density and page rhythm cannot be judged against
+placeholder content.
+
+Effort estimate in the brief raised from 7–10 days to 9–13.
+
+**Entries above this line predate the renumbering.** Where they say "Phase 4" of visual
+comparison or the Lighthouse target, they mean what is now Phase 5. This file is append-only,
+so they stand as written.
