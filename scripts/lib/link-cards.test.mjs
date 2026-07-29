@@ -69,6 +69,64 @@ test('a card pointing at a broken page keeps the broken href', () => {
   assert.ok(out.includes('title="Core concepts"'), out);
 });
 
+test('a card-table row with no anchor emits a Card carrying the row\'s title and body text', () => {
+  const input =
+    '<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody>' +
+    '<tr><td><strong>Is True</strong></td><td>Can be used with Boolean Attributes</td></tr>' +
+    '</tbody></table>';
+  assert.equal(
+    convertCardTables(input, ctx),
+    [
+      '<CardGrid>',
+      '  <Card title="Is True">',
+      '    Can be used with Boolean Attributes',
+      '  </Card>',
+      '</CardGrid>',
+    ].join('\n')
+  );
+});
+
+test('a mixed table emits both a LinkCard and a Card inside one CardGrid, in source order', () => {
+  const input =
+    '<table data-view="cards"><thead><tr><th></th><th></th>' +
+    '<th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>' +
+    '<tr><td><a href="../the-opendialog-model/"><strong>The OpenDialog model</strong></a></td>' +
+    '<td>Take a deepdive.</td>' +
+    '<td><a href="../the-opendialog-model/">the-opendialog-model</a></td></tr>' +
+    '<tr><td><strong>No link</strong></td><td>Just a description.</td></tr>' +
+    '</tbody></table>';
+  assert.equal(
+    convertCardTables(input, ctx),
+    [
+      '<CardGrid>',
+      '  <LinkCard title="The OpenDialog model" description="Take a deepdive." href="/core-concepts/the-opendialog-model" />',
+      '  <Card title="No link">',
+      '    Just a description.',
+      '  </Card>',
+      '</CardGrid>',
+    ].join('\n')
+  );
+});
+
+test('a row with two non-empty description cells keeps both', () => {
+  const input =
+    '<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody>' +
+    '<tr><td><strong>Quick Start</strong></td><td>Summary text.</td><td>How to start text.</td></tr>' +
+    '</tbody></table>';
+  assert.equal(
+    convertCardTables(input, ctx),
+    [
+      '<CardGrid>',
+      '  <Card title="Quick Start">',
+      '    Summary text.',
+      '',
+      '    How to start text.',
+      '  </Card>',
+      '</CardGrid>',
+    ].join('\n')
+  );
+});
+
 test('countDroppedCovers counts the cover assets LinkCard cannot show', () => {
   const input =
     '<table data-view="cards"><thead><tr><th></th>' +

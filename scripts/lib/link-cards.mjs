@@ -1,5 +1,6 @@
 /**
- * Emits Starlight <LinkCard> markup from the two GitBook constructs that render as cards.
+ * Emits Starlight <LinkCard> and <Card> markup from the two GitBook constructs that render
+ * as cards.
  *
  * Both need route-map.json: a content-ref's inner link text is a raw filename, and GitBook
  * substitutes the target page's title at render time.
@@ -18,6 +19,25 @@ function linkCard({ title, description, href }) {
   if (description) parts.push(`description="${attribute(description)}"`);
   parts.push(`href="${href}"`);
   return `<LinkCard ${parts.join(' ')} />`;
+}
+
+/**
+ * Builds one Card element for a row with no link target. `body` paragraphs become the
+ * element's children rather than an attribute, since Card (unlike LinkCard) has no
+ * `description` prop — GitBook still renders these rows, just without a click target.
+ */
+function card({ title, body }) {
+  if (body.length === 0) return `<Card title="${attribute(title)}" />`;
+  const children = body.map((paragraph) => `  ${paragraph}`).join('\n\n');
+  return [`<Card title="${attribute(title)}">`, children, '</Card>'].join('\n');
+}
+
+/** Indents every non-blank line of a (possibly multi-line) card element by one level. */
+function indent(block) {
+  return block
+    .split('\n')
+    .map((line) => (line === '' ? '' : `  ${line}`))
+    .join('\n');
 }
 
 /**
@@ -90,24 +110,32 @@ const IMAGE_EXTENSION = /\.(?:png|jpe?g|gif|svg|webp)$/i;
 const CARD_TABLE = /<table(?=[^>]*\bdata-view="cards")[^>]*>[\s\S]*?<\/table>/g;
 
 /**
- * Converts <table data-view="cards"> to a CardGrid of LinkCards.
+ * Converts <table data-view="cards"> to a CardGrid of LinkCards and Cards.
  *
  * Attribute order varies — one of the eight reads data-card-size first — so the detector is
  * order independent.
  *
+ * GitBook renders every row of a cards-view table as a card; only rows with a resolvable link
+ * target are clickable. Every row here becomes an element: <LinkCard> when it has one,
+ * <Card> — title plus body, no href — when it does not. One real table (a reference glossary
+ * of condition operators) has no link in any of its 22 rows; two rows of another have a title
+ * and body but no target. Dropping those would silently delete real documentation prose.
+ *
  * Title is the first non-empty cell's text (not necessarily an anchor: some rows carry the
  * title as a bare <strong> and the link only in the hidden data-card-target column).
- * Description is the next non-empty cell that is not itself a bare link — a description may
+ * The remaining non-empty cells that are not themselves a bare link — a description may
  * legitimately contain an inline link (e.g. "using <a>message types</a> to their fullest
  * potential"), so "no <a> at all" is too strict a test; "is the whole cell just one <a>" is
- * what actually distinguishes a link cell (title/target/cover) from prose.
+ * what actually distinguishes a link cell (title/target/cover) from prose — become the card's
+ * body: a single `description` attribute for LinkCard, or one paragraph per cell as Card's
+ * children when a row has more than one (e.g. two rows of quick-start-ai-agents carry both a
+ * summary and a "how to start" cell; both must survive).
  *
- * The href is the first non-image link found in any cell other than the description cell,
- * which is what keeps an inline link inside the description from being mistaken for the
- * card's real target. data-card-cover images have no LinkCard equivalent and are skipped as
- * href candidates; countDroppedCovers reports them so Phase 3 does not delete those assets as
- * orphans. Rows with no link anywhere (a purely informational row, as in one real table used
- * as a reference glossary) are skipped rather than emitted with a fabricated href.
+ * The href is the first non-image link found in any cell other than the body cells, which is
+ * what keeps an inline link inside a description from being mistaken for the card's real
+ * target. data-card-cover images have no LinkCard equivalent and are skipped as href
+ * candidates; countDroppedCovers reports them so Phase 3 does not delete those assets as
+ * orphans.
  */
 export function convertCardTables(text, ctx) {
   return text.replace(CARD_TABLE, (table) => {
@@ -119,25 +147,25 @@ export function convertCardTables(text, ctx) {
         .filter((c) => c.text !== '');
       if (nonEmpty.length === 0) continue;
       const title = nonEmpty[0];
-      const description = nonEmpty.slice(1).find((c) => !isPureAnchor(cell[c.index]));
+      const body = nonEmpty.slice(1).filter((c) => !isPureAnchor(cell[c.index]));
+      const bodyIndexes = new Set(body.map((c) => c.index));
 
       const hrefCandidates = cell
         .map((c, i) => ({ index: i, href: firstHref(c) }))
-        .filter((c) => c.href !== null && c.index !== description?.index)
+        .filter((c) => c.href !== null && !bodyIndexes.has(c.index))
         .map((c) => c.href);
       const target = hrefCandidates.find((href) => !IMAGE_EXTENSION.test(href));
-      if (!target) continue;
 
       cards.push(
-        linkCard({
-          title: title.text,
-          description: description?.text,
-          href: hrefFor(target, ctx),
-        })
+        target
+          ? linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) })
+          : card({ title: title.text, body: body.map((c) => c.text) })
       );
     }
-    if (cards.length === 0) return table;
-    return ['<CardGrid>', ...cards.map((c) => `  ${c}`), '</CardGrid>'].join('\n');
+    if (cards.length === 0) {
+      throw new Error('card-table has no rows with any title or body content to show');
+    }
+    return ['<CardGrid>', ...cards.map(indent), '</CardGrid>'].join('\n');
   });
 }
 
