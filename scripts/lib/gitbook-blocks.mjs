@@ -116,29 +116,39 @@ export function convertEmbeds(text) {
   );
 }
 
-/** Converts {% stepper %} to a Starlight <Steps> ordered list. */
+/**
+ * Converts {% stepper %} to a Starlight <Steps> ordered list.
+ *
+ * Throws on any shape where a step's boundaries are ambiguous — an unclosed step, an
+ * unclosed stepper, or an {% endstep %} with nothing open — rather than silently discarding
+ * or misnumbering content. Matches convertHints's precedent: a shape a later GitBook sync
+ * introduces must fail loudly at cutover, not degrade silently past every build gate.
+ */
 export function convertSteppers(text) {
   let inStepper = false;
   let number = 0;
   let body = null;
-  return mapLines(text, (line) => {
+  const out = mapLines(text, (line) => {
     if (/^[ \t]*\{%\s*stepper\s*%\}[ \t]*$/.test(line)) {
       inStepper = true;
       number = 0;
       return ['<Steps>', ''];
     }
     if (/^[ \t]*\{%\s*endstepper\s*%\}[ \t]*$/.test(line)) {
+      if (body !== null) throw new Error(`step ${number} is missing {% endstep %}`);
       inStepper = false;
       return ['</Steps>'];
     }
     if (!inStepper) return line;
     if (/^[ \t]*\{%\s*step\s*%\}[ \t]*$/.test(line)) {
+      if (body !== null) throw new Error(`step ${number} is missing {% endstep %}`);
       number++;
       body = [];
       return [];
     }
     if (/^[ \t]*\{%\s*endstep\s*%\}[ \t]*$/.test(line)) {
-      const lines = body ?? [];
+      if (body === null) throw new Error('{% endstep %} with no matching {% step %}');
+      const lines = body;
       while (lines.length && lines.at(-1).trim() === '') lines.pop();
       const [first, ...rest] = lines;
       body = null;
@@ -150,6 +160,11 @@ export function convertSteppers(text) {
     }
     return line;
   });
+  if (inStepper) {
+    if (body !== null) throw new Error(`step ${number} is missing {% endstep %}`);
+    throw new Error('{% stepper %} is missing {% endstepper %}');
+  }
+  return out;
 }
 
 /** Converts the single {% columns %} block to a CardGrid. */

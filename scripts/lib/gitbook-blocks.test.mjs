@@ -167,6 +167,63 @@ test('a stepper becomes a Steps ordered list with indented bodies', () => {
   );
 });
 
+test('a step missing {% endstep %} throws instead of silently dropping its content', () => {
+  const input = [
+    '{% stepper %}',
+    '{% step %}',
+    '### Step one',
+    '{% step %}',
+    '### Step two',
+    '{% endstep %}',
+    '{% endstepper %}',
+  ].join('\n');
+  assert.throws(() => convertSteppers(input), /step 1 is missing \{% endstep %\}/);
+});
+
+test('two separate stepper blocks in one file each renumber their steps from 1', () => {
+  const input = [
+    '{% stepper %}',
+    '{% step %}',
+    '### A1',
+    '{% endstep %}',
+    '{% step %}',
+    '### A2',
+    '{% endstep %}',
+    '{% endstepper %}',
+    '',
+    '{% stepper %}',
+    '{% step %}',
+    '### B1',
+    '{% endstep %}',
+    '{% step %}',
+    '### B2',
+    '{% endstep %}',
+    '{% endstepper %}',
+  ].join('\n');
+  const out = convertSteppers(input);
+  assert.equal((out.match(/<Steps>/g) ?? []).length, 2);
+  assert.equal((out.match(/<\/Steps>/g) ?? []).length, 2);
+  assert.ok(out.includes('1. ### A1'));
+  assert.ok(out.includes('2. ### A2'));
+  assert.ok(out.includes('1. ### B1'));
+  assert.ok(out.includes('2. ### B2'));
+});
+
+test('{% endstepper %} arriving with an open step throws', () => {
+  const input = ['{% stepper %}', '{% step %}', '### Step one', '{% endstepper %}'].join('\n');
+  assert.throws(() => convertSteppers(input), /step 1 is missing \{% endstep %\}/);
+});
+
+test('an unterminated stepper at end of input throws', () => {
+  const input = ['{% stepper %}', '{% step %}', '### Step one', '{% endstep %}'].join('\n');
+  assert.throws(() => convertSteppers(input), /\{% stepper %\} is missing \{% endstepper %\}/);
+});
+
+test('a stray {% endstep %} with no open step throws', () => {
+  const input = ['{% stepper %}', '{% endstep %}', '{% endstepper %}'].join('\n');
+  assert.throws(() => convertSteppers(input), /\{% endstep %\} with no matching \{% step %\}/);
+});
+
 test('columns becomes a CardGrid and the fenced code inside survives', () => {
   const input = [
     '{% columns %}',
