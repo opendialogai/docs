@@ -127,6 +127,18 @@ test('a row with two non-empty description cells keeps both', () => {
   );
 });
 
+test('a targeted row with more than one prose cell throws rather than dropping content', () => {
+  const input =
+    '<table data-view="cards"><thead><tr><th></th><th></th><th></th>' +
+    '<th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody>' +
+    '<tr><td><a href="../the-opendialog-model/"><strong>The OpenDialog model</strong></a></td>' +
+    '<td>Take a deepdive.</td>' +
+    '<td>Extra prose cell.</td>' +
+    '<td><a href="../the-opendialog-model/">the-opendialog-model</a></td></tr>' +
+    '</tbody></table>';
+  assert.throws(() => convertCardTables(input, ctx), /a\/README\.md.*The OpenDialog model/);
+});
+
 test('countDroppedCovers counts the cover assets LinkCard cannot show', () => {
   const input =
     '<table data-view="cards"><thead><tr><th></th>' +

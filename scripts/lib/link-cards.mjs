@@ -129,7 +129,10 @@ const CARD_TABLE = /<table(?=[^>]*\bdata-view="cards")[^>]*>[\s\S]*?<\/table>/g;
  * what actually distinguishes a link cell (title/target/cover) from prose — become the card's
  * body: a single `description` attribute for LinkCard, or one paragraph per cell as Card's
  * children when a row has more than one (e.g. two rows of quick-start-ai-agents carry both a
- * summary and a "how to start" cell; both must survive).
+ * summary and a "how to start" cell; both must survive). LinkCard has no slot for a second
+ * body cell — a targeted row with more than one throws rather than silently dropping the
+ * extra prose, the same principle that makes an unlinked row become a Card instead of being
+ * skipped.
  *
  * The href is the first non-image link found in any cell other than the body cells, which is
  * what keeps an inline link inside a description from being mistaken for the card's real
@@ -156,11 +159,16 @@ export function convertCardTables(text, ctx) {
         .map((c) => c.href);
       const target = hrefCandidates.find((href) => !IMAGE_EXTENSION.test(href));
 
-      cards.push(
-        target
-          ? linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) })
-          : card({ title: title.text, body: body.map((c) => c.text) })
-      );
+      if (target) {
+        if (body.length > 1) {
+          throw new Error(
+            `${ctx.source}: card "${title.text}" has a link target and ${body.length} body cells — LinkCard can only show one as its description`
+          );
+        }
+        cards.push(linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) }));
+      } else {
+        cards.push(card({ title: title.text, body: body.map((c) => c.text) }));
+      }
     }
     if (cards.length === 0) {
       throw new Error('card-table has no rows with any title or body content to show');
