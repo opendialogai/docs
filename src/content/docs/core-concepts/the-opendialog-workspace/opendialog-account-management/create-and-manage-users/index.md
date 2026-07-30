@@ -4,7 +4,7 @@ title: Managing Users
 
 Welcome to user management in OpenDialog! This guide shows you how to add and manage team members in your workspace. Your workspace starts with one user account, and you can easily add more team members as needed.
 
-### :heavy\_plus\_sign: Adding a new user
+### ➕ Adding a new user
 
 To enable your team members to access the workspace, you will have to add them as users on your OpenDialog account.
 

@@ -14,6 +14,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { emitFrontmatter, parseFrontmatter, takeTitle } from './lib/frontmatter.mjs';
+import { convertEmoji, countEmoji, countUnknownShortcodes } from './lib/emoji.mjs';
 import { convertFigures, reflowImageDiv, rewriteAssetRefs } from './lib/figures.mjs';
 import {
   convertCode,
@@ -119,11 +120,13 @@ const stats = {
   steps: 0,
   cardGrids: 0,
   images: 0,
+  emoji: 0,
   droppedCovers: 0,
   survivingBlocks: 0,
   survivingEntities: 0,
   survivingImgTags: 0,
   survivingBraces: 0,
+  survivingShortcodes: 0,
   assetRefs: 0,
   survivingAssetPaths: 0,
 };
@@ -146,6 +149,13 @@ for (const route of routeMap) {
   stats.droppedCovers += countDroppedCovers(body);
 
   let text = takeTitle(body).body;
+
+  // Before anything escapes underscores on the way to MDX, so shortcodes are still in the
+  // plain form GitBook wrote.
+  stats.emoji += countEmoji(text);
+  text = convertEmoji(text);
+  stats.survivingShortcodes += countUnknownShortcodes(text);
+
   text = convertCode(text);
   text = convertHints(text);
   text = convertFile(text, ctx);
@@ -240,10 +250,14 @@ const EXPECTED = {
   // Demo.gif) renders as a <video> element rather than a markdown image.
   images: 528,
   droppedCovers: 13,
+  // Four distinct GitBook shortcodes across three pages. A sync introducing a fifth
+  // moves this and must be adjudicated, not adjusted away.
+  emoji: 5,
   survivingBlocks: 0,
   survivingEntities: 0,
   survivingImgTags: 0,
   survivingBraces: 0,
+  survivingShortcodes: 0,
 };
 if (assetMap) EXPECTED.survivingAssetPaths = 0;
 
