@@ -50,8 +50,8 @@ function countInProse(text, pattern) {
   return (prose.join('\n').match(pattern) || []).length;
 }
 
-/** Matches one <LinkCard ...> or <Card ...> element, never <CardGrid>. */
-const CARD_ELEMENT = /<(?:LinkCard|Card)(?=[ >])/g;
+/** Matches one <LinkCard>, <CoverCard> or <Card> element, never <CardGrid>. */
+const CARD_ELEMENT = /<(?:LinkCard|CoverCard|Card)(?=[ >])/g;
 
 /** Counts <LinkCard>/<Card> elements present in `text`, for measuring what each pass added. */
 function countCards(text) {
@@ -121,7 +121,7 @@ const stats = {
   cardGrids: 0,
   images: 0,
   emoji: 0,
-  droppedCovers: 0,
+  covers: 0,
   survivingBlocks: 0,
   survivingEntities: 0,
   survivingImgTags: 0,
@@ -146,7 +146,7 @@ for (const route of routeMap) {
   const meta = titles.get(route.source);
   const ctx = { source: route.source, routes, titles, assets: assetMap };
 
-  stats.droppedCovers += countDroppedCovers(body);
+  stats.covers += countDroppedCovers(body);
 
   let text = takeTitle(body).body;
 
@@ -181,13 +181,18 @@ for (const route of routeMap) {
   text = rewriteLinks(text, ctx);
 
   const used = COMPONENTS.filter(([marker]) => text.includes(marker)).map(([, name]) => name);
-  const isMdx = used.length > 0;
+  const hasCoverCard = text.includes('<CoverCard ');
+  const isMdx = used.length > 0 || hasCoverCard;
 
   if (isMdx) {
     text = unwrapPreCode(text);
     text = normaliseForMdx(text);
-    const imports = `import { ${[...new Set(used)].sort().join(', ')} } from '@astrojs/starlight/components';`;
-    text = `\n${imports}\n${text}`;
+    const imports = [];
+    if (used.length) {
+      imports.push(`import { ${[...new Set(used)].sort().join(', ')} } from '@astrojs/starlight/components';`);
+    }
+    if (hasCoverCard) imports.push("import CoverCard from '~/components/CoverCard.astro';");
+    text = `\n${imports.join('\n')}\n${text}`;
   }
 
   const target = `${OUT}/${route.target}${isMdx ? 'x' : ''}`;
@@ -252,7 +257,8 @@ const EXPECTED = {
   // the full occurrence count, because the corpus's sole video-kind asset (Knowledge Base
   // Demo.gif) renders as a <video> element rather than a markdown image.
   images: 528,
-  droppedCovers: 13,
+  // No longer dropped: CoverCard renders them. The count is unchanged.
+  covers: 13,
   // Four distinct GitBook shortcodes across three pages. A sync introducing a fifth
   // moves this and must be adjudicated, not adjusted away.
   emoji: 5,

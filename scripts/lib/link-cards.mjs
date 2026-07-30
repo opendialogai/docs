@@ -5,6 +5,7 @@
  * Both need route-map.json: a content-ref's inner link text is a raw filename, and GitBook
  * substitutes the target page's title at render time.
  */
+import { ASSET_SRC, unescapeAssetName } from './asset-refs.mjs';
 import { mapLines, protectCode } from './segments.mjs';
 import { resolveSource } from './links.mjs';
 
@@ -19,6 +20,19 @@ function linkCard({ title, description, href }) {
   if (description) parts.push(`description="${attribute(description)}"`);
   parts.push(`href="${href}"`);
   return `<LinkCard ${parts.join(' ')} />`;
+}
+
+/**
+ * Builds one CoverCard element — a LinkCard that also shows the row's cover image.
+ *
+ * The cover is passed as a /src/assets path rather than the `~/assets` alias, because
+ * CoverCard resolves it through import.meta.glob, which keys on the real path.
+ */
+function coverCard({ title, description, href, cover }) {
+  const parts = [`title="${attribute(title)}"`];
+  if (description) parts.push(`description="${attribute(description)}"`);
+  parts.push(`href="${href}"`, `cover="${cover}"`);
+  return `<CoverCard ${parts.join(' ')} />`;
 }
 
 /**
@@ -188,7 +202,9 @@ export function convertCardTables(text, ctx) {
               `${ctx.source}: card "${title.text}" has a link target and ${body.length} body cells — LinkCard can only show one as its description`
             );
           }
-          cards.push(linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) }));
+          const cover = coverFor(cell, ctx);
+          const card = { title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) };
+          cards.push(cover ? coverCard({ ...card, cover }) : linkCard(card));
         } else {
           cards.push(card({ title: title.text, body: body.map((c) => c.text) }));
         }
@@ -199,6 +215,26 @@ export function convertCardTables(text, ctx) {
       return ['<CardGrid>', ...cards.map(indent), '</CardGrid>'].join('\n');
     })
   );
+}
+
+/**
+ * The row's cover image as a /src/assets path, or null when it has none.
+ *
+ * Resolved through asset-map.json, so the path is the slugified name assets.mjs actually
+ * wrote. Without a map — a checkout where assets.mjs has never run — no cover is emitted
+ * rather than a path that resolves to nothing, matching how figures.mjs degrades.
+ */
+function coverFor(cell, ctx) {
+  for (const c of cell) {
+    const href = (c.match(/<a href="([^"]*\.(?:png|jpe?g|gif|svg|webp))"/i) ?? [])[1];
+    if (!href) continue;
+    const match = href.trim().match(ASSET_SRC);
+    const name = match ? unescapeAssetName(match[1]) : null;
+    const entry = name && ctx?.assets ? ctx.assets[name] : null;
+    if (!entry) return null;
+    return entry.reference.replace(/^~\//, '/src/');
+  }
+  return null;
 }
 
 /**

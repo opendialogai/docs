@@ -2,7 +2,8 @@
 title: Scenarios
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import CoverCard from '~/components/CoverCard.astro';
 
 ## What is a scenario?
 
@@ -73,6 +74,6 @@ You can edit the Scenario name, description, set a preferred interpreter (which 
 ## How to design your scenario
 
 <CardGrid>
-  <LinkCard title="The OpenDialog model" description="Take a deepdive into the underpinning model for OpenDialog applications." href="/core-concepts/the-opendialog-model" />
-  <LinkCard title="Designing your application" description="Create a new scenario from a template or from scratch using OpenDialog's model and best practices." href="/opendialog-platform/conversation-designer" />
+  <CoverCard title="The OpenDialog model" description="Take a deepdive into the underpinning model for OpenDialog applications." href="/core-concepts/the-opendialog-model" cover="/src/assets/od-basicmodel.png" />
+  <CoverCard title="Designing your application" description="Create a new scenario from a template or from scratch using OpenDialog's model and best practices." href="/opendialog-platform/conversation-designer" cover="/src/assets/applicationdesign.png" />
 </CardGrid>

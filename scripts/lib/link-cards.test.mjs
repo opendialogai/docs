@@ -237,3 +237,50 @@ test('countDroppedCovers reports the same number of targets', () => {
   assert.equal(countDroppedCovers(text), coverTargets(text).length);
   assert.equal(countDroppedCovers(text), 2);
 });
+
+test('a card row with a cover becomes a CoverCard carrying the built asset path', () => {
+  const assets = { 'OD-basicmodel.png': { slug: 'od-basicmodel.png', reference: '~/assets/od-basicmodel.png' } };
+  const ctx = {
+    source: 'a/README.md',
+    routes: new Map([['a/b.md', { url: '/b' }]]),
+    titles: new Map(),
+    assets,
+  };
+  const table =
+    '<table data-view="cards"><thead><tr><th></th><th></th>' +
+    '<th data-hidden data-card-target data-type="content-ref"></th>' +
+    '<th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr>' +
+    '<td><a href="b.md"><strong>Model</strong></a></td><td>A description.</td>' +
+    '<td><a href="b.md">b</a></td>' +
+    '<td><a href="../.gitbook/assets/OD-basicmodel.png">OD-basicmodel.png</a></td>' +
+    '</tr></tbody></table>';
+  const out = convertCardTables(table, ctx);
+  assert.match(out, /<CoverCard /);
+  assert.match(out, /cover="\/src\/assets\/od-basicmodel\.png"/);
+  assert.match(out, /href="\/b"/);
+  assert.match(out, /title="Model"/);
+  assert.equal(out.includes('<LinkCard'), false);
+});
+
+test('a card row with no cover stays a LinkCard', () => {
+  const ctx = { source: 'a/README.md', routes: new Map([['a/b.md', { url: '/b' }]]), titles: new Map(), assets: {} };
+  const table =
+    '<table data-view="cards"><tbody><tr>' +
+    '<td><a href="b.md"><strong>Model</strong></a></td><td>A description.</td>' +
+    '</tr></tbody></table>';
+  const out = convertCardTables(table, ctx);
+  assert.match(out, /<LinkCard /);
+  assert.equal(out.includes('<CoverCard'), false);
+});
+
+test('without an asset map no cover is emitted, rather than a path that resolves to nothing', () => {
+  const ctx = { source: 'a/README.md', routes: new Map([['a/b.md', { url: '/b' }]]), titles: new Map(), assets: null };
+  const table =
+    '<table data-view="cards"><tbody><tr>' +
+    '<td><a href="b.md"><strong>Model</strong></a></td><td>Desc.</td>' +
+    '<td><a href="../.gitbook/assets/OD-basicmodel.png">x.png</a></td>' +
+    '</tr></tbody></table>';
+  const out = convertCardTables(table, ctx);
+  assert.equal(out.includes('<CoverCard'), false);
+  assert.match(out, /<LinkCard /);
+});

@@ -3,7 +3,8 @@ title: Monitoring your application
 description: Use the OpenDialog Analyse feature to make informed decisions about the past, present and future of your conversational application.
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import CoverCard from '~/components/CoverCard.astro';
 
 
 This section explains how to track user interactions with your conversational application and identify trends in project usage.
@@ -69,9 +70,9 @@ To use the Analyse feature within OpenDialog, navigate to the 'Analyse' dashboar
 Analyse has three main components: project usage, interaction logs, and message log table:
 
 <CardGrid>
-  <LinkCard title="Project usage" description="The project usage graph shows both the number of users and the number of requests for any given date or range of dates. It can also be expanded for a more focused and in-depth visualisation." href="/opendialog-platform/monitoring-your-application#project-usage" />
-  <LinkCard title="Interaction logs" description="The interaction logs are listed and filtered by date, with the most recent appearing at the top. Each interaction log can be expanded to review specific conversations." href="/opendialog-platform/monitoring-your-application#interaction-logs" />
-  <LinkCard title="Message log table" description="The message logs are listed and filtered by date, with the most recent appearing at the top. Messages can also be filtered by Conversation, Scene, Turn and Intent to find specific results." href="/opendialog-platform/monitoring-your-application#message-table" />
+  <CoverCard title="Project usage" description="The project usage graph shows both the number of users and the number of requests for any given date or range of dates. It can also be expanded for a more focused and in-depth visualisation." href="/opendialog-platform/monitoring-your-application#project-usage" cover="/src/assets/screenshot-2024-09-26-at-10-32-32.png" />
+  <CoverCard title="Interaction logs" description="The interaction logs are listed and filtered by date, with the most recent appearing at the top. Each interaction log can be expanded to review specific conversations." href="/opendialog-platform/monitoring-your-application#interaction-logs" cover="/src/assets/screenshot-2024-10-01-at-15-28-40.png" />
+  <CoverCard title="Message log table" description="The message logs are listed and filtered by date, with the most recent appearing at the top. Messages can also be filtered by Conversation, Scene, Turn and Intent to find specific results." href="/opendialog-platform/monitoring-your-application#message-table" cover="/src/assets/screenshot-2024-09-26-at-10-38-51.png" />
 </CardGrid>
 
 ## **How to use**

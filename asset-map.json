@@ -1177,6 +1177,13 @@
       "reference": "~/assets/null-alt-tag-1.png",
       "hash": "6076eb924fc29b951161f0255a5bd35f56373d237ab40a22aafe942e7e32276f"
     },
+    "OD-basicmodel.png": {
+      "slug": "od-basicmodel.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/od-basicmodel.png",
+      "hash": "d09899e88d7c897d0ab3daefd3f41cec0008a3cc635d8c79dccb151e2a1e600d"
+    },
     "OD-workspacecreatenew.png": {
       "slug": "od-workspacecreatenew.png",
       "kind": "image",
@@ -1779,6 +1786,20 @@
       "reference": "~/assets/screenshot-2024-09-26-at-10-32-32.png",
       "hash": "6a63313d19e4789a205043ca81f4e3bad200a9598897f1b2bb2e69f52f9ec510"
     },
+    "Screenshot 2024-09-26 at 10.38.51.png": {
+      "slug": "screenshot-2024-09-26-at-10-38-51.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/screenshot-2024-09-26-at-10-38-51.png",
+      "hash": "5624c52dcf4a823d47f7992ea1b4283e931ef5133398037f2945a1e8446f8ce3"
+    },
+    "Screenshot 2024-10-01 at 15.28.40.png": {
+      "slug": "screenshot-2024-10-01-at-15-28-40.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/screenshot-2024-10-01-at-15-28-40.png",
+      "hash": "d67f4b3cd5595466e1ca1291e03f823eee0e6bfb784fd47847a697fe37dfbec3"
+    },
     "Screenshot 2024-10-01 at 15.31.13.png": {
       "slug": "screenshot-2024-10-01-at-15-31-13.png",
       "kind": "image",
@@ -2010,6 +2031,13 @@
       "reference": "~/assets/ai-agent-completed.png",
       "hash": "acd925745e016f7802bcf78e70f189abb1b1c0427ca97f20a8ad0f2130f15260"
     },
+    "applicationdesign.png": {
+      "slug": "applicationdesign.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/applicationdesign.png",
+      "hash": "58357d6f69aefcc847ca3d06eddff899f37decf6509b66f05087a5546c87c849"
+    },
     "authentication_mtls.png": {
       "slug": "authentication-mtls.png",
       "kind": "image",
@@ -2037,6 +2065,13 @@
       "destination": "src/assets",
       "reference": "~/assets/certificate-management.png",
       "hash": "7c0334788173af7290d8b1f23cd9c032fd3022f0dc47e5925d4fb29c9569088b"
+    },
+    "conditions (1).png": {
+      "slug": "conditions-1.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/conditions-1.png",
+      "hash": "19d2cf411ce58d29a6da55c8903afaad426b9c89c11bba39f4419fee472cd235"
     },
     "create_new_alias.png": {
       "slug": "create-new-alias.png",
@@ -2079,6 +2114,13 @@
       "destination": "src/assets",
       "reference": "~/assets/e-sign.png",
       "hash": "c9b3813fcadbe7421b29dbb778d1308ef648664bd263c6ed6c654bec67d44388"
+    },
+    "engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg": {
+      "slug": "engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg",
+      "hash": "f9d9175de0787f586d87a7394b619027d2689127eab2222381e0825762ca25e8"
     },
     "expand-message-demo.png": {
       "slug": "expand-message-demo.png",
@@ -3095,6 +3137,13 @@
       "reference": "~/assets/intents.png",
       "hash": "b6707259dad8405009a74c571a9edc73cf3d8c6cfcc275bdc560b5776072659f"
     },
+    "legoblocks.png": {
+      "slug": "legoblocks.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/legoblocks.png",
+      "hash": "9476a161c55e3ea4e5b8b58a41a5adb55b7db62348d4fcd1529940a3ad810f6e"
+    },
     "location.png": {
       "slug": "location.png",
       "kind": "image",
@@ -3255,6 +3304,13 @@
       "destination": "src/assets",
       "reference": "~/assets/opendialog-model.png",
       "hash": "f49cc07a16f69af1b0ff7a218cfe1359f78b0042db8a7bc1ae5ace124d5b46ca"
+    },
+    "personalisation.png": {
+      "slug": "personalisation.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/personalisation.png",
+      "hash": "84c2816eb095c700858e07c62dc5002fd33fce746a1493540186b59448191358"
     },
     "pic 2.png": {
       "slug": "pic-2.png",
@@ -3465,6 +3521,13 @@
       "destination": "src/assets",
       "reference": "~/assets/turns.png",
       "hash": "4a9e28c1dc85c840b2cadc74f1be8459f5c5645d4ec4b6b65753bdf305cae352"
+    },
+    "usinglanguageservice.png": {
+      "slug": "usinglanguageservice.png",
+      "kind": "image",
+      "destination": "src/assets",
+      "reference": "~/assets/usinglanguageservice.png",
+      "hash": "c6e7d516d5f0ce9586fc3ef8d50a596dc24b21a65b09a825b73d62a4940e8f73"
     },
     "vectorise.png": {
       "slug": "vectorise.png",

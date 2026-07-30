@@ -3,7 +3,8 @@ title: Message editor
 description: The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages.
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import CoverCard from '~/components/CoverCard.astro';
 
 
 ## Finding the message editor
@@ -186,7 +187,7 @@ The following message types support expandable attributes:
 OpenDialog's modular approach to messages allows you to take advantage of rich UI components, surface specific messages on your terms and personalize them to make them relevant to specific users or use cases. Check out the following sections to take your conversational application from simple question answering to a truly personalised hybrid experience :
 
 <CardGrid>
-  <LinkCard title="Tailor the user experience" description="Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of message types to their fullest potential." href="/opendialog-platform/conversation-designer/message-design/constructing-messages" />
-  <LinkCard title="Surface relevant messages" description="Take advantage of OpenDialog's unique approach, using conditions to surface relevant messages at the right moment in the conversation." href="/opendialog-platform/conversation-designer/message-design/message-conditions" />
-  <LinkCard title="Personalize the messages" description="OpenDialog's attribute system will allow you to taylor your messages using these variables to surface personalised information." href="/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages" />
+  <CoverCard title="Tailor the user experience" description="Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of message types to their fullest potential." href="/opendialog-platform/conversation-designer/message-design/constructing-messages" cover="/src/assets/legoblocks.png" />
+  <CoverCard title="Surface relevant messages" description="Take advantage of OpenDialog's unique approach, using conditions to surface relevant messages at the right moment in the conversation." href="/opendialog-platform/conversation-designer/message-design/message-conditions" cover="/src/assets/conditions-1.png" />
+  <CoverCard title="Personalize the messages" description="OpenDialog's attribute system will allow you to taylor your messages using these variables to surface personalised information." href="/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages" cover="/src/assets/personalisation.png" />
 </CardGrid>

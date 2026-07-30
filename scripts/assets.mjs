@@ -124,30 +124,24 @@ async function quantise(resized) {
 }
 
 /**
- * The assets convert.mjs will reference: everything in source/ except covers-only images.
+ * The assets convert.mjs will reference: everything in source/, covers included.
  *
- * A name can be both a genuine content reference and a card cover in different files (or
- * different places in the same file), so cover-ness is decided by multiset subtraction across
- * the whole corpus — one reference is removed per cover occurrence of that name — rather than by
- * testing membership per file, which would let a single cover occurrence anywhere blot out every
- * genuine occurrence of that name everywhere.
+ * Covers were subtracted here while <LinkCard> had no image slot and conversion discarded
+ * them, so copying them would have shipped images nothing rendered. src/components/
+ * CoverCard.astro now renders them, so they are referenced again and must be copied. The
+ * cover hrefs are still counted, because that count is an invariant of its own.
  */
 function copySet() {
-  const allCounts = new Map();
-  const coverCounts = new Map();
+  const names = new Set();
   let coverHrefs = 0;
-  const bump = (counts, name) => counts.set(name, (counts.get(name) ?? 0) + 1);
   const files = walk(`${root}/source`).filter((f) => /\.mdx?$/.test(f)).sort();
   for (const file of files) {
     const { all: refs, covers } = assetRefsInFile(readFileSync(file, 'utf8'));
     coverHrefs += covers.length;
-    for (const name of refs) bump(allCounts, name);
-    for (const name of covers) bump(coverCounts, name);
+    for (const name of refs) names.add(name);
   }
-  const all = new Set(allCounts.keys());
-  const copy = [...all]
-    .filter((name) => allCounts.get(name) - (coverCounts.get(name) ?? 0) > 0)
-    .sort();
+  const all = new Set(names);
+  const copy = [...all].sort();
   return { all, copy, coverHrefs };
 }
 
@@ -261,8 +255,11 @@ const largest = walk(DESTINATIONS['src/assets'].dir)
 const EXPECTED = {
   references: 509,
   coverHrefs: 13,
-  copySet: 500,
-  mapEntries: 500,
+  // 509, not 500: the 9 covers referenced nowhere else are copied again now that
+  // CoverCard renders them. Four are photographic PNGs the pipeline preserves as PNG,
+  // which is what takes src/assets from 32.0 to 48.4 MiB against the 60 MB gate.
+  copySet: 509,
+  mapEntries: 509,
   slugCollisions: 0,
 };
 const stats = {
