@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { normaliseForMdx } from './mdx.mjs';
+import { normaliseForMdx, unwrapPreCode } from './mdx.mjs';
 
 test('void elements are self-closed', () => {
   assert.equal(normaliseForMdx('a<br>b'), 'a<br />b');
@@ -66,13 +66,14 @@ test('a bare brace in JSX children between two tags is escaped, the tags are not
   );
 });
 
-// The TAG regex must not mistake a CommonMark autolink for an HTML tag. Task 6's convertEmbeds
-// and links.mjs's rewriteLinks both emit bare `<scheme:...>` autolinks (e.g.
-// `<https://www.fetchify.com/address-auto-complete>`, a real, non-video embed in the corpus
-// promoted to .mdx). An autolink's scheme is immediately followed by ":", which no real tag
-// name is, so a query string that happens to contain "class=" or a bare "{" must survive
-// completely untouched rather than being corrupted by the tag-attribute rewrite or hidden from
-// brace-escaping.
+// The TAG regex must not mistake a CommonMark autolink for an HTML tag. No page in the current
+// corpus reaches this pass carrying one — gitbook-blocks.mjs's convertEmbeds renders a
+// non-video embed as a markdown link rather than a bare `<url>` specifically so it never has
+// to (a `<scheme://…>` autolink is not reliably parseable by MDX at all, regardless of this
+// regex) — but a scheme's ":" is immediately followed by characters no real tag name has, so
+// this stays a defensive regression test: a query string that happens to contain "class=" or a
+// bare "{" must survive completely untouched rather than being corrupted by the tag-attribute
+// rewrite or hidden from brace-escaping.
 test('a scheme autolink is not mistaken for a tag', () => {
   assert.equal(
     normaliseForMdx('<https://example.com/path?class=header&note={x}>'),
@@ -131,4 +132,52 @@ test('an attribute named like class (e.g. data-class) is not renamed', () => {
     normaliseForMdx('<div data-class="x">y</div>'),
     '<div data-class="x">y</div>'
   );
+});
+
+// progress-bar-message.md's XML snippet is exactly this shape: a <pre><code> whose content
+// spans several lines, MDX cannot parse at all (even with no nested tag: it reads content
+// immediately after either tag as inline phrasing, which cannot carry a hard line break in
+// MDX's paragraph model). <code> is dropped and <pre>'s content moved to the following line —
+// the one part of this that changes nothing visible, since the HTML spec requires browsers to
+// ignore exactly one newline straight after a <pre> start tag.
+test('unwrapPreCode drops <code> and moves a multi-line <pre> block onto the next line', () => {
+  assert.equal(
+    unwrapPreCode('<pre><code>a\nb\n<strong>c</strong>\n</code></pre>'),
+    '<pre>\na\nb\n<strong>c</strong>\n\n</pre>'
+  );
+});
+
+// The corpus's one <strong> here has a newline inside it too — right before its own closing
+// tag, with nothing else following. That is the exact shape progress-bar-message.md has, and
+// is also unparseable by MDX, so it is joined onto one line along with the <pre> fix.
+test('unwrapPreCode joins a <strong> whose closing tag is a trailing newline away', () => {
+  assert.equal(
+    unwrapPreCode('<pre><code>a\nb\n<strong>c\n</strong></code></pre>'),
+    '<pre>\na\nb\n<strong>c</strong>\n</pre>'
+  );
+});
+
+test('unwrapPreCode throws when a <strong> holds a real line break, not a trailing one', () => {
+  assert.throws(
+    () => unwrapPreCode('<pre><code>a\n<strong>b\nc</strong>\n</code></pre>'),
+    /unwrapPreCode: <strong> spans more than one content line/
+  );
+});
+
+test('unwrapPreCode leaves a single-line <pre><code> alone', () => {
+  const input = '<pre><code>one line</code></pre>';
+  assert.equal(unwrapPreCode(input), input);
+});
+
+test('unwrapPreCode leaves an attributed <pre> alone, the shape it does not recognise', () => {
+  // using-jmespath-expressions.md's tables use <pre class="language-json">; those pages stay
+  // .md today, so this shape never needs to reach here, and is left untouched rather than
+  // guessed at.
+  const input = '<pre class="language-json"><code class="lang-json">a\nb</code></pre>';
+  assert.equal(unwrapPreCode(input), input);
+});
+
+test('unwrapPreCode leaves a <pre> inside a fence as literal text', () => {
+  const input = '```html\n<pre><code>a\nb</code></pre>\n```';
+  assert.equal(unwrapPreCode(input), input);
 });

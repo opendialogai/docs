@@ -106,9 +106,16 @@ function attribute(value) {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 }
 
-/** Renders one embed. Non-video URLs become autolinks and so need no component. */
+/**
+ * Renders one embed. Non-video URLs become a markdown link and so need no component.
+ *
+ * Not a bare `<url>` autolink: MDX's JSX tag grammar treats the "://" after a scheme as an
+ * invalid namespaced tag name rather than an autolink, so a page that also has a video embed
+ * — and is therefore promoted to .mdx regardless — fails to build. A `[url](url)` link is
+ * unambiguous in both .md and .mdx and reads the same on the page.
+ */
 function renderEmbed(url, title) {
-  if (!isVideoEmbed(url)) return `<${url}>`;
+  if (!isVideoEmbed(url)) return `[${url}](${url})`;
   return title ? `<Embed url="${url}" title="${attribute(title)}" />` : `<Embed url="${url}" />`;
 }
 

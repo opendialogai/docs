@@ -1,9 +1,6 @@
 ---
 title: Getting ready
-description: >-
-  Before jumping into the build process, you need to make sure you have a clear
-  understanding of an AI agent’s key building blocks and the pieces of
-  information you need to personalise yours.
+description: Before jumping into the build process, you need to make sure you have a clear understanding of an AI agent’s key building blocks and the pieces of information you need to personalise yours.
 ---
 
 ## Building blocks of an AI Agent
@@ -17,3 +14,37 @@ This is all about how you want users to interact with your AI agent. You’ll ne
 ### [Language Capabilities](/opendialog-platform/interpreters-and-natural-language-understanding)
 
 This refers to how well your AI Agent can understand and process user input, and respond to it. Semantic classification allows your AI agent to interpret the meaning and intent behind user queries, categorising them into relevant topics. In addition, Retrieval-Augmented Generation (RAG) helps the AI agent to dynamically fetch information from knowledge sources, ensuring users receive specific responses. These advanced language capabilities ensure your AI agent can deliver meaningful, relevant answers across a variety of topics. In OpenDialog, you can set up these advanced capabilities through our Language Services.
+
+### [Contextual Knowledge](/core-concepts/contexts-and-attributes/attribute-management)
+
+To make conversations personal and relevant, your AI agent can use contextual variables — details like the user’s name, preferences, or history. These variables allow the AI agent to tailor its responses, making the interaction more engaging and effective. The AI agent can also extract key information from the conversation itself (e.g., a user’s account number or order status) to refine its responses and keep the conversation flowing. In OpenDialog, you can create and manage these variables through Attribute Management.
+
+
+
+![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXehD4Czg1ekUeRmU56R2wpHBgdnklb4YmB8rs_pPb_w0D-IAonzo2cb4BtwzUagMuxbSFCCxVZ8LPme4uIDBEwS-B0ANBtGFl5aVKXP6Y7Dn7tSYti_dVN0V2A1sPQ-dMd74xm9YqkCQJY1Ly8OlUwyc0k?key=Fx-ocWb11TfGpsPXdPvXlg)
+
+## What You Need Before You Build
+
+Before diving into the powerful tools that will bring your AI agent to life, it’s essential to have a clear sense of a few key elements. Think of this as gathering your ingredients before starting a recipe—you’ll save time and make the process smoother by coming prepared.
+
+### The Purpose of the AI Agent
+
+What problem is your AI agent solving? Is it helping users troubleshoot technical issues, assisting employees with internal processes, or providing quick access to product information? Having a clear mission for your agent will guide its development.
+
+### The Primary Topic Area
+
+What is the main subject your AI agent will cover? Whether it’s customer service, employee training, or product support, identifying this focus area will help you structure the agent’s responses and capabilities.
+
+### The Primary Knowledge Source
+
+Where will the AI agent retrieve the majority of its information? It could be an FAQ website page, product documentation, or an internal database. Your AI agent will pull from these sources dynamically, ensuring it delivers answers based on the most relevant data.
+
+With these details in hand, you’re ready to create a safe, responsive AI agent that delivers immediate value to your users.
+
+:::note
+**Not quite sure about what you want to build?**
+
+You can use our example use case in the product: an AI Agent that answers questions about the moon.
+:::
+
+Now, let's build something amazing!

@@ -76,6 +76,10 @@ export function emitFrontmatter({ title, description }) {
  * Starlight renders the frontmatter title as the page heading, so leaving the H1 in place
  * would show it twice. Uses mapLines so a "# comment" opening a shell fence — which four
  * source files have — is never mistaken for the title.
+ *
+ * Strips GitBook's &#x20; entity here too: the title is lifted out of the body before
+ * stripEntities ever runs over it, so a title carrying the entity (one does) would otherwise
+ * reach the emitted frontmatter untouched.
  */
 export function takeTitle(body) {
   let title = null;
@@ -83,7 +87,7 @@ export function takeTitle(body) {
     if (title !== null) return line;
     const h1 = line.match(/^#\s+(.*)$/);
     if (!h1) return line;
-    title = h1[1].replace(/<[^>]*>/g, '').replace(/\\([[\]])/g, '$1').trim();
+    title = h1[1].replace(/<[^>]*>/g, '').replace(/\\([[\]])/g, '$1').replace(/&#x20;/g, ' ').trim();
     return null;
   });
   return { title, body: rest };

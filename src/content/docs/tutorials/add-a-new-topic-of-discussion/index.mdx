@@ -1,0 +1,207 @@
+---
+title: Adding a new topic of discussion
+description: Let's expand  your AI Agent's capabilities by introducing a new topic of discussion.
+---
+
+import Embed from '~/components/Embed.astro';
+
+
+## Introduction
+
+Adding new topics of discussion allows your AI agent to answer questions and engage in conversations beyond the initial scope, creating a more dynamic and comprehensive user experience. Let’s walk through the process of adding a new topic to your AI agent.
+
+This allows your AI agent to answer questions and engage in conversations beyond the initial scope, creating a more dynamic and comprehensive user experience. Let’s walk through the process of adding a new topic to your AI agent.
+
+So that an AI Agent can correctly handle a new topic of discussion, we must make sure that it is set up to :
+
+* Understand user queries as being related to that topic of discussion : this happens via the Semantic Classifier.
+* Contextualise the user query & advance the conversation process : this happens via the Conversation Design
+* Generate a relevant response, statically or dynamically based on a knowledge source: this happens through a combination of a RAG service, LLM Actions and Message Design.
+
+![](/.gitbook/assets/add_topic_source.png)
+
+## **See it in action**
+
+<Embed url="https://youtu.be/v6wBulsRa4o" title="Tutorial video on how to add a new topic of discussion" />
+
+## **Step-by-step guide**
+
+### **Understand: Semantic classification**
+
+The first step is to ensure your AI agent can recognise this new topic. To do this, you’ll need to add it to the semantic classifier—the language service that helps your AI Agent distinguish between different topic intents.
+
+💡 An intent represents the underlying intention of what a user or application says.
+
+For example : The intent for “When was NASA founded?” is ‘AboutCompany’.
+
+:::tip
+**Navigate to the Semantic Intent Classifier**
+
+* Click on Language Services in the left-hand sidebar
+* In the list, select the classifier called “ProjectName” followed by “Classifier”
+:::
+
+You’ll see a list of predefined topic intents, like “Talk to Human,” “About the AI Agent,” and “Small Talk.” These topics help the AI Agent interpret user intents accurately. Now let’s add a new topic of discussion for your AI Agent to understand.
+
+For example, if you want the AI Agent to answer questions about your company, create an “AboutCompany” intent.
+
+:::tip
+**Add a new intent**
+
+* Click in the input field on the top of the screen that says “Enter unique name”
+* Enter a unique name for your topic intent, for example “AboutCompany”
+:::
+
+In order for the Large Language Model to understand what this new topic intent is all about, we will need to provide it with some more details as to what this topic actually covers. We do so by providing it with brief instructions in the description box.
+
+For example, for your topic intent “AboutCompany,” a description might be “Questions about the brand, company background, or related services.”
+
+These details guide your AI Agent in understanding when this topic arises and distinguish it from any other topics.
+
+💡 When writing your description, a good checkpoint is to see whether a child would understand what your topic of discussion is about, based solely on this description.  Large Language Models are not superhuman, so anything that is not clearly described, will likely cause confusion and wrong matches later down the line.
+
+:::tip
+**Add a description for your intent**
+
+* Click in the description box right next to the intent name field
+* Enter a brief description of your topic of discussion
+* Confirm your entries by clicking on the checkmark
+:::
+
+### **Contextualise and advance : Conversation Design**
+
+With the new intent in place in the semantic classifier, it’s time to set up how your AI Agent handles the conversation related to it. This is done in the Design section of OpenDialog’s scenario management.
+
+:::tip
+**Navigate to your scenario management**
+
+\- In the left-hand navigation menu, click on Scenarios
+
+\- In the list, select your scenario - named as in your initial setup
+
+\- You’ll land in the Design - Conversations section of OpenDialog
+:::
+
+Now is a good time to explore the OpenDialog conversation engine model in a bit more detail.
+
+![](/.gitbook/assets/opendialog_model.png)
+
+*Breakdown of the OpenDialog model*
+
+#### The OpenDialog model breaks down the wider context of AI Agent interactions into a manageable structure: 
+
+* **Scenarios:** The overall structure that defines your AI agent’s conversations. It is where you specify how your AI Agent can interact with a user and what should happen as a result. Scenarios are represented in dark navy blue in the OpenDialog design setup.
+* **Conversations:** The high-level parts of a scenario, often tied to specific user goals or states. Conversations are represented in highlight blue in the OpenDialog design setup.
+
+:::tip
+**Navigate to the next level in the conversation design**
+
+* Locate the “Topic conversations” conversation
+* Click on its node
+:::
+
+* **Scenes:** Smaller units within conversations, handling specific parts, substages or states of the conversation. Scenes are represented in mauve grey in the OpenDialog design setup.
+
+:::tip
+**Navigate to the next level in the conversation design**
+
+* Locate the “About the bot” scene
+* Click on its node
+:::
+
+* **Turns:** Represent the back-and-forth exchanges between the user and the AI Agent. Turns are represented in a teal colour in the OpenDialog design setup.
+
+:::tip
+**Navigate to the next level in the conversation design**
+
+* Locate the “Bot capabilities” turn
+* Click on its node
+:::
+
+* **Intents:** Represent the intention behind the user’s input or the AI agent’s response. They are represented in yellow in OpenDialog.
+
+:::tip
+**Navigate to the next level in the conversation design**
+
+* Click on the yellow intent node in the turn overview
+* Click in the “About the bot” intent card in the middle of your screen
+:::
+
+In OpenDialog, you can choose to handle topics of discussion in a few different manners:
+
+* **Free-form conversations:** The AI Agent invites the user to ask any question that comes to mind at any given time.
+* **Structured process conversations:** The AI agent follows a predefined script, inviting the user to take specific steps towards the completion of a process.
+* **Hybrid:** The AI agent will use a mixture of both free-form and structured conversations as part of the user experience.
+
+In this section, we primarily focus on creating free-form conversations in OpenDialog. For more information on how to set up a structured process conversation, you can find more information in the [Process Handling AI Agent ](/getting-started-1/quick-start-ai-agents/a-process-handling-ai-agent)section.
+
+Now let’s look at how to add an additional topic to your free-from conversation design. To do so, you’ll need to modify the initial conversation setup of your scenario to include interactions related to your new topic.
+
+:::tip
+**Navigate back up to the scene level**
+
+* Locate the coloured filter buttons in the top left corner of your screen
+* Click on the mauve grey button to be taken back to the "About the bot" scene
+:::
+
+To set up your new topic of discussion, we are going to use this pre-existing scene as a template and copy it. Now, let’s duplicate this topic’s scene to create a base for your new topic, for example “AboutCompany”.
+
+![](</.gitbook/assets/Images Slidedeck 1.png>)
+
+*Duplicating a scene.*
+
+We are now going to customise the duplicated scene to match your new topic of discussion.  This customization ensures the AI Agent responds in context, providing relevant answers to questions about the company.
+
+![](</.gitbook/assets/Images Slidedeck 1 (1).png>)
+
+Navigating downward in the architecture of your AI Agent, you will also need to update the name and description settings for your turn, so they reflect that these are related to your new topic of discussion.
+
+![](</.gitbook/assets/Images Slidedeck 1 (2).png>)
+
+Once the turn level is edited, it is now time to update the intent for your new topic of discussion.  This is where the rubber hits the road as we need to ensure the conversation design matches up with the semantic classification. You do this by updating the language service intent that the interpreter references in the intent settings panel of your conversation design. This will allow the AI Agent to process and respond to queries in the desired way.
+
+![](</.gitbook/assets/Images Slidedeck 1 (3).png>)
+
+#### **Responding to a user query : Message Design**
+
+To update the response of your AI agent to the new topic of discussion you just added, we will need to update the app response intent.
+
+:::tip
+**Editing an app response intent**
+
+* Click in the yellow app response intent card
+* Update the “Bot says” field with an example response message
+* Update the intent name to reflect your new topic, eg. “AboutCompanyResponse”
+* Click on the “Add conditions, actions, attributes” link on the bottom of the panel
+* Delete the action under the “Add actions” header by clicking on the X
+* Go back to the basic settings by clicking on the link on the bottom of the panel
+* Click on the “Edit messages” button
+:::
+
+You will now get taken to this specific intent’s messages and are ready to start updating your app’s response. 
+
+You will need to determine how your AI agent will source the responses for this topic: using a static, a dynamically generated or a hybrid response.
+
+* **Static responses**: The AI Agent provides a static scripted response for a given topic. 
+* **Dynamic responses**: The AI agent generates a dynamic response based on a knowledge source, serviced by a RAG service.
+* **Hybrid**: The AI agent generates part of the response dynamically, and uses them in combination with static elements like buttons or carrousels.
+
+Let’s start with updating our response message to provide users with a static response. You can edit the text in the messages directly in the provided text block by updating the text to what you want the AI Agent to respond.
+
+For example: “NASA was founded in 1954.”
+
+:::tip
+**Editing a message**
+
+* Click on the Edit icon (pencil on noteblock) of the message card
+* Locate the text block in the middle of your screen
+* Replace the text in the text block with a static response
+* Scroll back to the top of the screen
+* Click “Save message” to save your message edits.
+:::
+
+You have now added a new topic of discussion, using a static response. 
+
+:::note
+Keen to see it in action?  You can go back to the Preview by clicking the Test section in the left-hand navigation panel, and selecting Preview.
+:::

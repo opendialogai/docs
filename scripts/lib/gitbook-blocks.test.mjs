@@ -127,7 +127,7 @@ test('a caption containing a double quote is escaped for the attribute', () => {
 test('a non-video embed becomes a plain link and needs no component', () => {
   assert.equal(
     convertEmbeds('{% embed url="https://webaim.org/resources/contrastchecker/" %}'),
-    '<https://webaim.org/resources/contrastchecker/>'
+    '[https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/)'
   );
 });
 
@@ -146,17 +146,17 @@ test('a youtube.com/watch URL with no v parameter is not an embeddable shape', (
   assert.equal(isVideoEmbed('https://www.youtube.com/watch'), false);
 });
 
-test('a loom.com URL not in /share/ form becomes an autolink, not an Embed', () => {
+test('a loom.com URL not in /share/ form becomes a plain link, not an Embed', () => {
   assert.equal(
     convertEmbeds('{% embed url="https://www.loom.com/embed/abc" %}'),
-    '<https://www.loom.com/embed/abc>'
+    '[https://www.loom.com/embed/abc](https://www.loom.com/embed/abc)'
   );
 });
 
-test('a youtube.com/watch URL with no v parameter becomes an autolink, not an Embed', () => {
+test('a youtube.com/watch URL with no v parameter becomes a plain link, not an Embed', () => {
   assert.equal(
     convertEmbeds('{% embed url="https://www.youtube.com/watch" %}'),
-    '<https://www.youtube.com/watch>'
+    '[https://www.youtube.com/watch](https://www.youtube.com/watch)'
   );
 });
 

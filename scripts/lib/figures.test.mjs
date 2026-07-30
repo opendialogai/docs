@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { assetPath, convertFigures, rewriteAssetRefs } from './figures.mjs';
+import { assetPath, convertFigures, rewriteAssetRefs, stripImageDivs } from './figures.mjs';
 
 test('assetPath makes a relative asset reference root-absolute', () => {
   assert.equal(assetPath('../../../.gitbook/assets/image (601).png'), '/.gitbook/assets/image (601).png');
@@ -97,4 +97,45 @@ test('an img with no src attribute throws rather than shipping unoptimised', () 
     () => convertFigures('<img alt="X">'),
     /convertFigures: <img> with no src attribute/
   );
+});
+
+test('stripImageDivs unwraps a single-line div holding one or more figures', () => {
+  assert.equal(
+    stripImageDivs('<div align="left"><figure><img src="a.png" alt=""></figure></div>'),
+    '<figure><img src="a.png" alt=""></figure>'
+  );
+  assert.equal(
+    stripImageDivs('<div><figure><img src="a.png" alt=""></figure> <figure><img src="b.png" alt=""></figure></div>'),
+    '<figure><img src="a.png" alt=""></figure> <figure><img src="b.png" alt=""></figure>'
+  );
+});
+
+test('stripImageDivs unwraps a multi-line div holding figures separated by blank lines', () => {
+  const input = [
+    '<div align="left">',
+    '',
+    '<figure><img src="a.png" alt=""></figure>',
+    '',
+    '</div>',
+  ].join('\n');
+  assert.equal(stripImageDivs(input), '<figure><img src="a.png" alt=""></figure>');
+});
+
+test('stripImageDivs unwraps a div holding a bare img with no figure', () => {
+  assert.equal(
+    stripImageDivs('<div align="center">\n\n<img src="a.png" alt="">\n\n</div>'),
+    '<img src="a.png" alt="">'
+  );
+});
+
+test('stripImageDivs throws rather than silently dropping a div holding real prose', () => {
+  assert.throws(
+    () => stripImageDivs('<div><p>Some real documentation text.</p></div>'),
+    /stripImageDivs: <div> holds more than figures\/images/
+  );
+});
+
+test('a div inside a fence is left as literal text', () => {
+  const input = '```html\n<div id="app"></div>\n```';
+  assert.equal(stripImageDivs(input), input);
 });

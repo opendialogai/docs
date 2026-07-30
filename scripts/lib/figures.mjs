@@ -70,6 +70,33 @@ export function convertFigures(text) {
   });
 }
 
+const IMAGE_DIV = /<div\b[^>]*>([\s\S]*?)<\/div>/g;
+const IMAGE_DIV_CONTENT = /^(?:\s|<figure>[\s\S]*?<\/figure>|<img\b[^>]*>)*$/;
+
+/**
+ * Strips GitBook's alignment <div> wrapper from around one or more <figure>/<img> elements.
+ *
+ * GitBook uses this div's `align`/`data-full-width` attributes to position an image; a
+ * markdown image has no such concept, so the wrapper carries nothing worth keeping. Left in
+ * place it is actively harmful: MDX treats a bare HTML block as ending at the first blank
+ * line, and every one of these divs has its content on a separate line from its own closing
+ * tag, so the div is never actually closed as far as MDX's parser is concerned — a page
+ * carrying one fails to build.
+ *
+ * Throws when a div's content is anything other than figures, bare images and whitespace, so
+ * a div wrapping real prose is never silently dropped.
+ */
+export function stripImageDivs(text) {
+  return protectCode(text, (masked) =>
+    masked.replace(IMAGE_DIV, (whole, inner) => {
+      if (!IMAGE_DIV_CONTENT.test(inner)) {
+        throw new Error(`stripImageDivs: <div> holds more than figures/images: ${whole.slice(0, 80)}`);
+      }
+      return inner.trim();
+    })
+  );
+}
+
 /** Normalises the paths of markdown images that were already in the source. */
 export function rewriteAssetRefs(text) {
   return protectCode(text, (masked) =>

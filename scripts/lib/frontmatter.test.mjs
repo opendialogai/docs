@@ -84,6 +84,12 @@ test('takeTitle strips inline tags and unescapes brackets', () => {
   assert.equal(takeTitle('# Best <mark>practices</mark>\n').title, 'Best practices');
 });
 
+test('takeTitle strips the &#x20; entity', () => {
+  // conversation-design/introduction/README.md's H1 carries a trailing &#x20; — a no-op
+  // space GitBook renders — which would otherwise leak into the emitted frontmatter title.
+  assert.equal(takeTitle('# Best practices&#x20;\n').title, 'Best practices');
+});
+
 test('takeTitle ignores a # line inside a fenced code block', () => {
   // Four source files open a shell fence with a comment; that must not become the title.
   const body = '```bash\n# Install the CLI\n```\n\n# Real title\n';

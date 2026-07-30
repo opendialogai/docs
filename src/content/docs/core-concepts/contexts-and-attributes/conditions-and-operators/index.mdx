@@ -1,0 +1,154 @@
+---
+title: Conditions and operators
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Conditions are a way that attributes can be used to shape the flow of the conversation. These conditions are essentially asking a question. If the answer to that question is yes, then the message is eligible for use in the conversation. The various questions being asked are called Operations.
+
+## Available operations on individual conditions
+
+<CardGrid>
+  <Card title="Is True">
+    Can be used with Boolean Attributes
+
+    Checks if Attribute value is equal to "True"
+  </Card>
+  <Card title="Is False">
+    Can be used with Boolean Attributes
+
+    Checks if Attribute value is equal to "False"
+  </Card>
+  <Card title="Equals">
+    Can be used with Integer, Float, and String Attributes
+
+    Checks if Attribute value is equal to a set value in the condition
+  </Card>
+  <Card title="Not Equals">
+    Can be used with Integer, Float, and String Attributes
+
+    Checks if Attribute value is not equal to a set value in the condition
+  </Card>
+  <Card title="Greater Than">
+    Can be used with any Attribute with a numerical value
+
+    Checks if Attribute value is greater than the set value in the condition
+  </Card>
+  <Card title="Greater Than or Equal To">
+    Can be used with any Attribute with a numerical value.
+
+    Checks if Attribute value is greater than or equal to the set value in the condition
+  </Card>
+  <Card title="Less Than">
+    Can be used with any Attribute with a numerical value
+
+    Checks if Attribute value is less than the set value in the condition
+  </Card>
+  <Card title="Less Than or Equal To">
+    Can be used with any Attribute with a numerical value.
+
+    Checks if Attribute value is less than or equal to the set value in the condition
+  </Card>
+  <Card title="Time Passed Equals">
+    Can be used with last_seen Attribute
+
+    Checks if last_seen Attribute is equal to the set value in the condition
+  </Card>
+  <Card title="Time Passed Greater Than">
+    Can be used with last_seen Attribute
+
+    Checks if last_seen Attribute is greater than the set value in the condition
+  </Card>
+  <Card title="Time Passed Less Than">
+    Can be used with last_seen Attribute
+
+    Checks if last_seen Attribute is less than the set value in the condition
+  </Card>
+  <Card title="Is Not Set">
+    Can be used with any Attribute
+
+    Checks if the Attribute does not have a value set
+  </Card>
+  <Card title="Is Set">
+    Can be used with any Attribute
+
+    Checks if the Attribute does have a value set
+  </Card>
+  <Card title="Is Empty">
+    Can be used with any Attribute
+
+    Checks if the Attribute does not have a value
+  </Card>
+  <Card title="Is Not Empty">
+    Can be used with any Attribute
+
+    Checks if the Attribute value does have a value
+  </Card>
+  <Card title="In Set">
+    Can be used with String Attributes
+
+    Checks if the Attribute value includes the text value set in the condition
+  </Card>
+  <Card title="Not In Set">
+    Can be used with String Attributes
+
+    Checks if the Attribute value does not include the text value set in the condition
+  </Card>
+  <Card title="Is Before">
+    Can be used with Timestamp attributes
+
+    Checks if the Attribute value is before the value set in the condition. The value may be a textual representation and contain a timezone such as "10:00 BST".
+  </Card>
+  <Card title="Is After">
+    Can be used with Timestamp attributes
+
+    Checks if the Attribute value is after the value set in the condition. The value may be a textual representation and contain a timezone such as "18:00 BST".
+  </Card>
+  <Card title="Is Past">
+    Can be used with Timestamp attributes
+
+    Checks if the Attribute value is in the past relative to the time at the moment of evaluation.
+  </Card>
+  <Card title="Is Future">
+    Can be used with Timestamp attributes
+
+    Checks if the Attribute value is in the future relative to the time at the moment of evaluation.
+  </Card>
+  <Card title="Is Today">
+    Can be used with Timestamp attributes
+
+    Checks if the Attribute value is today at the moment of evaluation.-
+  </Card>
+</CardGrid>
+
+## Operators to combine multiple conditions
+
+You can chain or group multiple conditions (two or more) together and apply them to any Conversation Object or Message Template, enabling validation through an operator. Currently, the supported operators for chaining conditions are **And** and **Or**.
+
+By default, the operator for multiple conditions is set to **And**.
+
+#### **Example**
+
+Let’s consider an example with two conditions for a Conversation Object: `user_name` and `user_email`.
+
+* **And Operator**: If the operator is set to **And**, the chained conditions will be true only when _both_ conditions are met. For instance, the object will be considered valid only if both `user_name` and `user_email` are set.
+
+![](</.gitbook/assets/image (565).png>)
+
+*Conditions And operator*
+
+* **Or Operator**: When the operator is set to **Or**, the chained condition will be true if _either_ of the conditions is met. In this case, the object will be valid if either `user_name` or `user_email` is set.
+
+![](</.gitbook/assets/image (567).png>)
+
+*Conditions Or operator*
+
+The above also applies to Message Templates.<br />
+
+![](</.gitbook/assets/image (569).png>)
+
+*Message Template conditions OR operator*
+
+:::note
+When adding more than two conditions, you will be asked to select an operator.  This operator will apply to all set conditions.  So, if you create 3 conditions, the AND  or OR operator will apply to all 3.
+:::

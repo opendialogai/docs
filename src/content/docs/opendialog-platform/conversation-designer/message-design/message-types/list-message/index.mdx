@@ -1,0 +1,78 @@
+---
+title: List Message
+description: List messages allow for multiple messages to be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search
+---
+
+import Embed from '~/components/Embed.astro';
+
+
+## What is a list message?
+
+List messages allow for multiple messages to be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search.
+
+A list message is a message that essentially looks like a carousel. Within this carousel you can have multiple different items, like a list, that contain information. List messages work well together with rich messages but can be used as a wrapper for any messages types.
+
+## When to use list messages
+
+A carousel list message in your OpenDialog chatbot can be quite useful for various purposes. For example, if you're running an e-commerce chatbot, a carousel can display multiple products at once, allowing users to browse through a selection and choose what interests them. They add visual interest to the conversation, making interactions more engaging and intuitive for users.
+
+![](</.gitbook/assets/Screenshot 2024-04-29 at 07.48.11.png>)
+
+*Example of a list message*
+
+## How to create a list message
+
+### Via the custom message in Message Editor
+
+Navigate to the [Message Editor](/opendialog-platform/conversation-designer/message-design/message-editor) and create a _Custom Message._ Select `list-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
+
+Fill in the template with the [properties ](/opendialog-platform/conversation-designer/message-design/message-types/list-message#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
+
+![](</.gitbook/assets/Group 16.png>)
+
+*How to create a list message via the custom message editor*
+
+:::tip
+* Open your OpenDialog application
+* Select the Scenario that you wish to edit
+* Select Design from the left hand panel and select Messages
+* Go into the message that you want to add a message block to
+* Add a 'Custom Message' block
+* Select 'list message' from the drop down
+* Add in your own text to the fields you want to customise
+* To preview your message, go to the Preview section
+:::
+
+#### XML Snippet
+
+```
+<list-message>
+    <item><text-message>{text_message}</text-message></item>
+    <item><image-message>{image_message}</image-message></item>
+    <item><rich-message>{rich_message}</rich-message></item>
+</list-message>
+```
+
+#### Properties
+
+Within each item of your list message, you can also add a [rich message](/opendialog-platform/conversation-designer/message-design/message-types/rich-message). See the rich message page for more information
+
+:::caution
+If you change your mind and select a different message type after generating the XML code, the new message code will be appended in the same window so make sure to delete the old message code.
+:::
+
+## How to use a list message
+
+<Embed url="https://www.loom.com/share/0d749f8e4b224eb49d052b4d46f197f0?sid=5555dcef-eaa6-4ab6-a05d-9dc6aba6f3f5" />
+
+:::caution
+**Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
+:::
+
+## How to construct a list message
+
+When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structing these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](/opendialog-platform/conversation-designer/message-design/constructing-messages)page for more information.
+
+:::note
+For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](/opendialog-platform/conversation-designer/designing-accessible-chatbots).
+:::

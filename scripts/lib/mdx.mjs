@@ -41,6 +41,49 @@ function styleObject(css) {
   return entries.length ? `{{ ${entries.join(', ')} }}` : '{{}}';
 }
 
+const PRE_CODE = /<pre>(?:<code>)?([\s\S]*?)(?:<\/code>)?<\/pre>/g;
+const STRONG = /<strong>([\s\S]*?)<\/strong>/g;
+
+/**
+ * Rewrites a multi-line `<pre><code>…</code></pre>` block into a bare `<pre>…</pre>` with its
+ * content starting on the line after the opening tag, and joins a `<strong>` inside it back
+ * onto one line.
+ *
+ * MDX cannot parse this pair across multiple lines at all — even with no nested tag, content
+ * immediately following `<pre>` or `<code>` on the same line is read as inline phrasing content,
+ * and phrasing content in MDX's paragraph model cannot carry a hard line break the way
+ * CommonMark's raw-HTML-block rule would allow (MDX does not apply that rule to tags it reads
+ * as JSX). The same is true of a `<strong>` whose open and close land on different lines.
+ *
+ * Neither change is visible: moving `<pre>`'s content onto its own line costs nothing because
+ * the HTML spec requires browsers to ignore exactly one newline immediately after a `<pre>`
+ * start tag (`<code>` has no such rule, so it is dropped rather than given the same treatment —
+ * its monospacing is redundant with `<pre>`'s own); and the corpus's one `<strong>` here has
+ * nothing following its internal newline but the closing tag, so that newline is a trailing
+ * artifact rather than a separating line break. A `<strong>` with a real line break in the
+ * middle of its text throws rather than being silently joined into one run-on line.
+ *
+ * Only the one shape the corpus has — a bare, attribute-less `<pre><code>` — is recognised. A
+ * `<pre>` this does not match (a differently-shaped one, e.g. the ones inside
+ * using-jmespath-expressions.md's tables) is left untouched: those pages are plain .md, where
+ * none of this applies.
+ */
+export function unwrapPreCode(text) {
+  return protectCode(text, (masked) =>
+    masked.replace(PRE_CODE, (whole, inner) => {
+      if (!inner.includes('\n')) return whole;
+      const joined = inner.replace(STRONG, (strongWhole, strongInner) => {
+        const trimmed = strongInner.replace(/\n+$/, '');
+        if (trimmed.includes('\n')) {
+          throw new Error(`unwrapPreCode: <strong> spans more than one content line: ${strongWhole}`);
+        }
+        return `<strong>${trimmed}</strong>`;
+      });
+      return `<pre>\n${joined}\n</pre>`;
+    })
+  );
+}
+
 export function normaliseForMdx(text) {
   return protectCode(text, (masked) => {
     // Tags are stashed before brace escaping so attributes — including the style objects
