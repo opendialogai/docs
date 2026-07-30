@@ -225,8 +225,10 @@ const EXPECTED = {
   cardTableCards: 41,
   embeds: 36,
   cardGrids: 9,
-  // 500 mapped assets, but one (Knowledge Base Demo.gif) is asset-map.json's sole kind: 'video'
-  // entry and renders as a <video> element rather than a markdown image.
+  // Markdown-image occurrences across the corpus, not distinct assets — most of the 498
+  // image-kind entries in asset-map.json are referenced more than once. This is one less than
+  // the full occurrence count, because the corpus's sole video-kind asset (Knowledge Base
+  // Demo.gif) renders as a <video> element rather than a markdown image.
   images: 528,
   droppedCovers: 13,
   survivingBlocks: 0,

@@ -10,18 +10,13 @@
  * stays green: Astro treats an unresolvable *relative* image path as a fatal build error,
  * whereas a leading "/" is read as a public/ path and left alone.
  */
+import { ASSET_SRC, unescapeAssetName } from './asset-refs.mjs';
 import { protectCode } from './segments.mjs';
 
 export const NEEDS_ANGLE = /[ ()]/;
 const FIGURE = /<figure>\s*<img\s+([^>]*?)>\s*(?:<figcaption>([\s\S]*?)<\/figcaption>)?\s*<\/figure>/g;
 const BARE_IMG = /<img\s+([^>]*?)>/g;
 const ASSET_IMAGE = /!\[([^\]]*)\]\((<[^>]*>|[^)]*(?:\([^)]*\)[^)]*)*)\)/g;
-const ASSET_SRC = /\.gitbook\/assets\/(.*)$/;
-
-/** Unescapes a captured .gitbook/assets path segment into the bare filename it names. */
-function unescapeAssetName(raw) {
-  return decodeURIComponent(raw.replace(/\\([_()*[\]\-.])/g, '$1'));
-}
 
 /** The bare, unescaped filename a .gitbook/assets reference names, or null if it is not one. */
 function assetName(src) {
@@ -53,7 +48,8 @@ function image(alt, src, assets) {
   const entry = assets ? assets[assetName(src)] : null;
   const path = assetPath(src, assets);
   if (entry?.kind === 'video') {
-    return `<video autoplay loop muted playsinline src="${path}"></video>`;
+    const ariaLabel = alt ? ` aria-label="${alt}"` : '';
+    return `<video autoplay loop muted playsinline${ariaLabel} src="${path}"></video>`;
   }
   return `![${alt}](${NEEDS_ANGLE.test(path) ? `<${path}>` : path})`;
 }

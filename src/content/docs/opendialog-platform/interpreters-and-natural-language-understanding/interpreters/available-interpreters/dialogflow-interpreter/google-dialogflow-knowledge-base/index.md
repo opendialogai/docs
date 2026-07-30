@@ -12,7 +12,7 @@ For this particular example, we'll create a delivery knowledge base. Navigate to
 
 [DeliveryKnowledgeBase.csv](/files/deliveryknowledgebase.csv)
 
-<video autoplay loop muted playsinline src="/media/knowledge-base-demo.gif"></video>
+<video autoplay loop muted playsinline aria-label="DialogFlow Knowledge Base Demo" src="/media/knowledge-base-demo.gif"></video>
 
 ## Mapping Intents
 

@@ -182,10 +182,20 @@ test('a mapped image emits the alias reference', () => {
 });
 
 test('a mapped video emits a video element, not an image', () => {
-  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets: ASSETS });
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt="A demo"></figure>', { assets: ASSETS });
   assert.match(out, /<video[^>]*autoplay[^>]*loop[^>]*muted[^>]*playsinline/);
   assert.match(out, /src="\/media\/demo\.mp4"/);
   assert.doesNotMatch(out, /!\[/);
+});
+
+test('a mapped video carries its alt text forward as an aria-label', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt="A demo"></figure>', { assets: ASSETS });
+  assert.match(out, /aria-label="A demo"/);
+});
+
+test('a mapped video with no alt text emits no empty aria-label', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets: ASSETS });
+  assert.doesNotMatch(out, /aria-label/);
 });
 
 test('with no map at all the placeholder form is kept', () => {
