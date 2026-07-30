@@ -202,19 +202,27 @@ export function convertCardTables(text, ctx) {
 }
 
 /**
- * Counts data-card-cover image references lost in conversion, for the Phase 3 handoff.
+ * Every data-card-cover image href in `text`, in document order.
  *
- * Also run under protectCode, for the same reason as convertCardTables: a card-table shown as a
- * code sample inside a fence must not be counted as a real, converting table.
+ * Card covers have no <LinkCard> equivalent, so conversion discards them. Phase 3 subtracts
+ * these from the asset copy set so a cover referenced nowhere else is not copied into
+ * src/assets/, where nothing would render it.
  */
-export function countDroppedCovers(text) {
-  let total = 0;
+export function coverTargets(text) {
+  const found = [];
   protectCode(text, (masked) => {
     for (const [table] of masked.matchAll(CARD_TABLE)) {
       if (!/data-card-cover/.test(table)) continue;
-      total += [...table.matchAll(/<a href="[^"]*\.(?:png|jpe?g|gif|svg|webp)"/gi)].length;
+      for (const [, href] of table.matchAll(/<a href="([^"]*\.(?:png|jpe?g|gif|svg|webp))"/gi)) {
+        found.push(href);
+      }
     }
     return masked;
   });
-  return total;
+  return found;
+}
+
+/** Counts data-card-cover image references lost in conversion, for the Phase 3 handoff. */
+export function countDroppedCovers(text) {
+  return coverTargets(text).length;
 }

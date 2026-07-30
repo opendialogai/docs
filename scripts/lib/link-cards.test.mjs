@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { convertCardTables, convertContentRefs, countDroppedCovers } from './link-cards.mjs';
+import { convertCardTables, convertContentRefs, countDroppedCovers, coverTargets } from './link-cards.mjs';
 
 const routes = new Map([
   ['a/text-message.md', { url: '/design/text-message' }],
@@ -192,4 +192,48 @@ test('countDroppedCovers ignores a card-table shown as a code sample inside a fe
     '<tr><td><a href="../.gitbook/assets/a.png">a.png</a></td></tr></tbody></table>\n' +
     '```';
   assert.equal(countDroppedCovers(input), 0);
+});
+
+test('coverTargets returns each cover href in document order', () => {
+  const text = [
+    '<table data-view="cards" data-card-cover="true">',
+    '<tbody>',
+    '<tr><td><a href="../.gitbook/assets/one.png">one</a></td><td>Body</td></tr>',
+    '<tr><td><a href="../.gitbook/assets/two (1).png">two</a></td><td>Body</td></tr>',
+    '</tbody>',
+    '</table>',
+  ].join('\n');
+  assert.deepEqual(coverTargets(text), [
+    '../.gitbook/assets/one.png',
+    '../.gitbook/assets/two (1).png',
+  ]);
+});
+
+test('coverTargets ignores tables without a cover column', () => {
+  const text = '<table data-view="cards"><tbody><tr><td><a href="../.gitbook/assets/a.png">a</a></td></tr></tbody></table>';
+  assert.deepEqual(coverTargets(text), []);
+});
+
+test('coverTargets ignores a card table inside a fenced block', () => {
+  const text = [
+    '```html',
+    '<table data-view="cards" data-card-cover="true">',
+    '<tr><td><a href="../.gitbook/assets/fenced.png">x</a></td></tr>',
+    '</table>',
+    '```',
+  ].join('\n');
+  assert.deepEqual(coverTargets(text), []);
+});
+
+test('countDroppedCovers reports the same number of targets', () => {
+  const text = [
+    '<table data-view="cards" data-card-cover="true">',
+    '<tbody>',
+    '<tr><td><a href="../.gitbook/assets/one.png">one</a></td><td>Body</td></tr>',
+    '<tr><td><a href="../.gitbook/assets/two.png">two</a></td><td>Body</td></tr>',
+    '</tbody>',
+    '</table>',
+  ].join('\n');
+  assert.equal(countDroppedCovers(text), coverTargets(text).length);
+  assert.equal(countDroppedCovers(text), 2);
 });
