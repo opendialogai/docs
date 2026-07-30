@@ -9,6 +9,15 @@ import { extractTargets } from './links.mjs';
 import { coverTargets } from './link-cards.mjs';
 
 const ASSET = /\.gitbook\/assets\/(.*)$/;
+/**
+ * Matches any double-quoted src="…" or href="…" text, regardless of surrounding markup.
+ *
+ * This is also the only thing that finds a GitBook `{% file src="…" %}` block's asset — there
+ * is no dedicated pattern for that construct, because its `src="…"` attribute is textually
+ * indistinguishable from an HTML one. A `{% file %}` block written with single quotes, or any
+ * other attribute syntax, would not match this regex and its asset would silently disappear
+ * from `all` with no error. Anyone changing GitBook's file-block syntax must check this regex.
+ */
 const ATTR = /(?:src|href)="([^"]*)"/g;
 
 /** Bare asset filename from a destination, or null when the destination is not an asset. */

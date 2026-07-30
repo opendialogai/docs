@@ -32,7 +32,10 @@ test('finds raw HTML src and href references', () => {
   assert.deepEqual(assetRefsInFile(text).all, ['raw.png', 'doc.csv']);
 });
 
-test('finds a GitBook file block', () => {
+// This is generic ATTR coverage, not a dedicated file-block pattern: a {% file %} block's
+// asset is found only because its src="…" attribute happens to read like an HTML one. See
+// the ATTR comment in asset-refs.mjs.
+test('finds a GitBook file block via its src="…" attribute', () => {
   const { all } = assetRefsInFile('{% file src="../.gitbook/assets/data.csv" %}');
   assert.deepEqual(all, ['data.csv']);
 });
