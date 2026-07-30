@@ -14,7 +14,7 @@ title: Troubleshooting interpreters
 
         ![This image shows the window to run the interpreter test in OD](/.gitbook/assets/2023-06-16_07-44-00.png)
 
-*Run interpreter test in OD*
+        *Run interpreter test in OD*
 
 
 

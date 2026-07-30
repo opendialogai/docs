@@ -81,6 +81,23 @@ test('a code span in a caption becomes a backtick span, not plain text', () => {
   );
 });
 
+test('a figure indented inside a list item emits an equally indented caption', () => {
+  // troubleshooting-interpreters.md:13 and about-attributes.md:53 both sit this way. A
+  // column-0 caption line closes the enclosing list, turning the next list item into an
+  // indented code block.
+  const input =
+    '*   Some list text\n\n' +
+    '        <figure><img src=".gitbook/assets/a.png" alt=""><figcaption><p>A caption</p></figcaption></figure>\n\n' +
+    '        *   Next bullet';
+  assert.equal(
+    convertFigures(input),
+    '*   Some list text\n\n' +
+      '        ![](/.gitbook/assets/a.png)\n\n' +
+      '        *A caption*\n\n' +
+      '        *   Next bullet'
+  );
+});
+
 test('a figure holding more than one img throws rather than silently dropping one', () => {
   assert.throws(
     () =>

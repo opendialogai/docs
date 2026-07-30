@@ -48,15 +48,24 @@ function captionText(caption) {
  * markup in the output, silently shipping broken HTML into a published page, so that shape is
  * rejected rather than degraded. Likewise an <img> with no src attribute never occurs in the
  * corpus; rather than passing an untouched, unoptimised <img> through, that is also rejected.
+ *
+ * A captioned figure's leading whitespace carries onto its caption line too. The <img> itself
+ * inherits the indentation of the line it sits on because FIGURE is replaced in place, but the
+ * appended caption line does not unless it is given the same indent explicitly — and 2 of the
+ * 430 figures sit inside a list item (troubleshooting-interpreters.md, about-attributes.md),
+ * where a column-0 caption line closes the enclosing list at that point in the document.
  */
 export function convertFigures(text) {
   return protectCode(text, (masked) => {
     const converted = masked
-      .replace(FIGURE, (_, attrs, caption) => {
+      .replace(FIGURE, (_, attrs, caption, offset, full) => {
+        const lineStart = full.lastIndexOf('\n', offset - 1) + 1;
+        const before = full.slice(lineStart, offset);
+        const indent = /^[ \t]*$/.test(before) ? before : '';
         const src = attrs.match(/src="([^"]*)"/)?.[1] ?? '';
         const alt = attrs.match(/alt="([^"]*)"/)?.[1] ?? '';
         const cap = captionText(caption);
-        return cap ? `${image(alt, src)}\n\n*${cap}*` : image(alt, src);
+        return cap ? `${image(alt, src)}\n\n${indent}*${cap}*` : image(alt, src);
       })
       .replace(BARE_IMG, (whole, attrs) => {
         const src = attrs.match(/src="([^"]*)"/)?.[1];

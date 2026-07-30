@@ -1064,10 +1064,16 @@ Recorded so they are not rediscovered as new. None is reachable on today's corpu
   figures measured at 0/0/1/18 ms), which makes the loud-failure path the slow one.
 - `convert.mjs`: `JSX_ATTRS`/`JSX_TAG` duplicate and diverge from `mdx.mjs`'s versions while a
   comment claims they mirror it; `filter(line => !line.startsWith('import '))` would also drop
-  a prose line beginning "import " (none exist across the 46 `.mdx` files);
-  `stats.images`/`embeds`/`cardGrids`/`steps` count over the whole output including fenced
-  code, unlike the `surviving*` counters, so a future fenced `![` would inflate the figure and
-  read as a pass.
+  a prose line beginning "import " (none exist across the 46 `.mdx` files); `stats.images`/
+  `embeds`/`cardGrids`/`steps` count over the whole output text, unlike the `surviving*`
+  counters, which use `countInProse` to look only outside fenced code — originally written here
+  as "a future fenced `![` would inflate the figure and read as a pass", with no drift today.
+  **Correction, made necessary by the 2026-07-30 whole-branch review (see below): there was
+  drift today, for a different reason than the one named.** `countInProse`'s fence mask does
+  not cover *indented* code either, and before that review's figure-caption-indentation fix,
+  2 of the 529 counted images sat inside an indented CommonMark code block and did not render
+  as an `<img>` at all — `images: 529` never distinguished "a `![` is somewhere in the text"
+  from "an image is on the page". Fixed; see below.
 - `sidebar-tree.mjs`: tests exercise only depths 0/2/4 while the real `SUMMARY.md` nests to
   depth 8; no test covers a section boundary occurring mid-nesting with a non-empty stack.
 
@@ -1145,3 +1151,199 @@ wrong:
   set" against the 11-file `.mdx` candidate set of the time. With the set now at 46 files the
   figure is **14 lines across 6 files**. The entry's conclusion — keep `<LinkCard>`, escape
   braces as output encoding — is unchanged and was correct.
+
+---
+
+## 2026-07-30 — Final whole-branch review: fixes
+
+The final whole-branch review before push found 1 critical and 4 important findings. All are
+fixed here. Three further findings, triaged by that review as needing to survive the deletion
+of `.superpowers/sdd/2026-07-29-phase-2-conversion-script/progress.md` (git-ignored scratch,
+gone at merge), are recorded below instead of fixed — none is reachable on today's corpus.
+
+### CRITICAL — `figures.mjs` emitted a figure caption at column 0, breaking any list it sat in
+
+`convertFigures` replaces `<figure>` markup in place, so a captioned figure's `<img>` inherits
+the indentation of the line it sits on, but the caption line it appends — `\n\n*caption*` — did
+not. Two of the 430 figures sit indented inside a list item:
+`troubleshooting-interpreters.md:13` (8 spaces) and `about-attributes.md:53` (6 spaces). In both,
+the column-0 caption line closed the enclosing (nested) `<ul>` early. On
+`troubleshooting-interpreters`, that turned the following 8-space bullet and its two 12-space
+images into a CommonMark **indented code block**: the text `![](...)` for two images was still
+present in the generated `.md`, so `images: 529` did not move, but neither image rendered as an
+`<img>` on the built page — they showed as literal source inside
+`<pre data-language="plaintext">`. On `about-attributes`, the caption detached to a top-level
+`<p>` after the list closed, no longer paired with its image.
+
+**Why no invariant caught it.** `stats.images` counts `![` anywhere in the output text
+(`scripts/convert.mjs:188`); `survivingBlocks` and the other `surviving*` counters mask fenced
+code (via `countInProse`) but not *indented* code. Nothing in the pipeline distinguishes "text
+that reads as a markdown image" from "text CommonMark actually renders as one". `astro build`
+stayed green throughout, because an indented code block is entirely valid HTML — it is just not
+the two screenshots the page is supposed to show.
+
+**Live-site check, before committing to a fix.** Rather than assume the caption should be
+indented into the list, both live pages were checked directly in a browser
+(`docs.opendialog.ai`), since `reference/` holds only `llms.txt` and the two sitemaps — no HTML
+snapshot exists to settle this offline. On both
+`/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters`
+and `/core-concepts/contexts-and-attributes/about-attributes`, walking up the DOM from the
+caption's text node lands on `FIGCAPTION -> ... -> LI -> UL -> LI -> UL`: GitBook nests the
+caption inside the enclosing list item on both pages. Indenting the caption into the list, as
+the review proposed, matches the live site; it was not a guess.
+
+**Fix.** `convertFigures`'s `FIGURE` replacer now takes the match offset (available from
+`String.replace`'s callback) and looks backward to the start of that line in the full text. If
+everything between the line start and the match is whitespace, that whitespace is used as the
+indent prefixed to the caption line; otherwise the indent is empty, matching every other figure
+in the corpus (`scripts/lib/figures.mjs`). A regression test asserts an indented figure yields an
+equally indented caption (`scripts/lib/figures.test.mjs`) — every prior case in that file sat at
+column 0, which is exactly why this survived every previous review.
+
+**`reflowImageDiv` is unaffected.** It always places a `<figure>` at column 0 inside its wrapper
+`<div>` (blank-line-separated, per its own JSDoc), and no image-wrapper `<div>` in the corpus is
+itself indented (`grep -rn '^[ \t]\+<div' source/` finds two indented `<div>` lines, both inside
+code fences in unrelated pages, neither an image wrapper). Re-running the full pipeline confirms
+this: exactly the two expected generated files change
+(`src/content/docs/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/troubleshooting-interpreters/index.md`
+and `src/content/docs/core-concepts/contexts-and-attributes/about-attributes/index.mdx`), each by
+one line — the caption gaining its list's indentation — and every page carrying a wrapper `<div>`
+is byte-identical to before.
+
+**Verified in the rendered output, not just the source.** After `npx astro build`:
+`troubleshooting-interpreters/index.html` no longer contains a
+`<pre data-language="plaintext">` holding markdown, and its `<img>` count (excluding the site
+logo) is 6, matching the 6 `![` in the generated `.md` — before the fix these were 5 and 6. The
+caption renders as an `<em>` paragraph nested inside the same `<li>`/`<ul>` as its image, matching
+the live-site DOM shape measured above. `about-attributes/index.html` shows the same: 3 rendered
+`<img>` matching 3 `![` in the generated `.mdx`, caption nested correctly.
+
+All 13 invariants still pass at their existing values (`images: 529` — the count itself does not
+move, since the same two `![` are still in the text; what changes is that they now actually
+render). Route parity, page count and nav-entry count are unchanged. The full pipeline
+(`routes.mjs` → `convert.mjs` → `sidebar.mjs`) re-run twice leaves `git status --short` empty.
+
+### IMPORTANT — `convertContentRefs` no longer silently deletes the rest of a file on an
+unterminated block
+
+`url` was set on `{% content-ref %}`'s opening marker and cleared only by
+`{% endcontent-ref %}`; every line while it was set returned `[]`, with no check that the block
+had actually closed by end of input. An unterminated block silently discarded everything after
+it, no throw, no warning — the exact failure mode commit `af32c13` hardened `convertSteppers`
+against, and until now the only block transform in `gitbook-blocks.mjs`/`link-cards.mjs` still
+degrading this way. The `contentRefCards: 51` invariant was only a partial backstop: a sync that
+adds one content-ref and malforms another still reconciles to 51 and passes green with a page
+tail deleted.
+
+**Fix.** `convertContentRefs` now throws if `url` is still non-null after the line pass (an
+unterminated block), and throws on an inner line that is neither blank nor a bare
+`[text](target)` markdown link — the shape all 51 corpus content-refs hold today
+(`scripts/lib/link-cards.mjs`). Both are tested: one input ends mid-block with no
+`{% endcontent-ref %}` at all, the other includes a non-link inner line
+(`scripts/lib/link-cards.test.mjs`). All 51 real content-refs remain well-formed, so neither
+throw fires on the corpus; `contentRefCards: 51` is unchanged.
+
+### IMPORTANT — `convertCardTables` and `countDroppedCovers` now run under `protectCode`
+
+Both operated on raw text, bypassing the module's two code-safety primitives with no stated
+reason — `segments.mjs`'s header calls `mapLines`/`protectCode` "the foundation rather than a
+convenience", and every other transform in this pipeline is built on one of them (`convertCode`
+in `gitbook-blocks.mjs` is the sole other exception, and it carries a JSDoc explaining why it is
+safe to skip). A ` ```html ` fence containing a `<table data-view="cards">` had its contents
+rewritten into `<CardGrid>`/`<Card>` markup, corrupting the code sample. Zero card tables sit
+inside a fence in today's 208 files, so this was latent, not observed.
+
+**Fix.** Both now run their existing logic inside `protectCode`, with a one-line JSDoc note
+explaining why it is safe (card tables never contain fences, so nothing but the fenced-code
+exclusion changes). Two tests added: a card-table shown as an `html` code sample inside a fence
+is left as literal text by both `convertCardTables` and `countDroppedCovers`
+(`scripts/lib/link-cards.test.mjs`). Re-running the full pipeline confirms zero generated files
+changed as a result of this fix — every card-table page is byte-identical to before, since no
+real card table sits inside a fence.
+
+### IMPORTANT — six inline links in card-table descriptions flatten to plain text (accepted, not fixed)
+
+`plainText()` (`link-cards.mjs`) strips all tags when building a `LinkCard`/`Card` title or
+description. Starlight's `LinkCard` takes `description` as a plain string, so there is nowhere to
+put a link — this is an accepted limitation of the target component, not a code bug, and the code
+is unchanged. Six `<a href>` links disappear this way, all inside the same card-table shape
+repeated on two pages:
+`opendialog-platform/conversation-designer/message-design/message-editor.md` and
+`opendialog-platform/conversation-designer/message-design/README.md`, each linking `message
+types` to `message-types/`, `conditions` to `message-conditions.md` and `attribute` to
+`using-attributes-in-messages.md` from inside a card's description prose. Verified in the output:
+`src/content/docs/.../message-design/message-editor/index.mdx` renders
+`description="…to their fullest potential."` with the `message types` link gone. Logged here as
+this file is the register for exactly this kind of deviation and has recorded smaller ones.
+
+### `package.json` gains a `convert` script; `CLAUDE.md`'s command list corrected
+
+There was no single command tying `routes.mjs`, `convert.mjs` and `sidebar.mjs` together —
+`CLAUDE.md`'s Commands section listed them as separate manual steps, and `convert.mjs` itself
+iterates `route-map.json`, not `source/`. Run alone against a sync that **adds** a page, a stale
+`route-map.json` means the new page is never read: `files` stays at 204, every other counter is
+unchanged, and the run is green with a page silently missing. (A *deleted* page throws `ENOENT`,
+so only additions are silent this way.)
+
+`package.json` now has `"convert": "node scripts/routes.mjs && node scripts/convert.mjs && node
+scripts/sidebar.mjs"`. `CLAUDE.md`'s Commands section is updated to `npm run convert` and a note
+that running `convert.mjs` alone is unsafe against a page addition. Separately, that section
+documented `node scripts/verify-routes.mjs`, which does not exist — `routes.mjs` performs the
+sitemap-parity check itself and writes `route-map.json`; both the Commands list and the
+"Definition of done" line at the bottom of `CLAUDE.md` are corrected to name `routes.mjs`.
+
+### Three findings that must survive the ledger's deletion
+
+The final review's triage of `progress.md` (git-ignored, deleted at merge) judged these three
+must be recorded here. None is reachable on today's corpus.
+
+- **`isVideoEmbed` (`gitbook-blocks.mjs`) and `embedSrc` (`Embed.astro`) encode the same
+  embeddable-URL-shape knowledge in two files**, guarded only by a JSDoc cross-reference in each
+  direction — there is no shared constant. They currently agree on all four shapes handled
+  (`youtu.be/<id>`, `youtube.com/watch?v=<id>`, `loom.com/share/<id>`, and rejection of everything
+  else), including `?si=`/`?sid=` query-string handling. Adding a fifth shape — a YouTube
+  `/live/` URL, say — requires a human to update both files; nothing enforces that they stay in
+  sync.
+- **`styleObject` (`mdx.mjs`) wraps a CSS declaration's value in single quotes without escaping
+  any quote characters already in it.** All 131 `<mark style>` values in today's corpus are
+  `color:<name>`, so this never fires. A routine docs-team edit — `font-family: 'Times New
+  Roman'` inside a `<mark style="...">` — would emit a JSX string literal containing an
+  unescaped `'`, a malformed-JSX build failure rather than a throw at conversion time, the
+  opposite of this project's loud-failure house style.
+- **An `alt` attribute containing `]`, or a figure caption containing `*`, breaks the emitted
+  markdown**, because both are written into markdown syntax positions (`![alt](src)`,
+  `*caption*`) without escaping. Measured: zero occurrences of either today, across all 430
+  figures and 6 bare `<img>` tags — this is latent, not a bug reachable on the current corpus.
+  A future prose edit in GitBook could introduce one. This is a caution for the docs team, not a
+  code change, and belongs beside the other docs-team cautions logged in the "Phase 2 gate"
+  section above.
+
+### Minor, not fixed — the same indent-loss shape as the critical, elsewhere
+
+`convertHints`, `convertFile`, `convertColumns` and `convertContentRefs` (`gitbook-blocks.mjs`,
+`link-cards.mjs`) all match `^[ \t]*` on their opening/closing markers via `mapLines` and emit
+their replacement line(s) at column 0, the same root cause as the critical above. Zero indented
+`{%` markers exist anywhere in the 208-file corpus today, so none of the four fires. Not fixed:
+each is a line-for-line `mapLines` replacement rather than a multi-line regex match against
+offsets, so the fix would not reuse the technique used for `figures.mjs` above, and nothing in
+today's corpus needs it.
+
+### `.gitignore` gains `.playwright-mcp/`
+
+The Playwright MCP server used for the live-site check above writes a `.playwright-mcp/`
+directory into the repository working directory. It has appeared and been manually removed twice
+before during this branch's reviews (recorded in the ledger, now gone). One line prevents an
+accidental commit of browser artifacts; the directory created during this review's own live-site
+check was deleted before committing.
+
+### Verification run at this commit
+
+```
+node scripts/routes.mjs && node scripts/convert.mjs && node scripts/sidebar.mjs
+```
+204 derived / 204 live / 0 unreachable / 0 invented; all 13 invariants `ok`; 204 pages; 6
+sections, 245 nav entries. `npx astro build` succeeds, 205 pages (204 + `404.html`). Full test
+suite: 147/147 (142 plus 5 new — 1 in `figures.test.mjs`, 4 in `link-cards.test.mjs`). Pipeline
+re-run twice leaves `git status --short` empty except for the intentional source/test changes
+themselves. Exactly two files under `src/content/docs/` changed as a result of the critical fix;
+zero changed as a result of the `protectCode` or `convertContentRefs` fixes.

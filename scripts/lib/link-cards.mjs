@@ -5,7 +5,7 @@
  * Both need route-map.json: a content-ref's inner link text is a raw filename, and GitBook
  * substitutes the target page's title at render time.
  */
-import { mapLines } from './segments.mjs';
+import { mapLines, protectCode } from './segments.mjs';
 import { resolveSource } from './links.mjs';
 
 /** Escapes a value for use inside a double-quoted JSX attribute. */
@@ -55,10 +55,21 @@ function hrefFor(target, { source, routes }) {
   return `${route.url}${anchor}`;
 }
 
-/** Converts {% content-ref %} blocks to <LinkCard>. */
+const CONTENT_REF_INNER_LINK = /^\[[^\]]*\]\([^)]*\)$/;
+
+/**
+ * Converts {% content-ref %} blocks to <LinkCard>.
+ *
+ * Every line between the opening marker and {% endcontent-ref %} is discarded but for that
+ * closing marker itself — the corpus's inner line is always a raw "[filename](filename)" link,
+ * whose title comes from route-map.json instead. Both throw-guards below exist so that shape
+ * stays true rather than assumed: an unterminated block would otherwise discard every line to
+ * the end of the file with no error, and an inner line that is not blank or a bare link would
+ * otherwise vanish just as silently.
+ */
 export function convertContentRefs(text, ctx) {
   let url = null;
-  return mapLines(text, (line) => {
+  const out = mapLines(text, (line) => {
     const open = line.match(/^[ \t]*\{%\s*content-ref\s+url="([^"]+)"\s*%\}[ \t]*$/);
     if (open) {
       url = open[1];
@@ -74,8 +85,15 @@ export function convertContentRefs(text, ctx) {
       return [linkCard({ ...meta, href: hrefFor(target, ctx) })];
     }
     // The inner "[filename](filename)" line is discarded; the title comes from route-map.
+    if (line.trim() !== '' && !CONTENT_REF_INNER_LINK.test(line.trim())) {
+      throw new Error(`${ctx.source}: content-ref for ${url} holds an unrecognised inner line: ${line}`);
+    }
     return [];
   });
+  if (url !== null) {
+    throw new Error(`${ctx.source}: content-ref for ${url} is missing {% endcontent-ref %}`);
+  }
+  return out;
 }
 
 /** Returns the row elements of a card-table's tbody. */
@@ -139,50 +157,64 @@ const CARD_TABLE = /<table(?=[^>]*\bdata-view="cards")[^>]*>[\s\S]*?<\/table>/g;
  * target. data-card-cover images have no LinkCard equivalent and are skipped as href
  * candidates; countDroppedCovers reports them so Phase 3 does not delete those assets as
  * orphans.
+ *
+ * Run under protectCode so a card-table shown as a code sample inside a fence is left as literal
+ * text rather than rewritten into JSX. No card table sits inside a fence in the corpus today, so
+ * this is a latent guard, not an observed fix.
  */
 export function convertCardTables(text, ctx) {
-  return text.replace(CARD_TABLE, (table) => {
-    const cards = [];
-    for (const row of rows(table)) {
-      const cell = cells(row);
-      const nonEmpty = cell
-        .map((c, i) => ({ index: i, text: plainText(c) }))
-        .filter((c) => c.text !== '');
-      if (nonEmpty.length === 0) continue;
-      const title = nonEmpty[0];
-      const body = nonEmpty.slice(1).filter((c) => !isPureAnchor(cell[c.index]));
-      const bodyIndexes = new Set(body.map((c) => c.index));
+  return protectCode(text, (masked) =>
+    masked.replace(CARD_TABLE, (table) => {
+      const cards = [];
+      for (const row of rows(table)) {
+        const cell = cells(row);
+        const nonEmpty = cell
+          .map((c, i) => ({ index: i, text: plainText(c) }))
+          .filter((c) => c.text !== '');
+        if (nonEmpty.length === 0) continue;
+        const title = nonEmpty[0];
+        const body = nonEmpty.slice(1).filter((c) => !isPureAnchor(cell[c.index]));
+        const bodyIndexes = new Set(body.map((c) => c.index));
 
-      const hrefCandidates = cell
-        .map((c, i) => ({ index: i, href: firstHref(c) }))
-        .filter((c) => c.href !== null && !bodyIndexes.has(c.index))
-        .map((c) => c.href);
-      const target = hrefCandidates.find((href) => !IMAGE_EXTENSION.test(href));
+        const hrefCandidates = cell
+          .map((c, i) => ({ index: i, href: firstHref(c) }))
+          .filter((c) => c.href !== null && !bodyIndexes.has(c.index))
+          .map((c) => c.href);
+        const target = hrefCandidates.find((href) => !IMAGE_EXTENSION.test(href));
 
-      if (target) {
-        if (body.length > 1) {
-          throw new Error(
-            `${ctx.source}: card "${title.text}" has a link target and ${body.length} body cells — LinkCard can only show one as its description`
-          );
+        if (target) {
+          if (body.length > 1) {
+            throw new Error(
+              `${ctx.source}: card "${title.text}" has a link target and ${body.length} body cells — LinkCard can only show one as its description`
+            );
+          }
+          cards.push(linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) }));
+        } else {
+          cards.push(card({ title: title.text, body: body.map((c) => c.text) }));
         }
-        cards.push(linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) }));
-      } else {
-        cards.push(card({ title: title.text, body: body.map((c) => c.text) }));
       }
-    }
-    if (cards.length === 0) {
-      throw new Error('card-table has no rows with any title or body content to show');
-    }
-    return ['<CardGrid>', ...cards.map(indent), '</CardGrid>'].join('\n');
-  });
+      if (cards.length === 0) {
+        throw new Error('card-table has no rows with any title or body content to show');
+      }
+      return ['<CardGrid>', ...cards.map(indent), '</CardGrid>'].join('\n');
+    })
+  );
 }
 
-/** Counts data-card-cover image references lost in conversion, for the Phase 3 handoff. */
+/**
+ * Counts data-card-cover image references lost in conversion, for the Phase 3 handoff.
+ *
+ * Also run under protectCode, for the same reason as convertCardTables: a card-table shown as a
+ * code sample inside a fence must not be counted as a real, converting table.
+ */
 export function countDroppedCovers(text) {
   let total = 0;
-  for (const [table] of text.matchAll(CARD_TABLE)) {
-    if (!/data-card-cover/.test(table)) continue;
-    total += [...table.matchAll(/<a href="[^"]*\.(?:png|jpe?g|gif|svg|webp)"/gi)].length;
-  }
+  protectCode(text, (masked) => {
+    for (const [table] of masked.matchAll(CARD_TABLE)) {
+      if (!/data-card-cover/.test(table)) continue;
+      total += [...table.matchAll(/<a href="[^"]*\.(?:png|jpe?g|gif|svg|webp)"/gi)].length;
+    }
+    return masked;
+  });
   return total;
 }

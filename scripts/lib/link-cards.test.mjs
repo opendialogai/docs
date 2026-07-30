@@ -36,6 +36,25 @@ test('a content-ref to a page with no description omits the attribute', () => {
   );
 });
 
+test('an unterminated content-ref throws rather than silently deleting the rest of the file', () => {
+  const input = [
+    'Intro paragraph.',
+    '{% content-ref url="text-message.md" %}',
+    '[text-message.md](text-message.md)',
+  ].join('\n');
+  assert.throws(() => convertContentRefs(input, ctx), /a\/README\.md: content-ref for text-message\.md is missing \{% endcontent-ref %\}/);
+});
+
+test('a content-ref with an unrecognised inner line throws rather than silently discarding it', () => {
+  const input = [
+    '{% content-ref url="text-message.md" %}',
+    '[text-message.md](text-message.md)',
+    'A caption line that is not a link.',
+    '{% endcontent-ref %}',
+  ].join('\n');
+  assert.throws(() => convertContentRefs(input, ctx), /a\/README\.md: content-ref for text-message\.md holds an unrecognised inner line/);
+});
+
 test('a card-table becomes a CardGrid of LinkCards', () => {
   const input =
     '<table data-card-size="large" data-view="cards" data-full-width="false">' +
@@ -154,4 +173,23 @@ test('countDroppedCovers counts the cover assets LinkCard cannot show', () => {
 test('an ordinary table is left alone', () => {
   const input = '<table><thead><tr><th>A</th></tr></thead><tbody><tr><td>1</td></tr></tbody></table>';
   assert.equal(convertCardTables(input, ctx), input);
+});
+
+test('a card-table shown as a code sample inside a fence is left as literal text', () => {
+  const input =
+    '```html\n' +
+    '<table data-view="cards"><thead><tr><th></th></tr></thead><tbody>' +
+    '<tr><td><strong>Example</strong></td></tr></tbody></table>\n' +
+    '```';
+  assert.equal(convertCardTables(input, ctx), input);
+});
+
+test('countDroppedCovers ignores a card-table shown as a code sample inside a fence', () => {
+  const input =
+    '```html\n' +
+    '<table data-view="cards"><thead><tr>' +
+    '<th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody>' +
+    '<tr><td><a href="../.gitbook/assets/a.png">a.png</a></td></tr></tbody></table>\n' +
+    '```';
+  assert.equal(countDroppedCovers(input), 0);
 });
