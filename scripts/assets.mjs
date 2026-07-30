@@ -4,16 +4,19 @@
  *
  * Still images are resized to a width ceiling and, below a colour-count threshold,
  * palette-quantised; the source format is always preserved, since a `.jpg` file holding PNG bytes
- * is a content/extension mismatch. GIFs and other files are copied unchanged. A content-hash
- * cache skips re-encoding an asset whose bytes have not changed since the last run.
+ * is a content/extension mismatch. A GIF at or above GIF_VIDEO_THRESHOLD is re-encoded to MP4;
+ * smaller GIFs and other files are copied unchanged. A content-hash cache skips re-encoding an
+ * asset whose bytes have not changed since the last run.
  *
  * The copy set is derived from source/ alone — never from src/content/docs — because
  * convert.mjs consumes this map to emit its paths and would otherwise need itself first.
  *
  * Reproducible: output paths derive from sorted filenames, sharp's encoders are deterministic for
- * fixed parameters, and the cache keys on content hash rather than mtime, so a run against the
- * same source/ tree always produces byte-identical files and an identical asset-map.json.
+ * fixed parameters, ffmpeg is run with bitexact flags so it is too, and the cache keys on content
+ * hash rather than mtime, so a run against the same source/ tree always produces byte-identical
+ * files and an identical asset-map.json.
  */
+import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
@@ -83,6 +86,33 @@ async function countColours(buffer) {
 }
 
 /**
+ * Re-encodes an animated GIF to MP4, reading straight from source/ since ffmpeg takes a path
+ * rather than a buffer.
+ *
+ * -movflags +faststart puts the index first so the browser can start playing before the file has
+ * fully downloaded. yuv420p and the even-dimension scale filter are what Safari requires.
+ *
+ * -fflags +bitexact, -flags:v +bitexact and -map_metadata -1 strip encoder version strings,
+ * timestamps and other metadata libx264/the MP4 muxer would otherwise embed, which would
+ * otherwise make two encodes of the same input differ byte-for-byte and break the content-hash
+ * cache's guarantee that the same source/ tree always produces identical output.
+ */
+function encodeVideo(from, to) {
+  execFileSync('ffmpeg', [
+    '-y', '-loglevel', 'error',
+    '-fflags', '+bitexact',
+    '-i', from,
+    '-movflags', '+faststart',
+    '-pix_fmt', 'yuv420p',
+    '-vf', 'scale=trunc(iw/2)*2:trunc(ih/2)*2',
+    '-c:v', 'libx264', '-crf', '23', '-preset', 'slow', '-an',
+    '-flags:v', '+bitexact',
+    '-map_metadata', '-1',
+    to,
+  ]);
+}
+
+/**
  * Palette-quantises a resized PNG, keeping the result only when it is actually smaller.
  *
  * Palette is a PNG concept. This must only ever be called with a PNG buffer — calling it on a
@@ -139,15 +169,22 @@ let reused = 0;
 
 const assets = {};
 for (const name of [...copy].sort()) {
-  const source = readFileSync(join(SOURCE_ASSETS, name));
+  const from = join(SOURCE_ASSETS, name);
+  const source = readFileSync(from);
   const hash = createHash('sha256').update(source).digest('hex');
   const slug = slugs.get(name);
+  const still = STILL_IMAGE.test(name);
+
+  // A still image's plan needs a colour count, which needs the resize. Everything else can be
+  // planned immediately, and only those can change extension.
+  const early = still ? null : planAsset({ filename: name, bytes: source.length, colours: null });
+  const finalSlug = early?.treatment === 'encode-video' ? slug.replace(/\.gif$/i, '.mp4') : slug;
 
   const cached = previous[name];
   if (
     cached &&
     cached.hash === hash &&
-    cached.slug === slug &&
+    cached.slug === finalSlug &&
     cached.destination in DESTINATIONS &&
     existsSync(join(DESTINATIONS[cached.destination].dir, cached.slug))
   ) {
@@ -156,27 +193,26 @@ for (const name of [...copy].sort()) {
     continue;
   }
 
-  let plan;
-  let output;
-  if (STILL_IMAGE.test(name)) {
+  let plan = early;
+  let output = source;
+  if (still) {
     const resized = await resizeImage(source, name);
     plan = planAsset({ filename: name, bytes: source.length, colours: await countColours(resized) });
     output = plan.treatment === 'resize-quantise' && PNG.test(name) ? await quantise(resized) : resized;
     if (output.length > source.length) output = source;
-  } else {
-    plan = planAsset({ filename: name, bytes: source.length, colours: null });
-    output = source;
   }
 
   const destination = DESTINATIONS[plan.destination];
-  writeFileSync(join(destination.dir, slug), output);
+  const target = join(destination.dir, finalSlug);
+  if (plan.treatment === 'encode-video') encodeVideo(from, target);
+  else writeFileSync(target, output);
   encoded++;
 
   assets[name] = {
-    slug,
+    slug: finalSlug,
     kind: plan.kind,
     destination: plan.destination,
-    reference: destination.reference(slug),
+    reference: destination.reference(finalSlug),
     hash,
   };
 }

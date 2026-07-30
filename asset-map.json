@@ -1094,10 +1094,10 @@
       "hash": "f827b5ad0eb44d9865c6b70c6f6acd0d311e2db111a007147c5878e61f2738f9"
     },
     "Knowledge Base Demo.gif": {
-      "slug": "knowledge-base-demo.gif",
+      "slug": "knowledge-base-demo.mp4",
       "kind": "video",
       "destination": "public/media",
-      "reference": "/media/knowledge-base-demo.gif",
+      "reference": "/media/knowledge-base-demo.mp4",
       "hash": "8a62cb1b8bf749d681eeaff569e01589072b0319aabd17f51b999933d06c8a05"
     },
     "L3-Levels 1.png": {

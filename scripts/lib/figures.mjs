@@ -43,11 +43,16 @@ export function assetPath(src, assets) {
   return entry.reference;
 }
 
+const VIDEO_CONTAINER = /\.(?:mp4|webm)$/i;
+
 /** Renders an asset reference: an image, or a video element for an asset that became one. */
 function image(alt, src, assets) {
   const entry = assets ? assets[assetName(src)] : null;
   const path = assetPath(src, assets);
   if (entry?.kind === 'video') {
+    if (!VIDEO_CONTAINER.test(path)) {
+      throw new Error(`image: kind is "video" but reference is not a video container: ${path}`);
+    }
     const ariaLabel = alt ? ` aria-label="${alt}"` : '';
     return `<video autoplay loop muted playsinline${ariaLabel} src="${path}"></video>`;
   }

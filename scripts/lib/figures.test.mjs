@@ -198,6 +198,21 @@ test('a mapped video with no alt text emits no empty aria-label', () => {
   assert.doesNotMatch(out, /aria-label/);
 });
 
+test('a video kind mapped to an mp4 reference is accepted', () => {
+  const assets = { 'demo.gif': { slug: 'demo.mp4', kind: 'video', reference: '/media/demo.mp4', hash: 'y' } };
+  assert.doesNotThrow(() =>
+    convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets })
+  );
+});
+
+test('a video kind mapped to a gif reference throws rather than emitting an unplayable video', () => {
+  const assets = { 'demo.gif': { slug: 'demo.gif', kind: 'video', reference: '/media/demo.gif', hash: 'y' } };
+  assert.throws(
+    () => convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets }),
+    /kind is "video" but reference is not a video container/
+  );
+});
+
 test('with no map at all the placeholder form is kept', () => {
   const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: null });
   assert.equal(out.trim(), '![A](/.gitbook/assets/one.png)');
