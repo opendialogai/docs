@@ -6,13 +6,13 @@ title: Message Conditions
 
 Message conditions can be defined by clicking on Conditions in the Layout and adding context, attribute and other details. More information about context and attributes is a available in the next page on Attributes in Messages.
 
-![](</.gitbook/assets/2023-05-01_15-15-11 copy (1).png>)
+![](~/assets/2023-05-01-15-15-11-copy-1.png)
 
-![](/.gitbook/assets/2023-05-01_15-57-54.png)
+![](~/assets/2023-05-01-15-57-54.png)
 
 We define conditions so that the system can evaluate which message to use. In the image below, two messages are associated with the intent called intent.app.WelcomeUser. The message called intent.app.WelcomeNewUser gets used when the user is not an existing customer. If they are, the message intent.app.WelcomeExistingUser is used. Existing\_customer is an attribute of the user context. More information about using attributes in messages can be found in the next page, "Attributes in messages".
 
-![](/.gitbook/assets/2023-05-01_14-35-48.png)
+![](~/assets/2023-05-01-14-35-48.png)
 
 *Example of messages with conditions*
 
@@ -20,10 +20,10 @@ Continuing our example above, where we want to show different messages to users 
 
 For our example, then we would set the 'Attribute' to `seconds_since_last_seen` , 'Context' to `user`, 'Operation' to `Equals` and the 'Value' to '`0`' - meaning only show this message if the user has not been seen yet.
 
-![Conditions: New user welcome message](</.gitbook/assets/image (40).png>)
+![Conditions: New user welcome message](~/assets/image-40.png)
 
 Where as for the returning user, we would change the 'Operation' to be `Greater than`. Meaning only show this message if the user has been seen before.
 
-![Conditions: Returning user welcome message](</.gitbook/assets/image (254).png>)
+![Conditions: Returning user welcome message](~/assets/image-254.png)
 
 Conditions are really powerful for enabling personalised experiences for users. The key functionality that drives Conditions are Attributes and you find out more about them [here](/core-concepts/contexts-and-attributes/conditions-and-operators).

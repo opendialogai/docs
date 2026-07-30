@@ -170,6 +170,44 @@ test('a div inside a fence is left as literal text', () => {
   assert.equal(reflowImageDiv(input), input);
 });
 
+const ASSETS = {
+  'one.png': { slug: 'one.png', kind: 'image', reference: '~/assets/one.png', hash: 'x' },
+  'demo.gif': { slug: 'demo.mp4', kind: 'video', reference: '/media/demo.mp4', hash: 'y' },
+  'data.csv': { slug: 'data.csv', kind: 'file', reference: '/files/data.csv', hash: 'z' },
+};
+
+test('a mapped image emits the alias reference', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: ASSETS });
+  assert.equal(out.trim(), '![A](~/assets/one.png)');
+});
+
+test('a mapped video emits a video element, not an image', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets: ASSETS });
+  assert.match(out, /<video[^>]*autoplay[^>]*loop[^>]*muted[^>]*playsinline/);
+  assert.match(out, /src="\/media\/demo\.mp4"/);
+  assert.doesNotMatch(out, /!\[/);
+});
+
+test('with no map at all the placeholder form is kept', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: null });
+  assert.equal(out.trim(), '![A](/.gitbook/assets/one.png)');
+});
+
+test('a reference missing from an existing map throws', () => {
+  assert.throws(
+    () => convertFigures('<figure><img src="../.gitbook/assets/gone.png" alt=""></figure>', { assets: ASSETS }),
+    /gone\.png/
+  );
+});
+
+test('rewriteAssetRefs maps an existing markdown image', () => {
+  assert.equal(rewriteAssetRefs('![A](../.gitbook/assets/one.png)', { assets: ASSETS }), '![A](~/assets/one.png)');
+});
+
+test('a remote image is untouched whether or not a map exists', () => {
+  assert.equal(rewriteAssetRefs('![A](https://example.com/x.png)', { assets: ASSETS }), '![A](https://example.com/x.png)');
+});
+
 test('reflowImageDiv followed by convertFigures pairs each caption with its own image', () => {
   // End-to-end regression for the bug the review found: date-picker-message.md's shape is
   // exactly three figures on one line inside one div.

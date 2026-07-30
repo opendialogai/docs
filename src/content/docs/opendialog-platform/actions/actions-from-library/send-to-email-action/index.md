@@ -12,7 +12,7 @@ All you need to set this up is an email address to send the email to. Note that 
 
 ### Where to find
 
-![](</.gitbook/assets/Screenshot 2023-05-31 at 16.18.00.png>)
+![](~/assets/screenshot-2023-05-31-at-16-18-00.png)
 
 *Select the action library to add pre-defined actions like the send to email action*
 
@@ -32,7 +32,7 @@ Once you click on "Add from action library", give the action a name of your choi
 
 Select "Send to Email".
 
-![](/.gitbook/assets/2023-11-10_14-20-10.png)
+![](~/assets/2023-11-10-14-20-10.png)
 
 *Send to email action*
 
@@ -40,7 +40,7 @@ Add an email address, subject line and body.
 
 You can use attributes in your message. Do make sure these attributes have values, e.g. you can set attribute values in buttons, or attribute values may be passed on through integrations. For more on attributes and values, visit the [Contexts and attributes](/core-concepts/contexts-and-attributes) section.
 
-![](/.gitbook/assets/2023-11-10_14-24-27.png)
+![](~/assets/2023-11-10-14-24-27.png)
 
 *Send to email details*
 
@@ -48,7 +48,7 @@ Save the action.
 
 Activate the action.
 
-![](/.gitbook/assets/2023-11-10_14-27-21.png)
+![](~/assets/2023-11-10-14-27-21.png)
 
 *Activate the action*
 
@@ -60,13 +60,13 @@ In the designer, go to the intent that you want to action to be triggered from.
 
 Click on "Add .. actions, ..." at the bottom of the component pane.
 
-![](/.gitbook/assets/2023-11-10_14-29-11.png)
+![](~/assets/2023-11-10-14-29-11.png)
 
 *Add conditions, actions and attributes*
 
 Select the action from the dropdown.
 
-![](/.gitbook/assets/2023-11-10_14-29-36.png)
+![](~/assets/2023-11-10-14-29-36.png)
 
 *Select the action from the dropdown list*
 

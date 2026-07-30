@@ -6,7 +6,7 @@ The Design functionality includes the Conversation designer and Messages editor.
 
 When you click on a scenario in the scenario list in your workspace (as shown in the previous page), the scenario opens by default in the Conversation Design tab.
 
-![](/.gitbook/assets/2023-05-01_10-54-09.png)
+![](~/assets/2023-05-01-10-54-09.png)
 
 *Conversation Designer interface*
 
@@ -14,7 +14,7 @@ Conversation designers spend a lot of their time in the Conversation Designer pu
 
 The Conversation Design interface includes 3 panes with a number of controls and access to platform functionality in the sidebar:
 
-![Overview of the OpenDialog interface elements](</.gitbook/assets/Interface elements.png>)
+![Overview of the OpenDialog interface elements](~/assets/interface-elements.png)
 
 *Details of the Conversation Designer interface*
 
@@ -24,11 +24,11 @@ You can access the 'Search' functionality in the main scenario menu, which searc
 
 <div>
 
-![](/.gitbook/assets/Search_Scenario_View.png)
+![](~/assets/search-scenario-view.png)
 
 *Search across Intents and Messages using the search functionality in the main scenario menu*
 
-![](/.gitbook/assets/Search_Message.png)
+![](~/assets/search-message.png)
 
 *Type a query in the search bar and get an immediate list of the conversational components you can click on to edit*
 

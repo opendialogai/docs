@@ -12,7 +12,7 @@ To use Amazon Lex, you'll need an [Amazon Web Services](https://aws.amazon.com/)
 
 First you'll need to create the Lex interpreter in OpenDialog. On the "Interpreters Setup" page, select "Add new interpreter". Here you'll need to choose a unique name for the interpreter and select the Lex type.
 
-![Interpreter screen](</.gitbook/assets/Screenshot 2021-11-01 at 09.19.03.png>)
+![Interpreter screen](~/assets/screenshot-2021-11-01-at-09-19-03.png)
 
 You'll see that you need to enter some settings in order to configure the interpreter. The following sections will details how to collect this information.
 
@@ -24,7 +24,7 @@ In order to expose access to a Lex bot, you'll need to create a user account via
 
 In the AWS admin panel, search for "IAM" and select the returned result. You are now in the IAM dashboard panel. From the left hand menu, under the "Access management" heading, select "Users". From here select the blue "Add users" button.
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.22.33.png>)
+![](~/assets/screenshot-2021-11-01-at-09-22-33.png)
 
 From here you will need to configure the new user. Choose a user name of your choice (perhaps "OpenDialogLexUser"), and select the credential type as "Access key - Programmatic access". Then select the blue "Next: Permissions" button.
 
@@ -38,7 +38,7 @@ On this final screen you can review the user configuration. When you're ready, c
 
 Now that you've created your IAM user for Lex, select the new user from the "Users" table. On this screen, under the "Summary" heading there are multiple tabs. Select the tab titled "Security credentials". In this tab, under the "Access keys" heading, we can manage access keys for our IAM user. This is where we will create and find the first two pieces of data that OpenDialog requires: the key and the secret.
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.24.03.png>)
+![](~/assets/screenshot-2021-11-01-at-09-24-03.png)
 
 Click "Create access key". A modal will appear which contains a table with your key ID and secret key. The value under "Access key ID" should be pasted into the "Key" field in OpenDialog, and the "Secret access key" should be pasted into the "Secret" field.
 
@@ -58,7 +58,7 @@ On this screen you can configure the language of the bot. Use the "Select langua
 
 Once your bot is created, you'll be automatically redirected to a screen for editing an intent. From OpenDialog to validate that the integration has been configured correctly, you'll need to set up at least one intent. To do this, you can re-purpose the intent you're currently viewing. If you'd like to come back to this later, all you'll need to do is add a single sample utterance. Under "Sample utterances", enter a sample utterance (such as "hello lex") and click "Add utterance".
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.28.03.png>)
+![](~/assets/screenshot-2021-11-01-at-09-28-03.png)
 
 For further details on setting up intents, see the [Lex documentation](https://docs.aws.amazon.com/lexv2/latest/dg/build-intents.html). Once you've set up the intent, click "Save Intent" and then "Build". The build process may take a few minutes, you'll know it's complete when you see a green "Successfully built..." message at the top of the screen.
 
@@ -80,7 +80,7 @@ You've now collected all the details required for the Lex interpreter.
 
 Now that the interpreter is configured to integrate with our Lex bot, it can be tested via the "Check Interpreter Setup" in the bottom right. Enter an utterance such as "hello lex" (or whatever sample utterance(s) you entered for the intent earlier) and you should see that it was interpreted as the expected intent. It's useful to note the confidence percentage here, as this will be used shortly.
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.32.48.png>)
+![](~/assets/screenshot-2021-11-01-at-09-32-48.png)
 
 If the test returns an error, please review the Lex settings that you used to configure the interpreter.
 
@@ -96,7 +96,7 @@ The following steps presume that that you are working with the default conversat
 
 In your scenario, locate the "Welcome Turn" within the "Welcome Conversation". By default this turn includes a single application request intent, and a single user response intent which matches the user clicking the default "OK" button. Add a second user response intent here to match the `newIntent` intent that was trained in Lex.
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.38.44.png>)
+![](~/assets/screenshot-2021-11-01-at-09-38-44.png)
 
 It's important to note that the confidence level for the intent should be less than what was returned in our test. If Lex interprets an intent with a confidence lower than our threshold, OpenDialog will disregard it.
 
@@ -108,10 +108,10 @@ Now that the interpreter is set on the intent, everything is in place see the Le
 
 After the webchat widget loads, if you send a message such as "hello lex" (or whatever sample utterance(s) you entered for the intent earlier), you should see that the welcome message is re-sent to you. This means that OpenDialog successfully interpreted and matched the new Lex intent (if it didn't you'll get a no match error message).
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.42.01.png>)
+![](~/assets/screenshot-2021-11-01-at-09-42-01.png)
 
 To the right, under "Context" and "User" you should see some new attributes that begin with "lex\_". These attributes provide you with data about any slot elicitation or intent confirmation that might be configured in Lex. In OpenDialog, an intent is modeled as a single user utterance, and any slot filling is performed by subsequent intents. Therefore if you'd like to make use of Lex's slot elicitation or intent confirmation, you will need to query these Lex attributes via [OpenDialog conditions](https://docs.opendialog.ai/developing-with-opendialog/conditions).
 
-![](</.gitbook/assets/Screenshot 2021-11-01 at 09.42.38 (1).png>)
+![](~/assets/screenshot-2021-11-01-at-09-42-38-1.png)
 
 Well done, you've now got your Lex bot integrated with your conversational application.

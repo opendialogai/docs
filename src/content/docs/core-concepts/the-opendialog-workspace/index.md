@@ -8,7 +8,7 @@ The first thing you see when you login to OpenDialog is the workspace.
 
 The workspace is the starting point for accessing the main OpenDialog functionalities:  [scenarios](/broken/pages/QXiLofFtrSva3tSBJilT) for setting up your Conversational AI application ,  [language services](/core-concepts/the-opendialog-workspace/language-services) to configure language capabilities available to use in your different scenarios, and your  [account management](/core-concepts/the-opendialog-workspace/opendialog-account-management). 
 
-![](/.gitbook/assets/OD-workspacedashboard.png)
+![](~/assets/od-workspacedashboard.png)
 
 *The Workspace Dashboard is your go-to starting point to create &#x26; manage your applications.*
 
@@ -18,7 +18,7 @@ Most OpenDialog features are presented in two to three sections : the main menu 
 
 When logging into your OpenDialog workspace, you are presented with the Workspace Dashboard.  From here you can use the main menu to navigate to the different areas of the product, or switch to a different workspace you have access to. 
 
-![](/.gitbook/assets/OD-workspacenavigation.png)
+![](~/assets/od-workspacenavigation.png)
 
 *Switching to another workspace or adding a new workspace*
 
@@ -39,6 +39,6 @@ If you wish to create a new workspace, you can do so directly from the workspace
 * Congratulations 🙌🏻 , you now have an additional workspace!
 :::
 
-![](/.gitbook/assets/OD-workspacecreatenew.png)
+![](~/assets/od-workspacecreatenew.png)
 
 *Use the workspace dropdown to create a new workspace*

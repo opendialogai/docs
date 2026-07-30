@@ -18,7 +18,7 @@ So that an AI Agent can correctly handle a new topic of discussion, we must make
 * Contextualise the user query & advance the conversation process : this happens via the Conversation Design
 * Generate a relevant response, statically or dynamically based on a knowledge source: this happens through a combination of a RAG service, LLM Actions and Message Design.
 
-![](/.gitbook/assets/add_topic_source.png)
+![](~/assets/add-topic-source.png)
 
 ## **See it in action**
 
@@ -84,7 +84,7 @@ With the new intent in place in the semantic classifier, it’s time to set up h
 
 Now is a good time to explore the OpenDialog conversation engine model in a bit more detail.
 
-![](/.gitbook/assets/opendialog_model.png)
+![](~/assets/opendialog-model.png)
 
 *Breakdown of the OpenDialog model*
 
@@ -146,21 +146,21 @@ Now let’s look at how to add an additional topic to your free-from conversatio
 
 To set up your new topic of discussion, we are going to use this pre-existing scene as a template and copy it. Now, let’s duplicate this topic’s scene to create a base for your new topic, for example “AboutCompany”.
 
-![](</.gitbook/assets/Images Slidedeck 1.png>)
+![](~/assets/images-slidedeck-1.png)
 
 *Duplicating a scene.*
 
 We are now going to customise the duplicated scene to match your new topic of discussion.  This customization ensures the AI Agent responds in context, providing relevant answers to questions about the company.
 
-![](</.gitbook/assets/Images Slidedeck 1 (1).png>)
+![](~/assets/images-slidedeck-1-1.png)
 
 Navigating downward in the architecture of your AI Agent, you will also need to update the name and description settings for your turn, so they reflect that these are related to your new topic of discussion.
 
-![](</.gitbook/assets/Images Slidedeck 1 (2).png>)
+![](~/assets/images-slidedeck-1-2.png)
 
 Once the turn level is edited, it is now time to update the intent for your new topic of discussion.  This is where the rubber hits the road as we need to ensure the conversation design matches up with the semantic classification. You do this by updating the language service intent that the interpreter references in the intent settings panel of your conversation design. This will allow the AI Agent to process and respond to queries in the desired way.
 
-![](</.gitbook/assets/Images Slidedeck 1 (3).png>)
+![](~/assets/images-slidedeck-1-3.png)
 
 #### **Responding to a user query : Message Design**
 

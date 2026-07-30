@@ -6,7 +6,7 @@ title: Azure
 
 Semantic Intent Classifiers allow you to integrate with a large language model provider, for example, Azure OpenAI, in order to allow your scenario to understand user input. It can be found under the Language Services section of your OpenDialog Workspace. Once you select 'Create new service' and subsequently 'Semantic Intent Classifier' you will then have the opportunity to create it. Select Azure OpenAI to start setting up your Azure OpenAI integration.
 
-![](</.gitbook/assets/Screenshot 2024-07-08 at 18.05.09.png>)
+![](~/assets/screenshot-2024-07-08-at-18-05-09.png)
 
 *Setting up an OpenAI integration via OpenDialog*
 
@@ -30,7 +30,7 @@ To configure your Azure OpenAI LLM action you will need to provide the following
 
 To set up your Azure OpenAI Semantic Intent Classifier, navigate to "Language services". Use the "Create new service" button to begin creating a new Language service. Next select the "Semantic Intent Classifier type".
 
-![](</.gitbook/assets/Screenshot 2024-07-08 at 18.21.46.png>)
+![](~/assets/screenshot-2024-07-08-at-18-21-46.png)
 
 *Use the "Create an LLM action" button to set up a new OpenAI integration*
 

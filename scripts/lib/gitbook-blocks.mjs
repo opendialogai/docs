@@ -3,6 +3,7 @@
  *
  * Hints, code and file blocks need no component, so a file containing only these stays .md.
  */
+import { assetPath, NEEDS_ANGLE } from './figures.mjs';
 import { mapLines, protectCode } from './segments.mjs';
 
 const ASIDE = { info: 'note', success: 'tip', warning: 'caution', danger: 'danger' };
@@ -65,13 +66,16 @@ export function convertHints(text) {
   });
 }
 
-/** Turns the single {% file %} block into a markdown link to a Phase 3 asset placeholder. */
-export function convertFile(text) {
+/** Turns the single {% file %} block into a markdown link to the asset it resolves to. */
+export function convertFile(text, ctx) {
+  const assets = ctx?.assets ?? null;
   return mapLines(text, (line) => {
     const match = line.match(/^[ \t]*\{%\s*file\s+src="([^"]+)"\s*%\}[ \t]*$/);
     if (!match) return line;
     const name = match[1].split('/').pop();
-    return `[${name}](</.gitbook/assets/${name}>)`;
+    if (!assets) return `[${name}](</.gitbook/assets/${name}>)`;
+    const path = assetPath(match[1], assets);
+    return `[${name}](${NEEDS_ANGLE.test(path) ? `<${path}>` : path})`;
   });
 }
 

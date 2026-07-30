@@ -5,7 +5,7 @@ description: Use OpenDialog Attribute Management to create new attributes throug
 
 This section outlines how to personalise your conversation through the use of existing attributes, and how to create new attributes throughout the conversation engine.
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 09.18.27.png>)
+![](~/assets/screenshot-2024-02-27-at-09-18-27.png)
 
 *OpenDialog Attribute Management lets you create new attributes on a need-to-have basis throughout the conversation engine.*
 
@@ -42,7 +42,7 @@ The Attribute Management function can be found in the sidebar of the conversatio
 
 ### Intents
 
-![](</.gitbook/assets/Group 2 (1).png>)
+![](~/assets/group-2-1.png)
 
 *The attribute input field can be accessed within the advanced intent settings section in conversation designer sidebar.*
 
@@ -57,7 +57,7 @@ To access the Attribute Management feature within the intents sidebar for a give
 
 ### Conditions
 
-![](</.gitbook/assets/Group 1 (1).png>)
+![](~/assets/group-1-1.png)
 
 *The attribute management input field can be accessed under the custom conditions section of the conversation designer sidebar.*
 
@@ -71,7 +71,7 @@ To access the Attribute Management feature within the conditions sidebar for a g
 
 ### Message editor
 
-![](</.gitbook/assets/Group 3 (1).png>)
+![](~/assets/group-3-1.png)
 
 *The attribute input field can be accessed within the message editor section of the conversation designer*
 
@@ -104,19 +104,19 @@ A <mark style="color:purple;">**dynamic attribute**</mark> is an attribute that 
 
 If the attribute you want to use doesn't exist within a scenario, you can add a new attribute to the list. Within the conversation designer sidebar, there are two ways to do this. The first is simply to click the 'Create new attribute' button that is located underneath the text input field. This will take you straight to the attribute creation section.
 
-![](</.gitbook/assets/Group 4.png>)
+![](~/assets/group-4.png)
 
 *Click the 'Create new attribute' button to create a new attribute for your scenario.*
 
 The second way to create a new attribute is through the drop down itself. If you aren't sure whether the attribute you want has been created or not, you can go ahead and type it into the input field anyway. If the attribute isn't in existence, a "no results found" symbol will pop up. From here, you can click the button at the bottom of the drop-down field to bring up the create attribute section.
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 11.22.29.png>)
+![](~/assets/screenshot-2024-02-27-at-11-22-29.png)
 
 *Click the button at the bottom of the drop down field to create a new attribute.*
 
 This functionality is also the same within the message editor. See the image below for an example:
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 11.26.11.png>)
+![](~/assets/screenshot-2024-02-27-at-11-26-11.png)
 
 *Click the button at the bottom of the drop down field to create a new attribute within the message editor.*
 
@@ -129,7 +129,7 @@ Once you have selected to create a new attribute, the attribute creation modal w
 
 Once you are happy with all of the completed fields, you can click the 'Save attribute' button at the bottom of the modal, or simply press enter. Once this is done, your attribute will be saved and added to the list of existing attributes for your scenario. This attribute can now be accessed via the drop-down list and used throughout your conversations.
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 11.22.41.png>)
+![](~/assets/screenshot-2024-02-27-at-11-22-41.png)
 
 *Use the 'Add new attribute' modal to create a new dynamic attribute for your scenario.*
 
@@ -139,19 +139,19 @@ To add an existing attribute within the conditions panel, find the input field u
 
 Once you have found your chosen attribute, simply click on the item within the list.
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 11.21.09.png>)
+![](~/assets/screenshot-2024-02-27-at-11-21-09.png)
 
 *Start typing your chosen attribute into the text field to bring up the attribute dropdown selection.*
 
 Once you have selected your attribute, you can click the information icon button on the right-hand side of the input field to find out further information about the attribute that you have chosen. For example, the attribute type, value, and description.
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 12.58.47.png>)
+![](~/assets/screenshot-2024-02-27-at-12-58-47.png)
 
 *Click the information icon button on the right hand side of the input field to find out further information about an attribute.*
 
 An attribute can also be selected within the message editor. To do this, navigate to the message you want to edit, click within the text block, or add a new text block if there isn't already one there. To add a new attribute, open the drop-down menu by opening a curly brace `{` . From here, you can start typing an attribute name, which will bring up the list of attributes to choose from. Once you have found your chosen attribute, either click on the item within the list or press enter.
 
-![](</.gitbook/assets/Screenshot 2024-02-27 at 11.24.56.png>)
+![](~/assets/screenshot-2024-02-27-at-11-24-56.png)
 
 *Open a curly brace to activate the attribute management input field within the message editor.*
 

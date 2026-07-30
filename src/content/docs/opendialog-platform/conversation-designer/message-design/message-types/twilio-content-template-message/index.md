@@ -11,11 +11,11 @@ This message holds a reference to the Twilio Content Template that is used to re
 
 <div>
 
-![](/.gitbook/assets/1000008688.jpg)
+![](~/assets/1000008688.jpg)
 
 *An example of Call to Action template*
 
-![](/.gitbook/assets/1000008687.jpg)
+![](~/assets/1000008687.jpg)
 
 *An example of Quick Reply template*
 
@@ -37,7 +37,7 @@ You should use a Twilio Content Template Message when you want to create a multi
 
 Navigate to the [Message Editor](/opendialog-platform/conversation-designer/message-design/message-editor) and create a Custom Message. Copy the [XML snippet](/opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message#xml-snippet) at the bottom of this page into the black box, or select `twilio-content-template-message` from the drop down, and your chat message will appear in the Preview panel.
 
-![](</.gitbook/assets/image (577).png>)
+![](~/assets/image-577.png)
 
 *How to create Twilio Content Template Message in the custom message block*
 

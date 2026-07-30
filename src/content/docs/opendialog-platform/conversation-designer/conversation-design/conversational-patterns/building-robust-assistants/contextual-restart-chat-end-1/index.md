@@ -5,11 +5,11 @@ description: This pattern allows the user to end the chat.
 
 This functionality is not activated by default; it must be activated in the Interface Settings page:
 
-![](/.gitbook/assets/2023-11-09_19-07-11.png)
+![](~/assets/2023-11-09-19-07-11.png)
 
 *End chat toggle in interface settings*
 
-![](</.gitbook/assets/2023-11-09_19-08-09 (1).png>)
+![](~/assets/2023-11-09-19-08-09-1.png)
 
 *End chat link in user interface*
 

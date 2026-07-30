@@ -9,7 +9,7 @@ OpenDialog Translate is currently in Alpha release. If translation is something 
 
 This section outlines how to translate your conversational application's content and how to update your conversational application accordingly.
 
-![](/.gitbook/assets/Translate_languageselection.png)
+![](~/assets/translate-languageselection.png)
 
 *OpenDialog Translate lets you auto-translate and share your content strings as a spreadsheet with your translators.*
 
@@ -45,7 +45,7 @@ By viewing the number of missing strings for each language, you get a clear unde
 
 Translate allows you to manage your content for multilingual use in your conversational application. In addition, the Translate feature provides a Multilingual Dashboard to manage translation workflows and status. It is, therefore, a separate section in the scenario menu.
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 14.33.04.png>)
+![](~/assets/screenshot-2023-05-11-at-14-33-04.png)
 
 *The Translate dashboard can be accessed via the main scenario menu.*
 
@@ -63,7 +63,7 @@ If you are familiar with Translate, you can also directly start using the Transl
 * Click on the three-dotted menu in the Scenario Card
 * Start the translation process by selecting 'Export for translation'
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 13.01.33.png>)
+![](~/assets/screenshot-2023-05-11-at-13-01-33.png)
 
 *Export your content strings for translation directly from the Scenario Overview page*
 
@@ -91,7 +91,7 @@ A <mark style="color:purple;">**target language**</mark> is one of the languages
 
 You first need to export your original content for translation. The content will be exported to a .csv file and sent to the email address you use to log in to OpenDialog.
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 13.11.46.png>)
+![](~/assets/screenshot-2023-05-11-at-13-11-46.png)
 
 *Use the 'Export scenario' button to start the Translate process.*
 
@@ -105,7 +105,7 @@ The export modal has a checkbox that allows you to activate auto-translate for y
 
 The auto-translate service will add an automatic translation of all your content strings to the exported file.
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 13.12.57.png>)
+![](~/assets/screenshot-2023-05-11-at-13-12-57.png)
 
 *The export scenario for translation modal allows you to activate an automated translation service.*
 
@@ -115,7 +115,7 @@ When you are happy with your choices, you can confirm your export by clicking th
 
 Head on over to your email inbox, where you will find the exported .csv file. You can find an example of what this looks like below.
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 18.20.26.png>)
+![](~/assets/screenshot-2023-05-11-at-18-20-26.png)
 
 *.csv file after export*
 
@@ -141,7 +141,7 @@ The Translate dashboard provides an understanding, at a glance, of the completen
 
 This is indicated in the language cards by the ratio of translated items to translatable items, the percentage ratio and the color of the progress bar.
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 14.52.54.png>)
+![](~/assets/screenshot-2023-05-11-at-14-52-54.png)
 
 *The language cards in the 'Your translations' sections reflect the status of the completeness of your translations.*
 
@@ -151,11 +151,11 @@ Once you have imported your translation files, you can start testing your conver
 
 To do so, expand the Test section in the main scenario menu, and select Preview. You will notice that a drop down is now available at the top of the Preview screen, allowing you to select the language you wish to test the bot in.
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 14.54.32.png>)
+![](~/assets/screenshot-2023-05-11-at-14-54-32.png)
 
 *Preview set to English for this scenario by default*
 
-![](</.gitbook/assets/Screenshot 2023-05-11 at 14.54.46.png>)
+![](~/assets/screenshot-2023-05-11-at-14-54-46.png)
 
 *The same scenario with Preview set to French*
 

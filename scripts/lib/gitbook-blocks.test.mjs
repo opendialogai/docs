@@ -71,6 +71,35 @@ test('convertFile becomes a link whose text is the basename', () => {
   );
 });
 
+test('with no map at all convertFile keeps the placeholder form', () => {
+  assert.equal(
+    convertFile('{% file src="../../.gitbook/assets/DeliveryKnowledgeBase.csv" %}', { assets: null }),
+    '[DeliveryKnowledgeBase.csv](</.gitbook/assets/DeliveryKnowledgeBase.csv>)'
+  );
+});
+
+test('a mapped file block emits the map reference, unwrapped when it needs no angle brackets', () => {
+  const assets = {
+    'DeliveryKnowledgeBase.csv': {
+      slug: 'deliveryknowledgebase.csv',
+      kind: 'file',
+      reference: '/files/deliveryknowledgebase.csv',
+      hash: 'z',
+    },
+  };
+  assert.equal(
+    convertFile('{% file src="../../.gitbook/assets/DeliveryKnowledgeBase.csv" %}', { assets }),
+    '[DeliveryKnowledgeBase.csv](/files/deliveryknowledgebase.csv)'
+  );
+});
+
+test('a file block missing from an existing map throws', () => {
+  assert.throws(
+    () => convertFile('{% file src="../../.gitbook/assets/gone.csv" %}', { assets: {} }),
+    /gone\.csv/
+  );
+});
+
 test('an end-of-line entity is stripped, not turned into a trailing space', () => {
   // "word &#x20;" -> "word  " would be a markdown hard break the live site does not render.
   assert.equal(stripEntities('Put a JSON payload here.&#x20;'), 'Put a JSON payload here.');

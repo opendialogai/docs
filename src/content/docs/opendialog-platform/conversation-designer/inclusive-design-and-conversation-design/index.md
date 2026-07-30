@@ -14,7 +14,7 @@ We often design with the needs of the many in mind and forget to include the nee
 
 'Solve for one, and extend to many'.
 
-![Side by side stand a person with one arm, a person carrying a child, and a person with an injured arm in a sling](</.gitbook/assets/Inclusive (3).png>)
+![Side by side stand a person with one arm, a person carrying a child, and a person with an injured arm in a sling](~/assets/inclusive-3.png)
 
 ## Empathising with your customers
 
@@ -44,7 +44,7 @@ Developing design solutions with this approach in mind means more people will be
 
 You may feel the need to think about edge cases and scenarios that may affect 0.1% of your customers. While this is good practice, instead, it's best to think about it from a kinetics perspective and consider how your customers interact with society and the world around them.
 
-![The senses; represented with a hand, an eye, an ear and a speaking mouth](</.gitbook/assets/Sensory (2).png>)
+![The senses; represented with a hand, an eye, an ear and a speaking mouth](~/assets/sensory-2.png)
 
 #### **It's worth considering:**
 

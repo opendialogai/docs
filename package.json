@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "convert": "node scripts/routes.mjs && node scripts/convert.mjs && node scripts/sidebar.mjs",
+    "convert": "node scripts/routes.mjs && node scripts/assets.mjs && node scripts/convert.mjs && node scripts/sidebar.mjs",
     "test": "node --test \"scripts/lib/*.test.mjs\""
   },
   "dependencies": {

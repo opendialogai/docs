@@ -16,7 +16,7 @@ Components can be both open and starting.
 
 Because of these rules, it is very important for a designer to consider the behavior for any component.
 
-![Screen showing the edit turn area of the component pane.](</.gitbook/assets/2023-03-08_16-29-24 1.png>)
+![Screen showing the edit turn area of the component pane.](~/assets/2023-03-08-16-29-24-1.png)
 
 ## Conversation engine at the start of an interaction
 
@@ -32,7 +32,7 @@ When there are multiple available user intents in your conversation design, the 
 
 First, the conversation engine will run the interpreter associated with each available user intent in the conversation design. The interpreter will take the user's input and will attempt to match an intent with it. If the _interpreted_ intent name matches the _expected_ intent name in the conversation design, then we will continue with the intent. If the interpretation does not match, or provides no interpreted intents, then we will discard the expected intent from consideration.
 
-![A screenshot of the OpenDialog Designer. It shows two user intents, one called Update Policy and another called Add Driver.](</.gitbook/assets/Screenshot 2024-08-23 at 15.30.55.png>)
+![A screenshot of the OpenDialog Designer. It shows two user intents, one called Update Policy and another called Add Driver.](~/assets/screenshot-2024-08-23-at-15-30-55.png)
 
 *There are two available user intents in this conversational position.*
 
@@ -44,7 +44,7 @@ If both interpreters were to return intents that match, then the conversation en
 
 As [Semantic Intent Classifiers](/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier) allow you to define intents and sub-intents, it is more likely that interpreters using your classifier will match more than one intent. To ensure that you do not need to carefully order intents in the Designer, Semantic Intent Classifiers return their intents with a priority ranking. Sub-intents are ranked the highest priority, as they are more specific and granular. Whereas intents are ranked as a lower priority, as they are general and broad.
 
-![A screenshot of the OpenDialog Designer. It shows two user intents, one called Manage Policy and another called Update Milage.](</.gitbook/assets/Screenshot 2024-08-23 at 15.40.04.png>)
+![A screenshot of the OpenDialog Designer. It shows two user intents, one called Manage Policy and another called Update Milage.](~/assets/screenshot-2024-08-23-at-15-40-04.png)
 
 *There are two available user intents in this conversational position.*
 
@@ -54,19 +54,19 @@ Using the example from the screenshot above, let's presume that both intents are
 
 1. If the matching user intent defines a transition, the engine will follow that transition.
 
-![](/.gitbook/assets/2023-06-20_16-05-02.png)
+![](~/assets/2023-06-20-16-05-02.png)
 
 2. If there is no transition, look for a matching app response intent within the turn.
 
-![](/.gitbook/assets/2023-06-20_15-55-55.png)
+![](~/assets/2023-06-20-15-55-55.png)
 
 3. If there is no transition and no response intent is present in the turn, the engine will look for a next intent in another turn within the same scene.
 
-![](/.gitbook/assets/2023-06-20_15-59-11.png)
+![](~/assets/2023-06-20-15-59-11.png)
 
 
 
-![](/.gitbook/assets/2023-06-20_15-59-35.png)
+![](~/assets/2023-06-20-15-59-35.png)
 
 4. If an intent has the completing behavior: after this intent is executed we go back up to the scenario level.
 5. If none of the rules in this section apply, then a no match is triggered, either local or global (scenario level).

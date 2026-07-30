@@ -10,7 +10,7 @@ Create one or several sample dialogs based on the use case to help you get start
 
 Here's an example of a sample dialog:
 
-![](/.gitbook/assets/2023-05-15_20-34-34.png)
+![](~/assets/2023-05-15-20-34-34.png)
 
 *Example of a sample dialog*
 

@@ -9,11 +9,11 @@ Date picker messages allow the user to choose a date from a graphical calendar i
 
 <div align="center" data-full-width="true">
 
-![](</.gitbook/assets/Screenshot 2024-06-04 at 10.31.07.png>)
+![](~/assets/screenshot-2024-06-04-at-10-31-07.png)
 
 *Users are prompted with a clickable input box.*
 
-![](</.gitbook/assets/Screenshot 2024-06-04 at 10.31.14.png>)
+![](~/assets/screenshot-2024-06-04-at-10-31-14.png)
 
 *When clicked, a calendar appears*
 
@@ -23,19 +23,19 @@ As well as being able to just pick the date, the date picker message also has ot
 
 <div>
 
-![](</.gitbook/assets/Pick a time.png>)
+![](~/assets/pick-a-time.png)
 
 *Pick a time*
 
-![](</.gitbook/assets/Pick a date and time.png>)
+![](~/assets/pick-a-date-and-time.png)
 
 *Pick a date and time*
 
-![](</.gitbook/assets/Pick a year and month.png>)
+![](~/assets/pick-a-year-and-month.png)
 
 *Pick a month and year*
 
-![](</.gitbook/assets/Pick a year.png>)
+![](~/assets/pick-a-year.png)
 
 *Pick a year*
 
@@ -63,7 +63,7 @@ Date picker messages are set up by following two steps:
 
 ### 1. Creating a date picker message on an application intent
 
-![](</.gitbook/assets/Group 8 (1).png>)
+![](~/assets/group-8-1.png)
 
 *How to create a date picker message in the custom message block*
 

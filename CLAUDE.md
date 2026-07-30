@@ -55,16 +55,16 @@ URL set. Measured against the live sitemap: 204. Route parity is judged against 
 ```bash
 npm run dev                  # local dev server
 npm run build                # astro build -> dist/
-npm run convert              # source/ -> route-map.json -> src/content/docs/ -> sidebar
+npm run convert              # source/ -> route-map.json -> asset-map.json -> src/content/docs/ -> sidebar
 node scripts/assets.mjs      # rename, re-encode, rewrite refs
 node scripts/routes.mjs      # built routes vs live sitemap.xml, writes route-map.json
 npx wrangler deploy          # deploy to Cloudflare
 ```
 
-`npm run convert` runs `routes.mjs`, `convert.mjs` and `sidebar.mjs` in that order. `convert.mjs`
-reads `route-map.json` rather than `source/` directly, so running it on its own against a sync
-that adds a page silently leaves the new page unconverted — always use `npm run convert`, never
-`node scripts/convert.mjs` alone.
+`npm run convert` runs `routes.mjs`, `assets.mjs`, `convert.mjs` and `sidebar.mjs` in that order.
+`convert.mjs` reads `route-map.json` and `asset-map.json` rather than `source/` directly, so
+running it on its own against a sync that adds a page or an image silently leaves the addition
+unconverted — always use `npm run convert`, never `node scripts/convert.mjs` alone.
 
 ## Definition of done for any change
 

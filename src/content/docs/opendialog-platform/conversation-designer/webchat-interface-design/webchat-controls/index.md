@@ -15,7 +15,7 @@ Within the top header of every chat bot, there is a variety of different control
 
 
 
-![](</.gitbook/assets/Group 7 (1).png>)
+![](~/assets/group-7-1.png)
 
 *Where to find the minimise button - right top hand corner*
 
@@ -25,7 +25,7 @@ To do this, locate the minimise icon in the top right corner, and click it once 
 
 ### Main Menu<br>
 
-![](</.gitbook/assets/Group 5.png>)
+![](~/assets/group-5.png)
 
 *Where to find the main menu button - right top hand corner*
 
@@ -40,7 +40,7 @@ To locate the main menu controls, find the 3 dots icon in the left hand corner. 
 
 
 
-![](</.gitbook/assets/Screenshot 2024-04-25 at 22.56.32.png>)
+![](~/assets/screenshot-2024-04-25-at-22-56-32.png)
 
 *Example of the expanded main menu from within the header controls*
 
@@ -48,7 +48,7 @@ To locate the main menu controls, find the 3 dots icon in the left hand corner. 
 
 
 
-![](</.gitbook/assets/Group 8.png>)
+![](~/assets/group-8.png)
 
 *Where to find the speech to text button - bottom left hand corner*
 
@@ -60,7 +60,7 @@ To access this feature, find the microphone button in the bottom left corner. Cl
 
 
 
-![](</.gitbook/assets/Group 11.png>)
+![](~/assets/group-11.png)
 
 *Where to locate the CTA button*
 

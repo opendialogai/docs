@@ -31,11 +31,11 @@ Additional steps are required to complete the integration set-up between OpenDia
 
 Multiple Interpreters can exist within a single scenario, and each Interpreter can fulfil a different purpose. Every Interpreter you create will be shown as a card on the 'Interpret' landing page.
 
-![](/.gitbook/assets/2023-05-02_12-11-35.png)
+![](~/assets/2023-05-02-12-11-35.png)
 
 *Interpreters overview page*
 
-![](/.gitbook/assets/2023-05-02_12-11-15.png)
+![](~/assets/2023-05-02-12-11-15.png)
 
 *Adding a new interpreter page*
 

@@ -14,7 +14,7 @@ To make this easier, we have collated a list of _do's and don'ts_ to help you bu
 
 ### **Always use a sans-serif typeface in your chatbot.**
 
-![A comparison between Sans-serif and serif fonts](/.gitbook/assets/Text.png)
+![A comparison between Sans-serif and serif fonts](~/assets/text.png)
 
 A sans-serif font such as Arial, Helvetica or Tahoma provides maximum readability to your customers. Fonts like Times New Roman, Garamond, or a custom/bespoke font will provide poor legibility (especially for those with visual impairments) and should be avoided.
 
@@ -22,25 +22,25 @@ A sans-serif font such as Arial, Helvetica or Tahoma provides maximum readabilit
 
 ### **All images require an alt tag, excluding** [**those that are decorative**](https://www.w3.org/WAI/tutorials/images/decorative/)**.**
 
-![An example of writing good alt tags using a photo of a girl practising the guitar. The first is descriptive of the image content. The second example says only &#x27;guitar&#x27;. ](</.gitbook/assets/Alt tags (1).png>)
+![An example of writing good alt tags using a photo of a girl practising the guitar. The first is descriptive of the image content. The second example says only &#x27;guitar&#x27;. ](~/assets/alt-tags-1.png)
 
 When creating an alt tag, it's best practice to describe the information, not the picture. For example, the alt text for an image of a person typing on a computer could be "Woman optimizing website for SEO" or "Woman researching free blogging platforms," depending on the topic of the conversation. This means screen readers can provide context to customers who may not be able to perceive the image clearly.
 
 ### **There are also times when an alt tag is not required.**
 
-![An example of when an alt tag is not required, next to a decorative image that does not require an alt tag ](</.gitbook/assets/Null alt tag (1).png>)
+![An example of when an alt tag is not required, next to a decorative image that does not require an alt tag ](~/assets/null-alt-tag-1.png)
 
 In this example, the image provides no meaningful information and can be considered 'decorative'. Therefore, **you do not need to add an alt tag**. Open Dialog will automatically add a 'Null' state, meaning assistive technologies will ignore announcing the alt tag, ensuring you are compliant.
 
 ### **Avoid flashing images**
 
-![A comparison image showing side by side smiley faces. One is static, the other flashes in a strobe like motion. ](</.gitbook/assets/smiley flash (1).gif>)
+![A comparison image showing side by side smiley faces. One is static, the other flashes in a strobe like motion. ](~/assets/smiley-flash-1.gif)
 
 If you choose to use gifs or moving images, avoid those that flash or appear to strobe in any way to ensure you maintain AA accessibility standards. If the image is pertinent to the conversation (i.e. isn't classed as decorative) ensure you also include an alt tag.
 
 ### **Avoid text in images where possible, and use alt tags when not**
 
-![A side by side comparison of the same image, with a girl practising guitar and a text overlay saying &#x27;Book now&#x27;.  ](</.gitbook/assets/Images in text (1).png>)
+![A side by side comparison of the same image, with a girl practising guitar and a text overlay saying &#x27;Book now&#x27;.  ](~/assets/images-in-text-1.png)
 
 Where possible text burned into images (i.e. when an image is saved with text as part of the pixel data) should be avoided. There may be times when it's not possible to avoid this. In such cases, use the alt tag to describe the information.
 
@@ -50,7 +50,7 @@ This is also true if you are using images with graphs or pictorial information, 
 
 ### **Abide by AA colour contrast specifications**
 
-![A side by side comparison displays AA compliant levels of colour contrast against non compliant colour contrast standards](</.gitbook/assets/Colour contrast (2).png>)
+![A side by side comparison displays AA compliant levels of colour contrast against non compliant colour contrast standards](~/assets/colour-contrast-2.png)
 
 Choosing the right colour contrast levels can be tricky, as there are layers to this level of compliance. The most important elements such as text, buttons and other information should be a minimum of 4.5:1 contrast level.
 
@@ -82,7 +82,7 @@ It's also good practice to review your chatbot in greyscale to ensure any action
 
 ### **Avoid generic buttons and link labels**
 
-![A side by side comparison of how to label buttons effectively and poorly](/.gitbook/assets/Buttons.png)
+![A side by side comparison of how to label buttons effectively and poorly](~/assets/buttons.png)
 
 Button labels should describe what the customer can expect if they click them. Using a generic phrase like 'See more' or 'Discover now' is inaccessible, and doesn't give customers any context over what they can expect. 
 
@@ -92,7 +92,7 @@ Lastly, you should also avoid adding bare URLs such as www.google.co.uk as the b
 
 ### Use example content within placeholder text
 
-![A side by side comparison shows 2 form fields. The left hand one displays helpful placeholder text, the right hand one show unhelpful placeholder text](</.gitbook/assets/Placeholders (1).png>)
+![A side by side comparison shows 2 form fields. The left hand one displays helpful placeholder text, the right hand one show unhelpful placeholder text](~/assets/placeholders-1.png)
 
 When used sparingly (placeholders are not essential for accessibility compliance) placeholder text can be beneficial for customers.
 
@@ -118,7 +118,7 @@ Use _emojis_ sparingly, and include them at the end of sentences to avoid breaki
 
 ## Message speed
 
-![The &#x27;Typing Cvent&#x27; setting within the Open Dialog conversation designer, shows how to adjust message speed using a numerical value ](</.gitbook/assets/image (1) (1) (1) (1) (1).png>)
+![The &#x27;Typing Cvent&#x27; setting within the Open Dialog conversation designer, shows how to adjust message speed using a numerical value ](~/assets/image-1-1-1-1-1.png)
 
 Showing too many messages too quickly can be difficult for some customers to keep track of and comprehend, specifically if English is not their first language. It's better to slow things down a little and give them some space to read.
 

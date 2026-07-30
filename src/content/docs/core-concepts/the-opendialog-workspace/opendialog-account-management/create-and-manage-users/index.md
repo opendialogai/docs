@@ -14,7 +14,7 @@ Users are added to the workspace, not to a specific scenario.
 
 To do this, click on your name, the three dots next to it, and then click on User Management. Once there, click the Create button at the top right, complete the form, and click Create.
 
-![](</.gitbook/assets/Screenshot 2025-07-11 at 17.09.31.png>)
+![](~/assets/screenshot-2025-07-11-at-17-09-31.png)
 
 *The user creation screen*
 
@@ -30,7 +30,7 @@ Once you've set up the new user account, you need to notify the user directly si
 
 To update user details, such as to change their [role](/core-concepts/the-opendialog-workspace/opendialog-account-management/create-and-manage-users#role-based-access-control), go to the User Management page within the application and click the pencil icon next to the user you want to edit. From this screen you can amend the user's name and their role.
 
-![](</.gitbook/assets/Screenshot 2025-07-11 at 16.48.00.png>)
+![](~/assets/screenshot-2025-07-11-at-16-48-00.png)
 
 *The user editing screen*
 
@@ -38,7 +38,7 @@ To update user details, such as to change their [role](/core-concepts/the-opendi
 
 To remove a user from your instance, go to the User Management page within the application and click 'X' next to the user you want to remove. Then, click 'Yes' on the pop-up, and the user will be removed.
 
-![User profile - Delete/Edit buttons](</.gitbook/assets/image (149).png>)
+![User profile - Delete/Edit buttons](~/assets/image-149.png)
 
 OpenDialog uses a role-based access control system to manage access within workspaces. This system ensures that users have access only to the tools and information they need, based on their assigned roles.
 

@@ -6,6 +6,6 @@ The outcome of any primary and secondary research needs to be analyzed and summa
 
 Here is an example of a user profile.
 
-![](/.gitbook/assets/2023-05-15_20-27-38.png)
+![](~/assets/2023-05-15-20-27-38.png)
 
 Depending on the complexity of the user interaction with a product, it may be useful to summarize other insights, in addition to the user profile. A live handoff of this information from the UX research team to the designers is preferable.

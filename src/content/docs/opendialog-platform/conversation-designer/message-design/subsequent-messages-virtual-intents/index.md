@@ -4,7 +4,7 @@ title: Subsequent Messages - Virtual Intents
 
 It is possible to share a number of messages in a single app intent, and [it is recommended to chunk content into bite-size pieces for legibility](/opendialog-platform/conversation-designer/message-design/messages-best-practices).
 
-![](/.gitbook/assets/2023-05-23_14-09-08.png)
+![](~/assets/2023-05-23-14-09-08.png)
 
 *3 pieces of information in a single app intent*
 
@@ -12,7 +12,7 @@ However, in some cases the information shared with the user does not all logical
 
 
 
-![](/.gitbook/assets/2023-05-23_14-14-16.png)
+![](~/assets/2023-05-23-14-14-16.png)
 
 *Information the assistant shares with the user - no user interaction*
 
@@ -20,13 +20,13 @@ The above would seem to violate the app - user - app -... order that must be adh
 
 The app intent indicates in the component pane that they want to use a virtual intent.
 
-![](/.gitbook/assets/2023-05-23_14-19-32.png)
+![](~/assets/2023-05-23-14-19-32.png)
 
 *App intent that uses a virtual intent*
 
 The user intent looks and feels just like any other user intent, and transitions to the next app intent.
 
-![](/.gitbook/assets/2023-05-23_14-21-42.png)
+![](~/assets/2023-05-23-14-21-42.png)
 
 *User intent*
 

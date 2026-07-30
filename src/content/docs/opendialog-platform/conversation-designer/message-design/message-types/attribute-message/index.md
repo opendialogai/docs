@@ -15,7 +15,7 @@ You want to use attribute message when you don't know exact message structure wh
 
 Navigate to the [Message Editor](https://docs.opendialog.ai/~/changes/BlkAxgfqkBZsmUnZLd8K/opendialog-platform/conversation-designer/message-design/message-editor) and create a _Custom Message._ Copy the [XML snippet](/opendialog-platform/conversation-designer/message-design/message-types/attribute-message#what-is-a-list-message-3) at the bottom of this page into the black box, or select `attribute-message` from the dropdown.
 
-![](</.gitbook/assets/image (4) (3).png>)
+![](~/assets/image-4-3.png)
 
 *How to create an attribute message in custom message block*
 

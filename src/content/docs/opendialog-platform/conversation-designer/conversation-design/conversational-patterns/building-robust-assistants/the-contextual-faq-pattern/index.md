@@ -33,13 +33,13 @@ _Note: as an example, the screenshots in this section illustrate adding an FAQ t
 
 We add an FAQ turn to the scene:
 
-![](</.gitbook/assets/FAQ Interface Turns.png>)
+![](~/assets/faq-interface-turns.png)
 
 *Package Bot FAQ Welcome Scene*
 
 The FAQ turn consists of a user intent to capture the user's question and an app intent that shares the FAQ answer with the user and contains the re-prompt.
 
-![](</.gitbook/assets/FAQ Turn.png>)
+![](~/assets/faq-turn.png)
 
 Depending on the NLU service provider, the name of the intents may be predetermined. For instance, when using DialogFlow KB, the user intent name is "intent.dialoflow.faq".
 
@@ -47,7 +47,7 @@ The app intent must contain a specific reference. This reference is also depende
 
 The screenshot below shows and example of a reprompt ("Do you have any other questions..."). The reprompt helps to move the conversation forward and can be designed to fit your needs. In this case, the system asks whether the user wants to ask another question. An alternative could be to ask the original system question again.
 
-![](/.gitbook/assets/2023-06-30_15-33-50.png)
+![](~/assets/2023-06-30-15-33-50.png)
 
 *Screenshot showing XML for DialogFlow KB*
 

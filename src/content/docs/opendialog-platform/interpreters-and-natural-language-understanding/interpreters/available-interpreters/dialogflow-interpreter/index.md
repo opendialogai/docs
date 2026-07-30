@@ -14,18 +14,18 @@ Once you've created an agent follow the instructions here to generate an API key
 
 1. Go to the settings of you Dialogflow agent and click on the project link to go to the Google Cloud project console
 
-![](</.gitbook/assets/image (380).png>)
+![](~/assets/image-380.png)
 
 2\. From within the Google Cloud console project go to the IAM & Admin > Service Accounts.
 
-![](</.gitbook/assets/image (426).png>)
+![](~/assets/image-426.png)
 
 3\. Create a service account and give it the Dialogflow API Admin role. You will need to give it an ID and then grant the Role as shown below.
 
-![Creating an service user for the Dialogflow API through the Google Cloud Console](</.gitbook/assets/image (192).png>)
+![Creating an service user for the Dialogflow API through the Google Cloud Console](~/assets/image-192.png)
 
 4\. Click on the account just created, head to the Keys tab and create a JSON key which will generate a file and download it to your machine.
 
-![Generating a JSON key for Dialogflow API access](</.gitbook/assets/image (414).png>)
+![Generating a JSON key for Dialogflow API access](~/assets/image-414.png)
 
 We will now use this JSON key in our next step when creating our Dialogflow interpreter in OpenDialog.

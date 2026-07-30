@@ -16,8 +16,8 @@ For instance, if we want sample utterances in the domain of "getting more inform
 
 The example below shows that the incremental yield is not always a guarantee; in this case adding the online aspect did not yield significantly more value. However, it is important to continue to experiment with prompts as the yield can vary greatly depending on the specific use case. The prompts in the examples below as only an illustration. 
 
-![](/.gitbook/assets/2023-06-09_16-10-54.png)
+![](~/assets/2023-06-09-16-10-54.png)
 
-![](/.gitbook/assets/2023-06-09_16-11-08.png)
+![](~/assets/2023-06-09-16-11-08.png)
 
-![](/.gitbook/assets/2023-06-09_16-11-21.png)
+![](~/assets/2023-06-09-16-11-21.png)

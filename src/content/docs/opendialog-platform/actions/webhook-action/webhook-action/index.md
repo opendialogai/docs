@@ -14,7 +14,7 @@ For some more details around the data structures you can use please see the [Int
 
 Once you have a service that provides the desired functionality, you'll want to create a new webhook by following the action creation steps and set the action's URL to be the URL of your service.
 
-![A webhook action that sends/receives data from "https://api.example.com/opendialog"](</.gitbook/assets/image (403).png>)
+![A webhook action that sends/receives data from "https://api.example.com/opendialog"](~/assets/image-403.png)
 
 ### Headers
 
@@ -36,7 +36,7 @@ First, let's create a test action in OpenDialog and set the webhook endpoint to 
 
 The url we are using is `https://af7df53c-9871-40de-a454-31d5cf2d6237.mock.pstmn.io /your-webhook-endpoint`
 
-![](</.gitbook/assets/image (535).png>)
+![](~/assets/image-535.png)
 
 *A webhook action*
 
@@ -46,7 +46,7 @@ Now, we can set up the **input attributes.** This is the information we will be 
 In the **Headers** section you can setup and authentication token required and you can also send headers that include conversation attributes such as the user's ID.
 :::
 
-![](</.gitbook/assets/image (536).png>)
+![](~/assets/image-536.png)
 
 Ok, so we've setup a `first_name` and `last_name` as input attributes and indicated that we expect a `full_name` as an output attribute (i.e. the result of our action).
 
@@ -56,7 +56,7 @@ The webhook action is _permissive_ in that it will accept input attributes that 
 
 Now, we can test our action by click on the Test Action Using JSON button.
 
-![](</.gitbook/assets/image (537).png>)
+![](~/assets/image-537.png)
 
 *Testing a webhook action*
 
@@ -64,13 +64,13 @@ We will get the preset response from the mock Postman server.
 
 Now, we can activate our action to make it available in a scenario.
 
-![](</.gitbook/assets/image (538).png>)
+![](~/assets/image-538.png)
 
 *Activating an action.*
 
 Finally, we can add the action to a specific intent so that it is run whenever that intent is selected.
 
-![](</.gitbook/assets/image (539).png>)
+![](~/assets/image-539.png)
 
 *Adding an action to an intent.*
 
@@ -80,19 +80,19 @@ Before testing it out let's setup the WelcomeResponse message to use the results
 
 1. Click on Edit Messages.
 
-![](</.gitbook/assets/image (540).png>)
+![](~/assets/image-540.png)
 
 2. Click on the WelcomeResponse edit button
 
-![](</.gitbook/assets/image (541).png>)
+![](~/assets/image-541.png)
 
 3. We are going to add a text block to our message that greets the user.
 
-![](</.gitbook/assets/image (542).png>)
+![](~/assets/image-542.png)
 
 4. Now if we visit the preview section we will see that we are extracting the information from the action and using it to greet the user.
 
-![](</.gitbook/assets/image (543).png>)
+![](~/assets/image-543.png)
 
 Well done! You've created your first action using the Webhook action in OpenDialog.
 
@@ -104,10 +104,10 @@ Every action automatically generates a boolean attribute (true/false) based on t
 
 We can see the value of this attribute in our user context.
 
-![](</.gitbook/assets/image (544).png>)
+![](~/assets/image-544.png)
 
 We can check for the value of this attribute in our conditions before we use the output of the attribute.
 
 For example, we could have two messages one used when `webhook_test_action_success` is true and one for false.
 
-![](</.gitbook/assets/image (545).png>)
+![](~/assets/image-545.png)

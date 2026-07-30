@@ -10,7 +10,7 @@ Using LLM Actions you have more fine-grained control over when and how to involv
 
 This section will help you to understand what an LLM action is, and how to configure and use it within your conversation.
 
-![An LLM action set up showing configuration form fields](/.gitbook/assets/LLMActions_TestPanel.png)
+![An LLM action set up showing configuration form fields](~/assets/llmactions-testpanel.png)
 
 *Generate content using specific instructions or perform reasoning that can inform decision-making within the conversation flow*
 
@@ -48,7 +48,7 @@ Amend and configure the behaviour of your LLM action using the test panel, ensur
 
 LLM actions are an additional integration to the conversation designer and can be found under 'Integrate' within the sidebar menu.
 
-![The OpenDialog product showing where in the menu &#x27;LLM actions&#x27; can be found](</.gitbook/assets/Actions landing page.png>)
+![The OpenDialog product showing where in the menu &#x27;LLM actions&#x27; can be found](~/assets/actions-landing-page.png)
 
 *You can find LLM Actions under 'Integrate' in the sidebar menu*
 
@@ -77,7 +77,7 @@ LLM Actions have two main components:
 
 Within the settings area, you can configure your engine, enter your prompt, apply any advanced settings and enter any safeguarding considerations.
 
-![](</.gitbook/assets/LLMAction_Setup (1).png>)
+![](~/assets/llmaction-setup-1.png)
 
 *Initial LLM Action set up, where you can choose a name, description, your preferred LLM engine and model*
 
@@ -108,7 +108,7 @@ Each requires a slightly different configuration.
 :::danger
 Note - you will need to enter the model used for Azure OpenAI, and this needs to match the deployment in Azure. If the model you entered does not match, you will get an error message when testing your action configuration\
 \
-![](</.gitbook/assets/image (614).png>)
+![](~/assets/image-614.png)
 :::
 
 #### When using a custom configuration
@@ -138,7 +138,7 @@ Within prompt configuration you will see two main areas:
 
 Use the system prompt to specify how the LLM should respond. When creating a prompt, always ensure it is clear, specific, and concise. Provide context, avoid ambiguity, and define the desired output format. 
 
-![](</.gitbook/assets/LLMAction_basicprompt config.png>)
+![](~/assets/llmaction-basicprompt-config.png)
 
 *Configure a system prompt that can be sent as instructions to the LLM*
 
@@ -152,7 +152,7 @@ _"You are a helpful car insurance assistant. The user will provide questions or 
 
 
 
-![](</.gitbook/assets/LLMAction_basicprompt config with attributes.png>)
+![](~/assets/llmaction-basicprompt-config-with-attributes.png)
 
 *A prompt containing attributes*
 
@@ -203,7 +203,7 @@ Setting a higher temperature will provide less probable words, leading to more v
 
 This area allows you to configure specific aspects of your LLM’s behaviour. You can find these within the advanced expandable section under 'Prompt configuration'. OpenDialog automatically provides a default setting for most options, however you can adjust them to your preference, and see immediate cause and effect using the testing panel.
 
-![](/.gitbook/assets/LLMActions_AdvancedSettings.png)
+![](~/assets/llmactions-advancedsettings.png)
 
 *Configure your LLM action in more detail using advanced settings*
 
@@ -219,13 +219,13 @@ When a user prompt is specified in the advanced section, the user utterance with
 
 By defining output attributes, the LLM will be prompted to return data for each attribute. This allows you to retrieve granular data alongside standard response text. Each output attribute can also be coupled with an optional instruction. This instruction specifies how the LLM should attempt to populate the attribute. Any populated output attributes will be displayed in the testing panel after running a test of the action.
 
-![](</.gitbook/assets/LLMActions_AttributesforReuse - 1.png>)
+![](~/assets/llmactions-attributesforreuse-1.png)
 
 *Specify attributes and use them within message design*
 
 Output attributes are incredibly useful, and can be used to affect the conversational flow via conditions.
 
-![](</.gitbook/assets/LLMActions_AttributesforReuse -2 - in Messages.png>)
+![](~/assets/llmactions-attributesforreuse-2-in-messages.png)
 
 *Add attributes in messages, and use an LLM to continue the conversation*
 
@@ -262,7 +262,7 @@ With these output attributes created and their values defined, we can now config
 
 
 
-![](</.gitbook/assets/image (615).png>)
+![](~/assets/image-615.png)
 
 #### File Attribute
 
@@ -323,7 +323,7 @@ LLMs can sometimes be unpredictable without careful consideration. We highly rec
 
 At OpenDialog, the safety of both our customers and your users is paramount; therefore, our LLM actions provide safeguarding tools to help meet both the criteria of your business and the expectations of your customers.
 
-![](/.gitbook/assets/LLMActions_safeguarding.png)
+![](~/assets/llmactions-safeguarding.png)
 
 *Create safer LLM actions using OpenDialogs safeguarding tools and features*
 
@@ -351,7 +351,7 @@ Please note that the utterances and words added to the exclusion lists are consi
 
 When creating your LLM action, the test panel will allow you to try the action, and see both the Inputs and the Outputs within a test. It's a great indicator of what you can expect from your action and provides a safe space to change and iterate the behaviour of your action. It's also worth noting that testing response text and attributes are not guaranteed to be the same when used in your scenario due to the inherent non-determinism of LLMs.
 
-![](/.gitbook/assets/LLMActions_TestPanel.png)
+![](~/assets/llmactions-testpanel.png)
 
 *The test panel will display what is sent to the LLM (Inputs), and what in turn is received from the LLM in return (Outputs)*
 
@@ -378,7 +378,7 @@ Any attributes that have had a manual value entered will no longer appear with a
 
 #### Testing LLM Actions with Files
 
-![](</.gitbook/assets/image (618).png>)
+![](~/assets/image-618.png)
 
 *Files selected, but not uploaded*
 
@@ -388,7 +388,7 @@ Once the files have been uploaded, they will appear in the list of uploaded file
 
 Once all selected files have been uploaded, the `Run LLM Test` button will become active again, and you can run a test along with the uploaded files, simulating user uploaded files.
 
-![](</.gitbook/assets/image (619).png>)
+![](~/assets/image-619.png)
 
 *2 files uploaded and ready to go*
 
@@ -396,7 +396,7 @@ Once all selected files have been uploaded, the `Run LLM Test` button will becom
 
 This area shows the information received from the LLM based on the input data.
 
-![](/.gitbook/assets/LLMActions_TestPanel.png)
+![](~/assets/llmactions-testpanel.png)
 
 *When an LLM test is run, all outputs will be shown in the 'Outputs' section in the test panel window*
 
@@ -438,7 +438,7 @@ Token calculation varies based on the LLM you use and the specific model selecte
 
 If files were uploaded and sent in the test, that will be indicated in the inspector, showing the name and type of file included along with the name of the file attribute referenced
 
-![](</.gitbook/assets/image (621).png>)
+![](~/assets/image-621.png)
 
 ## Frequently asked questions
 

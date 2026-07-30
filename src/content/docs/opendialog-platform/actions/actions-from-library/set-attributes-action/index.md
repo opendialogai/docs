@@ -11,7 +11,7 @@ There are a number of reasons you may want to explicitly set some attribute valu
 
 The Set Attributes action is available through the Custom Actions Component ID dropdown.
 
-![](</.gitbook/assets/image (2) (3).png>)
+![](~/assets/image-2-3.png)
 
 It is configured by configuring it's JSON structure.
 
@@ -19,4 +19,4 @@ The attribute value map identifies the name of the attribute and the value it sh
 
 The example below shows how we would set the value of two attributes starter\_bot\_global\_no\_match\_count and starter\_bot\_chat\_started to specific values within the User context.
 
-![](</.gitbook/assets/image (1) (1) (3) (1).png>)
+![](~/assets/image-1-1-3-1.png)

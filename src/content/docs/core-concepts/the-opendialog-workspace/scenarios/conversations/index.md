@@ -8,13 +8,13 @@ Conversations represent the high-level goals or states of our scenario.
 
 Settings include a conversation name, whether the conversation exhibits starting behavior, and selecting the default interpreter to use.
 
-![](/.gitbook/assets/2023-05-18_15-08-12.png)
+![](~/assets/2023-05-18-15-08-12.png)
 
 *Conversation settings*
 
 Clicking "Add new condition" opens the New Condition area:
 
-![](/.gitbook/assets/2023-05-18_15-09-06.png)
+![](~/assets/2023-05-18-15-09-06.png)
 
 *Conversation settings expanded*
 

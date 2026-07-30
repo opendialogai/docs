@@ -9,7 +9,7 @@ The settings are currently GLOBAL and will affect all scenarios you have created
 
 Any changes made to the fields are not saved until you click on the 'Save Settings' button at the top of the screen
 
-![](</.gitbook/assets/image (583).png>)
+![](~/assets/image-583.png)
 
 *Save your settings changes using the save button*
 
@@ -19,7 +19,7 @@ The settings are broadly split into 4 settings that affect different elements wi
 
 ### General
 
-![The General settings](</.gitbook/assets/Screenshot 2024-11-29 at 14.07.49.png>)
+![The General settings](~/assets/screenshot-2024-11-29-at-14-07-49.png)
 
 Here you can configure some overall settings for the widget:
 
@@ -33,7 +33,7 @@ Here you can configure some overall settings for the widget:
 \- _Timing_ configures the length of time (in milliseconds) that the typing indicator should be shown for each message.\
 \- You can control whether you want to show the typing indicator between each message block in the individual message toggling option _Hide Typing Indicator between messages_.\
 \- _Show the typing indicator on message send_ controls whether to show the typing indicator at all.\
-\- _Typing Indicator_ can be either "Animation", which will show three dancing dots (![](</.gitbook/assets/image (2) (4).png>)), or "Animation with feedback text", which will show spinning dots with feedback text (![](</.gitbook/assets/image (3) (3).png>))
+\- _Typing Indicator_ can be either "Animation", which will show three dancing dots (![](~/assets/image-2-4.png)), or "Animation with feedback text", which will show spinning dots with feedback text (![](~/assets/image-3-3.png))
 
 You can configure the text and color of dots for "Animation with feedback text" in the embed code after you publish your scenario. Add the general key to your window.openDialogSettings object with the property typingIndicatorSettings. For this, you would need to specify:
 
@@ -64,7 +64,7 @@ You can configure the text and color of dots for "Animation with feedback text" 
 
 ### CSS
 
-![CSS Options](</.gitbook/assets/image (55).png>)
+![CSS Options](~/assets/image-55.png)
 
 Here you can upload custom CSS files to completely customise the chat widget. There are 2 files you can add:
 
@@ -74,7 +74,7 @@ Here you can upload custom CSS files to completely customise the chat widget. Th
 
 ### Layout Settings
 
-![Alter the colours used in the bot](</.gitbook/assets/image (285).png>)
+![Alter the colours used in the bot](~/assets/image-285.png)
 
 Here you can adjust the colours used in the bot from the chat window itself to the messages and buttons.
 
@@ -84,19 +84,19 @@ Here you can adjust the colours used in the bot from the chat window itself to t
 
 ### Conversational History Settings
 
-![Adjust what history is shown to the user](</.gitbook/assets/image (528).png>)
+![Adjust what history is shown to the user](~/assets/image-528.png)
 
 Here, you can control whether the interface shows a user their previous chat history on load, and if so, how many messages to show. You can test how this behaves by using the preview section and **refreshing** the page on your browser rather than clicking the 'Refresh Scenario' button as this will generate a new user.
 
 ## Security Settings
 
-![](</.gitbook/assets/image (578).png>)
+![](~/assets/image-578.png)
 
 *Security Settings tab*
 
 ### Anonymous Authentication
 
-![](</.gitbook/assets/image (579).png>)
+![](~/assets/image-579.png)
 
 *Anonymous Authentication*
 
@@ -110,7 +110,7 @@ When this feature is enabled, users must not be assigned pre-set user ID's (such
 
 ### Cross site request forgery (CSRF)
 
-![](</.gitbook/assets/image (581).png>)
+![](~/assets/image-581.png)
 
 *Cross Site Request Forgery Settings*
 
@@ -120,7 +120,7 @@ This means that SDK implementations will need to ensure that the a custom subdom
 
 ### Cross origin resource sharing (CORS)
 
-![](</.gitbook/assets/image (582).png>)
+![](~/assets/image-582.png)
 
 *Cross Origin Resource Sharing Settings*
 

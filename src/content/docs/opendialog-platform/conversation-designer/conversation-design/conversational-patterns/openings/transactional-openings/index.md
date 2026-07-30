@@ -30,13 +30,13 @@ Lowe's is a home improvement store. The automated assistant opening contains the
 
 Numbers refer to the numbered list above.
 
-![](</.gitbook/assets/2023-05-04_15-58-27 (1).png>)
+![](~/assets/2023-05-04-15-58-27-1.png)
 
 *lowes.com*
 
 Okta's OktaBot uses a more transactional style. The bot greets the user. The self-identification is more implicit in the header and above the prompt. The bot goes straight into authentication to then show the relevant options.
 
-![](</.gitbook/assets/2023-05-04\_16-17-09 (1).png>)     ![](</.gitbook/assets/2023-05-04\_16-23-35 (1).png>)
+![](~/assets/2023-05-04-16-17-09-1.png)     ![](~/assets/2023-05-04-16-23-35-1.png)
 
 
 
@@ -46,7 +46,7 @@ Erica greats the user, and since the assistant is integrated in the app, access 
 
 Next Erica actually shows "new insights": a list of things that may interest me as a user, before showing the options.
 
-![](/.gitbook/assets/spaces\_IT4T0sJdqeqCXi1fUCAu\_uploads\_mWtXL3ueFl5AvnJIeQBH\_IMG-6998.webp)      ![](</.gitbook/assets/spaces\_IT4T0sJdqeqCXi1fUCAu\_uploads\_uK8yZf49ckvTwbfi1qDG\_IMG-6996 (1).webp>)
+![](~/assets/spaces-it4t0sjdqeqcxi1fucau-uploads-mwtxl3uefl5avnjieqbh-img-6998.webp)      ![](~/assets/spaces-it4t0sjdqeqcxi1fucau-uploads-uk8yzf49ckvtwbfi1qdg-img-6996-1.webp)
 
 
 

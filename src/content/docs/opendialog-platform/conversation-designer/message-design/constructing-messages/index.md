@@ -13,7 +13,7 @@ To design your message, click on any message block(s) to add those to the design
 
 Each block can be deleted, duplicated, or reordered using the relevant icons.
 
-![](</.gitbook/assets/image (1) (2).png>)
+![](~/assets/image-1-2.png)
 
 *Individual message screen to design your message*
 
@@ -48,7 +48,7 @@ As a general rule for setting up messages with multiple blocks, it is always bes
 
 Within every message type, there is also a drag-and-drop feature for you to use.
 
-![](</.gitbook/assets/Group 10 (1).png>)
+![](~/assets/group-10-1.png)
 
 To access the drag-and-drop feature, go to the top left corner of any message block and click on the icon with six dots.
 
@@ -83,11 +83,11 @@ Notice the difference between the following screens:
 
 <div align="left">
 
-![](/.gitbook/assets/2023-05-23_13-09-37.png)
+![](~/assets/2023-05-23-13-09-37.png)
 
 *All text in a single message*
 
-![](</.gitbook/assets/Screenshot 2024-06-05 at 13.47.08.png>)
+![](~/assets/screenshot-2024-06-05-at-13-47-08.png)
 
 *Text divided up in smaller chunks for readability*
 
@@ -106,7 +106,7 @@ A rule of thumb in a typical OpenDialog assistant is to limit the text in a sing
 * 9 lines with buttons, ideally in 3 or 4 chunks
 * Consider that on average, each line holds about 30 - 35 characters, or 5 to 6 words of average length (based on an average word length in English of 4.7 characters per word).
 
-![](</.gitbook/assets/2023-05-23_10-57-47 (5).png>)
+![](~/assets/2023-05-23-10-57-47-5.png)
 
 *Example screen and content*
 

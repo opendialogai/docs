@@ -9,7 +9,7 @@
  * non-zero on any divergence, in the same spirit as routes.mjs checking itself against the
  * live sitemap snapshot.
  */
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -34,6 +34,10 @@ const OUT = `${root}/src/content/docs`;
 
 const routeMap = JSON.parse(readFileSync(`${root}/route-map.json`, 'utf8'));
 const routes = new Map(routeMap.map((r) => [r.source, r]));
+
+const assetMap = existsSync(`${root}/asset-map.json`)
+  ? JSON.parse(readFileSync(`${root}/asset-map.json`, 'utf8')).assets
+  : null;
 
 /** Counts occurrences of `pattern` in prose only, ignoring anything inside a fenced block. */
 function countInProse(text, pattern) {
@@ -120,6 +124,7 @@ const stats = {
   survivingEntities: 0,
   survivingImgTags: 0,
   survivingBraces: 0,
+  assetRefs: 0,
 };
 
 const COMPONENTS = [
@@ -135,14 +140,14 @@ for (const route of routeMap) {
   const raw = readFileSync(`${root}/source/${route.source}`, 'utf8');
   const { data, body } = parseFrontmatter(raw);
   const meta = titles.get(route.source);
-  const ctx = { source: route.source, routes, titles };
+  const ctx = { source: route.source, routes, titles, assets: assetMap };
 
   stats.droppedCovers += countDroppedCovers(body);
 
   let text = takeTitle(body).body;
   text = convertCode(text);
   text = convertHints(text);
-  text = convertFile(text);
+  text = convertFile(text, ctx);
 
   const beforeContentRef = countCards(text);
   text = convertContentRefs(text, ctx);
@@ -156,8 +161,8 @@ for (const route of routeMap) {
   text = convertSteppers(text);
   text = convertColumns(text);
   text = reflowImageDiv(text);
-  text = convertFigures(text);
-  text = rewriteAssetRefs(text);
+  text = convertFigures(text, ctx);
+  text = rewriteAssetRefs(text, ctx);
   text = stripEntities(text);
   text = rewriteLinks(text, ctx);
 
@@ -191,6 +196,24 @@ for (const route of routeMap) {
   stats.survivingEntities += countInProse(output, /&#x20;/g);
   stats.survivingImgTags += countInProse(output, /<img/g);
   if (isMdx) stats.survivingBraces += countUnescapedBraces(output);
+
+  stats.assetRefs += (output.match(/~\/assets\/[^\s)>"]+/g) || []).length;
+  for (const [, ref] of output.matchAll(/~\/assets\/([^\s)>"]+)/g)) {
+    if (!existsSync(`${root}/src/assets/${ref}`)) {
+      throw new Error(`${route.source}: emitted asset does not exist: src/assets/${ref}`);
+    }
+  }
+  // Matches both a quoted attribute (<video src="/media/…">) and a markdown-link destination
+  // ([name](/files/…)), in one pass so a reference cannot be counted under both alternatives.
+  for (const match of output.matchAll(/"\/(media|files)\/([^"]+)"|\(<?\/(media|files)\/([^)>]+)>?\)/g)) {
+    const dir = match[1] ?? match[3];
+    const ref = match[2] ?? match[4];
+    stats.assetRefs++;
+    if (!existsSync(`${root}/public/${dir}/${ref}`)) {
+      throw new Error(`${route.source}: emitted asset does not exist: public/${dir}/${ref}`);
+    }
+  }
+
   if (/hidden:/.test(output.split('---')[1] ?? '')) throw new Error(`${route.source}: hidden survived`);
 }
 
@@ -202,7 +225,9 @@ const EXPECTED = {
   cardTableCards: 41,
   embeds: 36,
   cardGrids: 9,
-  images: 529,
+  // 500 mapped assets, but one (Knowledge Base Demo.gif) is asset-map.json's sole kind: 'video'
+  // entry and renders as a <video> element rather than a markdown image.
+  images: 528,
   droppedCovers: 13,
   survivingBlocks: 0,
   survivingEntities: 0,
@@ -220,6 +245,7 @@ for (const [key, expected] of Object.entries(EXPECTED)) {
 // Informational, not asserted: the corpus contains ordinary numbered lists too, so a
 // "^\d+\. " count cannot isolate the 15 stepper steps. Task 6 checks those by eye.
 console.log(`     ${'ordered list items'.padEnd(20)} ${stats.steps}`);
+console.log(`     ${'asset references'.padEnd(20)} ${stats.assetRefs}`);
 console.log(`\nwrote ${stats.files} pages to src/content/docs`);
 
 if (failed) {

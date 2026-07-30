@@ -4,7 +4,7 @@ title: LLM Action Analytics
 
 Every LLM Action is logged and you can download those Logs directly from the action.
 
-![](</.gitbook/assets/image (530).png>)
+![](~/assets/image-530.png)
 
 *Aggregate and Detail LLM Action log data*
 

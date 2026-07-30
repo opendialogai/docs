@@ -33,7 +33,7 @@ When initiating a transfer pattern, there are some common steps.
 
 When a transfer is initiated, there may not be any agents available immediately. In this case, the user is put in a queue, and would benefit from clear communication on how long they are likely to have to wait and their position in the queue. This can help manage expectations. Transparency is key to user satisfaction, and “time-fillers” might help too. The Liz bot shows one example of how to handle waiting:
 
-![](</.gitbook/assets/Screen Shot 2022-02-17 at 11.15.00 AM.png>)
+![](~/assets/screen-shot-2022-02-17-at-11-15-00-am.png)
 
 This example shows estimated waiting time, position in the queue, and even offers the user the option of filing a ticket as an alternative to continuing to wait.
 
