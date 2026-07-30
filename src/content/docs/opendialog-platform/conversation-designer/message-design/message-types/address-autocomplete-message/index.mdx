@@ -1,0 +1,103 @@
+---
+title: Address Autocomplete Message
+description: This page describes where to use and find an address autocomplete message type
+---
+
+import Embed from '~/components/Embed.astro';
+
+
+## What is an address autocomplete message?
+
+An address autocomplete message type in a chatbot is a feature that assists users in quickly entering their address information by providing real-time suggestions as they type. This type of message aims to enhance the user experience by reducing the amount of typing required and ensuring more accurate address entries.
+
+Using address autocomplete can significantly enhance the efficiency and user-friendliness of a chatbot, particularly in scenarios where precise address information is crucial
+
+## When to use an address autocomplete message
+
+Address autocomplete message types can be useful to use in your OpenDialog chatbot when users need to enter address information accurately and efficiently. Some example instances where this message may be beneficial include when customers need to provide their address for service requests, returns, or troubleshooting issues. Or during account creation or profile updates, users can enter their address details accurately.
+
+It can be utilised for different purposes across various different industries. For example, in healthcare, when booking appointments, patients can enter their address for home visits or correspondence. Or when scheduling installations or repairs with their car provider, users can quickly enter their address.
+
+## How to create an address autocomplete message
+
+### Via the custom message in Message Editor
+
+Navigate to the [Message Editor](/opendialog-platform/conversation-designer/message-design/message-editor) and create a _Custom Message._ Select `address-autocomplete-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
+
+Fill in the template with the [properties](/opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message#properties) of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
+
+![](</.gitbook/assets/Group 30.png>)
+
+*How to create an address autocomplete message via a custom message*
+
+:::tip
+* Open your OpenDialog application
+* Select the Scenario that you wish to edit
+* Select Design from the left hand panel and select Messages
+* Go into the message that you want to add a message block to
+* Add a 'Custom Message' block
+* Select 'address auto complete' from the drop down
+* Add in your own text to the fields you want to customise
+* To preview your message, go to the Preview section
+:::
+
+#### XML Snippet
+
+```xml
+<autocomplete-message>
+
+-- THIS MUST BE THE LAST MESSAGE IN THE LIST TO WORK AS EXPECTED -->
+ <title>Title</title>
+ <callback>callback.id</callback>
+ <submit_text>Submit</submit_text>
+  <options-endpoint>
+    <url>https://api.craftyclicks.co.uk/address/1.1/find</url>
+    <params>
+      <param name="country" value="GBR" />
+    </params>
+    <query-param-name>query</query-param-name>
+  </options-endpoint>
+  <attribute_name>location</attribute_name>
+  <google api_key="" />
+  <fetchify
+    api_key=""
+    fetch_countries="true"
+    retrieve_endpoint_url="https://api.craftyclicks.co.uk/address/1.1/retrieve"
+    countries_endpoint_url="https://api.craftyclicks.co.uk/address/1.1/countries"
+  />
+</autocomplete-message>
+```
+
+## How to use an address autocomplete message
+
+<Embed url="https://www.loom.com/share/e48ff649b6fa4c5884492a25739390f9" />
+
+:::tip
+**Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
+:::
+
+### Fetchify
+
+The autocomplete message set up uses the website Fetchify. The link to this website is below:
+
+[https://www.fetchify.com/address-auto-complete](https://www.fetchify.com/address-auto-complete)
+
+You can set up your own account from the website above if you would like to use address autocomplete messages throughout your conversations in OpenDialog. From here, you will be given a key which you can then copy and paste over into the XML Snippet section in the message editor when adding an address autocomplete message.
+
+You can also make a free account with Google Maps in order to access a static maps API key. This can be accessed from the website below:
+
+[https://developers.google.com/maps/documentation/maps-static/get-api-key](https://developers.google.com/maps/documentation/maps-static/get-api-key)
+
+## How to construct an address autocomplete message
+
+When using an address autocomplete message with other message block types, these must be the very last in the list. 
+
+:::note
+Note that the autocomplete message will cause the user input field to be taken over by an autocomplete modal.
+:::
+
+When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structuring these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](/opendialog-platform/conversation-designer/message-design/constructing-messages)page for more information.
+
+:::note
+For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](/opendialog-platform/conversation-designer/designing-accessible-chatbots).
+:::

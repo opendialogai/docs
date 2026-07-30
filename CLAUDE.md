@@ -55,12 +55,17 @@ URL set. Measured against the live sitemap: 204. Route parity is judged against 
 ```bash
 npm run dev                  # local dev server
 npm run build                # astro build -> dist/
-node scripts/convert.mjs     # source/ -> src/content/docs/
+npm run convert              # source/ -> route-map.json -> src/content/docs/ -> sidebar
 node scripts/assets.mjs      # rename, re-encode, rewrite refs
-node scripts/verify-routes.mjs  # built routes vs live sitemap.xml
+node scripts/routes.mjs      # built routes vs live sitemap.xml, writes route-map.json
 npx wrangler deploy          # deploy to Cloudflare
 ```
 
+`npm run convert` runs `routes.mjs`, `convert.mjs` and `sidebar.mjs` in that order. `convert.mjs`
+reads `route-map.json` rather than `source/` directly, so running it on its own against a sync
+that adds a page silently leaves the new page unconverted — always use `npm run convert`, never
+`node scripts/convert.mjs` alone.
+
 ## Definition of done for any change
 
-`astro build` succeeds, `verify-routes.mjs` passes, no new broken internal links, and anything ambiguous is written up in `MIGRATION-NOTES.md`.
+`astro build` succeeds, `routes.mjs` passes, no new broken internal links, and anything ambiguous is written up in `MIGRATION-NOTES.md`.

@@ -1,0 +1,55 @@
+---
+title: 3rd party Integrations in your application
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+## Introduction
+
+Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data to return to the conversation.
+
+Actions can take input and return output. In OpenDialog, both input and output are stored as values for attributes. An attribute is a single piece of data that has a name, type and value. For example, the attribute `first_name` is a string (text) that stores the user's first name. The attribute `seconds_since_last_seen` is an integer (number) and stores the number of seconds since the assistant last interacted with the user. Actions allow us to define input and output attributes as a way to pass data in and out of our applications.
+
+Each intent in a conversation has the possibility of having an assigned action, which will be run after that intent is matched. For user intents, the action will be run directly after interpretation and matching of the user's utterance. For application intents, the action will be run directly after intent conditions are evaluated, but before messages are selected and rendered, which provides the possibility of action outputs affecting which message is chosen and the attributes included within messages.
+
+In this section we describe webhook actions and prebuilt actions. For reasoning and other functionality through LLM Actions go to the [LLM Action](/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions) section.
+
+## Creating an action
+
+Actions are listed and can be added in the Integrate menu.
+
+![](/.gitbook/assets/2023-05-02_15-20-54.png)
+
+Each action requires a unique name, and attributes. The number of attributes can vary, and it is not mandatory to have both input and output attributes. Input attributes are sent from OpenDialog to the external data source. Output attributes are sent from the external data source to OpenDialog.
+
+Each action type may have additional fields that are unique to that action type. For example, the webhook action requires a URL. Please see the relevant sub-section for further guidance on the specific action type you are using.
+
+![](/.gitbook/assets/2023-05-02_15-28-26.png)
+
+*Edit or create action page*
+
+After you've saved your new action, make sure to activate it by sliding its toggle on the "Integrate" page.
+
+## Adding an action to an intent
+
+Once an action is created and activated, it can be added to an intent. To add an action or check any actions that have already been added, click "Add Action" in the Advanced Settings in the Component Setup pane.
+
+![](/.gitbook/assets/2023-05-02_15-33-04.png)
+
+*Add Action in the Advanced Settings*
+
+To add an action, select an action from the dropdown list and save attributes to a context. Mapping the input and output attributes informs the action of where to find the input attributes and where to store the output attributes. If a mapping isn't provided for an output attribute, OpenDialog will by default store it in the `user` context.
+
+![](/.gitbook/assets/2023-05-02_15-32-45.png)
+
+*Adding an action to an intent*
+
+## Start creating actions
+
+<LinkCard title="Webhook action" href="/opendialog-platform/actions/webhook-action" />
+
+<LinkCard title="Actions from library" description="This section describes the different actions that are available through the actions library ." href="/opendialog-platform/actions/actions-from-library" />
+
+<LinkCard title="Conversation Hand-off" description="OpenDialog now allows you to set up a seamless handover to other systems from within your conversational application." href="/opendialog-platform/actions/conversation-hand-off" />
+
+<LinkCard title="LLM Actions" description="An LLM Action enables you to use LLMs to perform reasoning, generate text and feed that information back into your scenario in order to influence the next steps of the conversation." href="/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions" />

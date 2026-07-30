@@ -1,0 +1,99 @@
+---
+title: Designing Conversational AI Agents
+---
+
+When designing Conversational AI agents we deal with three broad aspects
+
+1. The possible behavior, language and actions that the user of the agent may want to use to achieve their goal (get an answer to a question, complete a transaction, make a change to a policy, etc).
+2. The possible and available behaviors, language and actions that the AI agent has to help the user achieve the goal.
+3. The context of the conversation and the overall rules that govern the interaction and dictate how language should be interpreted and when certain rules should be applied. 
+
+A conversation design needs to be able to manipulate and reason about all of these elements within a Conversational AI framework so as to be able design for the right outcomes.
+
+The OpenDialog approach directly supports you in designing across these elements and combining them in a number of different ways.
+
+![](/.gitbook/assets/3B.png)
+
+*High-level overview of the OpenDialog Framework*
+
+The diagram below illustrates the key components at a high-level. When user input comes in we classify it (through Semantic Classifiers) in order to have an understanding of what the user is trying to say and then we contextualise it based on the state of the overall business process we are support, the specific type of conversation we are having and what we know abot the user. We can then reason about where the conversation should transition next before we go ahead and generate a response for the user. This reasoning cycle is illustrated below.
+
+![](/.gitbook/assets/5B.png)
+
+*The OpenDialog Reasoning Cycle*
+
+This functionality is support by the OpenDialog AI Agent Orchestration Layer in combination with the OpenDialog Conversation Framework.
+
+## The OpenDialog Conversation Framework
+
+The OpenDialog conversation framework enables much of the flexibility that the platform provides. It consists of levels and components that help you define this space within which your agent and the user communicate. It allows you to **take a design-system approach to conversation design**, going from high-level descriptions to individual turns within a conversation.
+
+The different levels of the framework are:
+
+![](</.gitbook/assets/L3-Levels 1.png>)
+
+*Levels of the OpenDialog framework*
+
+## Scenario
+
+When we start an OpenDialog application we start with a **Scenario.** This holds the highest-level description of the _space_ we are designing.
+
+A scenario is the highest level in the OpenDialog framework. It encompasses the set of functionalities that make up all the conversational application. For example your scenario might be a Pizza Order activity, an Insurance Claim activity or a Customer Support activity.
+
+![](</.gitbook/assets/design - scenario 1.png>)
+
+*Creating a Scenario in OpenDialog*
+
+## Conversations
+
+Within a Scenario your AI agent and the user will have conversations. A conversation refers to communication for specific goals. Conversations can be viewed as steps in the customer journey, or conversations to be had. Examples: a welcome conversation, a payment and delivery conversation.
+
+![](</.gitbook/assets/design - conversation 1.png>)
+
+*Conversations within an OpenDialog scenario.*
+
+## Scenes
+
+Conversations then are further split into scenes. A scene deals with a specific stage, aspect or subgoal of a conversation. It is a middle layer in the model that allows for much flexibility in building out conversations. Example: a payment conversation can include a scene to enter payment data, a scene to confirm paument and a scene to finalize payment. A delivery conversation can include a scene to collect delivery details such as the address.
+
+![](/.gitbook/assets/Scenes.png)
+
+*Scenes in OpenDialog conversations*
+
+## Turns
+
+In a turn the user and application exchange specific information or intents. Example: the scene to collect a delivery address can have two turns: a turn to collect the address details and a turn to confirm the address details that were collected.
+
+![](/.gitbook/assets/turns.png)
+
+## Intents
+
+A turn consists of intents. An intent holds the message and its meaning. An intent can come from the app or the user. For example the application may request an address and the user may provide it or the application may display an address for confirmation and the user can confirm it.
+
+This is where you can connect what we said at the start about desiging a space where the agent _and_ the user are represented. We have intents _both_ for the app (our AI agent) and the user.
+
+![](/.gitbook/assets/intents.png)
+
+## To summarize
+
+![](</.gitbook/assets/putting it all together (1).png>)
+
+*Overview of the components in the OpenDialog model*
+
+As you start designing in OpenDialog you will see that we provide multiple ways for you to explore this space and get familiar with the concepts, which, in turn, will equip you with tool to create really flexible Gen-AI powered conversational applications.
+
+
+
+
+
+:::note
+**If we are using LLMs why do you care about intents?**
+
+
+
+You could use OpenDialog with a single user Intent and a single bot Intent - with everything mediated via a prompt. What you are doing there, however, is abdicating all control of the conversation to the prompt and LLM. Anyone who has attempted to build an enterprise-grade conversational application will know that that is not enough. You need more control over inputs and outputs. Explicit, rule-based, control.
+
+
+
+That is why we prefer to set up broad intent classes that enable us to reason about the type of thing the user is saying and the context within which they are saying it so that we can be more fine-grained into what prompts we use to respond, what sources we access for knowledge (in the case of RAG) and how well we control the next step of the conversation. This way we take advantage of the power of LLMs without abdicating control to them - something that is crucial for an enterprise-grade application that can be trusted.
+:::
