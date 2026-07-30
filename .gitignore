@@ -5,3 +5,4 @@ dist/
 .wrangler/
 screenshots/
 .playwright-mcp/
+.DS_Store

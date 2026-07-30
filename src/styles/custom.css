@@ -1,9 +1,10 @@
 /*
  * OpenDialog brand tokens for Starlight.
  *
- * Colours and fonts are taken from opendialog.ai, not invented. The accent is the
- * brand blue #0023ff — hsl(232, 100%, 50%). Starlight's own default accent sits at
- * hue 234, so the brand blue is already close to the theme's tuned defaults.
+ * Colours are taken from opendialog.ai, not invented; the typefaces are taken from
+ * the GitBook docs site this replaces, which serves Poppins and IBM Plex Mono. The
+ * accent is the brand blue #0023ff — hsl(232, 100%, 50%). Starlight's own default
+ * accent sits at hue 234, so the brand blue is already close to the theme's defaults.
  *
  * The grey ramp keeps Starlight's lightness values, which are tuned for contrast,
  * and shifts only hue and saturation onto OpenDialog's blue-tinted greys
@@ -12,12 +13,23 @@
  * Starlight treats dark as the :root default and light as [data-theme='light'].
  */
 
-@import '@fontsource-variable/inter';
-@import '@fontsource/fragment-mono';
+/*
+ * Poppins and IBM Plex Mono are the faces the GitBook docs site serves. Only the
+ * latin subset is imported: the corpus uses 27 non-ASCII codepoints and every one
+ * is either inside latin's range or an emoji that falls back to the system face,
+ * exactly as it does on GitBook. Poppins also ships Devanagari, which nothing here
+ * needs. The corpus contains no bold italic, so 700-italic is not imported.
+ */
+@import '@fontsource/poppins/latin-400.css';
+@import '@fontsource/poppins/latin-400-italic.css';
+@import '@fontsource/poppins/latin-600.css';
+@import '@fontsource/poppins/latin-700.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
 
 :root {
-	--sl-font: 'Inter Variable', 'Inter', sans-serif;
-	--sl-font-mono: 'Fragment Mono', ui-monospace, monospace;
+	--sl-font: 'Poppins', sans-serif;
+	--sl-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
 	/* Accent — dark mode. #0023ff is too dark against a dark background, so the
 	   mid tone is lifted while the hue is held at the brand value. */
@@ -70,6 +82,18 @@
 		color: var(--sl-color-text-accent);
 		font-weight: 600;
 	}
+}
+
+/*
+ * GitBook ships some code samples as literal <pre> markup rather than as a fenced
+ * code block. Those never reach Expressive Code, and Starlight's code styling is
+ * scoped to fenced blocks, so without this they fall back to the browser's default
+ * monospace while every other code block on the site renders in IBM Plex Mono.
+ * `:not(.not-content *)` is Starlight's own marker for content it does not style,
+ * and keeps this clear of Expressive Code's frames.
+ */
+.sl-markdown-content pre:not(.not-content *) {
+	font-family: var(--sl-font-mono);
 }
 
 /*
