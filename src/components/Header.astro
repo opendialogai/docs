@@ -44,10 +44,9 @@ const shouldRenderSearch =
 
 <style>
 	/*
-	 * Deliberately not wrapped in @layer. Starlight declares starlight.core before
-	 * starlight.reset, so the reset's `* { margin: 0 }` outranks anything in core —
-	 * which is why Starlight's own .title-wrapper margin never applies. Unlayered
-	 * author styles outrank every layer.
+	 * Unlayered, so these win over the Starlight header rules they replace, which live
+	 * in starlight.core. The selectors are scoped to this component and reach nothing
+	 * else.
 	 */
 	.header {
 		display: flex;

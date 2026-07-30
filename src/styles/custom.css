@@ -1,4 +1,20 @@
 /*
+ * Starlight's cascade layer order, restated.
+ *
+ * Starlight declares this in style/layers.css, but a layer's priority is fixed by where
+ * it FIRST appears, and Astro bundles this file ahead of Starlight's own stylesheets.
+ * Opening `@layer starlight.core` below without restating the order therefore registered
+ * starlight.core as the first — and so lowest-priority — layer, dropping it beneath
+ * starlight.reset. The reset's `* { margin: 0 }` then silently won against every margin
+ * Starlight sets in core: the search dialog's centring, the page title and description
+ * spacing, sidebar row gaps, and the 1.5rem rhythm between content blocks.
+ *
+ * This must stay the first statement in this file.
+ */
+@layer starlight.base, starlight.reset, starlight.core, starlight.content, starlight.components,
+	starlight.utils;
+
+/*
  * OpenDialog brand tokens for Starlight.
  *
  * Colours are taken from opendialog.ai, not invented; the typefaces are taken from
@@ -214,21 +230,6 @@
 		height: 2rem;
 	}
 
-}
-
-/*
- * Starlight pads .title-wrapper by 0.25rem to keep the focus ring clear of the logo
- * and cancels it with an equal negative margin. That margin never takes effect: it
- * sits in the starlight.core layer, and starlight.reset — which is declared later,
- * so it wins — carries `* { margin: 0 }`. The logo therefore lands 4px right of the
- * sidebar edge, where GitBook aligns the two exactly.
- *
- * This rule is deliberately outside @layer: unlayered author styles outrank every
- * layer, and starlight.core is the lowest-priority one, so the layer this file
- * otherwise uses cannot beat the reset.
- */
-.header .title-wrapper {
-	margin-inline-start: -0.25rem;
 }
 
 /*

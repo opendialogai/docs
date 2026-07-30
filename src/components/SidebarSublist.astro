@@ -132,10 +132,9 @@ const items = sublist.map((entry) => {
 
 <style>
 	/*
-	 * Deliberately not wrapped in @layer. Starlight declares starlight.core before
-	 * starlight.reset, so the reset's `* { margin: 0 }` outranks it and every margin
-	 * here — including the 2px row gap — computes to 0. These selectors are scoped to
-	 * this component, so being unlayered affects nothing else.
+	 * Unlayered, so these win over the Starlight sidebar rules they replace, which live
+	 * in starlight.core. The selectors are scoped to this component and reach nothing
+	 * else.
 	 */
 	ul {
 		--sl-sidebar-item-padding-inline: 0.5rem;

@@ -103,11 +103,8 @@ const crumbs = (ancestors(sidebar) ?? [])
 
 <style>
 	/*
-	 * Deliberately not wrapped in @layer. Starlight declares starlight.core before
-	 * starlight.reset, so the reset's `* { margin: 0 }` outranks anything in core and
-	 * every margin here would compute to 0 — as the h1 and description margins in this
-	 * file silently did before the breadcrumb was added. These selectors are scoped to
-	 * this component, so being unlayered affects nothing else.
+	 * Unlayered, so these win over the Starlight rules they replace, which live in
+	 * starlight.core. The selectors are scoped to this component and reach nothing else.
 	 */
 	.breadcrumb {
 		margin-top: 1rem;
