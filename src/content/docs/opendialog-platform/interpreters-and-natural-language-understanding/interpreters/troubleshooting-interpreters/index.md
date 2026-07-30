@@ -12,7 +12,7 @@ title: Troubleshooting interpreters
 
 
 
-        ![This image shows the window to run the interpreter test in OD](~/assets/2023-06-16-07-44-00.png)
+        ![This image shows the window to run the interpreter test in OD](~/assets/2023-06-16-07-44-00.png "375")
 
         *Run interpreter test in OD*
 

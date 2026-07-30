@@ -101,6 +101,84 @@
 }
 
 /*
+ * GitBook's image wrapper divs.
+ *
+ * GitBook lays a wrapper div's figures out in a row: 12px gap, centred, each image at the
+ * width its author set, all shrinking together when the row would otherwise overflow.
+ * Starlight stacks them, because markdown.css sets `display: block` on every image in
+ * content. 13 of the 19 wrappers hold more than one figure — 31 images across 9 pages —
+ * and one of them rendered a 188px thumbnail at 720x1075.
+ *
+ * Having no class is what identifies these: every div Starlight emits into content has one
+ * (sl-heading-wrapper, card-grid, expressive-code). `:has(img)` then excludes the only
+ * other classless div in the corpus, the webchat SDK's mount point.
+ *
+ * `align="left"` means left, as on GitBook; a wrapper without it centres. Unlayered
+ * because the paragraph reset has to beat starlight.content, which outranks
+ * starlight.core.
+ */
+.sl-markdown-content div:not([class]):has(img) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+/*
+ * Above the mobile breakpoint a row that would overflow shrinks rather than wrapping,
+ * which is what GitBook does — its row of four 188px figures renders at 187.25 apiece
+ * rather than breaking to a second line. Below it, wrapping is the sane behaviour.
+ */
+@media (min-width: 50rem) {
+	.sl-markdown-content div:not([class]):has(img) {
+		flex-wrap: nowrap;
+	}
+}
+
+.sl-markdown-content div[align='left']:has(img) {
+	justify-content: flex-start;
+}
+
+/* Each figure — or bare image paragraph, where there is no caption — is one row item. */
+.sl-markdown-content div:not([class]):has(img) > p,
+.sl-markdown-content div:not([class]):has(img) > figure {
+	margin: 0;
+	min-width: 0;
+	flex: 0 1 auto;
+}
+
+/*
+ * An image the author sized keeps that width; an unsized one takes whatever is left,
+ * which is how GitBook fills a row mixing the two — a 374px figure beside an unsized one
+ * renders as 371 and 371 there. Only rehype-image-width sets a style attribute, so its
+ * absence is what marks an image as unsized.
+ */
+.sl-markdown-content div:not([class]):has(img) > p:has(img:not([style])),
+.sl-markdown-content div:not([class]):has(img) > figure:has(img:not([style])) {
+	flex: 1 1 0;
+}
+
+/*
+ * Figure captions.
+ *
+ * rehype-figures pairs each image with the caption beneath it. Markdown could only carry
+ * a caption as emphasis, so Starlight renders it as body-sized italic text aligned left;
+ * GitBook sets 12px, centred, roman, in a muted grey. Unlayered to beat starlight.content.
+ */
+.sl-markdown-content figure {
+	margin: 1.5rem 0;
+}
+
+.sl-markdown-content figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	text-align: center;
+	color: var(--sl-color-gray-3);
+}
+
+/*
  * Heading scale.
  *
  * Starlight's headings run about 17% larger than GitBook's and carry no tracking:

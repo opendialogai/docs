@@ -64,7 +64,7 @@ We will get the preset response from the mock Postman server.
 
 Now, we can activate our action to make it available in a scenario.
 
-![](~/assets/image-538.png)
+![](~/assets/image-538.png "375")
 
 *Activating an action.*
 
@@ -92,7 +92,7 @@ Before testing it out let's setup the WelcomeResponse message to use the results
 
 4. Now if we visit the preview section we will see that we are extracting the information from the action and using it to greet the user.
 
-![](~/assets/image-543.png)
+![](~/assets/image-543.png "375")
 
 Well done! You've created your first action using the Webhook action in OpenDialog.
 
@@ -104,7 +104,7 @@ Every action automatically generates a boolean attribute (true/false) based on t
 
 We can see the value of this attribute in our user context.
 
-![](~/assets/image-544.png)
+![](~/assets/image-544.png "321")
 
 We can check for the value of this attribute in our conditions before we use the output of the attribute.
 

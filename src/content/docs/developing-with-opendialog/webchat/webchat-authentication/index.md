@@ -62,7 +62,7 @@ New users have not used the scenario before and have no chat history or data in 
 
 Returning users are users who have been seen before and have a conversational history, but they reached the end of their last conversation. Technically, this means they reached an intent that has the ‘completing’ behavior. This can be set on the intent edit page:
 
-![](~/assets/untitled.png)
+![](~/assets/untitled.png "362")
 
 When a returning user visits the WebChat widget again, the `chat_open` event is sent as for new users with the `intent.core.welcome` callback ID
 

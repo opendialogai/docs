@@ -43,6 +43,6 @@ The screenshot below shows an example of a no match turn in a scene.
 
 Per the screenshot below, within a no match turn, the user intent captures the user utterance and the app intent provides information and a way to continue the conversation.
 
-![](~/assets/2023-11-09-18-39-04.png)
+![](~/assets/2023-11-09-18-39-04.png "563")
 
 *Intents in no match turn*

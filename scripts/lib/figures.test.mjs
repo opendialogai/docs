@@ -29,6 +29,43 @@ test('a figure with an empty caption emits only the image', () => {
   );
 });
 
+test("an img's width is carried through as the markdown title", () => {
+  // Markdown has nowhere to put a width. The title slot is the only channel that
+  // survives into the HTML without introducing block markup, which matters because one
+  // width-bearing figure sits inside a list item where a wrapper div would break the
+  // list. rehype-image-width turns it into a style and strips it.
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="" width="375"></figure>'),
+    '![](/.gitbook/assets/a.png "375")'
+  );
+});
+
+test('a width is carried alongside an angle-bracketed path and a caption', () => {
+  assert.equal(
+    convertFigures(
+      '<figure><img src=".gitbook/assets/a b.png" alt="Alt" width="188">' +
+        '<figcaption><p>Cap</p></figcaption></figure>'
+    ),
+    '![Alt](</.gitbook/assets/a b.png> "188")\n\n*Cap*'
+  );
+});
+
+test('an img with no width emits no title', () => {
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt=""></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
+test('a non-numeric width is ignored rather than emitted as a title', () => {
+  // GitBook only ever writes integer pixel widths; anything else would be a shape this
+  // converter has not seen, and a bogus title is worse than no width.
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="" width="100%"></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
 test('alt text is preserved and never invented', () => {
   assert.equal(
     convertFigures('<figure><img src=".gitbook/assets/a.png" alt="A diagram"><figcaption></figcaption></figure>'),

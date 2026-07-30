@@ -45,8 +45,27 @@ export function assetPath(src, assets) {
 
 const VIDEO_CONTAINER = /\.(?:mp4|webm)$/i;
 
-/** Renders an asset reference: an image, or a video element for an asset that became one. */
-function image(alt, src, assets) {
+/**
+ * A GitBook `width` attribute as an integer pixel string, or null.
+ *
+ * GitBook only ever writes integer pixel widths. Anything else is a shape this converter
+ * has not seen, and carrying a value the rehype plugin cannot use would leave a stray
+ * tooltip on the image, so it is dropped rather than guessed at.
+ */
+function widthOf(attrs) {
+  return attrs.match(/\bwidth="(\d+)"/)?.[1] ?? null;
+}
+
+/**
+ * Renders an asset reference: an image, or a video element for an asset that became one.
+ *
+ * A width rides in the markdown title slot. Markdown has nowhere else to put one, and the
+ * alternatives are worse: a raw <img> would bypass astro:assets, and a wrapper <div> is
+ * block markup that breaks the enclosing list for the one width-bearing figure that sits
+ * inside a list item. scripts/lib/rehype-image-width.mjs turns the title into a width and
+ * removes it, so no title reaches the page.
+ */
+function image(alt, src, assets, width) {
   const entry = assets ? assets[assetName(src)] : null;
   const path = assetPath(src, assets);
   if (entry?.kind === 'video') {
@@ -56,7 +75,8 @@ function image(alt, src, assets) {
     const ariaLabel = alt ? ` aria-label="${alt}"` : '';
     return `<video autoplay loop muted playsinline${ariaLabel} src="${path}"></video>`;
   }
-  return `![${alt}](${NEEDS_ANGLE.test(path) ? `<${path}>` : path})`;
+  const dest = NEEDS_ANGLE.test(path) ? `<${path}>` : path;
+  return `![${alt}](${dest}${width ? ` "${width}"` : ''})`;
 }
 
 /** Plain-text form of a <figcaption>, keeping <code> spans as backticks since GitBook's export
@@ -97,14 +117,13 @@ export function convertFigures(text, ctx) {
         const src = attrs.match(/src="([^"]*)"/)?.[1] ?? '';
         const alt = attrs.match(/alt="([^"]*)"/)?.[1] ?? '';
         const cap = captionText(caption);
-        return cap
-          ? `${image(alt, src, assets)}\n\n${indent}*${cap}*`
-          : image(alt, src, assets);
+        const rendered = image(alt, src, assets, widthOf(attrs));
+        return cap ? `${rendered}\n\n${indent}*${cap}*` : rendered;
       })
       .replace(BARE_IMG, (whole, attrs) => {
         const src = attrs.match(/src="([^"]*)"/)?.[1];
         if (!src) throw new Error(`convertFigures: <img> with no src attribute: ${whole}`);
-        return image(attrs.match(/alt="([^"]*)"/)?.[1] ?? '', src, assets);
+        return image(attrs.match(/alt="([^"]*)"/)?.[1] ?? '', src, assets, widthOf(attrs));
       });
     if (converted.includes('<figure') || converted.includes('<figcaption')) {
       throw new Error('convertFigures: a <figure> block did not match the expected one-image shape');

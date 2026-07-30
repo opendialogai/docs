@@ -5,11 +5,11 @@ description: This pattern allows the user to restart the interaction.
 
 This functionality is not activated by default; it must be activated in the Interface Settings page
 
-![](~/assets/2023-11-09-18-52-09.png)
+![](~/assets/2023-11-09-18-52-09.png "375")
 
 *Toggle for Restart button in settings*
 
-![](~/assets/2023-11-09-18-53-48.png)
+![](~/assets/2023-11-09-18-53-48.png "375")
 
 *Restart icon in user interface*
 
@@ -17,7 +17,7 @@ If the user clicks the **Restart** button at any point during the conversation, 
 
 If none of these are found, the global intent.core.restart is executed. This intent is provided by default in the Trigger conversation (see screenshot)
 
-![](~/assets/2023-11-09-18-48-53.png)
+![](~/assets/2023-11-09-18-48-53.png "375")
 
 *intent.core.restart in the Trigger conversation*
 

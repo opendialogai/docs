@@ -10,7 +10,7 @@ It helps legibility if the information is provided in multiple messages (all wit
 
 Notice the difference between the following screens:
 
-![](~/assets/2023-05-23-13-09-37.png)
+![](~/assets/2023-05-23-13-09-37.png "375")
 
 *All text in a single message*
 
@@ -27,7 +27,7 @@ A rule of thumb in a typical OpenDialog assistant is to limit the text in a sing
 * 9 lines with buttons, ideally in 3 or 4 chunks
 * Consider that on average, each line holds about 30 - 35 characters, or 5 to 6 words of average length (based on an average word length in English of 4.7 characters per word).
 
-![](~/assets/2023-05-23-10-57-47-5.png)
+![](~/assets/2023-05-23-10-57-47-5.png "375")
 
 *Example screen and content*
 

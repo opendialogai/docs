@@ -151,11 +151,11 @@ Once you have imported your translation files, you can start testing your conver
 
 To do so, expand the Test section in the main scenario menu, and select Preview. You will notice that a drop down is now available at the top of the Preview screen, allowing you to select the language you wish to test the bot in.
 
-![](~/assets/screenshot-2023-05-11-at-14-54-32.png)
+![](~/assets/screenshot-2023-05-11-at-14-54-32.png "375")
 
 *Preview set to English for this scenario by default*
 
-![](~/assets/screenshot-2023-05-11-at-14-54-46.png)
+![](~/assets/screenshot-2023-05-11-at-14-54-46.png "375")
 
 *The same scenario with Preview set to French*
 

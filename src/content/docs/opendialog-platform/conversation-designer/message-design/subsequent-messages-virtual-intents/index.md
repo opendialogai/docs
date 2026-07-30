@@ -12,7 +12,7 @@ However, in some cases the information shared with the user does not all logical
 
 
 
-![](~/assets/2023-05-23-14-14-16.png)
+![](~/assets/2023-05-23-14-14-16.png "375")
 
 *Information the assistant shares with the user - no user interaction*
 

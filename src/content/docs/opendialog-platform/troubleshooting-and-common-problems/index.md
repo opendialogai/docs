@@ -4,7 +4,7 @@ title: Troubleshooting and Common Problems
 
 Q: I get a "check your behavior" error in the player
 
-![](~/assets/2023-06-14-16-31-02.png)
+![](~/assets/2023-06-14-16-31-02.png "188")
 
 A: Check that you don't have two of the same type of intents following one another, e.g. an app intent followed by an app intent.
 

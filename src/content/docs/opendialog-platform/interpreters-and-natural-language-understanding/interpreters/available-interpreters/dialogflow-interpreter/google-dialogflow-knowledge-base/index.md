@@ -26,7 +26,7 @@ Now that the interpreter is configured to integrate with the Dialogflow knowledg
 
 <div align="center">
 
-![](~/assets/od-kamau-cloud-opendialog-ai-admin-interpreters-mapping-99-scenario-0x13c2efa.png)
+![](~/assets/od-kamau-cloud-opendialog-ai-admin-interpreters-mapping-99-scenario-0x13c2efa.png "375")
 
 </div>
 

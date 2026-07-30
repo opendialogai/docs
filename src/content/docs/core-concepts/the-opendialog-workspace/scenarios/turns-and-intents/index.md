@@ -70,9 +70,9 @@ Actions can have output attributes, typically set up for webhook or LLM actions.
 
 <div>
 
-![](~/assets/1.png)
+![](~/assets/1.png "501")
 
-![](~/assets/2.png)
+![](~/assets/2.png "329")
 
 </div>
 

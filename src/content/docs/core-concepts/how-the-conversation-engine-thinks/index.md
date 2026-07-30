@@ -66,7 +66,7 @@ Using the example from the screenshot above, let's presume that both intents are
 
 
 
-![](~/assets/2023-06-20-15-59-35.png)
+![](~/assets/2023-06-20-15-59-35.png "375")
 
 4. If an intent has the completing behavior: after this intent is executed we go back up to the scenario level.
 5. If none of the rules in this section apply, then a no match is triggered, either local or global (scenario level).

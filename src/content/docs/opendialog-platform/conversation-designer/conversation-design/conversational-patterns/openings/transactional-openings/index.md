@@ -30,7 +30,7 @@ Lowe's is a home improvement store. The automated assistant opening contains the
 
 Numbers refer to the numbered list above.
 
-![](~/assets/2023-05-04-15-58-27-1.png)
+![](~/assets/2023-05-04-15-58-27-1.png "373")
 
 *lowes.com*
 

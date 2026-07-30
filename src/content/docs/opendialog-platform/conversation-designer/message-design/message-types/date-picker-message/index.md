@@ -9,11 +9,11 @@ Date picker messages allow the user to choose a date from a graphical calendar i
 
 <div align="center" data-full-width="true">
 
-![](~/assets/screenshot-2024-06-04-at-10-31-07.png)
+![](~/assets/screenshot-2024-06-04-at-10-31-07.png "207")
 
 *Users are prompted with a clickable input box.*
 
-![](~/assets/screenshot-2024-06-04-at-10-31-14.png)
+![](~/assets/screenshot-2024-06-04-at-10-31-14.png "207")
 
 *When clicked, a calendar appears*
 
@@ -23,19 +23,19 @@ As well as being able to just pick the date, the date picker message also has ot
 
 <div>
 
-![](~/assets/pick-a-time.png)
+![](~/assets/pick-a-time.png "188")
 
 *Pick a time*
 
-![](~/assets/pick-a-date-and-time.png)
+![](~/assets/pick-a-date-and-time.png "188")
 
 *Pick a date and time*
 
-![](~/assets/pick-a-year-and-month.png)
+![](~/assets/pick-a-year-and-month.png "188")
 
 *Pick a month and year*
 
-![](~/assets/pick-a-year.png)
+![](~/assets/pick-a-year.png "188")
 
 *Pick a year*
 
