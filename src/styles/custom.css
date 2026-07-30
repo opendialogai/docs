@@ -85,6 +85,65 @@
 }
 
 /*
+ * Heading scale.
+ *
+ * Starlight's headings run about 17% larger than GitBook's and carry no tracking:
+ * 42/35 against 36/30 at h1/h2. GitBook's scale, measured, is 36/30/24/20 with
+ * -0.025em on h1 and -0.0125em on h2 through h4, and line-heights of 1.25, 1.2,
+ * 1.333 and 1.4. Only h2, h3 and h4 occur in the corpus — 425, 427 and 343 of them,
+ * no h1 and no h5 or h6 — so the h1 values live in PageTitle.astro, which owns the
+ * only h1 on any page.
+ *
+ * --sl-text-h5 is left alone: asides.css uses it for the aside title, and 258 hint
+ * blocks depend on it.
+ *
+ * Unlayered because Starlight re-declares these tokens inside a media query at
+ * props.css:180 to enlarge headings on wide screens, and styles markdown headings
+ * from a later layer than starlight.core.
+ */
+:root {
+	--sl-text-h1: 2.25rem;
+	--sl-text-h2: 1.875rem;
+	--sl-text-h3: 1.5rem;
+	--sl-text-h4: 1.25rem;
+}
+
+.sl-markdown-content :is(h2, h3, h4):not(:where(.not-content *)) {
+	letter-spacing: -0.0125em;
+}
+
+.sl-markdown-content h2:not(:where(.not-content *)) {
+	line-height: 1.2;
+}
+
+.sl-markdown-content h3:not(:where(.not-content *)) {
+	/* Absolute rather than a 4/3 ratio, which lands on 31.9999px. Safe because the
+	   size above is absolute too. */
+	line-height: 2rem;
+}
+
+.sl-markdown-content h4:not(:where(.not-content *)) {
+	line-height: 1.4;
+}
+
+/*
+ * A heading that is itself a link — the corpus authors several, such as "User
+ * Experience" on getting-started-1/getting-ready — renders in Starlight's link blue
+ * with an underline, which reads as a mis-styled heading. GitBook renders it in the
+ * heading colour, undecorated. The hover underline is added rather than measured, so
+ * the link stays discoverable without changing how the heading rests.
+ */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a:not(:where(.not-content *)) {
+	color: inherit;
+	text-decoration: none;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a:hover:not(:where(.not-content *)),
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a:focus-visible:not(:where(.not-content *)) {
+	text-decoration: underline;
+}
+
+/*
  * Page shell.
  *
  * GitBook constrains its layout to a 1440px box centred in the viewport with 32px of

@@ -1,37 +1,172 @@
 ---
 /**
- * Renders the frontmatter description beneath the page title.
+ * Renders the section breadcrumb above the page title and the frontmatter
+ * description beneath it.
  *
  * GitBook shows a page's description as visible lead text under the heading. Starlight
  * uses it only for <meta name="description">, so without this override 71 pages lose
  * content the reader can currently see.
+ *
+ * The breadcrumb is the chain of ancestor groups from the section down to the
+ * immediate parent, excluding the page itself — one entry for a page sitting directly
+ * in a section, two for a nested one. Every entry is a link, as on GitBook.
+ *
+ * Targets are resolved to the first page inside each group rather than to a section
+ * URL. GitBook links its top-level crumb to paths like /core-concepts, which are not
+ * pages: it 307-redirects them to the section's first page (/core-concepts →
+ * /core-concepts/the-opendialog-model, /getting-started-1 → /). Those paths are in
+ * neither the live sitemap nor route-map.json, so reproducing them here would add a
+ * broken internal link. Pointing straight at the redirect target reaches the same page
+ * without the hop, which is the same reasoning behind `trailingSlash: 'never'`.
+ *
+ * One rule covers both levels because scripts/lib/sidebar-tree.mjs makes a parent
+ * page the first item of its own group, so "the first link in this group" is the
+ * parent's own page for an intermediate group and the section's first page for a
+ * top-level one.
  */
 // Starlight's PAGE_TITLE_ID is not reachable from a public export subpath, so the value
 // is inlined. It must stay '_top': the table of contents' "Overview" entry links to #_top.
 const PAGE_TITLE_ID = '_top';
 
 const { title, description } = Astro.locals.starlightRoute.entry.data;
+const { sidebar } = Astro.locals.starlightRoute;
+
+/** The first link inside a group, depth-first: the page that group header stands for. */
+function firstLink(entries) {
+	for (const entry of entries) {
+		if (entry.type === 'link') return entry;
+		const nested = firstLink(entry.entries);
+		if (nested) return nested;
+	}
+	return undefined;
+}
+
+/** The groups enclosing the current page, outermost first. */
+function ancestors(entries, chain = []) {
+	for (const entry of entries) {
+		if (entry.type === 'link') {
+			if (entry.isCurrent) return chain;
+			continue;
+		}
+		const found = ancestors(entry.entries, [...chain, entry]);
+		if (found) return found;
+	}
+	return undefined;
+}
+
+const crumbs = (ancestors(sidebar) ?? [])
+	.map((group, depth) => {
+		const link = firstLink(group.entries);
+		if (!link) return undefined;
+		// An intermediate group *is* a page, and GitBook omits that crumb when it is
+		// the page being viewed rather than linking it to itself. A top-level section
+		// is a structural bucket and never a page, so it always shows — GitBook keeps
+		// "GETTING STARTED" on / even though its target redirects back to /. Where the
+		// section's first page is the current page, the crumb renders as plain text so
+		// it still orients the reader without being a link to here.
+		if (depth > 0 && link.isCurrent) return undefined;
+		return { label: group.label, href: link.href, isHere: link.isCurrent };
+	})
+	.filter(Boolean);
 ---
+
+{
+	crumbs.length > 0 && (
+		<nav class="breadcrumb" aria-label="Breadcrumb">
+			<ol>
+				{crumbs.map((crumb) => (
+					<li>
+						{crumb.isHere ? <span>{crumb.label}</span> : <a href={crumb.href}>{crumb.label}</a>}
+						<svg
+							class="separator"
+							aria-hidden="true"
+							viewBox="0 0 8 8"
+							width="8"
+							height="8"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M2.5 1 5.5 4 2.5 7" />
+						</svg>
+					</li>
+				))}
+			</ol>
+		</nav>
+	)
+}
 
 <h1 id={PAGE_TITLE_ID}>{title}</h1>
 {description && <p class="page-description">{description}</p>}
 
 <style>
-	@layer starlight.core {
-		h1 {
-			margin-top: 1rem;
-			font-size: var(--sl-text-h1);
-			line-height: var(--sl-line-height-headings);
-			font-weight: 600;
-			color: var(--sl-color-white);
-		}
+	/*
+	 * Deliberately not wrapped in @layer. Starlight declares starlight.core before
+	 * starlight.reset, so the reset's `* { margin: 0 }` outranks anything in core and
+	 * every margin here would compute to 0 — as the h1 and description margins in this
+	 * file silently did before the breadcrumb was added. These selectors are scoped to
+	 * this component, so being unlayered affects nothing else.
+	 */
+	.breadcrumb {
+		margin-top: 1rem;
+		/* --sl-text-xs is 13px; GitBook sets 12px. */
+		font-size: 0.75rem;
+		line-height: 1.25rem;
+	}
 
-		.page-description {
-			margin-top: 0.75rem;
-			font-size: var(--sl-text-lg);
-			line-height: 1.6;
-			color: var(--sl-color-gray-3);
-			text-wrap: pretty;
-		}
+	.breadcrumb ol {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.breadcrumb li {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.breadcrumb a {
+		color: var(--sl-color-text-accent);
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover,
+	.breadcrumb a:focus-visible {
+		text-decoration: underline;
+	}
+
+	/* The trailing chevron would dangle after the last crumb. */
+	.breadcrumb li:last-child .separator {
+		display: none;
+	}
+
+	.separator {
+		color: var(--sl-color-gray-4);
+		flex-shrink: 0;
+	}
+
+	/* GitBook sets the page title heavier than the rest of the scale: 700 against 600. */
+	h1 {
+		margin-top: 0.75rem;
+		font-size: var(--sl-text-h1);
+		line-height: 1.25;
+		letter-spacing: -0.025em;
+		font-weight: 700;
+		color: var(--sl-color-white);
+	}
+
+	.page-description {
+		margin-top: 0.75rem;
+		font-size: var(--sl-text-lg);
+		line-height: 1.6;
+		color: var(--sl-color-gray-3);
+		text-wrap: pretty;
 	}
 </style>
