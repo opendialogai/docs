@@ -871,10 +871,31 @@ preserved in the JSDoc at `scripts/lib/mdx.mjs:66-79`. Fixing it properly means 
 **`ffmpeg` is now installed** — version 8.1.2, at `/opt/homebrew/bin/ffmpeg`. This supersedes
 the "Phase 3 dependency missing" entry earlier in this file, which is now stale.
 
-One further note: `engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg` is
-**18,022,046 B = 17.18 MiB** and is on the exclusion list above. Keeping it costs 17 MiB for an
-image nothing currently displays. That is a deliberate trade — Phase 4 may restore card covers
-— but it should be a conscious one, not an accident.
+**Trap 5 — the heaviest excluded asset has a byte-identical twin, and only one of them is on
+the exclusion list.** `source/.gitbook/assets/` holds **two** files of exactly **18,022,046 B
+= 17.19 MiB**, with the same SHA-256 (`f9d9175d…`):
+
+| File | Referenced in source | Referenced in output | Phase 3 action |
+|---|---|---|---|
+| `engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg` | yes — the `language-services.md` card cover | none | **exclusion list — keep** |
+| `engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc (1).jpg` | **none** | none | ordinary orphan — **delete** |
+
+Only the un-suffixed file is a card cover. The ` (1)` copy is referenced by nothing anywhere,
+in source or output, so it is an ordinary orphan and deleting it is correct — it reclaims
+17.19 MiB and loses nothing. Stated explicitly so Phase 3 does not discover a near-duplicate
+17.19 MiB file mid-deletion and have to stop and work out which one matters.
+
+Keeping the one that is excluded costs **17.19 MiB for an image nothing currently displays**.
+That is a deliberate trade — Phase 4 may restore card covers — but it should be a conscious
+one, not an accident. If Phase 4 decides against restoring covers, this is the first asset to
+drop.
+
+**The duplication is not isolated.** Hashing the whole library finds **158 groups of
+byte-identical files, holding 169 redundant copies totalling 58,190,126 B = 55.49 MiB** — about
+10% of the 541 MiB. GitBook's ` (1)`/` (2)` re-upload suffixes are the visible symptom. Most
+of this is inside the 1,089 orphans and disappears with them, but Phase 3 should not be
+surprised to find duplicates *among the assets it keeps*, and de-duplicating survivors is a
+cheap win if the numbers justify it.
 
 ### Handoff to Phase 4 — look and feel
 
