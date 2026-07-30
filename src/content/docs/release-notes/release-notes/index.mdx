@@ -4,7 +4,6 @@ description: Learn about our product's newest updates and enhancements that will
 ---
 
 import { LinkCard } from '@astrojs/starlight/components';
-import Embed from '~/components/Embed.astro';
 
 
 ## March 2026
@@ -611,7 +610,11 @@ Notable updates:
 
 ## December 2023 - Proxima
 
-<Embed url="https://youtu.be/KTIIq9DsEbc?si=5JJLEcE9F6xIdZWE" />
+<figure className="od-embed">
+<div className="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/KTIIq9DsEbc" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 #### <mark style={{ color: 'purple' }}>New Features</mark>
 

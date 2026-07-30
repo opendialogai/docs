@@ -3,9 +3,6 @@ title: Audio Message
 description: This page describes where to use and find an audio message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is an audio message?
 
 An audio message involves sending a sound file to the user as part of the conversation. This type of message can be an effective way to convey information, emotions, or instructions in a manner that text or images might not achieve as effectively.
@@ -75,7 +72,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use an audio message
 
-<Embed url="https://www.loom.com/share/b68beddac70c4e4ba22273403712f552?sid=185748d0-927d-4b75-b530-61731a267f08" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/b68beddac70c4e4ba22273403712f552" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

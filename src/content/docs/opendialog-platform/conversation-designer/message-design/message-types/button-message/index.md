@@ -3,9 +3,6 @@ title: Button Message
 description: This page describes where to use and find a button block message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a button message?
 
 You can add only one button message type to each message, however, within that you can add as many different buttons as you require. You can do this by clicking on the ＋ next to the button entry you require the button to appear afterwards. Right now you can not reorder the buttons, so they need to be added in the order you want them to appear.
@@ -248,7 +245,11 @@ For the button message type, you can select a number of advanced behaviours depe
 * **Override user input field - show buttons as main interaction mode:** This option will hide the text input within Webchat and show the buttons as the main interaction at the bottom.
 * **Allow continued interaction throughout the conversation:** This option will allow users to continue to interact with the buttons even if they have moved on from that part of the conversation. This is really useful for FAQ style chatbots.
 
-<Embed url="https://www.loom.com/share/d5b595a7c9d2416e8f6abd214511ac26?sid=b04c2a11-4868-400c-b8c2-42349025dd41" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/d5b595a7c9d2416e8f6abd214511ac26" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen

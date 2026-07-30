@@ -168,26 +168,26 @@ for (const route of routeMap) {
   text = convertCardTables(text, ctx);
   stats.cardTableCards += countCards(text) - beforeCardTable;
 
-  text = convertEmbeds(text);
   text = convertSteppers(text);
   text = convertColumns(text);
   text = reflowImageDiv(text);
   text = convertFigures(text, ctx);
   text = rewriteAssetRefs(text, ctx);
+  // After the figure passes: an embed emits a <figure class="od-embed"> wrapping a
+  // <div>, and both reflowImageDiv and convertFigures reject markup of that shape rather
+  // than degrading it. Neither pass has anything to do with an embed.
+  text = convertEmbeds(text);
   text = stripEntities(text);
   text = rewriteLinks(text, ctx);
 
   const used = COMPONENTS.filter(([marker]) => text.includes(marker)).map(([, name]) => name);
-  const hasEmbed = text.includes('<Embed ');
-  const isMdx = used.length > 0 || hasEmbed;
+  const isMdx = used.length > 0;
 
   if (isMdx) {
     text = unwrapPreCode(text);
     text = normaliseForMdx(text);
-    const imports = [];
-    if (used.length) imports.push(`import { ${[...new Set(used)].sort().join(', ')} } from '@astrojs/starlight/components';`);
-    if (hasEmbed) imports.push("import Embed from '~/components/Embed.astro';");
-    text = `\n${imports.join('\n')}\n${text}`;
+    const imports = `import { ${[...new Set(used)].sort().join(', ')} } from '@astrojs/starlight/components';`;
+    text = `\n${imports}\n${text}`;
   }
 
   const target = `${OUT}/${route.target}${isMdx ? 'x' : ''}`;
@@ -198,7 +198,8 @@ for (const route of routeMap) {
   stats.files++;
   if (isMdx) stats.mdx++;
   stats.asides += (output.match(/^:::(note|tip|caution|danger)/gm) || []).length;
-  stats.embeds += (output.match(/<Embed /g) || []).length;
+  // Either spelling: normaliseForMdx rewrites class to className on .mdx pages.
+  stats.embeds += (output.match(/<figure class(?:Name)?="od-embed">/g) || []).length;
   stats.cardGrids += (output.match(/<CardGrid>/g) || []).length;
   stats.steps += (output.match(/^\d+\. /gm) || []).length;
   stats.images += (output.match(/!\[/g) || []).length;
@@ -238,7 +239,9 @@ for (const route of routeMap) {
 
 const EXPECTED = {
   files: 204,
-  mdx: 46,
+  // Down from 46: an <iframe> is not a Starlight component, so an embed no longer
+  // promotes a page to .mdx. Only pages using LinkCard, Card, CardGrid or Steps do.
+  mdx: 18,
   asides: 258,
   contentRefCards: 51,
   cardTableCards: 41,

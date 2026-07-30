@@ -3,9 +3,6 @@ title: Rich Message
 description: This page describes where to use and find a rich message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a rich message?
 
 A rich message is a card type message that can include lots of different multimedia elements such as titles, text, images, links and more.
@@ -106,7 +103,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a rich message
 
-<Embed url="https://www.loom.com/share/b982f37b775b4f26bd571ce56d6b93f2?sid=c7d68bdc-fbed-4935-ba03-7e7267367347" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/b982f37b775b4f26bd571ce56d6b93f2" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

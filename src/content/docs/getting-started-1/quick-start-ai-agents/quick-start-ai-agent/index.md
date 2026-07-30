@@ -3,9 +3,6 @@ title: Quick Start AI Agent
 description: The OpenDialog Quick Start AI Agent
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 The Quick Start AI Agent is an optimised journey that really simplifies the process of creating an AI Agent. It is the fastest way to get up and running with OpenDialog.
 
 You will get taken to the Quick Start AI Agent process when you first login to OpenDialog or you can fire it up the  by visiting Create Scenario and then click on "Get Started Now"
@@ -22,7 +19,12 @@ Behind the scenes OpenDialog configures a complete AI Agent scenario that you ca
 
 
 
-<Embed url="https://youtu.be/RhUc_mgkNl8" title="Building a Quickstart AI Agent in no time!" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/RhUc_mgkNl8" title="Building a Quickstart AI Agent in no time!" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>Building a Quickstart AI Agent in no time!</figcaption>
+</figure>
 
 ## Step by step guide
 

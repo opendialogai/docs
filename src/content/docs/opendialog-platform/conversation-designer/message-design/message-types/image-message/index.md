@@ -3,9 +3,6 @@ title: Image Message
 description: This page describes where to use and find an image message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is an image message?
 
 With image messages we can display an image in the chat window with an optional embedded clickable link. An image message involves sending an image to the user as part of the interaction. An image message consists of a visual element—such as a photograph, illustration, graphic, or screenshot—delivered within a chatbot conversation. Images can convey information quickly and effectively, often more so than text alone.
@@ -99,7 +96,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use an image message
 
-<Embed url="https://www.loom.com/share/674637e1927d4d9b902e12d51ca302cc?sid=b44c6386-9bd7-4c85-b054-1b7d1a89fcd8" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/674637e1927d4d9b902e12d51ca302cc" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

@@ -3,9 +3,6 @@ title: Autocomplete Message
 description: This page describes where to use and find an autocomplete message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is an autocomplete message?
 
 Autocomplete messages allow us to capture accurate and form valid data from users efficiently. These messages can perform automatic look-ups based on partial user inputs.
@@ -108,7 +105,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use an autocomplete message
 
-<Embed url="https://www.loom.com/share/86b21a17ceb34aa09c2159d04078e951?sid=ce0f5e97-9b94-41eb-a678-2fda64dabb8f" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/86b21a17ceb34aa09c2159d04078e951" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

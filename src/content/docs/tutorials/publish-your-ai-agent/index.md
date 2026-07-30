@@ -3,9 +3,6 @@ title: Publish your AI Agent
 description: Ready to launch your AI Agent?
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## Introduction
 
 Now that you’ve built and refined your AI agent, it’s time to publish it on your website and let it engage with your users. OpenDialog makes this a simple two-step process using aliases, allowing you to easily manage and update your webchat without needing to change the underlying code.
@@ -18,7 +15,12 @@ In OpenDialog, an alias acts as a reference point for your WebChat widget. This 
 
 ## See it in action
 
-<Embed url="https://youtu.be/CnL88dIvqQE?si=HXxwZWjhCD8RHY_b" title="Publishing an AI Agent" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/CnL88dIvqQE" title="Publishing an AI Agent" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>Publishing an AI Agent</figcaption>
+</figure>
 
 
 

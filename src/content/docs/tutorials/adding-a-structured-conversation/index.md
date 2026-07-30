@@ -3,9 +3,6 @@ title: Adding a structured conversation
 description: Let's add a structured conversation flow to your AI Agent.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 Now that your AI Agent has become proficient at handling different topics of discussion, let's see how we can add a more structured type of conversation in the mix.
 
 :::note
@@ -26,7 +23,12 @@ To do this, we will need to :
 
 
 
-<Embed url="https://youtu.be/ZA7xgNQDYGk" title="Add a structured conversation thanks to OpenDialog's unique model" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/ZA7xgNQDYGk" title="Add a structured conversation thanks to OpenDialog's unique model" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>Add a structured conversation thanks to OpenDialog's unique model</figcaption>
+</figure>
 
 ## Step-by-step guide
 
@@ -256,4 +258,4 @@ Wait a minute! Now that the process is in place, we still need to link it up to 
 
 That's it - your are all set.  Now, when the BookAppointment topic will be matched through semantic classification, the AI Agent will transition to the BookAppointment process rather than providing a one-off response.
 
-<br />
+<br>

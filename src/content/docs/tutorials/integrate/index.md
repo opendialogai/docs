@@ -3,9 +3,6 @@ title: Add a 3rd party integration
 description: Let's enhance your AI Agent with access to 3rd party data.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## Introduction
 
 Throughout the course of a conversation, we may want to communicate with systems outside of OpenDialog to send or receive data. This may be as simple as a "ping" to a URL representing a milestone in the user's journey, or an integration with an external data source which takes some input data from the conversation, and outputs some new data to return to the conversation.
@@ -32,7 +29,12 @@ For some more details around the data structures you can use please see the [Int
 
 
 
-<Embed url="https://youtu.be/aseZ5oHG1IQ?si=nn7YIbOVNQJdDiZr" title="A step by step guide to add an integration between OpenDialog and a 3rd party application" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/aseZ5oHG1IQ" title="A step by step guide to add an integration between OpenDialog and a 3rd party application" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>A step by step guide to add an integration between OpenDialog and a 3rd party application</figcaption>
+</figure>
 
 ## Step by step guide
 
@@ -204,7 +206,7 @@ You can use the value of output attributes from your action in your messages, to
 * Click the Edit icon on the message card
 * Locate the text block
 * Locate the place in your message where you want to add the information from output attribute
-* Type an opening curly brace \{ to access the attribute autocomplete field
+* Type an opening curly brace { to access the attribute autocomplete field
 * Start typing the name of your output attribute, for example full\_name
 * Select the desired attribute from the dropdown, in our case: full\_name
 * Scroll back up to the top of the page

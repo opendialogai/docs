@@ -3,9 +3,6 @@ title: Form Message
 description: This page describes where to use and find a form block message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a form message?
 
 The form message lets you create more complicated message inputs that are great for capturing structured information about the user use as addresses or full names.
@@ -61,7 +58,7 @@ We support a range of attribute types from the following list:
 * `IntegerColelctionAttribute` e.g. \[1, 2, 3]
 * `FloatCollectionAttribute` e.g. \[1.1, 1.2, 1.3]
 * `ArrayDataAttribute` (aka 'List') e.g. \["Any set of values", "that you like", \["even nested ones"]]
-* `JSONInferredCompositeAttribute` e.g. \{ "1": "Unemployed", "2": "Employed"\}
+* `JSONInferredCompositeAttribute` e.g. { "1": "Unemployed", "2": "Employed"}
 
 The only unsupported type is:
 
@@ -205,7 +202,12 @@ This form message example was created with the following XML:
 
 ## How to use a form message?
 
-<Embed url="https://www.loom.com/share/d83919130d5743b5a9bc7b3763bdf62c?sid=be885a0c-4e12-476a-99d4-0c48cd036407" title="A video example of how to use a form message" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/d83919130d5743b5a9bc7b3763bdf62c" title="A video example of how to use a form message" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>A video example of how to use a form message</figcaption>
+</figure>
 
 :::tip
 **Saves Message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen

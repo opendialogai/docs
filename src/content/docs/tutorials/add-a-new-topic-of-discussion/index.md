@@ -3,9 +3,6 @@ title: Adding a new topic of discussion
 description: Let's expand  your AI Agent's capabilities by introducing a new topic of discussion.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## Introduction
 
 Adding new topics of discussion allows your AI agent to answer questions and engage in conversations beyond the initial scope, creating a more dynamic and comprehensive user experience. Let’s walk through the process of adding a new topic to your AI agent.
@@ -22,7 +19,12 @@ So that an AI Agent can correctly handle a new topic of discussion, we must make
 
 ## **See it in action**
 
-<Embed url="https://youtu.be/v6wBulsRa4o" title="Tutorial video on how to add a new topic of discussion" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/v6wBulsRa4o" title="Tutorial video on how to add a new topic of discussion" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>Tutorial video on how to add a new topic of discussion</figcaption>
+</figure>
 
 ## **Step-by-step guide**
 

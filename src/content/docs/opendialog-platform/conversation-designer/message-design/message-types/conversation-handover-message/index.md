@@ -3,9 +3,6 @@ title: Conversation Handover message
 description: This page describes where to use and find a conversation handover message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a conversation handover message?
 
 In OpenDialog webchat, using a conversation handover message means that new messages sent by the user are not sent to the `incoming/webchat` endpoint, but are handled by an external system.
@@ -71,7 +68,11 @@ Fill in the template with the [properties ](/opendialog-platform/conversation-de
 
 ## How to use a conversation handover message
 
-<Embed url="https://www.loom.com/share/606e24e270bb42cea53a68c2203059c7?sid=2d4ccbdb-35d4-44fe-9a61-3b1bd876b1d1" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/606e24e270bb42cea53a68c2203059c7" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

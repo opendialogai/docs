@@ -3,9 +3,6 @@ title: File Upload Message
 description: This page describes where to use and find a file upload block message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a file upload message?
 
 File upload messages allow us to submit more than one file at a time in multiple different formats.
@@ -90,7 +87,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a file upload message
 
-<Embed url="https://www.loom.com/share/b244bd98b24e46d6bda9de97e5d8c3ab?sid=98ef4b9c-dd03-488c-8327-c66c6477d16c" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/b244bd98b24e46d6bda9de97e5d8c3ab" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

@@ -3,9 +3,6 @@ title: Full Page Message
 description: This page describes where to use and find a full page message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a full page message?
 
 When full page messages are received, they will take over the entire chatbot screen (depending on what is supported by each platform)
@@ -139,7 +136,12 @@ The cancel button can be added to a form message with the following mark up:
 
 ## How to use a full page message
 
-<Embed url="https://www.loom.com/share/77515c9f87f64b4a90864ba7c03f3e1a?sid=86a2e4c1-6b7b-4141-9f51-f3013796e8c6" title="A video demonstration of how to use a full page message" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/77515c9f87f64b4a90864ba7c03f3e1a" title="A video demonstration of how to use a full page message" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>A video demonstration of how to use a full page message</figcaption>
+</figure>
 
 ## How to construct a full page message
 

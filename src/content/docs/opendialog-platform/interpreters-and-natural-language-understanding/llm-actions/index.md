@@ -3,9 +3,6 @@ title: LLM Actions
 description: An LLM Action enables you to use LLMs to perform reasoning, generate text and feed that information back into your scenario in order to influence the next steps of the conversation.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 Using LLM Actions you have more fine-grained control over when and how to involve an LLM in your conversation since actions can be performed _after_ a user intent has been interpreted (by an OpenDialog interpreter) or _before_ a bot message was sent to the user.  This enables you to influence the context of the conversation as best required by your scenario.
 
 This section will help you to understand what an LLM action is, and how to configure and use it within your conversation.
@@ -64,7 +61,11 @@ To access LLM actions:
 
 ## How to use
 
-<Embed url="https://www.loom.com/share/c6cac1069fbf4596824e80448de4630b" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/c6cac1069fbf4596824e80448de4630b" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 ## Structure
 
@@ -148,7 +149,7 @@ _"You are a helpful car insurance assistant. The user will provide questions or 
 
 It is also possible to include [attributes](/core-concepts/contexts-and-attributes/about-attributes) within your system, for example:
 
-_"You are a helpful car insurance assistant. The user will provide questions or statements related to car insurance claims, and you will categorise their input. The user's vehicle is a \{vehicle\_type\}. Output whether the user is asking to make a claim (make\_claim), asking about the status of a claim (claim\_status) or an FAQ about a claim (claim\_faq). If none of the above, return an empty string."_
+_"You are a helpful car insurance assistant. The user will provide questions or statements related to car insurance claims, and you will categorise their input. The user's vehicle is a {vehicle\_type}. Output whether the user is asking to make a claim (make\_claim), asking about the status of a claim (claim\_status) or an FAQ about a claim (claim\_faq). If none of the above, return an empty string."_
 
 
 
@@ -209,7 +210,7 @@ This area allows you to configure specific aspects of your LLM’s behaviour. Yo
 
 #### **User prompt**
 
-The user prompt field allows you to provide a custom user prompt to the LLM. By default this field will contain `{utterance_text}` which means that the LLM will receive whatever text the user enters into Webchat. A custom user prompt allows you to constrain what is received by the LLM. You may choose to use attributes to provide a bespoke input, such as _"I work \{distance\}km away from my house"_. These attributes can be retrieved from form messages, button messages, interpreters or other actions. You can also choose to remove the user prompt completely. This means that no user input is sent to the LLM (besides any attributes in the system prompt). This can be useful if you want to generate text based solely on pre-defined instructions in your system prompt.
+The user prompt field allows you to provide a custom user prompt to the LLM. By default this field will contain `{utterance_text}` which means that the LLM will receive whatever text the user enters into Webchat. A custom user prompt allows you to constrain what is received by the LLM. You may choose to use attributes to provide a bespoke input, such as _"I work {distance}km away from my house"_. These attributes can be retrieved from form messages, button messages, interpreters or other actions. You can also choose to remove the user prompt completely. This means that no user input is sent to the LLM (besides any attributes in the system prompt). This can be useful if you want to generate text based solely on pre-defined instructions in your system prompt.
 
 :::note
 When a user prompt is specified in the advanced section, the user utterance within the test panel is replaced with the user prompt you entered.
@@ -250,15 +251,15 @@ _The factors to consider here:_
 
 Then we set some output attributes, for example:
 
-_\{can\_insure\_string\} either yes, no, unknown or unrelated_
+_{can\_insure\_string} either yes, no, unknown or unrelated_
 
-_\{follow\_up\_question\} if you need more info, this is what we should ask the user_
+_{follow\_up\_question} if you need more info, this is what we should ask the user_
 
-With these output attributes created and their values defined, we can now configure messages based on the circumstances of the user's application. If they can be insured, we can redirect to \{can\_insure\_string\}. If we need more information, we can redirect to the \{follow\_up\_question\} to gather more information.
+With these output attributes created and their values defined, we can now configure messages based on the circumstances of the user's application. If they can be insured, we can redirect to {can\_insure\_string}. If we need more information, we can redirect to the {follow\_up\_question} to gather more information.
 
 </details>
 
-With these output attributes created and their values defined, we can now configure messages based on the circumstances of the users application. If they can be insured, we can redirect to \{can\_insure\_string\}. If we need more information, we can redirect to the \{follow\_up\_question\} to gather more information.
+With these output attributes created and their values defined, we can now configure messages based on the circumstances of the users application. If they can be insured, we can redirect to {can\_insure\_string}. If we need more information, we can redirect to the {follow\_up\_question} to gather more information.
 
 
 

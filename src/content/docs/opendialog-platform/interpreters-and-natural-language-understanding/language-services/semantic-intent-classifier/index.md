@@ -3,9 +3,6 @@ title: Semantic Intent Classifier
 description: OpenDialog's Semantic Intent Classifier provides a quick and easy way to enable natural language input within your bot, allowing you to interpret user utterances without training phrases.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 Interpreting a user's utterance is an important part of conversation design. It ensures your bot can understand what a user has said in natural language, understand whether it is a question about 'Policy' or 'Making a claim', and accurately match an intent. Conversations are non-linear and context-driven, meaning effective intent management and matching is integral to great conversation design.
 
 [Try the OpenDialog digital concierge](https://opendialog.ai/opendialog-digital-concierge/)
@@ -117,7 +114,11 @@ A Semantic Intent Classifier Language Service has 4 main components:
 
 ### Overview
 
-<Embed url="https://www.loom.com/share/ad624135bb6c4747b4811e50f09a31ff" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/ad624135bb6c4747b4811e50f09a31ff" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 ### Vocabulary
 

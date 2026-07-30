@@ -2,8 +2,6 @@
 title: Freshdesk Action
 ---
 
-import Embed from '~/components/Embed.astro';
-
 ### The basics
 
 The Freshdesk action lets you set up a connection between OpenDialog and your Freshdesk ticketing system, which you can then in turn use within your conversation design.
@@ -55,15 +53,20 @@ The Freshdesk Action has three main components: the action setup, the action tes
 
 *Freshdesk action setup in the central pane, guidance and action testing in the right-hand pane.*
 
-The <mark style={{ color: 'purple' }}>**action setup**</mark> happens in the central pane of the actions screen.  It is divided into three separate spaces:  naming your action, adding your account details (see [What you'll need](/opendialog-platform/actions/actions-from-library/freshdesk-action#what-youll-need) for more details), setting the ticket information, and, finally, tags to categorize your requests in Freshdesk.
+The <mark style="color:purple;">**action setup**</mark> happens in the central pane of the actions screen.  It is divided into three separate spaces:  naming your action, adding your account details (see [What you'll need](/opendialog-platform/actions/actions-from-library/freshdesk-action#what-youll-need) for more details), setting the ticket information, and, finally, tags to categorize your requests in Freshdesk.
 
-The <mark style={{ color: 'purple' }}>**action testing**</mark> becomes available in the right-hand pane once all the settings above have been completed.
+The <mark style="color:purple;">**action testing**</mark> becomes available in the right-hand pane once all the settings above have been completed.
 
-You can start <mark style={{ color: 'purple' }}>**using the action in your project**</mark> by adding it to the intent of your choice. More information about this [here](/opendialog-platform/actions).
+You can start <mark style="color:purple;">**using the action in your project**</mark> by adding it to the intent of your choice. More information about this [here](/opendialog-platform/actions).
 
 ### How to use
 
-<Embed url="https://youtu.be/XCaMVMtFvIc" title="Learn how to create and test a Freshdesk action" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/XCaMVMtFvIc" title="Learn how to create and test a Freshdesk action" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>Learn how to create and test a Freshdesk action</figcaption>
+</figure>
 
 #### Create the Freshdesk action
 

@@ -3,9 +3,6 @@ title: Interpreter Orchestration
 description: Use OpenDialog Interpreter Orchestration to set a highest priority interpreter at different levels of your conversation.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ![](~/assets/screenshot-2024-03-27-at-08-40-11.png)
 
 
@@ -82,4 +79,8 @@ Through this, the process of intent matching is streamlined, and gives the desig
 
 ## How to use - video
 
-<Embed url="https://www.loom.com/share/ef6e52e9a2194c80bb2b22f04e2aee45?sid=87f3d5f7-b553-410b-a969-13672d8c1002" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/ef6e52e9a2194c80bb2b22f04e2aee45" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>

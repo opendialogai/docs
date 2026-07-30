@@ -3,9 +3,6 @@ title: List Message
 description: List messages allow for multiple messages to be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a list message?
 
 List messages allow for multiple messages to be combined into a single message for the user that is displayed as a carousel that users can scroll between. These are good for displaying multiple search.
@@ -63,7 +60,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a list message
 
-<Embed url="https://www.loom.com/share/0d749f8e4b224eb49d052b4d46f197f0?sid=5555dcef-eaa6-4ab6-a05d-9dc6aba6f3f5" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/0d749f8e4b224eb49d052b4d46f197f0" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::caution
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

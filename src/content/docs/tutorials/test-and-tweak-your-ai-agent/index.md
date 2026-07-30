@@ -3,9 +3,6 @@ title: Test and tweak your AI Agent
 description: Your AI Agent is almost ready to launch! Before you publish it, let’s make sure it’s optimised for the best user experience.
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## Introduction
 
 While building out your AI agent, you have set up a number of components along the way that all contribute to it's success.
@@ -21,7 +18,12 @@ There are a few types of tests that you will want to run before launching your A
 
 ## See it in action
 
-<Embed url="https://youtu.be/OP8V9e3K3u8" title="Follow along to debug your AI Agent, step by step" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/OP8V9e3K3u8" title="Follow along to debug your AI Agent, step by step" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>Follow along to debug your AI Agent, step by step</figcaption>
+</figure>
 
 ## Step-by-step guide
 

@@ -3,9 +3,6 @@ title: E-Sign Message
 description: This page describes where to use and find a e-sign message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is an e-sign message?
 
 An e-sign message can be used within your OpenDialog chatbot to collect and gather signatures from your users. Users can input their signature and then send it over, to be stored by you and used in the future.
@@ -76,7 +73,11 @@ Fill in the template with the [properties](/opendialog-platform/conversation-des
 
 ## How to use e-sign messages
 
-<Embed url="https://www.loom.com/share/45f79a718bf840aa8cddf5b0e62fcb9e?sid=1ad5760c-3545-45fe-a0e8-51cb9b089dab" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/45f79a718bf840aa8cddf5b0e62fcb9e" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

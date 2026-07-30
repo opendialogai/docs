@@ -3,9 +3,6 @@ title: Address Autocomplete Message
 description: This page describes where to use and find an address autocomplete message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is an address autocomplete message?
 
 An address autocomplete message type in a chatbot is a feature that assists users in quickly entering their address information by providing real-time suggestions as they type. This type of message aims to enhance the user experience by reducing the amount of typing required and ensuring more accurate address entries.
@@ -70,7 +67,11 @@ Fill in the template with the [properties](/opendialog-platform/conversation-des
 
 ## How to use an address autocomplete message
 
-<Embed url="https://www.loom.com/share/e48ff649b6fa4c5884492a25739390f9" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/e48ff649b6fa4c5884492a25739390f9" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

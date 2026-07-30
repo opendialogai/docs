@@ -2,8 +2,6 @@
 title: Datetime Action
 ---
 
-import Embed from '~/components/Embed.astro';
-
 The Datetime action allows you to create and update timestamp attributes.
 
 :::note
@@ -12,7 +10,11 @@ Any new timestamp attributes that you create and/or reference with this action t
 
 ### Video
 
-<Embed url="https://www.loom.com/share/118848be202d465ab443e13a1ae46c15?sid=a0309590-8db2-4528-ae40-997941a2d189" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/118848be202d465ab443e13a1ae46c15" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 ### Fields
 

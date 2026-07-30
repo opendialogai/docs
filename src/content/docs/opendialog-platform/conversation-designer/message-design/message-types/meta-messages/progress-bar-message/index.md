@@ -3,9 +3,6 @@ title: Progress Bar Message
 description: This page describes where to use and find a progress bar message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a progress bar message
 
 Progress bar messages can give the user a sense of how far they have advanced through the interaction.
@@ -45,12 +42,11 @@ Fill in the template with the [properties](/opendialog-platform/conversation-des
 
 So, for example, the snippet below would show that the Claim Process is 10% complete.
 
-<pre>
-&#x3C;meta-message>
+<pre><code>&#x3C;meta-message>
   &#x3C;data name="progressPercent">10%&#x3C;/data>
   &#x3C;data name="progressText">Claim Process Completion&#x3C;/data>
-<strong>&#x3C;/meta-message></strong>
-</pre>
+<strong>&#x3C;/meta-message>
+</strong></code></pre>
 
 #### Properties
 
@@ -64,7 +60,11 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a progress bar message
 
-<Embed url="https://www.loom.com/share/6b9e1179b4504ea282e8663c5574cde6?sid=cabd2202-3893-477b-87ab-5354c4f47238" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/6b9e1179b4504ea282e8663c5574cde6" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

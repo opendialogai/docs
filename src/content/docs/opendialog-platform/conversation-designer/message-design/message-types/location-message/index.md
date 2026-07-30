@@ -3,9 +3,6 @@ title: Location Message
 description: This page describes where to use and find a location message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a location message?
 
 A location message is a message type that allows you to ask the user for their location. The user will then be able to open up a map and submit their location, or drag the map to whatever location they want to submit
@@ -74,7 +71,11 @@ If you do not register this new attribute first, this will cause the message to 
 
 ## How to use location messages
 
-<Embed url="https://www.loom.com/share/3fed628c713c4bae97111edb4e11bb29?sid=a9d2f7ad-0f18-42db-9a1d-1e97c4be594c" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/3fed628c713c4bae97111edb4e11bb29" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.

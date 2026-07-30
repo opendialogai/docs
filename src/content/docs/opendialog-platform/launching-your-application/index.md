@@ -2,8 +2,6 @@
 title: Launching your application
 ---
 
-import Embed from '~/components/Embed.astro';
-
 ## Publishing a single scenario to WebChat
 
 To launch your conversational application using the OpenDialog WebChat on your website or application, start by activating the scenario. To do so, go to the 'Scenarios' page and click on the slider to set it to 'active'.
@@ -40,7 +38,12 @@ An alias can map to any given scenario and therefore exists on the Workspace lev
 
 ### How it works
 
-<Embed url="https://youtu.be/k57nEd_ruWQ" title="How to use Aliases in the OpenDialog Product" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.youtube-nocookie.com/embed/k57nEd_ruWQ" title="How to use Aliases in the OpenDialog Product" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>How to use Aliases in the OpenDialog Product</figcaption>
+</figure>
 
 #### Creating an alias
 

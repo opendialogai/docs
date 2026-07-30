@@ -3,9 +3,6 @@ title: Text Message
 description: This page describes where to use and find a text message type
 ---
 
-import Embed from '~/components/Embed.astro';
-
-
 ## What is a text message?
 
 A text message is a plain message with only text and is the primary message block we use to communicate with the user. It conveys information plainly conversationally and can also be used as a preamble to user choices using buttons, forms, and other message types.
@@ -122,7 +119,12 @@ If you change your mind and select a different message type after generating the
 
 ## How to use a text message
 
-<Embed url="https://www.loom.com/share/af079d5a9e654cfba90bedbcc935df9e?sid=197ce241-73b2-4a9a-8bee-db8f1125c039" title="A video demonstration on how to use" />
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/af079d5a9e654cfba90bedbcc935df9e" title="A video demonstration on how to use" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<figcaption>A video demonstration on how to use</figcaption>
+</figure>
 
 :::tip
 **Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
@@ -132,9 +134,9 @@ If you change your mind and select a different message type after generating the
 
 You can use a text message to display the responses from a large language model in your text message.
 
-To do so, you can reference the attribute that contains the LLM response in the text message block as follows : \{attribute\_name\}
+To do so, you can reference the attribute that contains the LLM response in the text message block as follows : {attribute\_name}
 
-_For example, \{llm\_response\}_
+_For example, {llm\_response}_
 
 This requires you to configure the attribute the LLM response will get stored to. For more information on attributes, check out our [Attribute Management](/core-concepts/contexts-and-attributes/attributes) section.
 
