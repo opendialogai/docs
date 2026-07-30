@@ -1374,7 +1374,8 @@ as newly measured.
 | `_astro`-referencing HTML files in `dist` | 205 of 205 |
 | `src/assets` size (byte sum, the gate) | 33,591,322 B = 32.0 MiB against 60,000,000 |
 | `src/assets` size (`du -sh`, allocated blocks) | 33M (`du -sm`: 34) |
-| `public` size | 1.1M / 2 (byte sum: MP4 1,179,445 B + CSV) |
+| `public` size (`du -sh`, allocated blocks) | 2.0M (`du -sm`: 3) |
+| `public` size (byte sum, all three tracked files) | 1,195,546 B = 1.14 MiB |
 | Largest file, any destination | 1,179,445 B = 1.12 MiB (the MP4), under the 25 MiB cap |
 | `find src/assets public -type f -size +25000k` | empty |
 | `git status` after the whole pipeline re-run twice | clean |
@@ -1383,6 +1384,14 @@ as newly measured.
 allocated disk blocks; with ~500 small files the block overhead is real. Both numbers stay far
 under the 60 MB gate, so this is a reading-the-number caution, not a risk: use the byte sum
 (`33,591,322 B`) as the authoritative figure, `du -sh`'s `33M` as a sanity check only.
+
+**`public`'s byte sum includes `favicon.png`, which this phase does not manage.** `du -sh public`
+reads `2.0M`; the true byte sum of everything `find public -type f` walks is `1,195,546 B`:
+`public/favicon.png` (15,074 B, tracked since `c31854d`, Phase 1's brand asset) +
+`public/files/deliveryknowledgebase.csv` (1,027 B) +
+`public/media/knowledge-base-demo.mp4` (1,179,445 B). This phase's own contribution — the CSV
+and the MP4 — is `1,180,472 B`, matching the "Files in `public/media`: 1" / "Files in
+`public/files`: 1" figures below.
 
 ### Override 1 — the brief's Step 2 check was blind to the corpus's one `public/files/` reference
 
@@ -1642,9 +1651,16 @@ would simply read one lower and, absent independent knowledge of the true count,
 ### Stale entries in this repo's own docs, corrected by this phase
 
 - **`ffmpeg` is installed** — 8.1.2, at `/opt/homebrew/bin/ffmpeg`, verified again at this gate.
-  `CLAUDE.md`'s Gotchas section and this file's own "Phase 3 dependency missing" entry (Phase 1
-  gate) still record it as missing; both are now stale as written but stand per the append-only
-  rule. The Phase 2 gate's Handoff-to-Phase-3 section already carries the correction.
+  This file's own "Phase 3 dependency missing" entry (Phase 1 gate) still records it as missing;
+  it is now stale as written but stands per the append-only rule. The Phase 2 gate's
+  Handoff-to-Phase-3 section already carries the correction. **`CLAUDE.md` does not, and never
+  has, mention `ffmpeg` at all** — verified here with `git log --all --oneline -S'ffmpeg' --
+  CLAUDE.md` (no output, no commit ever touched the string) and `grep -in 'ffmpeg' CLAUDE.md` (no
+  match). The design spec (`docs/superpowers/specs/2026-07-30-phase-3-assets-design.md:57`)
+  claims "`MIGRATION-NOTES.md`, `CLAUDE.md` and the Phase 2 handoff all record it as a missing
+  prerequisite" — that claim is itself wrong about `CLAUDE.md`, and the Phase 3 handoff repeated
+  it as "three files still record it as missing" without checking. Recorded here so the chain
+  stops at this file rather than propagating into whatever reads this section next.
 - **The 28 MB GIF was never a deployment blocker.** It is an orphan — referenced by nothing in
   `source/` or the generated output — and was never copied by `assets.mjs`. `CLAUDE.md`'s Gotchas
   line describing it as something that "will fail deployment" and needs re-encoding is describing
