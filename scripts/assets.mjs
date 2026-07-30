@@ -1,13 +1,12 @@
 /**
- * Copies the referenced GitBook assets into src/assets/ and public/, slugified and re-encoded,
+ * Copies the referenced GitBook assets into src/assets/ and public/, slugified, byte-for-byte,
  * and records what each became in asset-map.json.
  *
  * The copy set is derived from source/ alone — never from src/content/docs — because
  * convert.mjs consumes this map to emit its paths and would otherwise need itself first.
  *
- * Idempotent: output paths derive from sorted filenames, encoding parameters are fixed, and an
- * asset whose source bytes are unchanged is skipped. Re-runnable against a fresh GitBook sync
- * right up to cutover day.
+ * Reproducible: output paths derive from sorted filenames, so a run against the same source/
+ * tree always produces byte-identical files and an identical asset-map.json.
  */
 import { createHash } from 'node:crypto';
 import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
