@@ -92,15 +92,15 @@ async function countColours(buffer) {
  * -movflags +faststart puts the index first so the browser can start playing before the file has
  * fully downloaded. yuv420p and the even-dimension scale filter are what Safari requires.
  *
- * -fflags +bitexact, -flags:v +bitexact and -map_metadata -1 strip encoder version strings,
- * timestamps and other metadata libx264/the MP4 muxer would otherwise embed, which would
- * otherwise make two encodes of the same input differ byte-for-byte and break the content-hash
- * cache's guarantee that the same source/ tree always produces identical output.
+ * -flags:v +bitexact and -map_metadata -1, together with the fixed encode parameters below and a
+ * pinned ffmpeg version, strip encoder version strings, timestamps and other metadata libx264/the
+ * MP4 muxer would otherwise embed, which would otherwise make two encodes of the same input differ
+ * byte-for-byte and break the content-hash cache's guarantee that the same source/ tree always
+ * produces identical output.
  */
 function encodeVideo(from, to) {
   execFileSync('ffmpeg', [
     '-y', '-loglevel', 'error',
-    '-fflags', '+bitexact',
     '-i', from,
     '-movflags', '+faststart',
     '-pix_fmt', 'yuv420p',
@@ -180,6 +180,11 @@ for (const name of [...copy].sort()) {
   const early = still ? null : planAsset({ filename: name, bytes: source.length, colours: null });
   const finalSlug = early?.treatment === 'encode-video' ? slug.replace(/\.gif$/i, '.mp4') : slug;
 
+  // The cache keys on content hash, slug and destination only — it does not, and cannot, key on
+  // MAX_WIDTH, QUANTISE_MAX_COLOURS or GIF_VIDEO_THRESHOLD. Changing one of those constants and
+  // re-running still hits this cache for every unchanged source file, so the new value silently
+  // never takes effect: delete asset-map.json before the next run whenever an encode constant
+  // changes.
   const cached = previous[name];
   if (
     cached &&
@@ -236,7 +241,7 @@ for (const name of [...copy].sort()) {
  * guess, and skipping such entries would let their stale files sit unswept forever.
  */
 const destinationKeyFor = (asset) => asset.destination ?? DESTINATION_FOR_KIND[asset.kind];
-const claimed = new Set(Object.values(assets).map((asset) => `${asset.destination}/${asset.slug}`));
+const claimed = new Set(Object.values(assets).map((asset) => `${destinationKeyFor(asset)}/${asset.slug}`));
 for (const asset of Object.values(previous)) {
   const destinationKey = destinationKeyFor(asset);
   if (claimed.has(`${destinationKey}/${asset.slug}`)) continue;

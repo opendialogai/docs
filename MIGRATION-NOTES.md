@@ -1707,7 +1707,8 @@ semantics collapsing to an italic paragraph.
 None of the below is reachable on today's corpus. Recorded so they are not rediscovered as new.
 
 - `encodeVideo`'s `VIDEO_CONTAINER = /\.(?:mp4|webm)$/i` accepts `.webm`, which `encodeVideo`
-  never produces; `/\.mp4$/i` would match the actual invariant.
+  never produces; `/\.mp4$/i` would match the actual invariant. Root cause below, under
+  "output-extension ownership".
 - The sweep's `claimed` set is built with a raw `` `${asset.destination}/${asset.slug}` ``
   template while the sweep side goes through the `destinationKeyFor` helper. Functionally
   identical today because every entry written this run has a valid `destination`, but it is the
@@ -1727,6 +1728,93 @@ None of the below is reachable on today's corpus. Recorded so they are not redis
   describing `copyFileSync` plus a second `readFileSync` per asset does not match the shipped
   loop, which reads each source file exactly once via `readFileSync` and reuses that buffer for
   both the hash and the resize/write path.
+
+### Final review: further deferred findings
+
+Transcribed from `.superpowers/sdd/2026-07-30-phase-3-assets/deferred-minors.md`, which is
+git-ignored and deleted at merge, before it disappears. Four items from that file already
+appear in the list above (`copySet()`'s triple sort, the two `~/assets/` regexes in
+`convert.mjs`, `convertFile`'s link-text/path divergence, and the `VIDEO_CONTAINER` `.webm`
+acceptance); these do not.
+
+- No test covers the collision-suffix loop (`assignSlugs`, `asset-plan.mjs`) re-checking an
+  already-suffixed name — `['a b.png', 'a-b.png', 'a-b-2.png']` sorts to
+  `['a b.png', 'a-b-2.png', 'a-b.png']`, and the `while` loop must skip the taken `a-b-2.png`
+  to land on `a-b-3.png`. Verified correct by hand-trace, not locked in by a test. The
+  collision path is unreachable on today's corpus and is exactly what a future sync fires,
+  making it the least-exercised load-bearing branch in the asset pipeline.
+- `slugify`'s (`asset-plan.mjs`) handling of dotfiles, trailing dots and multi-part extensions
+  is undocumented: `.hidden` fails the `dot > 0` guard and the whole name becomes the stem;
+  `trailing.` yields a bare `.` extension; `archive.tar.gz` folds `.tar` into the stem, giving
+  `archive-tar.gz`. All defensible for this corpus, none stated in the JSDoc.
+- No unit test locks true duplicate hrefs in `link-cards.mjs`'s `coverTargets`, though
+  `asset-refs.test.mjs` now locks duplicate survival one layer up, in the code that consumes
+  them, and both `coverHrefs` and `copySet` would fail loudly if a `Set` crept into either.
+
+**Output-extension ownership, and two more places that duplicate `asset-plan.mjs`'s naming
+decisions instead of asking it for them.**
+
+- The output extension is decided in `assets.mjs`, by
+  `slug.replace(/\.gif$/i, '.mp4')` keyed on `plan.treatment`, rather than inside the pure
+  `asset-plan.mjs` module that owns every other naming decision. That split is the reason
+  `figures.mjs`'s `VIDEO_CONTAINER` regex has to accept `.webm` defensively even though
+  `encodeVideo` never produces it — the real invariant, `/\.mp4$/i`, only holds once
+  `planAsset` itself decides the output name. Moving output naming into `planAsset` collapses
+  both gaps at once.
+- `assets.mjs`'s `STILL_IMAGE = /\.(?:png|jpe?g|webp)$/i` duplicates `asset-plan.mjs`'s `STILL`
+  regex rather than importing it. The two agree today. A future divergence one way — an
+  extension `STILL_IMAGE` accepts that `STILL` rejects — throws loudly inside `planAsset`; a
+  divergence the other way is silent: a resized image that `STILL_IMAGE` planned as
+  `kind: 'file'` would land in `public/files`, resolve correctly, and simply never be
+  optimised.
+- A cache hit (`assets.mjs`, the `cached && cached.hash === hash && …` branch) reuses
+  `reference` and `kind` verbatim and never re-validates them against the current plan inputs.
+  Changing `MAX_WIDTH`, `QUANTISE_MAX_COLOURS` or `GIF_VIDEO_THRESHOLD` and re-running
+  therefore cache-hits every asset — `reused 500`, `encoded 0` — and the constant appears to
+  have had no effect at all. `assets.mjs` now carries a comment above the cache check stating
+  this explicitly: changing an encode constant requires deleting `asset-map.json` before the
+  next run.
+
+### Adjudicating a corpus-count change before cutover
+
+`assets.mjs`'s `EXPECTED` (references 509, coverHrefs 13, copySet 500, mapEntries 500) and
+`convert.mjs`'s `EXPECTED` both hold absolute corpus counts, not proportions or ranges.
+`assets.mjs` runs before `convert.mjs` in `npm run convert`, so a docs author adding one
+legitimate screenshot before cutover makes `assets.mjs` exit 1 and `convert.mjs` never runs at
+all. `CLAUDE.md` is explicit that these counts are never adjusted to make a run pass — that
+rule is correct and stays. What has been missing is how to tell a genuine content change from
+a broken transform, since both present identically: a count that no longer matches.
+
+**Procedure, to run before touching any `EXPECTED` value:**
+
+1. Diff `source/` against the previous sync (or `git log` on `documentation` since the last
+   conversion) to name the actual file added, removed or edited. Do not proceed on the count
+   alone — name the specific asset and the page(s) that changed.
+2. Confirm the asset is on disk: `ls source/.gitbook/assets/<name>`.
+3. Confirm which page(s) reference it: `grep -rl '<name>' source/**/*.md`. A genuine addition
+   is referenced from at least one page; an asset added to `source/` but referenced nowhere is
+   an orphan and moves no count at all.
+4. Check the delta is accounted for exactly: one new page reference to a new distinct asset
+   should move `references`, `copySet` and `mapEntries` by the same amount, in the same
+   direction, for a reason that traces to the named file; a reference to an asset already in
+   the corpus moves only `references`. A removed page's assets move the counts down the same
+   way.
+5. **The signal that a count moved for a real reason is that every count it touches moves
+   together in a way the named file explains.** A single count moving alone, or a count moving
+   by an amount the named change does not account for, is not a legitimate content change —
+   treat it as a transform defect and debug it as one, per this file's standing rule not to
+   adjust an expectation to match a broken run.
+6. Once steps 1–5 establish the change is genuine, update the specific `EXPECTED` value(s) in
+   `scripts/assets.mjs` and/or `scripts/convert.mjs`, and **record the change in this file**:
+   which count, old value, new value, the asset name, the page(s) referencing it, and the
+   evidence from steps 2–4. A human signs off on that entry before the updated expectation is
+   committed — this is not a change a script makes to itself.
+
+This is deliberately conservative under time pressure: on cutover day, the fast path (assume
+legitimate, bump the number) and the correct path (name the file, prove the delta) look
+identical from the failing output alone. Steps 1–4 are the difference, and they cost one
+`grep` and one `ls` against the cost of shipping a broken build, or worse, adjusting an
+expectation to hide one.
 
 ### Concerns
 

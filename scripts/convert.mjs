@@ -125,6 +125,7 @@ const stats = {
   survivingImgTags: 0,
   survivingBraces: 0,
   assetRefs: 0,
+  survivingAssetPaths: 0,
 };
 
 const COMPONENTS = [
@@ -214,6 +215,14 @@ for (const route of routeMap) {
     }
   }
 
+  // Every asset target rewritten above resolves through asset-map.json. Nothing rewrites a plain
+  // markdown *link* to a .gitbook/assets path — extractTargets/rewriteLinks treats it as a page
+  // link and skips it, rewriteAssetRefs and convertFigures only match image syntax — so this is
+  // the one shape that would ship a dead relative path with astro build still green. Asserted
+  // only when assetMap is non-null: in the no-map fallback every reference is deliberately still
+  // a /.gitbook/assets/ placeholder (see assetPath in figures.mjs), so this would always fail.
+  stats.survivingAssetPaths += (output.match(/\.gitbook\/assets\//g) || []).length;
+
   if (/hidden:/.test(output.split('---')[1] ?? '')) throw new Error(`${route.source}: hidden survived`);
 }
 
@@ -236,6 +245,7 @@ const EXPECTED = {
   survivingImgTags: 0,
   survivingBraces: 0,
 };
+if (assetMap) EXPECTED.survivingAssetPaths = 0;
 
 let failed = false;
 for (const [key, expected] of Object.entries(EXPECTED)) {
