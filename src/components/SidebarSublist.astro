@@ -1,0 +1,287 @@
+---
+/**
+ * Sidebar list that renders a parent page as one clickable, expandable row.
+ *
+ * Starlight sidebar groups cannot be links — SidebarGroupSchema is label / translations
+ * / badge / collapsed, with `attrs: z.never()` — so scripts/lib/sidebar-tree.mjs gives a
+ * page that also has children a group whose first item is that page, repeating the
+ * label. That is correct data but renders as 41 duplicated rows, 245 in total against
+ * GitBook's 204.
+ *
+ * This promotes that first item into the group's own row: the label becomes a link and
+ * the caret beside it toggles the group, which is what GitBook shows. The duplicate is
+ * then dropped from the children.
+ *
+ * The rule keys on the first entry being a link carrying the group's own label, which is
+ * exactly how sidebar-tree.mjs marks a parent page. Sections do not match it — their
+ * first entry is the section's first page under a different label — so they keep
+ * rendering as plain, unlinked headers, which is also what GitBook does.
+ *
+ * Styles are carried over from Starlight's own SidebarSublist, since overriding a
+ * component replaces its scoped styles too.
+ */
+import { Icon, Badge } from '@astrojs/starlight/components';
+import SidebarRestorePoint from '@astrojs/starlight/components/SidebarRestorePoint.astro';
+
+interface Props {
+	sublist: any[];
+	nested?: boolean;
+}
+
+const { sublist, nested } = Astro.props;
+
+/** Every link beneath these entries, ignoring grouping. */
+function flatten(entries: any[]): any[] {
+	return entries.flatMap((entry) => (entry.type === 'group' ? flatten(entry.entries) : entry));
+}
+
+/**
+ * The page a group stands for, if it has one: sidebar-tree.mjs places it first and gives
+ * it the group's label.
+ */
+function ownPage(group: any) {
+	const first = group.entries[0];
+	return first && first.type === 'link' && first.label === group.label ? first : undefined;
+}
+
+const items = sublist.map((entry) => {
+	if (entry.type === 'link') return { entry, group: false as const };
+	// Only nested groups stand for a page. A top-level entry is a section, which is a
+	// structural bucket, and GitBook renders those as plain unlinked headers. Without
+	// this gate the "Release Notes" section promotes itself, because its label happens
+	// to equal its only page's label — a coincidence, not the parent-page structure.
+	const own = nested ? ownPage(entry) : undefined;
+	return {
+		entry,
+		group: true as const,
+		own,
+		children: own ? entry.entries.slice(1) : entry.entries,
+		// Starlight's own rule: a collapsed group still opens when it holds the current
+		// page, so the nav opens along the path to the page being read.
+		open: flatten(entry.entries).some((i: any) => i.isCurrent) || !entry.collapsed,
+	};
+});
+---
+
+<ul class:list={{ 'top-level': !nested }}>
+	{
+		items.map((item) =>
+			!item.group ? (
+				<li>
+					<a
+						href={item.entry.href}
+						aria-current={item.entry.isCurrent ? 'page' : undefined}
+						class:list={[item.entry.attrs.class]}
+						{...item.entry.attrs}
+					>
+						<span>{item.entry.label}</span>
+						{item.entry.badge && (
+							<Badge
+								variant={item.entry.badge.variant}
+								class={item.entry.badge.class}
+								text={item.entry.badge.text}
+							/>
+						)}
+					</a>
+				</li>
+			) : (
+				<li>
+					<details open={item.open}>
+						<summary class:list={{ linked: !!item.own }}>
+							{item.own ? (
+								<a
+									class="group-link"
+									href={item.own.href}
+									aria-current={item.own.isCurrent ? 'page' : undefined}
+								>
+									{item.entry.label}
+								</a>
+							) : (
+								<span class="group-label">
+									<span class="section-label">{item.entry.label}</span>
+								</span>
+							)}
+							{item.entry.badge && (
+								<Badge
+									variant={item.entry.badge.variant}
+									class={item.entry.badge.class}
+									text={item.entry.badge.text}
+								/>
+							)}
+							<Icon name="right-caret" class="caret" size="1.25rem" />
+						</summary>
+						<SidebarRestorePoint />
+						<Astro.self sublist={item.children} nested />
+					</details>
+				</li>
+			)
+		)
+	}
+</ul>
+
+<script>
+	// A click on a group's label must navigate without also toggling the group. The
+	// event would otherwise bubble to the enclosing <summary>, whose default action
+	// collapses it, and SidebarPersister would carry that collapsed state across the
+	// navigation — so landing on a parent page would hide the children beneath it.
+	// stopPropagation leaves the link's own navigation untouched.
+	for (const link of document.querySelectorAll('.group-link')) {
+		link.addEventListener('click', (event) => event.stopPropagation());
+	}
+</script>
+
+<style>
+	/*
+	 * Deliberately not wrapped in @layer. Starlight declares starlight.core before
+	 * starlight.reset, so the reset's `* { margin: 0 }` outranks it and every margin
+	 * here — including the 2px row gap — computes to 0. These selectors are scoped to
+	 * this component, so being unlayered affects nothing else.
+	 */
+	ul {
+		--sl-sidebar-item-padding-inline: 0.5rem;
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		overflow-wrap: anywhere;
+	}
+
+	/* GitBook indents each level by 21px: 8 of margin, 12 of padding, 1 of rule. */
+	ul ul {
+		margin-inline-start: var(--sl-sidebar-item-padding-inline);
+		padding-inline-start: 0.75rem;
+	}
+
+	/*
+	 * The hairline runs down the list, not each row, so it is unbroken between siblings —
+	 * and only from the second level down. A section's own items sit flush against the
+	 * section header on GitBook, with no rule beside them.
+	 */
+	ul ul ul {
+		border-inline-start: 1px solid var(--sl-color-hairline-light);
+	}
+
+	/*
+	 * Section header. Starlight renders these at 16px/600 in the heading colour,
+	 * which reads as a second title; GitBook sets 12px/600 uppercase with 0.025em
+	 * tracking. The transform matters beyond case: two of the six sections are
+	 * title-case in SUMMARY.md, and GitBook uppercases them in CSS rather than in
+	 * the source, so this keeps the labels untouched and still renders them alike.
+	 */
+	.section-label {
+		font-size: 0.75rem;
+		font-weight: 600;
+		line-height: 1rem;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		color: var(--sl-color-white);
+	}
+
+	/* Rows sit on a 34px pitch: 32 tall with a 2px gap. */
+	li + li {
+		margin-top: 2px;
+	}
+
+	.top-level > li + li {
+		margin-top: 1.5rem;
+	}
+
+	summary {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.2em var(--sl-sidebar-item-padding-inline);
+		line-height: 1.4;
+		cursor: pointer;
+		user-select: none;
+	}
+	summary::marker,
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
+	/*
+	 * A linked group drops the summary's own padding so the link can carry it and
+	 * fill the row, giving the whole label a hit area and hover state rather than a
+	 * strip of it. The caret stays outside the link, so clicking it toggles the group
+	 * instead of navigating.
+	 */
+	summary.linked {
+		padding-block: 0;
+		padding-inline: 0;
+	}
+
+	.group-link {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.caret {
+		transition: transform 0.2s ease-in-out;
+		flex-shrink: 0;
+	}
+	:global([dir='rtl']) .caret {
+		transform: rotateZ(180deg);
+	}
+	[open] > summary .caret {
+		transform: rotateZ(90deg);
+	}
+
+	/*
+	 * Every nav row, leaf or group header, is the same: GitBook draws no distinction
+	 * between them. 14px/400 in a muted grey against Starlight's --sl-color-gray-2,
+	 * on a 32px row.
+	 */
+	a,
+	.group-link {
+		display: block;
+		border-radius: 0.25rem;
+		text-decoration: none;
+		color: var(--sl-color-gray-3);
+		font-size: 0.875rem;
+		font-weight: 400;
+		line-height: 1.25rem;
+		padding: 6px var(--sl-sidebar-item-padding-inline);
+	}
+
+	a:hover,
+	a:focus,
+	.group-link:hover,
+	.group-link:focus-visible {
+		color: var(--sl-color-white);
+	}
+
+	/*
+	 * GitBook marks the current page with weight and colour alone. Starlight fills
+	 * the row with the accent, which against a fully saturated brand blue reads as a
+	 * heavy solid block.
+	 */
+	[aria-current='page'],
+	[aria-current='page']:hover,
+	[aria-current='page']:focus {
+		font-weight: 600;
+		color: var(--sl-color-text-accent);
+		background-color: transparent;
+		position: relative;
+	}
+
+	/*
+	 * GitBook turns the rule beside the current row brand blue. It is drawn on the row
+	 * rather than on the list so that a parent page being current does not colour the
+	 * rule down its entire subtree.
+	 */
+	ul ul [aria-current='page']::before {
+		content: '';
+		position: absolute;
+		inset-block: 0;
+		inset-inline-start: calc(-0.75rem - 1px);
+		width: 1px;
+		background-color: var(--sl-color-text-accent);
+	}
+
+	a > *:not(:last-child),
+	.group-label > *:not(:last-child) {
+		margin-inline-end: 0.25em;
+	}
+</style>

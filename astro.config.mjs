@@ -27,6 +27,11 @@ export default defineConfig({
 				ThemeProvider: './src/components/ThemeProvider.astro',
 				// Would otherwise leave an empty bordered strip in the mobile menu.
 				MobileMenuFooter: './src/components/MobileMenuFooter.astro',
+				// Renders a parent page as one clickable, expandable row rather than
+				// repeating it as the first child of its own group. Must be wired through
+				// Sidebar: SidebarSublist is not an overridable component, and naming it
+				// here is accepted silently and does nothing.
+				Sidebar: './src/components/Sidebar.astro',
 			},
 			// No `social`: GitBook carries no social icons, and Starlight renders them in
 			// the header and the mobile menu whenever the key is present.

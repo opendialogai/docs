@@ -30,11 +30,17 @@ export function buildSidebar(entries, slugFor) {
   }
 
   // A node with children becomes a group. Starlight cannot link a group, so the page keeps
-  // its own entry as that group's first item, carrying the same label.
+  // its own entry as that group's first item, carrying the same label; the Sidebar override
+  // promotes that first item into the group's own row rather than repeating it.
+  //
+  // Nested groups start collapsed. Starlight opens a collapsed group when it contains the
+  // current page, so the nav opens along the path to the page being read and nothing else —
+  // GitBook's behaviour. Sections are deliberately left expanded, as they are there.
   const shape = (node) =>
     node.children.length
       ? {
           label: node.label,
+          collapsed: true,
           items: [{ label: node.label, slug: node.slug }, ...node.children.map(shape)],
         }
       : { label: node.label, slug: node.slug };

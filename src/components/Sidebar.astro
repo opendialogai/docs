@@ -1,0 +1,26 @@
+---
+/**
+ * Sidebar, wired to the local sublist that renders parent pages as linkable rows.
+ *
+ * This exists only because `SidebarSublist` is not an overridable component — the
+ * `components` schema accepts Sidebar but not SidebarSublist, and Starlight's own
+ * Sidebar imports it by relative path rather than through the virtual module. Naming
+ * SidebarSublist in astro.config.mjs is accepted and silently does nothing. Overriding
+ * Sidebar is the supported way to reach it.
+ *
+ * Otherwise identical to Starlight's own Sidebar.
+ */
+import MobileMenuFooter from 'virtual:starlight/components/MobileMenuFooter';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from './SidebarSublist.astro';
+
+const { sidebar } = Astro.locals.starlightRoute;
+---
+
+<SidebarPersister>
+	<SidebarSublist sublist={sidebar} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+	<MobileMenuFooter />
+</div>
