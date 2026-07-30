@@ -1821,3 +1821,185 @@ expectation to hide one.
 None blocking. The `{% file %}` coincidental-match gap and the `EXPECTED.images` no-map fallback
 caveat are both structurally sound today and both explicitly logged above so a future GitBook
 sync that changes shape fails loudly rather than silently.
+
+## 2026-07-30 — Phase 4 gate: look and feel complete
+
+Scope was widened at the outset, on Pat's decision: the six measured items in the Phase 2
+and Phase 3 handoffs **plus** the chrome items in `MIGRATION-BRIEF.md`'s Phase 4 section,
+which are additive to those handoffs rather than superseded by them.
+
+### Gate evidence
+
+- `astro build` green, 205 pages.
+- `node scripts/routes.mjs` — route parity OK, 204 live sitemap URLs, 0 unreachable.
+- 231 unit tests pass (up from 187).
+- `npm run convert` byte-identical across consecutive runs.
+- Deployed to `opendialog-docs.opendialog.workers.dev`; a 30-route sample all served 200 on
+  the first poll.
+- No horizontal overflow at 375, 768, 1024, 1440 or 1920.
+
+### The defect underneath several others: cascade layer order
+
+`custom.css` opened `@layer starlight.core { … }`, and Astro bundles `customCss` ahead of
+Starlight's own stylesheets. A layer's priority is fixed by where it **first appears**, so
+`starlight.core` registered first and became the **lowest**-priority layer — beneath
+`starlight.reset`, whose `* { margin: 0 }` then beat every margin Starlight sets in `core`.
+Measured in the bundle: first `@layer starlight.core{` at byte 2,086, Starlight's own layers
+not until 38,915. Starlight's intended order, from `style/layers.css`, is
+`base, reset, core, content, components, utils`.
+
+This had been true since Phase 1 and was **not** cosmetic-only. It silently disabled:
+
+- the search dialog's `margin: 4rem auto auto`, which is why the modal opened pinned to the
+  top-left corner rather than centred;
+- `PageTitle.astro`'s `h1` and `.page-description` margins — dead since Phase 1;
+- Starlight's own `.title-wrapper` negative margin, which is why the logo sat 4px right of
+  the sidebar edge;
+- `.sl-container > * + *`'s 1.5rem rhythm between content blocks.
+
+Fixed by restating the canonical order as the first statement in `custom.css`. **That
+statement must stay first in the file.** Lightning CSS strips the bare `@layer` statement
+from the bundle but physically reorders the layer blocks to match it, which is what makes
+the fix work — verified by reading the built CSS, not assumed.
+
+Consequence for anyone editing `custom.css`: `starlight.core` is *below* `starlight.content`
+and `starlight.components`. A rule that must beat Starlight's markdown or component styling
+has to sit **outside** `@layer` — several rules here deliberately do, and say so.
+
+### Corrections to earlier entries in this file
+
+- **The brand-token font row (line ~168) is wrong.** It records "Inter (body), Fragment Mono
+  (code)" as taken from `opendialog.ai`. Measured today, the marketing site loads **Sofia
+  Pro** and no Inter at all; the note was written a day earlier, so the site is very unlikely
+  to have changed under it. More importantly the docs site being replaced serves **Poppins**
+  and **IBM Plex Mono**, which is what the migrated site now serves. This is the same
+  unverified-claim shape as the ffmpeg entry the Phase 4 prompt warns about.
+- **`scripts/sidebar.mjs`'s "nav entries" counter and its comment were stale** the moment the
+  Sidebar override landed: a parent page is no longer two rows. It now reports
+  `data entries: 245 (41 parent pages counted twice)` and `rendered rows: 204`.
+- **`reference/` holds no visual snapshots.** The Phase 4 prompt's definition of done says to
+  verify "against the `reference/` snapshots"; that directory contains only `llms.txt`,
+  `sitemap.xml` and `sitemap-pages.xml`, and `screenshots/` is git-ignored. All visual
+  comparison in this phase was made against the live GitBook site, which is still up. **There
+  is still no committed visual oracle that outlives GitBook.**
+
+### What changed
+
+**Typography.** Poppins and IBM Plex Mono, self-hosted via Fontsource (OFL-1.1), latin
+subset only — the corpus's 27 non-ASCII codepoints are all inside latin's range or emoji that
+fall back to the system face. Zero external font requests preserved. Heading scale matched to
+GitBook exactly: h1 36/700/45/−0.9, h2 30/600/36/−0.375, h3 24/600/32/−0.3, h4
+20/600/28/−0.25. `--sl-text-h5` deliberately untouched: `asides.css` uses it for the aside
+title and 258 hint blocks depend on it.
+
+**Header.** Site title 18px/600/−0.025em near-black with a 32px logo, against Starlight's
+24px brand blue. `opendialog.ai` and the "Talk to an expert" CTA carried across from GitBook
+with their real hrefs; the three social icons GitBook does not have are gone. Search moved to
+the right of the CTA, as GitBook orders it — that needed a full `Header` override, not the
+`SocialIcons` override first assumed, because Starlight puts search in a middle column.
+
+**Page shell.** GitBook constrains its layout to a 1440px box centred in the viewport with
+32px inner padding while the header band stays full-bleed. One inset variable now drives the
+header padding, the fixed sidebar and the main frame together.
+
+**Light-only.** The live GitBook site is light-only — hard-coded `light` on `<html>`, no
+switcher, no theme key in storage. `ThemeProvider` pins light and ignores a stored `dark`
+preference, so anyone who chose dark on the preview still gets light. Dark tokens stay in
+`custom.css`, so it is one file to undo. **Caveat: the pin is an inline script, so with
+JavaScript disabled the page falls back to Starlight's `:root` default, which is dark.**
+Fixing that properly needs `data-theme` on the server-rendered `<html>`, i.e. a `Page`
+override.
+
+**Breadcrumb.** The ancestor-group chain, section down to immediate parent, excluding the
+page. GitBook links its top-level crumb to paths like `/core-concepts`, which are **not
+pages** — it 307-redirects them to the section's first page, and they appear in neither the
+live sitemap nor `route-map.json`. The crumb points straight at the redirect target instead:
+same destination, no hop, no route invented. **All 636 breadcrumb links across 204 pages
+resolve to a real route.** A section is a structural bucket and never a page, so its crumb
+always shows; where the section's first page *is* the current page it renders as plain text
+rather than linking to itself (6 pages).
+
+**Sidebar.** 207 rows and 7,760px of scroll became 44 rows — GitBook shows 44. Nested groups
+start collapsed (`sidebar-tree.mjs`); Starlight already opens a collapsed group holding the
+current page, so the nav opens along the path being read and nothing else. `SidebarSublist`
+folds a parent page's duplicate entry into the group's own clickable row, so 245 nav entries
+render as 204. Type matched: section headers 12px/600 uppercase against Starlight's 16px/600,
+rows 14px/400 muted, current page marked by weight, colour and a 1px rule rather than a
+filled block, 34px row pitch, 21px indent per level, hairline only from the second level down.
+
+**Images.** The 64 `width=` attributes dropped in Phase 2 are carried through — 21 inside
+wrapper divs, **43 on standalone figures**, which GitBook sizes just the same. One 188px
+thumbnail had been rendering at 720×1075. The width rides in the markdown title slot and
+`rehype-image-width` turns it into an inline width and strips the title. `rehype-figures`
+pairs each image with the caption beneath it into `figure`/`figcaption`, which both fixes the
+rows and restores the semantics Phase 2 lost. All 15 wrappers render on one row.
+
+**Emoji, embeds, covers.** GitBook's four shortcodes render as characters, with `emoji 5` and
+`survivingShortcodes 0` as invariants. Video embeds emit as raw HTML rather than a component,
+returning **28 pages to `.md`** (`mdx` 46 → 18). Card covers are restored via `CoverCard`
+(`covers 13`), and `assets.mjs` copies them again (`copySet`/`mapEntries` 500 → 509).
+
+### The Phase 2 decision that was open, now closed without a markup change
+
+`progress-bar-message`'s `<pre>` needed two markup changes to parse as MDX — the dropped
+`<code>` and the joined `<strong>` — and that was escalated to Pat in Phase 2 with no decision
+recorded. **Neither change happens any more.** Measuring the rendered page first showed the
+real problem was worse than the one escalated: through MDX the block also **lost its
+indentation and had its straight quotes rewritten as curly by SmartyPants**, breaking an XML
+sample readers copy. The identical construct in the `.md` page `using-jmespath-expressions`
+was untouched across all 20 of its blocks. The page is `.mdx` only because of one `<Embed>`;
+emitting embeds as raw HTML returns it to `.md`, where `unwrapPreCode` never runs. **The
+generated `<pre>` is now byte-identical to the source.** No markup change is made to
+documentation content, so the standing rule is not bent.
+
+### Traps worth keeping
+
+- **`SidebarSublist` is not an overridable component.** The `components` schema accepts
+  `Sidebar` but not `SidebarSublist`, and Starlight's `Sidebar` imports it by relative path.
+  Naming it in `astro.config.mjs` is **accepted silently and does nothing** — no error, no
+  warning. It has to be reached through a `Sidebar` override.
+- **Clicking a linked group label also toggled it**, and `SidebarPersister` carried that
+  collapsed state across the navigation, so landing on a parent page hid its children. Only
+  visible by clicking through; the server-rendered HTML was correct.
+- **A block element at column 0 closes any enclosing list.** 7 embeds on
+  `ai-agent-creation-overview` sit in list items inside a stepper, and `<Steps>` requires a
+  single `<ol>` child, so the page failed the build outright. Every emitted embed line now
+  carries the indentation of the block it replaces — the same hazard `figures.mjs` documents
+  for captions, and the reason the width could not be carried in a wrapper `<div>`.
+- **`reflowImageDiv` and `convertFigures` both reject markup they do not expect**, and an
+  embed's `<figure>` wrapping a `<div>` is exactly that shape. Embeds convert *after* both
+  passes rather than either guard being weakened.
+- **`CSSStyleRule` exposes an empty-but-truthy `.cssRules`** for CSS Nesting. An ad-hoc
+  cascade-debugging script that branches on `if (rule.cssRules)` therefore treats every leaf
+  rule as a container and reports that nothing matches. Two measurements in this phase were
+  wrong that way before being caught; use `instanceof CSSStyleRule`.
+
+### Not done, and why
+
+- **The two non-video embeds still render as plain links.** `fetchify.com` in
+  `address-autocomplete-message` and `webaim.org` in `designing-accessible-chatbots`. GitBook
+  renders a bookmark card carrying the **target page's `<title>`, its domain and its favicon**,
+  all fetched from the third-party site at render time — measured: "WebAIM: Contrast Checker /
+  webaim.org". Reproducing that needs external metadata we do not have, and inventing a title
+  would be fabricating content. Left as links deliberately, for Pat to decide.
+- **`src/assets` is 48.4 MiB, up from 32.0**, against the 60 MB gate, and the largest file is
+  4.0 MiB. Four of the nine restored covers are photographic PNGs of 11–14 MB that the
+  pipeline preserves as PNG. Format preservation is a Phase 3 decision and redesigning the
+  asset pipeline was out of scope; `astro:assets` still optimises what ships.
+- **`sharp@0.34.5` carries a high-severity advisory** (libvips CVEs) with a
+  `dependabot/npm_and_yarn/sharp-0.35.3` branch already open. Pre-existing, untouched here.
+  Note that bumping it means deleting `asset-map.json` and re-encoding, so it is not free.
+
+### Handoff to Phase 5 — verification and cutover
+
+**Nothing in this phase verified route parity against the deployed site**, only against
+`route-map.json` and a 30-route sample. Still outstanding before DNS:
+
+- Full route parity for all 204 live sitemap URLs against the deployed build.
+- A broken-link check covering **raw HTML anchors**, not just markdown links — 13 survive,
+  and the 12 in-page anchors (`#h.t23f6ncuijwz` ×7, `#what-is-a-list-message` ×5) need
+  checking against the *rendered* heading slugs.
+- **Anchor parity is still assumed, not verified.**
+- Accessibility: **455 of 529 images still have an empty `alt`**, and a linked group row now
+  nests an anchor inside a `<summary>`, which is worth a look in that pass.
+- The light-only pin's JavaScript-disabled fallback, above.
