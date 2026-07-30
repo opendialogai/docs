@@ -731,8 +731,12 @@ Prose is not edited under the standing rules. All of these are preserved verbati
   is preserved verbatim. It will not resolve: the published route is
   `/opendialog-platform/conversation-designer/message-design/message-types/button-message`
   with no extension, and **no URL in `reference/sitemap-pages.xml` ends in `.md`** — so this
-  is broken on GitBook today too, not a migration regression. It is the **only** one: of 13
-  raw `<a href>` surviving in the output, 12 are absolute, external, or anchors.
+  is broken on GitBook today too, not a migration regression. It is the **only** one: 13 raw
+  `<a href>` survive in the output, and the other **12 are all bare in-page anchors** —
+  `#h.t23f6ncuijwz` (7) and `#what-is-a-list-message` (5). **None is absolute or external.**
+  (An earlier draft of this section said "absolute, external, or anchors"; that was wrong, and
+  it matters, because a Phase 5 link check sized off it would go looking for a class of link
+  that does not exist in the output.)
 - **One source link escapes the repo root.**
   `source/core-concepts/contexts-and-attributes/secret-context.md:215-216` links to
   `../../../opendialog-platform/actions/webhook-action/` from a file two directories deep.
@@ -767,7 +771,7 @@ Baseline measured at this commit:
 | | |
 |---|---|
 | Asset files in `source/.gitbook/assets` | 1,589 |
-| Total size | 540 MB |
+| Total size | 541 MiB (`du -sm`) |
 | `/.gitbook/…` placeholder references in the generated output | **523** |
 | Distinct assets those references point at | **500** |
 | Pages carrying at least one | 115 |
@@ -811,7 +815,10 @@ figure on `monitoring-your-application`, so it is not an orphan at all.
 
 Their source card-tables: `scenarios/README.md` (OD-basicmodel, applicationdesign);
 `language-services.md` (engineer-maintenancing…, usinglanguageservice);
-`monitoring-your-application.md` (the two Screenshots);
+`monitoring-your-application.md` (`Screenshot 2024-09-26 at 10.38.51.png` and
+`Screenshot 2024-10-01 at 15.28.40.png` — note this table carries **three** Screenshot covers,
+and the third, `Screenshot 2024-09-26 at 10.32.32.png`, is the one excluded above because it
+is still referenced; do not identify these by "the Screenshots");
 `message-design/README.md` and `message-editor.md` (legoblocks, conditions (1),
 personalisation — shared). `source/README.md`'s card-table has a `data-card-cover` column that
 is **empty**, which is where part of the spec's inflated figure came from.
@@ -825,22 +832,49 @@ dropped by any other transform. Counts reconcile independently too: 436 `<img>` 
 pre-existing markdown images in source = 529 markdown images in output.
 
 **Trap 3 — the 25 MiB blocker is probably already solved, but verify before re-encoding.**
-Exactly one asset exceeds Cloudflare's 25 MiB per-file cap:
-`OpenDialog - Preview - Google Chrome 2021-12-09 09-03-23.gif`, at **27.3 MB**. It is
-**referenced by nothing** — not by the generated output and **not by any source `.md` file
-either**, so it is a genuine pre-existing orphan rather than something conversion lost. If
-Phase 3 deletes orphans before deploying, the deployment blocker disappears without an encode.
-Two other GIFs sit just under the cap: `Tutorial Demo.gif` (22.5 MB, also an orphan) and
-`Knowledge Base Demo.gif` (22.6 MB, **referenced** — this is the one that actually ships and
-the one worth re-encoding for weight, not for the cap).
+
+**Units matter in this subsection: Cloudflare's cap is 25 MiB (26,214,400 bytes), not 25 MB.**
+Byte counts are given so no conversion is needed.
+
+Exactly one asset exceeds the cap:
+`OpenDialog - Preview - Google Chrome 2021-12-09 09-03-23.gif`, at **28,637,283 B = 27.31
+MiB**. It is **referenced by nothing** — not by the generated output and **not by any source
+`.md` file either** — so it is a genuine pre-existing orphan rather than something conversion
+lost. If Phase 3 deletes orphans before deploying, the deployment blocker disappears without an
+encode.
+
+Two other GIFs sit just under the cap:
+
+| File | Bytes | MiB | Referenced? |
+|---|---|---|---|
+| `OpenDialog - Preview - … 09-03-23.gif` | 28,637,283 | 27.31 | no — orphan, **over the cap** |
+| `Knowledge Base Demo.gif` | 23,654,022 | 22.56 | **yes** — this is the one that ships |
+| `Tutorial Demo.gif` | 23,615,825 | 22.52 | no — orphan |
+
+`Knowledge Base Demo.gif` is the one worth re-encoding: for weight, not for the cap.
+
+**Trap 4 — one page is one GitBook edit away from failing the conversion run.**
+`opendialog-platform/actions/webhook-action/using-jmespath-expressions.md` holds three bare,
+attribute-less, multi-line `<pre><code>` blocks inside table cells (the "Output:" results).
+`unwrapPreCode` deliberately **throws** on that shape rather than rewriting it, because
+rewriting would insert a blank line inside a `<td>`, terminate the cell's HTML block early and
+corrupt the table silently past a green build. The page is safe today only because it emits as
+`.md`, so `unwrapPreCode` is never called on it. **If a later GitBook sync adds a video embed
+or a `{% content-ref %}` to that page, it promotes to `.mdx` and `convert.mjs` will abort.**
+
+That is the intended behaviour — loud failure on a re-runnable script beats silent table
+corruption — but it is an operational risk on a script that runs against fresh syncs right up
+to cutover day, so it should not be a surprise on the morning it happens. The reasoning is
+preserved in the JSDoc at `scripts/lib/mdx.mjs:66-79`. Fixing it properly means teaching
+`unwrapPreCode` to handle a `<pre>` inside a table cell, which nobody has needed yet.
 
 **`ffmpeg` is now installed** — version 8.1.2, at `/opt/homebrew/bin/ffmpeg`. This supersedes
 the "Phase 3 dependency missing" entry earlier in this file, which is now stale.
 
-One further note: `engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg` is 17.2 MB
-and is on the exclusion list above. Keeping it costs 17 MB for an image nothing currently
-displays. That is a deliberate trade — Phase 4 may restore card covers — but it should be a
-conscious one, not an accident.
+One further note: `engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg` is
+**18,022,046 B = 17.18 MiB** and is on the exclusion list above. Keeping it costs 17 MiB for an
+image nothing currently displays. That is a deliberate trade — Phase 4 may restore card covers
+— but it should be a conscious one, not an accident.
 
 ### Handoff to Phase 4 — look and feel
 
@@ -859,13 +893,19 @@ measuring it. **Measured directly in a real browser against the live site, twice
 `getBoundingClientRect()`:**
 
 - `/opendialog-platform/actions/webhook-action` — both bare wrapper divs render **side by
-  side**. The pair from `README.md:11` renders at the same `y`, at widths 188 and 375, exactly
-  matching the source `width=` attributes. The pair from `README.md:154` likewise, at width
+  side**. The pair from `README.md:11` renders at the same `y`, at widths 188 and 375, matching
+  the source `width=` attributes to the pixel. The pair from `README.md:154` likewise, at width
   374 and its unsized sibling.
 - `/opendialog-platform/conversation-designer/message-design/message-types/date-picker-message`
-  — the bare div's **four** images render as one row of four, all at the same `y`, all 187
-  wide. The `align="center" data-full-width="true"` div's two images likewise render side by
-  side *and* centered.
+  — the bare div's **four** images render as one row of four, all at the same `y`. These are the
+  one case that does **not** match its `width=` to the pixel: the source says `width="188"` and
+  they render at **187.25**, because four of them plus gaps exceed the content width and the
+  row constrains them. The `align="center" data-full-width="true"` div's two images render side
+  by side *and* centered, at their stated 207.
+
+So of the five distinct widths measured, four (188, 375, 374, 207) match the source attribute
+exactly and one (188 → 187.25) is constrained by the available row width. The side-by-side
+conclusion does not depend on the difference.
 
 So GitBook lays out **every** wrapper div's figures side by side, attributed or not — the
 question was framed too narrowly. Starlight stacks them, because
@@ -908,18 +948,39 @@ elements") but **how it renders is unreviewed.** The single instance, in
 each top-level child is likely to become its own cell — meaning a label could be separated
 from the fence it introduces. Look at this one page specifically.
 
-**Card-cover images have no slot.** `<LinkCard>` has no image slot, so the 13 cover references
-(9 distinct assets, listed above) render as plain cards. A visual gap against the live site.
+**Card-cover images have no slot.** `<LinkCard>` has no image slot, so the **13** cover
+references — pointing at **10** distinct assets, of which **9** are orphaned by conversion and
+listed above — render as plain cards. A visual gap against the live site. Keep the 13/10/9
+chain intact when quoting it: collapsing the three into one number is exactly the mistake that
+produced the spec's phantom 26.
 
 **`<figure>` semantics are lost.** Markdown has no `<figcaption>`; captions emit as a
 `*italic*` paragraph under the image. 101 of 430 figures have an empty caption and emit the
 image alone. Restoring `<figure>`/`<figcaption>` via a rehype plugin is a Phase 4 call.
 
-**`progress-bar-message` loses the `<code>` inside its `<pre>`.** `unwrapPreCode` drops the
-redundant `<code>` element to make the block MDX-parseable. Verified render-invisible under
-the HTML spec — browsers ignore exactly one newline immediately after a `<pre>` start tag,
-which is the only textual change — but any CSS or accessibility tooling keyed on `pre code`
-rather than bare `pre` no longer matches this one block.
+**`progress-bar-message` takes two markup changes inside its `<pre>`, and was flagged to Pat
+for a decision.** `unwrapPreCode` makes the block MDX-parseable, and it does two things:
+
+1. **It drops the redundant `<code>` element**, keeping only `<pre>`. Any CSS or accessibility
+   tooling keyed on `pre code` rather than bare `pre` no longer matches this one block.
+2. **It joins a `<strong>` that spanned a line break.**
+   `source/…/meta-messages/progress-bar-message.md:47-48` reads
+   `<strong>&#x3C;/meta-message>`, newline, `</strong>`; the output at
+   `…/progress-bar-message/index.mdx:52` reads `<strong>&#x3C;/meta-message></strong>` on one
+   line. This is deliberate — `scripts/lib/mdx.mjs:97` trims trailing newlines inside a
+   `<strong>` and throws if more than one content line remains — but it is a second textual
+   change, not a side effect of the first.
+
+An earlier draft of this section claimed the ignored-newline behaviour was "the only textual
+change". **That was wrong**, and it is corrected here. Whitespace is significant inside
+`<pre>`, so "render-invisible" is a conclusion worth re-checking rather than inheriting: the
+`<code>` drop is render-invisible under the HTML spec (browsers ignore exactly one newline
+immediately after a `<pre>` start tag), but the `<strong>` line-join removes a newline in the
+middle of preformatted content.
+
+**This was escalated to Pat by name during execution and no decision was recorded.** It is a
+markup change to documentation content, which the standing rules otherwise forbid. Recorded
+here because it is the last point at which the execution ledger still exists.
 
 **The 2 non-video embeds render as bare markdown links.** `fetchify.com` in
 `address-autocomplete-message` and `webaim.org` in `designing-accessible-chatbots` emit as
@@ -932,10 +993,13 @@ per page; worth revisiting in the Phase 5 accessibility pass.
 ### Handoff to Phase 5 — verification
 
 - **Alt-text coverage:** 455 of 529 output images have an empty `alt`.
-- **Raw `<a href>` links:** 13 survive in the output. Exactly one is a relative page path that
-  does not resolve — `button-message.md` in `twilio-content-template-message`, detailed above.
-  It is broken on GitBook today too. The Phase 5 link check must cover raw HTML anchors, not
-  just markdown links, or it will miss this class entirely.
+- **Raw `<a href>` links:** 13 survive in the output — **1** relative page path and **12** bare
+  in-page anchors (`#h.t23f6ncuijwz` ×7, `#what-is-a-list-message` ×5). None is absolute or
+  external. The one relative path, `button-message.md` in `twilio-content-template-message`,
+  does not resolve and is broken on GitBook today too; it is detailed above. The Phase 5 link
+  check must cover raw HTML anchors, not just markdown links, or it will miss this class
+  entirely — and note the 12 in-page anchors need checking against the *rendered heading slugs*,
+  which ties into the anchor-parity item below.
 - **Anchors are preserved verbatim.** GitBook and Starlight slugify headings the same way for
   these pages, but that was assumed, not verified. Anchor correctness is a Phase 5 concern.
 - **Alt-text and caption fragility.** An `alt` containing `]` or a caption containing `*`
@@ -985,6 +1049,49 @@ Recorded so they are not rediscovered as new. None is reachable on today's corpu
   read as a pass.
 - `sidebar-tree.mjs`: tests exercise only depths 0/2/4 while the real `SUMMARY.md` nests to
   depth 8; no test covers a section boundary occurring mid-nesting with a non-empty stack.
+
+#### Test-coverage gaps
+
+Behaviour verified by hand or by corpus run, but not locked in by a test. Several of these
+originate in the plan's own reference tests rather than in the implementation.
+
+- `frontmatter.mjs`: no test for a double-quoted scalar, nor for a `description` that needs
+  quoting — the shared `scalar()` path is covered from the title angle only.
+- `links.mjs`: no test for an empty destination `[a]()`, a destination containing a newline, an
+  unclosed angle-bracket form, or a `mailto:` containing `)`. All four were traced by hand and
+  behave correctly.
+- `gitbook-blocks.mjs`: no test for a truly empty `{% step %}` body (it would emit `"N. "` with
+  a trailing space); `isVideoEmbed`'s hostname-suffix rejection (`notyoutube.com`,
+  `evil-loom.com`, `youtube.com.evil.com`) was verified functionally but is not codified.
+- `figures.mjs`: absent from the corpus and therefore untested by construction — no `<figure>`
+  carries attributes, no self-closing `<img/>` exists, and no `<figure>` block spans lines.
+- `sidebar.mjs`: the `count()`/`countItems()` diagnostic fix (see below) has no dedicated test.
+  This is consistent with project convention — only `scripts/lib/*.mjs` have companion tests,
+  and top-level `scripts/*.mjs` are untested directly — but it is new logic beyond the draft.
+
+#### Style and consistency
+
+- `convert.mjs`: four lines exceed 100 characters (longest 126), mostly inherited from the
+  plan's draft.
+- `mdx.mjs`: `unwrapPreCode`'s manual cursor/`matchAll` accumulation is more verbose than
+  needed — `String.replace`'s callback already receives the match offset.
+- `gitbook-blocks.mjs`: the `/^[ \t]*\{%\s*…\s*%\}[ \t]*$/` marker pattern is repeated across
+  `convertSteppers`, `convertColumns`, `convertFile` and `convertHints` — about 5 call sites. A
+  shared helper is arguably not worth the indirection.
+- `renderEmbed`'s `<url>` → `[url](url)` change is broader than the MDX problem required. The
+  MDX parser only chokes on a bare autolink in `.mdx`, but the change applies to both, so
+  `webaim.org` in `designing-accessible-chatbots` — a `.md` page where the autolink was fine —
+  is also rewritten. Render-identical, and it matches the source's own convention, but Task 6's
+  reviewed-clean form was changed for another page's benefit.
+
+#### A defect in the plan's draft worth remembering
+
+`sidebar.mjs`'s draft `count()` helper counted only leaf entries, so it reported 204 nav
+entries where the brief itself expected 245. The counter was fixed, not the expectation, after
+confirming 41 parent entries exist in `SUMMARY.md`. Diagnostic-only — `buildSidebar`, the
+generated file and the `entries.length !== 204` gate were untouched. This was the tenth defect
+found in the plan's draft code, and it is the cleanest example of the rule that held throughout:
+**when a count diverges, fix the counter or the code, never the expectation.**
 
 ### Open items for Pat
 
