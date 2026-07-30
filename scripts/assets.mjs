@@ -1,20 +1,28 @@
 /**
- * Copies the referenced GitBook assets into src/assets/ and public/, slugified, byte-for-byte,
- * and records what each became in asset-map.json.
+ * Copies and encodes the referenced GitBook assets into src/assets/ and public/, slugified, and
+ * records what each became in asset-map.json.
+ *
+ * Still images are resized to a width ceiling and, below a colour-count threshold,
+ * palette-quantised; the source format is always preserved, since a `.jpg` file holding PNG bytes
+ * is a content/extension mismatch. GIFs and other files are copied unchanged. A content-hash
+ * cache skips re-encoding an asset whose bytes have not changed since the last run.
  *
  * The copy set is derived from source/ alone — never from src/content/docs — because
  * convert.mjs consumes this map to emit its paths and would otherwise need itself first.
  *
- * Reproducible: output paths derive from sorted filenames, so a run against the same source/
- * tree always produces byte-identical files and an identical asset-map.json.
+ * Reproducible: output paths derive from sorted filenames, sharp's encoders are deterministic for
+ * fixed parameters, and the cache keys on content hash rather than mtime, so a run against the
+ * same source/ tree always produces byte-identical files and an identical asset-map.json.
  */
 import { createHash } from 'node:crypto';
-import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import sharp from 'sharp';
+
 import { assetRefsInFile } from './lib/asset-refs.mjs';
-import { assignSlugs, planAsset, slugify } from './lib/asset-plan.mjs';
+import { assignSlugs, planAsset, slugify, MAX_WIDTH, QUANTISE_MAX_COLOURS } from './lib/asset-plan.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE_ASSETS = `${root}/source/.gitbook/assets`;
@@ -26,10 +34,64 @@ const DESTINATIONS = {
   'public/files': { dir: `${root}/public/files`, reference: (slug) => `/files/${slug}` },
 };
 
+/** kind has always determined destination one-to-one (see planAsset), so an older map entry
+ * written before the `destination` field existed can still be placed correctly. */
+const DESTINATION_FOR_KIND = { image: 'src/assets', video: 'public/media', file: 'public/files' };
+
 const walk = (dir) =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) =>
     entry.isDirectory() ? walk(join(dir, entry.name)) : [join(dir, entry.name)]
   );
+
+const STILL_IMAGE = /\.(?:png|jpe?g|webp)$/i;
+const PNG = /\.png$/i;
+const JPEG = /\.jpe?g$/i;
+const WEBP = /\.webp$/i;
+
+/** Resizes a still image to the width ceiling, re-encoding it in its own source format so the
+ * output extension always matches its content. Never enlarges. */
+async function resizeImage(buffer, name) {
+  const pipeline = sharp(buffer).resize({ width: MAX_WIDTH, withoutEnlargement: true });
+  if (JPEG.test(name)) return pipeline.jpeg({ quality: 90 }).toBuffer();
+  if (WEBP.test(name)) return pipeline.webp().toBuffer();
+  return pipeline.png({ compressionLevel: 9 }).toBuffer();
+}
+
+/**
+ * Unique RGB values in a decoded image, stopping once the quantisation threshold is exceeded.
+ *
+ * Must be called on the RESIZED image, never the original and never a downsample: unique colours
+ * scale with pixel count, so a threshold calibrated on a smaller image admits far more files than
+ * intended. An earlier draft of the design measured at 400px and projected 84.6 MiB against a
+ * 60 MB gate.
+ *
+ * Asserts on the channel count rather than computing a meaningless result: a greyscale decode has
+ * one channel, and reading three components per pixel while stepping by one would read across
+ * pixel boundaries.
+ */
+async function countColours(buffer) {
+  const { data, info } = await sharp(buffer).raw().toBuffer({ resolveWithObject: true });
+  if (info.channels < 3) {
+    throw new Error(`countColours: need at least 3 channels (RGB) to count colours, got ${info.channels}`);
+  }
+  const seen = new Set();
+  for (let i = 0; i < data.length; i += info.channels) {
+    seen.add((data[i] << 16) | (data[i + 1] << 8) | data[i + 2]);
+    if (seen.size > QUANTISE_MAX_COLOURS) return seen.size;
+  }
+  return seen.size;
+}
+
+/**
+ * Palette-quantises a resized PNG, keeping the result only when it is actually smaller.
+ *
+ * Palette is a PNG concept. This must only ever be called with a PNG buffer — calling it on a
+ * JPEG or WebP source would silently rewrite the file to PNG bytes under an unchanged extension.
+ */
+async function quantise(resized) {
+  const quantised = await sharp(resized).png({ palette: true, compressionLevel: 9 }).toBuffer();
+  return quantised.length < resized.length ? quantised : resized;
+}
 
 /**
  * The assets convert.mjs will reference: everything in source/ except covers-only images.
@@ -71,20 +133,68 @@ const collisions = copy.filter((name) => slugs.get(name) !== slugify(name)).leng
 
 for (const { dir } of Object.values(DESTINATIONS)) mkdirSync(dir, { recursive: true });
 
+const previous = existsSync(MAP) ? JSON.parse(readFileSync(MAP, 'utf8')).assets : {};
+let encoded = 0;
+let reused = 0;
+
 const assets = {};
-for (const name of copy) {
-  const from = join(SOURCE_ASSETS, name);
-  const bytes = statSync(from).size;
-  const plan = planAsset({ filename: name, bytes, colours: /\.(png|jpe?g|webp)$/i.test(name) ? 0 : null });
+for (const name of [...copy].sort()) {
+  const source = readFileSync(join(SOURCE_ASSETS, name));
+  const hash = createHash('sha256').update(source).digest('hex');
   const slug = slugs.get(name);
+
+  const cached = previous[name];
+  if (
+    cached &&
+    cached.hash === hash &&
+    cached.slug === slug &&
+    cached.destination in DESTINATIONS &&
+    existsSync(join(DESTINATIONS[cached.destination].dir, cached.slug))
+  ) {
+    assets[name] = cached;
+    reused++;
+    continue;
+  }
+
+  let plan;
+  let output;
+  if (STILL_IMAGE.test(name)) {
+    const resized = await resizeImage(source, name);
+    plan = planAsset({ filename: name, bytes: source.length, colours: await countColours(resized) });
+    output = plan.treatment === 'resize-quantise' && PNG.test(name) ? await quantise(resized) : resized;
+    if (output.length > source.length) output = source;
+  } else {
+    plan = planAsset({ filename: name, bytes: source.length, colours: null });
+    output = source;
+  }
+
   const destination = DESTINATIONS[plan.destination];
-  copyFileSync(from, join(destination.dir, slug));
+  writeFileSync(join(destination.dir, slug), output);
+  encoded++;
+
   assets[name] = {
     slug,
     kind: plan.kind,
+    destination: plan.destination,
     reference: destination.reference(slug),
-    hash: createHash('sha256').update(readFileSync(from)).digest('hex'),
+    hash,
   };
+}
+
+/**
+ * Removes what a prior run wrote for an asset that no longer exists in this run's copy set.
+ *
+ * Driven by the previous map's slugs, never by listing the destination directories: those
+ * directories are not script-owned (src/assets holds the site logo, unrelated to any asset entry)
+ * and a listing-based sweep would delete anything it does not recognise, logo included. The map
+ * is the only record of what this script has ever written, so it is the only safe source for
+ * what this script may delete.
+ */
+const claimed = new Set(Object.values(assets).map((asset) => asset.slug));
+for (const asset of Object.values(previous)) {
+  if (claimed.has(asset.slug)) continue;
+  const destinationKey = asset.destination ?? DESTINATION_FOR_KIND[asset.kind];
+  rmSync(join(DESTINATIONS[destinationKey].dir, asset.slug), { force: true });
 }
 
 writeFileSync(MAP, `${JSON.stringify({ generated: 'scripts/assets.mjs', assets }, null, 2)}\n`);
@@ -123,6 +233,9 @@ const underCap = largest < 25 * MIB;
 console.log(`${underGate ? 'ok  ' : 'FAIL'} ${'src/assets size'.padEnd(18)} ${(srcAssets / MIB).toFixed(1)} MiB`);
 console.log(`${underCap ? 'ok  ' : 'FAIL'} ${'largest file'.padEnd(18)} ${(largest / MIB).toFixed(1)} MiB`);
 if (!underGate || !underCap) failed = true;
+
+console.log(`     ${'encoded'.padEnd(18)} ${encoded}`);
+console.log(`     ${'reused from cache'.padEnd(18)} ${reused}`);
 
 console.log(`\nwrote ${Object.keys(assets).length} assets and asset-map.json`);
 if (failed) {
