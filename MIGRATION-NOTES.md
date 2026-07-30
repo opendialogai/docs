@@ -1347,3 +1347,373 @@ suite: 147/147 (142 plus 5 new — 1 in `figures.test.mjs`, 4 in `link-cards.tes
 re-run twice leaves `git status --short` empty except for the intentional source/test changes
 themselves. Exactly two files under `src/content/docs/` changed as a result of the critical fix;
 zero changed as a result of the `protectCode` or `convertContentRefs` fixes.
+
+---
+
+## 2026-07-30 — Phase 3 gate: assets complete
+
+Every image on the built site resolves. `scripts/assets.mjs` copies, slugifies and re-encodes
+the 500 referenced GitBook assets into `src/assets/` and `public/`; `convert.mjs` emits their
+real paths from `asset-map.json`. Before this phase every image 404'd.
+
+**Every figure below was re-measured at this commit**, from a fresh `npm run convert` +
+`npx astro build`, not transcribed from the design spec, the plan, or the per-task ledger. Where
+a figure could only be sourced from the (git-ignored, soon-deleted) task ledger — the pre-encode
+byte count and the historical ffmpeg-flag proof — that is stated explicitly rather than presented
+as newly measured.
+
+### Gate evidence
+
+| Check | Result |
+|---|---|
+| `npm run convert` | `routes.mjs`, `assets.mjs`, `convert.mjs`, `sidebar.mjs` all `ok`/green |
+| `npx astro build` | succeeds, 205 pages (204 + `404.html`), 496 optimised image variants |
+| `npm test` | 187/187 pass |
+| On-disk reference resolution (corrected check, see Override 1 below) | 523 checked, **0 broken** |
+| Built-site placeholder scan (`src="/.gitbook/assets/…"` in `dist`) | **0** occurrences |
+| `_astro`-referencing HTML files in `dist` | 205 of 205 |
+| `src/assets` size (byte sum, the gate) | 33,591,322 B = 32.0 MiB against 60,000,000 |
+| `src/assets` size (`du -sh`, allocated blocks) | 33M (`du -sm`: 34) |
+| `public` size | 1.1M / 2 (byte sum: MP4 1,179,445 B + CSV) |
+| Largest file, any destination | 1,179,445 B = 1.12 MiB (the MP4), under the 25 MiB cap |
+| `find src/assets public -type f -size +25000k` | empty |
+| `git status` after the whole pipeline re-run twice | clean |
+
+**`du` and the byte sum disagree, and the gate is defined on the byte sum.** `du` reports
+allocated disk blocks; with ~500 small files the block overhead is real. Both numbers stay far
+under the 60 MB gate, so this is a reading-the-number caution, not a risk: use the byte sum
+(`33,591,322 B`) as the authoritative figure, `du -sh`'s `33M` as a sanity check only.
+
+### Override 1 — the brief's Step 2 check was blind to the corpus's one `public/files/` reference
+
+The brief's on-disk proof matched only the double-quoted attribute form,
+`/"\/(media|files)\/([^"]+)"/g`. The corpus's single `public/files/` reference is emitted as a
+**markdown link** — `[DeliveryKnowledgeBase.csv](/files/deliveryknowledgebase.csv)` — which has
+no quotes, so that check could not see the one reference it most needed to prove. Extended here
+to also scan the markdown-link delimiter shape (`](…)`, with optional angle brackets) for both
+`/media/` and `/files/`, matching what `convert.mjs`'s own on-disk scan already does. Re-run:
+
+```
+references checked: 523
+broken: 0
+```
+
+523 matches `convert.mjs`'s own `asset references 523` counter exactly. Confirmed the CSV line
+is inside that count by direct grep — the reference resolves to
+`public/files/deliveryknowledgebase.csv`, which exists.
+
+### The final invariant output of `assets.mjs`, from a real run
+
+```
+ok   references         509
+ok   coverHrefs         13
+ok   copySet            500
+ok   mapEntries         500
+ok   slugCollisions     0
+ok   src/assets size    32.0 MiB
+ok   largest file       1.1 MiB
+     encoded            0
+     reused from cache  500
+
+wrote 500 assets and asset-map.json
+```
+
+`encoded 0` / `reused from cache 500` because every asset was already committed
+byte-identical from Tasks 4–7. **Verified reproducibility independently at this gate**, not
+merely asserted: `asset-map.json` was deleted and `assets.mjs` re-run cold. Cold run took
+**75.8 s wall / 92.7 s user** (the ledger's Task 6 run recorded ~89 s; the difference is
+machine-load variance in a `sharp`/`ffmpeg`-bound job, not a regression — user time is the
+closer comparison since both are CPU-bound). Output was **byte-identical**: `git status`
+after the cold re-encode was clean, and a second run afterwards again reported
+`reused from cache 500` / `encoded 0` in 0.3 s.
+
+### `convert.mjs`'s own invariants, from the same run
+
+```
+ok   files                204
+ok   mdx                  46
+ok   asides               258
+ok   contentRefCards      51
+ok   cardTableCards       41
+ok   embeds               36
+ok   cardGrids            9
+ok   images               528
+ok   droppedCovers        13
+ok   survivingBlocks      0
+ok   survivingEntities    0
+ok   survivingImgTags     0
+ok   survivingBraces      0
+     ordered list items   149
+     asset references     523
+```
+
+### Every figure in the phase's measured-figures table, re-verified here
+
+| | Table said | Re-measured | |
+|---|---|---|---|
+| Asset references in `source/` | 509, 0 missing | **509**, `assets.mjs` did not throw its missing-asset guard | confirmed |
+| Cover href occurrences | 13 | **13** (`ok coverHrefs 13`) | confirmed |
+| Copy set / `asset-map.json` entries | 500 | **500** / **500** | confirmed |
+| Dropped card covers, excluded | 9 | **9** — all absent from `asset-map.json`, verified by name | confirmed |
+| Slug collisions | 0 | **0** (`ok slugCollisions 0`) | confirmed |
+| Files in `src/assets` | 499 (498 + logo) | **499**; `opendialog-logo.png` present, referenced at `astro.config.mjs:16` | confirmed |
+| Files in `public/media` | 1 (the MP4) | **1** | confirmed |
+| Files in `public/files` | 1 (the CSV) | **1** | confirmed |
+| Copy set by source extension | 487 png, 7 jpg, 2 webp, 3 gif, 1 csv | **487 / 7 / 2 / 3 / 1**, read from `asset-map.json` keys | confirmed |
+| Stills | 496 | **496** = 487+7+2 | confirmed |
+| Map entries by kind | image 498, file 1, video 1 | **image 498, file 1, video 1** | confirmed |
+| `src/assets` after encoding | 33,591,322 B = 32.0 MiB | **33,591,322 B** | confirmed |
+| Largest file, all destinations | 1.12 MiB (the MP4) | **1,179,445 B = 1.12 MiB** | confirmed |
+| The video | 23,654,022 B → 1,179,445 B | **23,654,022 B → 1,179,445 B**, `ISO Media, MP4 Base Media v1` | confirmed |
+| Cold encode / cached run | ~89 s / 0.4 s, reused 500 / encoded 0 | **75.8 s wall (92.7 s user)** / **0.3 s**, reused 500 / encoded 0 | timing varies, mechanism confirmed |
+| Markdown images emitted | 528, +1 `<video>`, +1 `/files/` link | **528** / **1** / **1** | confirmed |
+| Distinct `~/assets/` aliases | 498 | **498** | confirmed |
+| `src/assets` before encoding | 121.4 MiB | not independently re-run (destructive to re-derive; would mean discarding the committed encoded assets) — carried from the Task 4 ledger run, cross-checked against `du -sm src/assets` = 142 MB reported there for the same byte figure | carried, not re-measured |
+
+**One figure needed a methodology note, not a correction.** The Phase 4 handoff (below) names
+`engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg` at **454,752 unique colours**.
+Reproduced exactly — but only when counted on a **lossless** resize to 2000px width (the method
+used for the design's original p50/p95/max calibration, before the JPEG-format-preservation
+ruling existed). Counting it the way `assets.mjs` actually would — resize, then re-encode as
+JPEG at quality 90, *then* count colours on the decoded JPEG, which is what `resizeImage` +
+`countColours` do for every real JPEG in the pipeline — gives **225,760** for this same file,
+because JPEG's lossy compression itself removes colours before they are counted. This has no
+practical consequence: `quantise()` is gated to `PNG.test(name)`, so no JPEG is ever
+palette-quantised regardless of its colour count, at 225,760 or 454,752. Recorded so nobody
+re-derives 454,752 by feeding this file through the live pipeline and gets confused when the
+number doesn't match.
+
+### Five measured corrections to the brief, as they actually ran
+
+The design spec's Phase 3 section predated any measurement. All five held throughout execution:
+
+1. **Orphan deletion is not a step.** `source/` is git-ignored and regenerable from
+   `documentation`; assets move *out* of it, nothing is deleted from it. The two traps on
+   "delete the 1,089 orphans" (a byte-identical duplicate of an excluded cover, and the
+   28 MB GIF being an orphan already) are moot because no deletion step exists.
+2. **All 50 extension-less files in `source/.gitbook/assets` are orphans.** Zero are
+   referenced — verified corpus-wide by literal-match against all three real terminators
+   (`)`, `"`, `>`), not by a bracket-naive grep (see Trap below). No magic-byte sniffing was
+   ever needed.
+3. **The 28 MB GIF was never a deployment blocker.** `OpenDialog - Preview - Google Chrome
+   2021-12-09 09-03-23.gif`, 28,637,283 B, is referenced by nothing — not the generated output,
+   not any source `.md` file. It is an orphan and was never copied by `assets.mjs`.
+4. **Resizing alone cannot meet the gate; palette quantisation is the lever.** 231 of 496
+   images were already ≤1600px wide before this phase.
+5. **The `~/assets/` alias resolves in markdown images**, verified by build spike before this
+   phase and confirmed again here: all 498 `~/assets/…` references in the generated output
+   resolve to real files in `src/assets/`.
+
+### The slug rule
+
+`slugify()` (`scripts/lib/asset-plan.mjs`): lowercase the stem, collapse every run of
+non-`[a-z0-9]` characters to a single hyphen, trim leading/trailing hyphens, keep the original
+(lowercased) extension. A collision appends `-2`, `-3`, … to the stem, checked against names
+already claimed in a fully-sorted pass so the result depends only on the input names, never on
+directory read order. **Zero collisions across the 509 referenced assets** (`ok
+slugCollisions 0`), confirmed at this gate.
+
+### The quantisation threshold: 32,768 unique colours, measured on the RESIZED image
+
+`QUANTISE_MAX_COLOURS = 32768` in `scripts/lib/asset-plan.mjs`. The count must be taken **after**
+resizing to the 2000px width ceiling, never on the original and never on a downsample smaller
+than the shipped size — unique colours scale with pixel count, so a threshold calibrated on a
+smaller proxy image admits far more files than intended at the real size.
+
+**The calibration error this guards against:** an earlier design draft measured colour counts on
+400px downsamples and set the threshold at 8,192, based on projecting 11 of 505 images would
+exceed it. At the real ~2000px resize width, 197 of 505 exceeded that same threshold, projecting
+**84.6 MiB** against the 60 MB gate — nearly 8x the predicted overshoot. The proxy measurement
+did not hold because colour count does not scale linearly with the *linear* resize dimension.
+Recalibrated at 32,768 measured directly on the resized (not downsampled) image; `countColours`'s
+own docstring records this so nobody re-derives the threshold from a downsample again.
+
+### Format preservation: JPEG stays JPEG, PNG stays PNG, WebP stays WebP
+
+**Decision by the project owner**, made during this phase after the original design assumed all
+496 stills were PNG (490 was the design's guess). The real composition, read from
+`asset-map.json`: **487 PNG + 7 JPEG + 2 WebP.**
+
+- JPEG resizes to JPEG at quality 90.
+- PNG resizes to PNG, then palette-quantises if the resized image is at or under the 32,768
+  colour threshold.
+- WebP resizes to WebP, lossless re-encode, never quantised.
+
+The extension always matches the content. Palette quantisation is treated as a PNG-only concept
+in the code (`quantise()` is gated on `PNG.test(name)`), not merely a matter of which branch
+happens to run — calling `sharp(...).png({palette:true})` on a JPEG or WebP source would
+silently convert the format under an unchanged extension, which is exactly the well-formed-but-
+wrong artefact class this project has hit before. Before this decision, 6 referenced JPEGs would
+have been written as PNG bytes under a `.jpg` extension whenever the quantised PNG came out
+smaller — the `if (output.length > source.length) output = source` guard protects size, not
+format agreement, so it would not have caught this.
+
+### Which assets went to `public/`, and why
+
+`DESTINATIONS` in `scripts/assets.mjs` maps every asset `kind` to exactly one destination:
+
+| Kind | Destination | Why |
+|---|---|---|
+| `image` (498) | `src/assets/`, alias `~/assets/…` | Passes through `astro:assets` for on-demand optimised variants — the whole point of not using `public/`. |
+| `video` (1, the MP4) | `public/media/`, path `/media/…` | `astro:assets` optimises images; it has no video pipeline. A `<video src>` needs a stable public URL, not an import. |
+| `file` (1, the CSV download) | `public/files/`, path `/files/…` | A download link needs a stable public URL a reader can save-as; it is not an image to optimise. |
+
+### Trap — the cover/non-cover split must be corpus-wide, never per file
+
+`source/monitoring-your-application.md` references `Screenshot 2024-09-26 at 10.32.32.png`
+**twice**: as a `data-card-cover` href on line 67, and as an ordinary `<figure><img>` on line 75
+— and in no other file. A per-file split (`cover.has(name)` tested against a per-file `Set`)
+lets the cover occurrence blot out the genuine figure occurrence of the *same name in the same
+file*, silently dropping the copy set to 499 and 404ing that one figure with every invariant
+still green (499 ≠ 500 is the only thing that would catch it, and a broken detector could "fix"
+itself by adjusting the expectation instead).
+
+**The fix, verified in `copySet()` (`scripts/assets.mjs`):** accumulate `all` and `covers` as
+corpus-wide multisets (a name can appear any number of times across any number of files) and take
+the difference **once, after the whole walk** — never inside a per-file loop. Confirmed at this
+gate: `Screenshot 2024-09-26 at 10.32.32.png` **is** present in `asset-map.json` (500 entries),
+and the other 9 genuine cover-only assets are **not**. This is `MIGRATION-NOTES.md`'s existing
+Trap 2 (Phase 2 gate section, Handoff to Phase 3) arriving from a new direction — same asset,
+same warning: do not identify these assets by "the Screenshots."
+
+### Trap — bracket-naive greps truncate at the first `)` and produce false results
+
+Bit twice during this phase, both times in ad-hoc verification greps, never in shipped code. A
+pattern like `'\.gitbook/assets/[^")>]*'` stops at the first `)`, so `Preview Main (1).jpg`
+reduces to `Preview Main (1` and never matches a `.jpe?g` suffix test, and `1 (1).png` becomes
+textually indistinguishable from the real extension-less file `1 (1)`. The first attempt at the
+"are the 50 extension-less files really unreferenced" check used exactly this shape and reported
+**215 false-positive "dotless" references**, all artefacts of the truncation. The second bit a
+JPEG count (6 vs the correct 7): the same character class excluded `Preview Main (1).jpg` and
+undercounted the copy set's JPEGs. **Anyone measuring this corpus must read `asset-map.json` or
+use `extractTargets`/`assetRefsInFile`, never a bracket-naive grep.**
+
+### `assets.mjs` may only ever delete files it created
+
+The sweep at the end of the copy loop removes what a *previous* map claimed that the *current*
+run no longer claims — never a `readdirSync`-minus-claimed sweep over the destination
+directories. `src/assets/opendialog-logo.png` (the site logo, referenced at
+`astro.config.mjs:16`) sits in `src/assets/` unclaimed by any asset entry; a listing-based sweep
+deletes it on every run. Confirmed present at this gate.
+
+The sweep keys on the **(destination, slug) pair**, not the slug alone, via a
+`destinationKeyFor` helper. Reason: a GIF crossing `GIF_VIDEO_THRESHOLD` on a future resync keeps
+its filename (`knowledge-base-demo`) but switches destination (`public/media` gif → mp4, same
+directory in this case, but the general shape holds for any future kind change) — a slug-only
+sweep could read the new destination's claim as covering a stale copy left in the old one and
+leave it behind forever. An entry written before the `destination` field existed is placed via a
+`DESTINATION_FOR_KIND` fallback rather than skipped, since `kind` has always determined
+destination one-to-one.
+
+### `ffmpeg` determinism: `-fflags +bitexact` before `-i` is inert here
+
+`ffmpeg`'s MP4 muxer embeds a creation timestamp by default, which would make two encodes of the
+same GIF differ byte-for-byte and defeat the content-hash cache's reproducibility guarantee.
+Determinism comes from `-flags:v +bitexact`, `-map_metadata -1` and fixed encode parameters on a
+pinned `ffmpeg` version. **`-fflags +bitexact`, placed before `-i`, binds the demuxer, not the
+muxer, and is inert for this encode** — proven during Task 7's review by removing it and
+re-encoding: byte-identical output, same hash (`02170b309…`). The JSDoc at
+`scripts/assets.mjs`'s `encodeVideo` should be read with that in mind; the comment as written
+slightly overstates which flag does what.
+
+### `EXPECTED.images` went 529 → 528; the only expectation adjusted this phase
+
+Single cause: the corpus's sole `kind: 'video'` asset (`Knowledge Base Demo.gif` →
+`knowledge-base-demo.mp4`) renders as a `<video>` element, not a markdown image, so one of the
+529 image-shaped references from Phase 2 became a non-image reference in Phase 3. 528 counts
+markdown-image **occurrences** in the output text, not distinct assets — re-confirmed at this
+gate by direct grep (`528` `![…](` occurrences, `1` `<video>`, `1` `/files/` link). Verified
+three independent ways during Task 5: a page-only diff of exactly 516 insertions / 516 deletions
+with nothing added or removed; reference sites totalling 530 before and 530 after; and a direct
+on-disk count. **Caveat carried forward:** this counter depends on `asset-map.json` existing —
+in the sanctioned no-map fallback state, the video re-emits as a markdown image, `stats.images`
+reads 529, and `convert.mjs` exits 1. That fallback keeps `astro build` green by design, but the
+invariant gate itself is not runnable without the map.
+
+### The `{% file %}` download is matched by coincidence, not by a dedicated pattern
+
+`convertFile` in `scripts/lib/gitbook-blocks.mjs` resolves the CSV's `src="…"` only because that
+text is textually indistinguishable from the `ATTR` regex `asset-refs.mjs` already scans for
+ordinary HTML attributes. There is no pattern written specifically for `{% file %}`. A future
+GitBook sync emitting the same block with single quotes (`src='…'`) would silently drop the
+corpus's only download reference, with no invariant positioned to catch it — `references: 509`
+would simply read one lower and, absent independent knowledge of the true count, look correct.
+
+### Stale entries in this repo's own docs, corrected by this phase
+
+- **`ffmpeg` is installed** — 8.1.2, at `/opt/homebrew/bin/ffmpeg`, verified again at this gate.
+  `CLAUDE.md`'s Gotchas section and this file's own "Phase 3 dependency missing" entry (Phase 1
+  gate) still record it as missing; both are now stale as written but stand per the append-only
+  rule. The Phase 2 gate's Handoff-to-Phase-3 section already carries the correction.
+- **The 28 MB GIF was never a deployment blocker.** It is an orphan — referenced by nothing in
+  `source/` or the generated output — and was never copied by `assets.mjs`. `CLAUDE.md`'s Gotchas
+  line describing it as something that "will fail deployment" and needs re-encoding is describing
+  a file that was never in scope to deploy.
+- **All 50 extension-less files are orphans**, zero referenced, verified by literal-match
+  against all three real terminators (`)`, `"`, `>`) rather than a bracket-naive grep (see Trap
+  above, which nearly produced a false positive on this exact check). Magic-byte sniffing, which
+  `CLAUDE.md`'s Gotchas section still names as necessary, was never needed.
+
+### Handoff to Phase 4 — look and feel
+
+**The 9 dropped card covers remain in `source/.gitbook/assets/`, untouched, by path:**
+
+```
+OD-basicmodel.png
+applicationdesign.png
+Screenshot 2024-09-26 at 10.38.51.png
+Screenshot 2024-10-01 at 15.28.40.png
+conditions (1).png
+engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg
+legoblocks.png
+personalisation.png
+usinglanguageservice.png
+```
+
+Restoring card covers means copying these 9 through this same pipeline (`assets.mjs`'s
+`copySet()` currently excludes them by design, per the corpus-wide split above — that logic
+would need a deliberate carve-out, not a bug fix). **The photograph among them,
+`engineer-maintenancing-ai-systems-2023-11-27-05-12-07-utc.jpg`, must stay full-colour** — see
+the methodology note above on its two colour counts (454,752 lossless / 225,760 as the JPEG
+pipeline would actually produce it); either way it stays a JPEG and is never palette-quantised,
+so "full-colour" is guaranteed by the format gate regardless of which count is used to describe
+it.
+
+**Also Phase 4's, all already recorded in this file's Phase 2 gate section** (Handoff to Phase 4)
+and unchanged by this phase: the 13 wrapper-div side-by-side figures across 9 pages covering 31
+images that stack in Starlight but render in a row on GitBook; the 64 dropped `width=`
+attributes with nowhere to go in markdown; card-cover images having no `<LinkCard>` slot (the
+same 13/10/9 chain as above); non-linkable sidebar groups; and `<figure>`/`<figcaption>`
+semantics collapsing to an italic paragraph.
+
+### Deferred minor findings, carried forward before the ledger is deleted
+
+None of the below is reachable on today's corpus. Recorded so they are not rediscovered as new.
+
+- `encodeVideo`'s `VIDEO_CONTAINER = /\.(?:mp4|webm)$/i` accepts `.webm`, which `encodeVideo`
+  never produces; `/\.mp4$/i` would match the actual invariant.
+- The sweep's `claimed` set is built with a raw `` `${asset.destination}/${asset.slug}` ``
+  template while the sweep side goes through the `destinationKeyFor` helper. Functionally
+  identical today because every entry written this run has a valid `destination`, but it is the
+  two-hand-built-keys drift risk that should be routed through one helper.
+- Two near-identical regex literals scan for `~/assets/` in `convert.mjs`, one to count and one
+  to check existence.
+- The markdown-link alternative in `convert.mjs`'s on-disk scan mis-parses a destination
+  containing a literal `(` — unreachable while `assets.mjs` slugifies every filename.
+- `convertFile`'s link text and its path derive the filename by different rules — text from a
+  raw `split('/').pop()`, path through the unescape helper. Identical for the corpus's one file
+  block; a `\_`-escaped filename would render a literal backslash in prose.
+- The invalid-percent-encoding error in `asset-refs.mjs` names the `.gitbook/assets/`-relative
+  segment rather than the full destination path.
+- `copySet()`'s `copy` array is sorted, and both `assignSlugs` and the main copy loop
+  (`[...copy].sort()`) independently re-sort the same already-sorted array. Harmless duplicate
+  work, not present as a double-read of source files in the final code — an earlier ledger entry
+  describing `copyFileSync` plus a second `readFileSync` per asset does not match the shipped
+  loop, which reads each source file exactly once via `readFileSync` and reuses that buffer for
+  both the hash and the resize/write path.
+
+### Concerns
+
+None blocking. The `{% file %}` coincidental-match gap and the `EXPECTED.images` no-map fallback
+caveat are both structurally sound today and both explicitly logged above so a future GitBook
+sync that changes shape fails loudly rather than silently.
