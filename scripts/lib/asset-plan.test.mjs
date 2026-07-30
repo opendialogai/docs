@@ -61,6 +61,13 @@ test('a large gif becomes a video in public/media', () => {
   assert.deepEqual(plan, { kind: 'video', destination: 'public/media', treatment: 'encode-video' });
 });
 
+test('a gif with a missing or malformed byte count throws instead of silently becoming a copy', () => {
+  assert.throws(() => planAsset({ filename: 'x.gif', bytes: undefined, colours: null }));
+  assert.throws(() => planAsset({ filename: 'x.gif', bytes: null, colours: null }));
+  assert.throws(() => planAsset({ filename: 'x.gif', bytes: NaN, colours: null }));
+  assert.throws(() => planAsset({ filename: 'x.gif', bytes: -1, colours: null }));
+});
+
 test('a non-image is copied to public/files', () => {
   const plan = planAsset({ filename: 'data.csv', bytes: 1027, colours: null });
   assert.deepEqual(plan, { kind: 'file', destination: 'public/files', treatment: 'copy' });

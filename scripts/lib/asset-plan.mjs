@@ -76,6 +76,9 @@ export function planAsset({ filename, bytes, colours }) {
     };
   }
   if (GIF.test(filename)) {
+    if (!Number.isFinite(bytes) || bytes < 0) {
+      throw new Error(`planAsset: gif needs a valid byte count: ${filename}`);
+    }
     return bytes >= GIF_VIDEO_THRESHOLD
       ? { kind: 'video', destination: 'public/media', treatment: 'encode-video' }
       : { kind: 'image', destination: 'src/assets', treatment: 'copy' };
