@@ -72,27 +72,37 @@ export function convertFigures(text) {
 
 const IMAGE_DIV = /<div\b[^>]*>([\s\S]*?)<\/div>/g;
 const IMAGE_DIV_CONTENT = /^(?:\s|<figure>[\s\S]*?<\/figure>|<img\b[^>]*>)*$/;
+const IMAGE_DIV_ITEM = /<figure>[\s\S]*?<\/figure>|<img\b[^>]*>/g;
 
 /**
- * Strips GitBook's alignment <div> wrapper from around one or more <figure>/<img> elements.
+ * Reflows GitBook's alignment <div> wrapper so each <figure>/<img> inside it sits on its own
+ * line, blank-line-separated from its opening tag, its siblings, and the closing tag.
  *
- * GitBook uses this div's `align`/`data-full-width` attributes to position an image; a
- * markdown image has no such concept, so the wrapper carries nothing worth keeping. Left in
- * place it is actively harmful: MDX treats a bare HTML block as ending at the first blank
- * line, and every one of these divs has its content on a separate line from its own closing
- * tag, so the div is never actually closed as far as MDX's parser is concerned — a page
- * carrying one fails to build.
+ * Left as GitBook wrote it — every figure jammed onto one line with its siblings, or split
+ * across lines with no blank line before the div's own closing tag — this is unparseable:
+ * MDX treats a bare HTML block as ending at the first blank line, so a multi-line one is never
+ * actually closed as far as its parser is concerned, and a single-line one leaves consecutive
+ * figures glued together, which convertFigures (run after this) then turns into
+ * "*caption one* ![](image two)" — each caption sitting beside the next image rather than its
+ * own.
+ *
+ * The wrapper itself is kept, not stripped: its `align`/`data-full-width` attributes are real
+ * GitBook layout instructions (3 of the 10 wrappers in the corpus centre their image), and a
+ * blank line on each side of a JSX/HTML tag is valid in both CommonMark and MDX, so reflowing
+ * fixes the parse problem without losing that.
  *
  * Throws when a div's content is anything other than figures, bare images and whitespace, so
  * a div wrapping real prose is never silently dropped.
  */
-export function stripImageDivs(text) {
+export function reflowImageDiv(text) {
   return protectCode(text, (masked) =>
     masked.replace(IMAGE_DIV, (whole, inner) => {
       if (!IMAGE_DIV_CONTENT.test(inner)) {
-        throw new Error(`stripImageDivs: <div> holds more than figures/images: ${whole.slice(0, 80)}`);
+        throw new Error(`reflowImageDiv: <div> holds more than figures/images: ${whole.slice(0, 80)}`);
       }
-      return inner.trim();
+      const openTag = whole.match(/^<div\b[^>]*>/)[0];
+      const items = inner.match(IMAGE_DIV_ITEM) ?? [];
+      return [openTag, ...items, '</div>'].join('\n\n');
     })
   );
 }

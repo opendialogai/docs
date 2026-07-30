@@ -14,7 +14,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { emitFrontmatter, parseFrontmatter, takeTitle } from './lib/frontmatter.mjs';
-import { convertFigures, rewriteAssetRefs, stripImageDivs } from './lib/figures.mjs';
+import { convertFigures, reflowImageDiv, rewriteAssetRefs } from './lib/figures.mjs';
 import {
   convertCode,
   convertColumns,
@@ -55,21 +55,31 @@ function countCards(text) {
 
 // Mirrors mdx.mjs's TAG/VOID_TAG matching: a quoted attribute value is matched as one whole
 // unit so a ">" inside it (e.g. a title or href) is never mistaken for the tag's own close.
+// Deliberately looser than TAG, though: it omits TAG's `(?=[\s/>])` name-boundary lookahead,
+// so it is a strict superset of what normaliseForMdx itself treats as a tag. See
+// countUnescapedBraces below for why that matters.
 const JSX_ATTRS = `(?:"[^"]*"|'[^']*'|[^>"'])*`;
 const JSX_TAG = new RegExp(`<\\/?[A-Za-z][A-Za-z0-9]*${JSX_ATTRS}>`, 'g');
 
 /**
- * Counts bare `{` or `}` that survived normaliseForMdx unescaped: braces outside fenced code
- * and inline code spans (via protectCode — the same masking normaliseForMdx itself escapes
- * around, so a `{ attr }` shown deliberately inside a code span, e.g.
- * `` `{user.attribute}` ``, is not mistaken for a leak), outside JSX tags and the import line
- * (where braces are legitimate JS/JSX syntax, not prose), and not already escaped as `\{` /
- * `\}`. Anything left over is `{ attribute | filter }` template syntax that would still parse
- * as a broken JSX expression — the guarantee that keeps a <Card>'s body safe to render.
+ * Counts bare `{` or `}` outside fenced code and inline code spans (via protectCode — the same
+ * masking normaliseForMdx itself escapes around, so a `{ attr }` shown deliberately inside a
+ * code span, e.g. `` `{user.attribute}` ``, is not mistaken for a leak), outside JSX tags and
+ * the import line (where braces are legitimate JS/JSX syntax, not prose), and not already
+ * escaped as `\{` / `\}`.
  *
- * countInProse only masks fenced blocks, not inline code spans, and undercounts as a result:
- * the corpus has real prose like `` `{user.attr}` `` where protectCode's inline-code masking
- * is exactly what makes the unescaped brace safe.
+ * What this does and does not prove: JSX_TAG is a strict superset of mdx.mjs's TAG regex (see
+ * above), so every brace normaliseForMdx leaves unescaped — because it sits inside a real TAG
+ * match — also sits inside a JSX_TAG match here, and this counter strips it too. On any page
+ * normaliseForMdx has actually run over, the count is therefore 0 *by construction*, not by
+ * verification: this cannot detect a bug in normaliseForMdx's own tag-matching (e.g. TAG
+ * over-matching and swallowing a real prose brace into what it treats as tag content, letting
+ * it survive unescaped) — JSX_TAG, matching at least as much as TAG, would hide exactly that
+ * bug from this count too. What it genuinely catches is narrower: a page whose braces never
+ * reached normaliseForMdx's escape step at all — a wiring defect (the `isMdx` gate skipped, or
+ * the escape step itself removed), not a content-safety guarantee. `astro build`, which
+ * renders every page through the real MDX compiler, is what would actually catch a defect
+ * inside normaliseForMdx that lets a template-syntax brace through unescaped.
  */
 function countUnescapedBraces(text) {
   let count = 0;
@@ -145,7 +155,7 @@ for (const route of routeMap) {
   text = convertEmbeds(text);
   text = convertSteppers(text);
   text = convertColumns(text);
-  text = stripImageDivs(text);
+  text = reflowImageDiv(text);
   text = convertFigures(text);
   text = rewriteAssetRefs(text);
   text = stripEntities(text);

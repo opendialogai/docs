@@ -169,12 +169,34 @@ test('unwrapPreCode leaves a single-line <pre><code> alone', () => {
   assert.equal(unwrapPreCode(input), input);
 });
 
-test('unwrapPreCode leaves an attributed <pre> alone, the shape it does not recognise', () => {
-  // using-jmespath-expressions.md's tables use <pre class="language-json">; those pages stay
-  // .md today, so this shape never needs to reach here, and is left untouched rather than
-  // guessed at.
+// using-jmespath-expressions.md's tables carry <pre> blocks in two shapes this function must
+// not touch: attributed ones (<pre class="language-json">), and bare ones that still sit
+// inline after other table markup on the same line (…Output:</p><pre><code>TRK-7788). Both stay
+// .md today, so unwrapPreCode is never called on that file — but if it ever were (a later sync
+// promotes it to .mdx), reflowing either shape the same way this function reflows a genuine
+// standalone block would insert a blank line inside a <td> and corrupt the table. Both must
+// throw rather than being silently left as unrewritten multi-line raw HTML, since either shape
+// is unparseable by MDX regardless and a silent pass-through would only defer the failure to a
+// build error that doesn't name the real cause.
+test('unwrapPreCode throws on an attributed <pre>, the shape it does not recognise', () => {
   const input = '<pre class="language-json"><code class="lang-json">a\nb</code></pre>';
-  assert.equal(unwrapPreCode(input), input);
+  assert.throws(
+    () => unwrapPreCode(input),
+    /unwrapPreCode: <pre> block has an unrecognised shape/
+  );
+});
+
+test('unwrapPreCode throws on a bare <pre> that does not start its own line', () => {
+  const input = '<td><p>Output:</p><pre><code>a\nb</code></pre></td>';
+  assert.throws(
+    () => unwrapPreCode(input),
+    /unwrapPreCode: <pre> block has an unrecognised shape/
+  );
+});
+
+test('unwrapPreCode fixes a bare <pre> that starts a line even with other lines before it', () => {
+  const input = 'Some prose above.\n<pre><code>a\nb</code></pre>';
+  assert.equal(unwrapPreCode(input), 'Some prose above.\n<pre>\na\nb\n</pre>');
 });
 
 test('unwrapPreCode leaves a <pre> inside a fence as literal text', () => {

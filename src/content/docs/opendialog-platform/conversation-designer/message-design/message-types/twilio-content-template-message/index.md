@@ -9,11 +9,17 @@ A Twilio Content Template Message is a type of message that allows you to send s
 
 This message holds a reference to the Twilio Content Template that is used to render the message. The Content Template can be referenced by its unique identifier, `sid` or by the `name` of the template. The message can also include additional parameters that are passed to the template for rendering. [Here's the relevant Twilio documentation for Content Templates](https://www.twilio.com/docs/content/overview).
 
+<div>
+
 ![](/.gitbook/assets/1000008688.jpg)
 
-*An example of Call to Action template* ![](/.gitbook/assets/1000008687.jpg)
+*An example of Call to Action template*
+
+![](/.gitbook/assets/1000008687.jpg)
 
 *An example of Quick Reply template*
+
+</div>
 
 ### When to use a Twilio Content Template Message
 

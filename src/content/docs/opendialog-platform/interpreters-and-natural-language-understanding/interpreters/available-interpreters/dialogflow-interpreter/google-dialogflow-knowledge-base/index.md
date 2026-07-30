@@ -24,7 +24,11 @@ Now navigate back to the interpreters section in OpenDialog and select the Dialo
 
 Now that the interpreter is configured to integrate with the Dialogflow knowledge base, it can be tested via the "Check Interpreter Setup" in the bottom right. Enter an utterance such as "how long will shipping take?" and you should see that it was interpreted. It's useful to note the confidence percentage here, as this will be used shortly.
 
+<div align="center">
+
 ![](/.gitbook/assets/od-kamau.cloud.opendialog.ai_admin_interpreters_mapping_99_scenario=0x13c2efa.png)
+
+</div>
 
 ## Using the interpreter for an intent
 

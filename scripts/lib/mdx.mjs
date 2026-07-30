@@ -41,7 +41,8 @@ function styleObject(css) {
   return entries.length ? `{{ ${entries.join(', ')} }}` : '{{}}';
 }
 
-const PRE_CODE = /<pre>(?:<code>)?([\s\S]*?)(?:<\/code>)?<\/pre>/g;
+const ANY_PRE = /<pre\b[^>]*>[\s\S]*?<\/pre>/g;
+const BARE_PRE_CODE = /^<pre><code>([\s\S]*)<\/code><\/pre>$/;
 const STRONG = /<strong>([\s\S]*?)<\/strong>/g;
 
 /**
@@ -63,25 +64,48 @@ const STRONG = /<strong>([\s\S]*?)<\/strong>/g;
  * artifact rather than a separating line break. A `<strong>` with a real line break in the
  * middle of its text throws rather than being silently joined into one run-on line.
  *
- * Only the one shape the corpus has — a bare, attribute-less `<pre><code>` — is recognised. A
- * `<pre>` this does not match (a differently-shaped one, e.g. the ones inside
- * using-jmespath-expressions.md's tables) is left untouched: those pages are plain .md, where
- * none of this applies.
+ * The recognised shape is narrow on purpose: a `<pre>` that both starts its own line (its
+ * opening tag is not preceded by other content on that line) and is bare — no attributes on
+ * either `<pre>` or `<code>`. using-jmespath-expressions.md's tables hold `<pre>` blocks that
+ * fail both tests — some carry `class="language-json"`, and even the ones that don't (the
+ * "Output:" results) sit inline after other markup in the same `<td>`, e.g.
+ * `...Output:</p><pre><code>TRK-7788`. Reflowing one of those the same way would insert a
+ * blank line inside the table cell and terminate its HTML block early, corrupting the table —
+ * confirmed by running this function against that file directly. That file is plain .md today,
+ * so this function is never called on it, but a `<pre>` this narrow test rejects throws rather
+ * than being silently left as multi-line raw HTML: if a later GitBook sync ever promotes that
+ * page to .mdx (a video embed, a content-ref), the mismatch surfaces at conversion time instead
+ * of corrupting the page silently.
  */
 export function unwrapPreCode(text) {
-  return protectCode(text, (masked) =>
-    masked.replace(PRE_CODE, (whole, inner) => {
-      if (!inner.includes('\n')) return whole;
-      const joined = inner.replace(STRONG, (strongWhole, strongInner) => {
+  return protectCode(text, (masked) => {
+    let out = '';
+    let cursor = 0;
+    for (const match of masked.matchAll(ANY_PRE)) {
+      const whole = match[0];
+      if (!whole.includes('\n')) continue; // single line: nothing to fix
+
+      const startsLine = match.index === 0 || masked[match.index - 1] === '\n';
+      const bare = whole.match(BARE_PRE_CODE);
+      if (!startsLine || !bare) {
+        throw new Error(
+          `unwrapPreCode: <pre> block has an unrecognised shape it cannot safely rewrite for MDX: ${whole.slice(0, 60)}…`
+        );
+      }
+
+      const joined = bare[1].replace(STRONG, (strongWhole, strongInner) => {
         const trimmed = strongInner.replace(/\n+$/, '');
         if (trimmed.includes('\n')) {
           throw new Error(`unwrapPreCode: <strong> spans more than one content line: ${strongWhole}`);
         }
         return `<strong>${trimmed}</strong>`;
       });
-      return `<pre>\n${joined}\n</pre>`;
-    })
-  );
+
+      out += masked.slice(cursor, match.index) + `<pre>\n${joined}\n</pre>`;
+      cursor = match.index + whole.length;
+    }
+    return out + masked.slice(cursor);
+  });
 }
 
 export function normaliseForMdx(text) {

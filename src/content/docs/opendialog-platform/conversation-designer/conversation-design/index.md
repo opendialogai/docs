@@ -22,15 +22,17 @@ Conversation Designers can use OpenDialog Search to find an intent, a message, o
 
 You can access the 'Search' functionality in the main scenario menu, which searches for content throughout Intents and Messages.
 
+<div>
+
 ![](/.gitbook/assets/Search_Scenario_View.png)
 
 *Search across Intents and Messages using the search functionality in the main scenario menu*
 
- 
-
 ![](/.gitbook/assets/Search_Message.png)
 
 *Type a query in the search bar and get an immediate list of the conversational components you can click on to edit*
+
+</div>
 
 Building the structure for an assistant is similar to information architecture in the field of UX: there are a number of ways to structure the information, and some may work better than others.
 

@@ -68,7 +68,13 @@ Any action type (whether it's a Webhook, Action or LLM Action) can be added to a
 
 Actions can have output attributes, typically set up for webhook or LLM actions. These user-defined attributes are populated by this action as a result of its execution. By default, all output attributes are stored in the `user` context, but you can override this behavior at the intent level.:
 
-![](/.gitbook/assets/1.png) ![](/.gitbook/assets/2.png)
+<div>
+
+![](/.gitbook/assets/1.png)
+
+![](/.gitbook/assets/2.png)
+
+</div>
 
 ## Reserved Intent Names
 

@@ -22,7 +22,11 @@ Authorization: Bearer YOUR_API_TOKEN
 
 To access your bearer token visit the Identity & Security page - accessible by clicking on your username in the bottom left-hand corner.
 
+<div align="left">
+
 ![](</.gitbook/assets/image (626).png>)
+
+</div>
 
 ![](</.gitbook/assets/image (627).png>)
 

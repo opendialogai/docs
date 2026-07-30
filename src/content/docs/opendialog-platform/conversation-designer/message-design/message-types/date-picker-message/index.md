@@ -7,23 +7,39 @@ description: This page describe where to use and find a date picker message type
 
 Date picker messages allow the user to choose a date from a graphical calendar interface within the chat window which is then saved to an attribute for further use. Date picker messages simplify the process of inputting dates in a consistent format. This can often be challenging if you need to constrain the range of dates you would like to accept as input, or if you are serving an international user base with differing date formats. <br>
 
+<div align="center" data-full-width="true">
+
 ![](</.gitbook/assets/Screenshot 2024-06-04 at 10.31.07.png>)
 
-*Users are prompted with a clickable input box.* ![](</.gitbook/assets/Screenshot 2024-06-04 at 10.31.14.png>)
+*Users are prompted with a clickable input box.*
+
+![](</.gitbook/assets/Screenshot 2024-06-04 at 10.31.14.png>)
 
 *When clicked, a calendar appears*
 
+</div>
+
 As well as being able to just pick the date, the date picker message also has other options. For example:
+
+<div>
 
 ![](</.gitbook/assets/Pick a time.png>)
 
-*Pick a time* ![](</.gitbook/assets/Pick a date and time.png>)
+*Pick a time*
 
-*Pick a date and time* ![](</.gitbook/assets/Pick a year and month.png>)
+![](</.gitbook/assets/Pick a date and time.png>)
 
-*Pick a month and year* ![](</.gitbook/assets/Pick a year.png>)
+*Pick a date and time*
+
+![](</.gitbook/assets/Pick a year and month.png>)
+
+*Pick a month and year*
+
+![](</.gitbook/assets/Pick a year.png>)
 
 *Pick a year*
+
+</div>
 
 * The month + year option
 * The just-year option

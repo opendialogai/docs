@@ -81,11 +81,17 @@ Notice the difference between the following screens:
 
  
 
+<div align="left">
+
 ![](/.gitbook/assets/2023-05-23_13-09-37.png)
 
-*All text in a single message* ![](</.gitbook/assets/Screenshot 2024-06-05 at 13.47.08.png>)
+*All text in a single message*
+
+![](</.gitbook/assets/Screenshot 2024-06-05 at 13.47.08.png>)
 
 *Text divided up in smaller chunks for readability*
+
+</div>
 
 ### Words per app turn
 

@@ -13,4 +13,8 @@ While creating your Web Chat instance based on the Embed code, you can uncomment
 
 In your Web Chat instance, you can check the link(s) in the "3-dots" menu and see that they are now available for your customers. The links appear in the order specified in the array, always below the Download chat.
 
+<div data-full-width="false">
+
 ![](</.gitbook/assets/Zrzut ekranu 2025-11-3 o 14.48.02.png>)
+
+</div>
