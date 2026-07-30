@@ -75,15 +75,30 @@ export function convertFile(text) {
   });
 }
 
-const VIDEO = /^(youtu\.be|youtube\.com|loom\.com)$/;
-
-/** True when an embed URL is one the Embed component can render as an iframe. */
+/**
+ * True when an embed URL is one of the exact shapes src/components/Embed.astro's `embedSrc`
+ * turns into a working iframe src: `youtu.be/<id>`, `youtube.com/watch?v=<id>` or
+ * `loom.com/share/<id>`.
+ *
+ * Checked here rather than left to the component: a URL on a video host but in some other
+ * shape — an already-`/embed/`-form Loom link, a `/live/` or `/shorts/` YouTube link, a
+ * `watch` URL missing `v` — would make `embedSrc` fail or produce a blank iframe. Rejecting
+ * it here means it becomes a plain autolink instead, a visible working link, and the
+ * decision is made once at conversion time rather than repeated (or drifted) at every build.
+ * Keep this in sync with `embedSrc` in src/components/Embed.astro.
+ */
 export function isVideoEmbed(url) {
+  let parsed;
   try {
-    return VIDEO.test(new URL(url).hostname.replace(/^www\./, ''));
+    parsed = new URL(url);
   } catch {
     return false;
   }
+  const host = parsed.hostname.replace(/^www\./, '');
+  if (host === 'youtu.be') return /^\/[^/]+$/.test(parsed.pathname);
+  if (host === 'youtube.com') return parsed.pathname === '/watch' && parsed.searchParams.get('v') !== null;
+  if (host === 'loom.com') return /^\/share\/[^/]+$/.test(parsed.pathname);
+  return false;
 }
 
 /** Escapes a caption for use inside a double-quoted JSX attribute. */

@@ -138,6 +138,28 @@ test('isVideoEmbed recognises Loom and YouTube only', () => {
   assert.equal(isVideoEmbed('https://www.fetchify.com/address-auto-complete'), false);
 });
 
+test('a loom.com URL not in /share/ form is not an embeddable shape', () => {
+  assert.equal(isVideoEmbed('https://www.loom.com/embed/x'), false);
+});
+
+test('a youtube.com/watch URL with no v parameter is not an embeddable shape', () => {
+  assert.equal(isVideoEmbed('https://www.youtube.com/watch'), false);
+});
+
+test('a loom.com URL not in /share/ form becomes an autolink, not an Embed', () => {
+  assert.equal(
+    convertEmbeds('{% embed url="https://www.loom.com/embed/abc" %}'),
+    '<https://www.loom.com/embed/abc>'
+  );
+});
+
+test('a youtube.com/watch URL with no v parameter becomes an autolink, not an Embed', () => {
+  assert.equal(
+    convertEmbeds('{% embed url="https://www.youtube.com/watch" %}'),
+    '<https://www.youtube.com/watch>'
+  );
+});
+
 test('a stepper becomes a Steps ordered list with indented bodies', () => {
   const input = [
     '{% stepper %}',

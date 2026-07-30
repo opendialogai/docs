@@ -12,7 +12,12 @@ interface Props {
 
 const { url, title } = Astro.props;
 
-/** Maps a share URL to its embeddable form. */
+/**
+ * Maps a share URL to its embeddable form.
+ *
+ * scripts/lib/gitbook-blocks.mjs's isVideoEmbed decides which URLs reach this component at
+ * all, accepting only the shapes handled below. Keep the two in sync.
+ */
 function embedSrc(raw: string): string | null {
   const parsed = new URL(raw);
   const host = parsed.hostname.replace(/^www\./, '');
@@ -26,24 +31,26 @@ function embedSrc(raw: string): string | null {
 }
 
 const src = embedSrc(url);
-// Task 6's isVideoEmbed only emits <Embed> for a hostname this function recognises, so a
-// null src here means that guarantee no longer holds. Failing the build surfaces the gap
-// immediately rather than shipping a dead-looking link in place of a video.
-if (!src) throw new Error(`Embed: no embeddable form for ${url}`);
 ---
 
-<figure class="od-embed">
-  <div class="od-embed-frame">
-    <iframe
-      src={src}
-      title={title ?? 'Embedded video'}
-      loading="lazy"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    />
-  </div>
-  {title && <figcaption>{title}</figcaption>}
-</figure>
+{
+  src ? (
+    <figure class="od-embed">
+      <div class="od-embed-frame">
+        <iframe
+          src={src}
+          title={title ?? 'Embedded video'}
+          loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+      {title && <figcaption>{title}</figcaption>}
+    </figure>
+  ) : (
+    <p><a href={url}>{title ?? url}</a></p>
+  )
+}
 
 <style>
   .od-embed {
