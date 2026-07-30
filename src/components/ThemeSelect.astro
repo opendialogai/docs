@@ -1,0 +1,13 @@
+---
+/**
+ * Renders nothing: the site ships light-only.
+ *
+ * The GitBook site this replaces is light-only — its <html> carries a hard-coded
+ * `light` class, there is no switcher and no theme key in localStorage — so a theme
+ * control would be a feature the docs have never had, arriving on cutover day.
+ *
+ * Starlight renders this component in both Header and MobileMenuFooter, so blanking
+ * it here covers the mobile menu as well as the header. `ThemeProvider` pins the
+ * theme itself; the dark tokens stay in custom.css so this is reversible.
+ */
+---

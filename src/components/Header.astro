@@ -1,0 +1,118 @@
+---
+/**
+ * Site header, ordered as GitBook orders it.
+ *
+ * Starlight's own header is a three-column grid — title, search, then a right-hand
+ * group of social icons and the theme and language selects — with the search column
+ * width computed to line up with the content column. GitBook runs title on the left
+ * and `opendialog.ai`, the "Talk to an expert" call to action and search together on
+ * the right, and aligns none of them to the content column, so that calc has nothing
+ * to preserve here and a flex row replaces it.
+ *
+ * The links sit in their own wrapper rather than beside search because Starlight
+ * hides the right-hand group below the `md` breakpoint while search stays visible;
+ * putting search in that wrapper would hide it on mobile.
+ */
+import config from 'virtual:starlight/user-config';
+
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+
+/**
+ * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
+ */
+const shouldRenderSearch =
+	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="header">
+	<div class="title-wrapper sl-flex">
+		<SiteTitle />
+	</div>
+
+	<div class="sl-flex right-group">
+		<div class="sl-hidden md:sl-flex print:hidden header-links">
+			<a href="https://opendialog.ai/">opendialog.ai</a>
+			<a class="cta" href="https://opendialog.ai/talk-to-expert/">Talk to an expert</a>
+		</div>
+
+		<div class="sl-flex print:hidden search-wrapper">
+			{shouldRenderSearch && <Search />}
+		</div>
+	</div>
+</div>
+
+<style>
+	/*
+	 * Deliberately not wrapped in @layer. Starlight declares starlight.core before
+	 * starlight.reset, so the reset's `* { margin: 0 }` outranks anything in core —
+	 * which is why Starlight's own .title-wrapper margin never applies. Unlayered
+	 * author styles outrank every layer.
+	 */
+	.header {
+		display: flex;
+		align-items: center;
+		gap: var(--sl-nav-gap);
+		height: 100%;
+	}
+
+	.title-wrapper {
+		/* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
+		overflow: clip;
+		/* Avoid clipping focus ring around link inside title wrapper. */
+		padding: 0.25rem;
+		margin: -0.25rem;
+		min-width: 0;
+	}
+
+	/* Pushes the links and search to the right edge, leaving the title on the left. */
+	.right-group {
+		margin-inline-start: auto;
+		align-items: center;
+		gap: 1.5rem;
+		min-width: 0;
+	}
+
+	.header-links {
+		align-items: center;
+		gap: 1.5rem;
+		font-size: var(--sl-text-sm);
+		/* Poppins' normal line-height is 25px at 14px, which makes the call to action
+		   43px tall against GitBook's 39. GitBook sets 20px. */
+		line-height: 1.25rem;
+	}
+
+	.header-links a {
+		color: var(--sl-color-gray-3);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.header-links a:hover,
+	.header-links a:focus-visible {
+		color: var(--sl-color-white);
+	}
+
+	/*
+	 * GitBook's call to action is a quiet outlined button, not a filled brand-blue
+	 * one: white fill, 1px hairline, 12px radius, 8/16 padding.
+	 */
+	.header-links .cta {
+		padding: 0.5rem 1rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.75rem;
+		background-color: var(--sl-color-bg);
+	}
+
+	.header-links .cta:hover,
+	.header-links .cta:focus-visible {
+		border-color: var(--sl-color-gray-4);
+	}
+
+	/* Without a bound, Starlight's search button grows to fill the flex row. */
+	.search-wrapper {
+		flex: 0 1 auto;
+		min-width: 0;
+		max-width: 16rem;
+	}
+</style>

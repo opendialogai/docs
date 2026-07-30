@@ -19,12 +19,17 @@ export default defineConfig({
 			components: {
 				// Renders the frontmatter description under the title, as GitBook does.
 				PageTitle: './src/components/PageTitle.astro',
+				// Orders the header as GitBook does and carries its opendialog.ai link
+				// and "Talk to an expert" call to action.
+				Header: './src/components/Header.astro',
+				// The site ships light-only, as GitBook does: no switcher, theme pinned.
+				ThemeSelect: './src/components/ThemeSelect.astro',
+				ThemeProvider: './src/components/ThemeProvider.astro',
+				// Would otherwise leave an empty bordered strip in the mobile menu.
+				MobileMenuFooter: './src/components/MobileMenuFooter.astro',
 			},
-			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/opendialogai' },
-				{ icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/opendialogai/' },
-				{ icon: 'x.com', label: 'X', href: 'https://twitter.com/opendialogai' },
-			],
+			// No `social`: GitBook carries no social icons, and Starlight renders them in
+			// the header and the mobile menu whenever the key is present.
 			sidebar,
 		}),
 	],
