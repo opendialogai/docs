@@ -62,23 +62,45 @@ export function resolveSource(fromSource, target) {
   return path.posix.normalize(joined).replace(/^(\.\.\/)+/, '');
 }
 
-/** Rewrites every internal page link in `text` to its route URL. Throws on any that misses. */
+/** A raw HTML anchor's href. GitBook's export leaves these inside table cells. */
+const HTML_HREF = /(<a\b[^>]*?\bhref=")([^"]*)(")/gi;
+
+/**
+ * Rewrites every internal page link in `text` to its route URL. Throws on any that misses.
+ *
+ * Covers both markdown links and raw HTML anchors. The corpus carries relative `.md` links
+ * in both forms, and handling only the first shipped
+ * `<a href="button-message.md">Button Message</a>` on twilio-content-template-message as a
+ * 404 — the same page links the same target correctly two lines further down, in markdown.
+ * A link inside a code fence is left alone by protectCode, so an HTML sample showing an
+ * anchor is not rewritten.
+ */
 export function rewriteLinks(text, { source, routes }) {
+  const routeFor = (target) => {
+    const resolved = resolveSource(source, target);
+    if (resolved === null) return null;
+    const route = routes.get(resolved);
+    if (!route) {
+      throw new Error(`${source}: link target does not resolve to a page: ${target} -> ${resolved}`);
+    }
+    const anchor = target.includes('#') ? target.slice(target.indexOf('#')) : '';
+    return `${route.url}${anchor}`;
+  };
+
   return protectCode(text, (masked) => {
     let out = '';
     let cursor = 0;
     for (const { start, end, target, angled } of extractTargets(masked)) {
-      const resolved = resolveSource(source, target);
-      if (resolved === null) continue;
-      const route = routes.get(resolved);
-      if (!route) {
-        throw new Error(`${source}: link target does not resolve to a page: ${target} -> ${resolved}`);
-      }
-      const anchor = target.includes('#') ? target.slice(target.indexOf('#')) : '';
-      const url = `${route.url}${anchor}`;
+      const url = routeFor(target);
+      if (url === null) continue;
       out += masked.slice(cursor, start) + (angled ? `<${url}>` : url);
       cursor = end;
     }
-    return out + masked.slice(cursor);
+    const withMarkdown = out + masked.slice(cursor);
+
+    return withMarkdown.replace(HTML_HREF, (whole, open, href, close) => {
+      const url = routeFor(href);
+      return url === null ? whole : `${open}${url}${close}`;
+    });
   });
 }
