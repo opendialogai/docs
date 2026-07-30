@@ -184,16 +184,26 @@ for (const name of [...copy].sort()) {
 /**
  * Removes what a prior run wrote for an asset that no longer exists in this run's copy set.
  *
- * Driven by the previous map's slugs, never by listing the destination directories: those
+ * Driven by the previous map's entries, never by listing the destination directories: those
  * directories are not script-owned (src/assets holds the site logo, unrelated to any asset entry)
  * and a listing-based sweep would delete anything it does not recognise, logo included. The map
  * is the only record of what this script has ever written, so it is the only safe source for
  * what this script may delete.
+ *
+ * Keyed on the (destination, slug) pair, not the slug alone: the same slug can move destination
+ * between runs (a GIF crossing GIF_VIDEO_THRESHOLD keeps its filename but switches between
+ * src/assets and public/media), and a slug claimed in its new destination must not be read as
+ * covering the stale copy left behind in its old one.
+ *
+ * An entry that predates the `destination` field is placed via DESTINATION_FOR_KIND rather than
+ * skipped: kind has always determined destination one-to-one, so the derivation is exact, not a
+ * guess, and skipping such entries would let their stale files sit unswept forever.
  */
-const claimed = new Set(Object.values(assets).map((asset) => asset.slug));
+const destinationKeyFor = (asset) => asset.destination ?? DESTINATION_FOR_KIND[asset.kind];
+const claimed = new Set(Object.values(assets).map((asset) => `${asset.destination}/${asset.slug}`));
 for (const asset of Object.values(previous)) {
-  if (claimed.has(asset.slug)) continue;
-  const destinationKey = asset.destination ?? DESTINATION_FOR_KIND[asset.kind];
+  const destinationKey = destinationKeyFor(asset);
+  if (claimed.has(`${destinationKey}/${asset.slug}`)) continue;
   rmSync(join(DESTINATIONS[destinationKey].dir, asset.slug), { force: true });
 }
 
