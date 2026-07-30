@@ -85,6 +85,94 @@
 }
 
 /*
+ * Page shell.
+ *
+ * GitBook constrains its layout to a 1440px box centred in the viewport with 32px of
+ * inner padding, while the header band itself stays full-bleed. Measured at a 1920
+ * viewport: the sidebar starts at 265 and the table of contents ends at 1641, which
+ * is 1440 minus the two 32px pads. Starlight's frame is full-bleed throughout, so on
+ * a wide monitor the nav sits hard against the left edge and the right third is dead
+ * space.
+ *
+ * A single inset feeds the header padding, the fixed sidebar and the main frame, so
+ * the three cannot drift apart. It is computed from 100vw, which includes the
+ * scrollbar, so the shell lands half a scrollbar-width left of true centre — around
+ * 7px against a gutter of 233px at 1920.
+ *
+ * Below 50rem Starlight collapses to one column with a slide-over sidebar, and an
+ * inset would only fight it, so this starts at Starlight's own breakpoint. The
+ * selectors carry extra specificity because Astro compiles Starlight's rules with a
+ * scope class.
+ */
+:root {
+	--od-shell-max: 90rem;
+	--od-shell-pad: 2rem;
+	--od-shell-inset: max(
+		var(--od-shell-pad),
+		calc((100vw - var(--od-shell-max)) / 2 + var(--od-shell-pad))
+	);
+}
+
+@media (min-width: 50rem) {
+	@layer starlight.core {
+		.page > header.header {
+			padding-inline: var(--od-shell-inset);
+		}
+
+		.page .sidebar .sidebar-pane {
+			inset-inline-start: var(--od-shell-inset);
+		}
+
+		.page > .main-frame {
+			padding-inline-start: calc(var(--sl-content-inline-start) + var(--od-shell-inset));
+			padding-inline-end: var(--od-shell-inset);
+		}
+	}
+}
+
+/*
+ * Site title and logo.
+ *
+ * Starlight styles the title with --sl-color-text-accent at --sl-text-h4, which
+ * renders it as 24px brand blue. GitBook sets it in near-black at 18px/600 with
+ * -0.025em tracking, alongside a 32px logo. --sl-color-white is the darkest text
+ * colour in light mode and the lightest in dark, so it tracks the page heading
+ * rather than pinning a foreign hex. That lands on rgb(18, 20, 33) against GitBook's
+ * rgb(28, 29, 32) — a touch darker and bluer, indistinguishable at 18px.
+ *
+ * Selectors are scoped through .header deliberately: Astro compiles Starlight's own
+ * rules to `.site-title.astro-<hash>`, so a bare `.site-title` loses the cascade.
+ */
+@layer starlight.core {
+	.header .site-title {
+		gap: 0.75rem;
+		font-size: 1.125rem;
+		letter-spacing: -0.025em;
+		color: var(--sl-color-white);
+	}
+
+	.header .site-title img {
+		height: 2rem;
+	}
+
+}
+
+/*
+ * Starlight pads .title-wrapper by 0.25rem to keep the focus ring clear of the logo
+ * and cancels it with an equal negative margin. That margin never takes effect: it
+ * sits in the starlight.core layer, and starlight.reset — which is declared later,
+ * so it wins — carries `* { margin: 0 }`. The logo therefore lands 4px right of the
+ * sidebar edge, where GitBook aligns the two exactly.
+ *
+ * This rule is deliberately outside @layer: unlayered author styles outrank every
+ * layer, and starlight.core is the lowest-priority one, so the layer this file
+ * otherwise uses cannot beat the reset.
+ */
+.header .title-wrapper {
+	margin-inline-start: -0.25rem;
+}
+
+/*
  * GitBook ships some code samples as literal <pre> markup rather than as a fenced
  * code block. Those never reach Expressive Code, and Starlight's code styling is
  * scoped to fenced blocks, so without this they fall back to the browser's default
