@@ -14,9 +14,9 @@ import { ASSET_SRC, unescapeAssetName } from './asset-refs.mjs';
 import { protectCode } from './segments.mjs';
 
 export const NEEDS_ANGLE = /[ ()]/;
-const FIGURE = /<figure>\s*<img\s+([^>]*?)>\s*(?:<figcaption>([\s\S]*?)<\/figcaption>)?\s*<\/figure>/g;
+export const FIGURE = /<figure>\s*<img\s+([^>]*?)>\s*(?:<figcaption>([\s\S]*?)<\/figcaption>)?\s*<\/figure>/g;
 const BARE_IMG = /<img\s+([^>]*?)>/g;
-const ASSET_IMAGE = /!\[([^\]]*)\]\((<[^>]*>|[^)]*(?:\([^)]*\)[^)]*)*)\)/g;
+export const ASSET_IMAGE = /!\[([^\]]*)\]\((<[^>]*>|[^)]*(?:\([^)]*\)[^)]*)*)\)/g;
 
 /** The bare, unescaped filename a .gitbook/assets reference names, or null if it is not one. */
 function assetName(src) {
@@ -82,7 +82,7 @@ function image(alt, src, assets, width) {
 /** Plain-text form of a <figcaption>, keeping <code> spans as backticks since GitBook's export
  * uses them to mark an attribute name inline; every other tag carries no information the
  * italic caption needs. */
-function captionText(caption) {
+export function captionText(caption) {
   return (caption ?? '')
     .replace(/<code>([\s\S]*?)<\/code>/g, '`$1`')
     .replace(/<[^>]*>/g, '')
