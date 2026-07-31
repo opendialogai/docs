@@ -10,7 +10,8 @@
     "astro": "astro",
     "convert": "node scripts/routes.mjs && node scripts/assets.mjs && node scripts/convert.mjs && node scripts/sidebar.mjs",
     "test": "node --test \"scripts/lib/*.test.mjs\"",
-    "verify:links": "node scripts/verify-links.mjs"
+    "verify:links": "node scripts/verify-links.mjs",
+    "verify:live": "node scripts/verify-live.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.5",
