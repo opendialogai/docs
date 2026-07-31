@@ -4,6 +4,30 @@ import starlight from '@astrojs/starlight';
 import sidebar from './src/sidebar.generated.mjs';
 import { rehypeImageWidth } from './scripts/lib/rehype-image-width.mjs';
 import { rehypeFigures } from './scripts/lib/rehype-figures.mjs';
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { pinLightTheme } from './scripts/lib/light-theme.mjs';
+
+/**
+ * Rewrites the colour scheme Starlight hard-codes into every emitted page.
+ *
+ * @type {import('astro').AstroIntegration}
+ */
+const pinLightThemeIntegration = {
+	name: 'pin-light-theme',
+	hooks: {
+		'astro:build:done': ({ dir, logger }) => {
+			const out = fileURLToPath(dir);
+			const pages = readdirSync(out, { recursive: true }).filter((f) => String(f).endsWith('.html'));
+			if (!pages.length) throw new Error('pin-light-theme: no HTML pages in the build output');
+			for (const page of pages) {
+				const path = `${out}/${page}`;
+				writeFileSync(path, pinLightTheme(readFileSync(path, 'utf8')));
+			}
+			logger.info(`pinned data-theme="light" on ${pages.length} pages`);
+		},
+	},
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,5 +69,6 @@ export default defineConfig({
 			// the header and the mobile menu whenever the key is present.
 			sidebar,
 		}),
+		pinLightThemeIntegration,
 	],
 });
