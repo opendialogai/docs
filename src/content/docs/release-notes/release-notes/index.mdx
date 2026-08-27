@@ -6,6 +6,115 @@ description: Learn about our product's newest updates and enhancements that will
 import { LinkCard } from '@astrojs/starlight/components';
 
 
+## August 2026
+
+#### <mark style={{ color: 'purple' }}>OpenDialog 4.0</mark>
+
+OpenDialog 4.0 is here! This is our first release under a new, regular major-version cadence with clearly communicated support windows: the current major release is fully supported, and when a new major ships the previous one receives a three-month transition period of security and critical fixes. 4.0 also moves the platform onto PHP 8.5, keeping OpenDialog on the latest fully supported runtime.
+
+#### <mark style={{ color: 'purple' }}>Deprecations and removals</mark>
+
+As part of 4.0 we are clearing out long-deprecated components. The following components are being removed in 4.0:
+
+* The legacy webchat — new scenarios have used the new webchat for some time, and we will be in touch with owners of remaining legacy-webchat scenarios about migration
+* The Voice/Alexa module, including the Alexa platform, the Alexa interpreter and skill synchronisation
+* The legacy NLU interpreters: Microsoft LUIS, Microsoft QnA Maker, Rasa, Amazon Lex and Google Dialogflow
+* The Google PaLM language model, which has been discontinued by Google
+
+In addition, the following components are deprecated in 4.0 and will be removed in the next major release:
+
+* The legacy direct OpenAI client interpreter — replaced by [Language Services](/opendialog-platform/interpreters-and-natural-language-understanding/language-services) backed by language model configurations
+* The Azure Custom QA interpreter
+
+If you have any questions about migrating away from a deprecated component, you can get help via our support form - [https://opendialog.ai/support](https://opendialog.ai/support/).
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* Fixed single action-run CSV downloads being truncated, and export filenames now include the scenario name
+* Fixed Knowledge Service topic search returning no results beyond the first page
+* Raised the static knowledge source limit to 300,000 characters
+* Refreshed the Dynamic Attributes admin screen to align with the OpenDialog design system
+* Continued webchat accessibility work, including improved screen reader support
+* Hardened webchat asset delivery and error handling for more resilient embeds
+
+## July 2026
+
+#### <mark style={{ color: 'purple' }}>Faster conversations</mark>
+
+We've completed a significant round of performance work on the conversation engine, substantially reducing the processing time for each chat message. Your users should notice snappier responses across the board.
+
+#### <mark style={{ color: 'purple' }}>Accessibility improvements in webchat</mark>
+
+We've made a major investment in webchat accessibility. Automated WCAG compliance checks now run as part of every webchat release, and this month's releases include improvements to keyboard navigation, focus management and screen reader support.
+
+#### <mark style={{ color: 'purple' }}>Selma and Analytics SDKs</mark>
+
+The first versioned releases of the Selma embeddable assistant SDK and the OpenDialog analytics capture SDK are now available, delivered as versioned assets alongside webchat.
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* Buttons can now be displayed alongside the input field in the mini webchat layout
+* Message log CSV exports are now processed in the background and delivered by email, so large exports no longer time out
+* Replaced Google reCAPTCHA with Cloudflare Turnstile on registration for a smoother, more privacy-friendly sign-up
+* Fixed an issue where embedding webchat in an iframe could be blocked by the browser
+* Upgraded the underlying application framework to the latest major version, bringing many security and stability improvements
+
+## June 2026
+
+#### <mark style={{ color: 'purple' }}>Advanced Configuration for LLM actions</mark>
+
+[LLM actions](/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions) now persist their full Advanced Configuration, giving you complete control over the model parameters used by your actions.
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* Log exports now include a date-range picker, so you can export exactly the period you need
+* Started a programme of conversation engine performance improvements, with detailed per-turn latency monitoring
+* Clearer behaviour when no response intent matches, and fixed the preview log refresh
+* Webchat styles are now isolated from host page styles, preventing conflicts on embedded sites
+* Fixed webchat handling of empty messages
+* Cleaned up duplicated dynamic attributes
+
+## May 2026
+
+#### <mark style={{ color: 'purple' }}>Data Insights foundations</mark>
+
+We are building a new Data Insights capability to give you richer reporting on how users interact with your AI agents. This month we laid the foundations: a dedicated reporting datastore and a new GraphQL API for querying interaction data, along with the aggregation pipeline that will power upcoming insights reporting. Watch this space!
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* API rate limits are now configurable per environment
+* Raised the static knowledge source limit to 200,000 characters
+* Re-engineered large CSV exports to stream their data, fixing failures on very large exports
+* Fixed search result navigation in the search modal
+* Fixed a CSRF issue affecting scenario aliases
+* Strengthened session security, including signing key rotation for anonymous webchat sessions
+* Various security and stability improvements
+
+## April 2026
+
+#### <mark style={{ color: 'purple' }}>Analytics data export</mark>
+
+You can now export your analytics data for use in your own reporting tools. A new Analytics export page supports detailed and aggregated CSV exports with filtering by scenario, and a new public Analytics Data Export API gives you programmatic access to the same data. Export downloads are delivered via secure temporary links rather than email attachments.
+
+For more information, see our [Public APIs documentation](/developing-with-opendialog/public-apis).
+
+#### <mark style={{ color: 'purple' }}>Secret attributes and contexts</mark>
+
+Store sensitive values such as API keys as secrets and reference them from your configurations, including language model configurations. Secret values are encrypted at rest and masked in the interface.
+
+For more information, see our [Secret Context documentation](/core-concepts/contexts-and-attributes/secret-context).
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* Added a minimum-similarity topic filter for finer control over knowledge retrieval relevance
+* Added metadata fields to Topics and Topic Sources
+* LLM actions using function calls can now force the model to call a function
+* Added support for the "Powered by OpenDialog" badge in webchat interface settings
+* Fixed creating a new attribute from a webhook response mapping
+* Fixed message feedback settings being overridden at workspace level
+* Fixed message ordering and text selection issues in webchat
+* Various security updates, including an out-of-band patch release for a dependency vulnerability
+
 ## March 2026
 
 #### <mark style={{ color: 'purple' }}>More control for Webhook V2 integrations</mark>
