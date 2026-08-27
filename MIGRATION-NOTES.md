@@ -1347,3 +1347,19 @@ suite: 147/147 (142 plus 5 new — 1 in `figures.test.mjs`, 4 in `link-cards.tes
 re-run twice leaves `git status --short` empty except for the intentional source/test changes
 themselves. Exactly two files under `src/content/docs/` changed as a result of the critical fix;
 zero changed as a result of the `protectCode` or `convertContentRefs` fixes.
+
+## 2026-08-25 — First post-cutover content edit: release notes hand-edited
+
+The release-notes page (`src/content/docs/release-notes/release-notes/index.mdx`) was updated
+by hand with the April–August 2026 entries, matched against the Confluence release pages
+(3.11 Wasat, 3.12 Yildun, 3.13 Zaniah, 3.14/4.0) and the GitHub release changelogs. The
+August entry carries the OpenDialog 4.0 deprecation/removal list from the 4.0 Release Page
+and RFD 0078.
+
+This deliberately breaks the "never hand-edit `src/content/docs/`" rule. That rule guarded
+against a `convert.mjs` re-run clobbering manual edits while GitBook was still the source of
+truth; the live site is now the Starlight build and GitBook no longer syncs. **Constraint
+created:** any future `npm run convert` re-run against a `source/` snapshot will silently
+drop these sections — the conversion pipeline must be treated as retired for content, or this
+page's post-cutover additions re-applied after any regeneration. Phase 3 (assets, PR #18)
+must rebase over this change and must not re-run the full conversion on top of it.
