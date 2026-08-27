@@ -2021,3 +2021,59 @@ created:** any future `npm run convert` re-run against a `source/` snapshot will
 drop these sections — the conversion pipeline must be treated as retired for content, or this
 page's post-cutover additions re-applied after any regeneration. Phase 3 (assets, PR #18)
 must rebase over this change and must not re-run the full conversion on top of it.
+
+---
+
+## 2026-08-27 — The conversion pipeline is retired; `src/content/docs/` is now authored
+
+`origin/main` was merged into `phase-4/look-and-feel` to bring the April–August 2026 release
+notes onto the branch. The release-notes page existed on both sides and both sides had
+changed it, so the resolution is worth recording: `main` carried the five new sections on top
+of Phase 2 output, which still referenced `/.gitbook/assets/image (627).png` and friends
+directly; `phase-4` carried the same page regenerated with `~/assets/…` paths, image widths
+and no dead `Embed` import. Git auto-merged them because the new sections sit above
+`## March 2026` and the asset rewrites sit below it. Verified rather than assumed: five new
+`<h2>`s render in reverse-chronological order, all four of the new absolute links resolve to
+pages that exist in `dist`, and the page emits 22 `_astro` images and zero `.gitbook`
+references.
+
+**The pipeline is now retired for content.** Conversion was always a one-time process, and it
+has run: `npm run convert` on this branch immediately before the merge left
+`git status --short` empty, so the generated corpus and `source/` agree exactly. That is the
+last time it should run. From here `src/content/docs/` is hand-authored in Starlight dialect
+and is the source of truth. `CLAUDE.md` hard rules 2 and 3 have been rewritten accordingly:
+rule 2 inverted, and rule 3 now forbids `npm run convert` outright rather than describing the
+idempotency it needs.
+
+`source/`, `scripts/convert.mjs` and the 261-test suite are kept, unchanged and still passing,
+as the record of how the corpus was produced. `assets.mjs` and `routes.mjs` are still safe to
+run alone. `source/` is deliberately left frozen: Stuart's release-notes sections were *not*
+back-ported into `source/release-notes/release-notes.md`. The two are now expected to diverge,
+and `source/` means "what GitBook held at cutover", not "what the site says".
+
+**Superseded:** the constraint recorded in the 2026-08-25 entry above — that Phase 3 "must
+rebase over this change and must not re-run the full conversion on top of it" — is resolved
+rather than outstanding. Phase 3 is contained in `phase-4/look-and-feel`, the merge is done,
+and no further conversion run is permitted by rule 3.
+
+### Inherited failure: `npm run verify:images` exits 1, and retirement makes it structural
+
+`verify:images` fails on this branch and **already failed at `dfb58cf`**, the commit that
+introduced it — this merge did not cause it. Proof: the merge adds 109 lines carrying no
+images, built `<img>` count is 746 and empty-alt content images 455, both exactly the
+documented pre-merge baseline, and regenerating `reports/alt-text-todo.md` on the merged tree
+produces a file byte-identical to the committed one.
+
+The check compares two figures with different provenance (`scripts/verify-images.mjs:119`):
+`emptyAltInBuild` is counted from `dist/`, while the work-list `rows` are parsed from
+`source/` (line 65 reads `source/<route.source>` directly). They disagree 448 vs
+455 — the source-side parse undercounts the build by 7. 455 is the figure used consistently
+elsewhere in this file; 448 appears nowhere else and is unexplained. Root cause of the 7 is
+not diagnosed here.
+
+**Retiring the pipeline turns this from a bug into a design fault.** A work list derived from
+`source/` describes the frozen GitBook corpus, not the site being served, and the two now
+diverge permanently by design — every authored image widens the gap. Before this check can
+pass again it needs to read `src/content/docs/` (or `dist/`) rather than `source/`. Left for
+the Phase 5 accessibility work; it does not affect what is served — the same build reports
+**0** images with no `alt` attribute at all and **0** `src` values with no file behind them.

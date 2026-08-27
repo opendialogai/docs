@@ -9,8 +9,8 @@ Migrating OpenDialog's product docs off GitBook onto Astro Starlight, deployed t
 ## Hard rules
 
 1. **`documentation` branch is read-only.** GitBook syncs to it bidirectionally. Writing to it corrupts the live site. Work on a feature branch.
-2. **Never hand-edit files in `src/content/docs/`.** They are generated. Found a bug? Fix `scripts/convert.mjs` and re-run. A manual edit is silently destroyed on the next run and creates a bug that reappears at cutover.
-3. **Scripts must be idempotent.** `convert.mjs` and `assets.mjs` run repeatedly, right up to cutover day, against fresh GitBook syncs. Same input must give byte-identical output.
+2. **`src/content/docs/` is hand-authored and is the source of truth.** Author pages in Starlight dialect: `.md`/`.mdx`, site-absolute internal links (`/core-concepts/…`), and `~/assets/…` image paths so `astro:assets` optimises them. The GitBook conversion was a one-time process and it is complete — never regenerate this directory to change content.
+3. **Never run `npm run convert` or `scripts/convert.mjs`.** `convert.mjs` deletes `src/content/docs/` wholesale and rewrites it from the frozen `source/` snapshot, discarding every page authored since the migration. The pipeline is retired; it and its tests are kept as the record of how the corpus was produced. `assets.mjs` and `routes.mjs` remain safe to run on their own, and must stay idempotent — same input, byte-identical output.
 4. **`source/` is pristine and git-ignored.** All scripts read from `source/`, write to `src/`. Never mutate `source/` in place.
 5. **URLs do not change.** Not the ugly ones either. Every path in the live `sitemap.xml` must resolve. This is the acceptance test.
 6. **Do not edit documentation prose.** Not to fix typos, not to improve clarity. Log it in `MIGRATION-NOTES.md`.
