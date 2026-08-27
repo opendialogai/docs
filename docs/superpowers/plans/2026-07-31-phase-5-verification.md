@@ -4,7 +4,7 @@
 
 **Goal:** Close out the GitBook→Starlight migration: clear the live `sharp` advisory, fix the light-only theme for readers without JavaScript, make the verification checks reproducible and committed, audit accessibility with axe-core, and hand the alt-text work to the docs team as a work list.
 
-**Architecture:** Four new scripts follow the existing `scripts/` pattern — pure logic in `scripts/lib/*.mjs` with `node:test` unit tests beside it, filesystem and network work in the top-level script. One new Astro integration rewrites the emitted `<html>` tag at `astro:build:done`. Nothing under `src/content/docs/` is hand-edited; nothing in `source/` is mutated.
+**Architecture:** Four new scripts follow the existing `scripts/` pattern — pure logic in `scripts/lib/*.mjs` with `node:test` unit tests beside it, filesystem and network work in the top-level script. One new Astro integration rewrites the emitted `<html>` tag at `astro:build:done`. Phase 5's own scripts read content and report on it; none of them writes to `src/content/docs/`, and nothing in `source/` is mutated.
 
 **Tech Stack:** Node 22+ ESM, `node:test`, Astro 7.1.5, Starlight 0.41.5, Playwright 1.62, axe-core (new devDependency), sharp 0.35.3 (bump).
 
@@ -13,8 +13,8 @@
 Copied from `CLAUDE.md` and the design. Every task's requirements implicitly include this section.
 
 - **`documentation` branch is read-only.** Never write to it.
-- **Never hand-edit files under `src/content/docs/`.** They are generated. Fix the script and re-run.
-- **Scripts must be idempotent.** Same input gives byte-identical output.
+- **`src/content/docs/` is hand-authored and is the source of truth.** Author pages in Starlight dialect. Phase 5's scripts still must not write to it.
+- **Never run `npm run convert`.** It deletes `src/content/docs/` wholesale and rewrites it from the frozen `source/` snapshot. `assets.mjs` and `routes.mjs` are safe alone and must stay idempotent — same input, byte-identical output.
 - **`source/` is pristine and git-ignored.** Scripts read from `source/`, write to `src/`. Never mutate `source/`.
 - **URLs do not change.** Every path in `reference/sitemap-pages.xml` must resolve. This is a live-traffic guarantee.
 - **Do not edit documentation prose.** Not typos, not broken links, not missing headings. Log it in `MIGRATION-NOTES.md`.
@@ -46,6 +46,27 @@ These are current, measured on 2026-07-31 against a fresh `astro build`. A task 
 | Content-area fragment links | 1,304 |
 | Inherited broken links (`/broken/pages/…`) | 9 |
 | Inherited broken anchors | 16 |
+
+### Re-measured 2026-08-27, after merging `origin/main`
+
+The merge brought in the April–August 2026 release notes, so four of the figures above have
+moved for a legitimate reason. Judge against these instead:
+
+| Measurement | Was | Now | Why |
+|---|---|---|---|
+| Unit tests passing | 235 | **261** | Phase 5 tasks added tests |
+| Content-area internal links | 2,650 | **2,673** | +23 links in the new release-notes sections |
+| Content-area fragment links | 1,304 | **1,323** | +19 |
+| Heading ids (excl. `_top`) | 1,211 | **1,230** | +19: five new `<h2>`s and fourteen `<h4>`s |
+
+Every other figure is unchanged — built pages 205, built `<img>` 746, empty-alt 455, inherited
+defects 9 links / 16 anchors, `src/assets` 48.4 MiB, largest asset 4.0 MiB. The +19 headings and
++19 anchors agree exactly, which is the cross-check that the new content is the whole story.
+
+**`npm run verify:images` exits 1 and did so before this merge**, at `dfb58cf`. It builds its
+work list from `source/` but counts empty alts from `dist/`, and the two disagree 448 vs 455.
+Retiring the pipeline makes that structural — see `MIGRATION-NOTES.md`. Fixing it means pointing
+the work list at `src/content/docs/` rather than `source/`; it is Phase 5 work and is not done.
 
 ---
 

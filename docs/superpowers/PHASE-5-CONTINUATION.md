@@ -35,14 +35,20 @@ item probably does, because it touches generated content and the rules forbid ed
 
 ## State you are inheriting
 
-- Branch **`phase-4/look-and-feel`**, pushed to `origin` at `45bc64e`, **30 commits ahead of
-  `origin/main`**. It contains all of `phase-3/assets`. **No PR is open** — Pat asked to be
-  consulted before one is raised.
-- Neither `phase-3/assets` nor `phase-4/look-and-feel` has merged to `main`. `main` is still
-  at the Phase 2 merge.
-- 235 unit tests pass. `npm run convert` is byte-identical across consecutive runs.
-- `astro build` green, 205 pages. `node scripts/routes.mjs` passes.
-- Deployed. The custom domain is **configured in the Cloudflare dashboard, not in
+- Branch **`phase-4/look-and-feel`**, with local commits not yet pushed to
+  `origin/phase-4/look-and-feel`. It contains all of `phase-3/assets` **and all of
+  `origin/main`**. **No PR is open** — Pat asked to be consulted before one is raised.
+- Neither `phase-3/assets` nor `phase-4/look-and-feel` has merged to `main`. `main` carries the
+  Phase 2 merge plus the April–August 2026 release notes (PR #20).
+- **The conversion pipeline is retired.** `src/content/docs/` is hand-authored and is the source
+  of truth; `source/` is frozen. Never run `npm run convert` — see `CLAUDE.md` rules 2 and 3 and
+  the 2026-08-27 entry in `MIGRATION-NOTES.md`.
+- 261 unit tests pass. The final `npm run convert`, run immediately before the merge, left the
+  tree byte-identical.
+- `astro build` green, 205 pages. `node scripts/routes.mjs` passes. `npm run verify:links` clean.
+  **`npm run verify:images` exits 1** and did so before the merge — inherited, logged, not fixed.
+- Deployed 2026-08-27 from this branch; `npm run verify:live` reports 207/207 serving 200.
+  The custom domain is **configured in the Cloudflare dashboard, not in
   `wrangler.jsonc`** — that file has no `routes` and no `custom_domain`. A `wrangler deploy`
   will not touch the binding, but it will not recreate it either if it is ever removed.
 
@@ -131,8 +137,11 @@ Both phase branches are outstanding against `main`. Ask before opening a PR.
 ## Hard rules that still bind
 
 1. **`documentation` branch is read-only.** GitBook syncs to it bidirectionally.
-2. **Never hand-edit `src/content/docs/`.** Generated; fix the script and re-run.
-3. **Scripts must be idempotent.** Same input, byte-identical output.
+2. **`src/content/docs/` is hand-authored and is the source of truth.** Author pages in
+   Starlight dialect: site-absolute internal links, `~/assets/…` image paths.
+3. **Never run `npm run convert`.** `convert.mjs` deletes `src/content/docs/` wholesale and
+   rewrites it from the frozen `source/` snapshot, discarding anything authored since the
+   migration. `assets.mjs` and `routes.mjs` are safe alone and must stay idempotent.
 4. **`source/` is pristine and git-ignored.** Repopulate with
    `git archive documentation | tar -x -C source/`.
 5. **URLs do not change.** Every path in `reference/sitemap-pages.xml` must resolve. This is
