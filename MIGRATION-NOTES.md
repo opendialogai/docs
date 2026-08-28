@@ -2096,3 +2096,51 @@ those are announced as nothing at all.
 
 Never affected what is served: the same build reports **0** images with no `alt` attribute at
 all and **0** `src` values with no file behind them.
+
+
+---
+
+## 2026-08-28 — `docs/superpowers/` removed
+
+The three design specs, three implementation plans and two phase-continuation prompts under
+`docs/superpowers/` are deleted. They were scaffolding for the phased build, not documentation
+of the site, and the durable record of what was decided and measured is this file.
+
+Nothing is lost: they are in git history, last present at `9ea473e`. Retrieve one with
+`git show 9ea473e:docs/superpowers/plans/2026-07-31-phase-5-verification.md`. Citations into
+those paths elsewhere in this file — the Phase 3 design spec reference in the ffmpeg
+correction above — now resolve only there. Those entries stand unedited under the append-only
+rule.
+
+**`.superpowers/` is deliberately kept.** It holds the per-task ledgers, briefs and review
+diffs, is git-ignored, and is therefore the only copy of several rulings and carried findings
+that were never transcribed here. Deleting it would be unrecoverable. Removing it is a
+separate decision, and the findings below should be transcribed first.
+
+### Phase 5 is unfinished, and this is what is left
+
+- **Task 6 — axe-core accessibility audit. Not started.** No `axe-core` dependency, no
+  `scripts/axe.mjs`, no `verify:a11y` script. Scoped to measure the two questions Phase 4 left
+  open rather than reason about them: the `<a>` nested inside a `<summary>` in a linked sidebar
+  group, and `CoverCard`'s deliberate `alt=""`. The plan has it stopping at a report before
+  anything is changed.
+- **Task 7 — Phase 5 gate write-up. Not done.** No Phase 5 gate entry exists in this file.
+- Both are specified in detail in the plan at the commit named above.
+
+### Carried findings that are still open
+
+- **Five hotlinked images are dead on the live site.** All five are on
+  `/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/transfer/components`
+  and return **404** — expired Google Docs export URLs, inherited from GitBook, not a migration
+  regression. Two further hotlinked images still resolve: one `googleusercontent` on
+  `/getting-started-1/getting-ready` and one `freshdesk` on
+  `/opendialog-platform/actions/conversation-hand-off/chatwoot`. This is a content defect for
+  the docs team, not a build defect. Status measured 2026-08-28; do not bake HTTP status into
+  any generated report, since that would break its idempotency.
+- **`reports/inherited-broken-links.json`'s `note` is partly false.** It claims the inherited
+  defects "are logged in `MIGRATION-NOTES.md`". True of the 9 links; **not** true of the 16
+  anchors, which are still only described as "assumed, not verified".
+- **An alt text containing `]`, or a caption containing `*`, breaks the emitted markdown.**
+  Flagged during Phase 2 review as owed to this file and never written down until now. It
+  matters more since the retirement: the docs team now writes alt text directly into
+  `src/content/docs/`, which is exactly the edit that would trigger it.
