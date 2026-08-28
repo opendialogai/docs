@@ -4,3 +4,5 @@ dist/
 .astro/
 .wrangler/
 screenshots/
+.playwright-mcp/
+.DS_Store

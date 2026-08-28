@@ -1,0 +1,24 @@
+---
+title: End chat
+description: This pattern allows the user to end the chat.
+---
+
+This functionality is not activated by default; it must be activated in the Interface Settings page:
+
+![](~/assets/2023-11-09-19-07-11.png "375")
+
+*End chat toggle in interface settings*
+
+![](~/assets/2023-11-09-19-08-09-1.png "366")
+
+*End chat link in user interface*
+
+Clicking on the **End Chat** button generates an intent to end the chat. Similar to no match and restart, the conversation engine will look for an intent.core.TurnEndChat intent in a turn in the current scene. If no intent is found, the engine will look for an intent.core.SceneEndChat intent in the conversation, and if no intent is found, the engine will look for an intent.core.ConversationEndChat.
+
+If none of these are found, the global intent.core.endChat is executed.
+
+
+
+:::caution
+Note the End Chat is not handled out of the box; you will need to set this up in your scenario.
+:::

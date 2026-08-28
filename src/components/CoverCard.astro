@@ -1,0 +1,85 @@
+---
+/**
+ * A card with a cover image, as GitBook renders a `data-card-cover` card table.
+ *
+ * Starlight's <LinkCard> has no image slot, so conversion used to discard the cover and
+ * emit a plain card — 13 references across 4 pages, pointing at 10 distinct assets.
+ *
+ * The image is resolved through import.meta.glob rather than taken as a path, so it goes
+ * through astro:assets and is optimised. The glob is lazy: only the covers actually
+ * referenced are bundled, not all 509 assets. An unresolvable cover throws rather than
+ * rendering a broken card, which is how the rest of this pipeline treats a reference it
+ * cannot satisfy.
+ */
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description?: string;
+  href: string;
+  cover: string;
+}
+
+const { title, description, href, cover } = Astro.props;
+
+const covers = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/**/*.{png,jpg,jpeg,webp,avif}'
+);
+
+const load = covers[cover];
+if (!load) throw new Error(`CoverCard: no asset at ${cover}`);
+const image = (await load()).default;
+---
+
+<a class="od-cover-card" href={href}>
+  <Image class="od-cover-image" src={image} alt="" widths={[371, 742]} sizes="371px" />
+  <span class="od-cover-body">
+    <span class="od-cover-title">{title}</span>
+    {description && <span class="od-cover-description">{description}</span>}
+  </span>
+</a>
+
+<style>
+  /*
+   * GitBook's covers render at 371x208 with object-fit: cover, two to a row, above the
+   * title and description. Unlayered so the anchor reset beats starlight.content.
+   */
+  .od-cover-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+  }
+
+  .od-cover-card:hover {
+    border-color: var(--sl-color-gray-4);
+  }
+
+  .od-cover-image {
+    width: 100%;
+    aspect-ratio: 371 / 208;
+    object-fit: cover;
+    display: block;
+  }
+
+  .od-cover-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .od-cover-title {
+    font-weight: 600;
+    color: var(--sl-color-text-accent);
+  }
+
+  .od-cover-description {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+</style>

@@ -1,0 +1,297 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { assetPath, convertFigures, reflowImageDiv, rewriteAssetRefs } from './figures.mjs';
+
+test('assetPath makes a relative asset reference root-absolute', () => {
+  assert.equal(assetPath('../../../.gitbook/assets/image (601).png'), '/.gitbook/assets/image (601).png');
+  assert.equal(assetPath('.gitbook/assets/Preview Sidebar.jpg'), '/.gitbook/assets/Preview Sidebar.jpg');
+});
+
+test('assetPath leaves a remote URL alone', () => {
+  const url = 'https://lh3.googleusercontent.com/abc';
+  assert.equal(assetPath(url), url);
+});
+
+test('a figure with a caption becomes an image plus an italic caption', () => {
+  assert.equal(
+    convertFigures(
+      '<figure><img src=".gitbook/assets/Preview Sidebar.jpg" alt="">' +
+        '<figcaption><p>Default conversation design view</p></figcaption></figure>'
+    ),
+    '![](</.gitbook/assets/Preview Sidebar.jpg>)\n\n*Default conversation design view*'
+  );
+});
+
+test('a figure with an empty caption emits only the image', () => {
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt=""><figcaption></figcaption></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
+test("an img's width is carried through as the markdown title", () => {
+  // Markdown has nowhere to put a width. The title slot is the only channel that
+  // survives into the HTML without introducing block markup, which matters because one
+  // width-bearing figure sits inside a list item where a wrapper div would break the
+  // list. rehype-image-width turns it into a style and strips it.
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="" width="375"></figure>'),
+    '![](/.gitbook/assets/a.png "375")'
+  );
+});
+
+test('a width is carried alongside an angle-bracketed path and a caption', () => {
+  assert.equal(
+    convertFigures(
+      '<figure><img src=".gitbook/assets/a b.png" alt="Alt" width="188">' +
+        '<figcaption><p>Cap</p></figcaption></figure>'
+    ),
+    '![Alt](</.gitbook/assets/a b.png> "188")\n\n*Cap*'
+  );
+});
+
+test('an img with no width emits no title', () => {
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt=""></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
+test('a non-numeric width is ignored rather than emitted as a title', () => {
+  // GitBook only ever writes integer pixel widths; anything else would be a shape this
+  // converter has not seen, and a bogus title is worse than no width.
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="" width="100%"></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
+test('alt text is preserved and never invented', () => {
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="A diagram"><figcaption></figcaption></figure>'),
+    '![A diagram](/.gitbook/assets/a.png)'
+  );
+});
+
+test('angle brackets are used only when the path needs them', () => {
+  assert.equal(convertFigures('<figure><img src=".gitbook/assets/plain.png" alt=""></figure>'),
+    '![](/.gitbook/assets/plain.png)');
+  assert.equal(convertFigures('<figure><img src=".gitbook/assets/a b.png" alt=""></figure>'),
+    '![](</.gitbook/assets/a b.png>)');
+  assert.equal(convertFigures('<figure><img src=".gitbook/assets/a(1).png" alt=""></figure>'),
+    '![](</.gitbook/assets/a(1).png>)');
+});
+
+test('a bare img outside any figure is converted too', () => {
+  assert.equal(convertFigures('<img src="../.gitbook/assets/x.png" alt="X">'),
+    '![X](/.gitbook/assets/x.png)');
+});
+
+test('figures inside a fence are left as literal text', () => {
+  const input = '```html\n<figure><img src=".gitbook/assets/a.png" alt=""></figure>\n```';
+  assert.equal(convertFigures(input), input);
+});
+
+test('rewriteAssetRefs normalises existing markdown image paths', () => {
+  assert.equal(
+    rewriteAssetRefs('![Demo](<../../.gitbook/assets/Knowledge Base Demo.gif>)'),
+    '![Demo](</.gitbook/assets/Knowledge Base Demo.gif>)'
+  );
+  assert.equal(rewriteAssetRefs('![D](../.gitbook/assets/d.png)'), '![D](/.gitbook/assets/d.png)');
+});
+
+test('rewriteAssetRefs leaves page links alone', () => {
+  assert.equal(rewriteAssetRefs('[a](/section/a/b)'), '[a](/section/a/b)');
+});
+
+test('a code span in a caption becomes a backtick span, not plain text', () => {
+  // openai.md and azure-openai.md both caption a screenshot this way, marking an attribute
+  // name inline with <code> rather than plain prose.
+  assert.equal(
+    convertFigures(
+      '<figure><img src="../../../.gitbook/assets/Screenshot 2024-07-09 at 09.52.58 (1).png" alt="">' +
+        "<figcaption><p>Create a text message using the LLM's response by using the " +
+        '<code>llm_response</code> attribute</p></figcaption></figure>'
+    ),
+    '![](</.gitbook/assets/Screenshot 2024-07-09 at 09.52.58 (1).png>)\n\n' +
+      "*Create a text message using the LLM's response by using the `llm_response` attribute*"
+  );
+});
+
+test('a figure indented inside a list item emits an equally indented caption', () => {
+  // troubleshooting-interpreters.md:13 and about-attributes.md:53 both sit this way. A
+  // column-0 caption line closes the enclosing list, turning the next list item into an
+  // indented code block.
+  const input =
+    '*   Some list text\n\n' +
+    '        <figure><img src=".gitbook/assets/a.png" alt=""><figcaption><p>A caption</p></figcaption></figure>\n\n' +
+    '        *   Next bullet';
+  assert.equal(
+    convertFigures(input),
+    '*   Some list text\n\n' +
+      '        ![](/.gitbook/assets/a.png)\n\n' +
+      '        *A caption*\n\n' +
+      '        *   Next bullet'
+  );
+});
+
+test('a figure holding more than one img throws rather than silently dropping one', () => {
+  assert.throws(
+    () =>
+      convertFigures(
+        '<figure><img src=".gitbook/assets/a.png" alt=""><img src=".gitbook/assets/b.png" alt="">' +
+          '<figcaption></figcaption></figure>'
+      ),
+    /convertFigures: a <figure> block did not match the expected one-image shape/
+  );
+});
+
+test('an img with no src attribute throws rather than shipping unoptimised', () => {
+  assert.throws(
+    () => convertFigures('<img alt="X">'),
+    /convertFigures: <img> with no src attribute/
+  );
+});
+
+test('reflowImageDiv keeps the wrapper, one blank-line-separated figure per line', () => {
+  assert.equal(
+    reflowImageDiv('<div align="left"><figure><img src="a.png" alt=""></figure></div>'),
+    '<div align="left">\n\n<figure><img src="a.png" alt=""></figure>\n\n</div>'
+  );
+});
+
+test('reflowImageDiv separates several figures glued onto one line', () => {
+  // The exact shape that glued a caption to the next image: convertFigures runs after this
+  // and turns each figure into "![]()\n\n*caption*", so two figures with no blank line between
+  // them produced "*caption one* ![](image two)" — the caption sitting beside the wrong image.
+  assert.equal(
+    reflowImageDiv(
+      '<div><figure><img src="a.png" alt=""></figure> <figure><img src="b.png" alt=""></figure></div>'
+    ),
+    '<div>\n\n<figure><img src="a.png" alt=""></figure>\n\n<figure><img src="b.png" alt=""></figure>\n\n</div>'
+  );
+});
+
+test('reflowImageDiv keeps the align attribute the live site uses to centre the image', () => {
+  const out = reflowImageDiv('<div align="center" data-full-width="false">\n\n<img src="a.png" alt="">\n\n</div>');
+  assert.equal(out, '<div align="center" data-full-width="false">\n\n<img src="a.png" alt="">\n\n</div>');
+});
+
+test('reflowImageDiv normalises a multi-line div already spread across lines', () => {
+  const input = [
+    '<div align="left">',
+    '',
+    '<figure><img src="a.png" alt=""></figure>',
+    '',
+    '</div>',
+  ].join('\n');
+  assert.equal(reflowImageDiv(input), '<div align="left">\n\n<figure><img src="a.png" alt=""></figure>\n\n</div>');
+});
+
+test('reflowImageDiv reflows a div holding a bare img with no figure', () => {
+  assert.equal(
+    reflowImageDiv('<div align="center">\n\n<img src="a.png" alt="">\n\n</div>'),
+    '<div align="center">\n\n<img src="a.png" alt="">\n\n</div>'
+  );
+});
+
+test('reflowImageDiv throws rather than silently dropping a div holding real prose', () => {
+  assert.throws(
+    () => reflowImageDiv('<div><p>Some real documentation text.</p></div>'),
+    /reflowImageDiv: <div> holds more than figures\/images/
+  );
+});
+
+test('a div inside a fence is left as literal text', () => {
+  const input = '```html\n<div id="app"></div>\n```';
+  assert.equal(reflowImageDiv(input), input);
+});
+
+const ASSETS = {
+  'one.png': { slug: 'one.png', kind: 'image', reference: '~/assets/one.png', hash: 'x' },
+  'demo.gif': { slug: 'demo.mp4', kind: 'video', reference: '/media/demo.mp4', hash: 'y' },
+  'data.csv': { slug: 'data.csv', kind: 'file', reference: '/files/data.csv', hash: 'z' },
+};
+
+test('a mapped image emits the alias reference', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: ASSETS });
+  assert.equal(out.trim(), '![A](~/assets/one.png)');
+});
+
+test('a mapped video emits a video element, not an image', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt="A demo"></figure>', { assets: ASSETS });
+  assert.match(out, /<video[^>]*autoplay[^>]*loop[^>]*muted[^>]*playsinline/);
+  assert.match(out, /src="\/media\/demo\.mp4"/);
+  assert.doesNotMatch(out, /!\[/);
+});
+
+test('a mapped video carries its alt text forward as an aria-label', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt="A demo"></figure>', { assets: ASSETS });
+  assert.match(out, /aria-label="A demo"/);
+});
+
+test('a mapped video with no alt text emits no empty aria-label', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets: ASSETS });
+  assert.doesNotMatch(out, /aria-label/);
+});
+
+test('a video kind mapped to an mp4 reference is accepted', () => {
+  const assets = { 'demo.gif': { slug: 'demo.mp4', kind: 'video', reference: '/media/demo.mp4', hash: 'y' } };
+  assert.doesNotThrow(() =>
+    convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets })
+  );
+});
+
+test('a video kind mapped to a gif reference throws rather than emitting an unplayable video', () => {
+  const assets = { 'demo.gif': { slug: 'demo.gif', kind: 'video', reference: '/media/demo.gif', hash: 'y' } };
+  assert.throws(
+    () => convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets }),
+    /kind is "video" but reference is not a video container/
+  );
+});
+
+test('with no map at all the placeholder form is kept', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: null });
+  assert.equal(out.trim(), '![A](/.gitbook/assets/one.png)');
+});
+
+test('a reference missing from an existing map throws', () => {
+  assert.throws(
+    () => convertFigures('<figure><img src="../.gitbook/assets/gone.png" alt=""></figure>', { assets: ASSETS }),
+    /gone\.png/
+  );
+});
+
+test('rewriteAssetRefs maps an existing markdown image', () => {
+  assert.equal(rewriteAssetRefs('![A](../.gitbook/assets/one.png)', { assets: ASSETS }), '![A](~/assets/one.png)');
+});
+
+test('a remote image is untouched whether or not a map exists', () => {
+  assert.equal(rewriteAssetRefs('![A](https://example.com/x.png)', { assets: ASSETS }), '![A](https://example.com/x.png)');
+});
+
+test('reflowImageDiv followed by convertFigures pairs each caption with its own image', () => {
+  // End-to-end regression for the bug the review found: date-picker-message.md's shape is
+  // exactly three figures on one line inside one div.
+  const input =
+    '<div align="center">' +
+    '<figure><img src="a.png" alt=""><figcaption><p>Pick a time</p></figcaption></figure> ' +
+    '<figure><img src="b.png" alt=""><figcaption><p>Pick a date</p></figcaption></figure>' +
+    '</div>';
+  assert.equal(
+    convertFigures(reflowImageDiv(input)),
+    [
+      '<div align="center">',
+      '',
+      '![](a.png)',
+      '',
+      '*Pick a time*',
+      '',
+      '![](b.png)',
+      '',
+      '*Pick a date*',
+      '',
+      '</div>',
+    ].join('\n')
+  );
+});

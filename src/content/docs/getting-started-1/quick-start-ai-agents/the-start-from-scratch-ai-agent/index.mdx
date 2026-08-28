@@ -1,0 +1,58 @@
+---
+title: The "Start from Scratch" AI Agent
+---
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+OpenDialog offers a solid starting point for your AI Agents in the form of the AI Agent "Start From Scratch" Scenario.
+
+This scenario handles all the standard chat management functionality (start, restart, end, session expire), provides a welcome message and also a flexible and easy to expand Topics conversation which you can use as your own starting point.
+
+This is a similar scenario to the one created by the [Quick Start AI Agent](/getting-started-1/quick-start-ai-agents/quick-start-ai-agent) process but it avoids any knoweldge source or topic configuration - enabling you to start from scratch!
+
+You can create a start from scratch scenario by visiting the Create Scenario Page and selecting Start from Scratch.
+
+<div align="left">
+
+![](~/assets/image-2-1-1.png "375")
+
+*Create Scenario Link*
+
+</div>
+
+![](~/assets/start-from-scratch-scenario.png)
+
+*Start from Scratch Scenario*
+
+## Scenario Structure
+
+
+
+![](~/assets/image-5-1.png)
+
+*The Start From Scratch Conversations and Flows*
+
+The "Start From Scratch" has four Conversations:
+
+* Chat Management: handles all the standard management functionality of start, restart, end and session expire
+* Global No Match: A global no match conversation to deal with No Matches from our interpreters if they are not specifically dealt with in other conversations. You can learn about the No Match intent [here](/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/building-robust-assistants/contextual-no-match-pattern).
+* Welcome: A welcome conversation that has a single, generic welcome message
+* Topic Conversation: A topic conversation that provides a generic structure for handling a multitude of different topics.
+
+In addition the scenario creates a Semantic Classifier that is used by the Topic Conversation - again a solid starting point for your own Classifiers.
+
+As you can see from the image above the entry point to the scenari is Chat Management. The context then gets redirected to the Welcome Conversation, where we send a welcome message, and we then move to the Topic Conversation where we will be dealing with any requests from the user.
+
+
+
+<LinkCard title="Chat Management Conversation" description="The Chat Management Conversation of the Start from Scratch Scenario" href="/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/chat-management-conversation" />
+
+<LinkCard title="Welcome Conversation" description="The Welcome Conversation of the Start from Scratch Scenario" href="/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/welcome-conversation" />
+
+<LinkCard title="Topic Conversation" description="The Topic Conversation of the Start From Scratch Scenario" href="/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/topic-conversation" />
+
+<LinkCard title="Global No Match Conversation" description="The Global No Match Conversation of the &quot;Start from Scratch&quot; AI Agent" href="/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/global-no-match-conversation" />
+
+<LinkCard title="Supporting LLM Actions" description="The LLM Actions used by the &quot;Start from Scratch&quot; scenario" href="/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/supporting-llm-actions" />
+
+<LinkCard title="Semantic Classifier: Query Classifier" description="The Semantic Classifier used by the &quot;Start from Scratch&quot; Scenario" href="/getting-started-1/quick-start-ai-agents/the-start-from-scratch-ai-agent/semantic-classifier-query-classifier" />

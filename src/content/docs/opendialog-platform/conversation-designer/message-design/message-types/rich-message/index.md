@@ -1,0 +1,210 @@
+---
+title: Rich Message
+description: This page describes where to use and find a rich message type
+---
+
+## What is a rich message?
+
+A rich message is a card type message that can include lots of different multimedia elements such as titles, text, images, links and more.
+
+Rich messages can be used within your OpenDialog chatbot in various scenarios to enhance user engagement and improve the overall user experience.
+
+## When to use rich messages
+
+Rich messages are great for when you need to convey information that is better communicated through visuals, such as product images. For guiding users through complex processes or workflows, rich messages can break down steps visually and provide clear instructions at each stage. When users need to make choices or selections from a list of options, buttons or quick reply options, rich messages can streamline the process and make it more user-friendly.
+
+Rich messages allow for more control around message content and how it is displayed to the user. They can be thought of like 'card' style messages and contain any of the following elements in combination:
+
+* Title
+* Subtitle
+* Text
+* Image
+* Buttons
+
+![](~/assets/screenshot-2024-04-28-at-10-15-32.png "179")
+
+*Example of a rich message*
+
+## How to create a rich message
+
+### Via the custom message in Message Editor
+
+Navigate to the [Message Editor](/opendialog-platform/conversation-designer/message-design/message-editor) and create a _Custom Message._ Select `rich-message` from the message type drop down menu and the XML Snippet field will automatically be populated with a code template.
+
+Fill in the template with the [properties ](/opendialog-platform/conversation-designer/message-design/message-types/rich-message#properties)of your particular message and when you are happy with it make sure to save your message and test it in the Test Preview chat window.
+
+![](~/assets/group-17.png)
+
+*How to create a rich message via the custom message editor*
+
+:::tip
+* Open your OpenDialog application
+* Select the Scenario that you wish to edit
+* Select Design from the left hand panel and select Messages
+* Go into the message that you want to add a message block to
+* Add a 'Custom Message' block
+* Select 'rich-message' from the drop down
+* Add in your own text to the fields you want to customise
+* To preview your message, go to the Preview section
+:::
+
+#### XML Snippet
+
+Basic snippet:
+
+```xml
+<rich-message>
+  <title>Rich Message</title>
+  <subtitle>With a subtitle</subtitle>
+  <text>Some engaging text</text>
+  <image>
+    <src>https://gblobscdn.gitbook.com/spaces%2F-MOzV9Wk3YsltjoDUyen%2Favatar-1608658264352.png?alt=media</src>
+    <url new_tab="true">https://docs.opendialog.ai</url>
+  </image>
+</rich-message>
+```
+
+More advanced snippet:
+
+```xml
+<rich-message>
+    <title>title</title>
+    <subtitle>subtitle</subtitle>
+    <text>text</text>
+    <callback>callback</callback>
+    <callback_value>callbackValue</callback_value>
+    <link>https://docs.opendialog.ai</link>
+    <button>
+      <text>Button text</text>
+      <link new_tab="true">linkUrl</link>
+      <value>attribute.value</value>
+      <callback>button_callback</callback>
+    </button>
+    <image>
+      <src>https://gblobscdn.gitbook.com/spaces%2F-MOzV9Wk3YsltjoDUyen%2Favatar-1608658264352.png?alt=media</src>
+      <url new_tab="true">https://docs.opendialog.ai</url>
+    </image>
+</rich-message>
+```
+
+#### Properties
+
+`<title>` Write the text here that you would like to see as your rich message title
+
+`<subtitle>` Write the text here that you would like to see as your rich message subtitle
+
+`<text>` Write the text you would like to display in your message here. Emojis can be inserted here too. For instructions see [no-code text message](/opendialog-platform/conversation-designer/message-design/message-types/rich-message#via-the-no-code-text-message-in-message-editor)
+
+`<image>` Write in here the link to the image that you would like to see displayed in your rich message
+
+:::caution
+If you change your mind and select a different message type after generating the XML code, the new message code will be appended in the same window so make sure to delete the old message code.
+:::
+
+## How to use a rich message
+
+<figure class="od-embed">
+<div class="od-embed-frame">
+<iframe src="https://www.loom.com/embed/b982f37b775b4f26bd571ce56d6b93f2" title="Embedded video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</figure>
+
+:::tip
+**Saving a message:** Always remember to hit 'Save Message' before closing or navigating away from the edit screen.
+:::
+
+## How to construct a rich message
+
+When structuring a message, you are able to use multiple different message blocks together to create the message that you are looking for. However, when it comes to ordering and structing these, there are some rules that need to be followed. To learn more about this, please head to the [Constructing Messages ](/opendialog-platform/conversation-designer/message-design/constructing-messages)page for more information.
+
+:::note
+For all message types, a key element to take into consideration is **Accessibility**, especially for messages that include customisation with multimedia types such as buttons, images and links. For all information on accessibility within OpenDialog, please click [here](/opendialog-platform/conversation-designer/designing-accessible-chatbots).
+:::
+
+## Making Rich Messages Expandable
+
+Rich messages support two independent types of expansion:
+
+1. **Message Expand**: Collapses the entire message bubble (including image, subtitle, text, buttons, links)
+2. **Text Expand**: Collapses only the body text within the message
+
+You can use one or both depending on your needs.
+
+### Expandable Attributes
+
+| Attribute                   | Description                                                | Required                                  |
+| --------------------------- | ---------------------------------------------------------- | ----------------------------------------- |
+| `expandable-message`        | Set to `"true"` to enable whole message expansion          | Yes (to enable message expand)            |
+| `expandable-message-height` | Visual height for collapsed message bubble (e.g., `"3em"`) | Required when `expandable-message="true"` |
+| `expandable-text`           | Set to `"true"` to enable text expansion                   | Yes (to enable text expand)               |
+| `expandable-text-height`    | Visual height for collapsed text (e.g., `"2em"`)           | One of height OR chars required           |
+| `expandable-text-chars`     | Character limit for collapsed text (e.g., `"240"`)         | One of height OR chars required           |
+
+### XML Examples
+
+**Message expand only:**
+
+```xml
+<rich-message expandable-message="true" expandable-message-height="3em">
+  <title>Product Information</title>
+  <subtitle>Complete details about your order</subtitle>
+  <text>Here is the full description of the product including specifications, dimensions, and care instructions.</text>
+  <image>
+    <src>https://example.com/product.jpg</src>
+  </image>
+  <button>
+    <text>View Order</text>
+    <callback>view_order</callback>
+  </button>
+</rich-message>
+```
+
+**Text expand only:**
+
+```xml
+<rich-message expandable-text="true" expandable-text-height="2em">
+  <title>FAQ Answer</title>
+  <text>This is a detailed answer to a frequently asked question that users may want to read in full.</text>
+  <link>https://example.com/learn-more</link>
+</rich-message>
+```
+
+**Both message and text expand:**
+
+```xml
+<rich-message
+  expandable-message="true"
+  expandable-message-height="3em"
+  expandable-text="true"
+  expandable-text-height="2em">
+  <title>Rich Message Title</title>
+  <subtitle>With subtitle</subtitle>
+  <text>This answer is long format, meaning it won't fit within a single message.</text>
+  <link>https://example.com</link>
+  <button>
+    <text>Call to action</text>
+    <callback>cta_callback</callback>
+  </button>
+</rich-message>
+```
+
+### Expansion Behavior
+
+When both message expand and text expand are enabled, expansion works in stages:
+
+| State                                | What's Visible                                                                                              |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| **Initial (both collapsed)**         | Title and "Read more..." link only. Image is included in height calculation.                                |
+| **Message expanded, text collapsed** | Title, subtitle, image, buttons, links visible. Body text shows collapsed with its own "Read more..." link. |
+| **Fully expanded**                   | All content visible including full body text.                                                               |
+
+:::note
+Images are included in the height calculation for message expand. The image remains fully visible when the message is expanded.
+:::
+
+### Best Practices
+
+* Show at least the title when message is collapsed
+* For text within rich messages, use a minimum of 2-4em height
+* Consider using message expand for lengthy rich messages with multiple elements
+* Use text expand when only the body text needs collapsing
