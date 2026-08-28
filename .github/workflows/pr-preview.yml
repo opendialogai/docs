@@ -56,6 +56,11 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # wrangler is not a project dependency - it is invoked through npx - so the action
+          # cannot find one and falls back to its own default, 3.90.0. That version predates
+          # assets-only Workers and fails with "Missing entry-point", because wrangler.jsonc
+          # declares `assets` and no `main`. Pin the version the project actually uses.
+          wranglerVersion: "4.127.0"
           command: versions upload
 
       - name: Comment the preview URL on the PR
