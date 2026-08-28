@@ -1,56 +1,68 @@
 /**
  * Finds the images that ship with no text alternative, and the caption each one already has.
  *
- * Read from source/ rather than from the build because the fix belongs in GitBook: alt text
- * written there rides back through convert.mjs on the next sync, while anything written into
- * src/content/docs/ is destroyed by the next run. The rows therefore name what a writer sees
- * in GitBook — the asset filename and the caption — not a hashed build artefact.
+ * Reads the authored content under src/content/docs/, which is the source of truth and the
+ * thing actually built: a work list drawn from anywhere else describes a site that is not
+ * being served. The rows name what a writer edits — the `~/assets/…` filename and the
+ * caption already beneath the image — not a hashed build artefact.
  *
- * Deriving alt from the caption was considered and rejected: 303 of the 455 already sit in a
- * <figure> whose <figcaption> is announced, so copying it into alt makes a screen reader read
- * the same sentence twice, and the 152 with no caption — 123 of them full screenshots — would
- * still have nothing.
+ * Deriving alt from the caption was considered and rejected: most of these already sit under
+ * a caption that is announced, so copying it into alt makes a screen reader read the same
+ * sentence twice, and the ones with no caption — the images announced as nothing at all —
+ * would still have nothing. Alt must say what the image shows; the caption labels it.
  */
 import { protectCode } from './segments.mjs';
-import { ASSET_SRC, unescapeAssetName } from './asset-refs.mjs';
-import { ASSET_IMAGE, FIGURE, captionText } from './figures.mjs';
 
-const BARE_IMG = /<img\s+([^>]*?)>/g;
-
-/** The bare GitBook asset filename a reference names, or null when it is not one. */
-function assetName(src) {
-  const clean = src.trim().replace(/^<|>$/g, '');
-  const match = clean.match(ASSET_SRC);
-  return match ? unescapeAssetName(match[1]) : null;
-}
-
-const altOf = (attrs) => attrs.match(/alt="([^"]*)"/)?.[1] ?? '';
-const srcOf = (attrs) => attrs.match(/src="([^"]*)"/)?.[1] ?? '';
+/** A markdown image: `![alt](destination)`, destination possibly carrying a title. */
+const CONTENT_IMAGE = /!\[([^\]]*)\]\(([^)]*)\)/g;
+/** The bare filename an `~/assets/…` reference names, ignoring any title after the path. */
+const ASSET = /^~\/assets\/(\S+)/;
 
 /**
- * Every image in a source file that would ship with an empty alt, in document order.
- *
- * Figures are consumed first so their <img> is not counted twice by the bare-image pass, the
- * same ordering convertFigures relies on.
+ * What to call the image in the work list: the bare filename for a local asset, the URL for
+ * one still hotlinked from a third party. Markdown's backslash escapes are undone so the
+ * name matches what the page actually requests.
  */
+function assetName(destination) {
+  const target = destination.trim().replace(/^<|>$/g, '').split(/\s+/)[0];
+  if (!target) return null;
+  const local = target.match(ASSET);
+  return (local ? local[1] : target).replace(/\\([_*()[\]\-.])/g, '$1');
+}
+
+/** A paragraph whose sole content is emphasis, which is how a caption reaches the build. */
+const EMPHASIS_ONLY = /^_([^_]+)_$|^\*([^*]+)\*$/;
+
+/** The caption a block carries, or '' when it is not a caption paragraph. */
+function captionOf(block) {
+  const emphasis = block.match(EMPHASIS_ONLY);
+  return emphasis ? (emphasis[1] ?? emphasis[2]) : '';
+}
+
+/** Every image in an authored page that ships with an empty alt, in document order. */
 export function emptyAltImages(text) {
   const found = [];
-  const record = (src, caption) => {
-    const asset = assetName(src);
-    if (asset) found.push({ asset, caption });
-  };
+  // A fence masks to a single token line, which leaves the blank-line structure the caption
+  // pairing reads intact while taking example markup out of the count.
   protectCode(text, (masked) => {
-    const withoutFigures = masked.replace(FIGURE, (_, attrs, caption) => {
-      if (!altOf(attrs)) record(srcOf(attrs), captionText(caption));
-      return '';
-    });
-    for (const [, attrs] of withoutFigures.matchAll(BARE_IMG)) {
-      if (!altOf(attrs)) record(srcOf(attrs), '');
-    }
-    for (const [, alt, destination] of withoutFigures.matchAll(ASSET_IMAGE)) {
-      if (!alt) record(destination, '');
-    }
+    collect(masked, found);
     return masked;
   });
   return found;
+}
+
+function collect(text, found) {
+  const blocks = text.split(/\n\s*\n/).map((block) => block.trim());
+  blocks.forEach((block, index) => {
+    const images = [...block.matchAll(CONTENT_IMAGE)];
+    // Only an image standing alone in its paragraph is paired with the caption beneath it,
+    // the same inference rehype-figures makes.
+    const alone = images.length === 1 && block === images[0][0];
+    const caption = alone ? captionOf(blocks[index + 1] ?? '') : '';
+    for (const [, alt, destination] of images) {
+      if (alt) continue;
+      const asset = assetName(destination);
+      if (asset) found.push({ asset, caption });
+    }
+  });
 }

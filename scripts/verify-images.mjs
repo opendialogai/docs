@@ -6,9 +6,10 @@
  * disk rather than over the network.
  *
  * Reporting: the 455 content images that ship with an empty alt, written to
- * reports/alt-text-todo.md for the docs team to fill in GitBook. The row count is checked
- * against the built output, because a report derived from source/ that has drifted from what
- * ships would read as complete work while describing a site nobody is serving.
+ * reports/alt-text-todo.md for the docs team to fill in. Rows are read from the authored
+ * pages under src/content/docs/, which is both the source of truth and what a writer edits,
+ * and the row count is checked against the built output: a work list that has drifted from
+ * what ships would read as complete work while describing a site nobody is serving.
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -60,16 +61,24 @@ for (const file of files) {
 
 // --- the work list --------------------------------------------------------
 
-const rows = [];
+const found = [];
 for (const route of routes) {
-  const text = readFileSync(`${root}/source/${route.source}`, 'utf8');
-  for (const image of emptyAltImages(text)) {
-    rows.push({ url: route.url, title: route.title, ...image });
+  const page = [`${root}/src/content/docs/${route.target}`, `${root}/src/content/docs/${route.target}x`]
+    .find((path) => existsSync(path));
+  if (!page) continue;
+  for (const image of emptyAltImages(readFileSync(page, 'utf8'))) {
+    found.push({ url: route.url, title: route.title, ...image });
   }
 }
 
+// Uncaptioned first: those images are announced as nothing at all, while a captioned one at
+// least has text beside it. Document order is kept within each group.
+const rows = [...found.filter((r) => !r.caption), ...found.filter((r) => r.caption)];
 const withCaption = rows.filter((r) => r.caption).length;
+
 const escapePipes = (s) => s.replace(/\|/g, '\\|');
+/** Hotlinked third-party images carry 200-character URLs that would make the table unreadable. */
+const shorten = (s) => (s.length > 64 ? `${s.slice(0, 63)}…` : s);
 
 const report = [
   '# Images with no alt text',
@@ -79,18 +88,19 @@ const report = [
   `${rows.length} images across the documentation ship with an empty \`alt\` attribute, so a`,
   'screen reader announces nothing for them.',
   '',
-  'The fix belongs in GitBook. Alt text written there rides back through the conversion on the',
-  'next sync; anything written into the generated content in this repository is destroyed by',
-  'the next run.',
+  'The fix belongs in this repository. `src/content/docs/` is the source of truth and is edited',
+  'by hand: give the image alt text in the markdown — `![what it shows](~/assets/…)` — and it',
+  'ships on the next deploy.',
   '',
-  `${withCaption} of these sit under a visible caption, reproduced below — the caption is`,
-  'already announced, so alt text for those should describe what the image *shows* rather than',
-  `repeat it. The remaining ${rows.length - withCaption} have no caption and no alt: they are`,
-  'announced as nothing at all, and are the ones worth doing first.',
+  `The ${rows.length - withCaption} rows with no caption come first: nothing is announced for them at all, and they`,
+  `are the ones worth doing first. The remaining ${withCaption} sit under a visible caption, reproduced`,
+  'below. That caption is already announced, so alt text for those should describe what the',
+  'image *shows* rather than repeat it — duplicating it makes a screen reader read the same',
+  'sentence twice.',
   '',
   '| Page | Image | Existing caption |',
   '|---|---|---|',
-  ...rows.map((r) => `| [${escapePipes(r.title)}](https://docs.opendialog.ai${r.url}) | \`${escapePipes(r.asset)}\` | ${escapePipes(r.caption)} |`),
+  ...rows.map((r) => `| [${escapePipes(r.title)}](https://docs.opendialog.ai${r.url}) | \`${escapePipes(shorten(r.asset))}\` | ${escapePipes(r.caption)} |`),
   '',
 ].join('\n');
 
