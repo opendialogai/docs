@@ -2071,9 +2071,28 @@ The check compares two figures with different provenance (`scripts/verify-images
 elsewhere in this file; 448 appears nowhere else and is unexplained. Root cause of the 7 is
 not diagnosed here.
 
-**Retiring the pipeline turns this from a bug into a design fault.** A work list derived from
-`source/` describes the frozen GitBook corpus, not the site being served, and the two now
-diverge permanently by design — every authored image widens the gap. Before this check can
-pass again it needs to read `src/content/docs/` (or `dist/`) rather than `source/`. Left for
-the Phase 5 accessibility work; it does not affect what is served — the same build reports
-**0** images with no `alt` attribute at all and **0** `src` values with no file behind them.
+**Retiring the pipeline turned this from a bug into a design fault.** A work list derived from
+`source/` describes the frozen GitBook corpus, not the site being served, and the two would
+diverge further with every page authored.
+
+**Fixed the same day.** `alt-audit.mjs` now parses the authored pages under
+`src/content/docs/` — `~/assets/…` destinations, markdown titles, and the
+emphasis-paragraph-after-image convention `rehype-figures.mjs` uses — so a caption is reported
+only where a reader actually sees one. `verify:images` reports 455 rows against 455 in the
+build and exits 0.
+
+**The 7 were not a counting error.** Seven images on three pages
+(`getting-ready`, `…/transfer/components`, `…/conversation-hand-off/chatwoot`) are still
+hotlinked from `googleusercontent.com` and `freshdesk.com`. The old parser matched only
+`.gitbook/assets/…`, and one of its tests asserted that anything else was skipped, so the
+blind spot was pinned in place by a test. Those images ship with an empty `alt` exactly as
+local ones do and are now reported; that is the whole of 448 → 455.
+
+Two measurement cautions worth keeping. **Astro serialises `alt=""` as a bare `alt`**, so any
+check written against `alt="([^"]*)"` alone silently misses every empty-alt image — that
+mistake produced a phantom count of 372 during this investigation. And the split is now
+**303 captioned, 152 uncaptioned**; the uncaptioned rows sort first in the report, because
+those are announced as nothing at all.
+
+Never affected what is served: the same build reports **0** images with no `alt` attribute at
+all and **0** `src` values with no file behind them.
