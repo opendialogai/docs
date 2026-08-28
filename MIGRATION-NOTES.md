@@ -2144,3 +2144,56 @@ separate decision, and the findings below should be transcribed first.
   Flagged during Phase 2 review as owed to this file and never written down until now. It
   matters more since the retirement: the docs team now writes alt text directly into
   `src/content/docs/`, which is exactly the edit that would trigger it.
+
+---
+
+## 2026-08-28 — The npm-11 lockfile regression recurred, exactly as predicted
+
+The PR preview workflow (#21) merged into `phase-4/look-and-feel` at 13:43:34Z and its first
+run failed nine seconds later at `npm ci`:
+
+```
+npm error Missing: @emnapi/core@2.0.0-alpha.4 from lock file
+npm error Missing: @emnapi/runtime@2.0.0-alpha.4 from lock file
+npm error Missing: @emnapi/wasi-threads@2.0.1 from lock file
+```
+
+Same three packages as the 2026-07-29 Workers Builds failure, one alpha later. The entry above
+called this: *"Any `npm install` run locally under npm 11 rewrites the lock back into the
+npm-11-only shape and breaks CI again."*
+
+**The merge revealed it; it did not cause it.** `package-lock.json` lost the three top-level
+`@emnapi/*` entries at **`22cf3dd`** ("Serve Poppins and IBM Plex Mono"), 30 July — the first
+Phase 4 commit, which ran `npm install` to add the font packages and rewrote the lock as a
+side effect (10 `@emnapi` entries down to 7; 42 deletions against 8 insertions). It sat
+undetected for four weeks because nothing ran `npm ci` against this branch: Workers Builds
+builds `main`, and every deploy from here was a local `wrangler deploy` against a `dist/`
+built from an existing `node_modules`. The preview workflow is the first thing to install
+from the lock.
+
+`@napi-rs/wasm-runtime` — an optional wasm32 fallback reached through `sharp` and `rolldown` —
+requires `@emnapi/core ^2.0.0-alpha.3`, and nothing in the lock satisfied it. The version moved
+alpha.3 → alpha.4 only because that caret range floats across prereleases; the missing entries,
+not the float, are the defect.
+
+**Reproduced before fixing**, on Node 24.18.0 / npm 11.16.0 — the exact toolchain
+`.node-version` pins CI to — against a copy of the branch's `package.json` and
+`package-lock.json`. Identical error, identical three packages.
+
+**Fix:** `npm install --package-lock-only` under npm 11.16.0. The diff is 34 lines, all
+additions: the three `@emnapi/*` entries, marked `optional` and `peer`. No dependency version
+changed anywhere else.
+
+**Verified under both toolchains**, which is the part that makes it durable rather than a
+swap of which side breaks:
+
+| toolchain | `npm ci` | rewrites the lock? |
+|---|---|---|
+| Node 24.18.0 / npm 11.16.0 (CI) | exit 0 | no |
+| Node 22.19.0 / npm 11.6.0 (local) | exit 0 | no |
+
+**It will recur again.** The trap is unchanged: an `npm install` under a local npm older than
+CI's silently prunes optional cross-platform entries. The durable fix is still what the
+2026-07-29 entry asked for and never got — pin the local toolchain to `.node-version` so both
+sides run npm 11.16.0. Until then, after any `npm install`, check that
+`node_modules/@emnapi/core` is still in the lock before committing.
