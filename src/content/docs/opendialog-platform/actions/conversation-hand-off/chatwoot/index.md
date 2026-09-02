@@ -7,7 +7,7 @@ description: This section outlines how you can set up a handoff to live agents u
 
 Conversation Handoff allows you to set up an integration with an external messaging system, for example, Chatwoot.  You can therefore find it under the Integrate section of a specific scenario. Once you select 'Create a new Handoff' you will then have the opportunity to create the Handoff of your choice.  Select Chatwoot to start setting up your Chatwoot integration.
 
-![](</.gitbook/assets/Chatwoot Handover.png>)
+![](~/assets/chatwoot-handover.png)
 
 *Setting up a Chatwoot integration via OpenDialog*
 
@@ -28,7 +28,7 @@ Once you are set up with an account on Chatwoot for your business, you will need
 
 To set up your Chatwoot handoff, go to the Integrate section, and select Conv. handover from the menu.  Use the Create New Handoff button to set up a new Handoff.
 
-![](</.gitbook/assets/Screenshot 2023-07-28 at 16.26.42.png>)
+![](~/assets/screenshot-2023-07-28-at-16-26-42.png)
 
 *Use the Create new Handoff button to set up a new Handoff integration*
 
@@ -55,7 +55,7 @@ To do so, go to Chatwoot, the Inbox you have referenced in OpenDialog, and its s
 
 For example: example-workspace.cloud.opendialog.ai/incoming-chatwoot.
 
-![](</.gitbook/assets/Screenshot 2023-10-25 at 12.13.26.png>)
+![](~/assets/screenshot-2023-10-25-at-12-13-26.png)
 
 *Update your Chatwoot inbox Webhook URL to be able to receive messages*
 

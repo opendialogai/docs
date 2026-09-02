@@ -17,6 +17,7 @@ export default [
       },
       {
         "label": "Quick Start AI Agents",
+        "collapsed": true,
         "items": [
           {
             "label": "Quick Start AI Agents",
@@ -28,6 +29,7 @@ export default [
           },
           {
             "label": "The \"Start from Scratch\" AI Agent",
+            "collapsed": true,
             "items": [
               {
                 "label": "The \"Start from Scratch\" AI Agent",
@@ -105,6 +107,7 @@ export default [
     "items": [
       {
         "label": "OpenDialog Approach",
+        "collapsed": true,
         "items": [
           {
             "label": "OpenDialog Approach",
@@ -118,6 +121,7 @@ export default [
       },
       {
         "label": "OpenDialog Platform",
+        "collapsed": true,
         "items": [
           {
             "label": "OpenDialog Platform",
@@ -125,6 +129,7 @@ export default [
           },
           {
             "label": "Scenarios",
+            "collapsed": true,
             "items": [
               {
                 "label": "Scenarios",
@@ -150,6 +155,7 @@ export default [
           },
           {
             "label": "OpenDialog Account Management",
+            "collapsed": true,
             "items": [
               {
                 "label": "OpenDialog Account Management",
@@ -177,6 +183,7 @@ export default [
       },
       {
         "label": "Contexts and attributes",
+        "collapsed": true,
         "items": [
           {
             "label": "Contexts and attributes",
@@ -219,6 +226,7 @@ export default [
     "items": [
       {
         "label": "Designing your application",
+        "collapsed": true,
         "items": [
           {
             "label": "Designing your application",
@@ -226,6 +234,7 @@ export default [
           },
           {
             "label": "Conversation Design",
+            "collapsed": true,
             "items": [
               {
                 "label": "Conversation Design",
@@ -233,6 +242,7 @@ export default [
               },
               {
                 "label": "Conversational Patterns",
+                "collapsed": true,
                 "items": [
                   {
                     "label": "Conversational Patterns",
@@ -244,6 +254,7 @@ export default [
                   },
                   {
                     "label": "Building robust assistants",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Building robust assistants",
@@ -273,6 +284,7 @@ export default [
                   },
                   {
                     "label": "Openings",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Openings",
@@ -294,6 +306,7 @@ export default [
                   },
                   {
                     "label": "Authentication",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Authentication",
@@ -315,6 +328,7 @@ export default [
                   },
                   {
                     "label": "Information collection",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Information collection",
@@ -340,6 +354,7 @@ export default [
                   },
                   {
                     "label": "Recommendations",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Recommendations",
@@ -361,6 +376,7 @@ export default [
                   },
                   {
                     "label": "Extended telling",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Extended telling",
@@ -382,6 +398,7 @@ export default [
                   },
                   {
                     "label": "Repair",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Repair",
@@ -407,6 +424,7 @@ export default [
                   },
                   {
                     "label": "Transfer",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Transfer",
@@ -428,6 +446,7 @@ export default [
                   },
                   {
                     "label": "Closing",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Closing",
@@ -455,6 +474,7 @@ export default [
               },
               {
                 "label": "Best practices ",
+                "collapsed": true,
                 "items": [
                   {
                     "label": "Best practices ",
@@ -474,6 +494,7 @@ export default [
                   },
                   {
                     "label": "User needs",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "User needs",
@@ -519,6 +540,7 @@ export default [
                   },
                   {
                     "label": "The team",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "The team",
@@ -540,6 +562,7 @@ export default [
           },
           {
             "label": "Message Design",
+            "collapsed": true,
             "items": [
               {
                 "label": "Message Design",
@@ -575,6 +598,7 @@ export default [
               },
               {
                 "label": "Message Types",
+                "collapsed": true,
                 "items": [
                   {
                     "label": "Message Types",
@@ -642,6 +666,7 @@ export default [
                   },
                   {
                     "label": "Meta Messages",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Meta Messages",
@@ -667,6 +692,7 @@ export default [
           },
           {
             "label": "Webchat Interface design",
+            "collapsed": true,
             "items": [
               {
                 "label": "Webchat Interface design",
@@ -694,6 +720,7 @@ export default [
       },
       {
         "label": "Leveraging Generative AI",
+        "collapsed": true,
         "items": [
           {
             "label": "Leveraging Generative AI",
@@ -701,6 +728,7 @@ export default [
           },
           {
             "label": "Language Services",
+            "collapsed": true,
             "items": [
               {
                 "label": "Language Services",
@@ -708,6 +736,7 @@ export default [
               },
               {
                 "label": "Semantic Intent Classifier",
+                "collapsed": true,
                 "items": [
                   {
                     "label": "Semantic Intent Classifier",
@@ -743,6 +772,7 @@ export default [
           },
           {
             "label": "Interpreters",
+            "collapsed": true,
             "items": [
               {
                 "label": "Interpreters",
@@ -750,6 +780,7 @@ export default [
               },
               {
                 "label": "Available interpreters",
+                "collapsed": true,
                 "items": [
                   {
                     "label": "Available interpreters",
@@ -769,6 +800,7 @@ export default [
                   },
                   {
                     "label": "Google Dialogflow",
+                    "collapsed": true,
                     "items": [
                       {
                         "label": "Google Dialogflow",
@@ -810,6 +842,7 @@ export default [
           },
           {
             "label": "LLM Actions",
+            "collapsed": true,
             "items": [
               {
                 "label": "LLM Actions",
@@ -841,6 +874,7 @@ export default [
       },
       {
         "label": "3rd party Integrations in your application",
+        "collapsed": true,
         "items": [
           {
             "label": "3rd party Integrations in your application",
@@ -848,6 +882,7 @@ export default [
           },
           {
             "label": "Webhook action",
+            "collapsed": true,
             "items": [
               {
                 "label": "Webhook action",
@@ -863,6 +898,7 @@ export default [
               },
               {
                 "label": "[Deprecated] webhook actions",
+                "collapsed": true,
                 "items": [
                   {
                     "label": "[Deprecated] webhook actions",
@@ -878,6 +914,7 @@ export default [
           },
           {
             "label": "Actions from library",
+            "collapsed": true,
             "items": [
               {
                 "label": "Actions from library",
@@ -903,6 +940,7 @@ export default [
           },
           {
             "label": "Conversation Hand-off",
+            "collapsed": true,
             "items": [
               {
                 "label": "Conversation Hand-off",
@@ -959,6 +997,7 @@ export default [
       },
       {
         "label": "WebChat",
+        "collapsed": true,
         "items": [
           {
             "label": "WebChat",
@@ -986,6 +1025,7 @@ export default [
           },
           {
             "label": "SDK",
+            "collapsed": true,
             "items": [
               {
                 "label": "SDK",
@@ -1013,6 +1053,7 @@ export default [
       },
       {
         "label": "Public APIs",
+        "collapsed": true,
         "items": [
           {
             "label": "Public APIs",

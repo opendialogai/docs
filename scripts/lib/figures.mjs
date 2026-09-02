@@ -4,34 +4,85 @@
  * Raw <img> in markdown bypasses Astro's image pipeline entirely, which would ship 541 MB of
  * screenshots unoptimised. This is the highest-value transformation in the migration.
  *
- * Paths are emitted root-absolute. Assets do not reach src/assets/ until Phase 3, and Astro
- * treats an unresolvable *relative* image path as a fatal build error, whereas a leading "/"
- * is read as a public/ path and left alone. assets.mjs rewrites these in Phase 3.
+ * Paths resolve through asset-map.json, written by assets.mjs, which maps each original
+ * .gitbook/assets filename to where the physical file ended up. Without that map — a checkout
+ * where assets.mjs has never run — a root-absolute placeholder is emitted instead, so the build
+ * stays green: Astro treats an unresolvable *relative* image path as a fatal build error,
+ * whereas a leading "/" is read as a public/ path and left alone.
  */
+import { ASSET_SRC, unescapeAssetName } from './asset-refs.mjs';
 import { protectCode } from './segments.mjs';
 
-const NEEDS_ANGLE = /[ ()]/;
-const FIGURE = /<figure>\s*<img\s+([^>]*?)>\s*(?:<figcaption>([\s\S]*?)<\/figcaption>)?\s*<\/figure>/g;
+export const NEEDS_ANGLE = /[ ()]/;
+export const FIGURE = /<figure>\s*<img\s+([^>]*?)>\s*(?:<figcaption>([\s\S]*?)<\/figcaption>)?\s*<\/figure>/g;
 const BARE_IMG = /<img\s+([^>]*?)>/g;
-const ASSET_IMAGE = /!\[([^\]]*)\]\((<[^>]*>|[^)]*(?:\([^)]*\)[^)]*)*)\)/g;
+export const ASSET_IMAGE = /!\[([^\]]*)\]\((<[^>]*>|[^)]*(?:\([^)]*\)[^)]*)*)\)/g;
 
-/** Rewrites any .gitbook/assets reference to its root-absolute form. Remote URLs pass through. */
-export function assetPath(src) {
-  if (/^https?:/i.test(src)) return src;
-  const match = src.match(/\.gitbook\/assets\/(.*)$/);
-  return match ? `/.gitbook/assets/${match[1]}` : src;
+/** The bare, unescaped filename a .gitbook/assets reference names, or null if it is not one. */
+function assetName(src) {
+  const match = src.match(ASSET_SRC);
+  return match ? unescapeAssetName(match[1]) : null;
 }
 
-/** Renders a markdown image, bracketing the path only when it would break link parsing. */
-function image(alt, src) {
-  const path = assetPath(src);
-  return `![${alt}](${NEEDS_ANGLE.test(path) ? `<${path}>` : path})`;
+/**
+ * Resolves a .gitbook/assets reference to its final form.
+ *
+ * With an asset map, returns what assets.mjs produced. Without one — a checkout where Phase 3
+ * has never run — returns the root-absolute placeholder, so the build stays green. A reference
+ * absent from a map that does exist is a real inconsistency between the two generators and
+ * throws.
+ */
+export function assetPath(src, assets) {
+  if (/^https?:/i.test(src)) return src;
+  const match = src.match(ASSET_SRC);
+  if (!match) return src;
+  if (!assets) return `/.gitbook/assets/${match[1]}`;
+  const name = unescapeAssetName(match[1]);
+  const entry = assets[name];
+  if (!entry) throw new Error(`asset not in asset-map.json: ${name}`);
+  return entry.reference;
+}
+
+const VIDEO_CONTAINER = /\.(?:mp4|webm)$/i;
+
+/**
+ * A GitBook `width` attribute as an integer pixel string, or null.
+ *
+ * GitBook only ever writes integer pixel widths. Anything else is a shape this converter
+ * has not seen, and carrying a value the rehype plugin cannot use would leave a stray
+ * tooltip on the image, so it is dropped rather than guessed at.
+ */
+function widthOf(attrs) {
+  return attrs.match(/\bwidth="(\d+)"/)?.[1] ?? null;
+}
+
+/**
+ * Renders an asset reference: an image, or a video element for an asset that became one.
+ *
+ * A width rides in the markdown title slot. Markdown has nowhere else to put one, and the
+ * alternatives are worse: a raw <img> would bypass astro:assets, and a wrapper <div> is
+ * block markup that breaks the enclosing list for the one width-bearing figure that sits
+ * inside a list item. scripts/lib/rehype-image-width.mjs turns the title into a width and
+ * removes it, so no title reaches the page.
+ */
+function image(alt, src, assets, width) {
+  const entry = assets ? assets[assetName(src)] : null;
+  const path = assetPath(src, assets);
+  if (entry?.kind === 'video') {
+    if (!VIDEO_CONTAINER.test(path)) {
+      throw new Error(`image: kind is "video" but reference is not a video container: ${path}`);
+    }
+    const ariaLabel = alt ? ` aria-label="${alt}"` : '';
+    return `<video autoplay loop muted playsinline${ariaLabel} src="${path}"></video>`;
+  }
+  const dest = NEEDS_ANGLE.test(path) ? `<${path}>` : path;
+  return `![${alt}](${dest}${width ? ` "${width}"` : ''})`;
 }
 
 /** Plain-text form of a <figcaption>, keeping <code> spans as backticks since GitBook's export
  * uses them to mark an attribute name inline; every other tag carries no information the
  * italic caption needs. */
-function captionText(caption) {
+export function captionText(caption) {
   return (caption ?? '')
     .replace(/<code>([\s\S]*?)<\/code>/g, '`$1`')
     .replace(/<[^>]*>/g, '')
@@ -55,7 +106,8 @@ function captionText(caption) {
  * 430 figures sit inside a list item (troubleshooting-interpreters.md, about-attributes.md),
  * where a column-0 caption line closes the enclosing list at that point in the document.
  */
-export function convertFigures(text) {
+export function convertFigures(text, ctx) {
+  const assets = ctx?.assets ?? null;
   return protectCode(text, (masked) => {
     const converted = masked
       .replace(FIGURE, (_, attrs, caption, offset, full) => {
@@ -65,12 +117,13 @@ export function convertFigures(text) {
         const src = attrs.match(/src="([^"]*)"/)?.[1] ?? '';
         const alt = attrs.match(/alt="([^"]*)"/)?.[1] ?? '';
         const cap = captionText(caption);
-        return cap ? `${image(alt, src)}\n\n${indent}*${cap}*` : image(alt, src);
+        const rendered = image(alt, src, assets, widthOf(attrs));
+        return cap ? `${rendered}\n\n${indent}*${cap}*` : rendered;
       })
       .replace(BARE_IMG, (whole, attrs) => {
         const src = attrs.match(/src="([^"]*)"/)?.[1];
         if (!src) throw new Error(`convertFigures: <img> with no src attribute: ${whole}`);
-        return image(attrs.match(/alt="([^"]*)"/)?.[1] ?? '', src);
+        return image(attrs.match(/alt="([^"]*)"/)?.[1] ?? '', src, assets, widthOf(attrs));
       });
     if (converted.includes('<figure') || converted.includes('<figcaption')) {
       throw new Error('convertFigures: a <figure> block did not match the expected one-image shape');
@@ -117,12 +170,13 @@ export function reflowImageDiv(text) {
 }
 
 /** Normalises the paths of markdown images that were already in the source. */
-export function rewriteAssetRefs(text) {
+export function rewriteAssetRefs(text, ctx) {
+  const assets = ctx?.assets ?? null;
   return protectCode(text, (masked) =>
     masked.replace(ASSET_IMAGE, (whole, alt, dest) => {
       const src = dest.startsWith('<') ? dest.slice(1, -1) : dest;
       if (!/\.gitbook\/assets\//.test(src)) return whole;
-      return image(alt, src);
+      return image(alt, src, assets);
     })
   );
 }

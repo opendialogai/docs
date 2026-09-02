@@ -29,6 +29,43 @@ test('a figure with an empty caption emits only the image', () => {
   );
 });
 
+test("an img's width is carried through as the markdown title", () => {
+  // Markdown has nowhere to put a width. The title slot is the only channel that
+  // survives into the HTML without introducing block markup, which matters because one
+  // width-bearing figure sits inside a list item where a wrapper div would break the
+  // list. rehype-image-width turns it into a style and strips it.
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="" width="375"></figure>'),
+    '![](/.gitbook/assets/a.png "375")'
+  );
+});
+
+test('a width is carried alongside an angle-bracketed path and a caption', () => {
+  assert.equal(
+    convertFigures(
+      '<figure><img src=".gitbook/assets/a b.png" alt="Alt" width="188">' +
+        '<figcaption><p>Cap</p></figcaption></figure>'
+    ),
+    '![Alt](</.gitbook/assets/a b.png> "188")\n\n*Cap*'
+  );
+});
+
+test('an img with no width emits no title', () => {
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt=""></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
+test('a non-numeric width is ignored rather than emitted as a title', () => {
+  // GitBook only ever writes integer pixel widths; anything else would be a shape this
+  // converter has not seen, and a bogus title is worse than no width.
+  assert.equal(
+    convertFigures('<figure><img src=".gitbook/assets/a.png" alt="" width="100%"></figure>'),
+    '![](/.gitbook/assets/a.png)'
+  );
+});
+
 test('alt text is preserved and never invented', () => {
   assert.equal(
     convertFigures('<figure><img src=".gitbook/assets/a.png" alt="A diagram"><figcaption></figcaption></figure>'),
@@ -168,6 +205,69 @@ test('reflowImageDiv throws rather than silently dropping a div holding real pro
 test('a div inside a fence is left as literal text', () => {
   const input = '```html\n<div id="app"></div>\n```';
   assert.equal(reflowImageDiv(input), input);
+});
+
+const ASSETS = {
+  'one.png': { slug: 'one.png', kind: 'image', reference: '~/assets/one.png', hash: 'x' },
+  'demo.gif': { slug: 'demo.mp4', kind: 'video', reference: '/media/demo.mp4', hash: 'y' },
+  'data.csv': { slug: 'data.csv', kind: 'file', reference: '/files/data.csv', hash: 'z' },
+};
+
+test('a mapped image emits the alias reference', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: ASSETS });
+  assert.equal(out.trim(), '![A](~/assets/one.png)');
+});
+
+test('a mapped video emits a video element, not an image', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt="A demo"></figure>', { assets: ASSETS });
+  assert.match(out, /<video[^>]*autoplay[^>]*loop[^>]*muted[^>]*playsinline/);
+  assert.match(out, /src="\/media\/demo\.mp4"/);
+  assert.doesNotMatch(out, /!\[/);
+});
+
+test('a mapped video carries its alt text forward as an aria-label', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt="A demo"></figure>', { assets: ASSETS });
+  assert.match(out, /aria-label="A demo"/);
+});
+
+test('a mapped video with no alt text emits no empty aria-label', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets: ASSETS });
+  assert.doesNotMatch(out, /aria-label/);
+});
+
+test('a video kind mapped to an mp4 reference is accepted', () => {
+  const assets = { 'demo.gif': { slug: 'demo.mp4', kind: 'video', reference: '/media/demo.mp4', hash: 'y' } };
+  assert.doesNotThrow(() =>
+    convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets })
+  );
+});
+
+test('a video kind mapped to a gif reference throws rather than emitting an unplayable video', () => {
+  const assets = { 'demo.gif': { slug: 'demo.gif', kind: 'video', reference: '/media/demo.gif', hash: 'y' } };
+  assert.throws(
+    () => convertFigures('<figure><img src="../.gitbook/assets/demo.gif" alt=""></figure>', { assets }),
+    /kind is "video" but reference is not a video container/
+  );
+});
+
+test('with no map at all the placeholder form is kept', () => {
+  const out = convertFigures('<figure><img src="../.gitbook/assets/one.png" alt="A"></figure>', { assets: null });
+  assert.equal(out.trim(), '![A](/.gitbook/assets/one.png)');
+});
+
+test('a reference missing from an existing map throws', () => {
+  assert.throws(
+    () => convertFigures('<figure><img src="../.gitbook/assets/gone.png" alt=""></figure>', { assets: ASSETS }),
+    /gone\.png/
+  );
+});
+
+test('rewriteAssetRefs maps an existing markdown image', () => {
+  assert.equal(rewriteAssetRefs('![A](../.gitbook/assets/one.png)', { assets: ASSETS }), '![A](~/assets/one.png)');
+});
+
+test('a remote image is untouched whether or not a map exists', () => {
+  assert.equal(rewriteAssetRefs('![A](https://example.com/x.png)', { assets: ASSETS }), '![A](https://example.com/x.png)');
 });
 
 test('reflowImageDiv followed by convertFigures pairs each caption with its own image', () => {

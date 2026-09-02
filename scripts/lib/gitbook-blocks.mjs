@@ -3,6 +3,7 @@
  *
  * Hints, code and file blocks need no component, so a file containing only these stays .md.
  */
+import { assetPath, NEEDS_ANGLE } from './figures.mjs';
 import { mapLines, protectCode } from './segments.mjs';
 
 const ASIDE = { info: 'note', success: 'tip', warning: 'caution', danger: 'danger' };
@@ -65,13 +66,16 @@ export function convertHints(text) {
   });
 }
 
-/** Turns the single {% file %} block into a markdown link to a Phase 3 asset placeholder. */
-export function convertFile(text) {
+/** Turns the single {% file %} block into a markdown link to the asset it resolves to. */
+export function convertFile(text, ctx) {
+  const assets = ctx?.assets ?? null;
   return mapLines(text, (line) => {
     const match = line.match(/^[ \t]*\{%\s*file\s+src="([^"]+)"\s*%\}[ \t]*$/);
     if (!match) return line;
     const name = match[1].split('/').pop();
-    return `[${name}](</.gitbook/assets/${name}>)`;
+    if (!assets) return `[${name}](</.gitbook/assets/${name}>)`;
+    const path = assetPath(match[1], assets);
+    return `[${name}](${NEEDS_ANGLE.test(path) ? `<${path}>` : path})`;
   });
 }
 
@@ -114,9 +118,50 @@ function attribute(value) {
  * — and is therefore promoted to .mdx regardless — fails to build. A `[url](url)` link is
  * unambiguous in both .md and .mdx and reads the same on the page.
  */
-function renderEmbed(url, title) {
-  if (!isVideoEmbed(url)) return `[${url}](${url})`;
-  return title ? `<Embed url="${url}" title="${attribute(title)}" />` : `<Embed url="${url}" />`;
+/**
+ * Maps a share URL to its embeddable form. isVideoEmbed decides which shapes get here.
+ */
+function embedSrc(url) {
+  const parsed = new URL(url);
+  const host = parsed.hostname.replace(/^www\./, '');
+  if (host === 'youtu.be') return `https://www.youtube-nocookie.com/embed/${parsed.pathname.slice(1)}`;
+  if (host === 'youtube.com') return `https://www.youtube-nocookie.com/embed/${parsed.searchParams.get('v')}`;
+  return url.replace('/share/', '/embed/').split('?')[0];
+}
+
+/**
+ * Renders a video embed as raw HTML rather than a Starlight component.
+ *
+ * An <iframe> is not a Starlight component, so CLAUDE.md's rule — promote to .mdx only
+ * when a component is genuinely required — was never met by an embed. Emitting a component
+ * promoted 28 pages to .mdx for no other reason, and MDX parses a raw <pre> as JSX with
+ * markdown children: on progress-bar-message that silently stripped the snippet's
+ * indentation and turned its straight quotes into curly ones, breaking an XML sample
+ * readers copy. The same markup in a .md file is passed through untouched.
+ *
+ * The iframe is closed rather than self-closed so the markup parses as both HTML and MDX,
+ * since two pages keep an embed alongside a component they do genuinely need.
+ *
+ * Every emitted line carries the indentation of the block it replaces. A block-level
+ * element at column 0 closes any enclosing list, and 7 embeds on
+ * ai-agent-creation-overview sit inside list items within a {% stepper %} — Starlight's
+ * <Steps> requires its content to be a single <ol> and rejects the page outright when one
+ * breaks out. This is the same hazard figures.mjs handles for captions.
+ */
+function renderEmbed(url, title, indent = '') {
+  if (!isVideoEmbed(url)) return `${indent}[${url}](${url})`;
+  const label = attribute(title || 'Embedded video');
+  const lines = [
+    `<figure class="od-embed">`,
+    `<div class="od-embed-frame">`,
+    `<iframe src="${embedSrc(url)}" title="${label}" loading="lazy" ` +
+      `allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ` +
+      `allowfullscreen></iframe>`,
+    `</div>`,
+    ...(title ? [`<figcaption>${attribute(title)}</figcaption>`] : []),
+    `</figure>`,
+  ];
+  return lines.map((line) => `${indent}${line}`).join('\n');
 }
 
 /**
@@ -131,10 +176,13 @@ export function convertEmbeds(text) {
   return protectCode(text, (masked) =>
     masked
       .replace(
-        /^[ \t]*\{%\s*embed\s+url="([^"]+)"[^%]*%\}\n([\s\S]*?)\n[ \t]*\{%\s*endembed\s*%\}[ \t]*$/gm,
-        (_, url, caption) => renderEmbed(url, caption.replace(/\s+/g, ' ').trim())
+        /^([ \t]*)\{%\s*embed\s+url="([^"]+)"[^%]*%\}\n([\s\S]*?)\n[ \t]*\{%\s*endembed\s*%\}[ \t]*$/gm,
+        (_, indent, url, caption) => renderEmbed(url, caption.replace(/\s+/g, ' ').trim(), indent)
       )
-      .replace(/^[ \t]*\{%\s*embed\s+url="([^"]+)"[^%]*%\}[ \t]*$/gm, (_, url) => renderEmbed(url, ''))
+      .replace(
+        /^([ \t]*)\{%\s*embed\s+url="([^"]+)"[^%]*%\}[ \t]*$/gm,
+        (_, indent, url) => renderEmbed(url, '', indent)
+      )
   );
 }
 

@@ -4,7 +4,7 @@ title: Previewing your application
 
 Within OpenDialog you can preview any Webchat application so you can test and validate the conversational experience before deploying your application.
 
-![](</.gitbook/assets/Preview Sidebar.jpg>)
+![](~/assets/preview-sidebar.jpg)
 
 *Default conversation design view*
 
@@ -12,7 +12,7 @@ In the sidebar, hover on Test and click on Preview to interact with the preview 
 
 ### Functionality
 
-![](</.gitbook/assets/Preview Main (1).jpg>)
+![](~/assets/preview-main-1.jpg)
 
 *Preview screen*
 
@@ -34,11 +34,11 @@ The preview console panel includes:
 
 When clicking in the Considered Path, a larger version of the considered path is displayed, and an option to view the selected path (circles with green border), the non-selected paths (circles with red border) and an explanation for both selected and rejected paths.
 
-![](</.gitbook/assets/Preview Considered Path.jpg>)
+![](~/assets/preview-considered-path.jpg)
 
 *Considered Path*
 
-![](</.gitbook/assets/Preview Selected Path.jpg>)
+![](~/assets/preview-selected-path.jpg)
 
 *Selected Path*
 
@@ -59,6 +59,6 @@ To test this within the preview, for a returning user, we would type in `seconds
 * **Search & Filter:** Easily search for attributes or their values within the context.
 * **Attribute Details:** Hover over any attribute to view detailed information.
 
-![](</.gitbook/assets/Preview Attribute.jpg>)
+![](~/assets/preview-attribute.jpg)
 
 Note: in general no further action needs to be taken to set the custom attribute. Specifically for `seconds_since_last_seen` we need to refresh the whole page. Do not click Refresh Scenario as this resets the entire context, including the value we just defined.

@@ -4,7 +4,7 @@ title: Using Attributes in Messages
 
 Attributes can be used in any message to customize the content. For example, the user's name can be added in the welcome message to personalize the experience.
 
-![](/.gitbook/assets/2023-05-01_16-43-02.png)
+![](~/assets/2023-05-01-16-43-02.png)
 
 *Edit Message screen*
 
@@ -22,7 +22,7 @@ Note - If the attribute has no value or does not exist in the context given, the
 
 ### Message editor
 
-![](</.gitbook/assets/Group 3 (1).png>)
+![](~/assets/group-3-1.png)
 
 *The attribute input field can be accessed within the message editor section of the conversation designer*
 

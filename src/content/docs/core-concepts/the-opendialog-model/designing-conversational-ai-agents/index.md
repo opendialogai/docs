@@ -12,13 +12,13 @@ A conversation design needs to be able to manipulate and reason about all of the
 
 The OpenDialog approach directly supports you in designing across these elements and combining them in a number of different ways.
 
-![](/.gitbook/assets/3B.png)
+![](~/assets/3b.png)
 
 *High-level overview of the OpenDialog Framework*
 
 The diagram below illustrates the key components at a high-level. When user input comes in we classify it (through Semantic Classifiers) in order to have an understanding of what the user is trying to say and then we contextualise it based on the state of the overall business process we are support, the specific type of conversation we are having and what we know abot the user. We can then reason about where the conversation should transition next before we go ahead and generate a response for the user. This reasoning cycle is illustrated below.
 
-![](/.gitbook/assets/5B.png)
+![](~/assets/5b.png)
 
 *The OpenDialog Reasoning Cycle*
 
@@ -30,7 +30,7 @@ The OpenDialog conversation framework enables much of the flexibility that the p
 
 The different levels of the framework are:
 
-![](</.gitbook/assets/L3-Levels 1.png>)
+![](~/assets/l3-levels-1.png)
 
 *Levels of the OpenDialog framework*
 
@@ -40,7 +40,7 @@ When we start an OpenDialog application we start with a **Scenario.** This holds
 
 A scenario is the highest level in the OpenDialog framework. It encompasses the set of functionalities that make up all the conversational application. For example your scenario might be a Pizza Order activity, an Insurance Claim activity or a Customer Support activity.
 
-![](</.gitbook/assets/design - scenario 1.png>)
+![](~/assets/design-scenario-1.png)
 
 *Creating a Scenario in OpenDialog*
 
@@ -48,7 +48,7 @@ A scenario is the highest level in the OpenDialog framework. It encompasses the 
 
 Within a Scenario your AI agent and the user will have conversations. A conversation refers to communication for specific goals. Conversations can be viewed as steps in the customer journey, or conversations to be had. Examples: a welcome conversation, a payment and delivery conversation.
 
-![](</.gitbook/assets/design - conversation 1.png>)
+![](~/assets/design-conversation-1.png)
 
 *Conversations within an OpenDialog scenario.*
 
@@ -56,7 +56,7 @@ Within a Scenario your AI agent and the user will have conversations. A conversa
 
 Conversations then are further split into scenes. A scene deals with a specific stage, aspect or subgoal of a conversation. It is a middle layer in the model that allows for much flexibility in building out conversations. Example: a payment conversation can include a scene to enter payment data, a scene to confirm paument and a scene to finalize payment. A delivery conversation can include a scene to collect delivery details such as the address.
 
-![](/.gitbook/assets/Scenes.png)
+![](~/assets/scenes.png)
 
 *Scenes in OpenDialog conversations*
 
@@ -64,7 +64,7 @@ Conversations then are further split into scenes. A scene deals with a specific 
 
 In a turn the user and application exchange specific information or intents. Example: the scene to collect a delivery address can have two turns: a turn to collect the address details and a turn to confirm the address details that were collected.
 
-![](/.gitbook/assets/turns.png)
+![](~/assets/turns.png)
 
 ## Intents
 
@@ -72,11 +72,11 @@ A turn consists of intents. An intent holds the message and its meaning. An inte
 
 This is where you can connect what we said at the start about desiging a space where the agent _and_ the user are represented. We have intents _both_ for the app (our AI agent) and the user.
 
-![](/.gitbook/assets/intents.png)
+![](~/assets/intents.png)
 
 ## To summarize
 
-![](</.gitbook/assets/putting it all together (1).png>)
+![](~/assets/putting-it-all-together-1.png)
 
 *Overview of the components in the OpenDialog model*
 

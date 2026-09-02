@@ -8,7 +8,7 @@ Settings include a turn name, whether the turn exhibits starting and/or open beh
 
 Clicking "Add new condition" opens the New Condition area.
 
-![](/.gitbook/assets/2023-05-18_15-25-33.png)
+![](~/assets/2023-05-18-15-25-33.png)
 
 *Turns settings*
 
@@ -24,7 +24,7 @@ Turns contain a set of Response and Request intents. You can decide which partic
 
 If the intent has a request intent followed by a response intent: when the request intent is evaluated, the engine will look if there is a response intent in the same turn, and execute that.
 
-![](/.gitbook/assets/2023-05-18_15-29-56.png)
+![](~/assets/2023-05-18-15-29-56.png)
 
 *Intents in turns*
 
@@ -37,7 +37,7 @@ It is acceptable to have multiple intents in the list of request or response int
 
 ## Intent settings
 
-![](/.gitbook/assets/2023-05-18_15-38-33.png)
+![](~/assets/2023-05-18-15-38-33.png)
 
 *Intent settings*
 
@@ -70,9 +70,9 @@ Actions can have output attributes, typically set up for webhook or LLM actions.
 
 <div>
 
-![](/.gitbook/assets/1.png)
+![](~/assets/1.png "501")
 
-![](/.gitbook/assets/2.png)
+![](~/assets/2.png "329")
 
 </div>
 

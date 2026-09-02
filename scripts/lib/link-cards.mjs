@@ -5,6 +5,7 @@
  * Both need route-map.json: a content-ref's inner link text is a raw filename, and GitBook
  * substitutes the target page's title at render time.
  */
+import { ASSET_SRC, unescapeAssetName } from './asset-refs.mjs';
 import { mapLines, protectCode } from './segments.mjs';
 import { resolveSource } from './links.mjs';
 
@@ -19,6 +20,19 @@ function linkCard({ title, description, href }) {
   if (description) parts.push(`description="${attribute(description)}"`);
   parts.push(`href="${href}"`);
   return `<LinkCard ${parts.join(' ')} />`;
+}
+
+/**
+ * Builds one CoverCard element — a LinkCard that also shows the row's cover image.
+ *
+ * The cover is passed as a /src/assets path rather than the `~/assets` alias, because
+ * CoverCard resolves it through import.meta.glob, which keys on the real path.
+ */
+function coverCard({ title, description, href, cover }) {
+  const parts = [`title="${attribute(title)}"`];
+  if (description) parts.push(`description="${attribute(description)}"`);
+  parts.push(`href="${href}"`, `cover="${cover}"`);
+  return `<CoverCard ${parts.join(' ')} />`;
 }
 
 /**
@@ -188,7 +202,9 @@ export function convertCardTables(text, ctx) {
               `${ctx.source}: card "${title.text}" has a link target and ${body.length} body cells — LinkCard can only show one as its description`
             );
           }
-          cards.push(linkCard({ title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) }));
+          const cover = coverFor(cell, ctx);
+          const card = { title: title.text, description: body[0]?.text, href: hrefFor(target, ctx) };
+          cards.push(cover ? coverCard({ ...card, cover }) : linkCard(card));
         } else {
           cards.push(card({ title: title.text, body: body.map((c) => c.text) }));
         }
@@ -202,19 +218,47 @@ export function convertCardTables(text, ctx) {
 }
 
 /**
- * Counts data-card-cover image references lost in conversion, for the Phase 3 handoff.
+ * The row's cover image as a /src/assets path, or null when it has none.
  *
- * Also run under protectCode, for the same reason as convertCardTables: a card-table shown as a
- * code sample inside a fence must not be counted as a real, converting table.
+ * Resolved through asset-map.json, so the path is the slugified name assets.mjs actually
+ * wrote. Without a map — a checkout where assets.mjs has never run — no cover is emitted
+ * rather than a path that resolves to nothing, matching how figures.mjs degrades.
  */
-export function countDroppedCovers(text) {
-  let total = 0;
+function coverFor(cell, ctx) {
+  for (const c of cell) {
+    const href = (c.match(/<a href="([^"]*\.(?:png|jpe?g|gif|svg|webp))"/i) ?? [])[1];
+    if (!href) continue;
+    const match = href.trim().match(ASSET_SRC);
+    const name = match ? unescapeAssetName(match[1]) : null;
+    const entry = name && ctx?.assets ? ctx.assets[name] : null;
+    if (!entry) return null;
+    return entry.reference.replace(/^~\//, '/src/');
+  }
+  return null;
+}
+
+/**
+ * Every data-card-cover image href in `text`, in document order.
+ *
+ * Card covers have no <LinkCard> equivalent, so conversion discards them. Phase 3 subtracts
+ * these from the asset copy set so a cover referenced nowhere else is not copied into
+ * src/assets/, where nothing would render it.
+ */
+export function coverTargets(text) {
+  const found = [];
   protectCode(text, (masked) => {
     for (const [table] of masked.matchAll(CARD_TABLE)) {
       if (!/data-card-cover/.test(table)) continue;
-      total += [...table.matchAll(/<a href="[^"]*\.(?:png|jpe?g|gif|svg|webp)"/gi)].length;
+      for (const [, href] of table.matchAll(/<a href="([^"]*\.(?:png|jpe?g|gif|svg|webp))"/gi)) {
+        found.push(href);
+      }
     }
     return masked;
   });
-  return total;
+  return found;
+}
+
+/** Counts data-card-cover image references lost in conversion, for the Phase 3 handoff. */
+export function countDroppedCovers(text) {
+  return coverTargets(text).length;
 }

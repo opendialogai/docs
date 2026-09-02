@@ -22,7 +22,7 @@ Following this process ensures that the conversational experience is engaging an
 
 We will review each step of the process in detail in the next pages. 
 
-![](/.gitbook/assets/2023-05-19_19-36-01.png)
+![](~/assets/2023-05-19-19-36-01.png)
 
 ## Role of LLMs
 

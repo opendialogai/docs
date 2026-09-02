@@ -9,8 +9,8 @@ Migrating OpenDialog's product docs off GitBook onto Astro Starlight, deployed t
 ## Hard rules
 
 1. **`documentation` branch is read-only.** GitBook syncs to it bidirectionally. Writing to it corrupts the live site. Work on a feature branch.
-2. **Never hand-edit files in `src/content/docs/`.** They are generated. Found a bug? Fix `scripts/convert.mjs` and re-run. A manual edit is silently destroyed on the next run and creates a bug that reappears at cutover.
-3. **Scripts must be idempotent.** `convert.mjs` and `assets.mjs` run repeatedly, right up to cutover day, against fresh GitBook syncs. Same input must give byte-identical output.
+2. **`src/content/docs/` is hand-authored and is the source of truth.** Author pages in Starlight dialect: `.md`/`.mdx`, site-absolute internal links (`/core-concepts/…`), and `~/assets/…` image paths so `astro:assets` optimises them. The GitBook conversion was a one-time process and it is complete — never regenerate this directory to change content.
+3. **Never run `npm run convert` or `scripts/convert.mjs`.** `convert.mjs` deletes `src/content/docs/` wholesale and rewrites it from the frozen `source/` snapshot, discarding every page authored since the migration. The pipeline is retired; it and its tests are kept as the record of how the corpus was produced. `assets.mjs` and `routes.mjs` remain safe to run on their own, and must stay idempotent — same input, byte-identical output.
 4. **`source/` is pristine and git-ignored.** All scripts read from `source/`, write to `src/`. Never mutate `source/` in place.
 5. **URLs do not change.** Not the ugly ones either. Every path in the live `sitemap.xml` must resolve. This is the acceptance test.
 6. **Do not edit documentation prose.** Not to fix typos, not to improve clarity. Log it in `MIGRATION-NOTES.md`.
@@ -19,11 +19,11 @@ Migrating OpenDialog's product docs off GitBook onto Astro Starlight, deployed t
 ## Gotchas that will bite
 
 - **`{ attr | filter }` in prose breaks MDX builds.** OpenDialog's docs are full of this template syntax. In `.mdx` the braces parse as JSX expressions. Safe inside code fences, fatal outside them. Prefer `.md` — Starlight asides (`:::note`) work there. Only promote to `.mdx` when a Starlight component is genuinely required.
-- **Images must live in `src/assets/`, never `public/`.** Files in `public/` bypass `astro:assets` entirely and ship unoptimised. With 541 MB of source images this is the whole performance story.
+- **Images must live in `src/assets/`, never `public/`.** Files in `public/` bypass `astro:assets` entirely and ship unoptimised. With 541 MB of source images this is the whole performance story. Exception: video and downloadable files cannot pass through `astro:assets`, so the one MP4 lives in `public/media/` and the one CSV in `public/files/`.
 - **Raw `<img>` in markdown is not optimised.** The source has 430 `<figure><img>` blocks. They must become markdown `![]()` syntax or the optimisation never happens. Highest-value transformation in the project.
 - **1,317 asset filenames contain spaces or parentheses**, and GitBook wraps those paths in angle brackets: `![](<../.gitbook/assets/image (149).png>)`. Handle that form or you will silently drop images.
-- **50 assets have no file extension.** Sniff magic bytes and rename, or they get served with the wrong MIME type.
-- **One 28 MB GIF exceeds Cloudflare's 25 MiB per-file limit** and will fail deployment. Re-encode to MP4.
+- **50 assets have no file extension**, and all 50 are orphans — referenced from nowhere in `source/` — so none is ever copied and no MIME type is ever served.
+- **The GIF that ships, `Knowledge Base Demo.gif`, is 22.56 MiB** — under Cloudflare's 25 MiB per-file limit — and is re-encoded to a 1.12 MiB MP4 for weight, not to clear the cap. A separate 28 MB GIF that does exceed the cap is an orphan, referenced by nothing, and is never copied.
 - **Do not set `run_worker_first`** in `wrangler.jsonc`. Static asset requests are free and unlimited; Worker invocations are metered at 100k/day on the free plan.
 - **Never make DNS changes.** Pat repoints `docs.opendialog.ai` manually at cutover. Cloudflare API access is available for Workers and deployments only.
 - **Pat owns the GitBook analytics export.** Do not attempt it.
@@ -55,16 +55,16 @@ URL set. Measured against the live sitemap: 204. Route parity is judged against 
 ```bash
 npm run dev                  # local dev server
 npm run build                # astro build -> dist/
-npm run convert              # source/ -> route-map.json -> src/content/docs/ -> sidebar
-node scripts/assets.mjs      # rename, re-encode, rewrite refs
+npm run convert              # source/ -> route-map.json -> asset-map.json -> src/content/docs/ -> sidebar
+node scripts/assets.mjs      # copy, encode, write asset-map.json
 node scripts/routes.mjs      # built routes vs live sitemap.xml, writes route-map.json
 npx wrangler deploy          # deploy to Cloudflare
 ```
 
-`npm run convert` runs `routes.mjs`, `convert.mjs` and `sidebar.mjs` in that order. `convert.mjs`
-reads `route-map.json` rather than `source/` directly, so running it on its own against a sync
-that adds a page silently leaves the new page unconverted — always use `npm run convert`, never
-`node scripts/convert.mjs` alone.
+`npm run convert` runs `routes.mjs`, `assets.mjs`, `convert.mjs` and `sidebar.mjs` in that order.
+`convert.mjs` reads `route-map.json` and `asset-map.json` rather than `source/` directly, so
+running it on its own against a sync that adds a page or an image silently leaves the addition
+unconverted — always use `npm run convert`, never `node scripts/convert.mjs` alone.
 
 ## Definition of done for any change
 

@@ -25,20 +25,20 @@ While this pattern can be powerful, it may not always be possible to reuse a gen
 
 Focusing on a reusable pattern, consider the following scene:
 
-![A scene with contextual help](</.gitbook/assets/image (81).png>)
+![A scene with contextual help](~/assets/image-81.png)
 
 This scene gathers profile information from the user. We anticipate that the user may ask for help so we create a help turn that contains utterances such as: "help", "I require assistance", "what am I supposed to do", etc. The response within the Help turn can be highly contextualized since we know that we are in the Gather Profile Info scene.
 
 The Turn Help has two intents:
 
-![](</.gitbook/assets/image (84).png>)
+![](~/assets/image-84.png)
 
 The configuration for the "request help" intent from the user looks like this.
 
-![Request Help intent settings](</.gitbook/assets/image (263).png>)
+![Request Help intent settings](~/assets/image-263.png)
 
 The response intent from the bot can now provide help relevant to the context.
 
-![Provide help intent settings](</.gitbook/assets/image (408).png>)
+![Provide help intent settings](~/assets/image-408.png)
 
 The NLU interpreter intent and entities to cover help must be set up as well to make this work.

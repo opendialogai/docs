@@ -6,13 +6,13 @@ title: Troubleshooting interpreters
 
 *   Make sure that your knowledge base is working in the NLU service. E.g.
 
-    ![](/.gitbook/assets/2023-06-16\_07-40-11.png)  ![](</.gitbook/assets/2023-06-16\_07-40-37 (1).png>)
+    ![](~/assets/2023-06-16-07-40-11.png)  ![](~/assets/2023-06-16-07-40-37-1.png)
 
     *   Test your interpreter setup in OD. Note that success in OD doesn't mean that your knowledge base is working; you must check the previous step as well
 
 
 
-        ![This image shows the window to run the interpreter test in OD](/.gitbook/assets/2023-06-16_07-44-00.png)
+        ![This image shows the window to run the interpreter test in OD](~/assets/2023-06-16-07-44-00.png "375")
 
         *Run interpreter test in OD*
 
@@ -20,13 +20,13 @@ title: Troubleshooting interpreters
 
         *   Make sure your intent names align and use the names as shown in the image and the documentation. Check that your answer intent has an attribute message per the documentation.
 
-            ![](</.gitbook/assets/2023-06-16\_07-44-00 copy.png>)  ![](/.gitbook/assets/2023-06-16\_07-47-08.png)
+            ![](~/assets/2023-06-16-07-44-00-copy.png)  ![](~/assets/2023-06-16-07-47-08.png)
 
 ## Troubleshooting
 
 Q: Everything seems to be working but I get an empty answer in my preview.
 
-![Preview screen showing empty KB answer](/.gitbook/assets/2023-06-15_14-42-00.png)
+![Preview screen showing empty KB answer](~/assets/2023-06-15-14-42-00.png)
 
 *Preview screen showing empty KB answer*
 

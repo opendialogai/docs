@@ -3,14 +3,15 @@ title: Monitoring your application
 description: Use the OpenDialog Analyse feature to make informed decisions about the past, present and future of your conversational application.
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import CoverCard from '~/components/CoverCard.astro';
 
 
 This section explains how to track user interactions with your conversational application and identify trends in project usage.
 
 The OpenDialog Analyse dashboard provides a comprehensive view of recent interactions, a log of the latest messages, and a high-level summary of usage patterns over time.
 
-![](</.gitbook/assets/Screenshot 2024-09-26 at 10.28.52.png>)
+![](~/assets/screenshot-2024-09-26-at-10-28-52.png)
 
 *The OpenDialog Analyse dashboard gives you an overview of the latest interactions with your application and a bird-eye overview of project usage over time.*
 
@@ -49,7 +50,7 @@ By visualising usage trends, you can see the evident uptake or downturn in the n
 
 Analyse allows you to explore how your application has been performing. It is, therefore, part of the testing suite of a given scenario.
 
-![](</.gitbook/assets/Group 2 (3).png>)
+![](~/assets/group-2-3.png)
 
 *You can find Analyse, in the Test section of your scenario menu.*
 
@@ -69,9 +70,9 @@ To use the Analyse feature within OpenDialog, navigate to the 'Analyse' dashboar
 Analyse has three main components: project usage, interaction logs, and message log table:
 
 <CardGrid>
-  <LinkCard title="Project usage" description="The project usage graph shows both the number of users and the number of requests for any given date or range of dates. It can also be expanded for a more focused and in-depth visualisation." href="/opendialog-platform/monitoring-your-application#project-usage" />
-  <LinkCard title="Interaction logs" description="The interaction logs are listed and filtered by date, with the most recent appearing at the top. Each interaction log can be expanded to review specific conversations." href="/opendialog-platform/monitoring-your-application#interaction-logs" />
-  <LinkCard title="Message log table" description="The message logs are listed and filtered by date, with the most recent appearing at the top. Messages can also be filtered by Conversation, Scene, Turn and Intent to find specific results." href="/opendialog-platform/monitoring-your-application#message-table" />
+  <CoverCard title="Project usage" description="The project usage graph shows both the number of users and the number of requests for any given date or range of dates. It can also be expanded for a more focused and in-depth visualisation." href="/opendialog-platform/monitoring-your-application#project-usage" cover="/src/assets/screenshot-2024-09-26-at-10-32-32.png" />
+  <CoverCard title="Interaction logs" description="The interaction logs are listed and filtered by date, with the most recent appearing at the top. Each interaction log can be expanded to review specific conversations." href="/opendialog-platform/monitoring-your-application#interaction-logs" cover="/src/assets/screenshot-2024-10-01-at-15-28-40.png" />
+  <CoverCard title="Message log table" description="The message logs are listed and filtered by date, with the most recent appearing at the top. Messages can also be filtered by Conversation, Scene, Turn and Intent to find specific results." href="/opendialog-platform/monitoring-your-application#message-table" cover="/src/assets/screenshot-2024-09-26-at-10-38-51.png" />
 </CardGrid>
 
 ## **How to use**
@@ -80,7 +81,7 @@ Analyse has three main components: project usage, interaction logs, and message 
 
 The project usage functionality allows you to visualise project usage trends over time.
 
-![](</.gitbook/assets/Screenshot 2024-09-26 at 10.32.32.png>)
+![](~/assets/screenshot-2024-09-26-at-10-32-32.png)
 
 *Expanded view of project use over the course of a week*
 
@@ -96,7 +97,7 @@ The list of interaction logs allow you to visualise a list of conversations had 
 
 In addition, you can use the date picker on the top of the screen to select conversations for a specific date range, or search the interaction log for a specific user-ID thanks to the user-ID search field in the top right corner.
 
-![](</.gitbook/assets/Screenshot 2024-10-01 at 15.31.13.png>)
+![](~/assets/screenshot-2024-10-01-at-15-31-13.png)
 
 *List of interaction logs*
 
@@ -112,7 +113,7 @@ You can click through each item in the interaction log list to visualise its det
 
 ### Message log table
 
-![](</.gitbook/assets/Screenshot 2024-10-01 at 15.31.33.png>)
+![](~/assets/screenshot-2024-10-01-at-15-31-33.png)
 
 *List of message logs*
 
@@ -176,7 +177,7 @@ Displays the actual content of the message, either from the user or the system. 
 
 #### **Filtering Messages**
 
-![](</.gitbook/assets/Screenshot 2024-10-01 at 15.32.22.png>)
+![](~/assets/screenshot-2024-10-01-at-15-32-22.png)
 
 *By using the breadcrumb filter, you can narrow down you search by conversation, scene, turn and intent*
 
@@ -210,7 +211,7 @@ The detailed conversational logs for each item in the interaction logs are compo
 * The conversational flow visualisation
 * The conversational logic logs
 
-![](/.gitbook/assets/created.png)
+![](~/assets/created.png)
 
 *Detailed conversation log, including user information, conversational history, conversational flow visualization, and conversational logic.*
 

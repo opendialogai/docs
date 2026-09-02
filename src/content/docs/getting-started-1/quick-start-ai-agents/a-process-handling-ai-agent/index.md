@@ -37,7 +37,7 @@ In OpenDialog we suggest representing the overall Goal as a Conversation while e
 
 So an Appointment Booking Conversation for a doctor would look something like this:
 
-![](</.gitbook/assets/image (551).png>)
+![](~/assets/image-551.png)
 
 *Appointment booking process*
 
@@ -49,7 +49,7 @@ Name your scenes in easy to understand, human friendly ways so that you can easi
 
 Worth noting that in the Topic Conversation we have a specific Topic, called Book An Appointment which will detect if the user is asking to book an appointment which will direct them to the Appointment Booking Conversation.
 
-![](</.gitbook/assets/image (552).png>)
+![](~/assets/image-552.png)
 
 *Moving from a Topic Conversation to the Appointment Booking Conversation*
 
@@ -67,7 +67,7 @@ There is no specifically wrong or right answer. These are design choices based o
 
 Every scene in the Appointment Booking Conversation (or every step in our Process) follows the same pattern. Let's example that Pattern here:
 
-![](</.gitbook/assets/image (553).png>)
+![](~/assets/image-553.png)
 
 *The sample step scene*
 
@@ -75,7 +75,7 @@ Every scene in the Appointment Booking Conversation (or every step in our Proces
 
 There is one **starting turn** called _Step Introduction_. The purpose of this turn is to setup the scene for our user and explain the sub-goal. It will present the user with an appropriate welcome to the step and explain what we are trying to achieve.
 
-![](</.gitbook/assets/image (554).png>)
+![](~/assets/image-554.png)
 
 *The Step Introduction Turn*
 
@@ -99,7 +99,7 @@ We will start with the _Continue or Complete Step_ turn.
 
 Imagine the following dialog:
 
-![](</.gitbook/assets/image (556).png>)
+![](~/assets/image-556.png)
 
 *First step of OpenDialog appointment booking*
 
@@ -109,7 +109,7 @@ The purpose of the Continue or Complete Step is to define what happens if the us
 
 For example, consider the following interaction:
 
-![](</.gitbook/assets/image (559).png>)
+![](~/assets/image-559.png)
 
 *Continue or Complete moves us to New Scene*
 
@@ -121,7 +121,7 @@ There are two reasoning steps that led us to this outcome - we fist acknowledge 
 
 The conversation engine interpreted `"sure buddy let's go ahead"` as a Confirm intent (using a Semantic Classifier). That Confirm intent had an APP response within the turn as shown below.
 
-![](</.gitbook/assets/image (560).png>)
+![](~/assets/image-560.png)
 
 Since the user confirmed we then provide a response, which is `"Great, let's get started"`.
 
@@ -149,7 +149,7 @@ Virtual intents are useful for a number of reasons:
 Virtual intents are supported in the Analyse view of a conversation and in the conversation player in Conversation Design so you can always see what the impact of this intent injection will be.
 :::
 
-![](</.gitbook/assets/Intent and virtual intents.png>)
+![](~/assets/intent-and-virtual-intents.png)
 
 *Virtual intents*
 
@@ -169,11 +169,11 @@ This is a local No Match (`intent.core.TurnNoMatch`) that will be selected if th
 
 The Question intent will match to general questions and statements based on the definition of our semantic classifier. We can then connect it to an appropriate LLM action to answer the question. We can also decide to refocus the user on the goal through another virtual intent.
 
-![](</.gitbook/assets/image (561).png>)
+![](~/assets/image-561.png)
 
 *Answering a question and then return to the doctor choice*
 
-![](</.gitbook/assets/image (562).png>)
+![](~/assets/image-562.png)
 
 *Virtual intent on QuestionResponse that forces the conversation engine to behave as if the user asked about doctor choice*
 
@@ -183,7 +183,7 @@ The configuration above shoes that after we've provided a response to the questi
 
 This intent is in our Routing turn and transitions us back to the top of the same scene we are in which will, in turn, re-present the doctor choice widget. This enables us to reuse the exact same design and makes it more scalable moving forward as we can easily make different choices or introduce other steps by intervening at just the right point.
 
-![](</.gitbook/assets/image (563).png>)
+![](~/assets/image-563.png)
 
 *AskAboutDoctor routing intent*
 

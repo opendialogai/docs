@@ -29,7 +29,7 @@ An example:
 
 The conversation engine is built to accommodate no match where we define it, e.g. at the turn, scene, conversation or global level. When a user intent can not be matched to any turn in a scene, the conversation engine looks for a turn with the intent.core.TurnNoMatch intent. If this intent is not defined in any turn within a scene, the engine will look for a scene with an intent.core.SceneNoMatch intent. If this intent is not defined, the engine looks for a conversation with an intent.core.ConversationNoMatch intent. And if this intent is not defined, the engine will look for a global intent.core.NoMatch intent as a last resort. This global intent is defined by default in the custom template provided in the platform when creating a new scenario and is shown in the screenshot below.
 
-![](/.gitbook/assets/2023-11-09_18-41-49.png)
+![](~/assets/2023-11-09-18-41-49.png)
 
 *Global no match turn with intents from custom template*
 
@@ -39,10 +39,10 @@ In practice, the most common places in a scenario where you would define no matc
 
 The screenshot below shows an example of a no match turn in a scene.
 
-![No match turn in a scene](</.gitbook/assets/image (91).png>)
+![No match turn in a scene](~/assets/image-91.png)
 
 Per the screenshot below, within a no match turn, the user intent captures the user utterance and the app intent provides information and a way to continue the conversation.
 
-![](/.gitbook/assets/2023-11-09_18-39-04.png)
+![](~/assets/2023-11-09-18-39-04.png "563")
 
 *Intents in no match turn*

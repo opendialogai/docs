@@ -10,13 +10,13 @@ This step is the "glue" between the work we've done so far to inform the design,
 
 As an example, consider the following diagram:
 
-![](/.gitbook/assets/2023-05-17_07-54-16.png)
+![](~/assets/2023-05-17-07-54-16.png "218")
 
 *Extract of a diagram*
 
 Mapping this to conversations and scenes could look like this:
 
-![](/.gitbook/assets/2023-05-17_07-53-21.png)
+![](~/assets/2023-05-17-07-53-21.png "272")
 
 *Extract with conversations and scenes*
 

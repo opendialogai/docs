@@ -14,9 +14,9 @@ You can create new webhook action by visiting your scenario -> Integreate -> Act
 
 <div>
 
-![](</.gitbook/assets/image (2).png>)
+![](~/assets/image-2.png "188")
 
-![](</.gitbook/assets/image (1) (1).png>)
+![](~/assets/image-1-1.png "375")
 
 </div>
 
@@ -24,7 +24,7 @@ You can create new webhook action by visiting your scenario -> Integreate -> Act
 
 ### Overview
 
-![](</.gitbook/assets/image (2) (1).png>)
+![](~/assets/image-2-1.png)
 
 *New webhook page*
 
@@ -39,7 +39,7 @@ You can create new webhook action by visiting your scenario -> Integreate -> Act
 
 ### Basic configuration
 
-![](</.gitbook/assets/image (3).png>)
+![](~/assets/image-3.png)
 
 *Example of basic configurations of webhook action*
 
@@ -58,7 +58,7 @@ You can create new webhook action by visiting your scenario -> Integreate -> Act
 
 ### Headers configuration
 
-![](</.gitbook/assets/image (4).png>)
+![](~/assets/image-4.png)
 
 *Example of headers configuration of webhook action*
 
@@ -66,7 +66,7 @@ Configure key-value pairs for your headers. Value field also supports the OD att
 
 ### Request configuration
 
-![](</.gitbook/assets/image (5).png>)
+![](~/assets/image-5.png)
 
 *Example of payload configuration for webhook action*
 
@@ -75,7 +75,7 @@ Put a JSON payload which should be sent with your request.
 OD attribute syntax is supported, but you have to put them in double-quotes.
 
 <CardGrid>
-:white\_check\_mark: Do
+✅ Do
 
 ```json
 {
@@ -85,7 +85,7 @@ OD attribute syntax is supported, but you have to put them in double-quotes.
 
 
 
-:x: Don't
+❌ Don't
 
 ```
 {
@@ -98,7 +98,7 @@ Attribute types are preserved when the action is executing, so your number, bool
 
 ### Response configuration
 
-![](</.gitbook/assets/image (601).png>)
+![](~/assets/image-601.png)
 
 *Example of response configuration for webhook action*
 
@@ -145,7 +145,7 @@ You can store the whole response as a string by toggling "Store raw response" an
 
 ### Testing your webhook
 
-![](</.gitbook/assets/image (602).png>)
+![](~/assets/image-602.png)
 
 *Use testing panel on the left to run a test for your webhook*
 
@@ -153,13 +153,13 @@ Once you fill in your action name, URL, and HTTP method, the testing panel will 
 
 **Inputs block**
 
-![](</.gitbook/assets/image (603).png>)
+![](~/assets/image-603.png "372")
 
 Any input attributes in the URL, headers, and request body sections will become available to fill in. These temporary values will be used during your tests.
 
 **Outputs & Attributes block**
 
-![](</.gitbook/assets/image (604).png>)
+![](~/assets/image-604.png "373")
 
 You can see if your action worked as expected in the Outputs section. A green check will indicate if the action was executed successfully, and the response status code will be displayed next to it. In the Attributes section, you will see three default output attributes plus any output attributes you've defined in the "Response" tab:
 
@@ -171,9 +171,9 @@ You can see if your action worked as expected in the Outputs section. A green ch
 
 <div>
 
-![](</.gitbook/assets/image (605).png>)
+![](~/assets/image-605.png "374")
 
-![](</.gitbook/assets/image (606).png>)
+![](~/assets/image-606.png)
 
 </div>
 
@@ -185,7 +185,7 @@ Use the pop-out icon next to the "Response" section to view this in a full-page 
 
 Webhook V2 Actions support three authentication methods: **Header Authentication**, **Mutual TLS (mTLS)**, and **OAuth2 Client Credentials**. Authentication is configured per webhook action, within the action configuration itself.
 
-![Authentication method selection showing Header, mTLS, and OAuth2 options](/.gitbook/assets/authentication_selection.png)
+![Authentication method selection showing Header, mTLS, and OAuth2 options](~/assets/authentication-selection.png)
 
 *Select an authentication method for your webhook action*
 
@@ -202,7 +202,7 @@ Header Authentication lets you build dynamic authentication headers for your web
 
 Both blocks support the full OD attribute syntax, including `_auth` context references, `_webhook` context references (for request body or URL), and standard user/global/secret attributes.
 
-![Header Authentication configuration](/.gitbook/assets/authenticaton_headers.png)
+![Header Authentication configuration](~/assets/authenticaton-headers.png)
 
 *Header Authentication configuration*
 
@@ -259,7 +259,7 @@ Variables in the `variables` block can reference other variables defined in the 
 
 mTLS authentication establishes a two-way TLS handshake between OpenDialog and your API. You provide a client certificate which is presented to the server during the TLS negotiation.
 
-![mTLS Authentication configuration](/.gitbook/assets/authentication_mtls.png)
+![mTLS Authentication configuration](~/assets/authentication-mtls.png)
 
 *mTLS Authentication configuration*
 
@@ -289,7 +289,7 @@ To learn how to upload certificates and create secrets, see the [Secret Context]
 
 OAuth2 Client Credentials authentication is designed for server-to-server integrations where your webhook needs to authenticate with an OAuth2-protected API. It implements the [OAuth2 Client Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4), which exchanges a client ID and client secret for an access token.
 
-![OAuth2 Client Credentials configuration showing token URL, client ID, client secret with a secret reference, and scope](</.gitbook/assets/oauth2 config.png>)
+![OAuth2 Client Credentials configuration showing token URL, client ID, client secret with a secret reference, and scope](~/assets/oauth2-config.png)
 
 *OAuth2 Client Credentials configuration*
 
@@ -331,10 +331,10 @@ Scope:         api.read api.write
 
 Once you've saved your webhook action, it will appear on the "Actions" page. For convenience, a small chip with the HTTP method will be displayed in the bottom-left corner of the action card. Legacy webhook actions will be displayed with the subtitle "Legacy Webhook Action" and can be used as usual.
 
-![](</.gitbook/assets/image (607).png>)
+![](~/assets/image-607.png)
 
 Attach your webhook action as usual to an intent in the conversation designer.
 
-![](</.gitbook/assets/image (608).png>)
+![](~/assets/image-608.png)
 
 When the conversation reaches this intent, all your defined actions will be executed.

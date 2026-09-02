@@ -1,0 +1,32 @@
+{
+  "note": "Content defects inherited from GitBook, present in source/ and broken on GitBook too. The no-editing-prose rule forbids fixing them here; they are logged in MIGRATION-NOTES.md for the docs team. verify-links.mjs treats these as known, fails on anything new, and fails on any entry that is no longer broken so the list cannot rot.",
+  "links": [
+    { "from": "/", "href": "/broken/pages/2lcI5UfFruOL0M8VSp3d" },
+    { "from": "/", "href": "/broken/pages/EVpERlszmNSb5PDKaprI" },
+    { "from": "/", "href": "/broken/pages/-M_drTg0DF70xMVqRlyG" },
+    { "from": "/core-concepts/the-opendialog-workspace", "href": "/broken/pages/QXiLofFtrSva3tSBJilT" },
+    { "from": "/release-notes/release-notes", "href": "/broken/pages/Yh2t7P90PzNprbtTVwtP" },
+    { "from": "/release-notes/release-notes", "href": "/broken/pages/-MQM33QbO3LxSgzz40Lm" },
+    { "from": "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions", "href": "/broken/pages/h1Nv4EMKFW0n10de3P6a" },
+    { "from": "/opendialog-platform/conversation-designer/conversation-design/conversational-patterns/recommendations", "href": "/broken/pages/EMMG991zfA7rFesrsyIP" },
+    { "from": "/opendialog-platform/interpreters-and-natural-language-understanding/interpreters/available-interpreters/openai-interpreter", "href": "/broken/pages/ctW05MISDAG5zCohAvji" }
+  ],
+  "anchors": [
+    "/opendialog-platform/monitoring-your-application#message-table",
+    "/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages#available-filters",
+    "/opendialog-platform/conversation-designer/message-design/message-editor#message-types",
+    "/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier#attributes-and-values",
+    "/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions#user-utterance-response-exclusion-list",
+    "/core-concepts/contexts-and-attributes/about-attributes#multiple-value-attribute-types-collections-and-composites",
+    "/opendialog-platform/conversation-designer/message-design/message-types/address-autocomplete-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/attribute-message#what-is-a-list-message-3",
+    "/opendialog-platform/conversation-designer/message-design/message-types/button-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/conversation-handover-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/date-picker-message#when-to-use-date-picker-messages",
+    "/opendialog-platform/conversation-designer/message-design/message-types/e-sign-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/form-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/full-page-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/location-message#properties",
+    "/opendialog-platform/conversation-designer/message-design/message-types/rich-message#via-the-no-code-text-message-in-message-editor"
+  ]
+}

@@ -7,7 +7,7 @@ description: This section outlines how you can set up an LLM action using OpenAI
 
 LLM Actions allow you to integrate with a large language model provider, for example, OpenAI. It can be found under the Integrate section of a specific scenario. Once you select 'Create an LLM action' you will then have the opportunity to create the LLM action of your choice. Select OpenAI to start setting up your OpenAI integration.
 
-![](</.gitbook/assets/Screenshot 2024-07-08 at 18.05.09.png>)
+![](~/assets/screenshot-2024-07-08-at-18-05-09.png)
 
 *Setting up an OpenAI integration via OpenDialog*
 
@@ -44,7 +44,7 @@ OpenDialog validates that the referenced secret exists when you save the configu
 
 To set up your OpenAI LLM action, navigate to "Integrate", and select "LLM Actions" from the menu. Use the "Create an LLM action" button to set up a new LLM action.
 
-![](</.gitbook/assets/Screenshot 2024-07-08 at 18.21.46.png>)
+![](~/assets/screenshot-2024-07-08-at-18-21-46.png)
 
 *Use the "Create an LLM action" button to set up a new OpenAI integration*
 
@@ -54,7 +54,7 @@ After providing a name and a description for your LLM action, select "Open AI" a
 
 To use your OpenAI LLM action in your scenario, you can add it to an intent in the Designer.
 
-![](</.gitbook/assets/Screenshot 2024-07-08 at 18.25.21.png>)
+![](~/assets/screenshot-2024-07-08-at-18-25-21.png)
 
 *Select the desired intent in the designer and click "Add conditions, actions &#x26; attributes" to reveal the Action section*
 
@@ -62,7 +62,7 @@ When your scenario matches this intent, your LLM prompts will be sent to the lan
 
 To display the LLM's response text in your scenario, you will need to use the `llm_response` attribute (or any other desired output attributes) within a [message](/opendialog-platform/conversation-designer/message-design/message-editor). Within a message, create a new text block, set the text to `{llm_response}` and click "Save Message".
 
-![](</.gitbook/assets/Screenshot 2024-07-09 at 09.52.58 (1).png>)
+![](~/assets/screenshot-2024-07-09-at-09-52-58-1.png)
 
 *Create a text message using the LLM's response by using the `llm_response` attribute*
 

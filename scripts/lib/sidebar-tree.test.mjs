@@ -23,6 +23,7 @@ test('a parent page becomes a group whose first item is the page itself', () => 
       items: [
         {
           label: 'Message design',
+          collapsed: true,
           items: [
             { label: 'Message design', slug: 'design' },
             { label: 'Text message', slug: 'design/text' },
@@ -42,11 +43,31 @@ test('nesting continues to arbitrary depth', () => {
   const [group] = buildSidebar(entries, slugFor);
   assert.deepEqual(group.items[0].items[1], {
     label: 'B',
+    collapsed: true,
     items: [
       { label: 'B', slug: 'a/b' },
       { label: 'C', slug: 'a/b/c' },
     ],
   });
+});
+
+test('a nested group starts collapsed, a section does not', () => {
+  const entries = [
+    { depth: 0, label: 'Message design', source: 'design/README.md', section },
+    { depth: 2, label: 'Text message', source: 'design/text.md', section },
+  ];
+  const [group] = buildSidebar(entries, slugFor);
+  // Starlight opens a collapsed group when it holds the current page, so collapsing
+  // nested groups leaves the nav open exactly along the path to the page being read —
+  // which is what GitBook shows. Sections stay expanded there, so they are left alone.
+  assert.equal(group.collapsed, undefined);
+  assert.equal(group.items[0].collapsed, true);
+});
+
+test('a leaf carries no collapsed flag', () => {
+  const entries = [{ depth: 0, label: 'Model', source: 'model.md', section }];
+  const [group] = buildSidebar(entries, slugFor);
+  assert.equal('collapsed' in group.items[0], false);
 });
 
 test('the root README becomes the empty slug', () => {

@@ -3,7 +3,8 @@ title: Message editor
 description: The Message editor gives us access to the messages in the scenario and allows us to add, edit and delete messages.
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import CoverCard from '~/components/CoverCard.astro';
 
 
 ## Finding the message editor
@@ -14,13 +15,13 @@ There are two ways to access messages:
 
 <div align="left">
 
-![](/.gitbook/assets/DesignOption_NotExpanded.png)
+![](~/assets/designoption-notexpanded.png)
 
 *Design option - not expanded*
 
 </div>
 
-![](</.gitbook/assets/Group 24.png>)
+![](~/assets/group-24.png)
 
 *Design option - expanded*
 
@@ -34,7 +35,7 @@ There are two ways to access messages:
 
 **Option 2:** From within the Conversation designer, navigate to the Message editor by clicking on the message icon in a Scenario, Conversation, Scene, Turn or Intent. This will take you directly to the messages related to the conversational component you are on (scenario, conversation, scene, turn or intent)
 
-![](</.gitbook/assets/Group 25.png>)
+![](~/assets/group-25.png)
 
 *How to find the message editor*
 
@@ -59,19 +60,19 @@ Our search functionality allows you to edit a specific word, sentence, or messag
 
 You can access the 'Search' functionality in the main scenario menu, which searches for content throughout Intents and Messages.
 
-![](</.gitbook/assets/Group 26.png>)
+![](~/assets/group-26.png)
 
 *Search across Intents and Messaes using the search functionality in the main scenario menu*
 
 To search for a specific message, click on the 'Search' item in the main scenario menu, and the search modal will appear right in the middle of your workspace. Then, enter your query in the search bar, and the modal will display the results instantly.
 
-![](</.gitbook/assets/Screenshot 2024-06-05 at 15.36.41.png>)
+![](~/assets/screenshot-2024-06-05-at-15-36-41.png)
 
 *Enter your search query in the search bar that appears when selecting Search in the main scenario menu*
 
 By clicking on the appropriate search result from the list, you'll be directed to the chosen component, giving you the opportunity to edit the selected message with ease.
 
-![](</.gitbook/assets/Group 27.png>)
+![](~/assets/group-27.png)
 
 *Message catalog*
 
@@ -92,7 +93,7 @@ Note that the displayed messages in the message catalog are the sample message y
 
 In the intent list, click the Edit icon for an existing message or click "Add a new message". An existing message can also be copied or deleted:
 
-![](</.gitbook/assets/Group 28.png>)
+![](~/assets/group-28.png)
 
 *Multiple messages associated with a single intent*
 
@@ -116,7 +117,7 @@ The following options are available in the Edit Message screen:
   * "Hide the avatar for this message" will ensure that Webchat doesn't display the avatar alongside the message.
   * "Exclude markdown code from attribute filling" will ensure that any curly-braces `{}`included inside [markdown code blocks](http://commonmark.org/help/) (single or triple back ticks) will not be used in attribute filling. By default OpenDialog will presume any curly braces are being used as [attribute syntax](/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages) and attempt to fill it's value, this behaviour excludes markdown code from being filled. This behaviour is useful if you need to use curly braces for things such as code snippets within your messages.
 
-![](</.gitbook/assets/Screenshot 2025-03-06 at 11.09.33 (1).png>)
+![](~/assets/screenshot-2025-03-06-at-11-09-33-1.png)
 
 *Edit Message screen*
 
@@ -186,7 +187,7 @@ The following message types support expandable attributes:
 OpenDialog's modular approach to messages allows you to take advantage of rich UI components, surface specific messages on your terms and personalize them to make them relevant to specific users or use cases. Check out the following sections to take your conversational application from simple question answering to a truly personalised hybrid experience :
 
 <CardGrid>
-  <LinkCard title="Tailor the user experience" description="Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of message types to their fullest potential." href="/opendialog-platform/conversation-designer/message-design/constructing-messages" />
-  <LinkCard title="Surface relevant messages" description="Take advantage of OpenDialog's unique approach, using conditions to surface relevant messages at the right moment in the conversation." href="/opendialog-platform/conversation-designer/message-design/message-conditions" />
-  <LinkCard title="Personalize the messages" description="OpenDialog's attribute system will allow you to taylor your messages using these variables to surface personalised information." href="/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages" />
+  <CoverCard title="Tailor the user experience" description="Master the art of crafting powerful messages tailored to your specific needs, utilising OpenDialog's diverse range of message types to their fullest potential." href="/opendialog-platform/conversation-designer/message-design/constructing-messages" cover="/src/assets/legoblocks.png" />
+  <CoverCard title="Surface relevant messages" description="Take advantage of OpenDialog's unique approach, using conditions to surface relevant messages at the right moment in the conversation." href="/opendialog-platform/conversation-designer/message-design/message-conditions" cover="/src/assets/conditions-1.png" />
+  <CoverCard title="Personalize the messages" description="OpenDialog's attribute system will allow you to taylor your messages using these variables to surface personalised information." href="/opendialog-platform/conversation-designer/message-design/using-attributes-in-messages" cover="/src/assets/personalisation.png" />
 </CardGrid>

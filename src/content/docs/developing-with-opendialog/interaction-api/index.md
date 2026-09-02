@@ -94,8 +94,8 @@ To access the API you will need a bearer token associated with a user account in
 
 To access your bearer token visit the Identity & Security page - accessible by clicking on your username in the bottom left-hand corner.
 
-![](</.gitbook/assets/image (242).png>)
+![](~/assets/image-242.png)
 
-![](/.gitbook/assets/2022-09-21_16-47-08.png)
+![](~/assets/2022-09-21-16-47-08.png)
 
 *API Bearer Token Access*

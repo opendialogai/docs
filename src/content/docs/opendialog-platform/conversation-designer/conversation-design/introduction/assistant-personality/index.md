@@ -44,7 +44,7 @@ Per Nielsen Norman Group (see references): “... different tones of voice on a 
 
 Personality and tone can remain abstract concepts unless we translate that into actual language examples. A voice chart gathers the personality and tone information, and makes us think about details such as the vocabulary, grammar and verbosity that will reflect the personality and tone.
 
-![](/.gitbook/assets/2023-05-15_20-24-57.png)
+![](~/assets/2023-05-15-20-24-57.png)
 
 *Sample assistant tone profile*
 

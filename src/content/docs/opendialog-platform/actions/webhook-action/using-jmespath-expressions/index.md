@@ -4,7 +4,7 @@ title: Using JMESPath expressions
 
 Use **JMESPath expressions** to map and transform JSON response from webhook action into the desired data structure.
 
-![](</.gitbook/assets/image (611).png>)
+![](~/assets/image-611.png)
 
 *Example of using JMESPath expression in your output attributes mapping*
 

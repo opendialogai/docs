@@ -4,7 +4,7 @@ title: Using Markdown in messages
 
 In order to add richness and enhance our end users' experience when using the WebChat interface, it is possible to use Markdown within message types that have a significant text component. The currently supported message types are: Text, Button, Form and Rich. OpenDialog supports all the [basic features](https://www.markdownguide.org/basic-syntax/#overview) of the Markdown syntax, as well as [tables](https://www.markdownguide.org/extended-syntax/#tables) and [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks).
 
-![](</.gitbook/assets/image (571).png>)
+![](~/assets/image-571.png)
 
 *You can add your Markdown formatted content directly in the message editor*
 

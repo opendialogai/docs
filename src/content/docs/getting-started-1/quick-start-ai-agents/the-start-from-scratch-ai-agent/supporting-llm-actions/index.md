@@ -5,7 +5,7 @@ description: The LLM Actions used by the "Start from Scratch" scenario
 
 To support fluid conversation exchange the "Start from Scratch" scenario uses a number of LLM Actions that can form a solid basis / template for your own LLM Actions.
 
-![](</.gitbook/assets/Screenshot 2024-11-09 at 18.43.42.png>)
+![](~/assets/screenshot-2024-11-09-at-18-43-42.png)
 
 *LLM Actions of the "Start from Scratch" scenario*
 

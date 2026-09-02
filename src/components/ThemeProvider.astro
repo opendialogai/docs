@@ -1,0 +1,20 @@
+---
+/**
+ * Pins the colour scheme to light.
+ *
+ * Starlight's own provider reads localStorage and prefers-color-scheme and sets
+ * `data-theme` accordingly. Starlight treats dark as the :root default and light as
+ * `[data-theme='light']`, so the attribute has to be set to light rather than simply
+ * left off.
+ *
+ * `StarlightThemeProvider.updatePickers` is kept as a no-op: ThemeSelect renders
+ * nothing here, but the global is part of Starlight's inline contract and anything
+ * still calling it should not throw.
+ */
+---
+
+{/* Inlined rather than bundled so the theme is set before first paint. */}
+<script is:inline>
+	document.documentElement.dataset.theme = 'light';
+	window.StarlightThemeProvider = { updatePickers() {} };
+</script>

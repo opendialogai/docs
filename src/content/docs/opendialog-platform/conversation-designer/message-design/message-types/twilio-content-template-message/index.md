@@ -11,11 +11,11 @@ This message holds a reference to the Twilio Content Template that is used to re
 
 <div>
 
-![](/.gitbook/assets/1000008688.jpg)
+![](~/assets/1000008688.jpg)
 
 *An example of Call to Action template*
 
-![](/.gitbook/assets/1000008687.jpg)
+![](~/assets/1000008687.jpg)
 
 *An example of Quick Reply template*
 
@@ -37,7 +37,7 @@ You should use a Twilio Content Template Message when you want to create a multi
 
 Navigate to the [Message Editor](/opendialog-platform/conversation-designer/message-design/message-editor) and create a Custom Message. Copy the [XML snippet](/opendialog-platform/conversation-designer/message-design/message-types/twilio-content-template-message#xml-snippet) at the bottom of this page into the black box, or select `twilio-content-template-message` from the drop down, and your chat message will appear in the Preview panel.
 
-![](</.gitbook/assets/image (577).png>)
+![](~/assets/image-577.png)
 
 *How to create Twilio Content Template Message in the custom message block*
 
@@ -69,7 +69,7 @@ Navigate to the [Message Editor](/opendialog-platform/conversation-designer/mess
 | ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sid`       | string | The unique identifier of the Twilio Content Template to use for rendering. Required if `name` is not present.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `name`      | string | The name of the Twilio Content Template to use for rendering. Required if `sid` is not present.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `variables` | object | <p>A collection of variables to pass to the template for rendering.<br>In this example, <code>body</code> is a parameter of the message body.<br><code>button_1_text</code> is the text of the first button.<br><code>button_1_value</code> is the value of the button when clicked. Similar to Open Dialog's <a href="button-message.md">Button Message</a>, it can be a callback to an intent.<br>This field is optional, but variables number must match the number of parameters that you have defined in the Twilio content template.</p> |
+| `variables` | object | <p>A collection of variables to pass to the template for rendering.<br>In this example, <code>body</code> is a parameter of the message body.<br><code>button_1_text</code> is the text of the first button.<br><code>button_1_value</code> is the value of the button when clicked. Similar to Open Dialog's <a href="/opendialog-platform/conversation-designer/message-design/message-types/button-message">Button Message</a>, it can be a callback to an intent.<br>This field is optional, but variables number must match the number of parameters that you have defined in the Twilio content template.</p> |
 
 ### Supported Twilio Content Templates Types
 

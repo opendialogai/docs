@@ -5,11 +5,11 @@ description: This pattern allows the user to restart the interaction.
 
 This functionality is not activated by default; it must be activated in the Interface Settings page
 
-![](/.gitbook/assets/2023-11-09_18-52-09.png)
+![](~/assets/2023-11-09-18-52-09.png "375")
 
 *Toggle for Restart button in settings*
 
-![](/.gitbook/assets/2023-11-09_18-53-48.png)
+![](~/assets/2023-11-09-18-53-48.png "375")
 
 *Restart icon in user interface*
 
@@ -17,7 +17,7 @@ If the user clicks the **Restart** button at any point during the conversation, 
 
 If none of these are found, the global intent.core.restart is executed. This intent is provided by default in the Trigger conversation (see screenshot)
 
-![](/.gitbook/assets/2023-11-09_18-48-53.png)
+![](~/assets/2023-11-09-18-48-53.png "375")
 
 *intent.core.restart in the Trigger conversation*
 
@@ -31,13 +31,13 @@ Consider a scene in which we are trying to gather information about a user. Our 
 
 This is what a scene for this might look like:<br>
 
-![A scene to gather user information](</.gitbook/assets/image (282).png>)
+![A scene to gather user information](~/assets/image-282.png)
 
 The turn named `Scene Restart` can have the NLU to capture the user utterance indicating they made a mistake, and transitioning them back to the top of this scene.
 
 In this case, if the user restarts the flow at any point in this scene, we would want to route them back to the `Get Name Turn`(that is the first turn in this scene). To do so the scene restart intent transitions to the Get Name turn.
 
-![The Scene Level Restart](</.gitbook/assets/image (248).png>)
+![The Scene Level Restart](~/assets/image-248.png)
 
 :::tip
 Notice the intent is named `intent.core.SceneRestart` as we want to capture all restarts within this scene

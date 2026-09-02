@@ -1,9 +1,26 @@
 /*
+ * Starlight's cascade layer order, restated.
+ *
+ * Starlight declares this in style/layers.css, but a layer's priority is fixed by where
+ * it FIRST appears, and Astro bundles this file ahead of Starlight's own stylesheets.
+ * Opening `@layer starlight.core` below without restating the order therefore registered
+ * starlight.core as the first — and so lowest-priority — layer, dropping it beneath
+ * starlight.reset. The reset's `* { margin: 0 }` then silently won against every margin
+ * Starlight sets in core: the search dialog's centring, the page title and description
+ * spacing, sidebar row gaps, and the 1.5rem rhythm between content blocks.
+ *
+ * This must stay the first statement in this file.
+ */
+@layer starlight.base, starlight.reset, starlight.core, starlight.content, starlight.components,
+	starlight.utils;
+
+/*
  * OpenDialog brand tokens for Starlight.
  *
- * Colours and fonts are taken from opendialog.ai, not invented. The accent is the
- * brand blue #0023ff — hsl(232, 100%, 50%). Starlight's own default accent sits at
- * hue 234, so the brand blue is already close to the theme's tuned defaults.
+ * Colours are taken from opendialog.ai, not invented; the typefaces are taken from
+ * the GitBook docs site this replaces, which serves Poppins and IBM Plex Mono. The
+ * accent is the brand blue #0023ff — hsl(232, 100%, 50%). Starlight's own default
+ * accent sits at hue 234, so the brand blue is already close to the theme's defaults.
  *
  * The grey ramp keeps Starlight's lightness values, which are tuned for contrast,
  * and shifts only hue and saturation onto OpenDialog's blue-tinted greys
@@ -12,12 +29,23 @@
  * Starlight treats dark as the :root default and light as [data-theme='light'].
  */
 
-@import '@fontsource-variable/inter';
-@import '@fontsource/fragment-mono';
+/*
+ * Poppins and IBM Plex Mono are the faces the GitBook docs site serves. Only the
+ * latin subset is imported: the corpus uses 27 non-ASCII codepoints and every one
+ * is either inside latin's range or an emoji that falls back to the system face,
+ * exactly as it does on GitBook. Poppins also ships Devanagari, which nothing here
+ * needs. The corpus contains no bold italic, so 700-italic is not imported.
+ */
+@import '@fontsource/poppins/latin-400.css';
+@import '@fontsource/poppins/latin-400-italic.css';
+@import '@fontsource/poppins/latin-600.css';
+@import '@fontsource/poppins/latin-700.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
 
 :root {
-	--sl-font: 'Inter Variable', 'Inter', sans-serif;
-	--sl-font-mono: 'Fragment Mono', ui-monospace, monospace;
+	--sl-font: 'Poppins', sans-serif;
+	--sl-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
 	/* Accent — dark mode. #0023ff is too dark against a dark background, so the
 	   mid tone is lifted while the hue is held at the brand value. */
@@ -70,6 +98,250 @@
 		color: var(--sl-color-text-accent);
 		font-weight: 600;
 	}
+}
+
+/*
+ * GitBook's image wrapper divs.
+ *
+ * GitBook lays a wrapper div's figures out in a row: 12px gap, centred, each image at the
+ * width its author set, all shrinking together when the row would otherwise overflow.
+ * Starlight stacks them, because markdown.css sets `display: block` on every image in
+ * content. 13 of the 19 wrappers hold more than one figure — 31 images across 9 pages —
+ * and one of them rendered a 188px thumbnail at 720x1075.
+ *
+ * Having no class is what identifies these: every div Starlight emits into content has one
+ * (sl-heading-wrapper, card-grid, expressive-code). `:has(img)` then excludes the only
+ * other classless div in the corpus, the webchat SDK's mount point.
+ *
+ * `align="left"` means left, as on GitBook; a wrapper without it centres. Unlayered
+ * because the paragraph reset has to beat starlight.content, which outranks
+ * starlight.core.
+ */
+.sl-markdown-content div:not([class]):has(img) {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+/*
+ * Above the mobile breakpoint a row that would overflow shrinks rather than wrapping,
+ * which is what GitBook does — its row of four 188px figures renders at 187.25 apiece
+ * rather than breaking to a second line. Below it, wrapping is the sane behaviour.
+ */
+@media (min-width: 50rem) {
+	.sl-markdown-content div:not([class]):has(img) {
+		flex-wrap: nowrap;
+	}
+}
+
+.sl-markdown-content div[align='left']:has(img) {
+	justify-content: flex-start;
+}
+
+/* Each figure — or bare image paragraph, where there is no caption — is one row item. */
+.sl-markdown-content div:not([class]):has(img) > p,
+.sl-markdown-content div:not([class]):has(img) > figure {
+	margin: 0;
+	min-width: 0;
+	flex: 0 1 auto;
+}
+
+/*
+ * An image the author sized keeps that width; an unsized one takes whatever is left,
+ * which is how GitBook fills a row mixing the two — a 374px figure beside an unsized one
+ * renders as 371 and 371 there. Only rehype-image-width sets a style attribute, so its
+ * absence is what marks an image as unsized.
+ */
+.sl-markdown-content div:not([class]):has(img) > p:has(img:not([style])),
+.sl-markdown-content div:not([class]):has(img) > figure:has(img:not([style])) {
+	flex: 1 1 0;
+}
+
+/*
+ * Figure captions.
+ *
+ * rehype-figures pairs each image with the caption beneath it. Markdown could only carry
+ * a caption as emphasis, so Starlight renders it as body-sized italic text aligned left;
+ * GitBook sets 12px, centred, roman, in a muted grey. Unlayered to beat starlight.content.
+ */
+.sl-markdown-content figure {
+	margin: 1.5rem 0;
+}
+
+.sl-markdown-content figcaption {
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	text-align: center;
+	color: var(--sl-color-gray-3);
+}
+
+/*
+ * Video embeds.
+ *
+ * convert.mjs emits these as raw HTML rather than a component: an <iframe> is not a
+ * Starlight component, and requiring one promoted 28 pages to .mdx, where a raw <pre> is
+ * parsed as JSX and silently loses its indentation and straight quotes. These styles came
+ * from the component that used to render them.
+ */
+.sl-markdown-content .od-embed-frame {
+	aspect-ratio: 16 / 9;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	border: 1px solid var(--sl-color-gray-5);
+}
+
+.sl-markdown-content .od-embed-frame iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+
+/*
+ * Heading scale.
+ *
+ * Starlight's headings run about 17% larger than GitBook's and carry no tracking:
+ * 42/35 against 36/30 at h1/h2. GitBook's scale, measured, is 36/30/24/20 with
+ * -0.025em on h1 and -0.0125em on h2 through h4, and line-heights of 1.25, 1.2,
+ * 1.333 and 1.4. Only h2, h3 and h4 occur in the corpus — 425, 427 and 343 of them,
+ * no h1 and no h5 or h6 — so the h1 values live in PageTitle.astro, which owns the
+ * only h1 on any page.
+ *
+ * --sl-text-h5 is left alone: asides.css uses it for the aside title, and 258 hint
+ * blocks depend on it.
+ *
+ * Unlayered because Starlight re-declares these tokens inside a media query at
+ * props.css:180 to enlarge headings on wide screens, and styles markdown headings
+ * from a later layer than starlight.core.
+ */
+:root {
+	--sl-text-h1: 2.25rem;
+	--sl-text-h2: 1.875rem;
+	--sl-text-h3: 1.5rem;
+	--sl-text-h4: 1.25rem;
+}
+
+.sl-markdown-content :is(h2, h3, h4):not(:where(.not-content *)) {
+	letter-spacing: -0.0125em;
+}
+
+.sl-markdown-content h2:not(:where(.not-content *)) {
+	line-height: 1.2;
+}
+
+.sl-markdown-content h3:not(:where(.not-content *)) {
+	/* Absolute rather than a 4/3 ratio, which lands on 31.9999px. Safe because the
+	   size above is absolute too. */
+	line-height: 2rem;
+}
+
+.sl-markdown-content h4:not(:where(.not-content *)) {
+	line-height: 1.4;
+}
+
+/*
+ * A heading that is itself a link — the corpus authors several, such as "User
+ * Experience" on getting-started-1/getting-ready — renders in Starlight's link blue
+ * with an underline, which reads as a mis-styled heading. GitBook renders it in the
+ * heading colour, undecorated. The hover underline is added rather than measured, so
+ * the link stays discoverable without changing how the heading rests.
+ */
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a:not(:where(.not-content *)) {
+	color: inherit;
+	text-decoration: none;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a:hover:not(:where(.not-content *)),
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) a:focus-visible:not(:where(.not-content *)) {
+	text-decoration: underline;
+}
+
+/*
+ * Page shell.
+ *
+ * GitBook constrains its layout to a 1440px box centred in the viewport with 32px of
+ * inner padding, while the header band itself stays full-bleed. Measured at a 1920
+ * viewport: the sidebar starts at 265 and the table of contents ends at 1641, which
+ * is 1440 minus the two 32px pads. Starlight's frame is full-bleed throughout, so on
+ * a wide monitor the nav sits hard against the left edge and the right third is dead
+ * space.
+ *
+ * A single inset feeds the header padding, the fixed sidebar and the main frame, so
+ * the three cannot drift apart. It is computed from 100vw, which includes the
+ * scrollbar, so the shell lands half a scrollbar-width left of true centre — around
+ * 7px against a gutter of 233px at 1920.
+ *
+ * Below 50rem Starlight collapses to one column with a slide-over sidebar, and an
+ * inset would only fight it, so this starts at Starlight's own breakpoint. The
+ * selectors carry extra specificity because Astro compiles Starlight's rules with a
+ * scope class.
+ */
+:root {
+	--od-shell-max: 90rem;
+	--od-shell-pad: 2rem;
+	--od-shell-inset: max(
+		var(--od-shell-pad),
+		calc((100vw - var(--od-shell-max)) / 2 + var(--od-shell-pad))
+	);
+}
+
+@media (min-width: 50rem) {
+	@layer starlight.core {
+		.page > header.header {
+			padding-inline: var(--od-shell-inset);
+		}
+
+		.page .sidebar .sidebar-pane {
+			inset-inline-start: var(--od-shell-inset);
+		}
+
+		.page > .main-frame {
+			padding-inline-start: calc(var(--sl-content-inline-start) + var(--od-shell-inset));
+			padding-inline-end: var(--od-shell-inset);
+		}
+	}
+}
+
+/*
+ * Site title and logo.
+ *
+ * Starlight styles the title with --sl-color-text-accent at --sl-text-h4, which
+ * renders it as 24px brand blue. GitBook sets it in near-black at 18px/600 with
+ * -0.025em tracking, alongside a 32px logo. --sl-color-white is the darkest text
+ * colour in light mode and the lightest in dark, so it tracks the page heading
+ * rather than pinning a foreign hex. That lands on rgb(18, 20, 33) against GitBook's
+ * rgb(28, 29, 32) — a touch darker and bluer, indistinguishable at 18px.
+ *
+ * Selectors are scoped through .header deliberately: Astro compiles Starlight's own
+ * rules to `.site-title.astro-<hash>`, so a bare `.site-title` loses the cascade.
+ */
+@layer starlight.core {
+	.header .site-title {
+		gap: 0.75rem;
+		font-size: 1.125rem;
+		letter-spacing: -0.025em;
+		color: var(--sl-color-white);
+	}
+
+	.header .site-title img {
+		height: 2rem;
+	}
+
+}
+
+/*
+ * GitBook ships some code samples as literal <pre> markup rather than as a fenced
+ * code block. Those never reach Expressive Code, and Starlight's code styling is
+ * scoped to fenced blocks, so without this they fall back to the browser's default
+ * monospace while every other code block on the site renders in IBM Plex Mono.
+ * `:not(.not-content *)` is Starlight's own marker for content it does not style,
+ * and keeps this clear of Expressive Code's frames.
+ */
+.sl-markdown-content pre:not(.not-content *) {
+	font-family: var(--sl-font-mono);
 }
 
 /*

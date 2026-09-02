@@ -28,12 +28,21 @@ const slugFor = (source) => {
 const entries = parseSummary(readFileSync(`${root}/source/SUMMARY.md`, 'utf8'));
 const sidebar = buildSidebar(entries, slugFor);
 
-// A leaf page is one nav row. A parent page is two: the group header (unlinkable, so it
-// repeats the page as the group's first item) plus that first item itself. Top-level
-// sections are structural buckets, not pages, so they never add a row for themselves.
+// A parent page appears twice in this data: once as the group and once as that group's
+// first item, because a Starlight group cannot carry a link. src/components/
+// SidebarSublist.astro folds the two back into a single clickable row, so the rendered
+// nav is one row per page. Both numbers are reported: a gap between them that is not the
+// parent-page count means the two sides have drifted apart. Top-level sections are
+// structural buckets, not pages, and never add a row for themselves.
 const countItems = (items) =>
   items.reduce((total, item) => total + 1 + (item.items ? countItems(item.items) : 0), 0);
 const count = (groups) => groups.reduce((total, group) => total + countItems(group.items), 0);
+const countParents = (items) =>
+  items.reduce(
+    (total, item) => total + (item.items ? 1 + countParents(item.items) : 0),
+    0
+  );
+const parents = sidebar.reduce((total, group) => total + countParents(group.items), 0);
 
 writeFileSync(
   OUT,
@@ -42,7 +51,8 @@ writeFileSync(
 );
 
 console.log(`sections     : ${sidebar.length}`);
-console.log(`nav entries  : ${count(sidebar)}`);
+console.log(`data entries : ${count(sidebar)} (${parents} parent pages counted twice)`);
+console.log(`rendered rows: ${count(sidebar) - parents}`);
 console.log(`wrote ${OUT}`);
 
 if (entries.length !== 204) {

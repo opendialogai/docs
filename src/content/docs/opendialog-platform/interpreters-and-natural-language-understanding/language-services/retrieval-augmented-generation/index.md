@@ -16,7 +16,7 @@ The OpenDialog RAG service allows you to
 
 
 
-![Flowchart showing the Retrieval Augmented Generation process: uploading documents, converting and vectorizing them, querying using prompting, and generating a response.](</.gitbook/assets/1 (3).png>)
+![Flowchart showing the Retrieval Augmented Generation process: uploading documents, converting and vectorizing them, querying using prompting, and generating a response.](~/assets/1-3.png)
 
 *Simplified diagram of the Retrieval Augmented Generation process*
 
@@ -48,7 +48,7 @@ To access the RAG service feature  in your workspace:
 * Create a new RAG service by using the Create language service button
 :::
 
-![](</.gitbook/assets/image (1) (1) (2).png>)
+![](~/assets/image-1-1-2.png)
 
 *Access the ability to add a RAG service via the Language Services feature*
 
@@ -62,13 +62,13 @@ In some cases, throughout the product you might find that RAG services are refer
 
 The <mark style="color:purple;">**RAG service settings**</mark> section allows you to name  and provide a description for your RAG service to easily recognise it in the Language Services Dashboard. Once it is being used in your applications, you can also visualise the scenarios that are actively using this particular RAG service.
 
-![](/.gitbook/assets/RAG-settings-use.png)
+![](~/assets/rag-settings-use.png)
 
 *Access the RAG service settings components via the left-hand menu*
 
 The <mark style="color:purple;">**Topics**</mark> section allows you to define, manage, edit and test the main semantic topics of your RAG service.
 
-![](</.gitbook/assets/image (1) (1) (2) (1).png>)
+![](~/assets/image-1-1-2-1.png)
 
 *The topics overview provides you with an overview of your different topics, and the ability to manage them*
 
@@ -78,7 +78,7 @@ To action the generation of responses based on your RAG service, you will need t
 
 ### Overview
 
-![](/.gitbook/assets/3.png)
+![](~/assets/3.png)
 
 *Overview of the steps within OpenDialog to setup and use a RAG service*
 
@@ -108,7 +108,7 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 
 #### Basic settings
 
-![](</.gitbook/assets/image (2) (2) (1).png>)
+![](~/assets/image-2-2-1.png)
 
 *From the Language Services dashboard, view your created RAG services or create a new one*
 
@@ -121,7 +121,7 @@ A knowledge string is a piece of syntax you will use to reference a specific RAG
 * Click 'Create service' button to finish creating your service
 :::
 
-![](</.gitbook/assets/image (3) (2).png>)
+![](~/assets/image-3-2.png)
 
 *RAG service setup page*
 
@@ -149,7 +149,7 @@ Top K refers to the number of top results or items to retrieve during a search o
 
 Once you have created your [RAG ](/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation#rag)service setup, you will get taken to the [Topics](/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation#topics) page. This page will be empty when first creating your service. You can start setting up your topics, by clicking on the Add topic button in the top right corner of the middle panel of your screen.
 
-![](</.gitbook/assets/image (6) (2).png>)
+![](~/assets/image-6-2.png)
 
 *Select the 'Add topic' button from the top right hand corner of your screen*
 
@@ -163,7 +163,7 @@ Once you have created your [RAG ](/opendialog-platform/interpreters-and-natural-
 * This will trigger the 'Add sources' section to appear
 :::
 
-![](</.gitbook/assets/image (5) (2).png>)
+![](~/assets/image-5-2.png)
 
 *Provide a name, description to your topic and create it by clicking on the create topic button*
 
@@ -177,7 +177,7 @@ Once you have created a topic, you can start adding your documents, data and inf
 * Select the source type of your data
 :::
 
-![](</.gitbook/assets/Select source type.png>)
+![](~/assets/select-source-type.png)
 
 *Add your information sources to a topic using the 'Add source' dropdown*
 
@@ -192,7 +192,7 @@ Once you have selected text, the text upload modal will pop up. From here you ca
 * Select 'Upload source' once you are finished
 :::
 
-![](</.gitbook/assets/URL 2.png>)
+![](~/assets/url-2.png)
 
 *From the URL uploader modal you can start to add in your URL's in the 'URL Source' field*
 
@@ -200,7 +200,7 @@ Once you have selected text, the text upload modal will pop up. From here you ca
 
 To add a URL source, you first need to select the 'URL' option from the topic source drop down menu.
 
-![](</.gitbook/assets/URL 1.png>)
+![](~/assets/url-1.png)
 
 *Select URL from the topic source dropdown menu*
 
@@ -208,13 +208,13 @@ Once you have selected 'URL' from the topic source dropdown, the URL upload moda
 
 You also have the option to include exclusion ID's and Classes. These optional fields allow you to select parts of your URL that you would not like to be referenced. Then when your URL source is vectorised, these ID's and Classes will not be included.
 
-![](</.gitbook/assets/URL 3.png>)
+![](~/assets/url-3.png)
 
 *Here you have the option to input any exclusion ID's and Classes for your URL source(s)*
 
 Once you are happy with the URL\`s selected, you can click the 'Upload source' button to add them to your topic.
 
-![](</.gitbook/assets/URL 4.png>)
+![](~/assets/url-4.png)
 
 *Click the 'Upload source' button to add your URL's to your topic*
 
@@ -243,13 +243,13 @@ The types of document that can be uploaded to your topic as a source are:
 
 
 
-![](</.gitbook/assets/pic 2.png>)
+![](~/assets/pic-2.png)
 
 *Select 'Document' from the topic source dropdown menu*
 
 Once you have selected Document, the document upload modal will pop up. From here you can either click to upload a document of your choice, or you can drag and drop files onto the modal. You can upload multiple files at once if you wish to.
 
-![](</.gitbook/assets/pic 3.png>)
+![](~/assets/pic-3.png)
 
 *The document upload modal*
 
@@ -257,11 +257,11 @@ After you have selected the files that you want to upload, you can see them list
 
 Once you are happy with the files selected, you can click the 'Upload source' button to add them to your topic.
 
-![](</.gitbook/assets/pic 4.png>)
+![](~/assets/pic-4.png)
 
 *Once you're happy with your uploaded documents, click 'Upload source'*
 
-![](</.gitbook/assets/pic 5.png>)
+![](~/assets/pic-5.png)
 
 *Once you have uploaded your document, you can see it in your topic sources table*
 
@@ -286,7 +286,7 @@ Your topic sources now need to be converted to their numerical representation, u
 
 
 
-![](/.gitbook/assets/RAG-vectorisation.png)
+![](~/assets/rag-vectorisation.png)
 
 *Select your topic sources to start vectorisation*
 
@@ -308,7 +308,7 @@ Once you have vectorised your different topic sources for a given topic, you can
 * View results - scroll down to see the full results
 :::
 
-![](</.gitbook/assets/Screenshot 2024-08-12 at 14.26.34.png>)
+![](~/assets/screenshot-2024-08-12-at-14-26-34.png)
 
 *Testing your knowledge service using the test panel*
 
@@ -316,7 +316,7 @@ Once you have vectorised your different topic sources for a given topic, you can
 
 You can use your RAG service in your AI application by referencing it through a [knowledge string](/opendialog-platform/interpreters-and-natural-language-understanding/language-services/retrieval-augmented-generation#knowledge-strings) in other services, like LLM Actions.  In order to do so, you need to retrieve or construct the relevant knowledge strings.
 
-![](</.gitbook/assets/2 (1) (2).png>)
+![](~/assets/2-1-2.png)
 
 *Syntax structure of a knowledge string*
 
@@ -363,7 +363,7 @@ In order to use the knowledge from within a specific RAG service to generate res
 For more information on LLM actions, please check the [**LLM Actions**](/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions) section of the documentation.
 :::
 
-![](/.gitbook/assets/RAG-LLMactions.png)
+![](~/assets/rag-llmactions.png)
 
 *Using the AboutCompany RAG service in an LLM action*
 
@@ -419,6 +419,6 @@ Your LLM action's response based on the RAG knowledge will be stored against an 
 
 
 
-![](/.gitbook/assets/RAG-response.png)
+![](~/assets/rag-response.png)
 
 *Reference your generated response via the output attribute*

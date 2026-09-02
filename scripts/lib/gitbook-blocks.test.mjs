@@ -71,6 +71,35 @@ test('convertFile becomes a link whose text is the basename', () => {
   );
 });
 
+test('with no map at all convertFile keeps the placeholder form', () => {
+  assert.equal(
+    convertFile('{% file src="../../.gitbook/assets/DeliveryKnowledgeBase.csv" %}', { assets: null }),
+    '[DeliveryKnowledgeBase.csv](</.gitbook/assets/DeliveryKnowledgeBase.csv>)'
+  );
+});
+
+test('a mapped file block emits the map reference, unwrapped when it needs no angle brackets', () => {
+  const assets = {
+    'DeliveryKnowledgeBase.csv': {
+      slug: 'deliveryknowledgebase.csv',
+      kind: 'file',
+      reference: '/files/deliveryknowledgebase.csv',
+      hash: 'z',
+    },
+  };
+  assert.equal(
+    convertFile('{% file src="../../.gitbook/assets/DeliveryKnowledgeBase.csv" %}', { assets }),
+    '[DeliveryKnowledgeBase.csv](/files/deliveryknowledgebase.csv)'
+  );
+});
+
+test('a file block missing from an existing map throws', () => {
+  assert.throws(
+    () => convertFile('{% file src="../../.gitbook/assets/gone.csv" %}', { assets: {} }),
+    /gone\.csv/
+  );
+});
+
 test('an end-of-line entity is stripped, not turned into a trailing space', () => {
   // "word &#x20;" -> "word  " would be a markdown hard break the live site does not render.
   assert.equal(stripEntities('Put a JSON payload here.&#x20;'), 'Put a JSON payload here.');
@@ -103,25 +132,42 @@ test('an unrecognised hint style throws rather than falling back to note', () =>
   );
 });
 
-test('a self-closing embed becomes an Embed element', () => {
-  assert.equal(
-    convertEmbeds('{% embed url="https://youtu.be/RhUc_mgkNl8" %}'),
-    '<Embed url="https://youtu.be/RhUc_mgkNl8" />'
-  );
+test('a self-closing embed becomes a raw iframe figure, needing no component', () => {
+  const out = convertEmbeds('{% embed url="https://youtu.be/RhUc_mgkNl8" %}');
+  assert.match(out, /^<figure class="od-embed">/);
+  assert.match(out, /src="https:\/\/www\.youtube-nocookie\.com\/embed\/RhUc_mgkNl8"/);
+  assert.match(out, /<\/iframe>/, 'the iframe is closed rather than self-closed, so it parses as both HTML and MDX');
+  assert.equal(/<figcaption/.test(out), false, 'no caption was given');
+  assert.equal(out.includes('<Embed'), false);
 });
 
-test('an embed with a caption passes it as title', () => {
-  assert.equal(
-    convertEmbeds('{% embed url="https://www.loom.com/share/abc" %}\nBuilding an agent\n{% endembed %}'),
-    '<Embed url="https://www.loom.com/share/abc" title="Building an agent" />'
-  );
+test('an embed with a caption renders it as a figcaption and the iframe title', () => {
+  const out = convertEmbeds('{% embed url="https://www.loom.com/share/abc" %}\nBuilding an agent\n{% endembed %}');
+  assert.match(out, /src="https:\/\/www\.loom\.com\/embed\/abc"/);
+  assert.match(out, /title="Building an agent"/);
+  assert.match(out, /<figcaption>Building an agent<\/figcaption>/);
 });
 
-test('a caption containing a double quote is escaped for the attribute', () => {
-  assert.equal(
-    convertEmbeds('{% embed url="https://youtu.be/x" %}\nThe "best" way\n{% endembed %}'),
-    '<Embed url="https://youtu.be/x" title="The &quot;best&quot; way" />'
-  );
+test('an uncaptioned embed still carries an accessible iframe title', () => {
+  const out = convertEmbeds('{% embed url="https://youtu.be/x" %}');
+  assert.match(out, /title="Embedded video"/);
+});
+
+test('a loom share URL keeps only its id, dropping any query string', () => {
+  const out = convertEmbeds('{% embed url="https://www.loom.com/share/abc?sid=123" %}');
+  assert.match(out, /src="https:\/\/www\.loom\.com\/embed\/abc"/);
+});
+
+test('a youtube watch URL becomes its nocookie embed form', () => {
+  const out = convertEmbeds('{% embed url="https://www.youtube.com/watch?v=abc123" %}');
+  assert.match(out, /src="https:\/\/www\.youtube-nocookie\.com\/embed\/abc123"/);
+});
+
+test('a caption containing a double quote is escaped in both places it appears', () => {
+  const out = convertEmbeds('{% embed url="https://youtu.be/x" %}\nThe "best" way\n{% endembed %}');
+  assert.match(out, /title="The &quot;best&quot; way"/);
+  assert.match(out, /<figcaption>The &quot;best&quot; way<\/figcaption>/);
+  assert.equal(out.includes('"best"'), false);
 });
 
 test('a non-video embed becomes a plain link and needs no component', () => {
@@ -146,7 +192,23 @@ test('a youtube.com/watch URL with no v parameter is not an embeddable shape', (
   assert.equal(isVideoEmbed('https://www.youtube.com/watch'), false);
 });
 
-test('a loom.com URL not in /share/ form becomes a plain link, not an Embed', () => {
+test('an embed inside a list item keeps that indentation', () => {
+  // Emitted at column 0 the figure closes the enclosing list, which on
+  // ai-agent-creation-overview breaks <Steps> — it requires a single <ol> child.
+  const out = convertEmbeds('    {% embed url="https://youtu.be/x" %}');
+  for (const line of out.split('\n')) {
+    assert.match(line, /^    \S/, `line not indented: ${JSON.stringify(line)}`);
+  }
+});
+
+test('an indented non-video embed keeps its indentation too', () => {
+  assert.equal(
+    convertEmbeds('    {% embed url="https://webaim.org/x" %}'),
+    '    [https://webaim.org/x](https://webaim.org/x)'
+  );
+});
+
+test('a loom.com URL not in /share/ form becomes a plain link, not an embed', () => {
   assert.equal(
     convertEmbeds('{% embed url="https://www.loom.com/embed/abc" %}'),
     '[https://www.loom.com/embed/abc](https://www.loom.com/embed/abc)'

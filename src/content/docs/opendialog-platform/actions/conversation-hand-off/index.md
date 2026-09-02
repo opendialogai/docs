@@ -7,7 +7,7 @@ description: OpenDialog now allows you to set up a seamless handover to other sy
 
 Conversation Handoff allows you to set up an integration with an external messaging system, for example, Chatwoot.  You can therefore find it under the Integrate section of a specific scenario. Once you select 'Create a new Handoff' you will then have the opportunity to create the Handoff of your choice.  Select Chatwoot to start setting up your Chatwoot integration.
 
-![](</.gitbook/assets/Chatwoot Handover.png>)
+![](~/assets/chatwoot-handover.png)
 
 *Setting up a Chatwoot integration via OpenDialog*
 

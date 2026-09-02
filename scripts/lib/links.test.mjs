@@ -86,3 +86,39 @@ test('rewriteLinks leaves asset references untouched for Phase 3', () => {
 test('rewriteLinks throws, naming file and target, on an unresolved page link', () => {
   assert.throws(() => rewriteLinks('[Q](missing.md)', ctx), /a\/start\.md.*missing\.md/s);
 });
+
+test('a relative .md link inside a raw HTML anchor is rewritten too', () => {
+  // twilio-content-template-message carries its Button Message link as a raw <a> inside an
+  // HTML table cell. rewriteLinks only ever handled markdown links, so this one shipped as
+  // href="button-message.md" and 404'd, even though the page exists.
+  const ctx = {
+    source: 'a/b.md',
+    routes: new Map([['a/button-message.md', { url: '/msg/button-message' }]]),
+  };
+  assert.equal(
+    rewriteLinks('See <a href="button-message.md">Button Message</a>.', ctx),
+    'See <a href="/msg/button-message">Button Message</a>.'
+  );
+});
+
+test('an anchor fragment on a raw HTML link is preserved', () => {
+  const ctx = { source: 'a/b.md', routes: new Map([['a/c.md', { url: '/c' }]]) };
+  assert.equal(
+    rewriteLinks('<a href="c.md#part-two">x</a>', ctx),
+    '<a href="/c#part-two">x</a>'
+  );
+});
+
+test('a raw HTML anchor to an external URL or in-page anchor is left alone', () => {
+  const ctx = { source: 'a/b.md', routes: new Map() };
+  const external = '<a href="https://example.com">x</a>';
+  const inPage = '<a href="#what-is-a-list-message">x</a>';
+  assert.equal(rewriteLinks(external, ctx), external);
+  assert.equal(rewriteLinks(inPage, ctx), inPage);
+});
+
+test('a raw HTML anchor inside a fenced code block is left alone', () => {
+  const ctx = { source: 'a/b.md', routes: new Map([['a/c.md', { url: '/c' }]]) };
+  const fence = '```html\n<a href="c.md">x</a>\n```';
+  assert.equal(rewriteLinks(fence, ctx), fence);
+});

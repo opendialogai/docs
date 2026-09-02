@@ -2,7 +2,8 @@
 title: Scenarios
 ---
 
-import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid } from '@astrojs/starlight/components';
+import CoverCard from '~/components/CoverCard.astro';
 
 ## What is a scenario?
 
@@ -14,7 +15,7 @@ Each workspace holds one or more scenarios. You can access the Scenario overview
 
 You can also do so by accessing the Scenario overview through the dedicated button 'Manage scenarios'.
 
-![](</.gitbook/assets/Screenshot 2023-05-26 at 12.51.54.png>)
+![](~/assets/screenshot-2023-05-26-at-12-51-54.png)
 
 *Access the scenario overview through the left-hand menu or via the Manage Scenarios button.*
 
@@ -26,7 +27,7 @@ You can also do so by accessing the Scenario overview through the dedicated butt
 
 Create a new scenario using the main area's 'Create Scenario' button.
 
-![](</.gitbook/assets/Screenshot 2023-05-26 at 12.59.19.png>)
+![](~/assets/screenshot-2023-05-26-at-12-59-19.png)
 
 *Create a new scenario via the 'Create new scenario' button or import an existing scenario via a .json file*
 
@@ -42,7 +43,7 @@ When you export a scenario, an email is sent to your registered email address in
 
 Duplicating and exporting may take a few minutes; you will be emailed when the resulting file is ready.
 
-![](/.gitbook/assets/2023-05-01_16-32-21.png)
+![](~/assets/2023-05-01-16-32-21.png)
 
 *Example of Scenario functionality*
 
@@ -50,7 +51,7 @@ Duplicating and exporting may take a few minutes; you will be emailed when the r
 
 To import a scenario, you will need access to a .json file that you will upload during import. For example, you may have received a .json file as an export from another workspace or as an email attachment.
 
-![](</.gitbook/assets/Screenshot 2023-05-26 at 13.05.41.png>)
+![](~/assets/screenshot-2023-05-26-at-13-05-41.png)
 
 *Import scenario option at the top of the main Scenario Overview area.*
 
@@ -66,13 +67,13 @@ Active scenarios are available to be used in chat interfaces, while draft scenar
 
 You can edit the Scenario name, description, set a preferred interpreter (which will act as the default interpreter throughout the scenario) and also set conditions. Setting a condition on a scenario is relevant in a multi-agent architecture, where conditions on scenarios identify a scenario for consideration.
 
-![](/.gitbook/assets/2023-05-18_14-54-46.png)
+![](~/assets/2023-05-18-14-54-46.png)
 
 *Scenario settings in the conversation designer*
 
 ## How to design your scenario
 
 <CardGrid>
-  <LinkCard title="The OpenDialog model" description="Take a deepdive into the underpinning model for OpenDialog applications." href="/core-concepts/the-opendialog-model" />
-  <LinkCard title="Designing your application" description="Create a new scenario from a template or from scratch using OpenDialog's model and best practices." href="/opendialog-platform/conversation-designer" />
+  <CoverCard title="The OpenDialog model" description="Take a deepdive into the underpinning model for OpenDialog applications." href="/core-concepts/the-opendialog-model" cover="/src/assets/od-basicmodel.png" />
+  <CoverCard title="Designing your application" description="Create a new scenario from a template or from scratch using OpenDialog's model and best practices." href="/opendialog-platform/conversation-designer" cover="/src/assets/applicationdesign.png" />
 </CardGrid>

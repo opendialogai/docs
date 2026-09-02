@@ -24,11 +24,11 @@ To access your bearer token visit the Identity & Security page - accessible by c
 
 <div align="left">
 
-![](</.gitbook/assets/image (626).png>)
+![](~/assets/image-626.png)
 
 </div>
 
-![](</.gitbook/assets/image (627).png>)
+![](~/assets/image-627.png)
 
 **Important Security Notes:**
 

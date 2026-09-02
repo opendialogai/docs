@@ -10,7 +10,7 @@ This interpreter will return a single intent with the name of `OpenAIPrompt`. It
 
 To use OpenAI's you'll need to [create an account](https://platform.openai.com/) with OpenAI. Once you are signed up, you'll need to [create an API key](https://platform.openai.com/api-keys) via the "API keys" screen. You'll need to keep note of the generated API key for the next step.
 
-![](</.gitbook/assets/Screenshot 2024-01-09 at 09.56.45.png>)
+![](~/assets/screenshot-2024-01-09-at-09-56-45.png)
 
 *The API keys screen in OpenAI.*
 
@@ -18,7 +18,7 @@ To use OpenAI's you'll need to [create an account](https://platform.openai.com/)
 
 In your OpenDialog application, navigate to the desired scenario, and then the "Interpret" screen. Click the blue "Add new interpreter" button to begin creating the new interpreter. You will then see the following screen where you can give the interpreter a name and configure it. You will need to select the OpenAI option under "Interpreter Type".
 
-![](</.gitbook/assets/Screenshot 2024-01-09 at 09.58.23.png>)
+![](~/assets/screenshot-2024-01-09-at-09-58-23.png)
 
 *Creating an OpenAI interpreter in OpenDialog.*
 

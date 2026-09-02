@@ -3,7 +3,7 @@ title: 'Semantic Classifier: Query Classifier'
 description: The Semantic Classifier used by the "Start from Scratch" Scenario
 ---
 
-![](</.gitbook/assets/image (546).png>)
+![](~/assets/image-546.png)
 
 *The "Start From Scratch" semantic classifier*
 
