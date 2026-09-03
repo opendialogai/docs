@@ -14,17 +14,39 @@ OpenDialog 4.0 is here! This is our first release under a new, regular major-ver
 
 #### <mark style={{ color: 'purple' }}>Deprecations and removals</mark>
 
-As part of 4.0 we are clearing out long-deprecated components. The following components are being removed in 4.0:
+As part of 4.0 we are clearing out long-deprecated components. The following are removed in 4.0:
 
-* The legacy webchat — new scenarios have used the new webchat for some time, and we will be in touch with owners of remaining legacy-webchat scenarios about migration
-* The Voice/Alexa module, including the Alexa platform, the Alexa interpreter and skill synchronisation
-* The legacy NLU interpreters: Microsoft LUIS, Microsoft QnA Maker, Rasa, Amazon Lex and Google Dialogflow
-* The Google PaLM language model, which has been discontinued by Google
+* **The legacy webchat.** New scenarios have used the new webchat for some time. If you still have a scenario on the legacy webchat you can move it yourself — see [Converting a scenario to the Chat UI](#converting-a-scenario-to-the-chat-ui) below. The legacy message delivery acknowledgement endpoint (`POST /acknowledge`) goes with it; the Chat UI has no equivalent and does not need one.
+* **The Voice/Alexa module**, including the Alexa platform, the Alexa interpreter and skill synchronisation.
+* **The legacy NLU interpreters**: Microsoft LUIS, Microsoft QnA Maker, Rasa, Amazon Lex and Google Dialogflow.
+* **The Azure Custom QA interpreter.**
+* **The Conversation Analysis interpreter.**
+* **The Google PaLM language model**, which has been discontinued by Google.
 
-In addition, the following components are deprecated in 4.0 and will be removed in the next major release:
+The following are deprecated in 4.0 and will be removed in 5.0:
 
-* The legacy direct OpenAI client interpreter — replaced by [Language Services](/opendialog-platform/interpreters-and-natural-language-understanding/language-services) backed by language model configurations
-* The Azure Custom QA interpreter
+* **The OpenAI interpreter** — replaced by [Language Services](/opendialog-platform/interpreters-and-natural-language-understanding/language-services) backed by language model configurations.
+* **The OpenAI language processor** — likewise replaced by Language Services.
+
+Deprecated components are *frozen*: existing configurations keep working and stay editable, but you can no longer create new ones. This includes importing or duplicating a scenario that carries one, which will now fail.
+
+Any scenario using a component on either list shows a warning icon on its card in the scenario list. Hover the icon to see which components are affected and which release removes them.
+
+#### <mark style={{ color: 'purple' }}>Converting a scenario to the Chat UI</mark>
+
+Scenarios still on the legacy webchat can be moved to the Chat UI from the scenario list. Open the scenario's **⋮** menu and choose **Convert to Chat UI** — the option only appears on scenarios that are still using the legacy webchat.
+
+![](~/assets/convert-to-chat-ui.png)
+
+The scenario is converted in place. It keeps its ID, app key, aliases and publish state, and your existing settings are carried over wherever the Chat UI supports them. There is no need to recreate the scenario or re-point anything that refers to it by ID.
+
+When the conversion finishes you are shown a short report covering:
+
+* Any settings sections that were removed because the Chat UI does not support them. The **Comments** section is removed for every conversion.
+* Any settings the Chat UI does not recognise. These are kept but no longer have any effect.
+* Your original settings, which you can expand and copy for your records.
+
+**One step is left to do yourself:** update the embed code on your site so it loads the Chat UI script. Your scenario ID and app key have not changed, so only the script source needs to change. You can copy the new snippet from the scenario's [Interface settings](/opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings) page.
 
 If you have any questions about migrating away from a deprecated component, you can get help via our support form - [https://opendialog.ai/support](https://opendialog.ai/support/).
 
