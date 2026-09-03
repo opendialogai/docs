@@ -2228,3 +2228,63 @@ CI's silently prunes optional cross-platform entries. The durable fix is still w
 2026-07-29 entry asked for and never got — pin the local toolchain to `.node-version` so both
 sides run npm 11.16.0. Until then, after any `npm install`, check that
 `node_modules/@emnapi/core` is still in the lock before committing.
+
+---
+
+## 2026-09-03 — 4.0 deprecation list corrected against the product registry
+
+The August 2026 "Deprecations and removals" block, as first published in PR #20, did not match
+`config/opendialog/deprecations.php` on `origin/4.x` — the registry the platform actually reads
+to render the deprecation warning on a scenario card. That warning links straight at
+`https://docs.opendialog.ai/release-notes/release-notes` (hardcoded in
+`resources/opendialog-design-system/components/Scenarios/Scenario.vue`), so **every component id
+in that registry has to be explained on this page** or a customer follows the warning to a page
+that does not mention what they were warned about.
+
+Three divergences, all verified against the code rather than the ticket prose:
+
+| | published | registry / code |
+|---|---|---|
+| Azure Custom QA (`interpreter.core.qa`) | deprecated, removed next major | **removed in 4.0** — `AzureCustomQAInterpreter.php` is absent from `origin/4.x` |
+| Conversation Analysis (`interpreter.core.conversation_analysis`) | absent | **removed in 4.0** — `ConversationAnalysisInterpreter.php` is absent from `origin/4.x` |
+| OpenAI Language Processor (`language_processor.core.open_ai`) | absent | deprecated, `removed_in` 5.0, `frozen` |
+
+Verified by diffing `packages/core/src/InterpreterEngine/Interpreters/` between `origin/3.x` and
+`origin/4.x`: seven interpreters are gone (Luis, QnA, Rasa, Lex, Dialogflow, AzureCustomQA,
+ConversationAnalysis), and `LanguageModelEngine/Component/PaLMLanguageModel.php` with them.
+
+One registry entry is deliberately **not** on the page: a single-customer action renamed to
+`action.core.question_count` and frozen. Its component id embeds the customer's name, and this
+repo and the rendered page are both public, so it is not named here either. The id is not
+customer-visible — the deprecation warning renders the registry `label`, which is generic — so
+the omission costs that customer nothing. Any future entry whose id embeds a customer name
+needs the same treatment, or a relabelled id.
+
+`frozen` was not a concept on the page at all. It is load-bearing and customer-visible: a frozen
+component keeps working and stays editable, but refuses *new* configurations — which includes
+importing or duplicating a scenario that carries one. That behaviour change is deliberate
+(ODP-3364 C3) and worth stating rather than letting people discover it via a failed import.
+
+### The delivery acknowledgement endpoint
+
+`POST /acknowledge` (old webchat `AsyncController@acknowledge`) dies with the legacy webchat.
+The Chat UI has no equivalent. The one `/acknowledge/chatApi` reference in the shipped Chat UI
+bundle has never routed and already 404s in production, so nothing regresses — but the endpoint
+was public surface, so its removal is stated.
+
+### Chat UI conversion how-to
+
+Sourced from the implementation, not from the plan docs, because the plan's earlier revisions
+describe a copy-based conversion that was later reversed to in-place:
+
+- `ConvertWebchatScenarioService` (`packages/webchat-package/src/Services/`) rewrites the
+  scenario's platform configuration rows in place — uid, app key, aliases and publish state all
+  survive. Only the embed script src changes.
+- The `comments` section is dropped unconditionally; unrecognised keys are retained but inert;
+  the report returns the original payload.
+- `ConvertWebchat.vue` sends the customer to the scenario's Interface settings page for the new
+  snippet, so the page links there.
+
+The screenshot at `~/assets/convert-to-chat-ui.png` is the scenario card with its dot menu
+open. It deliberately shows both affordances at once: the "Convert to Chat UI" item, and the
+deprecation warning icon on the card footer that the surrounding prose describes.
