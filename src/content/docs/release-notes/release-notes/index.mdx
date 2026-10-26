@@ -6,6 +6,24 @@ description: Learn about our product's newest updates and enhancements that will
 import { LinkCard } from '@astrojs/starlight/components';
 
 
+## September 2026
+
+#### <mark style={{ color: 'purple' }}>Archive scenarios and language services</mark>
+
+You can now archive [scenarios](/core-concepts/the-opendialog-workspace/scenarios) and [language services](/core-concepts/the-opendialog-workspace/language-services) you no longer use, instead of deleting them. Archived items move to an **Archived** tab on their page and can be unarchived at any time. Editors and Admins can choose **Archive** from an item's **⋮** menu. A live scenario must be deactivated before it can be archived. An archived language service keeps working for any scenario that still uses it.
+
+Both pages also gain search, filters and sorting, and the Actions and LLM Actions pages now have a search box. Switching a scenario off from its card now asks you to confirm first, because any live agent using it stops working.
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* Fixed a conversation turn failing when a message referenced an item in a list held inside a composite attribute
+* Fixed the LLM action editor resetting prompts and settings you had typed to their defaults when an unsaved action's model was changed
+* Fixed a reply from before a webchat restart appearing in the new conversation
+* Fixed occasional errors when the same visitor was identified by several requests at once
+* Continued webchat accessibility work: keyboard and single-pointer repositioning of the minimal launcher, better focus handling in the minimal full-screen view, and an accessible name on the send button
+* The minimal webchat panel now fits short conversations instead of reserving a fixed height
+* Fixed experiment analytics under-counting visitors who left within a few seconds of the page loading
+
 ## August 2026
 
 #### <mark style={{ color: 'purple' }}>OpenDialog 4.0</mark>
