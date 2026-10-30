@@ -186,7 +186,9 @@ A pattern matches anywhere in the message. You don't need to match the whole mes
 | An optional character | `?` | `[A-Z]{2} ?[0-9]{6}` allows an optional space |
 | A letter in any language | `\p{L}` | `\p{Lu}` matches any capital letter |
 
-For example, `[A-Z]{2}[0-9]{6}[A-D]` matches a UK National Insurance number such as `AB123456C`, and `[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}` matches an IBAN written without spaces, such as `GB82WEST12345698765432`.
+For example, `[A-Z]{2}[0-9]{6}[A-D]` matches a UK National Insurance number written in capitals without spaces, such as `AB123456C`. Users often add spaces, as in `AB 12 34 56 C`, so `[A-Z]{2} ?[0-9]{2} ?[0-9]{2} ?[0-9]{2} ?[A-D]` is a safer choice. To catch lower case too, use `[A-Za-z]` and `[A-Da-d]` for the letters.
+
+Similarly, `[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}` matches an IBAN written without spaces, such as `GB82WEST12345698765432`.
 
 :::note
 I-Regexp is a deliberately small subset of regular expressions. Shortcuts such as `\d`, `\w` and `\s`, lookaheads, back references and lazy quantifiers such as `+?` are not supported. Use `[0-9]` instead of `\d`. The characters `^` and `$` are matched literally rather than as the start and end of the message.
