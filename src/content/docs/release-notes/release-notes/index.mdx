@@ -6,6 +6,24 @@ description: Learn about our product's newest updates and enhancements that will
 import { LinkCard } from '@astrojs/starlight/components';
 
 
+## October 2026
+
+#### <mark style={{ color: 'purple' }}>Test with conversation history</mark>
+
+The test panels for [semantic classifiers](/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier), [LLM actions](/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions) and Webhook V2 actions now have a **Conversation history** input. Type the earlier turns of a conversation and the test run builds the [conversation history](/opendialog-platform/interpreters-and-natural-language-understanding/llm-actions/using-conversation-history-memory-in-llm-actions) from them the same way a live conversation does, so prompts that use the history can be tested properly. The test panels no longer ask for secret attribute values.
+
+#### <mark style={{ color: 'purple' }}>Find a workspace faster</mark>
+
+If you have access to several workspaces, the workspace list you see after signing in now has a search box, so you can find a workspace by typing its name instead of scrolling. The list also appears faster.
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* Archived scenarios and language services no longer appear in the sidebar
+* Fixed semantic classifier prompt changes sometimes being lost after opening Settings or quickly switching to Intents. A failed save now shows an error
+* Fixed a message repeated within a minute getting the earlier turn's interpreter result instead of being interpreted again
+* Fixed [Preview](/opendialog-platform/previewing-your-application) not showing the conversation visualisation when web sockets are on
+* Continued webchat accessibility work: keyboard focus now stays in the message input when its buttons change
+
 ## September 2026
 
 #### <mark style={{ color: 'purple' }}>Archive scenarios and language services</mark>
