@@ -134,7 +134,7 @@ After enabling CORS, you will need to provide a list of the origins that should 
 
 *Sensitive Data Redaction settings*
 
-Users sometimes type things into the chat that you don't want to keep, such as a card number or a social security number. Sensitive data redaction masks that data before the message is stored or processed, so it never reaches your conversation logs, your attributes or any language model.
+Users sometimes type things into the chat that you don't want to keep, such as a card number or a social security number. Sensitive data redaction masks that data before the message is stored or processed, so anything your rules match never reaches your conversation logs, your attributes or any language model. It only catches what your rules describe: sensitive data that doesn't match a rule, or is written in a format the rule doesn't recognise, is not masked.
 
 Redaction is off by default. Turn on **Redact sensitive data in user messages** to switch it on for the scenario.
 
@@ -158,7 +158,7 @@ Rules decide what is redacted. Choose a rule type from the list and click **Add 
 **Payment card number** - Finds card numbers of 13 to 19 digits, written with or without spaces or dashes. It has two options:
 
 * **Also redact the CVV when it follows the card number in the same message** - Masks a 3 or 4 digit security code that appears after a card number. A number labelled `CVV`, `CVC`, `CSC` or `security code` is preferred.
-* **Only redact numbers that pass the card checksum (Luhn check)** - Only masks numbers that are valid card numbers. Turn this off to mask any 13 to 19 digit number, which catches mistyped card numbers too, but may also mask other long numbers such as account or order references.
+* **Only redact numbers that pass the card checksum (Luhn check)** - Only masks numbers that pass the checksum used by card numbers. This rules out most mistyped and random numbers, but some other long numbers pass it too. Turn this off to mask any 13 to 19 digit number, which catches mistyped card numbers too, but may also mask other long numbers such as account or order references.
 
 **US Social Security number** - Finds 9 digit numbers written as `123-45-6789`, `123 45 6789` or `123456789`.
 
@@ -186,7 +186,7 @@ A pattern matches anywhere in the message. You don't need to match the whole mes
 | An optional character | `?` | `[A-Z]{2} ?[0-9]{6}` allows an optional space |
 | A letter in any language | `\p{L}` | `\p{Lu}` matches any capital letter |
 
-For example, `[A-Z]{2}[0-9]{6}[A-D]` matches a UK National Insurance number such as `AB123456C`.
+For example, `[A-Z]{2}[0-9]{6}[A-D]` matches a UK National Insurance number such as `AB123456C`, and `[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}` matches an IBAN written without spaces, such as `GB82WEST12345698765432`.
 
 :::note
 I-Regexp is a deliberately small subset of regular expressions. Shortcuts such as `\d`, `\w` and `\s`, lookaheads, back references and lazy quantifiers such as `+?` are not supported. Use `[0-9]` instead of `\d`. The characters `^` and `$` are matched literally rather than as the start and end of the message.
@@ -215,5 +215,6 @@ Redaction applies to the text of messages users send through webchat, including 
 It does not apply to:
 
 * Data your website passes to webchat about the user, such as a name or email address set through the [SDK](/developing-with-opendialog/webchat/sdk).
+* The contents of files users upload, such as identity documents.
 * Messages sent through other channels, such as SMS, WhatsApp or Slack.
 * Messages your AI agent sends to the user.
