@@ -6,6 +6,23 @@ description: Learn about our product's newest updates and enhancements that will
 import { LinkCard } from '@astrojs/starlight/components';
 
 
+## November 2026
+
+#### <mark style={{ color: 'purple' }}>Sensitive data redaction</mark>
+
+You can now stop sensitive data that users type into the chat, such as a card number or a social security number, from being stored or processed. Turn on [sensitive data redaction](/opendialog-platform/conversation-designer/webchat-interface-design/webchat-interface-settings#sensitive-data-redaction) in a scenario's webchat interface settings and add rules for payment card numbers, US Social Security numbers or your own custom patterns. Matching data is masked in the chat window before the message is sent, and again on the OpenDialog server, so it never reaches your conversation logs, your attributes or any language model. Redaction is off by default, and a test box lets you check your rules before saving them.
+
+#### <mark style={{ color: 'purple' }}>See which semantic classifier interpreted an intent</mark>
+
+[Analyse](/opendialog-platform/monitoring-your-application) and [Preview](/opendialog-platform/previewing-your-application) now show the [semantic classifier](/opendialog-platform/interpreters-and-natural-language-understanding/language-services/semantic-intent-classifier) an intent was interpreted with, in that intent's Interpretation panel. A link downloads the run as a CSV holding the full prompt of every model call the classifier made, so you can see exactly what the model was asked. A run that matched nothing is listed under the rejected intent that used the classifier.
+
+#### <mark style={{ color: 'purple' }}>Improvements</mark>
+
+* The CSV exports in Analyse now include the number of cached input tokens reported by OpenAI and Azure OpenAI models, so you can see how much of a prompt was served from the cache
+* The analytics embed snippet now includes the `autoCapture` option, so you can see it and switch automatic capture of page behaviour off
+* Fixed chat messages failing when a message or a visitor's profile was very large
+* Fixed analytics events being lost when a visitor left the page while they were still being sent
+
 ## October 2026
 
 #### <mark style={{ color: 'purple' }}>Test with conversation history</mark>
