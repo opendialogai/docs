@@ -37,6 +37,9 @@ jobs:
 
       - run: npx astro build
 
+      - name: Check published GitBook URLs
+        run: npx --no-install route-audit --dist dist --report-only
+
       - name: Check for Cloudflare credentials
         id: creds
         env:
